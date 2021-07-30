@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: University Lecturer in Artificial Intelligence
+role: Profesor titular
 
 # Organizations/Affiliations
 organizations:
@@ -18,11 +18,12 @@ organizations:
   url: "https://jlaznarte.github.io"
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am interested in artificial intelligence.
+bio: Enseño e investigo en IA, ciencia de datos, series temporales &c
 
 interests:
-- Artificial Intelligence
-- Time series forecasting
+- Inteligencia Artificial
+- Predicción de series temporales
+- Consecuencias éticas y sociales de la tecnología
 
 education:
   courses:
@@ -40,10 +41,10 @@ social:
   link: 'mailto:jlaznarte@dia.uned.es'  # For a direct email link, use "mailto:test@example.org".
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.com/citations?user=NTpfnyoAAAAJ
+  link: https://scholar.google.com/citations?user=NOq_lKwAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/qingyuanzhao
+  link: https://github.com/jlaznarte
 - icon: twitter
   icon_pack: fab
   link: https://www.twitter.com/jlaznarte/
@@ -62,4 +63,7 @@ user_groups:
 - Principal Investigators
 ---
 
-I am a computer scientist.
+Soy profesor titular en el departamento de Inteligencia Artificial de la UNED, y temporalmente vicerrector adjunto de gestión inteligente de datos y recursos. Fui investigador post-doc en el Grupo de Energías Renovables del Centro para Energía y Procesos de la prestigiosa universidad Mines ParisTECH (Francia), donde estuve implicado en los proyectos europeos ANEMOS.Plus (FP6) y Safewind (FP7). Recibí un contrato "Ramón y Cajal" (2013) y obtuve la certificación I3 (2018). 
+
+Mis intereses de investigación giran en torno a la predicción de series temporales y algunas de sus aplicaciones menos relacionadas con asuntos económicos, como la predicción de la calidad del aire, el tráfico o la propagación de epidemias. Coordina el desarrollo de SOCAIRE, el sistema predictivo que permite la anticipación de la activación del protocolo de NO2 del Ayuntamiento de Madrid y es director de la Cátedra EMT/UNED de Calidad del Aire y Movilidad Sostenible.
+
