@@ -93,14 +93,22 @@ phone = ""
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
+<<<<<<< HEAD
 address = {street = "Calle Juan del Rosal, 16", city = "Madrid", region = "", postcode = "28040", country = "España", country_code = ""}
+=======
+address = {street = "calle Juan del Rosal, 16", city = "Madrid", region = "", postcode = "28040", country = "España", country_code = ""}
+>>>>>>> 137caa4... Cambio detalles personales
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
 coordinates = {latitude = "40.45087", longitude = "-3.73798"}
 
 # Directions for visitors to locate you.
+<<<<<<< HEAD
 directions = "Escuela Técnica Superior de Ingeniería Informática. Despacho 3.14"
+=======
+directions = "Despacho 3.14"
+>>>>>>> 137caa4... Cambio detalles personales
 
 # Office hours
 # A list of your office hours. To remove, set to an empty list `[]`.
