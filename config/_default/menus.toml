@@ -19,8 +19,8 @@
   weight = 20
 
 [[main]]
-  name = "Talks"
-  url = "talk/"
+  name = "Charlas"
+  url = "charlas/"
   weight = 30
 
 # [[main]]
@@ -29,24 +29,24 @@
 #   weight = 40
 
 [[main]]
-  name = "Publications"
+  name = "Publicaciones"
   url = "featured/"
   weight = 40
 
 [[main]]
-  name = "Teaching"
-  url = "teaching/"
+  name = "Docencia"
+  url = "docencia/"
   weight = 50
 
-[[main]]
-  name = "Students"
-  url = "students/"
-  weight = 60
+#[[main]]
+#  name = "Estudiantes"
+#  url = "students/"
+#  weight = 60
 
-[[main]]
-  name = "Links"
-  url = "links/"
-  weight = 80
+#[[main]]
+#  name = "Links"
+#  url = "links/"
+#  weight = 80
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
