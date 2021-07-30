@@ -102,10 +102,14 @@ address = {street = "calle Juan del Rosal, 16", city = "Madrid", region = "", po
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
 <<<<<<< HEAD
+<<<<<<< HEAD
 coordinates = {latitude = "40.45087", longitude = "-3.73798"}
 =======
 coordinates = {latitude = "40.4531597", longitude = "-3.7380099"}
 >>>>>>> 57b657e... Cambio detalles personales
+=======
+coordinates = {latitude = "40.45091", longitude = "-3.73801"}
+>>>>>>> b7b173b... Corrijo coordenadas
 
 # Directions for visitors to locate you.
 <<<<<<< HEAD
