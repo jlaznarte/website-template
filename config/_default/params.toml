@@ -78,7 +78,7 @@ privacy_pack = false
 edit_page = {repo_url = "https://github.com/gcushen/hugo-academic", content_dir = "", repo_branch = "master", editable = {docs = true, page = false, post = false}}
 
 # Show related content at the bottom of pages?
-show_related = {docs = true, page = false, post = true, project = true, publication = false, talk = false}
+show_related = {docs = false, page = false, post = false, project = false, publication = false, talk = false}
 
 ############################
 ## Contact details
@@ -88,19 +88,19 @@ show_related = {docs = true, page = false, post = true, project = true, publicat
 ############################
 
 # Enter contact details (optional). To hide a field, clear it to "".
-email = "qyzhao@statslab.cam.ac.uk"
+email = "jlaznarte@dia.uned.es"
 phone = ""
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
-address = {street = "Centre for Mathematical Sciences, Wilberforce Road", city = "Cambridge", region = "", postcode = "CB3 0WB", country = "United Kingdom", country_code = "UK"}
+address = {street = "calle Juan del Rosal, 16", city = "Madrid", region = "", postcode = "28040", country = "España", country_code = ""}
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
 coordinates = {latitude = "52.210312", longitude = "0.102033"}
 
 # Directions for visitors to locate you.
-directions = "Pavillion D -- Room D1.01"
+directions = "Despacho 3.14"
 
 # Office hours
 # A list of your office hours. To remove, set to an empty list `[]`.
@@ -134,9 +134,9 @@ twitter = ""
 
 # Date and time format (refer to https://sourcethemes.com/academic/docs/customization/#date-format )
 #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
-date_format = "2006-01-02"
+date_format = "01-02-2006"
 #   Examples: "3:04 pm" or "15:04"
-time_format = "3:04 PM"
+time_format = "15:04"
 
 # Address format (choose from the [address_formats] list below or add you own to the list).
 address_format = "en-gb"
@@ -224,10 +224,10 @@ plugins_js  = []
   #   0: Disabled
   #   1: Disqus (https://disqus.com)
   #   2: Commento (https://commento.io)
-  engine = 1
+  engine = 0
 
   # Which page types are commentable?
-  commentable = {page = false, post = true, docs = false, project = false, publication = true, talk = false, teaching = true}
+  commentable = {page = false, post = false, docs = false, project = false, publication = false, talk = false, teaching = false}
 
   # Configuration of Disqus.
   [comments.disqus]
@@ -283,7 +283,7 @@ plugins_js  = []
 ## Marketing
 ############################
 [marketing]
-  google_analytics = "UA-169798863-1"
+  google_analytics = ""
   google_tag_manager = ""
 
 ############################
