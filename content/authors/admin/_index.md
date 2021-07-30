@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Qingyuan Zhao
+title: José L. Aznarte
 
 # Username (this should match the folder name)
 authors:
@@ -10,18 +10,19 @@ authors:
 superuser: true
 
 # Role/position
-role: University Lecturer in Statistics
+role: University Lecturer in Artificial Intelligence
 
 # Organizations/Affiliations
 organizations:
-- name: University of Cambridge
-  url: "http://www.statslab.cam.ac.uk/~qz280/"
+- name: Universidad Nacional de Educación a Distancia - UNED
+  url: "https://jlaznarte.github.io"
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am interested in statistics.
+bio: I am interested in artificial intelligence.
 
 interests:
-- Statistics
+- Artificial Intelligence
+- Time series forecasting
 
 education:
   courses:
@@ -36,24 +37,24 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: 'mailto:qyzhao@statslab.cam.ac.uk'  # For a direct email link, use "mailto:test@example.org".
+  link: 'mailto:jlaznarte@dia.uned.es'  # For a direct email link, use "mailto:test@example.org".
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.com/citations?user=NTpfnyoAAAAJ
 - icon: github
   icon_pack: fab
   link: https://github.com/qingyuanzhao
-- icon: instagram
+- icon: twitter
   icon_pack: fab
-  link: https://www.instagram.com/qingyuan_zzz/
+  link: https://www.twitter.com/jlaznarte/
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-- icon: cv
-  icon_pack: ai
-  link: files/cv.pdf
+#- icon: cv
+#  icon_pack: ai
+#  link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: "qyzhao@statslab.cam.ac.uk"
+email: "jlaznarte@dia.uned.es"
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
@@ -61,6 +62,4 @@ user_groups:
 - Principal Investigators
 ---
 
-I am a statistician.
-
-Click [here](https://translate.google.co.uk/?sl=auto&tl=en&text=%E8%B5%B5%E5%8D%BF%E5%85%83&op=translate) for my name in Chinese and how to pronounce it.
+I am a computer scientist.
