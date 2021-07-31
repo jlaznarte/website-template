@@ -10,15 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-<<<<<<< HEAD
-<<<<<<< HEAD
 role: Profesor titular
-=======
-role: University Lecturer in Artificial Intelligence
->>>>>>> 48ec315... Primeros cambios
-=======
-role: Profesor titular
->>>>>>> cee929c... Cambio la bio
 
 # Organizations/Affiliations
 organizations:
@@ -26,29 +18,12 @@ organizations:
   url: "https://jlaznarte.github.io"
 
 # Short bio (displayed in user profile at end of posts)
-<<<<<<< HEAD
-<<<<<<< HEAD
 bio: Enseño e investigo en IA, ciencia de datos, series temporales &c
 
-interests:
+intereses:
 - Inteligencia Artificial
 - Predicción de series temporales
 - Consecuencias éticas y sociales de la tecnología
-=======
-bio: I am interested in artificial intelligence.
-
-interests:
-- Artificial Intelligence
-- Time series forecasting
->>>>>>> 48ec315... Primeros cambios
-=======
-bio: Enseño e investigo en IA, ciencia de datos, series temporales &c
-
-interests:
-- Inteligencia Artificial
-- Predicción de series temporales
-- Consecuencias éticas y sociales de la tecnología
->>>>>>> cee929c... Cambio la bio
 
 education:
   courses:
@@ -69,15 +44,7 @@ social:
   link: https://scholar.google.com/citations?user=NOq_lKwAAAAJ
 - icon: github
   icon_pack: fab
-<<<<<<< HEAD
-<<<<<<< HEAD
   link: https://github.com/jlaznarte
-=======
-  link: https://github.com/qingyuanzhao
->>>>>>> 48ec315... Primeros cambios
-=======
-  link: https://github.com/jlaznarte
->>>>>>> cee929c... Cambio la bio
 - icon: twitter
   icon_pack: fab
   link: https://www.twitter.com/jlaznarte/
@@ -96,18 +63,6 @@ user_groups:
 - Principal Investigators
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Soy profesor titular en el departamento de Inteligencia Artificial de la UNED, y temporalmente vicerrector adjunto de gestión inteligente de datos y recursos. Fui investigador post-doc en el Grupo de Energías Renovables del Centro para Energía y Procesos de la prestigiosa universidad Mines ParisTECH (Francia), donde estuve implicado en los proyectos europeos ANEMOS.Plus (FP6) y Safewind (FP7). Recibí un contrato "Ramón y Cajal" (2013) y obtuve la certificación I3 (2018). 
 
 Mis intereses de investigación giran en torno a la predicción de series temporales y algunas de sus aplicaciones menos relacionadas con asuntos económicos, como la predicción de la calidad del aire, el tráfico o la propagación de epidemias. Coordino el desarrollo de SOCAIRE, el sistema predictivo que permite la anticipación de la activación del protocolo de NO2 del Ayuntamiento de Madrid y soy director de la Cátedra EMT/UNED de Calidad del Aire y Movilidad Sostenible.
-
-=======
-I am a computer scientist.
->>>>>>> 48ec315... Primeros cambios
-=======
-Soy profesor titular en el departamento de Inteligencia Artificial de la UNED, y temporalmente vicerrector adjunto de gestión inteligente de datos y recursos. Fui investigador post-doc en el Grupo de Energías Renovables del Centro para Energía y Procesos de la prestigiosa universidad Mines ParisTECH (Francia), donde estuve implicado en los proyectos europeos ANEMOS.Plus (FP6) y Safewind (FP7). Recibí un contrato "Ramón y Cajal" (2013) y obtuve la certificación I3 (2018). 
-
-Mis intereses de investigación giran en torno a la predicción de series temporales y algunas de sus aplicaciones menos relacionadas con asuntos económicos, como la predicción de la calidad del aire, el tráfico o la propagación de epidemias. Coordino el desarrollo de SOCAIRE, el sistema predictivo que permite la anticipación de la activación del protocolo de NO2 del Ayuntamiento de Madrid y soy director de la Cátedra EMT/UNED de Calidad del Aire y Movilidad Sostenible.
-
->>>>>>> cee929c... Cambio la bio
