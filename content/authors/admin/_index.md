@@ -25,11 +25,11 @@ intereses:
 - Predicción de series temporales
 - Consecuencias éticas y sociales de la tecnología
 
-education:
-  courses:
-  - course: PhD in Statistics
-    institution: University A
-    year: 2021
+# education:
+#   courses:
+#   - course: PhD in Statistics
+#     institution: University A
+#     year: 2021
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -59,8 +59,8 @@ email: "jlaznarte@dia.uned.es"
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
-user_groups:
-- Principal Investigators
+# user_groups:
+# - Principal Investigators
 ---
 
 Soy profesor titular en el departamento de Inteligencia Artificial de la UNED, y temporalmente vicerrector adjunto de gestión inteligente de datos y recursos. Fui investigador post-doc en el Grupo de Energías Renovables del Centro para Energía y Procesos de la prestigiosa universidad Mines ParisTECH (Francia), donde estuve implicado en los proyectos europeos ANEMOS.Plus (FP6) y Safewind (FP7). Recibí un contrato "Ramón y Cajal" (2013) y obtuve la certificación I3 (2018). 
