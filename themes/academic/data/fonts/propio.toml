@@ -7,5 +7,5 @@ google_fonts = "Recursive:400,700|Petrona:400,400italic,700|Fira+Code"
 # Font families
 heading_font = "Recursive"
 body_font = "Petrona"
-nav_font = "Petrona"
+nav_font = "Recursive"
 mono_font = "Fira Code"
