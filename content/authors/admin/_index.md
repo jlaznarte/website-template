@@ -14,8 +14,12 @@ role: Profesor titular
 
 # Organizations/Affiliations
 organizations:
+- name: Departamento de Inteligencia Artificial
+  url: "http://www.ia.uned.es"
+- name: Escuela Técnica Superior de Ingeniería Informática
+  url: "http://www.ii.uned.es"
 - name: Universidad Nacional de Educación a Distancia - UNED
-  url: "https://jlaznarte.github.io"
+  url: "http://www.uned.es"
 
 # Short bio (displayed in user profile at end of posts)
 bio: Enseño e investigo en IA, ciencia de datos, series temporales &c
