@@ -1,0 +1,516 @@
+/* line 4, src/styles/ezproxy_aa.scss */
+.r3-aa-prompt,
+.r3-ezproxy-prompt {
+  display: none;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  min-width: 840px;
+  line-height: 40px;
+  text-align: center;
+  background: white;
+  border-bottom: 1px solid #aaaaaa;
+  z-index: 2000000000;
+}
+
+/* line 20, src/styles/ezproxy_aa.scss */
+.r3-aa-prompt svg,
+.r3-ezproxy-prompt svg {
+  height: 18px;
+  vertical-align: text-bottom;
+}
+
+/* line 25, src/styles/ezproxy_aa.scss */
+.r3-aa-prompt i.r3-info-icon,
+.r3-ezproxy-prompt i.r3-info-icon {
+  fill: orange;
+}
+
+/* line 29, src/styles/ezproxy_aa.scss */
+.r3-aa-prompt i.r3-institution-icon,
+.r3-ezproxy-prompt i.r3-institution-icon {
+  fill: white;
+}
+
+/* line 33, src/styles/ezproxy_aa.scss */
+.r3-aa-prompt i.r3-close-icon,
+.r3-ezproxy-prompt i.r3-close-icon {
+  fill: grey;
+}
+
+/* line 36, src/styles/ezproxy_aa.scss */
+.r3-aa-prompt i.r3-close-icon:hover,
+.r3-ezproxy-prompt i.r3-close-icon:hover {
+  fill: black;
+}
+
+/* line 41, src/styles/ezproxy_aa.scss */
+.r3-aa-prompt i.r3-view-pdf-icon,
+.r3-ezproxy-prompt i.r3-view-pdf-icon {
+  margin-right: 4px;
+}
+
+/* line 45, src/styles/ezproxy_aa.scss */
+.r3-aa-prompt a,
+.r3-ezproxy-prompt a {
+  background: #2ca4b0;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 13px;
+  margin-left: 8px;
+  white-space: nowrap;
+  -webkit-transition: background 200ms;
+  transition: background 200ms;
+}
+
+/* line 55, src/styles/ezproxy_aa.scss */
+.r3-aa-prompt a:hover,
+.r3-ezproxy-prompt a:hover {
+  background: #31b7c4;
+}
+
+/* line 60, src/styles/ezproxy_aa.scss */
+.r3-aa-prompt .r3-close-button,
+.r3-ezproxy-prompt .r3-close-button {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  text-align: center;
+  right: 0;
+  width: 36px;
+  height: 100%;
+  cursor: pointer;
+  background: white;
+}
+
+/* line 73, src/styles/ezproxy_aa.scss */
+body.r3-banner {
+  padding-top: 40px;
+}
+
+/* line 76, src/styles/ezproxy_aa.scss */
+body.r3-banner .r3-aa-prompt,
+body.r3-banner .r3-ezproxy-prompt {
+  display: block;
+}
+
+@media (max-width: 991px) {
+  /* line 83, src/styles/ezproxy_aa.scss */
+  .r3-aa-prompt,
+  .r3-ezproxy-prompt {
+    text-align: left;
+    padding-left: 10px;
+  }
+}
+
+/*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
+/* line 3, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-wrap,
+.fancybox-readcube .fancybox-skin,
+.fancybox-readcube .fancybox-outer,
+.fancybox-readcube .fancybox-inner,
+.fancybox-readcube .fancybox-image,
+.fancybox-readcube .fancybox-wrap iframe,
+.fancybox-readcube .fancybox-wrap object,
+.fancybox-readcube .fancybox-nav,
+.fancybox-readcube .fancybox-nav span,
+.fancybox-readcube .fancybox-tmp {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  vertical-align: top;
+}
+
+/* line 21, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8020;
+}
+
+/* line 28, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-skin {
+  position: relative;
+  background: #f9f9f9;
+  color: #444;
+  text-shadow: none;
+  border-radius: 4px;
+}
+
+/* line 38, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-opened {
+  z-index: 8030;
+}
+
+/* line 42, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-opened .fancybox-skin {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* line 48, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-outer, .fancybox-readcube .fancybox-inner {
+  position: relative;
+}
+
+/* line 52, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-inner {
+  overflow: hidden;
+}
+
+/* line 56, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-type-iframe .fancybox-inner {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 60, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-error {
+  color: #444;
+  font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 15px;
+  white-space: nowrap;
+}
+
+/* line 68, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-image, .fancybox-readcube .fancybox-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 74, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-iframe {
+  background-color: #FFF;
+}
+
+/* line 78, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* line 83, src/styles/fancybox.scss */
+.fancybox-readcube #fancybox-loading, .fancybox-readcube .fancybox-close, .fancybox-readcube .fancybox-prev span, .fancybox-readcube .fancybox-next span {
+  background-image: url("../images/fancybox_sprite.783d4031.png");
+}
+
+/* line 87, src/styles/fancybox.scss */
+.fancybox-readcube #fancybox-loading {
+  display: block;
+  position: fixed;
+  width: 44px;
+  height: 44px;
+  top: 50%;
+  left: 50%;
+  margin-top: -22px;
+  margin-left: -22px;
+  background-position: 0 -108px;
+  opacity: 0.8;
+  cursor: pointer;
+  z-index: 8060;
+}
+
+/* line 102, src/styles/fancybox.scss */
+.fancybox-readcube #fancybox-loading div {
+  width: 44px;
+  height: 44px;
+  background-image: url("../images/fancybox_loading.328cc0f6.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* line 110, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 8040;
+}
+
+/* line 120, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-nav {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent url("../images/blank.32547260.gif");
+  /* helps IE */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: 8040;
+}
+
+/* line 132, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-prev {
+  left: 0;
+}
+
+/* line 136, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-next {
+  right: 0;
+}
+
+/* line 140, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-nav span {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 34px;
+  margin-top: -18px;
+  cursor: pointer;
+  z-index: 8040;
+  visibility: hidden;
+}
+
+/* line 151, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-prev span {
+  left: 10px;
+  background-position: 0 -36px;
+}
+
+/* line 156, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-next span {
+  right: 10px;
+  background-position: 0 -72px;
+}
+
+/* line 161, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-nav:hover span {
+  visibility: visible;
+}
+
+/* line 165, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-tmp {
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
+  visibility: hidden;
+  max-width: 99999px;
+  max-height: 99999px;
+  overflow: visible !important;
+}
+
+/* Overlay helper */
+/* line 178, src/styles/fancybox.scss */
+.fancybox-readcube.fancybox-lock {
+  overflow: hidden !important;
+  width: auto;
+}
+
+/* line 183, src/styles/fancybox.scss */
+.fancybox-readcube.fancybox-lock body {
+  overflow: hidden !important;
+}
+
+/* line 187, src/styles/fancybox.scss */
+.fancybox-readcube.fancybox-lock-test {
+  overflow-y: hidden !important;
+}
+
+/* line 191, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: none;
+  z-index: 8010;
+  background: url("../images/fancybox_overlay.77aeaa52.png");
+}
+
+/* line 201, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-overlay-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 207, src/styles/fancybox.scss */
+.fancybox-readcube.fancybox-lock .fancybox-overlay {
+  overflow: auto;
+  overflow-y: scroll;
+}
+
+/* Title helper */
+/* line 215, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-title {
+  visibility: hidden;
+  font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  text-shadow: none;
+  z-index: 8050;
+}
+
+/* line 223, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-opened .fancybox-title {
+  visibility: visible;
+}
+
+/* line 227, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-title-float-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  margin-bottom: -35px;
+  z-index: 8050;
+  text-align: center;
+}
+
+/* line 236, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-title-float-wrap .child {
+  display: inline-block;
+  margin-right: -100%;
+  padding: 2px 20px;
+  background: transparent;
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  text-shadow: 0 1px 2px #222;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+/* line 252, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-title-outside-wrap {
+  position: relative;
+  margin-top: 10px;
+  color: #fff;
+}
+
+/* line 258, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-title-inside-wrap {
+  padding-top: 10px;
+}
+
+/* line 262, src/styles/fancybox.scss */
+.fancybox-readcube .fancybox-title-over-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding: 10px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Retina graphics */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* line 278, src/styles/fancybox.scss */
+  .fancybox-readcube #fancybox-loading, .fancybox-readcube .fancybox-close, .fancybox-readcube .fancybox-prev span, .fancybox-readcube .fancybox-next span {
+    background-image: url("../images/fancybox_sprite@2x.ed9970ce.png");
+    background-size: 44px 152px;
+    /*The size of the normal image, half the size of the hi-res image*/
+  }
+  /* line 283, src/styles/fancybox.scss */
+  .fancybox-readcube #fancybox-loading div {
+    background-image: url("../images/fancybox_loading@2x.f9293863.gif");
+    background-size: 24px 24px;
+    /*The size of the normal image, half the size of the hi-res image*/
+  }
+}
+
+/* line 3, src/styles/public/modals.scss */
+.r3-modal-open {
+  overflow: hidden;
+}
+
+/* line 7, src/styles/public/modals.scss */
+.r3-modal-bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  outline: 0;
+  z-index: 10000000;
+  overflow: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* line 22, src/styles/public/modals.scss */
+.r3-modal-close {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  bottom: 100%;
+  right: 0;
+  margin: 40px auto;
+  z-index: 10000050;
+}
+
+/* line 31, src/styles/public/modals.scss */
+.r3-modal-close.login {
+  width: 500px;
+  height: 560px;
+}
+
+/* line 36, src/styles/public/modals.scss */
+.r3-modal-close.checkout {
+  width: 500px;
+  height: 640px;
+}
+
+/* line 41, src/styles/public/modals.scss */
+.r3-modal-close .close-btn {
+  position: absolute;
+  top: -6px;
+  right: -30px;
+  font-size: 36px;
+  font-family: georgia, arial, sans-serif;
+  cursor: pointer;
+  color: #EEE;
+  text-shadow: 0 0 6px #000;
+}
+
+/* line 50, src/styles/public/modals.scss */
+.r3-modal-close .close-btn:hover {
+  color: #FFF;
+}
+
+/* line 54, src/styles/public/modals.scss */
+iframe.r3-modal {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  bottom: 100%;
+  right: 0;
+  margin: 40px auto;
+  outline: none;
+  border: none;
+  background-color: white;
+  box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.4);
+  z-index: 10000100;
+}
+
+/* line 67, src/styles/public/modals.scss */
+iframe.r3-modal.login {
+  width: 500px;
+  height: 560px;
+}
+
+/* line 72, src/styles/public/modals.scss */
+iframe.r3-modal.checkout {
+  width: 500px;
+  height: 640px;
+}
+
+/* line 77, src/styles/public/modals.scss */
+iframe.r3-modal.subscription {
+  width: 500px;
+  height: 625px;
+}

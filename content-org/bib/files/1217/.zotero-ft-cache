@@ -1,0 +1,301 @@
+
+Parent Coalition for Student Privacy
+Parent Coalition for Student Privacy
+Search
+Primary Menu Skip to content
+
+    About Us
+    Blog
+    Toolkits
+        Educator Toolkit for Teacher and Student Privacy
+            Webinar 1.20.19
+        Parent Toolkit for Student Privacy
+            What is student data? (Graphic)
+            Webinar & Presentation 5.23.17
+            Webinar & Presentation 10.3.17
+    Resources
+        Five Principles to Protect Student Privacy
+        Federal Laws enabling Parents to protect their Children’s Privacy : FERPA, PPRA and COPPA
+        Forms to Exercise Your Rights
+        Student Privacy Presentations
+        Surveys related to student privacy and the adoption of ed tech products
+        Other Resources for Parents
+    Legislation
+        Federal Bills
+        State Student Privacy Laws
+    inBloom
+        Background
+        Timeline
+        Newsclips
+    Join Us
+        Action
+    Media
+        Newsclips
+        Press Releases
+    Privacy Policy
+
+Search for:
+Blog
+Here’s how to check your student’s school-issued GSuite account.
+January 28, 2019 admin
+
+by Cheri Kiesecker
+Google defends Gmail data sharing, gives few details on violations-Reuters
+
+With mounting concerns about school safety, screen addiction ,  screen time’s known health and brain effects , increase in internet crimes against children , along with hyper focused national attention on data misuse , location tracking , breaches , Gmail data sharing , and data privacy –what about schoolchildren?
+
+As this Google Transparency Project explains , Google is promoting itself via GSuite products and Apps into many classrooms across America (and the globe).  What is Google doing with student data?  Why is Google allowed to track Location, Voice Activity, Web & App Activity, Device Information, YouTube videos Searched and Watched of K-12 school children? How are these data being used and shared?
+
+What data are being collected and stored (and shared?) via your child’s school issued Google GSuite account? We’ll show you how to start checking.
+
+In August of 2018 Missouri Education Watchdog wrote this article detailing how one Springfield, Missouri family, discovered that their school district’s Google’s GSuite platform was collecting and storing surprising amounts of personal data about students and, apparently even storing information from parents’ and family members’ personal accounts (family members’ passwords to banking, work, shopping, bills).  Others reported on this issue here and here .
+
+Missouri Education Watchdog recently followed up with a story highlighting a group of parents and educators asking to stop online advertisements to students.  The blog documents many pop ads (some very inappropriate) that students are receiving when logged into their school accounts, including recommendations from YouTube (owned by Google) and Apps available in the Google Play Store.
+
+We wonder, how many parents have seen and agreed to these Terms of Service for your student to use GSuite at school?
+
+—-PARENTS, HAVE YOU EVER SEEN AND AGREED TO THIS NOTICE?
+
+Since reporting on this issue, we have been contacted by parents across the country who have reported similar experiences and many have raised questions on how to check their child’s school issued Google/GSuite account.
+
+None of the parents we have spoken to thus far were shown the Google Terms of Service that their child had to agree to. In fact, many of the students themselves did not see the Terms of Service, either.  Presumably, schools are consenting to the Terms of Service for the children, in place of parents, (as parent agent).
+
+Some parents, when asked if their child could NOT use Google GSuite in school, have been told that if their student does not use the GSuite products (i.e., Google Classroom, Google Drive, Google Docs, or Gmail), it will be impossible for them to attend this school.  Have other parents been told that their child must agree to use GSuite products as a condition of attending their public school?
+How do you check settings in your child’s school issued Google GSuite account?
+
+We are posting instructions below that we have found helpful. Your experience may be different, but we suggest parents click on the Learn More links, and any / all links within the Google Account.  Set aside some time–or do it in pieces.  You could take days and still find links, more permissions.  TAKE NOTES or screen shots (hold down Print Screen and Control on your key board).  Interestingly, parents have anecdotally reported that changes they make to their child’s permissions have NOT been saved, have reverted back to allow tracking or syncing, or even back to the original password after they have changed the GSuite password. We would be curious if this is happening to other parents and students. Talk to your school’s IT administrator, share your concerns and findings with others to see if they can replicate.
+
+Start here:
+
+1.–Log into your child’s school Google GSuite  Account.  (Schools sometimes refer to these as Google Drive accounts, or Gmail, or Google Docs… but they are all part of the GSuite package.)
+
+2.–Click on the little circle icon at the top right of the screen (might be a photo of your child, or your child’s initials.).
+
+3.–Click Google Account .
+
+4.–Start looking and documenting.
+
+Below is what you might see if you go to Security Check up and then Activity Controls and then also look at Manage Activity.  Are these tracking permissions turned ON or are they “Paused”? Notice the fine print such as, “activity may be saved from time to time” even if you have Web and App Activity paused.    Maybe that’s why they label it “paused” and not STOPPED or OFF?
+
+https://myaccount.google.com/activitycontrols
+
+YouTube Search History and YouTube Watch History tracking are ON for most students we have spoken to. Ask your school IT admin why this tracking is on. Ask if they will turn this off for ALL students.
+
+YouTube in K-12 schools.
+
+If YouTube Search or Watch is ON for your student, BE SURE to click MANAGE ACTIVITY .  You, and Google, and school administration can see every YouTube searched and watched while logged into GSuite.
+
+Question:  why does GSuite offer YouTube to k-12 students, without parent consent, when YouTube’s terms of service clearly state that users must be 18 years of age or have parent consent prior to using YouTube.
+
+Even more curious:  YouTube Live Chat is apparently available to students.
+
+YouTube Live Chat for students?
+
+This screen shot is from a 12 year old elementary student’s account, when signed into the school issued GSuite account.  Who can communicate with an elementary student via YouTube Live Chat? Why is this offered to students?
+
+Speaking of chats.
+
+Can anyone outside of the school send an email to your child’s school gmail account? Can strangers communicate with school children via Google Hangouts?   Can, as this report from in Australia suggests , total strangers communicate with and potentially groom children via Google Docs or other chats available via GSuite and Google Apps?
+
+Given that the FBI recently warned that,  “ Ed Tech could present unique exploitation opportunities for criminals….and could help child predators identify new targets”,   the ability for strangers to potentially contact k-12 children, via school issued GSuite accounts would seem a legitimate security concern.
+
+Connected Devices.
+
+The FBI warning also mentions using device information to track children:
+
+Inter-connected Networks and Devices
+
+“EdTech connected to networked devices or directly to the Internet could increase opportunities for cyber actors to access devices collecting data and monitoring children within educational or home environments.”
+
+More Questions:
+
+Does Google consider a Device/IP address as personal information? Why do devices (regardless of whether it is a Chromebook or Mac, or Windows or cellphone) sync and stay signed-in even after logging out?
+
+When checking Account Activity in the student’s Google Account, even with Location tracking and Device tracking “paused,“ and after logging out of GSuite account after every use , this 13 year old student still had 11 devices “signed-in”, complete with device information and location. (Many of these were home or family personal devices that the student had logged into to complete homework.)
+
+Logging out is not enough?
+
+Students must Remove the Device, after every use, in order to not be signed in.  Do schools, parents, teachers, students know this?
+
+Who else has access to your child’s GSuite Account?   Check Apps and Third Parties.
+
+Why should Google allow third party access /connections to school children’s shopping habits, social media, etc? Does your child’s GSuite account link to any third party shopping services?
+
+————————————————————————
+
+Check if passwords are set to Auto-Save, Auto Sign-In. See what passwords have been saved in your child’s account.
+
+There’s plenty more to look at, but this should get you started. Let us know what you find.
+
+Thanks to the federal student privacy law FERPA being weakened in 2011 and 2008 , a student’s personal data can be shared outside of school walls, without parents’ knowledge or consent. The data can be shared and analyzed by government agencies, nonprofits, businesses, researchers, and edtech companies who can further share with third parties, (or even sell student data ), or used for advertising to students .
+
+If you are concerned, talk to your school administrator, your legislators. Ask for strong student data privacy, security, transparency laws that allow opt-in consent, enforceable penalties and private right of action, like those passed in Europe ( GDPR ) and California ( CCPA ).
+Blog
+Press Release: New Report Card Grades Each State On How Well it Protects Student Privacy
+January 22, 2019 admin
+
+For immediate release: Wednesday, Jan. 23, 2018
+
+For more information contact: Rachael Stickland, rachael@studentprivacymatters.org; 303.204.1272
+
+ 
+
+In the first of its kind, the Parent Coalition for Student Privacy and the Network for Public Education have released a report card that grades all fifty states on how well their laws protect student privacy.
+
+The State Student Privacy Report Card analyses 99 laws passed in 39 states plus DC between 2013 and 2018, and awards points in each of the following five categories, aligned with the core principles put forward by PCSP: Transparency ; Parental and Student Rights ; Limitations on Commercial Use of Data ; Data Security Requirements ; and Oversight, Enforcement, and Penalties for Violations .
+
+Two more categories were added to the evaluation: Parties Covered and Regulated and Other , a catch-all for provisions that did not fit into any of the above categories, such as prohibiting school employees from receiving compensation for recommending the use of specific technology products and services in their schools.
+
+No state earned an “A” overall, as no state sufficiently protects student privacy to the degree necessary in each of these areas. Colorado earned the highest average grade of “B.” Three states – New York, Tennessee and New Hampshire– received the second highest average grade of “B-“.  Eleven states received the lowest grades of “F” because they have no laws protecting student privacy: Alabama, Alaska, Massachusetts, Minnesota, Mississippi, Montana, New Jersey, New Mexico, South Carolina, Vermont and Wisconsin.
+
+The report tracks specific versions of state laws over time.  For example, many of the state privacy laws enacted since 2013 were modeled after the California’s 2014 law known as the Student Online Personal Information Protection Act (SOPIPA). While California barred all school vendors from selling student data, eight states subsequently passed laws that allowed the College Board and the ACT to do so.  Laws with specific loopholes to allow  these companies to sell student data were enacted in Arizona, Colorado, District of Columbia, Nebraska, North Carolina, Texas, Utah and Virginia –presumably because of lobbying efforts.
+
+The issue of data security is also critical.  The primary federal student privacy law known as FERPA requires no specific protections against data breaches and hacking, nor does it require families be notified when inadvertent disclosures occur.  In recent years, the number of data breaches from schools and vendors have skyrocketed, and some districts have even been targeted by hackers with attempted blackmail and extortion.  A recent report rated the education industry last in terms of cybersecurity compared to all other major industries.  As a result, this fall the FBI put out an advisory , warning of the risks represented by the rapid growth of education tech tools and their collection of sensitive student data,  saying that this could “ result in social engineering, bullying, tracking, identity theft, or other means for targeting children .”
+
+“The inBloom debacle in 2013 exposed the longstanding culture of fast and loose student data sharing among government agencies, schools and companies,” said Rachael Stickland, co-chair of the Parent Coalition for Student Privacy, parent of two public school children in Colorado and the primary author of the report. “Consequently, parents across the nation began urging their state legislators to address the problem, resulting in a complex web of state privacy laws that are difficult to untangle and understand. Our hope is to bring attention to state laws that make a reasonable effort to protect student privacy and identify those that need improvement. Parents and advocacy groups can use our findings to advocate for even stronger measures to protect their children.”
+
+NPE Executive Director Carol Burris noted, “This report card provides not only critical information regarding the existing laws, but also serves a blueprint for parents to use for lobbying for better protections for their children.”
+
+As Leonie Haimson, co-chair of the Parent Coalition for Student Privacy, pointed out, “FERPA was passed over forty-five years ago and has been weakened by regulation over time to allow for the sharing of personal student data by schools and vendors without parent knowledge or consent.  State legislators have stepped up to the plate to try to fill in some of its many gaps and to require more transparency, security protections, enforcement, and the ability of parents and students to control their own data. Yet none of these laws are robust enough in each of these areas.  Congress must strengthen and update FERPA, but meanwhile, this report card can serve as a guide to parents and advocates as to which state laws should be strengthened and in which specific ways.”
+
+An interactive map that shows the grades of each state, both overall and in each of the categories is posted here . The report is posted here ; here is a technical appendix with a more detailed account of how each law was evaluated.   There is also a downloadable matrix with links to all of the state laws, as well as specifying how many points were awarded in every category.
+
+###
+Blog
+Sign up for our free Jan. 20 webinar on how educators can better protect their students’ privacy — and their own
+January 4, 2019 admin
+
+A few weeks ago, it was reported that the personal information of 500,000 San Diego students, former students and school staff was exposed in a massive breach . At about the same time, education institutions and organizations were rated as the worst sector for cybersecurity in a 2018 report.
+
+We invite you to join us for a short webinar on Jan. 20, with important tips on how teachers and district/school staff members can better protect their students’ privacy of and their own.
+
+We will be offering guidance along with Marla Kilfoyle of the Badass Teachers Association from our  Educator Toolkit for Teacher and Student Privacy , released this fall. Educators will receive a certificate of participation. Don’t miss out! Space is limited!
+
+When? Sunday, January 20 from 6-7 PM EST (3-4 PST). We’re saving lots of time for questions!
+
+How? Sign up here – it’s free!
+
+We hope to see you on the 20th.
+
+Leonie Haimson  and Rachael Stickland
+Co-Chairs, Parent Coalition for Student Privacy
+
+www.studentprivacymatters.org
+Blog
+Delays in responding to FERPA complaints lead to NYC children robbed of their privacy
+December 5, 2018 admin
+
+If you’d like to add your voice and urge the mayor and Chancellor to stop robbing children of their privacy and stop encouraging charter schools to recruit more students and thereby defund public schools, send a letter by clicking here.
+
+Last week, in a mindboggling audit , the Inspector General of the US Department of Education revealed that the US Department of Education had utterly failed to respond in a timely fashion to  complaints filed by parents about the violation of their children’s privacy by their schools or districts.
+
+“ The Privacy Office is not meeting its statutory obligation to appropriately enforce FERPA and resolve FERPA complaints ,” the Inspector General concluded. “ Complainants’ privacy rights are also not appropriately protected as FERPA intends. ”
+
+In some cases, as the audit reveals, it took up to six years for the Family Policy Compliance Office   (FPCO) of the US Dept of Education to respond to FERPA complaints.  Because the office hasn’t kept a systematic record of when complaints were filed and then resolved, it was difficult for the auditor to even know what the average time before investigations were launched, close or responses sent.   As of Sept. 2017, there were 285 open investigations.
+
+As I was quoted in Edweek :  “ Parents have these very serious complaints about their kids’ privacy having been violated, and they go through the trouble of filing complaints, but they just sit for years without any kind of substantive response. ”
+
+To make things worse, when FPCO finally decides that the law has been broken, as they did with Agora charter school in Nov. 2017 , five years after the original complaint, they  have never imposed any fines or withheld any funding. Years of delay and no punishment means yet more reasons for schools and districts to drag their feet and continue to violate the law.
+
+Here in NYC,  children have suffered as a result of these inordinate delays. In November  2017, Johanna Garcia filed a FERPA complaint about the practice of NYC DOE making her family’s personal information and that of other families available to charter schools for the purpose of letting them mail marketing materials and recruit more students.  Four Council Members wrote a letter in support of Johanna’s complaint to the Mayor and Chancellor Carranza, urging them to halt this practice.
+
+Johanna finally received a written response from the US DOE on September 25,  2018,  nearly one year later, saying they had finally launched an investigation.  Dale King of FPCO forwarded her a letter that he had sent DOE, which asked several  piercing questions about their privacy practices and their rationale for allowing charter schools to access student personal information, while stating that there was a deadline of four weeks in which they would have to respond.
+
+Yet DOE further delayed, and apparently sent their response a full month after the deadline, on or around November 26.  Meanwhile, as I feared, charter schools have already begun to send out  mailings, promoting their schools and urging parents to apply for next year.
+
+On Twitter this morning, Naomi Pena, President of the Community Education Council in District 1, posted photos of the glossy brochures she just received in the mail from Success Academy charters, run by Eva Moskowitz, and the Hebrew Public (sic) Charter Schools, founded by Sara Berman, the daughter of billionaire Michael Steinhardt.
+
+ 
+
+Naomi’s last tweet refers to the fact that the DOE makes elected Community Education Councils pay the Vanguard mailing house to send parents information about what’s happening in their districts — even though the DOE could provide parent emails for free.  DOE could do this either under the directory information exception to FERPA, or the school officials exception.  In the first case, DOE would have to allow parental opt out, in the second case, CECs would have to sign a written agreement that they would only use this contact information to increase parental involvement and promise not to redisclose the data to other entities.
+
+CECs are eligible to be defined as school officials under FERPA as by  encouraging parental engagement, they are truly providing a service to DOE – unlike charter schools, which are providing no services to DOE, making them ineligible to be defined as school officials under the law.  CECs receive very little money from DOE and simply don’t have the budget to pay the thousands of dollars to Vanguard that wealthy charter school chains like Success and the Hebrew charter schools can afford.
+
+If you’d like to add your voice and urge the mayor and Chancellor to stop robbing children of their privacy and stop encouraging charter schools to recruit more students and thereby defund public schools, send a letter by clicking here.
+
+An even worse fate has been suffered by Fatima Geidi and her son because of the failure of the US Department of Education to carry out its responsibilities under the law.  On October 30, 2015,  more than three years ago, Fatima filed a FERPA complaint against Success Academy after she appeared  on the PBS News Hour to discuss the abusive treatment that her son had experienced at a Success charter school.  Eva Moskowitz took revenge against her, by posting her son’s disciplinary file online, full of false charges, and sending it to reporters throughout the nation.
+
+After filing a complaint against this egregious violation of her son’s privacy, Fatima received no response from the US Department of Education until more than two years later, when she received a letter which said that they had initiated an investigation and had asked Success for an explanation.  On February 16, 2018, they emailed her again to say that they had now received a response from Success and in a few weeks would let her know the results.
+
+By that time, however, Eva Moskowitz had taken the initial posting of the child’s supposed disciplinary offenses down.  But instead, she had since published the same chronicle of trumped-up allegations against him in a book published by Harper Collins on September 12, 2017. Fatima had informed the US Dept of Education of this fact as soon as she discovered it by filing yet another FERPA complaint on December 20, 2017, in which she cited her earlier complaint, and wrote that because of the delay the harm to her child ‘s privacy had been seriously aggravated.
+
+Fatima has heard nothing more from the US Department of Education about either her initial or more recent FERPA complaint since February 2018.  Eva Moskowitz’  book is still available online and in bookstores.  Fatima is now in the process of changing her son’s name so that in the future, his opportunities will not be wrecked by the false allegations made against him, contained in the pages of this horrific book.
+
+These are just two stories showing the immense price that NYC parents and their children have been forced to pay for the utter failure of the US Department of Education to carry out its responsibilities under the law.  The personal information of children has been handed off by DOE like candy to charter schools to help them recruit more students, where these children can be further abused and their privacy even more seriously violated.
+
+If you’d like to add your voice and urge the mayor and Chancellor to stop robbing children of their privacy and stop encouraging charter schools to recruit more students and thereby defund public schools, send a letter by clicking here.
+Blog
+Brooklyn students fight against the Summit online platform and the Zuckerberg-Gates corporate machine
+November 26, 2018 admin
+
+Update: this David vs. Goliath story with national implications was reported also on Fast Company , Business Insider,  EdSurge , and NY Magazine . The Washington Post also published the letter the students subsequently sent to Mark Zuckerberg.
+
+On November 5, about 100 students at the Secondary School of Journalism in Brooklyn walked out of their schools to protest the Summit online program.  This digital instruction program, funded by Mark Zuckerberg of Facebook and Bill Gates, forces students to spend hours staring at computers, left at sea with little human interaction or help from their teachers, all in the name of “personalized learning.”
+
+As one of the students, Mitchel Storman, said to Sue Edelman who reported on the protest in the NY Post, “ I have seen lots of students playing games instead of working….Students can easily cheat on quizzes since they can just copy and paste the question into Google.”
+
+Senior Akila Robinson said she couldn’t even log onto Summit for nearly two months, while other classmates can’t or won’t use it. “The whole day, all we do is sit there.”  A teacher said, “It’s a lot of reading on the computer, and that’s not good for the eyes. Kids complain. Some kids refuse to do it.”
+
+The online program, which originated in the Summit chain of charter schools in California, and was further developed and expanded with millions of dollars from the Gates Foundation, Facebook and now the Chan Zuckerberg LLC, has now been inserted in more than 300 or so public schools, collecting a huge amount of personal data from thousands of students without their knowledge or consent or that of their parents.
+
+I have been writing and questioning Summit for the past two years, and last year, met with Diane Tavenner, asked her all sorts of questions she never responded to, and toured her flagship charter school in Redwood City.  My description of this visit is here .
+
+Since then, parents in 15 states have reached out to me in distress about the negative impact of this program on their children. Many report that their children, who had previously done well in school,  now say that they aren’t learning, that they feel constantly stressed, are beginning to hate school and want to drop out. Some parents have told me that they are now homeschooling their kids or have decided to sell their homes and move out of the district.
+
+Recently it was disclosed that next year, the Summit program would spin off to a  separate nonprofit corporation,  run by a board led by Priscilla Chan, Zuckerberg’s wife and the CZI Chief Financial Officer.  Diane Tavenner told reporters   the new corporation “ doesn’t plan to expand the program, but rather, the new nonprofit will focus on meeting current demand .”  Yet a few days ago on Twitter , I saw that Summit is still entreating schools to apply .
+
+Below is a fact sheet I have shared with parents and students at Summit schools nationwide, along with questions they can ask their schools and districts about the instructional program, its data collection and privacy protections (or lack thereof).  The fact sheet is also available as a pdf you can download here .
+
+As it points out in more detail, parents have the right to demand that their children’s data be deleted from the online platform, according to Summit itself, and to opt out of their children’s directory information (name, email, student ID number etc.) provided to Summit from now on.  Here is a sample letter you can send to your child’s principal:
+
+Dear Principal [name],
+
+I hereby demand that all the data of my child [name] in the [grade] be immediately deleted from the Summit online system, as is my right according to the Summit Privacy Center . I also want to make it clear that from now on, I opt out of  [his or her] directory information provided to Summit, including name, address, student ID number, email address, etc.  This is my right according to the Summit Data Privacy Addendum .  Please respond as soon as possible to let me know that you have understood and complied with my request.
+
+Name, address, email
+
+Bravo to the courageous students at Secondary School of Journalism, who are fighting  for their own right to privacy and a quality education, vs Zuckerberg,  Gates and the other ed tech oligarchs who are attempting to control their classrooms and their personal data.  As the recent NY Times series pointed out, Silicon Valley corporate leaders and engineers want one kind of screen-free education for their own kids, while imposing  mechanized schooling on everyone else.
+
+Posts navigation
+1 2 … 19 Next →
+
+Cover
+
+Download the State Student Privacy Report Card HERE
+
+View the interactive map and find more information about the report HERE
+
+Cover
+
+Educators: learn how to protect your students' privacy and your own.
+
+Download a copy of the toolkit HERE
+
+Cover
+
+Parents: check out our toolkit on how to better protect your child's sensitive data, as well as tips to use in advocating for better privacy policies and practices at your children's schools.
+
+Download a copy of the toolkit in English
+or Spanish
+
+Donate Now!
+Amount: $
+Recent Posts
+
+    Here’s how to check your student’s school-issued GSuite account.
+    January 28, 2019
+    by Cheri Kiesecker With mounting concerns about school safety, screen addiction,  screen time’s known health and brain effects, increase in internet crimes against children, along with hyper focused national attention on data misuse, location tracking, breaches, Gmail data sharing, and … Read More »
+    Press Release: New Report Card Grades Each State On How Well it Protects Student Privacy
+    January 22, 2019
+    For immediate release: Wednesday, Jan. 23, 2018 For more information contact: Rachael Stickland, rachael@studentprivacymatters.org; 303.204.1272   In the first of its kind, the Parent Coalition for Student Privacy and the Network for Public Education have released a report card that … Read More »
+    Sign up for our free Jan. 20 webinar on how educators can better protect their students’ privacy — and their own
+    January 4, 2019
+    A few weeks ago, it was reported that the personal information of 500,000 San Diego students, former students and school staff was exposed in a massive breach. At about the same time, education institutions and organizations were rated as the … Read More »
+    Delays in responding to FERPA complaints lead to NYC children robbed of their privacy
+    December 5, 2018
+    If you’d like to add your voice and urge the mayor and Chancellor to stop robbing children of their privacy and stop encouraging charter schools to recruit more students and thereby defund public schools, send a letter by clicking here. … Read More »
+    Our Educator Privacy Toolkit presentation at the NPE conference
+    October 25, 2018
+    Melissa Tomlinson and Marla Kilfoyle of the Badass Teachers Association along with Rachael Stickland and Leonie Haimson presented the new  Educator Toolkit for Teacher and Student Privacy at the Network for Public Education Conference in Indianapolis last Saturday, October 20, … Read More »
+
+Proudly powered by WordPress

@@ -1,0 +1,185 @@
+
+Skip to content
+
+    Why GitHub?
+    Features →
+        Code review
+        Project management
+        Integrations
+        Actions
+        Team management
+        Social coding
+        Documentation
+        Code hosting
+        Customer stories →
+        Security →
+    Enterprise
+    Explore
+        Explore GitHub →
+    Learn & contribute
+        Topics
+        Collections
+        Trending
+        Learning Lab
+        Open source guides
+    Connect with others
+        Events
+        Community forum
+        GitHub Education
+    Marketplace
+    Pricing
+    Plans →
+        Compare plans
+        Contact Sales
+        Nonprofit →
+        Education →
+
+    In this organization All GitHub ↵
+    Jump to ↵
+
+    No suggested jump to results
+
+    In this organization All GitHub ↵
+    Jump to ↵
+    In this organization All GitHub ↵
+    Jump to ↵
+
+Sign in Sign up
+@inbloom
+inBloom
+
+    Atlanta, GA
+    https://inbloom.org/for-developers
+
+Repositories 23 People 0 Projects 0
+Dismiss
+Grow your team on GitHub
+
+GitHub is home to over 31 million developers working together. Join them to grow your own development teams, manage permissions, and collaborate on projects.
+Sign up
+Type: All
+Select type
+All Sources Forks Archived Mirrors
+Language: All
+Select language
+All AspectJ C# Java JavaScript PHP Python XSLT
+
+    secure-data-service
+
+    This is the ESDS. It contains the backend for the project. The main projects that are to be used are ingestion-service, api, simple-idp, search-indexer, dashboard, admin-tools and databrowser. All of the projects are Maven driven with the exception of admin-tools and databrowser. Those are both Rails applications. This project runs on Java 7 and…
+    Java 18 20 Apache-2.0 Updated May 5, 2016
+    lri-reboot-2.0
+
+    LRI Reboot 2.0 is a new implementation of the Learning Resource Index backed by an RDBMS and coded in Java.
+    AspectJ 2 4 Apache-2.0 Updated Mar 9, 2016
+    legacy-projects
+
+    This is a placeholder repo for cloned legacy projects
+    XSLT 1 5 Apache-2.0 Updated Jun 26, 2014
+    global-docs
+
+    Global Documentation repository
+    1 2 Apache-2.0 Updated May 27, 2014
+    server-density-plugins
+
+    A collection of various ServerDensity plugins that we have developed for use. These plugins can also be found in the ServerDensity
+    Python 1 5 Apache-2.0 Updated May 27, 2014
+    datastore-portal
+
+    Portal for the Secure Data Service based upon Liferay
+    Java 2 Apache-2.0 Updated May 27, 2014
+    tokengrabber
+
+    Tokengrabber is a developer utility in PHP to demonstrate the OAuth2 process to obtain an API token to interact with the Secure Data Service.
+    PHP 4 Apache-2.0 Updated May 27, 2014
+    APP-dashboard
+
+    This is a Java and Javascript-based application compatible with the Secure Data Service, which allows Educators to view information about their classes and students.
+    Java 10 11 Apache-2.0 Updated May 27, 2014
+    cookbook
+
+    Sample code and recipes for working with software APIs
+    C# 5 Apache-2.0 Updated May 27, 2014
+    ldap-in-memory
+
+    The in-memory LDAP server (IM-LDAP) simplifies the task of standing up an LDAP server for non-production environments.
+    Java 17 11 Apache-2.0 Updated May 27, 2014
+    publisher-toolkit
+
+    The Publisher Toolkit provides end-to-end guidance, specifications and scripts to submit digital content metadata into the Learning Registry which will be searchable via the Learning Registry Index.
+    Python 4 Apache-2.0 Updated May 27, 2014
+    APP-learning-maps-authoring-tool
+
+    The Learning Maps Authoring Tool is a GUI that enables users to construct visual learning pathways using learning standards stored in the Learning Resource Index.
+    JavaScript 3 8 Apache-2.0 Updated May 27, 2014
+    APP-lri-browser
+
+    lri Browser
+    JavaScript 1 2 Apache-2.0 Updated May 27, 2014
+    APP-student-insights-tool
+
+    Student Insights is a .Net and AJAX based tool that allows users to perform criteria based searches on student data.
+    JavaScript 1 4 Apache-2.0 Updated May 27, 2014
+    batch-upload-tool
+
+    A command-line utility, written in Java, which helps LEA/SEA IT Administrators transmit data to the Secure Data Service without the use of additional third-party packaging and secure file transfer applications. It may be helpful during initial testing of a site’s data integration process.
+    Java 2 3 Apache-2.0 Updated May 27, 2014
+    javascript-sdk
+
+    Node.js client code for the API
+    JavaScript 3 5 Apache-2.0 Updated May 27, 2014
+    java-sdk
+
+    This is a Java-based library intended to simplify the development of inBloom-compatible applications, along with a bare-bones application that demonstrates the use of the data store API.
+    Java 7 10 Apache-2.0 Updated May 27, 2014
+    APP-tagger
+
+    The Tagger is a web application that will generate valid envelopes for publishing to the Learning Registry
+    JavaScript 2 4 Updated May 27, 2014
+    APP-search
+
+    Search provides an interface to search the Learning Resource Index.
+    JavaScript 1 2 Apache-2.0 Updated May 27, 2014
+    encryption-tool
+
+    This is a Java-based application to encrypt select configuration parameters that require encryption for the Educator Dashboard.
+    Java 2 5 Apache-2.0 Updated May 27, 2014
+    csv2xml
+
+    The is a text-based utility, written in Java, which converts a small subset of data from a sample comma-separated value (CSV) format, to ESDS compliant XML, suitable for upload to the ESDS via the bulk data ingestion mechanism.
+    Java 2 5 Apache-2.0 Updated May 27, 2014
+    APP-student-grouping-tool
+
+    The student grouping tool is a .Net and AJAX based tool that allows teachers to arrange students in to groups using the datastore as a backend.
+    JavaScript 1 4 Apache-2.0 Updated May 27, 2014
+    ingestion-validation
+
+    This is a Java-based application is used to validate the format and consistency of data prior to uploading to the Secure Data Service.
+    Java 2 7 Apache-2.0 Updated May 27, 2014
+
+Top languages
+Java JavaScript Python C# XSLT
+Most used topics
+
+Loading…
+0
+People
+
+This organization has no public members. You must be a member to see who’s a part of this organization.
+
+    © 2019 GitHub , Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+You can’t perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session.

@@ -1,0 +1,75 @@
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. Skip to main content Skip to article
+Elsevier logo ScienceDirect
+
+    Journals & Books
+
+José L. Aznarte
+View account Sign out
+
+    Journals & Books
+
+    Help
+
+Settings
+
+    My recommendations
+    My history
+    Manage alerts
+    Change password
+    Purchased articles
+
+ 
+Get Access Get Access
+Share
+Export
+Advanced
+Elsevier
+Review of Palaeobotany and Palynology
+Volume 167, Issues 3–4 , October 2011, Pages 175-183
+Review of Palaeobotany and Palynology
+Research paper
+Progress towards an automated trainable pollen location and classifier system for use in the palynology laboratory
+Author links open overlay panel K. Holt a G. Allen b R. Hodgson b S. Marsland b J. Flenley a
+Show more
+https://doi.org/10.1016/j.revpalbo.2011.08.006 Get rights and content
+Abstract
+
+Palynological analysis, as applied in vegetation reconstruction, climate change studies, allergy research, melissopalynology and forensic science, is a slow, laborious process. Here, we present an ongoing project aimed at the realisation of a low-cost, automatic, trainable system for the location, recognition and counting of pollen on standard glass microscope slides. This system is designed to dramatically reduce the time that the palynologist must spend at the microscope, thus considerably increasing productivity in the pollen lab.
+
+The system employs robotics, image processing and neural network technology to locate, photograph and classify pollen on a conventionally prepared pollen slide. After locating pollen grains on a microscope slide, it captures images of them. The individual images of the pollen are then analysed using a set of mathematically defined features. These feature sets are then classified by the system by comparison with feature sets previously obtained from the analysis of images of known pollen types. The classified images are then presented to the palynologist for checking. This ability for post-classification checking is a key part of the automated palynology process, as it is likely that under the current technology, it will be very difficult to produce an automated pollen counting and classifier system that is 100% correct 100% of the time. However, it is important to remember that pollen counts performed by human palynologists are seldom 100% correct 100% of the time as well.
+
+The system has been tested on slides containing fresh pollen of six different species. The slides were counted repeatedly by both the system and by human palynologists. The results of these tests show that the machine can produce counts with very similar proportions to human palynologists (typically within 1–4%). Although the means of the machine counts were usually slightly lower than those of the human counts, the variance was also lower, demonstrating that the machine counts pollen more consistently than human palynologists. The system described herein should be viewed as a potentially very valuable tool in the palynological laboratory. Its ability to discriminate between the bulk of pollen and debris on a slide and capture and store images of each pollen grain is in itself a very useful feature. This capability combined with the relatively positive results from this first all-of-system capture-and-classify test clearly demonstrate the potential of the system to considerably improve the efficiency of palynological analysis. However, more tests are required before the extent of the system's potential can be fully realised. The next step, testing the system on fossil pollen samples, is now underway.
+Highlights
+
+► We detail a system aimed at automated counting and classification of pollen on slides. ► The results of tests of the system on fresh pollen are presented. ► These results are compared with counts by human palynologists of the same material. ► The results demonstrate that our system counts pollen more consistently than human palynologists. ► The system can thus make a major contribution to the science of palynology.
+
+    Previous article in issue
+    Next article in issue
+
+Keywords
+pollen analysis
+automated palynology
+neural networks
+pollen classification
+Recommended articles Citing articles (0)
+Copyright © 2011 Elsevier B.V. All rights reserved.
+Recommended articles
+No articles found.
+Citing articles
+Article Metrics
+View article metrics
+Elsevier
+
+    About ScienceDirect
+    Remote access
+    Shopping cart
+    Advertise
+    Contact and support
+    Terms and conditions
+    Privacy policy
+
+We use cookies to help provide and enhance our service and tailor content and ads. By continuing you agree to the use of cookies .
+
+Copyright © 2019 Elsevier B.V. or its licensors or contributors. ScienceDirect ® is a registered trademark of Elsevier B.V.
+
+ScienceDirect ® is a registered trademark of Elsevier B.V.

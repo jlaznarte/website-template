@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en" class="js svg">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://link.springer.com/chapter/10.1007%2F978-3-319-06605-9_21">
+<meta name="wpd_url" content="http://link.springer.com/chapter/10.1007%2F978-3-319-06605-9_21">
+<meta name="wpd_date" content="2016-02-08T15:21Z">
+
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="citation_publisher" content="Springer International Publishing">
+  <meta name="citation_title" content="Extensions to Quantile Regression Forests for Very High-Dimensional Data">
+  <meta name="citation_firstpage" content="247">
+  <meta name="citation_lastpage" content="258">
+  <meta name="citation_doi" content="10.1007/978-3-319-06605-9_21">
+  <meta name="citation_language" content="en">
+  <meta name="citation_abstract_html_url" content="http://link.springer.com/chapter/10.1007/978-3-319-06605-9_21">
+  <meta name="citation_pdf_url" content="http://link.springer.com/content/pdf/10.1007%2F978-3-319-06605-9_21.pdf">
+  <meta name="citation_springer_api_url" content="http://api.springer.com/metadata/pam?q=doi:SpringerId(10.1007/978-3-319-06605-9_21)&amp;api_key=">
+  <meta name="citation_author" content="Nguyen Thanh Tung">
+  <meta name="citation_author_institution" content="Chinese Academy of Sciences">
+  <meta name="citation_author_email" content="tungnt@wru.vn">
+  <meta name="citation_author" content="Joshua Zhexue Huang">
+  <meta name="citation_author_institution" content="Shenzhen University">
+  <meta name="citation_author_email" content="zx.huang@szu.edu.cn">
+  <meta name="citation_author" content="Imran Khan">
+  <meta name="citation_author_institution" content="Chinese Academy of Sciences">
+  <meta name="citation_author_email" content="imran.khan@siat.ac.cn">
+  <meta name="citation_author" content="Mark Junjie Li">
+  <meta name="citation_author_institution" content="Shenzhen University">
+  <meta name="citation_author_email" content="jj.li@szu.edu.cn">
+  <meta name="citation_author" content="Graham Williams">
+  <meta name="citation_author_institution" content="Chinese Academy of Sciences">
+  <meta name="citation_author_email" content="Graham.Williams@togaware.com">
+  <meta name="citation_inbook_title" content="Advances in Knowledge Discovery and Data Mining">
+  <meta name="citation_isbn" content="978-3-319-06604-2">
+  <meta name="citation_isbn" content="978-3-319-06605-9">
+  <meta name="citation_publication_date" content="2014/05/13">
+  <meta name="citation_conference_series_id" content="springer/pakdd">
+  <meta name="citation_conference_title" content="Pacific-Asia Conference on Knowledge Discovery and Data Mining">
+  <meta name="citation_conference_sequence_num" content="18">
+  <meta name="citation_conference_abbrev" content="PAKDD">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Extensions to Quantile Regression Forests for Very High-Dimensional Da">
+  <meta name="twitter:description" content="This paper describes new extensions to the state-of-the-art regression random forests Quantile Regression Forests (QRF) for applications to high-dimensional data with thousands of features. We propose">
+  <meta name="twitter:image" content="http://link.springer.comhttps://static-content.springer.com/cover/book/978-3-319-06605-9.jpg">
+  <meta name="twitter:site" content="SpringerSBM">
+  <!--[if (gt IE 8) | (IEMobile)]><!-->  <!--<![endif]-->
+  <!--[if (lt IE 9) & (!IEMobile)]> <link rel="stylesheet" media="screen" href="/static/201602081740-1139/css/ielt9_link.min.css"> <![endif]-->
+  
+  <link rel="apple-touch-icon-precomposed" size="144x144" href="http://link.springer.com/static/201602081740-1139/sites/link/images/apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" size="114x114" href="http://link.springer.com/static/201602081740-1139/sites/link/images/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" size="72x72" href="http://link.springer.com/static/201602081740-1139/sites/link/images/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" size="57x57" href="http://link.springer.com/static/201602081740-1139/sites/link/images/apple-touch-icon-57x57-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="http://link.springer.com/static/201602081740-1139/sites/link/images/apple-touch-icon-57x57-precomposed.png">
+  <link rel="shortcut icon" href="favicon-32x32.png">
+  <!--[if IE]>
+    <link rel="shortcut icon" href="/static/201602081740-1139/sites/link/images/favicon.ico"/>
+  <![endif]-->
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="/static/201602081740-1139/sites/link/images/ms-tileimage.png">
+  <link rel="canonical" href="http://link.springer.com/chapter/10.1007%2F978-3-319-06605-9_21">
+  <script src="linkid.js" async="" type="text/javascript"></script><script src="analytics.js" async=""></script><script src="gpt.js" type="text/javascript" async=""></script><script type="text/javascript">
+
+    window.suggestmeyes_loaded = true;
+  </script>
+  <script type="text/javascript">window.jsErrors = [];window.onerror = function(errorMessage) {window.jsErrors[window.jsErrors.length] = errorMessage;}</script>
+  <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');</script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+  </script>
+  <script type="text/javascript">
+
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+  </script>
+  <script type="text/javascript" id="googletag-push">
+
+    googletag.cmd.push(function() {
+    googletag.defineSlot('6313/casper/book/chapter', [160, 600], 'doubleclick-ad').addService(googletag.pubads());
+    googletag.pubads().setTargeting("eisbn","978-3-319-06605-9");
+    googletag.pubads().setTargeting("pisbn","978-3-319-06604-2");
+    googletag.pubads().setTargeting("eissn","1611-3349");
+    googletag.pubads().setTargeting("pissn","0302-9743");
+    googletag.pubads().setTargeting("doi","10.1007-978-3-319-06605-9_21");
+    googletag.pubads().setTargeting("sucode",["SUCO11645"]);
+    googletag.pubads().setTargeting("pmc",["I","I18030","I21017","I18032"]);
+    googletag.pubads().setTargeting("BPID",["1"]);
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+    });
+  </script>
+  <title>Extensions to Quantile Regression Forests for Very High-Dimensional Data - Springer</title>
+<script async="" src="pubads_impl_81.js"></script>
+<link rel="stylesheet" type="text/css" href="10.css" media="all">
+</head>
+<body class="anonymous link" data-name="link"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px none; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div style="display: none;" id="MathJax_Message"></div>
+  <div id="wrapper">
+    
+<div id="header" role="banner">
+  <a id="logo" href="http://link.springer.com/">
+  <img src="logo-base.png" alt="Logo Springer" title="SpringerLink">
+</a>
+
+  <div class="panel-search">
+    <form id="global-search" class="big-search" action="http://link.springer.com/search" method="get" role="search">
+      <div class="search-field">
+        <span class="ui-helper-hidden-accessible" aria-live="polite" role="status"></span><input id="query" class="text ui-autocomplete-input" name="query" autocomplete="off" value="" placeholder="Search" title="Search" type="text">
+      <ul style="display: none;" tabindex="0" id="ui-id-1" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all"></ul></div>
+      <input id="search" class="search-submit" value="Submit" title="New Search" type="submit"><img class="loading js-hidden" src="loading_search.gif" alt="">
+      <div id="search-options" class="flyout">
+        <button class="pillow-btn open-search-options" title="Open search options" type="button">Search Options</button>
+        <div class="flyout-content">
+          <ul>
+            <li>
+              <a id="advanced-search-link" href="http://link.springer.com/advanced-search">Advanced Search</a>
+            </li>
+            <li>
+              <a id="search-help-link" href="http://link.springer.com/searchhelp">Search Help</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </div>
+  <button class="pillow-btn open-search" title="Open search">Search</button>
+  <button class="pillow-btn open-menu" title="Open menu">Menu</button>
+  <div class="panel-menu">
+    <div id="cross-nav">
+      <div id="auth" class="flyout">
+        <a id="register-link" class="flyout-caption" href="http://link.springer.com/signup-login?previousUrl=http%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%252F978-3-319-06605-9_21">
+
+          » Sign up / Log in
+        </a>
+      </div>
+      <div id="lang" class="flyout">
+        <button class="flyout-caption cur">English</button>
+        <div class="flyout-content">
+          <ul>
+            <li>
+              <a id="change-language-Deutsch" href="http://link.springer.com/language/Deutsch" rel="nofollow">Deutsch</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="edition" class="flyout">
+  <button class="flyout-caption cur">Academic edition</button>
+  <div class="flyout-content">
+    <ul>
+      <li>
+        <a class="edition-select" href="http://link.springer.com/siteEdition/rd" rel="nofollow">Corporate edition</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+    <!-- /- giving kb-only user the option to skip to relevant content (see KeyboardNavigation.js) -->
+    <div id="skip-navigation">
+      <p class="skip-navigation--label">
+        <span>Skip to:</span>
+        <a href="#kb-nav--main">Main content</a>
+        <a href="#kb-nav--aside">Side column</a>
+      </p>
+    </div>
+    <div id="logo-company">
+    </div>
+    <ul id="global-nav" class="clearfix" role="navigation">
+      <li>
+        <a href="http://link.springer.com/">Home</a>
+      </li>
+      <li>
+        <a href="http://link.springer.com/contactus">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    <div id="content">
+      <input id="autoShowLookInside" value="true" type="hidden">
+      <input id="leafContentType" value="Chapter" type="hidden">
+      <div id="chapter" class="document no-access" itemscope="itemscope" itemtype="http://schema.org/ScholarlyArticle">
+        <div class="">
+      <div class="bar-dock">
+        <div style="left: 0px; width: 100%;" class="bar-wrapper">
+          <div class="bar-actions">
+            <span class="action icon-view">
+              <a class="lookinside-href webtrekk-track pdf-link" href="http://link.springer.com/chapter/10.1007%2F978-3-319-06605-9_21/lookinside/000.png" title="Look Inside" pagetype="rd_springer_com.book.chapter_preview" doi="10.1007/978-3-319-06605-9_21" parentdoi="10.1007/978-3-319-06605-9" parentcontenttype="Book" contenttype="Chapter" publication="10.1007/978-3-319-06605-9 | Advances in Knowledge Discovery and Data Mining" viewtype="Preview">Look Inside</a>
+            </span>
+            <span class="action icon-unlock">
+              <a class="access-link webtrekk-track" href="http://link.springer.com/accesspage/chapter/10.1007/978-3-319-06605-9_21?coverImageUrl=https%3A%2F%2Fstatic-content.springer.com%2Fcover%2Fbook%2F978-3-319-06605-9.jpg" title="Get Access" pagetype="rd_springer_com.book.chapter_denial" doi="10.1007/978-3-319-06605-9_21" parentcontenttype="Book" contenttype="Chapter" publication="10.1007/978-3-319-06605-9 | Advances in Knowledge Discovery and Data Mining" viewtype="Denial">Get Access</a>
+            </span>
+          </div>
+          <div class="unlock-wrapper">
+            <div style="margin-top: -24px;" class="bar-access-restr">
+              <strong class="message">Find out how to access preview-only content</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="document-main layout-3">
+          <div id="kb-nav--main" class="col-main has-full-enumeration" role="main">
+            
+            <div xmlns="http://www.w3.org/1999/xhtml" xmlns:meta="http://www.springer.com/app/meta" xmlns:epub="http://www.idpf.org/2007/ops"><section><header id="enumeration"><strong>Chapter</strong><p class="BookTitle"><a href="http://link.springer.com/book/10.1007/978-3-319-06605-9">Advances in Knowledge Discovery and Data Mining</a></p><p><span class="vol-info">
+
+                                  Volume 8444 of the series <a href="http://link.springer.com/bookseries/558">Lecture Notes in Computer Science</a></span><span class="page-numbers-info">
+
+                            pp 247-258</span></p><div class="version version-html5"></div></header></section><div xmlns="" class="MainTitleSection"><h1 xmlns="http://www.w3.org/1999/xhtml" class="ChapterTitle" lang="en">Extensions to Quantile Regression Forests for Very High-Dimensional Data</h1></div><ul class="AuthorNames"><li><span class="AuthorName_container"><span class="AuthorName">Nguyen&nbsp;Thanh&nbsp;Tung</span><span class="AuthorNames_popup flyout"><span class="AuthorNames_details flyout-content flyout--arrowTopLeft"><span class="AuthorsName_affiliation"><strong>Affiliated with</strong><span>Shenzhen Key Laboratory of High Performance Data Mining. Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences</span></span></span></span></span></li><li><span>, </span><span class="AuthorName_container"><span class="AuthorName">Joshua&nbsp;Zhexue&nbsp;Huang</span><span class="AuthorNames_popup flyout"><span class="AuthorNames_details flyout-content flyout--arrowTopLeft"><span class="AuthorsName_affiliation"><strong>Affiliated with</strong><span>College of Computer Science and Software Engineering, Shenzhen University</span></span></span></span></span></li><li><span>, </span><span class="AuthorName_container"><span class="AuthorName">Imran&nbsp;Khan</span><span class="AuthorNames_popup flyout"><span class="AuthorNames_details flyout-content flyout--arrowTopLeft"><span class="AuthorsName_affiliation"><strong>Affiliated with</strong><span>Shenzhen Key Laboratory of High Performance Data Mining. Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences</span></span></span></span></span></li><li><span>, </span><span class="AuthorName_container"><span class="AuthorName">Mark&nbsp;Junjie&nbsp;Li</span><span class="AuthorNames_popup flyout"><span class="AuthorNames_details flyout-content flyout--arrowTopLeft"><span class="AuthorsName_affiliation"><strong>Affiliated with</strong><span>College of Computer Science and Software Engineering, Shenzhen University</span></span></span></span></span></li><li><span>, </span><span class="AuthorName_container"><span class="AuthorName">Graham&nbsp;Williams</span><span class="AuthorNames_popup flyout"><span class="AuthorNames_details flyout-content flyout--arrowTopLeft"><span class="AuthorsName_affiliation"><strong>Affiliated with</strong><span>Shenzhen Key Laboratory of High Performance Data Mining. Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences</span></span></span></span></span></li></ul></div>
+    <div id="abstract-actions" class="panel">
+      <div class="content-pricing leaf-pricing">
+        <div class="leaf-pricing-content">
+          <div id="price-promo-message" class="hidden">
+            <div class="shout-out">
+              <p></p>
+            </div>
+          </div>
+          <div class="leaf-pricing-wrapper"></div>
+          <form id="getaccess-webshop" action="https://checkout.springer.com/checkout/add?SL=&amp;wt_mc=ThirdParty.SpringerLink.3.EPR653.AbstractPage_Chapter" method="post">
+            <input name="mac" value="45b7d0a3b8ea9edc3feff9e4d2fddc59" type="hidden">
+            <input name="returnurl" value="http://link.springer.com/chapter/10.1007/978-3-319-06605-9_21" type="hidden">
+            <input name="contenttitle" value="Extensions to Quantile Regression Forests for Very High-Dimensional Data" type="hidden">
+            <input name="pages" value="247-258" type="hidden">
+            <input name="copyrightyear" value="2014" type="hidden">
+            <input name="year" value="2014" type="hidden">
+            <input name="seriestitle" value="Lecture Notes in Computer Science" type="hidden">
+            <input name="authors" value="Nguyen Thanh Tung, Joshua Zhexue Huang, Imran Khan, Mark Junjie Li, Graham Williams" type="hidden">
+            <input name="title" value="Advances in Knowledge Discovery and Data Mining" type="hidden">
+            <input name="type" value="chapter" type="hidden">
+            <input name="doi" value="10.1007/978-3-319-06605-9_21" type="hidden">
+            <input name="volume" value="8444" type="hidden">
+            <input name="isxn" value="978-3-319-06605-9" type="hidden">
+            <input id="leaf-pricing-buy-now" class="btn btn-primary btn-action btn-monster" value="Buy chapter" type="submit">
+            <div style="display: block;" id="display-leaf-ppv"><p id="aggregate-pricing-info" class="content-prices">
+
+  $29.95 / €24.95 / £19.95 *
+</p>
+</div>
+          </form>
+        </div>
+        <div style="display: block;" class="line-divider"></div>
+        <div style="display: block;" id="display-book-ppv"><form action="http://link.springer.com/chapter/10.1007%2F978-3-319-06605-9_21" id="aggregate-pricing" class="aggregate-pricing aggregate-pricing-box">
+  <a id="aggregate-webshop-link" class="btn btn-primary btn-action" href="http://www.springer.com/addtocart/978-3-319-06605-9?wt_mc=ThirdParty.SpringerLink.3.EPR653.AbstractPage_eBook">Buy eBook</a>
+  <div class="aggregate-pricing-wrapper">
+    <h3>Buy this eBook</h3>
+    <p id="aggregate-pricing-info" class="content-prices">
+
+      $89.00 / €67.82 / £56.99*
+    </p>
+  </div>
+  <p class="price-disclaimer">* Final gross prices may vary according to local VAT.</p>
+</form></div>
+      </div>
+      <p class="price-disclaimer">* Final gross prices may vary according to local VAT.</p>
+      <span class="action icon-unlock">
+        <a id="request-access-link" class="webtrekk-track" href="http://link.springer.com/accesspage/chapter/10.1007/978-3-319-06605-9_21?coverImageUrl=https%3A%2F%2Fstatic-content.springer.com%2Fcover%2Fbook%2F978-3-319-06605-9.jpg" pagetype="rd_springer_com.book.chapter_denial" doi="10.1007/978-3-319-06605-9_21" contenttype="Chapter" parentcontenttype="Book" viewtype="Denial" publication="10.1007/978-3-319-06605-9 | Advances in Knowledge Discovery and Data Mining">Get Access</a>
+      </span>
+    </div>
+
+            
+            <div xmlns="http://www.w3.org/1999/xhtml" xmlns:meta="http://www.springer.com/app/meta" xmlns:epub="http://www.idpf.org/2007/ops"><section class="Abstract" id="Abs1" lang="en">
+                          <h2 class="Heading">Abstract</h2>
+                          <p class="Para">This paper describes new extensions to the state-of-the-art regression random forests <em class="EmphasisTypeItalic ">Quantile Regression Forests</em> (QRF) for applications to high-dimensional data with thousands of features. We propose a new subspace sampling method that randomly samples a subset of features from two separate feature sets, one containing important features and the other one containing less important features. The two feature sets partition the input data based on the importance measures of features. The partition is generated by using feature permutation to produce raw importance feature scores first and then applying <em class="EmphasisTypeItalic ">p</em>-value assessment to separate important features from the less important ones. The new subspace sampling method enables to generate trees from bagged sample data with smaller regression errors. For point regression, we choose the prediction value of <em class="EmphasisTypeItalic ">Y</em> from the range between two quantiles <em class="EmphasisTypeItalic ">Q</em>
+                            <sub>0.05</sub> and <em class="EmphasisTypeItalic ">Q</em>
+                            <sub>0.95</sub> instead of the conditional mean used in regression random forests. Our experiment results have shown that random forests with these extensions outperformed regression random forests and quantile regression forests in reduction of root mean square residuals.</p>
+                        </section><div class="KeywordGroup" lang="en">
+                          <h3 class="Heading">Keywords</h3>
+                          <span class="Keyword">Regression Random Forests</span>
+                          <span class="Keyword">Quantile Regression Forests</span>
+                          <span class="Keyword">Data Mining</span>
+                          <span class="Keyword">High-dimensional Data</span>
+                        </div></div>
+          </div>
+          <div id="kb-nav--aside" class="col-aside" role="complementary">
+            <div class="cover">
+      <div class="look-inside cover-image-animate">
+        <div class="no-access" style="display: none;" id="reader-overlay">
+      <div id="reader-page-template">
+        <div id="page-%P">
+          <div class="page-number">
+
+            Page
+            %P
+          </div>
+          <div class="pdf-page" id="page-img-container-%ID">
+            <img id="pdf-page-image-%ID" class="pdf-image" src="spacer.gif" alt="Loading..." style="width:%Wpx;" data-loaded="false" width="%W">
+          </div>
+        </div>
+      </div>
+      <div class="reader-position">
+        <div id="reader">
+          <div id="reader-buttons">
+            <a href="#close" id="pdf-close" class="btn btn-close right">
+
+              Close
+            </a>
+            <a style="display: none;" href="#close" id="toggletext" class="btn" title="Toggle plain text">
+
+              Plain text
+            </a>
+          </div>
+          <div id="viewer" class="show-pdf">
+            <div id="scroller"></div>
+          </div>
+          <div style="width: 795px;" class="top-shadow"></div>
+          <div style="width: 795px;" class="bottom-shadow"></div>
+        </div>
+      </div>
+    </div>
+
+        <a class="webtrekk-track lookinside-href" href="http://link.springer.com/chapter/10.1007%2F978-3-319-06605-9_21/lookinside/000.png" pagetype="rd_springer_com.book.chapter_preview" parentcontenttype="Book" contenttype="Chapter" doi="10.1007/978-3-319-06605-9_21" viewtype="Preview" publication="10.1007/978-3-319-06605-9 | Advances in Knowledge Discovery and Data Mining">
+          <img style="left: 0px;" class="look-inside-cover" src="978-3-319-06605-9.jpg" alt="Advances in Knowledge Discovery and Data Mining" itemprop="image" width="153">
+    <img style="right: 0px; z-index: 1;" class="look-inside-page" src="000.png" alt="Advances in Knowledge Discovery and Data Mining" itemprop="image" width="153">
+
+          <span style="right: 1px;" class="look-inside-badge">
+
+            Look
+            <br>
+            Inside
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div class="book-metrics SideBox" data-url="https://bookmetrix-proxy.live.cf.public.springer.com" data-contenttype="chapter">
+      <h2 class="SideBox_title">Chapter Metrics</h2>
+      <div class="book-metrics-items"><dl class="Meta Meta--2colBordedBackground"><dt class="book-metric-item-name Meta_name citations"><a data-analytics="Citations" href="http://www.bookmetrix.com/detail/chapter/c6f71d71-b254-4fc0-adb9-e6c724c99737#citations">Citations</a></dt><dd class="book-metric-item-value Meta_value citations"><a data-analytics="Citations" href="http://www.bookmetrix.com/detail/chapter/c6f71d71-b254-4fc0-adb9-e6c724c99737#citations">2</a></dd><dt class="book-metric-item-name Meta_name downloads"><a data-analytics="Downloads" href="http://www.bookmetrix.com/detail/chapter/c6f71d71-b254-4fc0-adb9-e6c724c99737#downloads">Downloads</a></dt><dd class="book-metric-item-value Meta_value downloads"><a data-analytics="Downloads" href="http://www.bookmetrix.com/detail/chapter/c6f71d71-b254-4fc0-adb9-e6c724c99737#downloads">1K</a></dd></dl></div>
+      <div class="Sidebox_footer book-metrics-footer">
+        <a href="http://www.bookmetrix.com/">
+          <span>Provided by</span>
+          <span><strong>Book</strong><span>metrix</span></span>
+        </a>
+      </div>
+    </div>
+            <div id="copublisher-container" data-url="https://copublishers.live.cf.public.springer.com/?id=978-3-319-06605-9&amp;id=978-3-319-06604-2"></div>
+
+            
+            <div class="SideBox section-links">
+    </div>
+
+            <div id="reference-tools" class="SideBox">
+      <h2 class="SideBox_title">Reference tools</h2>
+      <ul>
+        <li>
+          <div id="article-export-citation" class="Collapse Collapse--button u-z-index-3" tabindex="-1">
+        <h3 class="Collapse_toggle" data-toggle="collapse" data-target="targetId">
+
+            Export citation
+            <span class="Icon Icon--triangle-down-dark"></span>
+        </h3>
+        <ul id="article-export-citation-options" class="Collapse_content">
+            <li><a href="http://citation-needed.services.springer.com/v2/references/10.1007/978-3-319-06605-9_21?format=endnote&amp;flavour=citation">EndNote (.ENW)</a></li>
+            <li><a href="http://citation-needed.services.springer.com/v2/references/10.1007/978-3-319-06605-9_21?format=bibtex&amp;flavour=citation">JabRef (.BIB)</a></li>
+            <li><a href="http://citation-needed.services.springer.com/v2/references/10.1007/978-3-319-06605-9_21?format=bibtex&amp;flavour=citation">Mendeley (.BIB)</a></li>
+            <li><a href="http://citation-needed.services.springer.com/v2/references/10.1007/978-3-319-06605-9_21?format=refman&amp;flavour=citation">Papers (.RIS)</a></li>
+            <li><a href="http://citation-needed.services.springer.com/v2/references/10.1007/978-3-319-06605-9_21?format=refman&amp;flavour=citation">Zotero (.RIS)</a></li>
+            <li><a href="http://citation-needed.services.springer.com/v2/references/10.1007/978-3-319-06605-9_21?format=bibtex&amp;flavour=citation">BibTeX (.BIB)</a></li>
+            </ul>
+    </div>
+        </li>
+        <li>
+          <a id="papers-link" class="external webtrekk-track" href="http://redirect.papersapp.com/redirect?url=http://link.springer.com/chapter/10.1007%2F978-3-319-06605-9_21" target="_top" title="It opens in new window" gacategory="Export" publication="10.1007/978-3-319-06605-9_21 | Extensions to Quantile Regression Forests for Very High-Dimensional Data" viewtype="Add to Papers">Add to Papers</a>
+
+        </li>
+      </ul>
+    </div>
+    <div class="SideBox other-actions">
+      <h2 class="SideBox_title">Other actions</h2>
+      <ul>
+        <li>
+          <a id="about-link" class="external" href="http://www.springer.com/978-3-319-06604-2?wt_mc=ThirdParty.SpringerLink.3.EPR653.About_eBook" target="_top" title="It opens in new window">
+
+      About this Book
+    </a>
+
+        </li>
+        <li>
+          <a id="permissions-link" class="external" href="https://s100.copyright.com/AppDispatchServlet?publisherName=Springer&amp;orderBeanReset=true&amp;orderSource=SpringerLink&amp;author=Nguyen+Thanh+Tung&amp;AuthorEmail=tungnt%40wru.vn&amp;contentID=10.1007%2F978-3-319-06605-9_21&amp;openAccess=false&amp;endPage=258&amp;publicationDate=2014&amp;startPage=247&amp;title=Extensions+to+Quantile+Regression+Forests+for+Very+High-Dimensional+Data&amp;imprint=Springer+International+Publishing+Switzerland&amp;publication=eBook&amp;authorAddress=Shenzhen%2C+518055%2C+China" target="_top" title="It opens in new window">Reprints and Permissions</a>
+
+        </li>
+      </ul>
+    </div>
+
+            <div class="SideBox other-actions share">
+      <h2 class="SideBox_title">Share</h2>
+      <a id="facebook" href="javascript:void(0)" title="Share this content on Facebook">Share this content on Facebook</a>
+      <a id="twitter" href="javascript:void(0)" title="Share this content on Twitter">Share this content on Twitter</a>
+      <a id="linkedin" href="javascript:void(0)" title="Share this content on LinkedIn">Share this content on LinkedIn</a>
+    </div>
+
+          </div>
+        </div>
+        <div id="kb-nav--aside" class="document-aside" role="complementary">
+          <input id="relatedItemsSource" value="none" type="hidden">
+
+          <div id="abstract-esm" class="expander expander-empty">
+      <div class="expander-title">
+        <div class="heading">
+          <h2><button>Supplementary Material (0)</button></h2>
+        </div>
+      </div>
+      </div>
+
+          <div id="abstract-references" class="expander">
+      <div class="expander-title">
+        <div class="heading">
+           <h2><button>References (11)</button></h2>
+        </div>
+      </div>
+      <div class="expander-content">
+        <div class="expander-content-inner">
+          <div class="formatted">
+            
+    <div xmlns="http://www.w3.org/1999/xhtml" xmlns:meta="http://www.springer.com/app/meta" xmlns:epub="http://www.idpf.org/2007/ops" class="FulltextWrapper"><aside class="Bibliography" id="Bib1"><h3 class="Heading">References</h3><ol class="BibliographyWrapper"><li class="Citation"><div class="CitationNumber">1.</div><div class="CitationContent" id="CR1">Breiman, L., Friedman, J.H., Olshen, R.A., Stone, C.: Classification and Regression Trees. Wadsworth International, Belmont (1984)</div></li><li class="Citation"><div class="CitationNumber">2.</div><div class="CitationContent" id="CR2">Breiman, L.: Bagging Predictors. Machine Learning&nbsp;24(2), 123–140 (1996)<span class="Occurrences"><span class="Occurrence OccurrenceZLBID"><a href="http://www.emis.de/MATH-item?0858.68080"><span><span>MATH</span></span></a></span><span class="Occurrence OccurrenceAMSID"><a href="http://www.ams.org/mathscinet-getitem?mr=1425957"><span><span>MathSciNet</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">3.</div><div class="CitationContent" id="CR3">Breiman, L.: Random Forests. Machine Learning&nbsp;45(1), 5–32 (2001)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a href="http://dx.doi.org/10.1023/A%3A1010933404324"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceZLBID"><a href="http://www.emis.de/MATH-item?1007.68152"><span><span>MATH</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">4.</div><div class="CitationContent" id="CR4">Ho, T.: The random subspace method for constructing decision forests. IEEE Transactions on Pattern Analysis and Machine Intelligence&nbsp;20(8), 832–844 (1998)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a href="http://dx.doi.org/10.1109/34.709601"><span><span>CrossRef</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">5.</div><div class="CitationContent" id="CR5">Kursa, M.B., Rudnicki, W.R.: Feature Selection with the Boruta Package. Journal of Statistical Software&nbsp;36(11) (2010)</div></li><li class="Citation"><div class="CitationNumber">6.</div><div class="CitationContent" id="CR6">Liaw, A., Wiener, M.: randomForest 4.6-7. R package (2012), <span class="ExternalRef"><a href="http://cran.r-project.org/"><span class="RefSource">
+                          <span class="EmphasisFontCategoryNonProportional ">http://cran.r-project.org</span>
+                        </span></a></span>
+                    </div></li><li class="Citation"><div class="CitationNumber">7.</div><div class="CitationContent" id="CR7">Meinshausen, N.: Quantile Random Forests. Journal Machine Learning Research, 983–999 (2006)</div></li><li class="Citation"><div class="CitationNumber">8.</div><div class="CitationContent" id="CR8">Meinshausen, N.: quantregForest 0.2-3. R package (2012), <span class="ExternalRef"><a href="http://cran.r-project.org/"><span class="RefSource">
+                          <span class="EmphasisFontCategoryNonProportional ">http://cran.r-project.org</span>
+                        </span></a></span>
+                    </div></li><li class="Citation"><div class="CitationNumber">9.</div><div class="CitationContent" id="CR9">Rosenwald, A., et al.: The use of molecular profiling to predict survival after chemotherapy for diffuse large-b-cell lymphoma. N. Engl. J. Med.&nbsp;346, 1937–1947 (2002)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a href="http://dx.doi.org/10.1056/NEJMoa012914"><span><span>CrossRef</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">10.</div><div class="CitationContent" id="CR10">Stoppiglia, H., Dreyfus, G.: Ranking a random feature for variable and feature selection. The Journal of Machine Learning Research&nbsp;3, 1399–1414 (2003)<span class="Occurrences"><span class="Occurrence OccurrenceZLBID"><a href="http://www.emis.de/MATH-item?1102.68598"><span><span>MATH</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">11.</div><div class="CitationContent" id="CR11">Tuv, E., Borisov, A., Runger, G., Torkkola, K.: Feature selection with ensembles, artificial variables, and redundancy elimination. The Journal of Machine Learning Research&nbsp;10, 1341–1366 (2009)<span class="Occurrences"><span class="Occurrence OccurrenceZLBID"><a href="http://www.emis.de/MATH-item?1235.62003"><span><span>MATH</span></span></a></span><span class="Occurrence OccurrenceAMSID"><a href="http://www.ams.org/mathscinet-getitem?mr=2534863"><span><span>MathSciNet</span></span></a></span></span></div></li></ol></aside></div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+          
+          <div id="abstract-about" class="expander expander-open">
+      <div class="expander-title">
+        <div class="heading">
+          <button>
+            <h2>About this Chapter</h2>
+          </button>
+        </div>
+      </div>
+      <div class="expander-content">
+        <div class="expander-content-inner">
+          <div class="summary">
+            <dl>
+              <dt>Title</dt>
+              <dd id="abstract-about-title">Extensions to Quantile Regression Forests for Very High-Dimensional Data</dd>
+              
+              <dt>Book Title</dt>
+              <dd id="abstract-about-publication">
+                <a href="http://link.springer.com/book/10.1007/978-3-319-06605-9">Advances in Knowledge Discovery and Data Mining</a>
+              </dd>
+              <dt id="dt-abstract-about-book-subtitle">Book Subtitle</dt>
+    <dd id="abstract-about-book-subtitle">18th Pacific-Asia Conference, PAKDD 2014, Tainan, Taiwan, May 13-16, 2014. Proceedings, Part II</dd>
+
+              
+              <dt id="dt-abstract-about-book-chapter-page-ranges">Pages</dt>
+    <dd id="abstract-about-book-chapter-page-ranges">pp 247-258</dd>
+
+              <dt id="dt-abstract-about-book-chapter-copyright-year">Copyright</dt>
+    <dd id="abstract-about-book-chapter-copyright-year">2014</dd>
+
+              <dt>DOI</dt>
+              <dd id="abstract-about-book-chapter-doi" class="doi">10.1007/978-3-319-06605-9_21</dd>
+              <dt id="dt-abstract-about-book-print-isbn">Print ISBN</dt>
+    <dd id="abstract-about-book-print-isbn">978-3-319-06604-2</dd>
+
+              <dt id="dt-abstract-about-book-online-isbn">Online ISBN</dt>
+    <dd id="abstract-about-book-online-isbn">978-3-319-06605-9</dd>
+
+              <dt id="dt-abstract-about-book-series-title">Series Title</dt>
+    <dd id="abstract-about-book-series-title">
+      <a href="http://link.springer.com/bookseries/558">Lecture Notes in Computer Science</a>
+    </dd>
+
+              <dt id="dt-abstract-about-book-series-volume">Series Volume</dt>
+    <dd id="abstract-about-book-series-volume">8444</dd>
+
+              
+              <dt id="dt-abstract-about-book-series-print-issn">Series ISSN</dt>
+    <dd id="abstract-about-book-series-print-issn">0302-9743</dd>
+
+              <dt id="dt-abstract-about-publisher">Publisher</dt>
+    <dd id="abstract-about-publisher">Springer International Publishing</dd>
+
+              <dt id="dt-abstract-about-book-copyright-holder">Copyright Holder</dt>
+    <dd id="abstract-about-book-copyright-holder">Springer International Publishing Switzerland</dd>
+
+              <dt>Additional Links</dt>
+              <dd id="abstract-about-additional-links">
+                <ul>
+                  <li>
+                    <a class="external" href="http://www.springer.com/978-3-319-06604-2?wt_mc=ThirdParty.SpringerLink.3.EPR653.About_eBook" target="_top" title="It opens in new window">About this Book</a>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <dl>
+      <dt>Topics</dt>
+    <dd itemprop="genre">
+      <ul class="abstract-about-subject">
+        <li>
+          <a href="http://link.springer.com/search?facet-subject=%22Data+Mining+and+Knowledge+Discovery%22">Data Mining and Knowledge Discovery</a>
+        </li>
+        <li>
+          <a href="http://link.springer.com/search?facet-subject=%22Artificial+Intelligence+%28incl.+Robotics%29%22">Artificial Intelligence (incl. Robotics)</a>
+        </li>
+        <li>
+          <a href="http://link.springer.com/search?facet-subject=%22Information+Storage+and+Retrieval%22">Information Storage and Retrieval</a>
+        </li>
+      </ul>
+    </dd>
+
+      <dt>Keywords</dt>
+    <dd id="abstract-about-keywords" itemprop="keywords">
+      <ul class="abstract-keywords">
+        <li>Regression Random Forests</li>
+        <li>Quantile Regression Forests</li>
+        <li>Data Mining</li>
+        <li>High-dimensional Data</li>
+      </ul>
+    </dd>
+
+      <dt>Industry Sectors</dt>
+    <dd itemprop="genre">
+      <ul class="abstract-about-industrysectors">
+        <li>
+          <a title="/industry/pharma" href="http://link.springer.com/industry/pharma">Pharma</a>
+        </li>
+        <li>
+          <a title="/industry/materialsandsteel" href="http://link.springer.com/industry/materialsandsteel">Materials &amp; Steel</a>
+        </li>
+        <li>
+          <a title="/industry/automotive" href="http://link.springer.com/industry/automotive">Automotive</a>
+        </li>
+        <li>
+          <a title="/industry/chemicals" href="http://link.springer.com/industry/chemicals">Chemical Manufacturing</a>
+        </li>
+        <li>
+          <a title="/industry/biotech" href="http://link.springer.com/industry/biotech">Biotechnology</a>
+        </li>
+        <li>
+          <a title="/industry/electronics" href="http://link.springer.com/industry/electronics">Electronics</a>
+        </li>
+        <li>
+          <a title="/industry/it" href="http://link.springer.com/industry/it">IT &amp; Software</a>
+        </li>
+        <li>
+          <a title="/industry/telecom" href="http://link.springer.com/industry/telecom">Telecommunications</a>
+        </li>
+        <li>
+          <a title="/industry/consumer" href="http://link.springer.com/industry/consumer">Consumer Packaged Goods</a>
+        </li>
+        <li>
+          <a title="/industry/aerospace" href="http://link.springer.com/industry/aerospace">Aerospace</a>
+        </li>
+        <li>
+          <a title="/industry/geosciences" href="http://link.springer.com/industry/geosciences">Oil, Gas &amp; Geosciences</a>
+        </li>
+        <li>
+          <a title="/industry/engineering" href="http://link.springer.com/industry/engineering">Engineering</a>
+        </li>
+      </ul>
+    </dd>
+
+    </dl>
+    <dl>
+      <dt>Editors</dt>
+    <dd>
+      <ul class="editors">
+        <li itemprop="editor" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <a class="person" href="http://link.springer.com/search?facet-creator=%22Vincent+S.+Tseng%22" itemprop="name">Vincent S. Tseng</a>
+          <a class="envelope" href="mailto:tsengsm@mail.ncku.edu.tw" title="tsengsm@mail.ncku.edu.tw"><img src="envelope.png" alt="tsengsm@mail.ncku.edu.tw"></a>
+          <sup title="National Cheng Kung University">(19)</sup>
+        </li>
+        <li itemprop="editor" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <a class="person" href="http://link.springer.com/search?facet-creator=%22Tu+Bao+Ho%22" itemprop="name">Tu Bao Ho</a>
+          <a class="envelope" href="mailto:bao@jaist.ac.jp" title="bao@jaist.ac.jp"><img src="envelope.png" alt="bao@jaist.ac.jp"></a>
+          <sup title="Japan Advanced Institute of Science and Technology">(20)</sup>
+        </li>
+        <li itemprop="editor" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <a class="person" href="http://link.springer.com/search?facet-creator=%22Zhi-Hua+Zhou%22" itemprop="name">Zhi-Hua Zhou</a>
+          <a class="envelope" href="mailto:zhouzh@nju.edu.cn" title="zhouzh@nju.edu.cn"><img src="envelope.png" alt="zhouzh@nju.edu.cn"></a>
+          <sup title="Nanjing University">(21)</sup>
+        </li>
+        <li itemprop="editor" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <a class="person" href="http://link.springer.com/search?facet-creator=%22Arbee+L.+P.+Chen%22" itemprop="name">Arbee L. P. Chen</a>
+          <a class="envelope" href="mailto:alpchen@cs.nccu.edu.tw" title="alpchen@cs.nccu.edu.tw"><img src="envelope.png" alt="alpchen@cs.nccu.edu.tw"></a>
+          <sup title="National Chengchi University">(22)</sup>
+        </li>
+        <li itemprop="editor" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <a class="person" href="http://link.springer.com/search?facet-creator=%22Hung-Yu+Kao%22" itemprop="name">Hung-Yu Kao</a>
+          <a class="envelope" href="mailto:hykao@mail.ncku.edu.tw" title="hykao@mail.ncku.edu.tw"><img src="envelope.png" alt="hykao@mail.ncku.edu.tw"></a>
+          <sup title="National Cheng Kung University">(19)</sup>
+        </li>
+      </ul>
+    </dd>
+    <dt>Editor Affiliations</dt>
+    <dd>
+      <ul class="editor-affiliations">
+        <li>
+          <span class="position">19.</span>
+          <span class="affiliation">
+
+            National Cheng Kung University
+          </span>
+        </li>
+        <li>
+          <span class="position">20.</span>
+          <span class="affiliation">
+
+            Japan Advanced Institute of Science and Technology
+          </span>
+        </li>
+        <li>
+          <span class="position">21.</span>
+          <span class="affiliation">
+
+            Nanjing University
+          </span>
+        </li>
+        <li>
+          <span class="position">22.</span>
+          <span class="affiliation">
+
+            National Chengchi University
+          </span>
+        </li>
+      </ul>
+    </dd>
+
+      <dt>Authors</dt>
+    <dd>
+      <ul class="authors">
+        <li itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <a class="person" href="http://link.springer.com/search?facet-creator=%22Nguyen+Thanh+Tung%22" itemprop="name">Nguyen Thanh Tung</a>
+          <a class="envelope" href="mailto:tungnt@wru.vn" title="tungnt@wru.vn"><img src="envelope.png" alt="tungnt@wru.vn"></a>
+          <sup title="Shenzhen Key Laboratory of High Performance Data Mining. Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences">(23)</sup>
+        </li>
+        <li itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <a class="person" href="http://link.springer.com/search?facet-creator=%22Joshua+Zhexue+Huang%22" itemprop="name">Joshua Zhexue Huang</a>
+          <a class="envelope" href="mailto:zx.huang@szu.edu.cn" title="zx.huang@szu.edu.cn"><img src="envelope.png" alt="zx.huang@szu.edu.cn"></a>
+          <sup title="College of Computer Science and Software Engineering, Shenzhen University">(24)</sup>
+        </li>
+        <li itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <a class="person" href="http://link.springer.com/search?facet-creator=%22Imran+Khan%22" itemprop="name">Imran Khan</a>
+          <a class="envelope" href="mailto:imran.khan@siat.ac.cn" title="imran.khan@siat.ac.cn"><img src="envelope.png" alt="imran.khan@siat.ac.cn"></a>
+          <sup title="Shenzhen Key Laboratory of High Performance Data Mining. Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences">(23)</sup>
+        </li>
+        <li itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <a class="person" href="http://link.springer.com/search?facet-creator=%22Mark+Junjie+Li%22" itemprop="name">Mark Junjie Li</a>
+          <a class="envelope" href="mailto:jj.li@szu.edu.cn" title="jj.li@szu.edu.cn"><img src="envelope.png" alt="jj.li@szu.edu.cn"></a>
+          <sup title="College of Computer Science and Software Engineering, Shenzhen University">(24)</sup>
+        </li>
+        <li itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+          <a class="person" href="http://link.springer.com/search?facet-creator=%22Graham+Williams%22" itemprop="name">Graham Williams</a>
+          <a class="envelope" href="mailto:Graham.Williams@togaware.com" title="Graham.Williams@togaware.com"><img src="envelope.png" alt="Graham.Williams@togaware.com"></a>
+          <sup title="Shenzhen Key Laboratory of High Performance Data Mining. Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences">(23)</sup>
+        </li>
+      </ul>
+    </dd>
+    <dt>Author Affiliations</dt>
+    <dd>
+      <ul class="author-affiliations">
+        <li>
+          <span class="position">23.</span>
+          <span class="affiliation">
+
+            Shenzhen Key Laboratory of High Performance Data Mining. Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, Shenzhen, 518055, China
+            
+          </span>
+        </li>
+        <li>
+          <span class="position">24.</span>
+          <span class="affiliation">
+
+            College of Computer Science and Software Engineering, Shenzhen University, China
+            
+          </span>
+        </li>
+      </ul>
+    </dd>
+
+    </dl>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+        </div>
+      </div>
+      <div id="look-inside-interrupt" class="look-inside-interrupt">
+      <h3>Continue reading...</h3>
+      <div class="col-1">
+        <p>To view the rest of this content please follow the download PDF link above.</p>
+      </div>
+    </div>
+
+    </div>
+    <div id="web-trekk-abstract" doi="10.1007/978-3-319-06605-9_21" parentcontenttype="Book" contenttype="Chapter" viewtype="Abstract" publication="10.1007/978-3-319-06605-9 | Advances in Knowledge Discovery and Data Mining" unsiloed="" embedfulltext="false" openchoice="N"></div>
+    <input id="contentType" value="Chapter" type="hidden">
+
+
+    <div id="footer">
+  <hr>
+  <div id="footer-verticals" class="section" role="navigation">
+    <span class="strapline">Over 9 million scientific documents at your fingertips</span>
+    <div class="flyout">
+      <button class="pillow-btn open-disciplines">
+
+        Browse by Discipline
+        <span class="caret"></span>
+      </button>
+      <ol class="disciplines">
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Architecture+%26+Design%22" title="follow this link to go to Architecture &amp; Design">Architecture &amp; Design</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Astronomy%22" title="follow this link to go to Astronomy">Astronomy</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Biomedical+Sciences%22" title="follow this link to go to Biomedical Sciences">Biomedical Sciences</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Business+%26+Management%22" title="follow this link to go to Business &amp; Management">Business &amp; Management</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Chemistry%22" title="follow this link to go to Chemistry">Chemistry</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Computer+Science%22" title="follow this link to go to Computer Science">Computer Science</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Earth+Sciences+%26+Geography%22" title="follow this link to go to Earth Sciences &amp; Geography">Earth Sciences &amp; Geography</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Economics%22" title="follow this link to go to Economics">Economics</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Education+%26+Language%22" title="follow this link to go to Education &amp; Language">Education &amp; Language</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Energy%22" title="follow this link to go to Energy">Energy</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Engineering%22" title="follow this link to go to Engineering">Engineering</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Environmental+Sciences%22" title="follow this link to go to Environmental Sciences">Environmental Sciences</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Food+Science+%26+Nutrition%22" title="follow this link to go to Food Science &amp; Nutrition">Food Science &amp; Nutrition</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Law%22" title="follow this link to go to Law">Law</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Life+Sciences%22" title="follow this link to go to Life Sciences">Life Sciences</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Materials%22" title="follow this link to go to Materials">Materials</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Mathematics%22" title="follow this link to go to Mathematics">Mathematics</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Medicine%22" title="follow this link to go to Medicine">Medicine</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Philosophy%22" title="follow this link to go to Philosophy">Philosophy</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Physics%22" title="follow this link to go to Physics">Physics</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Psychology%22" title="follow this link to go to Psychology">Psychology</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Public+Health%22" title="follow this link to go to Public Health">Public Health</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Social+Sciences%22" title="follow this link to go to Social Sciences">Social Sciences</a>
+  </li>
+  <li>
+    <a href="http://link.springer.com/search?facet-discipline=%22Statistics%22" title="follow this link to go to Statistics">Statistics</a>
+  </li>
+</ol>
+
+    </div>
+  </div>
+  <div id="footer-nav" class="section">
+    <div id="footer-nav-misc">
+      <div id="footer-our-content" class="block" role="navigation">
+        <h2>Our Content</h2>
+        <ul>
+          <li>
+            <a title="View Journals" href="http://link.springer.com/search?facet-content-type=%22Journal%22">Journals</a>
+          </li>
+          <li>
+            <a title="View Books" href="http://link.springer.com/search?facet-content-type=%22Book%22">Books</a>
+          </li>
+          <li>
+            <a title="View Book Series" href="http://link.springer.com/search?facet-content-type=%22BookSeries%22">Book Series</a>
+          </li>
+          <li>
+            <a title="View Protocols" href="http://link.springer.com/search?facet-content-type=%22Protocol%22">Protocols</a>
+          </li>
+          <li>
+            <a title="View Reference Works" href="http://link.springer.com/search?facet-content-type=%22ReferenceWork%22">Reference Works</a>
+          </li>
+        </ul>
+      </div>
+      <div id="footer-other-sites" class="block" role="navigation">
+        <h2>Other Sites</h2>
+        <ul>
+          <li>
+            <a title="Visit Springer.com" href="http://www.springer.com/">Springer.com</a>
+          </li>
+          <li>
+            <a title="Visit Springer Protocols" href="http://www.springerprotocols.com/">SpringerProtocols</a>
+          </li>
+          <li>
+            <a title="Visit Springer Materials" href="http://materials.springer.com/">SpringerMaterials</a>
+          </li>
+          <li>
+            <a href="http://adis.springer.com/">AdisInsight</a>
+          </li>
+        </ul>
+      </div>
+      <div class="block" role="navigation">
+        <h2>Help &amp; Contacts</h2>
+        <ul>
+          <li>
+            <a class="contact-us-link" title="Contact us" href="http://link.springer.com/contactus">Contact Us</a>
+          </li>
+          <li>
+            <a class="impressum-link" title="View Impressum" href="http://link.springer.com/impressum">Impressum</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="footer-legal" class="section" role="contentinfo">
+    <div id="mobile-nav">
+      <span class="pillow-btn open-legal" title="Show Legal Information">Legal</span>
+    </div>
+    <div id="legal" role="contentinfo">
+      <span id="footer-copyright">© Springer International Publishing AG, Part of Springer Science+Business Media</span>
+      <a id="footer-privacy" title="View Terms and Conditions" href="http://link.springer.com/termsandconditions">Privacy Policy, Disclaimer, General Terms &amp; Conditions</a>
+      <div id="diagnostic-info">
+  <span id="diagnostic-login-status">Not logged in</span>
+  <span class="diagnostic-business-partners">Unaffiliated</span>
+  <span id="diagnostic-ip">88.6.101.171</span>
+</div>
+
+      
+    </div>
+  </div>
+  <div id="footer-branding" class="section">
+    <div class="block">
+      <span id="branding-logo">Springer for Research &amp; Development</span>
+    </div>
+  </div>
+  <div id="google-analytics-account" style="display: none;">UA-26408784-1</div>
+</div>
+
+
+    <div id="doubleclick-ad" class="banner-advert">
+  <script type="text/javascript">if ( window.outerWidth || document.body.clientWidth > 1100 ) { googletag.cmd.push(function() { googletag.display('doubleclick-ad'); }); };</script>
+<div style="border: 0pt none;" id="google_ads_iframe_6313/casper/book/chapter_0__container__"><iframe src="10_1.html" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_6313/casper/book/chapter_0" title="3rd party ad content" id="google_ads_iframe_6313/casper/book/chapter_0" frameborder="0" height="600" width="160"></iframe></div><iframe src="10_2.html" style="border: 0px none; vertical-align: bottom; visibility: hidden; display: none;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_6313/casper/book/chapter_0__hidden__" title="" id="google_ads_iframe_6313/casper/book/chapter_0__hidden__" frameborder="0" height="0" width="0"></iframe></div>
+
+  </div>
+  <noscript>
+
+  <div id="jsnotice" class="prompt-bar">
+    <p>
+      JavaScript is currently disabled<span>, this site works much better if you enable JavaScript in your browser.</span>
+    </p>
+  </div>
+</noscript>
+
+<script src="webtrekk_v3.js"></script>
+  <script id="webtrekk-properties" type="text/javascript">
+
+    var webtrekkProperties = {
+      trackDomain : "springergmbh01.webtrekk.net",
+      trackId : "935649882378213",
+      pageType : "rd_springer_com.book.chapter_abstract"
+      };
+  </script>
+  <noscript>
+
+    <div id="webtrekk"><img src="http://springergmbh01.webtrekk.net/935649882378213/wt?p=315,rd_springer_com.book.chapter_abstract" height="1" width="1" alt=""/></div>
+  </noscript>
+
+<script id="google-analytics" type="text/javascript">
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-26408784-1', 'auto');
+    ga('create', 'UA-26408784-4', 'auto', {'name': 'unsiloTracker'});
+    ga('set', 'dimension2', 'N');
+    ga('require', 'linkid', 'linkid.js');
+    ga('send', 'pageview');
+  </script>
+
+<script src="jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="jquery-migrate-1.2.1.min.js"></script>
+<script src="crossmark.js"></script>
+<script type="text/javascript">
+
+  var vgWortProperties = {
+  vgWortDomain: 'springer.met.vgwort.de'
+  };
+</script>
+<script src="all.js"></script>
+<script src="mathJaxConfig.js"></script>
+<script src="MathJax.js"></script>
+<script src="mathJaxHooks.js"></script>
+
+
+
+<script type="text/javascript">var _kiq = _kiq || [];</script>
+<script type="text/javascript" src="9CC.js" async="true"></script><iframe style="visibility: hidden; display: none;" src="10_3.html"></iframe>
+
+
+
+<div style="display: none;" id="cboxOverlay"></div><div style="display: none;" tabindex="-1" role="dialog" class="" id="colorbox"><div id="cboxWrapper"><div><div style="float: left;" id="cboxTopLeft"></div><div style="float: left;" id="cboxTopCenter"></div><div style="float: left;" id="cboxTopRight"></div></div><div style="clear: left;"><div style="float: left;" id="cboxMiddleLeft"></div><div style="float: left;" id="cboxContent"><div style="float: left;" id="cboxTitle"></div><div style="float: left;" id="cboxCurrent"></div><button id="cboxPrevious" type="button"></button><button id="cboxNext" type="button"></button><button id="cboxSlideshow"></button><div style="float: left;" id="cboxLoadingOverlay"></div><div style="float: left;" id="cboxLoadingGraphic"></div></div><div style="float: left;" id="cboxMiddleRight"></div></div><div style="clear: left;"><div style="float: left;" id="cboxBottomLeft"></div><div style="float: left;" id="cboxBottomCenter"></div><div style="float: left;" id="cboxBottomRight"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><div id="crossmark-tooltip-130" class="crossmark-tooltip" style="display: none;"><div class="cmtttop"></div><div class="cmttmid"><p>Click to get updates and verify authenticity.</p></div><div class="cmttbot"></div></div><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px none; margin: 0px;"><div style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px none; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: STIXSizeOneSym,sans-serif;" id="MathJax_Font_Test"></div></div></body>
+</html>

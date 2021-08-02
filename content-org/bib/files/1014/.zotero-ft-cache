@@ -1,0 +1,641 @@
+
+
+    1 Introduction
+        1.1 Abstract
+        1.2 Motivation
+        1.3 Methods in brief
+        1.4 Modeling strategy
+
+    2 Data Collection and Wrangling
+        2.1 Encoding Road Network Structure
+        2.2 Waze Data Wrangling
+
+    3 Exploratory Analysis
+        3.1 The Distribution of Collisions
+        3.2 Examining our Predictors
+
+    4 Feature Selection
+        4.1 Feature Selection with Boruta
+        4.2 Multi-colinearity
+
+    5 Model Selection
+        5.1 Set-up
+        5.2 Prediction Baseline
+        5.3 Model Training
+
+    6 Cross-Validation
+        6.1 K-Fold Cross-Validation
+        6.2 Spatial Cross-Validation
+
+    7 Model Results
+        7.1 Feature Importance
+        7.2 Plotting Results
+        7.3 Moran’s I
+        7.4 Mapping The Results
+
+    8 Conclusion and Next Steps
+
+    Appendices
+        Appendix A: Data Glossary
+        Appendix B: Summary Statistics
+        Appendix C: Source Code
+
+Automobile Collision Prediction in Louisville, KY
+By Guy Duer, Sha Ni & Deon Provost
+May 1st, 2018
+1 Introduction
+
+Across the United States, many cities have committed to reducing the number of automobile collisions on their streets. Unfortunately, finding ways by which these collisions may be prevented is a challenge that many cities struggle to overcome. While a great deal of academic attention has been devoted to explaining the nature and causes of varying types of automobile collisions, predictive modeling offers a different approach. Our aim is to provide insight into the degree by which built-environment characteristics of roads, and their interaction in space, can be used as predictors of collision-risk. If succesful, we hope to arm transportation professionals and policy-makers with a new tool for informing and targeting their built-environment interventions.
+
+Figure 1.1 shows a map of overall collision locations in Louisville. Note that our analysis only considers roads that are within the municipal boundary of Louisville, as outlined in black in the figure.
+figure 1.1: Louisville Collision Locations in 2017
+
+figure 1.1: Louisville Collision Locations in 2017
+1.1 Abstract
+
+For this analysis, we have partnered with the city of Louisville, Kentucky. In Louisville, traffic collisions are of the utmost concern. From 2013-2016, collisions in Louisville increased by 37.5% in aggregate. Compared with the rest of the United States, Louisville experienced 34% more traffic-related deaths than the national average.
+
+In its annual “Traffic Collision Facts” report, the Kentucky State Police describes the spatial distribution of collisions within the city, and the road types which seem to suffer the most collisions:
+
+“Crashes occur in all areas of Louisville, although there is a clear concentration along major arterials with high volumes of motor vehicles.”
+
+Figure 1.1.1 shows two areas in the city (Downtown and Bardstown Rd) that have exhibited some of the highest concentrations of accidents in 2017, according to the Kentucky State Police.
+figure 1.1.1: High Collision Frequency Locations figure 1.1.1: High Collision Frequency Locations
+
+figure 1.1.1: High Collision Frequency Locations
+
+It is reasonable and expected that roads and intersections with heavy traffic volume suffer the highest share of collisions. However, our analysis aims to explore whether additional factors may play a role. We seek to learn why, even along the same road segments (which likely have comparable traffic exposure), there is notable variability in the risk of collision (see Figure 1.2.1). We aim to explore the reasons and factors which shape this observed variability in risk.
+1.2 Motivation
+
+As posited above, a significant portion of the factors that contribute to collision-risk are straightforward. Most would expect that busy, high-speed roads endure a disproportionate number of automobile collisions. What is not straightforward, however, is that the segments that comprise these busy, important roads demonstrate substantial, currently unexplained, variability (Figure 1.2.1).
+
+It is our hypothesis that road characteristics and built environment features play an important role in influencing collision-risk. To test this hypothesis, we encode the network’s physical features, as well as Louisville’s demographic and spatial attributes into our dataset. This will allow us to model the differences in the road network and the degree to which these differences are associated with collision-risk across the city.
+
+Presently, policy officials pursue interventions based on observing the density of collisions after the fact, without a systematic understanding of the reasons why these density differences exist. Our approach seeks to predict where automobile collisions are likely to occur at the segment level based on the characteristics of each segment, thereby providing policymakers with the means to be more proactive in their interventions and their future designs. Additionally, informed by a sense of just how much various categories and individual features are associated with collision-risk, policymakers can streamline their intervention strategies and allocate resources effectively.
+Figure 1.2.1: Variability in Collision Count.
+
+Figure 1.2.1: Variability in Collision Count.
+1.3 Methods in brief
+
+Our analysis begins with Louisville’s road network (street-centerlines). The first step in the modeling process is to break this continuous shapefile into segments. Each segment will be treated as an observation in the dataset. Specifically, we broke the network into two district segment types- intersections and roads. All additional data which we collect will be attributed to these road/intersection segments as features in the dataset.
+
+The dependent variable which we will predict for each of the segments is the count of collisions per year. To generate this dependent variable, we used ArcGIS to spatially join the segments and crash locations from 2017, thereby attributing to each segment the number of crashes which occurred closest to that segment in that year. Please see section 2 “Data Collection and Wrangling” for additional details.
+Figure 1.3.1: Counting Crashes per Segment.
+
+Figure 1.3.1: Counting Crashes per Segment.
+
+To identify intersections within the network, we use ESRI’s network analysis tool within ArcGIS. This tool allows us to identify nodes (i.e. intersections) within the network. Next, we estimate that the average width of roads is roughly 50 feet and subsequently therefore we draw a buffer with a radius of 35 feet around each node. We use these buffers to clip (i.e., partition) each “edge” or segment within the centerlines file, resulting in a network with separated segments and intersections.
+Figure 1.3.2: Encoding Intersections
+
+Figure 1.3.2: Encoding Intersections
+
+As shown in Figure 1.3.3, this method does a very good job in approximating nodes and edges, but it is not perfect (as shown in the intersections on the left hand side of the image).
+Figure 1.3.3: Intersection Clipping Results
+
+Figure 1.3.3: Intersection Clipping Results
+1.4 Modeling strategy
+
+As described above, our aim is to build a model which predicts the frequency of collisions annually for each segment in Louisville. To do this, we digitize the features of the road network and create a set of attributes for each segment. Additionally, we must encode the structure of the network into our dataset, so we can examine how the features of each segment interact with the characteristics of the neighboring segments. This is especially important when considering the role of intersections in the network.
+
+More specifically, our modeling strategy attempts to predict collisions as a function of the road network. As such, we develop a hierarchical encoding scheme that relates one street to those around it at various spatial scales.
+
+Automobile collisions represent a form of “count data,” and we posit that our dependent variable will conform to distributions often associated with the nature of count data (Poisson and Negative Binomial Distributions, in particular).
+
+To evaluate how different types of factors affect collision count, the features we collect will be grouped into distinct “buckets”- physical features, spatial features, use-related features, etc. Then we can validate the effect of each bucket examining how the model is using each of the features.
+
+Once a model has been chosen, we will cross-validate our model spatially, temporally, and cross-sectionally.
+2 Data Collection and Wrangling
+
+For our analysis, we primarily focus on the use of open data with the understanding that this will permit other municipalities with similar open data repositories to reproduce our analysis.
+
+Our goal is to provide decision-makers with insight regarding the built-environment and regulatory factors which increase collision risk, and if possible, with an actionable path for collision-reduction. As a result, we had three goals in data collection:
+
+    Obtain data that has a reasonable and intuitive relationship to automobile collisions (i.e. road type, traffic volume, etc.)
+    Obtain built-environment data to test our research hypothesis that the built-environment can account for local variations in risk (i.e. road network design, road conditions, traffic control, etc.)
+    Find data that might be counterfactual to our hypothesis (segment centrality score, high density employment areas, etc.)
+
+Altogether, we have wrangled 53 unique features. The specific details of each of the features can be found in Appendix A
+
+ ## [1] "Intersect" "Var_SPEED" "TrafficSig" "ONEWAY" "SPEED" ## [6] "TYPE" "BIKEWAY" "QtM_Police" "QtM_School" "Rd_Char" ## [11] "rank" "Dist_Alcoh" "ZONING_COD" "avg_width" "No_Left" ## [16] "Stop_Sign" "Slow_Sign" "SpdLim_Sig" "Yield_Sign" "Discnt_Lne" ## [21] "DISTRICT" "POP_DEN" "BUS_RT" "BSNS_DENS" "Length" ## [26] "COLS_MILE" "N_NEIGHBS" "Light_Dens" "Emply_D" "Shop_Dn" ## [31] "ParkingCit" "Cite_Dens" "Downt_Dist" "NearArtery" "Count_2016" ## [36] "Frght_R" "Count_2017" "has_colls" "volume" "congestion" ## [41] "potholes" "rdkill" "missign" "hazobj" "hevtraff" ## [46] "medtraff" "stndtraff" "lev1j" "lev2j" "lev3j" ## [51] "lev4j" "Ave_delay" "GEOID" 
+
+The majority of the features were created using the ArcGIS toolbox. These tools include calculating distances from points of interest, kernel densities of various spatial events, and near-tables for capturing attributes of nearby features. Additionally, some of the features describing the road network itself were obtained from open-data sources and simply brought into our dataset using spatial joins. These include road conditions, road-type classifications, and speed limits.
+
+Each predictor required a different set of data-wrangling steps which included cleaning up the raw data, standardizing names and descriptions, geocoding unstructured spatial data, and more. To avoid lengthy discussion of each specific step, a description for each predictor, its source, and the steps taken in the wrangling process is avaiable in the Data Glossary in the Appendix .
+
+As discussed above, We group our data into several categories or “buckets” to facilitate our modeling approach. Table 2.1.1 shows the “buckets” and each of the features within it.
+Built Environment 	Road Usage/Control 	Location 	Network/Segment Characteristics
+TrafficSig 	SPEED 	QtM_Police 	Intersect
+ONEWAY 	ParkingCit 	QtM_School 	TYPE
+BIKEWAY 	Cite_Dens 	Dist_Alcoh 	N_NEIGHBS
+rank 	volume 	ZONING_COD 	Var_SPEED
+avg_width 	hevtraff 	DISTRICT 	Length
+No_Left 	medtraff 	POP_DEN 	
+Stop_Sign 	stndtraff 	BSNS_DENS 	
+Slow_Sign 	lev1j 	Emply_D 	
+SpdLim_Sig 	lev2j 	Shop_Dn 	
+Yield_Sign 	lev3j 	Downt_Dist 	
+Discnt_Lne 	lev4j 	NearArtery 	
+Frght_R 	congestion 	GEOID 	
+potholes 	Ave_delay 		
+missign 	hazobj 		
+Rd_Char 	rdkill 		
+BUS_RT 			
+Light_Dens 			
+
+There are two categories of predictors which required special consideration in the wrangling process- predictors derived from the structure of the street network structure and predictors derived from the newly available Waze data. The process for wrangling these features is described in the sections below.
+2.1 Encoding Road Network Structure
+
+Some of the factors that might contribute to collision risk cannot be modeled simply by looking at the attributes of individual road segments. Instead, they require that we consider the network as a whole and model connections within it. To do this, we developed a method of feature engineering which allows us to encode the structure of the network so that each segment knows which other segments are connected to it, and what their attributes are.
+
+The first step in this method is to create a network table which models the connectivity of the network by associating each of the segments (nodes) with the other segments it’s connected to (therefore modeling the network’s “edges”). We generate this network table by using the Near Table tool in ArcGIS with a search radius set to 0. As decribed above, we have divided our segments into two types- intersections and roads. Since we know that roads only touch intersections, and vice-versa, we can simply run the Near Table tool on both segment types, one at a time, using the other type as the near feature. We then concatonate the results into a single table.
+
+Some of the resulting table is shown below.
+Segment ID 	Neighbor ID
+0 	13338
+0 	30745
+1 	77
+1 	13390
+2 	55
+2 	77
+3 	5
+3 	63
+4 	5
+4 	13380
+
+Now that we have this network table as a reference for network connectivity, we can use it to calculate various aspects of the network which have to do with the interaction of neighboring segments. One such aspect is the speed variance in connection points. Current research suggests that roads are safer when all traffic is flowing at the same speed. A higher degree of risk is added when speed variance is introduced, such as when faster traffic merges into slower traffic or when slower turn into a high speed road.
+
+To record this speed variance, we will calculate, for each segment, the variance of the speed limits of all the segments which it’s connected to:
+Segment ID 	Speed Variance Experienced
+0 	200.00000
+1 	200.00000
+2 	50.00000
+3 	450.00000
+4 	450.00000
+5 	33.33333
+6 	450.00000
+7 	450.00000
+8 	233.33333
+9 	33.33333
+
+A similar process can be followed to calculate the number of neighbors each segment has (through aggregating by “count”) and to interpolate missing data by filling in blanks using neighboring data.
+2.2 Waze Data Wrangling
+
+In September of 2015, Louisville became the 5th city to partner with Waze Mobile, Ltd. to enhance traffic outcomes. As a result of this partnership, we have received unprecdented access to an incredibly rich dataset that presents unique challenges and opportunities.
+
+One of the most difficult, if not the most difficult, data point to obtain when analyzing any traffic-related inquiry is road demand. With data from Waze, our goal is to systematically attribute some measure of road demand to every street segment in Louisville, KY.
+
+These data are produced primarily to satisfy Waze’s own internal proprietary use cases, and not that of public officials. As we explored the dataset, we found tha there are limitations to its adaptiveness for our purposes. Below, we discuss both the limitations of the data and three approaches we used to encode the Waze data - an Inverse Distance Weighted analysis, a Nearest Neighbor Analysis, and a Kernel Density analysis. After extensive testing, we found that none of these approaches to encoding the Waze data to Louisville’s street network is singularly ideal. However, as we will discuss later , we were able to combine our most promising approaches into new features that we used in our model.
+2.2.1 Creating the WazeData dataset.
+
+Our data extract was provided in the form of a backup MySQL Server Database. Some specific details regarding the data and its schema cannot be shared per Louisville’s agreement with Waze. However, we will share the general process we have taken to incorporate this valuable dataset into our analysis.
+
+Waze pings its user’s mobile phone at regular intervals to obtain location data. In Louisville, this ping occurs approximately every two minutes. Based on it’s internal models and/or proprietary historical data collection, Waze has an expectation for the amount of time that it should take a user to move through a cooridor. The company can, then, detect when someone is moving slower than normal and ping a user with a request for the cause of a delay. Alternatively, a user may initiate notifying Waze as to the cause of a delay. As a result, Waze has provided tables with these anonymized data, including the types of delays and the associated coordinates.
+
+Unfortunately, in the Waze data provided, the street grid does not align to all the segments in Louisville’s street network. Perhaps Waze has or could create additional tables containing more detailed information that might facilitate a straightforward mapping the Waze data to Louisville’s road network. Either way, this ideal, georeferenced link was not available in the extract we received. Since we do not have the luxury of 1:1 mapping, we must find another way to encode Waze data into Louisville’s network.
+
+Waze does, however, provide XY coordinates for each of its pings to user devices. Therefore, for the duration of a trip, we can plot these pings within Louisville’s road network, and attempt a number of methods to impute road demand for each segment.
+2.2.2 Challenges to Wrangling the Waze Data
+
+First, the dataset is large and continuous (Readings from October 2014 to July 2017 every few minutes). There are over 15 million unique Jam ID’s (our unit of analysis for each trip). We selected four random days for our analysis, representing just over 350,000 Jam ID’s (just over 2% of the entire data set). We selected a random Tuesday and Thursday for two different weeks to represent “typical” traffic (10/20/2016, 10/25/2016 & 11/3/2016, 11/8/2016). Weather for these days may be found at www.wunderground.com; two of the four days experienced light precipitation.
+
+As can be seen in the image below, these Jam ID’s present a unique challenge. For example, if the trips seen in the image below had been flagged for delay and associated with a pothole, clearly the pothole was not the entire length of the segment nor trip. However, there is no obvious way to identify the exact location.
+
+Instead, we decided to treat these situations as relative “exposure,” which reflects our belief that each segment associated with or “exposed” to a particular delay is valuable information to encode in the network (even without an exact location). Moreover, in the image below, though only three sets of points appear to the naked eye, they represent a sample of 16 different trips (by Jam ID).
+
+Lastly, since our focus is on the relative collision-risk of each segment, we did not include timing data in our model. In the end, though time may have a relationship to collision-risk (i.e. collision-risk might increase during rush hour), we assume that the relative risk per street segment is independent of time for the purposes of focusing on the built environment.
+Figure 2.2.2: Alert Movement over Time
+
+‘Figure 2.2.2: Alert Movement over Time’
+2.2.3 Exploratory Visualization
+
+To encode the Waze data into Louisville’s street network, we begin by associating each Waze sample point with its nearest segment using a near table in ArcGis and visualizing the results, which may be seen in the image below. This visualization will allow us to explore the data as it is naively ascribed to its closest segment.
+
+In this example, each segment’s traffic jam level appears much more discontinuous than would be expected. Some segments, for example, have no reading at all. This provides a clue for the types of approaches that may be useful. Namely, we should look for methods that provide a way to spread the values associated with these points onto segments in a less disjointed fashion.
+Figure 2.2.3.1: Level of Traffic Jam by Nearest Segment
+
+Figure 2.2.3.1: Level of Traffic Jam by Nearest Segment
+
+First, we plotted all of our Waze sample points on Louisville’s street network in ArcGis. As points accumulate on a particular (i.e., popular) segment, we know that this specific use has an effect on neighboring segments. Since we are attempting to capture road demand for the network overall, we think that the data associated with these pings should not be limited only to the segment on which they appear. Rather, as discussed above, some “spread” or smoothing should occur to capture the impact that these data might be expected to have on neighboring segments.
+
+As a result, in our first approach, we turned to a commonly used method called Inverse Distance Weighting to impute and distribute the values of sample points in each segment’s vicinity.
+
+The image below demonstrates the results.
+Figure 2.2.3.2: IDW Overall
+
+Figure 2.2.3.2: IDW Overall
+
+At a high level, we see some variation in the concentration of volume and congestion as approximated by our sample data, but not nearly as much as might be expected. Zoomed in, as in the image below, the issue becomes clearer. Large areas of the nework appear arbitrarily low, while nearby segments appear to contain higher averages. We don’t normally see very busy streets become immediately free-flowing and vice versa. Intuitively, we would expect more “spread” or diffusion than we see here.
+Figure 2.2.3.3: IDW Zoomed-In
+
+Figure 2.2.3.3: IDW Zoomed-In
+
+Next, we began by associating each point with its nearest segment using a near table in ArcGis. The result may be seen in the image below. Unfortunately, the results from this method were similarly disappointing. So far, neither apporach has captured the inherent organization of the road network nor the spatial distribution that might be expected.
+2.2.4 Methods
+Nearest Neighbors for Congestion Level
+
+Next, to obtain the average delay by segment (i.e., congestion), we took the average congestion level for each segment’s 3 nearest points to get a more continuous representation of the network’s congestion at the segment level (note: we did not include Jam levels of -1).
+
+The results can be seen in the image below. We chose three because we wanted to be judicious without having the level of distribution become too diffuse, which would improperly affect nearby segments and potentially bias our model. This approach was much more in line with what we would expect. As is readily apparent, the values appear more spread out than the previous method (IDW).
+Figure 2.2.4.1: Congestion Density
+
+Figure 2.2.4.1: Congestion Density
+Kernel Density for Volume
+
+In our next test, as an approximation volume, we used ArcGis to take a kernel density of our Waze sample points. We then reclassifid the resulting raster by 100 quantiles, converted the result to a polygon and spatially joined the results to our segments.
+
+The result can be seen in the images below. The results appear consistent with what might be expected. The Downtown area and main arterials appear to receive more volume overall, and the values of nearby segments is more continuous.
+
+We applied the methods discussed above to many alerts provided by Waze, including (but not limited to) alerts that noted the presence of road kill, potholes and missing signs. Additionally, we used these methods on various combinatios of the traffic jam level data (i.e., only the top jam level, top two levels, etc.).
+Figure 2.2.4.2: Volume Kernel Density
+
+Figure 2.2.4.2: Volume Kernel Density
+Figure 2.2.4.3: Volume by Quantile
+
+Figure 2.2.4.3: Volume by Quantile
+2.2.5 Additional Notes
+
+As dicussed above, in its current form, the data is not ideal for use in this type of analysis. We recognize that it is structured to facilitate a business model rather than public use.
+
+That said, we combat the aforementioned limitations to the best of our ability; no single approach is definitively ideal. If the data provided by Waze included a lookup that permitted 1:1 mapping of its data to the Louisville road network, encoding it would be much more straightforward and the resulting approximations about road demand might prove much more robust. Getting a clean, georeferenced lookup table would greatly reduce the need for the type of wrangling
+
+Though none of these approaches to encoding the Waze data to Louisville’s street network is singularly ideal, we were nevertheless able to combine the results from our most promising approaches into new features that we used in our model.
+
+See section 4.2 for more detail.
+3 Exploratory Analysis
+
+Now that we have finished collecting and wrangling data points, let’s explore and visualize the data to gain an intuition about its structure.
+3.1 The Distribution of Collisions
+
+Firstly, we examine our dependent variable- Collisions in 2017. Figure 3.1.1 shows the distribution of collision counts within our segments. The histogram on the left shows the distibution of values as is. The histogram on the right has a logarithmic y-axis, which makes it easier to see the distribution of higher values.
+
+Looking at the distribution, it is apparent that collisions follow a 0-inflated Poisson distribution. As mentioned above, a Poisson distributions are to be expected for count data. However, the fact that the vast majority of segments have a collision count of zero or one may bias the model and create challenges in correctly predicting higher values.
+
+Note that the collision count goes all the way up to 180, but the plots are cropped to make it easier to see the main pattern.
+Figure 3.1.1: Collision Count Distribution
+
+Figure 3.1.1: Collision Count Distribution
+
+Let’s look at the spatial distribution of collisions in 2017:
+Figure 3.1.2: Spatial Distribution of Collisions
+
+Figure 3.1.2: Spatial Distribution of Collisions
+
+As shown in the map in Figure 3.1.2, the distribution of collisions in space is clearly not random. It is readily apparent that roads in certain parts of the city have more collisions on average, and that certain road types (eg. the highways) stand out by having higher collision counts, seemingly regardless of their location int he city. Additionally, as shown in the histograms in Figure 3.1.1, it is apparent that the majority of road segments in the city registered no accidents in 2017.
+
+We also note here that the length of each segment strongly affects the number of collisions that are captured on that segment. Since we are really more interested in collision density (as a proxy for risk), we will normalize the collisions counts by segments length when interpreting our results in order to create a risk score based on collision density.
+
+We can also aggregate our dependent variable by census tract to further examine the spatial structure of the data. As seen in Figure 3.1.3, there are some areas in the city with significantly higher accident densities.
+Figure 3.1.3: Spatial Distribution of Collisions by Census Tract
+
+Figure 3.1.3: Spatial Distribution of Collisions by Census Tract
+3.2 Examining our Predictors
+
+Since we hypothesize that road characteristics and the built environment influence automobile collisions, we want to explore the relationship of some of these characteristics to collisions.
+
+First, let’s see how collision density changes across road types (see Figure 3.2.1):
+Figure 3.2.1: Collision density by road type
+
+Figure 3.2.1: Collision density by road type
+
+As shown above, arterials, intersections, and expressways have the highest density of collisions. Conversely, local streets (which comprise the vast majority of our dataset) have very few collisions per mile on average.
+
+Next, let’s examine traffic control differences within intersections. Figure 3.2.2 shows that, for intersections, the presence of a traffic signal is associated with much higher average collision density. This may seem counter intuitive, as we expect that traffic signals make intersections safer. However, this is likely due to the fact that traffic signals are located in busier, high-speed intersections, and therefore are associated with more collisions.
+Figure 3.2.2: Collision density by intersection control
+
+Figure 3.2.2: Collision density by intersection control
+
+We are also interested by the effect of speed on collision density. As shown in Figure 3.2.3, collision density doesn’t increase lineary with speed. Rather, it peaks at 40-50 mph.
+Figure 3.2.3: Collision density by speed limit
+
+Figure 3.2.3: Collision density by speed limit
+
+Lastly, we examine the correlation between speed variance and collision density. As shown in Figure 3.2.4, there appears to be a slight positive relationship. However slight, this relationship is highly statistically significant according to our correlation analysis (P-value < 0.0001). The way the speed variance feature was developed is discussed in section 2.1.
+Figure 3.2.4: Collision density as function of speed variance
+
+Figure 3.2.4: Collision density as function of speed variance
+
+A full summary statistics table for each of our predictors is available in Appendix B .
+4 Feature Selection
+4.1 Feature Selection with Boruta
+
+The next step is to perform feature selection in order get rid of features which do not contribute to the accuracy of the model or may negatively affect the accuracy or interpretability of the predictions.
+
+To do so, we employ a feature-selection algorithm called “Boruta”. This algorithm analyzes each feature and either confirms or rejects its contribution to the model. The algorithm may also label features as “tentative” if it is unsure of their contribution. To learn more about Boruta, refer to this tutorial on Datacamp.
+
+After running the algorithm on our dataset, Boruta narrowed down our features to the following 37:
+Built Environment 	Road Usage/Control 	Location 	Network/Segment Characteristics
+TrafficSig 	SPEED 	Dist_Alcoh 	Intersect
+ONEWAY 	ParkingCit 	ZONING_COD 	TYPE
+avg_width 	Cite_Dens 	DISTRICT 	N_NEIGHBS
+Stop_Sign 	volume 	POP_DEN 	Var_SPEED
+SpdLim_Sig 	hevtraff 	BSNS_DENS 	Length
+Frght_R 	medtraff 	Emply_D 	
+potholes 	stndtraff 	Shop_Dn 	
+	lev1j 	Downt_Dist 	
+	lev2j 	NearArtery 	
+	lev3j 	GEOID 	
+	lev4j 		
+	congestion 		
+	hazobj 		
+	rdkill 		
+
+Unfortunately, many of the built-environment features which we are most interested in were marked as “tentative” or were rejected outright (these include BIKEWAY, rank, No_Left, Slow_Sign, Yield_Sign, Discnt_Lne). For the purposes of this analysis, and in order to continue examining our hypothesis, we will bring those variables back in to the dataset. Although we know that those features do not greatly affect our predictions, even a small effect may be important to observe.
+4.2 Multi-colinearity
+
+Some machine learning models do not perform well when predictors are too correlated (their values move together too closely). Therefore we will test the degree of correlation between our predictors and remove predictors that are severely colinear with others.
+
+The correlation matrix in Figure 4.2.1 shows that we do have issues with severe colinearity (colinearity greater than 0.8).
+Figure 4.2.1: Feature Correlation Matrix
+
+Figure 4.2.1: Feature Correlation Matrix
+
+The features we obtained from the Waze database are very highly colinear. This is maybe due to the fact that the number of alerts in each location serve as a proxy for road congestion, as well as to the difficulty of wrangling the Waze data (as discussed in section 2.2 ).
+
+To avoid having so many colinear features, we use Principal Component Analysis (PCA) to combine these features (lev3j, lev2j, lev4j, missign, rdkill, potholes, hevtraff, medtraff, stndtraff, hazobj, volume) into only two new features we call “waze.pca.1” and “waze.pca.2”.
+
+By using the PCA algorithm, we can take the different features and combine them into a smaller number of “princpal components” that capture as much information (variance) as possible from all the input features. This way, we can eliminate redundant features while minimizing the chance of unintentionally discarding valuable data. In our case, the two new features (“waze_use_1” and “waze_use_2”) capture a combined 88% of the variance which was explained by the preprocessed Waze variables. In our analysis, we consider these two new features as proxies for traffic volume and congestion.
+At the end of our feature selection process, we are left with 32 final predictors:
+Table 4.2.1: Final Predictors Built Environment 	Road Usage/Control 	Location 	Network/Segment Characteristics
+TrafficSig 	SPEED 	Dist_Alcoh 	Intersect
+ONEWAY 	ParkingCit 	ZONING_COD 	TYPE
+BIKEWAY 	Cite_Dens 	DISTRICT 	N_NEIGHBS
+rank 	waze_use_1 	POP_DEN 	Var_SPEED
+avg_width 	waze_use_2 	BSNS_DENS 	Length
+No_Left 		Emply_D 	
+Stop_Sign 		Shop_Dn 	
+Slow_Sign 		Downt_Dist 	
+SpdLim_Sig 		NearArtery 	
+Yield_Sign 		GEOID 	
+Discnt_Lne 			
+Frght_R 			
+TrafficSig 			
+5 Model Selection
+
+Now that feature selection is complete, we move on to selecting the best model for our predictions.
+5.1 Set-up
+
+To begin training and validating models, we will partition our entire street network dataset into 2 distinct sets - a training set (containing 80% of the data), and a testing set (containing 20% of the data).
+
+We will now train various models on the training set and then validate their results by predicting the dependent variable of the testing set and measuring the mean absolute error (MAE). The lower the MAE, the better the model. We will begin with simple models first, and continue to more sophisticated models if they improve our predictions substantially.
+5.2 Prediction Baseline
+
+To evaluate if and how much our models are improving over traditional collision modeling methods, we will use a simple, non-machine-learning approach as a benchmark. As we saw in section 3, road types and location within the city are highly indicative of how many accidents we can expect to observe. This makes sense, as we intuitively expect that arterials in downtown will have a higher number of accidents than a local street in an outskirt of the city.
+
+As shown in Figure 1.3.3, one of the features we have collected is ‘GEOID’. This feature corresponds to the census tract which each segment is within. There are a total of 158 census tracts within Louisville’s boundaries. Another feature we have collected is Road type- with a total of 11 distinct types.
+
+To produce our baseline, we group all our segments based on their road type and location in the city. Doing this yields a total of 1,738 separate road groups (158 locations times 11 road types). We then calculate the average collision count for each road group and assign each individual segment that average count as its predicted collision count. This method is essentially estimating the collision count of a road based on the type and location of that road in the city (ie. an arterial downtown vs a local street in a suburb). We believe that this approach represents a reasonable way of estimating how many collisions will occur on a road in a given year, and reflects a simple traditional methodology planners use to develop risk estimates.
+
+The models we build are only useful if they considerably out-perform this traditional and less complicated method.
+5.3 Model Training
+
+Table 5.3.1 below lists the models we fitted on the data, their resulting Mean Absolute Error (MAE), and their improvement over the baseline.
+Table 5.3.1: Model Results Model 	Mean Absolute Error (MAE) 	Baseline Improvement
+baseline 	0.67 	N/A
+Regression Models
+OLS 	0.77 	-15.1%
+Poisson 	0.62 	6.53%
+Penalized Regression Models
+Ridge 	0.72 	-7.53%
+Lasso 	0.69 	-4.08%
+Elastic Net 	0.7 	-5.37%
+Tree-Based Models
+CART 	0.67 	0.192%
+Random Forest 	0.54 	18.9%
+XGBoost 	0.46 	30.7%
+
+We validated a total 8 models that fit in 3 categories:
+
+Regression Models - Regression models are the simplest models we have fitted. These models attempt to fit a straight line through the data to capture the relationship between our predictors and the dependent variable. They do this by calculating the effect of a change in the predictors on the dependent variable. While simple, the benefit of linear models is that they produce results that are easily interpretable. As can be seen in the table, the Poisson variant performs considerably better, which is not surprising given that our dependent variable has a Poisson distribution.
+
+Penalized Regression Models - These models are more complex, and aim to reduce overfitting our data by making sure the predictions in the model are not overly dependent on a single predictor or only a few predictors (they penalize predictors that disproportionately influence the model). Unfortunately, these models did not perform very well on our data compared to the simpler Poisson model.
+
+Tree-Based Models - These models create a single (for CART) or many (for Random Forest and XGBoost) decision trees which create conditional “splits” in the data to arrive at their predictions. For the models which create many trees, the model averages the predictions of all the trees to create its final prediction. These models are very robust and perform quite well compared to the baseline.
+
+As may be expected, the XGBoost model , which is the most complex of the bunch, produces the best predictions, being off by less than half a crash on average.
+
+We will now see if this result is generalizable and stable across different training/test sets in our data.
+6 Cross-Validation
+
+Although the mean absolute error (MAE) of our predictions was lowest when using the XGBoost model, we need to make sure that these results are stable, generalizable, and consistent cross our data. In other words, we need to make sure that our model predicts equally well for all our observations, as opposed to predicting very well for some and more poorly for others.
+
+To evaluate the generalizability of our model, we will subsect our data in different ways and see if the results remain consistent. We will use two separate methods: K-fold CV and Spatial CV.
+6.1 K-Fold Cross-Validation
+
+The K-fold cross-validation method simply divides the entire segments dataset into a number of sections (K), or folds (in this case K = 10). Then, the formula will use 9 of the folds to train our model and predict the dependent variable of the remaining 1 fold. This process will be repeated for each of the folds, resulting in 10 different MAE’s.
+
+Our goal is to see our results from table 5.1.3 remain consistent across all the folds. That will bode well for the generalizability of our model. We will include our top 3 models in this cross-validation.
+Figure 6.1.1: 10-Fold Cross Validation
+
+Figure 6.1.1: 10-Fold Cross Validation
+
+As our 10 Fold CV results show (Figure 6.1.1), there is no significant deviation in our results from fold to fold. This means our models pass this round of cross-validation.
+6.2 Spatial Cross-Validation
+
+The spatial cross validation method is similar to the K-fold method. As K-fold, we divide the entire dataset into a number of subsects and predict the collision count for each subset, one by one, using all other subsects to train the model. This time, however, we do not divide the data into subsects randomly, but instead do it spatially based on census tracts (of which there are 159).
+
+In order to see the relative level of error from tract to tract, we calculate the percent error using only segments which had at least 1 collision in 2017.
+Figure 6.2.1: Spatial Cross Validation
+
+Figure 6.2.1: Spatial Cross Validation
+
+The map in Figure 6.2.1 shows somewhat disappointing results. It is clear that some tracts have a much larger degree of error than others, which suggests the model is not generalizable from area to area in the city. Moreover, it seems that the error values are not distributed randomly across the city. In other words, tracts with higher relative errors are near other tracts with higher relative errors, and tracts with lower errors are near tracts with lower errors. We investigate this result more in depth in section 7.3: Moran’s I
+
+Again, this indicates that we may need to continue improving our model going forward to make it more stable and generalizable from tract to tract.
+7 Model Results
+7.1 Feature Importance
+
+Now that we have selected a final model, let’s analyze its results and see what insights we can derive from them.
+
+Figure 7.1.1 shows the amount by which each of the features, colored by bucket, influences the final prediction:
+Figure 7.1.1: Feature Contribution by Bucket
+
+Figure 7.1.1: Feature Contribution by Bucket
+
+As shown by the plot, speed limit is the strongest feature in the model (meaning it is the feature used most by our model to derive its predictions). Other important features are segment length (which is not really indicative of anything in real life, but rather of our modeling choices), distance to alcohol permits, freight routes, and the Waze PCA features.
+
+While these features are the most important features which are driving predictions, they are not necessarily the most informative features for our use-case. As we postulated above, it is not surprising that large, busy roads have a higher count of collisions. We interpret this result as showing us that the model is relying primarily on features that are closely associated with the size and “busy-ness” of a road to make its predictions.
+
+Put differently, we believe that the model is relying firstly on demand-side factors, and only then looking for additional predictive power using supply-side factors. These supply-side factors are more interesting to us, because they provide insight that is more actionable for the city. Some powerful predictors, such as speed, may belong in either the supply-side or the demand-side categories. The plot below shows the feature importance, colored by demand/supply.
+Figure 7.1.2: Feature Contribution by Supply/Demand
+
+Figure 7.1.2: Feature Contribution by Supply/Demand
+
+As can be seen in Figure 7.1.2, the model is dominated by demand-side features (with the exception of SPEED that doesn’t clearly fall in either category). The supply-side feature with the biggest contribution to the model is Var_SPEED (Speed variance). This is very noteworthy, as it aligns with the academic literature that claims that combining traffic of different speeds result in higher accident rate. The next supply-side features are N_NEIGHBS (number of neighbors each segment has) and rank (road condition score). Studying these features closer can be a useful and advisable next step for Louisville, as they may unlock actionable insight into collision reduction in the city.
+
+It is extremely important to keep in mind that features may not exclusively measure only what we think they do- often, features act as proxies for other measures. For example, distance to alcohol might be so predictive because it actually measures proximity to busy commercial areas. These kind of measurement issues are very hard to detect and prove, and therefore we can not claim any causal relationships betwee the predictors and the dependent variable without scientifically studying each predictor separately.
+7.2 Plotting Results
+
+In this section we will analyze our model’s predictions.
+
+We will use the trained model to make predictions on our testing dataset and evaluate the results in detail.
+Figure 7.2.1: Residual Distribution
+
+Figure 7.2.1: Residual Distribution
+
+Plot 7.2.1 shows the distribution of residuals (error amount) in our predictions. The residuals distribution bodes fairly well for the model, as it is highly clustered around 0. However, there does seem to be a strange pattern emerging on the positive side of the plot, with repeating peaks in regular intervals. This is something we’d like to explore further in the future.
+Figure 7.2.2: Predicted as a function of observed
+
+Figure 7.2.2: Predicted as a function of observed
+
+The plot above (Figure 7.2.2) shows how correlated the predictions are with the observed values. The plot shows that a correlation certainly exists and also indicates that the model performs better when predicting lower values. As we move from the left to the right along the x-axis (from lower to higher values), the predicted and observed values become less and less correlated with each other.
+
+Next, let’s look at how the error amount (residuals) change with the observed values.
+Figure 7.2.3: Errors as a function of Observed
+
+Figure 7.2.3: Errors as a function of Observed
+
+Ideally, our model’s errors will be random and not display any patterns across the observed value range. Unfortunately, the plots in figure 7.2.3 indicate that the errors are not totally random.
+
+As with the previous plot, the left plot in Figure 7.2.3 indicates that our model’s errors are lower, in absolute terms, when predicting lower values. This is not surprising, though, as even being really wrong when predicting small values would only result in small error values relatively speaking. We also plot the percent error for segments with observed collision counts greater than 0 in the right plot of Figure 7.2.3. Here, we can see that, in relative terms, the model performs comprably even for high values. However, now we see that a large portion of the low risk segments are being over-predicted for by a great amount (almost by 10 times for a handful).
+
+This pattern in the models’ errors is something we’d like to continue exploring in the future.
+7.3 Moran’s I
+
+Another way to check for randomness is to see whether the errors are also randomly distributed in space. To do this, we can use a statistical test called Moran’s I .
+
+For this test, we only use segments with observed collision count greater than 0. Ideally, the test will show that the relative errors are not clustered in space, thus indicating that the model is not missing some spatial information.
+Figure 7.3.1: Moran's I Test
+
+Figure 7.3.1: Moran’s I Test
+
+Unfortunately, the Moran’s I test shows that the spatial clustering of the relative errors is, in fact, statistically significant (due to our data’s test statistic, indicated by the red line, being far greater than the expected random distribution). This means that our model still lacks an unknown spatial predictor to account for spatial dynamics of our data. Again, this is something that we would like to explore further in the future.
+7.4 Mapping The Results
+
+Finally, let’s plot our predictions on the street grid. As we mentioned before, we are interested in relative risk rather than raw collision count predictions. Therefore, we will normalize the model’s count predictions by the segment length to generate a collision-density prediction as a proxy for risk score. Figure 7.4.1 shows the way our model distributed risk across the street grid.
+Figure 7.4.1: Collision Risk Prediction
+
+Figure 7.4.1: Collision Risk Prediction
+
+It is possible to see how risk is concentrated in areas of heavy traffic flow such as downtown, the freeways, and the city’s main arterials.
+
+Let’s zoom in to take a closer look at the predictions in comparison to the observed values.
+Taking a closer look
+Downtown:
+Figure 7.4.2: Downtown Close-Up
+
+Figure 7.4.2: Downtown Close-Up
+
+Looking more closely, it is striking how similar the model’s risk prediction is to the actual collision density, despite being a little off at the margins. Even though the model is not always able correctly predict exact counts, it is clear that it has captured the spatial distribution of risk extremely well. However, as we saw in section 6.2 , the model perfoms better in certain urban contexts and worse in other.
+
+It is clear that intersection have a greater collision risk than connecting segments. Additionally, it is visible that the model discerns well between road types, with main arterials showing the highest risk scores.
+Bardstown Road:
+Figure 7.4.3: Bardstown Rd. Close-Up
+
+Figure 7.4.3: Bardstown Rd. Close-Up
+Johnsontown Area:
+Figure 7.4.4: Johnsontown Area Close-Up
+
+Figure 7.4.4: Johnsontown Area Close-Up
+8 Conclusion and Next Steps
+
+In this reseach project, we developed a model that is able to predict collision counts in Louisville’s road network with high accuracy (over 30% increase over traditional methods). Perhaps more importantly, we are able to see how the model arrived at its predictions, and thereby obtain insights into risk-factor combinations that may be predictive of increased collision risk. Our focus was on exploring how built-environment factors may affect this collision risk.
+
+As shown in Figure 6.1.2, our model is highly reliant on what we refer to as demand-side factors. The contribution of built-environment factors to the predictions was low, with speed variance, number of connecting segments, and pavement condition score contributing the most influence. Despite their relatively smaller contribution to the model, these features provide insights for actionable strategies for the city to combat traffic collisions.
+
+Road speed was the feature which contributed most to the model’s predictions, however is it not clear to us whether that is because certain speeds are more dangerous, or because they are associated with other factors. Further investigation will be necessary to understand how this knowledge can become actionable for the city. Looking forward, we would change our study design to better normalize for demand-side factors in the dependent variable, therefore better capturing small changes in risk created by the built-environment (supply-side).
+
+In the future, we’d also like to improve our model’s accuracy and generalizability. Currently, the model’s errors show us that there are spatial and non-spatial elements that are missing from our analysis. We’d like to continue exploring what might those be, and we can incorporate them in the future. We believe that replicating our method, but with more varied data from more cities, may unlock the key to better understanding Louisville’s and other cities’ road networks, which will facilitate more robust predictions in the future.
+
+To interactively explore the data and predictions which we have compiled through this project, we invite you to visit our online app .
+Appendices
+Appendix A: Data Glossary
+Variable Name 	Description 	File 	Source 	How is it Created
+Count_2017 	Continuous. Count of collisions per segment in year 2017 	Street Centerline File/ 2016&2017 collisions shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/street-centerline https://data.louisvilleky.gov/dataset/traffic-collisions 	ArcGIS (Spatial Join)
+Count_2016 	Continuous. Count of collisions per segment in year 2016 	Street Centerline File/ 2016&2017 collisions shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/street-centerline https://data.louisvilleky.gov/dataset/traffic-collisions 	ArcGIS( Spatial Join)
+Intersect 	Binary. 1 is intersection, 0 is not intersection. 	Street Centerline File 	Louisville Open Data: https://data.louisvilleky.gov/dataset/street-centerline 	ArcGIS (Network Analyst, 35-foot Buffer, Clip, Dissolve )
+SPEED 	Continuous. posted speed limit for each segment 	Street Centerline File 	Louisville Open Data: https://data.louisvilleky.gov/dataset/street-centerline 	R (aggregate function)
+Var_SPEED 	Continuous. The variance in speed values of the touching segments 	Street Centerline File 	Louisville Open Data: https://data.louisvilleky.gov/dataset/street-centerline 	ArcGIS (Near Table) , R
+TrafficSig 	Binary. 1 is signalized intersection, 0 is not signalized intersection. 	List of signalized intersections file. 	Louisville Open Data: https://data.louisvilleky.gov/dataset/traffic-signs 	R (Geocoded ggmap), ArcGIS (Near Table)
+ONEWAY 	Binary. 1 is one way street, 0 is not one-way street. 	Street Centerline File 	Louisville Open Data: https://data.louisvilleky.gov/dataset/street-centerline 	Original data (changed words to 1 and 0)
+TYPE 	Categorical. Road type classification 	Street Centerline File 	Louisville Open Data: https://data.louisvilleky.gov/dataset/street-centerline 	Original data
+BIKEWAY 	Binary. 1 is bikeway present. 0 is not present. 	Louisville Bikeway shapefile 	Louisville Open Data: http://data.lojic.org/datasets/jefferson-county-ky-bikeways 	ArcGIS (Near Table).
+QtM_Police 	Binary. 1 is within quarter mile of police station. 0 is not. 	Louisville Police Locations shapefile 	Louisville Open Data: http://data.lojic.org/datasets/jefferson-county-ky-police-stations 	ArcGIS (Buffer)
+QtM_School 	Binary. 1 is within quarter mile of school. 0 is not. 	Mapzen amenities building shapefile 	https://mgottholsen.carto.com/tables/k_12_schools/public 	ArcGIS (Buffer)
+Rd_Char 	Categorical. Road Character as described in accidents shapefile 	2017 collisions shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/traffic-collisions 	ArcGIS (Near Table), R
+rank 	Categorical. Pavement Condition Score. 	PCI Shapefile 	carto: https://louisvillemetro-ms.carto.com/tables/pavement_condition_index_071817/public 	ArcGIS (Spatial Join)
+Dist_Alcoh 	Continuous. Distance from location with active alcohol serving license. 	Louisville Permits shapefile 	Louisville Open Data:https://data.louisvilleky.gov/dataset/form-districts 	ArcGIS (Near Table).
+ZONING_COD 	Categorical. Zoning designation at segment location. 	Louisville Zoning shapefile 	Louisville Open Data: http://data.lojic.org/datasets/jefferson-county-ky-zoning 	ArcGIS (Spatial Join)
+avg_width 	Continuous. Average width of road segment 	PCI Shapefile 	carto: https://louisvillemetro-ms.carto.com/tables/pavement_condition_index_071817/public 	ArcGIS (Spatial Join)
+No_Left 	Binary. Intersections which are near “No Left Turn” signs 	Signs shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/traffic-signs 	ArcGIS (Near Table).
+Stop_Sign 	Binary. Segments which are near “Stop Sign” signs 	Signs shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/traffic-signs 	ArcGIS (Near Table).
+Slow_Sign 	Binary. Segments which are near “Slow Sign” signs 	Signs shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/traffic-signs 	ArcGIS (Near Table).
+SpLim_Sign 	Binary. Segments which are near speed limit signs 	Signs shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/traffic-signs 	ArcGIS (Near Table).
+Yield_Sign 	Binary. Segments which are near “Yield” signs 	Signs shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/traffic-signs 	ArcGIS (Near Table).
+Discnt_Lne 	Binary. Segments with signs that indicate the lane is ending or turning. 	Signs shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/traffic-signs 	ArcGIS (Near Table).
+DISTRICT 	Categorical. Form District Designation 	Form Districts shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/form-districts 	ArcGIS (Spatial Join)
+POP_DEN 	Continous. Population Density. 	2010 Census 	Louisville Open Data: Census Data 	tidycensus, BG population/BG area.
+BUS_RT 	Binary. 1 for bus route, 0 for no bus route. 	KIPDA transit routes 	Louisville Open Data: http://data.lojic.org/datasets/2e1994fd95bb48c393f90d1a54ab39c8_1 	ArcGIS (Near Table).
+BSNS_DENS 	Continuous. Business Density 	Louisville businesses shapefile. 	carto: https://mgottholsen.carto.com/tables/businesses/public 	ArcGIS (Kernel Density, Reclassify)
+Length 	Continuous. Length of each segment in miles. 	Louisville Centerlines shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/street-centerline 	Calculated in ArcGIS
+COLS_MILE 	continuous. Collisions per mile. 	Louisville Centerlines shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/street-centerline 	collisions/ length
+Emply_D 	Binary: if segements are located in employment high density area (1=yes, 0 =no) 	Employment_Hi_Density shapefile 	carto: https://mgottholsen.carto.com/tables/businesses/public 	ArcGIS (Spatial Join)
+Shop_Dn 	Binary: if segements are located in shopping high density area (1=yes, 0 =no) 	Shopping_Hi_Density shapefile 	carto: https://mgottholsen.carto.com/tables/businesses/public 	ArcGIS (Spatial Join)
+Frght_R 	Binary: 1 for freight route, 0 for no freight route 	mpo_greight_upd shapefile 		ArcGIS (Near Table).
+N_NEIGHBS 	Continuous. Number of adjacent segments 	Centerline shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/street-centerline 	ArcGIS (Near Table), R (aggregate)
+Light_Dens 	Continuous. Street Light Density 	Light Emitting Devices Shapefile 	https://data.louisvilleky.gov/search/type/dataset 	ArcGIS (Kernel Density, Reclassify)
+ParkingCit 	Continuous. Number of parking citations 	parking citations list 	https://data.louisvilleky.gov/dataset/street-parking-citation-collections 	R (Geocod), ArcGIS (Near Table)
+Cite_Dens 	Continuous. Parking Citation Density 	parking citations list 	https://data.louisvilleky.gov/dataset/street-parking-citation-collections 	R (Geocod), ArcGIS (Kernel Density)
+Downt_Dist 	Continuous. Distance to CBD 	NA 		ArcGIS
+NearArtery 	Categorical. Name of major artery within 1 km, if one exists. 	Centerline shapefile with road classifications 	Louisville Open Data: https://data.louisvilleky.gov/dataset/street-centerline 	R, ArcGIS(Dissolve, Near Table)
+has_colls 	Binary: 1 for collision, 0 for no freight collision counts 	2017 collisions shapefile 	Louisville Open Data: https://data.louisvilleky.gov/dataset/traffic-collisions 	R
+volume 	Continuous. Traffic Volume to the nearest segment 	Waze Data 		
+congestion 	Continuous. Congestion density to the nearest segment 	Waze Data 		
+potholes 	Continuous. Number of potholes for each segment 	Waze Data 		
+rdkill 	Continuous. Number of roadkill 	Waze Data 		
+missign 	Continuous. Number of missing signs on shoulder 	Waze Data 		
+hazobj 	Continuous. Number of hazard object on road 	Waze Data 		
+hevtraff 	Continuous. Heavy traffic 	Waze Data 		
+medtraff 	Continuous. Medium traffic 	Waze Data 		
+stndtraff 	Continuous.Stand still traffic 	Waze Data 		
+lev1j 	Continuous. Level 1 traffic jam scores 	Waze Data 		
+lev2j 	Continuous. Level 2 traffic jam scores 	Waze Data 		
+lev3j 	Continuous. Level 3 traffic jam scores 	Waze Data 		
+lev4j 	Continuous. Level 4 traffic jam scores 	Waze Data 		
+Ave_delay 	Continuous. Average delay by segment 	Waze Data 		Take 3 nearest points per segment, averaging the delay results
+Appendix B: Summary Statistics
+Summary Statistics
+	Statistic
+	mean 	sd 	median 	min 	max
+TrafficSig 	0.02 	0.12 	0 	0 	1
+ONEWAY 	0.06 	0.23 	0 	0 	1
+BIKEWAY 	1.03 	0.17 	1 	1 	2
+avg_width 	25.67 	9.06 	24 	8 	158
+No_Left 	1 	0.05 	1 	1 	2
+Stop_Sign 	0.18 	0.38 	0 	0 	1
+Slow_Sign 	0 	0.06 	0 	0 	1
+SpdLim_Sig 	0.16 	0.37 	0 	0 	1
+Yield_Sign 	0.01 	0.09 	0 	0 	1
+Discnt_Lne 	0 	0.05 	0 	0 	1
+Frght_R 	0.07 	0.26 	0 	0 	1
+SPEED 	28.26 	7.3 	25 	15 	65
+ParkingCit 	0.38 	5.22 	0 	0 	276
+Cite_Dens 	2.41 	7.86 	1 	0 	100
+Dist_Alcoh 	710.26 	706.96 	532.57 	4.15 	8692.23
+POP_DEN 	3504.35 	2552.84 	3100.74 	0 	16385.36
+BSNS_DENS 	41.35 	35.25 	40 	0 	100
+Emply_D 	0.21 	0.41 	0 	0 	1
+Shop_Dn 	0.06 	0.24 	0 	0 	1
+Downt_Dist 	12895.94 	6911.95 	13206.7 	9.01 	32370.9
+Intersect 	0.29 	0.45 	0 	0 	1
+N_NEIGHBS 	2.36 	0.62 	2 	2 	8
+Var_SPEED 	9.76 	31.74 	0 	0 	833.33
+Length 	0.07 	0.12 	0.03 	0 	3.43
+Count_2017 	0.58 	2.47 	0 	0 	151
+waze_use_1 	0 	2.85 	-0.74 	-2.71 	23.94
+waze_use_2 	0 	1.55 	0.07 	-15.6 	3.18
+lev3j 	46.43 	32.1 	47 	0 	100
+lev1j 	44.47 	31.79 	44.5 	0 	100
+lev2j 	49.42 	31.75 	51 	0 	100
+lev4j 	44.12 	32.17 	43.5 	0 	100
+missign 	7.14 	13.96 	2 	0 	100
+rdkill 	5.15 	10.03 	2 	0 	100
+potholes 	4.66 	9.18 	2 	0 	100
+hevtraff 	4.49 	8.77 	2 	0 	100
+medtraff 	4.48 	8.78 	2 	0 	100
+stndtraff 	4.44 	8.72 	2 	0 	100
+hazobj 	4.44 	8.83 	2 	0 	100
+volume 	31.17 	24.39 	24 	1 	100
+Appendix C: Source Code
+
+ library (caret) library (glmnet) library (Metrics) library (ggplot2) library (sf) library (dplyr) library (tidyverse) library (ggmap) options(scipen= 999 ) # 1 Introduction Crashes <- st_read( "Crashes.shp" ) LouisvilleBoundary <- st_read( "LouisvilleBoundary.shp" ) #Setup map theme mapTheme <- function (base_size = 12 ) { theme( text = element_text( color = "black" ), plot.title = element_text(size = 14 ,colour = "black" ), plot.subtitle=element_text(face= "italic" ), plot.caption=element_text(hjust= 0 ), axis.ticks = element_blank(), panel.background = element_blank(),axis.title = element_blank(), axis.text = element_blank(), axis.title.x = element_blank(), axis.title.y = element_blank(), panel.grid.minor = element_blank(), panel.border = element_rect(colour = "black" , fill= NA , size= 1 ) ) } baseMap1 <- get_googlemap( "Poplar Hills, KY" , source = "stamen" , zoom = 10 , maptype= 'roadmap' , color = 'bw' , size = c( 600 , 400 )) library (maptools) LouisvilleBoundary <- readShapeSpatial( "LouisvilleBoundary.shp" ) LouisvilleBoundary <- fortify(LouisvilleBoundary) ggmap(baseMap1) + geom_polygon(data=LouisvilleBoundary, aes(x = long, y = lat, group = group), fill= 'white' , colour= 'black' , size= 0.2 , alpha = 0.5 ) + geom_point(data = Crashes, aes(x=GPS_LONGIT, y=GPS_LATITU, fill = 'Crash \nLocations' ), color= 'red' , size = 0.1 ) + theme(legend.title=element_blank(), legend.position = c( 0.89 , 0.95 ), legend.background = element_rect(color = "black" , fill = "grey90" , size = 0.2 , linetype = "solid" )) + labs(title= "2017 Crash Locations" , subtitle = "Louisville, KY" ) + mapTheme() ## 1.1 Abstract library (ggmap) baseMap2 <- get_map(location = "Bardstown Rd and Grinstead Drive, Louisville, KY" , source = "google" , zoom = 17 , maptype= 'hybrid' , color = 'bw' ) baseMap3 <- get_map(location = "Downtown Louisville, KY" , source = "google" , zoom = 17 , maptype= 'hybrid' , color = 'bw' ) ggmap(baseMap2) + geom_point(data = Crashes, aes(x=GPS_LONGIT, y=GPS_LATITU), color= 'red' , size = 1 ) + mapTheme() ggmap(baseMap3) + geom_point(data = Crashes, aes(x=GPS_LONGIT, y=GPS_LATITU, fill = "Crash \nLocations" ), color= 'red' , size = 1 ) + mapTheme() + theme(legend.title=element_blank(), legend.position = c( 0.89 , 0.95 ), legend.background = element_rect(color = "black" , fill = "grey90" , size = 0.1 , linetype = "solid" )) ## 1.4 Modeling strategy segments <- st_read( "segments_3_21.shp" ) Predictors <- segments %>% as.data.frame %>%dplyr::select(-FID_1, -geometry) colnames(Predictors) ### 2.1 Encoding Network Structure NetworkTbl_int <- read_csv( 'NetworkData_int.csv' ) NetworkTbl_rd <- read_csv( 'NetworkData_roads.csv' ) NetworkTbl <- rbind(NetworkTbl_int, NetworkTbl_rd) NT <- dplyr::select(NetworkTbl, FID_1, FID_12_13) colnames(NT) <- c( 'FID_1' , 'Neighb_ID' ) NT <- NT[order(NT$FID_1),] NT_Table <- head(NT, n = 10 ) colnames(NT_Table) <- c( "Segment ID" , "Neighbor ID" ) kable(NT_Table, "html" ) %>% kable_styling( "hover" ) %>% kable_styling(bootstrap_options = "striped" , font_size = 12 ) #merge speed limit to the network table NT <- merge(x = NT, y = segments[,c( 'FID_1' , 'SPEED' )], by.x= 'Neighb_ID' , by.y= 'FID_1' , All = TRUE ) #aggregate speeds by variance Speed_Vars <- aggregate(NT$SPEED, by=list(Category=NT$FID_1), FUN=var) #clean up NAs Speed_Vars[is.na(Speed_Vars)] <- 0 #merge back into dataset segments <- merge(segments, Speed_Vars[,c( 'Category' , 'x' )], by.x= 'FID_1' , by.y= 'Category' , all.x = TRUE ) segments$Var_SPEED <- segments$x segments$x <- NULL Speed_Vars <- segments %>% as.data.frame %>% dplyr::select(FID_1, Var_SPEED) Var_Table <- head(Speed_Vars[order(Speed_Vars$FID_1),], n= 10 ) colnames(Var_Table) <- c( "Segment ID" , "Speed Variance Experienced" ) kable(Var_Table, "html" ) %>% kable_styling( "hover" ) %>% kable_styling(bootstrap_options = "striped" , font_size = 12 ) # 3 Exploratory Analysis ## 3.1 The Distribution of Collisions library (scales) library (gridExtra) hist <- ggplot(segments, aes(x=Count_2017)) + geom_histogram(bins = 80 ) +xlim(- 1 , 75 ) + ylab( "Number of Segments" ) + ggtitle( "Collision Count Distribution" ) + xlab( "Collision Count (2017)" ) hist_log <- ggplot(segments, aes(x=Count_2017)) + geom_histogram(bins = 50 ) +xlim(- 1 , 75 ) + ggtitle( "Collision Count Distribution (Log-Scale)" ) + ylab( "Number of Segments" ) + xlab( "Collision Count (2017)" ) + scale_y_continuous(trans = log_trans(), breaks = c( 0 , 10 , 100 , 1000 , 10000 )) grid.arrange(hist,hist_log, heights=unit( 0.75 , "npc" ), ncol= 2 ) mapTheme <- function (base_size = 12 ) { theme( text = element_text( color = "black" ), plot.title = element_text(size = 14 ,colour = "black" ), plot.subtitle=element_text(face= "italic" ), plot.caption=element_text(hjust= 0 ), axis.ticks = element_blank(), panel.background = element_rect(fill = "black" ), axis.title = element_blank(), axis.text = element_blank(), axis.title.x = element_blank(), axis.title.y = element_blank(), panel.grid.minor = element_blank(), panel.grid.major = element_blank(), panel.border = element_rect(colour = "black" , fill= NA , size= 2 ), legend.position = c( 0 , 1 ), legend.justification = c( 0 , 1 ), legend.background = element_rect(colour = NA , fill = "black" ), legend.title = element_text(colour = "white" ), legend.text = element_text(colour = "white" ) ) } library (viridis) ggplot() + geom_sf(data = segments, aes(fill=cut(Count_2017, c(- Inf , 0 , 1 , 5 , 10 , Inf )))) + scale_fill_viridis( "Collision Count in 2017" , discrete = TRUE , direction = 1 , option= "viridis" , labels = c( "0" , "1" , "2-5" , "6-10" , "10 or more" )) + ggtitle( "Spatial Distribution of Collisions" ) + scale_color_viridis( "" , discrete = TRUE , direction = 1 , option= "viridis" , labels = c( "0" , "1" , "2-5" , "6-10" , "11 or more" )) + geom_sf(data = segments, aes(colour=cut(Count_2017, c(- Inf , 0 , 1 , 5 , 10 , Inf ))), size = 0.1 , show_guide= FALSE ) + mapTheme() tracts <- st_read( "tracts.shp" ) ggplot() + geom_sf(data = tracts, aes(fill=Avg_abs_re)) + scale_fill_viridis( "Average Collision/Mile in 2017" , direction = 1 , option= "viridis" ) + ggtitle( "Spatial Distribution of Collision Density by Tract" ) + mapTheme() ## 3.2 Examining our Predictors library (dplyr) type_means_df <- segments %>% group_by(TYPE) %>% summarise(me = mean(COLS_MILE)) ggplot(type_means_df, aes(x=reorder(TYPE, -me), y=me)) + geom_bar(stat= "identity" , fill = "#4682b4" ) + theme(axis.text.x = element_text(angle = 45 , hjust = 1 )) + labs(title= "Average Collisions/Mile by Segment Type" ,y = 'Average Collisions/Mile' , x = 'Segment Type' ) Intersections <- segments[segments$Intersect == 1 ,] Intersections$Control <- ifelse( Intersections$TrafficSig == 1 , "Signal" , ifelse( Intersections$Stop_Sign == 1 , "Stop_Sign" , ifelse( Intersections$Yield_Sign == 1 , "Yield_Sign" , "None" ) )) control_means_df <- Intersections %>% group_by(Control) %>% summarise(me = mean(COLS_MILE)) ggplot(control_means_df, aes(x=reorder(Control,-me), y=me)) + geom_bar(stat= "identity" , fill = "#4682b4" ) + theme(axis.text.x = element_text(angle = 45 , hjust = 1 )) + labs(title= "Intersection Average Collisions/Mile by Control Type" ,y = 'Average Collisions/Mile' , x = 'Intersection Control' ) Edges <- segments[segments$Intersect == 0 ,] speed_means_df <- Edges %>% group_by(SPEED) %>% summarise(me = mean(COLS_MILE)) ggplot(speed_means_df, aes(x=SPEED, y=me)) + geom_bar(stat= "identity" , fill = "#4682b4" ) + theme(axis.text.x = element_text()) + labs(title= "Average Collisions/Mile by Speed Limit" ,y = 'Average Collisions/Mile' , x = 'Speed Limit (MPH)' ) ggplot(segments[segments$Intersect == 1 ,], aes(y=COLS_MILE, x=Var_SPEED)) + geom_point() + geom_smooth(method= "lm" ) + theme(axis.text.x = element_text()) + labs(title= "Average Collisions/Mile vs Speed Variance" ,y = 'Collisions/Mile' , x = 'Speed Variance' ) # 4 Feature Selection ## 4.1 Feature Selection with Boruta # run Boruta analysis boruta.train <- Boruta(Count_2017 ~ ., data = training %>% as.data.frame %>% dplyr::select(built_env, usage, location, network, misc), doTrace = 0 ) # save selected features borutaVars <- getSelectedAttributes(boruta.train) built_env <- c( "TrafficSig" , "ONEWAY" , "BIKEWAY" , "rank" , "avg_width" , "No_Left" , "Stop_Sign" , "Slow_Sign" , "SpdLim_Sig" , "Yield_Sign" , "Discnt_Lne" , "Frght_R" , "potholes" , "missign" ) usage <- c( "SPEED" , "ParkingCit" , "Cite_Dens" , "volume" , "hevtraff" , "medtraff" , "stndtraff" , "lev1j" , "lev2j" , "lev3j" , "lev4j" , "hazobj" , "rdkill" ) location <- c( "Dist_Alcoh" , "ZONING_COD" , "DISTRICT" , "POP_DEN" , "BSNS_DENS" , "Emply_D" , "Shop_Dn" , "Downt_Dist" , "NearArtery" , "GEOID" ) network <- c( "Intersect" , "TYPE" , "N_NEIGHBS" , "Var_SPEED" , "Length" ) dont_include <- c( "COLS_MILE" , "Count_2016" , "geometry" , "FID_1" , "Count_2017" ) ## 4.2 Multi-colinearity library (dplyr) segments <- st_read( "segments_3_21.shp" ) segments <- segments %>% dplyr::select(built_env, usage, location, network, Count_2017) ## identify Numeric Feature Names num_features <- names(which(sapply(segments, is.numeric))) segments_num <- segments %>% as.data.frame %>% dplyr::select(num_features) #Correlation Matrix CorMatrix <- cor(segments_num) library (corrplot) corrplot(CorMatrix, method = "color" , order = "AOE" , addCoef.col= "grey" , addCoefasPercent = FALSE , number.cex = .7 ) library (FactoMineR) library (factoextra) waze_vars <- subset(as.data.frame(segments), select = c( 'lev3j' , 'lev1j' , 'lev2j' , 'lev4j' , 'missign' , 'rdkill' , 'potholes' , 'hevtraff' , 'medtraff' , 'stndtraff' , 'hazobj' , 'volume' )) waze_usage.pca <- PCA(waze_vars, scale.unit = TRUE , ncp = 2 ) eig.val <- get_eigenvalue(waze_usage.pca) segments <- cbind.data.frame(segments,waze_usage.pca$ind$coord) segments <- segments %>% dplyr::select(-lev3j, -lev1j, -lev2j, -lev4j, -missign, -rdkill, -potholes, -hevtraff, -medtraff, -stndtraff, -hazobj, -volume) names(segments)[names(segments) == 'Dim.1' ] <- 'waze_use_1' names(segments)[names(segments) == 'Dim.2' ] <- 'waze_use_2' segments$Row.names <- NULL library (kableExtra) built_env <- c( "TrafficSig" , "ONEWAY" , "BIKEWAY" , "rank" , "avg_width" , "No_Left" , "Stop_Sign" , "Slow_Sign" , "SpdLim_Sig" , "Yield_Sign" , "Discnt_Lne" , "Frght_R" ) usage <- c( "SPEED" , "ParkingCit" , "Cite_Dens" , "waze_use_1" , "waze_use_2" ) location <- c( "Dist_Alcoh" , "ZONING_COD" , "DISTRICT" , "POP_DEN" , "BSNS_DENS" , "Emply_D" , "Shop_Dn" , "Downt_Dist" , "NearArtery" , "GEOID" ) network <- c( "Intersect" , "TYPE" , "N_NEIGHBS" , "Var_SPEED" , "Length" ) # 5 Model Selection ## 5.1 Set-up set.seed( 888 ) segments <- segments %>% as.data.frame %>% dplyr::select(built_env, usage, location, network, Count_2017) partition <- createDataPartition(y=segments$GEOID ,p= .80 ,list= F ) training <- segments[partition,] testing <- segments[-partition,] ## 5.2 Prediction Baseline Type_Averages <- aggregate(Count_2017~TYPE+GEOID, segments, mean) colnames(Type_Averages) <- c( "TYPE" , "GEOID" , "Type_Est" ) segment_baseline <- merge(x = segments, y = Type_Averages, by = c( "GEOID" , "TYPE" )) baseline <- mae(segment_baseline$Type_Est, segment_baseline$Count_2017) ## 5.3 Model Validation fit_ols <- lm(Count_2017 ~ ., data = training) y_hat_ols <- predict(fit_ols,testing) ols_mae <- mae(testing$Count_2017, y_hat_ols) #Poisson fit_poisson <- glm(Count_2017 ~ ., data = training, family= "poisson" ) y_hat_poisson <- predict(fit_poisson,testing, type = "response" ) pois_mae <- mae(testing$Count_2017, y_hat_poisson) ## Try Ridge fit.ridge.cv <- cv.glmnet(data.matrix(training %>% as.data.frame %>% dplyr::select(-Count_2017)), training$Count_2017, alpha= 0 ,type.measure= "mae" ) y_hat_l2 <- predict.cv.glmnet(fit.ridge.cv,data.matrix(testing %>% as.data.frame %>% dplyr::select(-Count_2017))) ridge_mae <- mae(testing$Count_2017, y_hat_l2) ## Try Lasso fit.lasso.cv <- cv.glmnet(data.matrix(training %>% as.data.frame %>% dplyr::select(-Count_2017)), training$Count_2017, alpha= 1 ,type.measure= "mae" ) y_hat_l1 <- predict.cv.glmnet(fit.lasso.cv,data.matrix(testing %>% as.data.frame %>% dplyr::select(-Count_2017))) las_mae <- mae(testing$Count_2017, y_hat_l1) ## Try Elastic Net fit.net.cv <- cv.glmnet(data.matrix(training %>% as.data.frame %>% dplyr::select(-Count_2017)), training$Count_2017, alpha= 0.5 ,type.measure= "mae" ) y_hat_l1l2 <- predict.cv.glmnet(fit.net.cv,data.matrix(testing %>% as.data.frame %>% dplyr::select(-Count_2017))) enet_mae <- mae(testing$Count_2017, y_hat_l1l2) ## Try CART library (rpart) fit_tree <- rpart(Count_2017 ~ . , minsplit = 100 , maxdepth = 15 , data=training) y_hat_tree <- predict(fit_tree,testing) tree_mae <- mae(testing$Count_2017, y_hat_tree) require (randomForest) fit_rf30 <- randomForest(Count_2017 ~ . , method= "poisson" , ntree = 30 , na.action = na.exclude , data=training %>% as.data.frame %>% dplyr::select(-NearArtery, -GEOID)) y_hat_rf30 <- predict(fit_rf30,testing) rf_mae <- mae(testing$Count_2017, y_hat_rf30) library (xgboost) set.seed( 777 ) XGB_data <- data.matrix(training %>% as.data.frame %>% dplyr::select(-Count_2017)) fit_xgb <- xgboost(XGB_data, training$Count_2017 , max_depth = 10 , eta = 0.05 , nthread = 2 , nrounds = 1000 , subsample = .7 , colsample_bytree = 0.9 , booster = "gbtree" , eval_metric = "mae" , objective= "count:poisson" , base_score = 0.56 , silent = 1 ) y_hat_xgb <- predict(fit_xgb, data.matrix(testing %>% as.data.frame)) xgb_mae <- mae(testing$Count_2017, y_hat_xgb) library (scales) #storing the results results <- data.frame() base <- c( "baseline" , round(baseline, 2 ), "N/A" ) ols <- c( "OLS" , round(ols_mae, 2 ), percent((baseline-ols_mae)/baseline)) pois <- c( "Poisson" , round(pois_mae, 2 ), percent((baseline-pois_mae)/baseline)) ridge <- c( "Ridge" , round(ridge_mae, 2 ), percent((baseline-ridge_mae)/baseline)) lass <- c( "Lasso" , round(las_mae, 2 ), percent((baseline-las_mae)/baseline)) elnet <- c( "Elastic Net" , round(enet_mae, 2 ), percent((baseline-enet_mae)/baseline)) tree <- c( "CART" , round(tree_mae, 2 ), percent((baseline-tree_mae)/baseline)) rf <- c( "Random Forest" , round(rf_mae, 2 ), percent((baseline-rf_mae)/baseline)) xgb <- c( "XGBoost" , round(xgb_mae, 2 ), percent((baseline-xgb_mae)/baseline)) results <- rbind(base, ols, pois, ridge, lass, elnet, tree, rf, xgb) rownames(results) <- c() colnames(results) <- c( "Model" , "Mean Absolute Error (MAE)" , "Baseline Improvement" ) library (dplyr) library (kableExtra) results %>% kable( "html" , caption = "Table 5.3.1: Model Results" ) %>% kable_styling( "hover" ) %>% group_rows( "Regression Models" , 2 , 3 , label_row_css = "background-color: #666; color: #fff;" ) %>% group_rows( "Penalized Regression Models" , 4 , 6 , label_row_css = "background-color: #666; color: #fff;" ) %>% group_rows( "Tree-Based Models" , 7 , 9 , label_row_css = "background-color: #666; color: #fff;" ) %>% row_spec( 0 , bold = T , color = "white" , background = "#000000" ) %>% row_spec( 9 , background = "#88C7C1" ) # Cross-Validation fitControl <- trainControl(method = "cv" , number = 10 ) set.seed( 555 ) #set seed for random number generator #Poisson 10-FOLD CV glmFit <- train(Count_2017 ~ ., data = segments %>% as.data.frame %>% dplyr::select(-NearArtery, -GEOID), method = "glm" , family = "poisson" , trControl = fitControl, na.action=na.exclude) glmFit_Tbl <- as.data.frame(glmFit$resample) #Random Forest 10-FOLD CV rfFit <- train(Count_2017 ~ ., data = segments %>% as.data.frame %>% dplyr::select(-NearArtery, -GEOID) , method = "rf" , ntree = 15 , trControl = fitControl, na.action=na.exclude, metric = "MAE" , maximize = F ) rfFit_Tbl <- as.data.frame(rfFit$resample) #XGB 10-FOLD CV fitControl <- trainControl(method = "cv" , number = 10 ) XGB_data <- segments %>% as.data.frame tuneGrid <- data.frame(nrounds = 800 , max_depth = 10 , eta = 0.02 , gamma = 0 , colsample_bytree = .7 , min_child_weight = 1 , subsample = .7 ) xgbFit <- train(Count_2017 ~ ., data = XGB_data, method = "xgbTree" , trControl = fitControl, na.action=na.exclude, tuneGrid = tuneGrid, metric = "MAE" , maximize = F ) xgbFit_Tbl <- as.data.frame(xgbFit$resample) #merge all results into one table CV_table <- list(glmFit_Tbl[,c( "MAE" , "Resample" )],rfFit_Tbl[,c( "MAE" , "Resample" )],xgbFit_Tbl[,c( "MAE" , "Resample" )]) %>% Reduce( function (df1,df2) inner_join(df1,df2,by= "Resample" ), .) colnames(CV_table) <- c( "Poisson" , "Fold" , "Random Forest" , "XGBoost" ) #put table into long format for plotting library (tidyverse) CV_table_long <- gather(CV_table, Method, value, -Fold) #plot results library (yarrr) colors <- as.vector(piratepal(palette = "info" ))[ 2 : 4 ] ggplot(CV_table_long, aes(Fold, value)) + geom_bar(aes(fill = Method), color = "black" , stat= "identity" , width= 0.6 , position = position_dodge(width= 0.6 )) + ylab( "MAE" ) + theme(axis.text.x = element_text(angle = 90 , hjust = 1 )) + scale_fill_manual( "Method" , values = c(colors)) +ggtitle( "10-Fold Cross-Validation Results" ) ## Spatial Cross-Validation spatialCV <- function (dataFrame, uniqueID, dependentVariable) { #initialize variables training <- 0 testing <- 0 tuner <- 0 currentUniqueID <- 0 uniqueID_List <- 0 y <- 0 endList <- list() #create a list that is all the spatial group unqiue ids in the data frame (ie all the neighborhoods) uniqueID_List <- unique(dataFrame[[uniqueID]]) x <- 1 y <- length(uniqueID_List) #create a counter and while it is less than the number of counties... while (x <= y) { #call a current county currentUniqueID <- uniqueID_List[x] #create a training set comprised of units not in that county and a test set of units #that are that county training <- dataFrame[ which(dataFrame[[uniqueID]] != uniqueID_List[x]),] testing <- dataFrame[ which(dataFrame[[uniqueID]] == uniqueID_List[x]),] trainingX <- training[ , -which(names(training) % in % c(dependentVariable))] testingX <- testing[ , -which(names(testing) % in % c(dependentVariable))] trainY <- training[[dependentVariable]] testY <- testing[[dependentVariable]] #tune a model - note I have hardwired the dependent variable and the trainControl XGB_data <- data.matrix(trainingX %>% as.data.frame %>% dplyr::select(-GEOID)) library (xgboost) tuner <- xgboost(XGB_data, training$Count_2017 , max_depth = 10 , eta = 0.05 , nthread = 2 , nrounds = 800 , subsample = .7 , colsample_bytree = 0.9 , booster = "gbtree" , eval_metric = "mae" , objective= "count:poisson" , base_score = 0.57 , silent = 1 ) #come up with predictions on the test county thisPrediction <- predict(tuner, data.matrix(testingX)) #calculate mape and mae and count of records for a given training set (to get a sense of sample size). thisMAPE <- mean(abs(testY - thisPrediction) / testY ) thisMAE <- mean(abs(testY - thisPrediction)) countTestObs <- nrow(testingX) #add to the final list the current county and the MAPE thisList <- cbind(as.character(currentUniqueID), thisMAPE, thisMAE,countTestObs) #create a final list to output endList <- rbind(endList, thisList) #iterate counter x <- x + 1 } #return the final list of counties and associated MAPEs return (as.data.frame(endList)) } segments_no_0 <- segments[segments$Count_2017 != 0 ,] SCV <- spatialCV(segments_no_0, 'GEOID' , 'Count_2017' ) # 7 Model Results ## 7.1 Feature Importance colors <- as.vector(piratepal(palette = "info" ))[ 1 : 4 ] ## Plot the feature importance importance_matrix <- xgb.importance(colnames(XGB_data), model = fit_xgb) importance <- as.data.frame(importance_matrix) type <- c( "Either" , "NA" , "Demand" , "Demand" , "Demand" , "Demand" , "Demand" , "Demand" , "Demand" , "Demand" , "Demand" , "Demand" , "Demand" , "Demand" , "Supply" , "Demand" , "Demand" , "Demand" , "Supply" , "Supply" , "Demand" , "Supply" , "Demand" , "Supply" , "Supply" , "Supply" , "Demand" , "Demand" , "Supply" , "Supply" , "Supply" , "Supply" ) bucket <- c( "Road Usage/Control" , "Network/Segment Characteristics" , "Location" , "Network/Segment Characteristics" , "Location" , "Built Environment" , "Road Usage/Control" , "Built Environment" , "Road Usage/Control" , "Built Environment" , "Location" , "Road Usage/Control" , "Location" , "Location" , "Network/Segment Characteristics" , "Location" , "Location" , "Location" , "Network/Segment Characteristics" , "Built Environment" , "Road Usage/Control" , "Built Environment" , "Built Environment" , "Built Environment" , "Network/Segment Characteristics" , "Built Environment" , "Built Environment" , "Built Environment" , "Built Environment" , "Built Environment" , "Built Environment" , "Built Environment" ) importance <- cbind(importance, type, bucket) ggplot(data=importance, aes(x=reorder(Feature, Gain), y=Gain, fill=bucket, width = 0.8 )) + geom_bar(stat= "identity" , color = "black" ) + coord_flip() + xlab( "Feature" ) + ylab( "Contribution" ) + ggtitle( "Feature Contribution to Model" ) + theme(legend.title=element_blank()) + scale_fill_manual( "Method" , values = c(colors)) ggplot(data=importance, aes(x=reorder(Feature, Gain), y=Gain, fill=type, width = 0.8 )) + geom_bar(stat= "identity" , color = "black" ) + coord_flip() + xlab( "Feature" ) + ylab( "Contribution" ) + ggtitle( "Feature Contribution to Model" ) + theme(legend.title=element_blank()) + scale_fill_manual( "Method" , values = c(colors)) ## 7.2 Plotting Results y_hat_xgb <- predict(fit_xgb, data.matrix(segments %>% as.data.frame %>% dplyr::select(colnames(XGB_data)))) segments_geo <- st_read( "segments_4_26_geo.shp" ) #create a new dataset which will include our results segments_w_pred <- segments_geo segments_w_pred$COLS_MILE <- segments_w_pred$Count_2017/segments_w_pred$Length #save the results segments_w_pred$y_hat_xgb <- as.integer(y_hat_xgb) #calculate residuals (errors) segments_w_pred$Resids <- segments_w_pred$Count_2017 - segments_w_pred$y_hat_xgb #calculate absolute errors segments_w_pred$abs_res <- abs(segments_w_pred$Resids) #normalize the predictions by dividing the predicted count by segment length segments_w_pred$Pred_COLSM <- segments_w_pred$y_hat_xgb/segments_w_pred$Length y_hat_xgb <- predict(fit_xgb, data.matrix(testing %>% as.data.frame %>% dplyr::select(colnames(XGB_data)))) xgb_results <- as.data.frame(cbind(y_hat_xgb, testing$Count_2017)) colnames(xgb_results) <- c( "Predicted" , "Observed" ) ggplot(xgb_results, aes(xgb_results$Observed-xgb_results$Predicted)) + geom_histogram(bins = 200 ) + labs(x= "Residuals" ,y= "Count" ) + xlim(- 5 , 5 ) + ggtitle( "Residual Distibution" ) #Observed & Predicted ggplot(data = xgb_results, aes(x = xgb_results$Predicted , y = xgb_results$Observed)) + geom_point(size = 1 ) + xlab( "Predicted" ) + ylab( "Observed" ) + ggtitle( "Observed Values vs. Predicted Values" ) + theme(plot.title = element_text(hjust = 0.5 )) + geom_smooth(method= "lm" ) #Observed & Residuals library (gridExtra) ErrorAct <- ggplot(data = xgb_results, aes(x = Observed , y = Observed-Predicted)) + geom_point(size = 1 ) + xlab( "Observed" ) + ylab( "Error (Actual)" ) + ggtitle( "" ) + theme(plot.title = element_text(hjust = 0.5 )) + geom_smooth(method= "lm" ) + geom_hline(yintercept = 0 ) xgb_results_not0 <- xgb_results[xgb_results$Observed != 0 ,] ErrorPct <- ggplot(data = xgb_results_not0, aes(x = Observed , y = (Observed-Predicted)/Observed)) + geom_point(size = 1 ) + xlab( "Observed" ) + ylab( "Error (Percentage)" ) + ggtitle( "" ) + theme(plot.title = element_text(hjust = 0.5 )) + geom_smooth(method= "lm" ) + geom_hline(yintercept = 0 ) grid.arrange(ErrorAct,ErrorPct, heights=unit( 0.75 , "npc" ), ncol= 2 , top = "Error as a function of Observed" ) ## 7.3 Mapping The Results library (viridis) library (BAMMtools) pred.jenks <- append(- Inf , getJenksBreaks(segments_w_pred$Pred_COLSM, 5 )) %>% append( Inf ) ggplot() + geom_sf(data = segments_w_pred, aes(fill=cut(Pred_COLSM, pred.jenks))) + scale_fill_viridis( "Predicted Risk\n(Natural Breaks)" , discrete = TRUE , direction = 1 , option= "viridis" , labels = c( "Low" , "" , "" , "" , "High" )) + ggtitle( "Model Predictions" ) + scale_color_viridis( "" , discrete = TRUE , direction = 1 , option= "viridis" , labels = c( "Low" , "" , "" , "" , "High" )) + geom_sf(data = segments_w_pred, aes(colour=cut(Pred_COLSM, pred.jenks)), size = 0.1 , show_guide= FALSE ) + mapTheme() error.jenks <- append(- Inf , getJenksBreaks(segments_w_pred$abs_res, 5 )) %>% append( Inf ) error.jenks[ 3 ] <- 1 ggplot() + geom_sf(data = segments_w_pred, aes(fill=cut(abs_res, error.jenks))) + scale_fill_viridis( "Absolute Errors\n(Natural Breaks)" , discrete = TRUE , direction = 1 , option= "viridis" , labels = c( "Low" , "" , "" , "" , "High" )) + ggtitle( "Predictions Errors" ) + scale_color_viridis( "Absolute Residuals\n(Quintiles)" , discrete = TRUE , direction = 1 , option= "viridis" , labels = c( "Low" , "" , "" , "" , "High" )) + geom_sf(data = segments_w_pred, aes(colour=cut(abs_res, error.jenks)), size = 0.1 , show_guide= FALSE ) + mapTheme() #### Taking a closer look library (raster) library (rgeos) library (viridis) library (gridExtra) # create a function that allows us to clip our segments crop_custom <- function (poly.sf, coords) { poly.sf.p <- st_transform(poly.sf, 4326 ) poly.sp <- as(poly.sf.p, "Spatial" ) poly.sp.crop <- crop(poly.sp, extent(c(coords))) cropped <- st_as_sf(poly.sp.crop) cropped } #downtown coords <- c(- 85.774107 ,- 85.737028 , 38.23594 , 38.262835 ) downtown <- crop_custom(segments_w_pred, coords) dt.pred <- ggplot() + geom_sf(data = downtown, aes(fill=cut(Pred_COLSM, pred.jenks)), size = 0.5 ) + geom_sf(data = downtown, aes(color=cut(Pred_COLSM, pred.jenks)), show_guide= FALSE ) + scale_color_viridis( "" , discrete = TRUE , direction = 1 , option= "viridis" ) + scale_fill_viridis( "" , discrete = TRUE , direction = 1 , option= "viridis" , labels = c( "Low" , "" , "" , "" , "High" )) + ggtitle( "Collision Risk: Prediction" ) + mapTheme() + theme(legend.background = element_blank()) dt.obs <- ggplot() + geom_sf(data = downtown, aes(colour=cut(COLS_MILE, pred.jenks)), size = 0.5 , show_guide= FALSE ) + scale_color_viridis( "" , discrete = TRUE , direction = 1 , option= "viridis" ) + theme(legend.position= "none" ) + ggtitle( "Collision Density: Actual" ) + mapTheme() grid.arrange(dt.pred,dt.obs,heights=unit( 0.99 , "npc" ), ncol= 2 ) #Bardstown coords <- c(- 85.731792 ,- 85.694713 , 38.218848 , 38.245749 ) Bardstown <- crop_custom(segments_w_pred, coords) Bardstown.pred <- ggplot() + geom_sf(data = Bardstown, aes(fill=cut(Pred_COLSM, pred.jenks)), size = 0.5 ) + geom_sf(data = Bardstown, aes(color=cut(Pred_COLSM, pred.jenks)), show_guide= FALSE ) + scale_color_viridis( "" , discrete = TRUE , direction = 1 , option= "viridis" ) + scale_fill_viridis( "" , discrete = TRUE , direction = 1 , option= "viridis" , labels = c( "Low" , "" , "" , "" , "High" )) + ggtitle( "Collision Density: Prediction" ) + mapTheme() + theme(legend.background = element_blank()) Bardstown.obs <- ggplot() + geom_sf(data = Bardstown, aes(colour=cut(COLS_MILE, pred.jenks)), size = 0.5 , show_guide= FALSE ) + scale_color_viridis( "" , discrete = TRUE , direction = 1 , option= "viridis" ) + theme(legend.position= "none" ) + ggtitle( "Collision Density: Actual" ) + mapTheme() grid.arrange(Bardstown.pred,Bardstown.obs, heights=unit( 0.99 , "npc" ), ncol= 2 ) #Johnsontown coords <- c(- 85.890083 ,- 85.810635 , 38.082091 , 38.145399 ) Johnsontown <- crop_custom(segments_w_pred, coords) Johnsontown.pred <- ggplot() + geom_sf(data = Johnsontown, aes(fill=cut(Pred_COLSM, pred.jenks)), size = 0.5 ) + geom_sf(data = Johnsontown, aes(color=cut(Pred_COLSM, pred.jenks)), show_guide= FALSE ) + scale_color_viridis( "" , discrete = TRUE , direction = 1 , option= "viridis" ) + scale_fill_viridis( "" , discrete = TRUE , direction = 1 , option= "viridis" , labels = c( "Low" , "" , "" , "" , "High" )) + ggtitle( "Collision Density: Prediction" ) + mapTheme() + theme(legend.background = element_blank()) Johnsontown.obs <- ggplot() + geom_sf(data = Johnsontown, aes(colour=cut(COLS_MILE, pred.jenks)), size = 0.5 , show_guide= FALSE ) + scale_color_viridis( "" , discrete = TRUE , direction = 1 , option= "viridis" ) + theme(legend.position= "none" ) + ggtitle( "Collision Density: Actual" ) + mapTheme() grid.arrange(Johnsontown.pred,Johnsontown.obs, heights=unit( 1.2 , "npc" ), ncol= 2 ) ## 7.4 Moran's I segments_w_pred_no_0 <- segments_w_pred[segments_w_pred$Count_2017 != 0 , ] segments_w_pred_no_0$mape <- abs(segments_w_pred_no_0$Count_2017 - segments_w_pred_no_0$y_hat_xgb)/segments_w_pred_no_0$Count_2017 centroids <- st_transform(st_centroid(segments_w_pred_no_0), 4326 ) centroids <- centroids %>% dplyr::select(mape, geometry) centroids$lat <- unlist(centroids$geometry)[ c( TRUE , FALSE ) ] centroids$lon <- unlist(centroids$geometry)[ c( FALSE , TRUE ) ] library (spdep) coords <- cbind(centroids$lat, centroids$lon) spatialWeights <- knn2nb(knearneigh(coords, 4 )) moranTest <- moran.mc(segments_w_pred_no_0$mape, nb2listw(spatialWeights, style= "W" ), nsim= 999 ) ggplot(as.data.frame(moranTest$res), aes(moranTest$res)) + geom_histogram(binwidth = 0.002 ) + geom_vline(aes(xintercept = moranTest$statistic), colour = "red" ,size= 1 ) + scale_x_continuous(limits = c(- 0.2 , 0.2 )) + xlab( "Moran's I Statistic" ) + ylab( "Count" ) + labs(title= "Observed and permuted Moran's I" ) 
+

@@ -1,0 +1,190 @@
+Screen reader users, click here to load entire article This page uses JavaScript to progressively load the article content as a user scrolls. Screen reader users, click the load entire article button to bypass dynamically loaded article content.
+ScienceDirect is phasing out support for older versions of Internet Explorer on Jan 12, 2016. For the best product experience, we recommend you upgrade to a newer version of IE or use a different browser: Firefox or Chrome . For additional information please see the ScienceDirect Blog page. Close
+ 
+
+    Journals
+    Books
+
+    Shopping cart
+    Sign in
+    Sign in
+    OpenAthens login
+    Login via your institution
+    Other institution login
+    Sign in using your ScienceDirect credentials
+    Username:
+    Password:
+    Remember me
+    | Not Registered?
+    Forgotten username or password?
+    Help
+
+    Purchase
+     
+    Help
+        Direct export
+         
+         
+        Export file
+          RIS (for EndNote, Reference Manager, ProCite)
+          BibTeX
+          Text
+          RefWorks Direct Export
+        Content
+          Citation Only
+          Citation and Abstract
+
+Advanced search
+
+ 
+Article outline
+Show full outline
+
+    Abstract
+    Keywords
+    1. Introduction
+    2. Methodology
+    2.1. Modelling domains and initialization
+    2.2. Episode selection
+    2.3. Scope of the sensitivity analysis
+    2.4. Datasets
+    2.5. Evaluation methodology
+    3. Results
+    3.1. PBL scheme
+    3.2. Microphysics
+    3.3. Land-surface model
+    3.4. SST options
+    3.5. Longwave radiation scheme
+    3.6. Shortwave radiation scheme
+    3.7. FDDA options
+    3.8. Best case
+    4. Conclusions
+    Acknowledgements
+    References
+
+Alert message
+JavaScript is disabled on your browser.
+Please enable JavaScript to use all the features on this page.
+Figures and tables
+
+    WRF modelling domains (Lambert Conformal projection).
+    Synoptic conditions during the winter episode (850mbar isobaric surface, ...
+    Synoptic conditions during the summer episode (850mbar isobaric surface, ...
+    Table 1
+    Meteorological stations selected to perform the sensitivity analysis.
+    Table 2
+    Comparison of predicted and observed (computed values from vertical soundings ...
+    Table 3
+    Table 4
+    Table 5
+    Table 6
+    Table 7
+    Table 8
+    Table 9
+    Table 10
+    Station-level statistics for the best case for winter and summer. Temperature ...
+    Station-level statistics for the best case for winter and summer. Wind speed ...
+    Station-level statistics for the best case for winter and summer. Wind direction ...
+    Station-level statistics for the best case for winter and summer. Humidity ...
+    PBLH comparison for Madrid (a) and Murcia (b) stations.
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. View full text
+
+Atmospheric Environment
+
+Volume 42, Issue 37 , December 2008, Pages 8560–8574
+Cover image Cover image
+A comprehensive sensitivity analysis of the WRF model for air quality applications over the Iberian Peninsula
+
+    Rafael Borge , ,
+    Vassil Alexandrov ,
+    Juan José del Vas ,
+    Julio Lumbreras ,
+    Encarnacion Rodríguez
+
+    Department of Chemical and Environmental Engineering, Technical University of Madrid (UPM), c/ José Gutiérrez Abascal 2, 28006 Madrid, Spain
+
+    Received 25 June 2008, Revised 20 August 2008, Accepted 20 August 2008, Available online 11 September 2008
+
+  Show more   Show less
+Choose an option to locate/access this article:
+Check if you have access through your login credentials or your institution
+Check access
+Purchase $35.95
+
+    doi:10.1016/j.atmosenv.2008.08.032 
+    Get rights and content 
+
+Abstract
+
+Meteorological inputs play a vital role on regional air quality modelling. An extensive sensitivity analysis of the Weather Research and Forecasting (WRF) model was performed, in the framework of the Integrated Assessment Modelling System for the Iberian Peninsula (SIMCA) project. Up to 23 alternative model configurations, including Planetary Boundary Layer schemes, Microphysics, Land-surface models, Radiation schemes, Sea Surface Temperature and Four-Dimensional Data Assimilation were tested in a 3 km spatial resolution domain. Model results for the most significant meteorological variables, were assessed through a series of common statistics. The physics options identified to produce better results (Yonsei University Planetary Boundary Layer, WRF Single-Moment 6-class microphysics, Noah Land-surface model, Eta Geophysical Fluid Dynamics Laboratory longwave radiation and MM5 shortwave radiation schemes) along with other relevant user settings (time-varying Sea Surface Temperature and combined grid-observational nudging) where included in a “best case” configuration. This setup was tested and found to produce more accurate estimation of temperature, wind and humidity fields at surface level than any other configuration for the two episodes simulated. Planetary Boundary Layer height predictions showed a reasonable agreement with estimations derived from routine atmospheric soundings. Although some seasonal and geographical differences were observed, the model showed an acceptable behaviour overall. Despite being useful to define the most appropriate setup of the WRF model for air quality modelling over the Iberian Peninsula, this study provides a general overview of WRF sensitivity and can constitute a reference for future mesoscale meteorological modelling exercises.
+Keywords
+
+    Air quality modelling ;
+    Meterological modelling ;
+    Sensitivity analysis ;
+    WRF setup ;
+    Iberian Peninsula
+
+    Corresponding author. Tel.: +34 913363203; fax: +34 913363009.
+
+Copyright © 2008 Elsevier Ltd. All rights reserved.
+
+    About ScienceDirect
+
+    Contact and support
+
+    Terms and conditions
+
+    Privacy policy
+
+Copyright © 2015 Elsevier B.V. or its licensors or contributors. ScienceDirect® is a registered trademark of Elsevier B.V.
+Cookies are used by this site. To decline or learn more, visit our Cookies page.
+Switch to Mobile Site
+  Recommended articles
+
+        An examination of sensitivity of WRF/Chem predictions to physical parameterizations, horizontal grid spacing, and nesting options
+        2010, Atmospheric Research
+        more
+            Chris Misenis, Yang Zhang
+            An examination of sensitivity of WRF/Chem predictions to physical parameterizations, horizontal grid spacing, and nesting options
+            Atmospheric Research, Volume 97, Issue 3, August 2010, Pages 315–334
+            Original Research Article
+                PDF (5049 K)
+        Study of a winter PM episode in Istanbul using the high resolution WRF/CMAQ modeling system
+        2010, Atmospheric Environment
+        more
+            Ulas Im, Kostandinos Markakis, Alper Unal, Tayfun Kindap, Anastasia Poupkou, Selahattin Incecik, Orhan Yenigun, Dimitros Melas, Christina Theodosi, Nikos Mihalopoulos
+            Study of a winter PM episode in Istanbul using the high resolution WRF/CMAQ modeling system
+            Atmospheric Environment, Volume 44, Issue 26, August 2010, Pages 3085–3094
+            Original Research Article
+                PDF (807 K)
+        Sensitive numerical simulation and analysis of rainstorm using nested WRF model
+        2006, Journal of Hydrodynamics, Ser. B
+        more
+            Shu-chang WANG, Si-xun HUANG, Yi LI
+            Sensitive numerical simulation and analysis of rainstorm using nested WRF model
+            Journal of Hydrodynamics, Ser. B, Volume 18, Issue 5, October 2006, Pages 578–586
+            Original Research Article
+                PDF (442 K)
+    View more articles »
+
+  Citing articles ( 72 )
+
+    This article has not been cited.
+
+  Related book content
+
+    No articles found.
+
+  Metrics
+
++ Show more applications
+- Show fewer applications
+ 
+Download PDFs
+Help
+Help
+[Entitle Gadget]
+Entitle Gadget
+

@@ -1,0 +1,16 @@
+.ou-feedback-widget-message,
+.ou-feedback-widget-message-label-yes,
+.ou-feedback-widget-message-label-no,
+.ou-feedback-widget-thanks,
+.ou-feedback-widget-after-yes,
+.ou-feedback-widget-after-no
+{ 
+  display: none;
+}
+
+.ou-feedback-widget-message label,
+.ou-feedback-widget-message textarea,
+.ou-feedback-widget-message button
+{
+  display: block;
+}

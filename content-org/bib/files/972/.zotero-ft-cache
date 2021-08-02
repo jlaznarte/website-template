@@ -1,0 +1,210 @@
+
+close
+Skip to main content
+
+This service is more advanced with JavaScript available, learn more at http://activatejavascript.org
+SpringerLink
+Search
+
+    Home
+    Contact us
+    Log in
+
+Menu
+
+    Home
+    Contact us
+    Log in
+
+Signal and Image Analysis for Biomedical and Life Sciences
+
+Signal and Image Analysis for Biomedical and Life Sciences pp 207-226 | Cite as
+Pollen Image Classification Using the Classifynder System: Algorithm Comparison and a Case Study on New Zealand Honey
+
+    Authors
+    Authors and affiliations
+
+    Ryan Lagerstrom Email author
+    Katherine Holt
+    Yulia Arzhaeva
+    Leanne Bischof
+    Simon Haberle
+    Felicitas Hopf
+    David Lovell
+
+    Ryan Lagerstrom
+        1
+    Email author
+    Katherine Holt
+        2
+    Yulia Arzhaeva
+        1
+    Leanne Bischof
+        1
+    Simon Haberle
+        3
+    Felicitas Hopf
+        3
+    David Lovell
+        4
+
+    1. Digital Productivity Flagship CSIRO North Ryde, Sydney Australia
+    2. Institute of Natural Resources Massey University Palmerston North New Zealand
+    3. School of Culture, History and Language, H C Coombs Blg 9 The Australian National University Canberra Australia
+    4. Digital Productivity Flagship CSIRO Canberra Australia
+
+Chapter
+First Online: 13 October 2014
+
+    2 Readers
+    1.1k Downloads
+
+Part of the Advances in Experimental Medicine and Biology book series (AEMB, volume 823)
+Abstract
+
+We describe an investigation into how Massey University’s Pollen Classifynder can accelerate the understanding of pollen and its role in nature. The Classifynder is an imaging microscopy system that can locate, image and classify slide based pollen samples. Given the laboriousness of purely manual image acquisition and identification it is vital to exploit assistive technologies like the Classifynder to enable acquisition and analysis of pollen samples. It is also vital that we understand the strengths and limitations of automated systems so that they can be used (and improved) to compliment the strengths and weaknesses of human analysts to the greatest extent possible. This article reviews some of our experiences with the Classifynder system and our exploration of alternative classifier models to enhance both accuracy and interpretability. Our experiments in the pollen analysis problem domain have been based on samples from the Australian National University’s pollen reference collection (2,890 grains, 15 species) and images bundled with the Classifynder system (400 grains, 4 species). These samples have been represented using the Classifynder image feature set. We additionally work through a real world case study where we assess the ability of the system to determine the pollen make-up of samples of New Zealand honey. In addition to the Classifynder’s native neural network classifier, we have evaluated linear discriminant, support vector machine, decision tree and random forest classifiers on these data with encouraging results. Our hope is that our findings will help enhance the performance of future releases of the Classifynder and other systems for accelerating the acquisition and analysis of pollen samples.
+Keywords
+Pollen  Palynology  Image analysis  Statistical classification  Automation  Machine learning 
+Cite chapter
+
+    How to cite?
+    .RIS Papers Reference Manager RefWorks Zotero
+    .ENW EndNote
+    .BIB BibTeX JabRef Mendeley
+
+References
+
+    1.
+    L. Breiman, J.H. Friedman, R.A. Olschen, C.J. Stone, Classification and Regression Trees (Chapman Hall, New York, 1999) Google Scholar
+    2.
+    L. Breiman, Random forests. Mach. Learn. 45 (1), 5–32 (2001) CrossRef MATH Google Scholar
+    3.
+    V.M. Bryant, D.C. Mildenhall, Forensic palynology in the United States of America. Palynology 14 , 193–208 (1990) CrossRef Google Scholar
+    4.
+    C. Cortes, V. Vapnik, Support-vector networks. Mach. Learn. 20 (3), 273–297 (1995) MATH Google Scholar
+    5.
+    C. Chun, E.A. Hendriks, R.P.W. Duin, J.H.C. Reiber, P.S. Hiemstra, L.A. de Weger, B. Stoel, Feasibility study on automated recognition of allergenic pollen: grass, birch and mugwort. Aerobiologia. 22 , 275–284 (2006) CrossRef Google Scholar
+    6.
+    A. Cristofori, F. Cristofolini, E. Gottardini, Twenty years of aerobiological monitoring in Trentino (Italy): assessment and evaluation of airborne pollen variability. Prog. Phys. Geogr. Aerobiol. 26 , 553–261 (2010) Google Scholar
+    7.
+    R. Dell’Anna, P. Lazzeri, M. Frisanco, F. Monti, F.M. Campeggi, E. Gottardini, M. Bersani, Pollen discrimination and classification by Fourier transform infrared (FT-IR) microspectroscopy and machine learning. Anal. Bioanal. Chem. 394 , 1443–1452 (2009) CrossRef Google Scholar
+    8.
+    M.P. De Sa-Otero, A.P. Gonzalez, M. Rodriguez-Damian, E. Cernadas, Computer-aided identification of allergenic species of Urticaceae pollen. Grana 43 , 224–230 (2004) CrossRef Google Scholar
+    9.
+    R.A. Fisher, The use of multiple measurements in taxonomic problems. Ann. Eugen. 7 (2), 179–188 (1936) CrossRef Google Scholar
+    10.
+    J.R. Flenley, The problem of pollen recognition, in Problems of Picture Interpretation , ed. by M.B. Clowes, J.P. Penny (CSIRO, Canberra, 1968), pp. 141–145 Google Scholar
+    11.
+    I. France, A.W.G. Duller, G.A.T. Duller, H.F. Lamb, A new approach to automated pollen analysis. Quat. Sci. Rev. 19 , 537–546 (2000) CrossRef Google Scholar
+    12.
+    M.H.M. Groot, R.G. Bogota, L.J. Lourens, H. Hooghiemstra, M. Vriend, J.C. Berrio, E. Tuenter, J. Van der Plicht, B. Van Geel, M. Ziegler, S.L. Weber, A. Betancourt, L. Contreras, S. Gaviria, C. Giraldo, N. Gonzalez, J.H.F. Jansen, M. Konert, D. Ortega, O. Rangel, G. Sarmiento, J. Vandenberghe, T. Van der Hammen, M. Van der Linden, W. Westerhoff, Ultra-high resolution pollen record from the northern Andes reveals rapid shifts in montane climates within the last two glacial cycles. Clim. Past 7 , 299–316 (2011) CrossRef Google Scholar
+    13.
+    J.A. Hertz, A. Krogh, R.G. Palmer, An Introduction to the Theory of Neural Computing (Addison-Wesley, Reading, 1991) Google Scholar
+    14.
+    K. Holt, G. Allen, R. Hodgson, S. Marsland, J. Flenley, Progress towards an automated trainable pollen location and classifier system for use in the palynology laboratory. Rev. Palaeobot. Palynol. 167 , 175–183 (2011) CrossRef Google Scholar
+    15.
+    C.A. Hopping, Palynology and the oil industry. Rev. Palaeobot. Palynol. 2 , 372–399 (1967) CrossRef Google Scholar
+    16.
+    S. Hu, D.L. Dilcher, D.M. Jarzen, D.W. Taylor, Early steps of angiosperm-pollinator coevolution. Proc. Natl. Acad. Sci. 105 , 240–245 (2007) CrossRef Google Scholar
+    17.
+    G.D. Jones, V.M. Bryant, Melissopalynology in the United States: a review and critique. Palynology 16 , 63–71 (1992) CrossRef Google Scholar
+    18.
+    S. Kawashima, B. Clot, T. Fujita, Y. Takahashi, K. Nakamura, An algorithm and a device for counting airborne pollen automatically using laser optics. Atmos. Environ. 41 , 7987–7993 (2007) CrossRef Google Scholar
+    19.
+    R. Lagerstrom, Y. Arzhaeva, L. Bischof, S. Haberle, F. Hopf, D. Lovell, A comparison of classification algorithms within the classifynder pollen imaging system, in International Symposium on Computational Models for Life Sciences , Sydney, Nov 2013, vol. 1559, pp. 250–259 Google Scholar
+    20.
+    P. Li, W.J. Treloar, J.R. Flenley, L. Empson, Towards automation of palynology 2: the use of texture measures and neural network analysis for automated identification of optical images of pollen grains. J. Quat. Sci. 19 , 755–762 (2004) CrossRef Google Scholar
+    21.
+    L.J. Maher, Nomograms for computing 0.95 confidence limits of pollen data. Rev. Palaeobot. Palynol. 13 , 85–93 (1971) Google Scholar
+    22.
+    M. McGlone, J. Wilmshurst, Dating initial Maori environmental impact in New Zealand. Quat. Int. 59 , 5–16 (1999) CrossRef Google Scholar
+    23.
+    D.C. Mildenhall, R. Tremain, Pollen analysis of New Zealand honey. Institute of Geological and Nuclear Sciences science report, 2009, pp. 6–19 Google Scholar
+    24.
+    K. Mitsumoto, K. Yabusaki, K. Kobayashi, H. Aoyagi, Development of a novel real-time pollen-sorting counter using species-specific pollen autofluoresence. Aerobiologia 26 , 99–111 (2010) CrossRef Google Scholar
+    25.
+    B.V. Odgaard, Fossil pollen as a record of past biodiversity. J. Biogeogr. 26 , 5–16 (1999) Google Scholar
+    26.
+    S. Petersen, V.M. Bryant, The study of pollen and its role in the honey market. Am. Bee J. 151 , 591–594 (2011) Google Scholar
+    27.
+    R Development Core Team, R: A Language and Environment for Statistical Computing (R Foundation for Statistical Computing, Vienna, 2010) Google Scholar
+    28.
+    O. Ronneberger, E. Schultz, H. Burkhardt, Automated pollen recognition using 3D volume images from fluourescence microscopy. Aerobiologia 18 , 107–115 (2002) CrossRef Google Scholar
+    29.
+    H. Seppa, K.D. Bennett, Quaternary pollen analysis: recent progress in palaeoecology and palaeoclimatology. Prog. Phys. Geogr. 27 , 548–579 (2003) CrossRef Google Scholar
+    30.
+    E.C. Stillman, J.R. Flenley, The needs and prospects for automation in palynology. Quat. Sci. Rev. 15 , 1–5 (1996) CrossRef Google Scholar
+    31.
+    J. Stockmarr, Tablets with spores used in absolute pollen analysis. Pollen et Spores 13 , 615–621 (1971) Google Scholar
+    32.
+    W. Von der Ohe, L. Persano Oddo, M.L. Piana, M. Morlot, P. Martin, Harmonized methods of melissopalynology. Apidologie 35 , S18–S25 (2004) CrossRef Google Scholar
+    33.
+    Y. Zhang, D.W. Fountain, R.M. Hodgson, J.R. Flenley, S. Gunetileke, Towards automation of palynology 3: pollen pattern recognition using Gabor transforms and digital moments. J. Quat. Sci. 19 , 763–768 (2004) CrossRef Google Scholar
+
+Copyright information
+© Springer International Publishing Switzerland 2015
+About this chapter
+
+Cite this chapter as:
+    Lagerstrom R. et al. (2015) Pollen Image Classification Using the Classifynder System: Algorithm Comparison and a Case Study on New Zealand Honey. In: Sun C., Bednarz T., Pham T., Vallotton P., Wang D. (eds) Signal and Image Analysis for Biomedical and Life Sciences. Advances in Experimental Medicine and Biology, vol 823. Springer, Cham
+
+    DOI https://doi.org/10.1007/978-3-319-10984-8_12
+    Publisher Name Springer, Cham
+    Print ISBN 978-3-319-10983-1
+    Online ISBN 978-3-319-10984-8
+    eBook Packages Biomedical and Life Sciences
+
+    About this book
+    Reprints and Permissions
+
+Personalised recommendations
+Pollen Image Classification Using the Classifynder System: Algorithm Comparison and a Case Study on New Zealand Honey
+Cite chapter
+
+    How to cite?
+    .RIS Papers Reference Manager RefWorks Zotero
+    .ENW EndNote
+    .BIB BibTeX JabRef Mendeley
+
+Buy options
+Actions
+Log in to check access
+Buy eBook
+EUR 118.99
+Buy chapter (PDF)
+EUR 30.19
+
+    Instant download
+    Readable on all devices
+    Own it forever
+    Local sales tax included if applicable
+
+Learn about institutional subscriptions
+Cite chapter
+
+    How to cite?
+    .RIS Papers Reference Manager RefWorks Zotero
+    .ENW EndNote
+    .BIB BibTeX JabRef Mendeley
+
+Cookies
+We use cookies to improve your experience with our site. More information
+Accept
+
+Over 10 million scientific documents at your fingertips
+Switch Edition
+
+    Academic Edition
+    Corporate Edition
+
+    Home
+    Impressum
+    Legal information
+    Accessibility
+    Contact us
+
+Springer Nature
+
+© 2017 Springer International Publishing AG. Part of Springer Nature .
+
+Not logged in Not affiliated 81.0.54.165

@@ -1,0 +1,173 @@
+Screen reader users, click here to load entire article This page uses JavaScript to progressively load the article content as a user scrolls. Screen reader users, click the load entire article button to bypass dynamically loaded article content.
+ScienceDirect is phasing out support for older versions of Internet Explorer on Jan 12, 2016. For the best product experience, we recommend you upgrade to a newer version of IE or use a different browser: Firefox or Chrome . For additional information please see the ScienceDirect Blog page. Close
+ 
+
+    Journals
+    Books
+
+    Shopping cart
+    Sign in
+    Sign in
+    OpenAthens login
+    Login via your institution
+    Other institution login
+    Sign in using your ScienceDirect credentials
+    Username:
+    Password:
+    Remember me
+    | Not Registered?
+    Forgotten username or password?
+    Help
+
+    Purchase
+     
+    Help
+        Direct export
+         
+         
+        Export file
+          RIS (for EndNote, Reference Manager, ProCite)
+          BibTeX
+          Text
+          RefWorks Direct Export
+        Content
+          Citation Only
+          Citation and Abstract
+
+Advanced search
+
+ 
+Article outline
+Show full outline
+
+    Abstract
+    Keywords
+    1. Introduction
+    2. Methodology
+    2.1. Time series analysis
+    2.2. ARIMA application to compute forecast intervals for the “Without Measures” scenario (WoM or “business as usual”)
+    2.3. Resampling techniques
+    2.4. Bootstrap scheme for building forecast intervals in the “With Measures” scenario (WM or base)
+    3. Results and discussion
+    3.1. Uncertainty of “Without Measures” scenario
+    3.2. Uncertainty of “With Measures” scenario
+    4. Conclusions
+    Acknowledgements
+    References
+
+Alert message
+JavaScript is disabled on your browser.
+Please enable JavaScript to use all the features on this page.
+Figures and tables
+
+    Table 1
+    CO2 emission projections, including uncertainty, for combustion plants in the ...
+    SF6 emission projections, including uncertainty, for use of SF6 in electrical ...
+    CH4 emission projections, including uncertainty, for pigs.
+    a). BIC for different orders of autoregressive models, AR(p), fitted for ...
+    Bootstrap replicas, activity 02.02.02. Pollutant: CO2. Base scenario.
+    Pollutant: CO2. Activity 02.02.02. Emission projections with uncertainty. Base ...
+    a). BIC for different orders of autoregressive models, AR(p), fitted for ...
+    Bootstrap replicas, group 07 without 07.06 and 07.07. Pollutant: CO2. Base ...
+    Pollutant: CO2, group 07 without 07.06 and 07.07. Emission projections with ...
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. View full text
+
+Atmospheric Environment
+
+Volume 43, Issue 8 , March 2009, Pages 1557–1564
+Cover image Cover image
+Computation of uncertainty for atmospheric emission projections from key pollutant sources in Spain
+
+    Julio Lumbreras a , , ,
+    Carolina García-Martos b ,
+    José Mira b ,
+    Rafael Borge a
+
+    a Department of Chemical & Environmental Engineering, Escuela Técnica Superior de Ingenieros Industriales (Universidad Politécnica de Madrid), C/José Gutiérrez Abascal, 2. 28006 Madrid, Spain
+    b Department of Industrial Engineering, Business Administration and Statistics, Escuela Técnica Superior de Ingenieros Industriales (Universidad Politécnica de Madrid), C/José Gutiérrez Abascal, 2. 28006 Madrid, Spain
+
+    Received 30 July 2008, Revised 13 October 2008, Accepted 16 October 2008, Available online 31 October 2008
+
+  Show more   Show less
+Choose an option to locate/access this article:
+Check if you have access through your login credentials or your institution
+Check access
+Purchase $35.95
+
+    doi:10.1016/j.atmosenv.2008.10.048 
+    Get rights and content 
+
+Abstract
+
+Emission projections are important for environmental policy, both to evaluate the effectiveness of abatement strategies and to determine legislation compliance in the future. Moreover, including uncertainty is an essential added value for decision makers. In this work, projection values and their associated uncertainty are computed for pollutant emissions corresponding to the most significant activities from the national atmospheric emission inventory in Spain. Till now, projections had been calculated under three main scenarios: “without measures” (WoM), “with measures” (WM) and “with additional measures” (WAM). For the first one, regression techniques had been applied, which are inadequate for time-dependent data. For the other scenarios, values had been computed taking into account expected activity growth, as well as policies and measures. However, only point forecasts had been computed. In this work statistical methodology has been applied for: a) Inclusion of projection intervals for future time points, where the width of the intervals is a measure of uncertainty. b) For the WoM scenario, ARIMA models are applied to model the dynamics of the processes. c) In the WM scenario, bootstrap is applied as an additional non-parametric tool, which does not rely on distributional assumptions and is thus more general. The advantages of using ARIMA models for the WoM scenario including uncertainty are shown. Moreover, presenting the WM scenario allows observing if projected emission values fall within the intervals, thus showing if the measures to be taken to reach the scenario imply a significant improvement. Results also show how bootstrap techniques incorporate stochastic modelling to produce forecast intervals for the WM scenario.
+Keywords
+
+    Emission projections ;
+    Uncertainty ;
+    Time series analysis ;
+    ARIMA models ;
+    Bootstrap
+
+    Corresponding author. Tel.: +34 913363189; fax: +34 913363009.
+
+Copyright © 2008 Elsevier Ltd. All rights reserved.
+
+    About ScienceDirect
+
+    Contact and support
+
+    Terms and conditions
+
+    Privacy policy
+
+Copyright © 2015 Elsevier B.V. or its licensors or contributors. ScienceDirect® is a registered trademark of Elsevier B.V.
+Cookies are used by this site. To decline or learn more, visit our Cookies page.
+Switch to Mobile Site
+  Recommended articles
+
+        A model to calculate consistent atmospheric emission projections and its application to Spain
+        2008, Atmospheric Environment
+        more
+            Julio Lumbreras, Rafael Borge, Juan Manuel de Andrés, Encarnación Rodríguez
+            A model to calculate consistent atmospheric emission projections and its application to Spain
+            Atmospheric Environment, Volume 42, Issue 21, July 2008, Pages 5251–5266
+            Original Research Article
+                PDF (1094 K)
+        Development of a high-resolution emission inventory for Spain using the SMOKE modelling system: A case study for the years 2000 and 2010
+        2008, Environmental Modelling & Software
+        more
+            Rafael Borge, Julio Lumbreras, Encarnacion Rodríguez
+            Development of a high-resolution emission inventory for Spain using the SMOKE modelling system: A case study for the years 2000 and 2010
+            Environmental Modelling & Software, Volume 23, Issue 8, August 2008, Pages 1026–1044
+            Original Research Article
+                PDF (5004 K)
+        Trends in on-road vehicle emissions of ammonia
+        2009, Atmospheric Environment
+        more
+            A.J. Kean, D. Littlejohn, G.A. Ban-Weiss, R.A. Harley, T.W. Kirchstetter, M.M. Lunden
+            Trends in on-road vehicle emissions of ammonia
+            Atmospheric Environment, Volume 43, Issue 8, March 2009, Pages 1565–1570
+            Original Research Article
+                PDF (599 K)
+    View more articles »
+
+  Citing articles ( 10 )
+
+    This article has not been cited.
+
+  Related book content
+
+    No articles found.
+
+  Metrics
+
++ Show more applications
+- Show fewer applications
+ 
+Download PDFs
+Help
+Help
+[Entitle Gadget]
+Entitle Gadget
+

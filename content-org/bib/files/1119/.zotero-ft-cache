@@ -1,0 +1,843 @@
+
+We use cookies to make interactions with our website easy and meaningful, to better understand the use of our services, and to tailor advertising. For further information, including about cookie settings, please read our Cookie Policy . By continuing to use this site, you consent to the use of cookies.
+Got it
+top
+See all ›
+9 References
+See all ›
+5 Figures
+Download citation
+Share
+Facebook
+Twitter
+LinkedIn
+Google+
+Reddit
+Download full-text PDF
+Learning Analytics in Higher Education Development: A Roadmap
+Article (PDF Available)  · April 2017   with  817 Reads
+Cite this publication
+
+    Olugbenga Wilson Adejo at University of the West of Scotland
+    Olugbenga Wilson Adejo
+        4.47
+        University of the West of Scotland
+    Thomas Connolly at University of the West of Scotland
+    Thomas Connolly
+        27.38
+        University of the West of Scotland
+
+Abstract
+The increase in education data and advance in technology are bringing about enhanced teaching and learning methodology. The emerging field of Learning Analytics (LA) continues to seek ways to improve the different methods of gathering, analysing, managing and presenting learners’ data with the sole aim of using it to improve the student learning experience and the study environment. In this paper, we try to explore the concept and salient features of LA potential in higher education and suggest strategies on how this emerging field can make use of data mining techniques alongside learners’ data to produce useful and informed decision making. Using the Technology-Organisation–Human frameworks, the paper investigates the roadmap for successful implementation of LA in Higher Educational Institutions.
+Discover the world's research
+
+    15+ million members
+    118+ million publications
+    700k+ research projects
+
+Join for free
+Figures - uploaded by Olugbenga Wilson Adejo
+Author content
+All content in this area was uploaded by Olugbenga Wilson Adejo
+: The overview of LA multidimensional benefits framework
+: The overview of LA multidimensional benefits framework
+… 
+Education Data analysis and beneficiaries
+Education Data analysis and beneficiaries
+… 
+. Tabular Representation of the differences among the three analyses discipline
+. Tabular Representation of the differences among the three analyses discipline
+… 
+Five Phases of an LA roadmap
++1
+Five Phases of an LA roadmap
+… 
+Content uploaded by Olugbenga Wilson Adejo
+Author content
+All content in this area was uploaded by Olugbenga Wilson Adejo on Jul 17, 2017
+Download full-text PDF
+Journal of Education and Practi ce www .iiste.org
+ISSN 2222-1735 ISSN (Online)2222- 288X
+V ol 8, No.10, 2017
+1 | P a g e
+www .iiste.org
+Learning Analytics in Higher Education Development: A
+Roadmap
+Olugbenga Adejo * Thomas Connolly
+School of Engineering and Computing , Universit y of the W est of Scotland, United Kingdom
+* E-mail of the corresponding author: olu gbenga.adejo@uws.ac.uk
+Abstract
+The increase in education data and advance in technology are bringing about enhanced teaching and
+learning methodology. The emerging field of Learning Analytics (LA) continues to seek ways to improve
+the different methods of gathering, analysing, mana ging and presenting learners’ data with the sole aim of
+using it to improve the student learning experience and the study environment. In t his paper, we try to
+explore the concept and salient features o f LA potentia l in higher education and suggest strategie s on how
+this emerging field can make use of data mining techniques alongside lear ners’ data to produce useful and
+informed decision making. Us ing the Technology-Organisation – Human frameworks, the paper investigates
+the roadmap for successful implementation of LA in higher Educational Institutions.
+Keywords: Learning Analytics, Learning Management System, Higher education, Roadmap
+1. Introduction
+The world generally is experiencing a data revolution. There is an upsurge in th e amount of data th at is
+being generated from different sources, through different channels, in different varieties and at a great speed .
+The rate of growth of data is expected to double every month betwee n now and 2020 (Khan et al, 2014).
+The higher ed ucational sector has also no t been left out of this “data deluge” era, there are great influx of
+data as well as emergence and adoption of new technologies. Ho wever, the major problem in the sector has
+been the inefficient use of this data to improve value to meet the educational mar ket need as compared to
+other sectors such as marketing, banking, health, security and spor t.
+In ad dition to the stude nts de mographic and activities data, the widespread introductions and proliferation
+of online learning, intelligent tutoring and Learning Management System (LMS) have led to an
+unprecedented i ncrease i n data generation, personal data col lection and also increa se i n syste m interaction
+data. Bey ond th ese are also a vast amount of d ata being collected and stored in educational blogs and
+forums, which are increasing daily and require special analytical tools for analysis and interpretation.
+However, the exploitation and useful application of these auto matically co llected users data for education
+development and learners benefits are still very limited (Greller et al., 20 12; Dawson an d Macfadyen.,
+2012).
+Although, all these data have hidden values beh ind them and if well analysed can give deep insights into
+the educational setting as well as reveal what teac hing methods and acade mic interventions t hat are most
+likely to enhance learner performance and retention (Wook et al., 2009). This simply means that the ne w set
+of the problem created by the “Big” educational data era nee ds a new set of solutions. One of such solutions
+designed to help the higher education system in data analysis is Learning analytics.
+Learning analytics (LA) is an important and emerging area of Education al Data Mining (EDM) and
+Technology Enhanced Learning (TEL) that comprises of different academic disciplines such as education,
+psychology and computer science ( Papamitsiou and Economides, 2014 ). LA of ficially emerged in 2010 as a
+new domain of education and computer science and makes use of existing techniques such as Artificial
+Journal of Education and Practi ce www .iiste.org
+ISSN 2222-1735 ISSN (Online)2222- 288X
+V ol 8, No.10, 2017
+2 | P a g e
+www .iiste.org
+Intelligence, business intelligence, statistics, mathematics and visualisation (Ferguson, 2012). LA
+specifically came o ut of EDM to address the issues of learner progression and attrition using the learners ’
+data. Ferg uson (2012) and Clow ( 2013) in their earlier studies comp il ed a com prehensive summary of
+definitions of LA. However , one of the most co mmonly cited definitions was the one given by Learning
+Analytics and Knowledge (LAK, 201 1) and asserted by The Societ y for Learning Analytics R esearch
+(SoLAR) in which LA was defined as “… the measurement, collection, analysis and reporting of data
+about learners and their c ontexts, for purposes of understanding and optimizing l earning and the
+environments in which it occurs” . Fro m this definition, it can be deduced that LA has no data of its own but
+exists to handle and analyse large educational data sets for th e learners’ benefits.
+EDUCAUSE as cited by Bichsel (2012) subsequentl y defined LA as “ the use of data, statistical analysis,
+and ex planatory and pr edictive models to gain insights and act on comp lex issues” relating to learners.
+These two definitions, w hich are no w generally ac cepted for lear ning analytics, are different from EDM,
+which the International Educational Data Mi ning So ciety defines as “ an emerging d iscipline, concerned
+with developing meth ods for exploring the unique types o f data that come from edu cational settings, and
+using those methods to better understand students, an d the settings which they learn in .”
+Del Blanco et al. (2013) while differentiating LA from the EDM describes LA as “ a discipline that gathered
+and analyz ed educational data with different purposes such as seeking a pattern in the learning process and
+trends or pr oblem in student performance” which is quite different from the use of educational data to
+develop d ifferent sections of education. The authors point out that LA collects huge amounts of data from
+student actions, co urse interactions and learning tools a nd enumerat es these actions to include their
+interaction with other learners , instructors and learning content. Learning tools co mmonly used range fro m
+traditional LMSs (Moodle, Blackboard) to MOOCs (Massi vely Open Online Courses) such as Udacity a nd
+Cousera. It also makes use of different data mining tech niques, statistics and visual anal ytics techniques to
+gather useful information.
+Many researchers have investigated the use of LA for student benefits; Campbell and Obli nger (2007) relate
+LA to making an informed decisions about st udent progress and retention and noted that “ Retention of
+students saves institutions the cost of recruiting students to replace those who withdraw without completing
+a degree ” , MacFadyen and Dawson (201 0) investigate it s use in predicting student performance using LMS
+data while Jose et al. (2016) research its use for progression analysis of students in HEIs. Th ese studies ’
+assertions were co rroborated by Dietz-Uhler and Hurn (2013) who explain the importanc e of LA to include
+assisting educational in stitutions in in creasing student retention, i mproving student success and progress,
+encourage personalis ed learning and also ease the burden of educational accountability .
+However, Wise, Zhao and Hausknecht, (2014) id entified two approaches to Learning Analytics which are
+of great importance in the use of it, these are;
+1) Embedded anal ytics, which is the integration of trac es o f activity into learning environment itself
+which can be used real-time in guiding learner participation. T his can be used in metacognitive
+monitoring during participation in learning activity.
+2) Extracted analytics, which is the integration of trac es of activity in a learning environment and
+represented in a separate format or platform; e.g. a d ashboard.
+Likewise, Ferguson (2012) also identified three different groups in LA with overlapping interests; however,
+all of them enj oy the same benefits of LA. T he groups include governments, educational institutions and
+teachers/learners. He later des cribed that each group also ha ve direct and indirect impacts on the learners
+and their academic success. The groups and their relationships are shown in Figure 1
+Journal of Education and Practi ce www .iiste.org
+ISSN 2222-1735 ISSN (Online)2222- 288X
+V ol 8, No.10, 2017
+3 | P a g e
+www .iiste.org
+Figure 1: Education Data analysis and beneficiaries
+In a similar study, Greller and Drachsler ( 2012 ) proposed a design framework for LA using a
+benefit/information flow among the m ajor stakeholders ; the institution (administrators), teachers and
+students as well as other dimensions such as data, instruments and limitatio ns. However, in addition to
+these major stakeholder s, he suggested the inclusion of informal learning environment stakeholders such as
+line managers and computer system administrators.
+Meanwhile, the us es of LA in HE have been discussed by several studies, inc luding:
+ For learners career development and progress measure ment (Abukhousie, 2014) .
+ Learning adaptati on and personalization to suit the need of each student ( Arnold and Pistilli ,
+2012).
+ Educational games development (Miroslav, 2013 ; Chaudy, Connolly and Hainey , 2014) .
+ Development of Course signa l that uses analytics to alert teachers and administrators of student at
+risk of attrition (Arnold and Pistilli, 2012) .
+ A convenient tool for assessment of teaching and learning in students.
+Similarly, Larusson and White (2014) enumerated the uses of LA to include:
+ enhancement of student and institutional performance;
+ assistance in assessing and giving attention to student at r isk;
+ helping instructors to assess and develop their o wn strength;
+ helping institutions to make efficient use of their learning resources
+The general benefits of the application of the L A to the different stakeholders are summarised in T able 1.
+Journal of Education and Practi ce www .iiste.org
+ISSN 2222-1735 ISSN (Online)2222- 288X
+V ol 8, No.10, 2017
+4 | P a g e
+www .iiste.org
+In addition, the tools available for LA are limited in their capability. Atif et al., 2013 summarises the tools
+and approaches used in LA in higher education in their work and also co mpared the capabilities of four
+different tools developed and used at Australian Universities. It was fo und out that some of the tools still
+have limited capabilities in achieving t heir goals. A lmosallam et al.,2013 provided an overview of these
+tools and applications from LAK1 1 to LAK 13 Conferences and some of the tools mentioned include
+E2Coach, Learn – B, Course Signal, SNAPP, café, AA T etc
+However Dawson et al.,2014 n oted that despite the wide-open and complex landscape of LA with th e
+consequent benefits, much focus o f LA is still on bivariate analysis which can be descr ibed as “low hanging
+fruit” of LA potential co mpare to deep , multivariate anal ytical work with much deeper meaning that ca n be
+done with LA. This co llaborated the previous statement reported by McKinsey about the lack of extensi ve
+strategic application of LA in the higher education sector as such there is a need for defining a strategic
+roadmap.
+T able 1: The overview of LA multidimensional benefits framework
+Benefit dimension
+Description
+Sub - benefit impact / implication
+Governmental benefits
+Institutional/organisational
+benefits
+Operational benefits
+Impact of LA technologies use by
+teacher on government and
+society
+The benefits that accrue to the
+institutions when thy make use o f
+LA tools and technologies
+This is the benefits obtained when
+improved method of learning
+ Reduce unemployment and
+other vices
+ Improve rating for the
+government and state.
+ High return on investment.
+ Long term benefit of increase
+in tax revenue
+ Long-term increase in GNP
+as a result of increase income
+of graduates
+ Lower government
+expenditure on social welfare.
+ Changing in work patterns
+ Facilitating improve
+educational/ learning delivery
+ Improve ability to obtain
+funding and increase tuition
+revenue for the Institution as
+retention increases.
+ Improve institution decision
+making
+ Improve retention and
+graduation rate
+ Improve School reputation
+and rating
+ Reduce cost of re-recruitment
+for replacement.
+ High return on investment.
+ Easy of analysis of student
+data
+Journal of Education and Practi ce www .iiste.org
+ISSN 2222-1735 ISSN (Online)2222- 288X
+V ol 8, No.10, 2017
+5 | P a g e
+www .iiste.org
+Learners benefits
+approach and operation are
+adopted
+How does the student gain from
+the use of LA by the teachers
+ Ease of monitoring students
+using LA dashboard.
+ Help in suggesting an early
+intervention to a student at
+risk.
+ Improve workforce
+productivity
+ Students get the necessary
+assistance on time.
+ Help student progression.
+ Reduced debt as a student
+will acquire the means (the
+degree certificate) to pay it.
+ High return on investment
+2. What is different about Learning Analytics?
+Educational administrators and technologists, especially those in higher education institutions, are still
+sceptical about the major differences in LA as compare to other fields that make use of educational data
+such as E ducation Data Mining (EDM) and Academic analytic (AA), after all they are all focus to ward the
+success of students and the ed ucation sector. EDM has been defined by the International Educational Data
+Mining Society as “an emerging discipline, concerned w ith developing method s for exploring t he unique
+types of data that come fro m educational settings, and using those methods to b etter understand students,
+and the sett ings which they learn in.” Siemen et al (2010) distinguish between EDM and LA, in areas suc h
+as their origin, stakeholders, adaptations and personaliza tion, reduction to co mponent and holism, which
+deals with understa nding the system as a whole and its complexity. Piety et al (2014) distinguish between
+Academic Analytics, Learning Analytics, Educational Data Mining, Personalization, and Systemic
+Instructional Improvement and pointed out that the major overlapping area of all these disciplines is in the
+engagement of researchers on how to explo it “big educational data” to improve education. Other areas of
+similarity are found in the fa ct that they are all deepl y ro oted in digital learning environ ments and online
+st orage of data.
+However, it should b e noted that the differences between these fields as enumerated below in Table 2 are
+largely organic and actually developed from the views, interest and values o f specific researcher rather than
+reflecting the sharp division or anta gonism views. Baker et al., 2 012; Almosallam et al., 2013 and Linan et
+al., 2015 gave comprehensive dif ferences and similarities between EDM and LA. These are su mmarised
+below
+Journal of Education and Practi ce www .iiste.org
+ISSN 2222-1735 ISSN (Online)2222- 288X
+V ol 8, No.10, 2017
+6 | P a g e
+www .iiste.org
+T able 2. T abular Representation of the differences among the three analyses discipline
+Education Data mining
+Academic Analytics
+Learning Analytics
+1) Reduced focus – Teachers
+and students
+2) It uses automated adaptation
+and interpret at io n
+3) Rooted in software and
+student modelling.
+4) Focus on learning as a
+research
+5) Ma ke use of textual data for
+analysis
+6) Focus more on techniques
+and methodologies
+7) Make use of Data mining
+techniques
+Reduced focus – Educational
+institutions
+It involves a utomatic iterative
+process
+Focus o n administrative concerns
+that affect higher education.
+Focus on e nrolment manage ment
+& decision making
+Make use of textual data for
+analysis
+Focus more on techniques and
+methodologies
+Make use of statistical techniques
+and predictive modelling
+Holistic focus- Teachers,
+Learners, educational institutions.
+Support human intervention and
+interpretation human data
+Focus on systemic intervention
+and support
+Focus on the aspect of educa tion
+beyond learning
+Textual anal ysis of data is rarel y
+seen
+Generally, focus on the
+application of analysis.
+Make use of Quantitative
+methods, data mining techniques
+and visualisation tools
+3. The Unresolved Challenges of Learning Analytics in Higher Education
+Learning analytics are designed to be of immense bene fit to the organisation, teachers and learners in the
+areas of learning personalization, per formance enhancement and feedback, student empowerment, learning
+methods design and consequently improved educational decision making. However there are diverse
+challenges militating against the application and implementation of it and if these challenges are not
+adequately addressed now, the y will be a great impediment to the development of the sector and meeting
+LA expectation. The study tries to answer these following questions –
+ What are the major challenges in implementing LA technology in HEIs?
+ What are the roadmaps that need to be followed to achieve success in LA implementation?
+These challenges identified by the study therefore are;
+a) Data and database heterogeneity – Eigh ty percent of educational data are un structured, in a
+different format and are spread around multiple, hetero geneous databases. These huge datasets are
+most time difficult to integrating and use hence needs to find a different appro ach for this
+multi-database mining and a nalysis. This will contin ue to be a major future challenge of LA as
+learner data is growing at a geometrical rate.
+b) T echnology architecture impact on data acc ess – Presently, the field of LA lack t he necessary
+technology architecture develo pment framework as it relates to technology specifications, models
+design and other infrastructure architecture. This poses a great challenge to t he development and
+use of LA technology .
+c) Data ownership – The data collected from different databases of HEIs and those c ollected
+Journal of Education and Practi ce www .iiste.org
+ISSN 2222-1735 ISSN (Online)2222- 288X
+V ol 8, No.10, 2017
+7 | P a g e
+www .iiste.org
+through survey questionnaire do have issues of ownership. Who owns or has the legal right to the
+data that are being used for analysis? How can the data be used, stored and for what duration?
+These and other questions need to be clarified with re gard to learners data, if not it will ac t as a
+major impediment in accessing and analysis of data in future.
+d) Privacy issues - As a result o f huge data set involve in lear ning anal ytic and access to these data
+by different categories of peo ple vis a viz administrator, teachers and oth er HEI staff, there is need
+to address the challenges of security , privac y, Access and data p rofiling. The edu cational
+administrator must, therefore, establish a guideline to monitor acce ss and use of learne rs’ data.
+e) Consensus Research framework – Presently there is no standardis ed framework on LA
+application in educational system
+f) Generalisation of application and tools - Many HEIs have alread y started implementing and
+utilised the potential LA in t heir syste m. Among them are t hose that are developed LA tools such
+as Purdue University( SIGNAL ) , University of W ollongong (SNAPP) ) University of New
+England (UNE)- (AWE), Open University Australia (OU A) - (PASS) etc Ho wever most of these
+technologies are specific to the university and are not easily adap table to others due to d ifferent
+social, economic and geographical factors affecting them. This is a major challenge that needs to
+be addressed for LA to be successful
+g) Inadequate training of staff on the use of learning analytic tools.
+4. The Roadmaps
+Many questions have arisen re lating to the future impact, direction and how to make LA achieve its
+ultimate g oals, which include enhancing lear ner performance . Researchers have s hown th at th e impact,
+value, processes and technology involved in LA are n ot well understood an d as such the potential and
+beneficial application of LA in HE Is are undermined (Greller and Drachsler, 2012). Ev en though the
+research area is just emerging, it is facing its own challenges as any other emerging research area. In fact ,
+one of the major themes for the conference of Learning An aly tic s and Knowledge for 2 014 wa s “ Learning
+Analytics at crossroads ” and as such this new research area requires a structured and sequential proce ss of
+development that meet the req uired educational needs. Therefore the first major ap proach is for the various
+stakeholders in the educational sector to identify and understand the strategic and potential value of
+learning analytics, rather than just focusing on technological i mplementation of it alone.
+Hence the paper tries to explore and proffer the different roadmaps that will lead to the success of the new
+research area. In their paper, Garcia and Bray ( 1997 ) presented a s tandardis ed structured method for
+designing and developing roa dmaps for an y new technology, grouped into three par ts : preliminary p lanning
+phase, development of the roadmap, and follow-up acti vities. However, for this research two f urther phases
+are included as shown in Figure 2.
+Journal of Education and Practi ce www .iiste.org
+ISSN 2222-1735 ISSN (Online)2222- 288X
+V ol 8, No.10, 2017
+8 | P a g e
+www .iiste.org
+Figure 2: Five Phases of an LA r oadmap
+Phase 1: Preliminary phase - This p reliminary phase consists of identification of the present
+challenges/gaps and co nditions that needed to be met to successfully implement LA in HEI s. It i s the
+planning stage that involves the develop ment of strategies for knowledge acquisition and accumulation
+about LA, its data sources and datab ases available. It also involves the identi fication of major stakeholders
+and necessary tec hnologies/infrastructure to address the gap, identification and assessment of the impact of
+action/inaction of each stakeholder on th e success and development of LA as well a s development of
+theoretical working analysis of LA. Ho wever, it should be noted that the first major step in this pha se is the
+formulation of the major educational goals to be achieved with LA, how to achieve it (execution) a nd the
+performance measurement . The second step involves making the critical decisions on the dataset to be
+incorporated in the analytics as well as data integration from heterogeneo us data sources . Generally , the
+preliminary stage deals mostly with planning.
+Phase 2: Security Privacy and Co mpliance Phase - In this phase, adequate identification a nd
+understanding of security, privacy and legality issues relating to the accessibility, use, and storage of learner
+data are the focus. Benc hmark, guidelines, policies and standards for privacy, data protection, security,
+ethical use of data and other legal compliance are created .
+Phase 3: Roadm ap development phase - This phase involves design and development of the key
+strategies to meet the speci fic requirements of LA development. These three major factors or roadmap
+strategies are necessary to ensure successful implementation and development of LA. However, these
+strategies must be integrated together in order to achieve the goal. These strategies are going to be
+examined under three sub-heading:
+a) The technological factors
+b) The organisational factors
+Journal of Education and Practi ce www .iiste.org
+ISSN 2222-1735 ISSN (Online)2222- 288X
+V ol 8, No.10, 2017
+9 | P a g e
+www .iiste.org
+c) The human-environmental factors
+a) The technological roadmap strateg y – Technolo gy is the driving force of analytics and
+organisational change and as such, its role in LA development cannot be overemphasised .
+Presently, technologies app lication in LA is in form of “Black box” solution is of negligib le use to
+HEIs. In addition, capturing multi and hetero geneous data of learners from different datab ases
+with the existing technology is challenging.
+However, it should be noted that each HEIs have a different requirement based on the location, the
+purpose of establishment, m ode of lecture delivery a nd many other fac tors. Hence, there is need
+for the development of an appr opriate template for implementation of LA in HE. The LA
+technologies development road map will, therefore, involves the technology need assessment and
+technology development plan, where th e available technology are assessed against the needs,
+requirements and goals of the educational institution before selection . Also, there is need to
+identify alternative tech nologies that might of great use in meeting the needs. As such the
+following should be done by the institutions;
+ Defining the requirement of the institution.
+ Literature review and understanding of each Learning a nalytic tools and technologies.
+ Evaluate and understand fea tures and attributes as well as cap abilities/limitation of each LA
+tools over the next 5-10years.
+ Understand the dynamics of the technologies for future use.
+ Ailing the attributes with the requirement and goals of the organisation.
+ Adoption and designing of the target technologie s.
+ Assess the performance of the technology in order to realign technology if necessary.
+b) The Organisational roadmap strategy - The organisational dimension in the s uccess of LA
+technologies in HEIs considers the relationship that exists betw een various components of the
+organisation and the implementation of the technologies. These organisational components include
+organisational policy, operations, management structure and culture as well as the institution
+strategy on technology implementation. Therefore, this study proposes four major organisational
+elements t hat sho uld be considered as a roadmap for succe ssful imple mentation of L A, as shown
+in Figure 3
+Figure 3: Graphical representation of Organisational factors for LA implementation
+Journal of Education and Practi ce www .iiste.org
+ISSN 2222-1735 ISSN (Online)2222- 288X
+V ol 8, No.10, 2017
+10 | P a g e
+www .iiste.org
+Hence the following steps should be follo wed
+ Guide process for change implementation
+ Review LA infrastructure and fill any existing gap
+ Assess compatibility with any other technologies prese ntly in use for learning
+ Establish institution training program
+ Create a conducive environment for the implementation o f LA tools.
+ Ensure adequate support from the educational management and administrator
+ Establish standardise control and monitoring of use LA tech nologies and data.
+c) The Human-Environmental roadmap strateg y
+The major key to effective utilisation, implementation and interpretation of LA tec hnologies to
+achieve organisation goals is to equip the key personnel to use LA. This should have a t op-down
+approach where the management is committed to the successful implementation. Si milarly, the key
+personnel should have the re levant professional s kill and competencies, such as the a bility to
+analyse, think and make app ropriate interpretation of the result obtained from LA techno logies.
+Because the incorrect interpretatio n of result report can lead to the wrong judge ment which may
+give false hope or cause emotional trauma to the learner. Therefore it is very important for
+educational administrators, counsellors and teac hers to be provided with basic analytical training
+in areas such as data mining, business intelligence, graph analysis/ interpretation and statistics.
+These should be cascaded down through the educational system .
+Phase 4; Adoption and evaluation Phase
+Once the strategies a nd the LA roadmap have been fully implemented in the system, they need to be
+evaluated to assess the stren gths and weaknesses of the tools as well as how the new tools integrate well
+with the legac y technologies. The assessments carried out on the technologies include functionality,
+usability and performance tests, as well as the measurement of bo th the positive and negative i mpacts of the
+technology on the organisation. Also, the risk, barrier and limitation to implementation are assessed.
+Phase 5: M onitoring and control Pha se - During the implementation of different stages of t he road map,
+the technology progress should be monitored and performance assessed b y measuring the performance o f
+the tools against organisational performance benchmarks, student performance, security strategies, the rate
+of retention a nd graduation. A syste m that will constantly monitor the performance and integrate change
+control into the application performance should be installed and implemented. There is also the possibility
+of review of phases before the final execution plan is develop ed.
+5. Conclusion and Recommendation
+In this paper, we have discussed the uses a nd impact of LA in HE system with specific focus on the United
+Kingdom Higher education. T he paper also p rovided a better understand of ho w HE Is can make use of LA
+tools as a mean of transfor ming educational sector and learn ers performance in order to achieve the desire d
+educational goals. So me of the benefits of LA have been enumerated to include governmental,
+organisational and learners benefits.
+In addition, the major impediments facing the success of LA implementation were discussed. It is expedient
+that HEIs in t he country make necessary policy a nd resolution to enhance learner data privacy and security.
+Also, effort should be made to mitigate the privacy and security risk associated with learner data
+accessibility especially to different teachers and education administrators .
+This theoretical review found out that most HEIs in the UK are not using LA to its opti mum level to assist
+the le arners in their effort to succeed and there fore recommend the review and adoption of LA to HEIs.
+Journal of Education and Practi ce www .iiste.org
+ISSN 2222-1735 ISSN (Online)2222- 288X
+V ol 8, No.10, 2017
+11 | P a g e
+www .iiste.org
+Furthermore, the paper recommends that there should be an established standard in the use of LA in HEIs.
+This will help to red uce the issues of the privacy breach and legal issues that might arise as a result of its
+use. In addition, the educational administrator should advocate policies that promote training of teachers on
+the use of LA tools.
+Finally, even though it is acknowledged that the paper has the limitation of not pro viding empirical
+evidence, however, it has actually provided a framework and roadmap for the i mplementation of LA tools
+that will help educational administration to estimate the future direction of LA and their relevance to
+different stakeholders. In addition, it should be noted that the foundation to generate the necessary benefit
+in LA application is to make available prop er integration among the major stakeholders – the learner, the
+teacher and the institution.
+In future, it would be advantageous to develop a dashboard that is more comprehensive to help teachers and
+education administrators to have a quick snapshot of student at -risk of attrition so that appr opriate
+help/intervention can be given. Further empirical research should also be carried o ut by measuring the rate
+adoption/acceptance of LA tools in the country as well as the development of more refined learning
+analytics implementation model.
+References
+Almosallam, E.A. and Ouertani, H.C., 2014. Learning Analytics: definitions, applications, and related
+fields. In Proceedings of the First International Conference on Advanced Data and Information and
+evaluation in higher education : Ory x Pr, 1991
+Almosallam, E.A. and Ouertani, H.C., 2014. Learning Analytics: definitions, applications, and relate d
+fields. In Proceedings of the First International Conference on Advanced Data and Information and
+evaluation in higher education : Ory x Pr, 1991
+Atif, A., Richar ds, D., Bilgin, A. and Marr one, M., 2013. Learning analytics in higher education: a
+summary of tools and approaches. In 30th Australasian Society for Computers in Learning in T ertiary
+Education Conference (ascilite 2013), Sydney.Engine ering (DaEng-2013) (pp. 721-730). Springer
+Singapore.
+Baker, R.S. and I nventado, P.S ., 2014. Educational data mining and learni ng analytics. In Learning
+analytics (pp. 61-75). Springer New Y ork.
+Bichsel, J., 2012. Analytics in higher education: Benefits, barriers, progress, and recom mendations .
+EDUCAUSE Center for Applied Research.
+Campbell, J.P . and Oblinger, D.G ., 2007. Academic analytics. EDUCAUS E review , 42 (4) , pp.40-57.
+Clow , D.,2013. An overview of learning analytics. In: Teaching in Higher Education, 18(6), 2013, pp.
+683 – 695.
+Dawson, S. and Macfadyen, L.P ., 2012. N umbers are not enough. Why e-learning analytics failed to
+inform an institutional strat egic plan. Educational T echnology & Society , 15 (3), pp.149-163
+Ferguson, R., 2012. Learning analytics: drivers, developments and challenges. International Journal
+of T echnology Enhanced Learning , 4 (5 -6), pp.304-317.
+Ferguson, R., 2012. Learning analytics: drivers, developments and challenges. International Journal
+of T echnology Enhanced Learning , 4 (5 -6), pp.304-317.
+Garcia, M.L. and Bray , O.H., 1997. Fundamentals of technology road mapping (pp. 3-31).
+Albuquerque, NM: Sandia Nati onal Laboratories.
+Gartner Inc., [Online]. A vailable: https:/ /www .gartner .com/doc/2571624
+Greller, W. and Drachsler, H., 2012. Translating Learning into Numbers: A Generic Framework for
+Learning Analytics. Educational technolog y & society , 15 (3), pp.42- 57.
+Journal of Education and Practi ce www .iiste.org
+ISSN 2222-1735 ISSN (Online)2222- 288X
+V ol 8, No.10, 2017
+12 | P a g e
+www .iiste.org
+Greller, W. and Drachsler, H., 2012. T ranslating learning into numbers: A generic framework for
+learning analytics. Educational t echnology & society , 15 (3), pp.42- 57.
+Greller, W. and Drachsler, H ., 2012. Translating lear ning into num bers: A generic framework for
+learning analytics. Educational t echnology & society , 15 (3), pp.42- 57.
+Khan, N., Y aqoob, I ., Hashem, I.A.T ., Inayat, Z., Mahm oud Ali, W .K., Alam, M., Shi raz, M. and Gani,
+A., 2014. Big data: survey, technologies, opportunities, and challenges. The Scientific W orld
+Journal , 2014 .
+Larusson, J. and White, B., 2013. Learning analytics (V ol. 178). Springer , New Y ork.
+Piety , P. J., Hickey, D.T. and Bishop, M.J., 2014, March. Educational data sciences: framing emergent
+practices for analytics of learning, organizations, and systems. In Proceedings of the Fourth
+International Confer ence on Learning Anal ytics and Knowledge (pp. 193-202) . ACM.
+Seanosky , J., Boulanger, D., & Kumar , V . (2015). Unfolding Learning Analytics for Big Data. In
+Emerging Issues in Sm art Learning (pp. 377-384). Springer Berlin Heidelberg
+Siemens, G ., 2011. Learning analytics: A foundation for informed change in higher education.
+Educause, slides retrieved from http://www .slideshare.net/gsiemens /learning-analyticseducause.
+Simpson, Ormond ., 2005. The costs and benefits of student retention for students, inst itutions and
+governments. S tudies in Learning, Evaluation Innovati on and Development , 2(3) pp. 3 4 – 43.
+Slade, S ., and Galpin, F ., 2012.. Lear ning analy tics and higher education: ethical perspectives. In
+Proceedings of the 2nd International Conference on Learning Analytics and Knowledge (pp. 16-17).
+ACM.
+W ook, M., Y ahaya, Y.H., Wahab, N., Isa, M.R.M., Awang, N.F. and Seong, H.Y ., 2009, December .
+Predicting NDUM student's academic perf ormance using dat a mining techniques. In Computer and
+Electrical Engineering, 2009. ICCEE'09. Second International Conference on (V ol. 2, pp. 357-361).
+IEEE.
+Citations (0)
+References (9)
+This research hasn't been cited in any other publications.
+
+    Analytics in Higher Education: Benefits, Barriers, Progress, and Recommendations
+    Technical Report
+    Full-text available
+        Aug 2012
+        Jacqueline Bichsel
+        Jacqueline Bichsel
+    The objectives of this research were to assess the current state of analytics in higher education, outline the challenges and barriers to using analytics, and develop a maturity index to provide a common means of assessing progress in analytics.
+    View
+    Show abstract
+    Learning Analytics in Higher Education: A Summary of Tools and Approaches
+    Conference Paper
+    Full-text available
+        Dec 2013
+        Amara Atif
+        Amara Atif
+        Mauricio Marrone
+        Mauricio Marrone
+        Ayse Bilgin
+        Ayse Bilgin
+        Deborah Richards
+        Deborah Richards
+    Higher education institutions recently have been drawing on methods from learning analytics to make decisions about learners’ academic progress, predictions about future performance and to recognise potential issues. As the use of learning analytics in higher education is a relatively new area of practice and research, the intent of this paper is to provide an overview of learning analytics including a summary of some exemplar tools. Finally we conclude the paper with a discussion on challenges and ethical issues.
+    View
+    Show abstract
+    Educational Data Mining and Learning Analytics
+    Chapter
+    Full-text available
+        May 2014
+        Ryan Baker
+        Ryan Baker
+        Paul Salvador Inventado
+        Paul Salvador Inventado
+    In recent years, two communities have grown around a joint interest on how big data can be exploited to benefit education and the science of learning: Educational Data Mining and Learning Analytics. This article discusses the relationship between these two communities, and the key methods and approaches of educational data mining. The article discusses how these methods emerged in the early days of research in this area, which methods have seen particular interest in the EDM and learning analytics communities, and how this has changed as the field matures and has moved to making significant contributions to both educational research and practice.
+    View
+    Show abstract
+    Numbers Are Not Enough. Why e-Learning Analytics Failed to Inform an Institutional Strategic Plan
+    Article
+    Full-text available
+        Jan 2012
+        EDUC TECHNOL SOC
+        Shane Dawson
+        Shane Dawson
+        Leah Macfadyen
+        Leah Macfadyen
+    Learning analytics offers higher education valuable insights that can inform strategic decision-making regarding resource allocation for educational excellence. Research demonstrates that learning management systems (LMSs) can increase student sense of community, support learning communities and enhance student engagement and success, and LMSs have therefore become core enterprise component in many universities. We were invited to undertake a current state analysis of enterprise LMS use in a large research-intensive university, to provide data to inform and guide an LMS review and strategic planning process. Using a new e-learning analytics platform, combined with data visualization and participant observation, we prepared a detailed snapshot of current LMS use patterns and trends and their relationship to student learning outcomes. This paper presents selected data from this "current state analysis" and comments on what it reveals about the comparative effectiveness of this institution's LMS integration in the service of learning and teaching. More critically, it discusses the reality that the institutional planning process was nonetheless dominated by technical concerns, and made little use of the intelligence revealed by the analytics process. To explain this phenomenon we consider theories of change management and resistance to innovation, and argue that to have meaningful impact, learning analytics proponents must also delve into the socio-technical sphere to ensure that learning analytics data are presented to those involved in strategic institutional planning in ways that have the power to motivate organizational adoption and cultural change.
+    View
+    Show abstract
+    Learning Analytics: definitions, applications and related fields
+    Conference Paper
+        Dec 2014
+        International Conference on Advanced Data and Information Engineering
+        Henda Chorfi
+        Henda Chorfi
+        Entesar Almosallam
+        Entesar Almosallam
+    In the last few decades, the number of people connected online for educational purpose is increasing dramatically and consequently a huge quantity of data is being generated. This data is mainly “traces” or “digital breadcrumbs” that students leave as they interact with online learning environments. Confident that this data can teach us about learners’ behaviors and help us enhancing learning experience, there has been a growing interest in the automatic analysis of such data. A research area referred to as Learning Analytics (LA) is identified. It is considered by many researchers as a strategic trend in education. Nevertheless, LA cannot be considered as a new field, it actually derives from different related fields such as Educational Data Mining, Academic Analytics, Action research, Personalized Adaptive Learning. In this paper, we begin with an examination of the educational factors that have driven the need and the development of analytics in education. We study connections between LA and its most related fields (Educational Data Mining and Academic Analytics). We summarize this interconnection in a table showing for each field the objectives, the stakeholders, the methods and the initial trigger behind the analysis actions. After that we study and run through LA applications presented in the International Learning Analytics & Knowledge Conferences during the three last years. Finally, we conclude by identifying some challenges in the area of LA in relation to the driven factors related to Educational Data.
+    View
+    Show abstract
+    An overview of learning analytics
+    Article
+        Aug 2013
+        TEACH HIGH EDUC
+        Doug Clow
+        Doug Clow
+    Learning analytics, the analysis and representation of data about learners in order to improve learning, is a new lens through which teachers can understand education. It is rooted in the dramatic increase in the quantity of data about learners and linked to management approaches that focus on quantitative metrics, which are sometimes antithetical to an educational sense of teaching. However, learning analytics offers new routes for teachers to understand their students and, hence, to make effective use of their limited resources. This paper explores these issues and describes a series of examples of learning analytics to illustrate the potential. It argues that teachers can and should engage with learning analytics as a way of influencing the metrics agenda towards richer conceptions of learning and to improve their teaching.
+    View
+    Show abstract
+    Learning analytics: Drivers, developments and challenges
+    Article
+        Jan 2012
+        Rebecca Ferguson
+        Rebecca Ferguson
+    Learning analytics is a significant area of technology-enhanced learning that has emerged during the last decade. This review of the field begins with an examination of the technological, educational and political factors that have driven the development of analytics in educational settings. It goes on to chart the emergence of learning analytics, including their origins in the 20th century, the development of data-driven analytics, the rise of learning-focused perspectives and the influence of national economic concerns. It next focuses on the relationships between learning analytics, educational data mining and academic analytics. Finally, it examines developing areas of learning analytics research, and identifies a series of future challenges.
+    View
+    Show abstract
+    Translating Learning into Numbers: A Generic Framework for Learning Analytics
+    Article
+    Full-text available
+        Jul 2012
+        EDUC TECHNOL SOC
+        Hendrik Drachsler
+        Hendrik Drachsler
+        Wolfgang Greller
+        Wolfgang Greller
+    With the increase in available educational data, it is expected that Learning Analytics will become a powerful means to inform and support learners, teachers and their institutions in better understanding and predicting personal learning needs and performance. However, the processes and requirements behind the beneficial application of Learning and Knowledge Analytics as well as the consequences for learning and teaching are still far from being understood. In this paper, we explore the key dimensions of Learning Analytics (LA), the critical problem zones, and some potential dangers to the beneficial exploitation of educational data. We propose and discuss a generic design framework that can act as a useful guide for setting up Learning Analytics services in support of educational practice and learner guidance, in quality assurance, curriculum development, and in improving teacher effectiveness and efficiency. Furthermore, the presented article intends to inform about soft barriers and limitations of Learning Analytics. We identify the required skills and competences that make meaningful use of Learning Analytics data possible to overcome gaps in interpretation literacy among educational stakeholders. We also discuss privacy and ethical issues and suggest ways in which these issues can be addressed through policy guidelines and best practice examples.
+    View
+    Show abstract
+    Fundamentals of technology road mapping
+        Jan 1997
+        3-31
+        M L Garcia
+        O H Bray
+    Garcia, M.L. and Bray, O.H., 1997. Fundamentals of technology road mapping (pp. 3-31).
+
+Ad
+Join ResearchGate to find the people and research you need to help your work.
+
+    15+ million members
+    118+ million publications
+    700k+ research projects
+
+Join for free
+Recommendations
+Discover more publications, questions and projects in Learning Analytics
+Project
+Do we need more buttons?
+
+    Constantin Toader
+    Constantin Toader
+    Thomas Hainey
+    Thomas Hainey
+    Thomas Connolly
+    Thomas Connolly
+
+I am trying to find out if computer gamers would need game controllers with more buttons than the standard game pad. This will help me find out if it is worth creating a new game controller using m ore than 16 buttons and more than 4 axes to improve the realism of playing simulation games or other games that require more than 16 inputs. ... [more]
+View project
+Project
+3D Me App
+
+    Marco Gilardi
+    Marco Gilardi
+    Mario Soflano
+    Mario Soflano
+    Thomas Connolly
+    Thomas Connolly
+
+This project aims to develop a novel method to enable smart-phones to reconstruct in 3D the body of a person from two orthogonal photos of the person
+View project
+Project
+DBTech PRO
+
+    Fritz Laux
+    Fritz Laux
+    Thomas Connolly
+    Thomas Connolly
+    Martti Laiho
+    Martti Laiho
+    [...]
+    Kari Silpiö
+    Kari Silpiö
+
+DBTech Pro project will determine the essential knowledge area of database technology covering the related standards, specifications, technology trends and understanding of the mainstream DBMS prod ucts. The project will plan, develop and pilot test course modules, methods and laboratory exercises to be used on advanced courses in schools and in further training for professionals. ... [more]
+View project
+Project
+DBTech EXT
+
+    Fritz Laux
+    Fritz Laux
+    Martti Laiho
+    Martti Laiho
+    Kari Silpiö
+    Kari Silpiö
+    [...]
+    Amandine Duffoux
+    Amandine Duffoux
+
+Aside the theoretical studies the project addresses the needs of the industry on application development and use of the mainstream database systems used by the European industry. The project extend s the results of the DBTech Pro project, the DBTech Framework of courses and the series of hands-on workshops - for learning by doing and verifying theories - is used to guide the development of learning modules, to cover the latest development in the practical field of database technologies.  Introduction to the tutorials and virtual labs for the workshops and self-studies are publicly available at  http://www.DBTechNet.org/DBTechExtTutorials.pdf ... [more]
+View project
+Article
+Full-text available
+Learning Analytics in a Shared-Network Educational Environment: Ethical Issues and Countermeasures
+April 2017 · International Journal of Advanced Computer Science and Applications
+
+    Olugbenga Wilson Adejo
+    Olugbenga Wilson Adejo
+    Thomas Connolly
+    Thomas Connolly
+
+The recent trend in the development of education across the globe is the use of the new Learning Analytics (LA) tools and technologies in teaching and learning. The potential benefits of LA notwithstanding, potential ethical issues have to be considered and addressed in order to avoid any legal issues that might arise from its use. As a result of this, Higher Education Institutions (HEIs) ... [Show full abstract] involved in the development of LA tools need to pay particular attention to every ethical challenges/constraint that might arise. This paper aims to identify and discuss several ethical issues connected with the practice and use of LA tools and technologies in analysing and predicting the performance of students in a shared network environment of HEIs. The study discusses the four ethical issues of Information and Communication Technology namely Privacy, Accuracy, Property and Accessibility (PAPA’s Model) as well as other approaches to explain these future concerns. The paper also presents the empirical evidence of the views of students on the analytical use and storage of their data. The results indicate that even though students have high trust in the privacy and security of their data being used by their institutions, more than half of the students have ethical concerns with the accessibility and storage of their data beyond a certain period. In the light of this, generalised strategies on ethical issues of the use of learners’ data in an HEI shared networked environment are proposed.
+View full-text
+Conference Paper
+Full-text available
+An Iterative and Collaborative implementation of an analytics framework for Teaching and Learning
+September 2017
+
+    Hua Leong Fwa
+    Hua Leong Fwa
+
+Institutions globally are adopting learning analytics at an unprecedented pace. With the measurement, collection, analysis and visualization of data about learners and their contexts, learning analytics promises to enhance institutions' understanding of both learning and the learning environment for optimization of the teaching and learning process. This impetus to adopt learning analytics within ... [Show full abstract] institutions globally is further accelerated by the unprecedented pace in which analytics has revolutionized the business world. In spite of the great enthusiasm surrounding learning analytics, recent reviews have also highlighted the lack of widespread adoption of it within the higher educational sector. This has been attributed to both data and technical challenges as well as the lack of a data driven decision making culture. In this paper, we will elaborate on the approach and framework in which our institution leveraged on in the journey towards the implementation of learning analytics.
+View full-text
+Article
+Guiding Early and Often: Using Curricular and Learning Analytics to Shape Teaching, Learning, and St...
+December 2017 · New Directions for Higher Education
+
+    Matthew D. Pistilli
+    Gregory L Heileman
+    Gregory L Heileman
+
+This chapter provides information on how the promise of analytics can be realized in gateway courses through a combination of good data science and the thoughtful application of outcomes to teaching and learning improvement efforts—especially with and among instructors.
+Read more
+Conference Paper
+Full-text available
+A First Step Towards Learning Analytics: Implementing an Experimental Learning Analytics Tool
+June 2017
+
+    Justian Knobbout
+    Justian Knobbout
+    Esther van der Stappen
+    Esther van der Stappen
+
+The educational domain is momentarily witnessing the emergence of learning analytics – a form of data analytics within educational institutes. Implementation of learning analytics tools, however, is not a trivial process. This research-in-progress focuses on the experimental implementation of a learning analytics tool in the virtual learning environment and educational processes of a case ... [Show full abstract] organization – a major Dutch university of applied sciences. The experiment is performed in two phases: the first phase led to insights in the dynamics associated with implementing such tool in a practical setting. The second – yet to be conducted – phase will provide insights in the use of pedagogical interventions based on learning analytics. In the first phase, several technical issues emerged, as well as the need to include more data (sources) in order to get a more complete picture of actual learning behavior. Moreover, self-selection bias is identified as a potential threat to future learning analytics endeavors when data collection and analysis requires learners to opt in.
+View full-text
+Discover more
+Last Updated: 01 Aug 2018
+Download citation
+What type of file do you want?
+RIS
+BibTeX
+Plain Text
+What do you want to download?
+Citation only
+Citation and abstract
+Download
+Interested in research on Learning Analytics?
+Join ResearchGate to discover and stay up-to-date with the latest research from leading experts in Learning Analytics and many other scientific topics.
+Join for free
+or
+Discover by subject area
+
+    Recruit researchers
+    Join for free
+    Login
+    Email
+    Tip: Most researchers use their institutional email address as their ResearchGate login
+    Password Forgot password?
+    Keep me logged in
+    Log in
+    or log in with
+    Welcome back! Please log in.
+    Email
+    · Hint
+    Tip: Most researchers use their institutional email address as their ResearchGate login
+    Password Forgot password?
+    Keep me logged in
+    Log in
+    or log in with
+    No account? Sign up
+
+App Store
+About
+News
+Company
+Careers
+Support
+Help center
+FAQ
+Business solutions
+Recruiting
+Advertising
+Ad
+© ResearchGate 2019. All rights reserved.
+
+    Imprint
+    Terms
+    Privacy
+

@@ -1,0 +1,25 @@
+//Literales estructurales
+arrLit_es=[]
+arrLit_es["volver"]=["volver"]
+arrLit_es["imprimir"]=["imprimir"]
+var literal=[]
+literal["elCampo"]="El campo"
+literal["noEsCorrecto"]="no es correcto"
+literal["recuerdaQueEl"]="Recuerde que el"
+literal["limiteDeEdadEs"]="limite de edad es"
+literal["elFormatoCorrectoEs"]="el formato correcto es"
+literal["num8CifrasYletra"]="8cifras+letra sin ningun espacio"
+literal["campoObligatorio"]="Campo obligatorio"
+literal["debeTenerExactamente"]="debe tener exactamente"
+literal["suLongMaximaEsDe"]="su longitud maxima es de"
+literal["suLongMinimaEsDe"]="su longitud minima es de"
+literal["debeSelecionarOpcion"]="su longitud maxima es de "
+literal["esDemasiado"]="es demasiado"
+literal["corto"]="corto"
+literal["largo"]="largo"
+literal["anios"]="anios"
+literal["caracter"]="caracter"
+literal["caracteres"]="caracteres"
+literal["codigoNoEspaniol"]="El dato introducido no es un código postal espaniol"
+literal["debesIntroducirUn"]="Debe introducir un"
+literal["valido"]="valido"

@@ -1,0 +1,50 @@
+
+Loading [MathJax]/extensions/MathMenu.js
+Cornell University
+Cornell University Library
+We gratefully acknowledge support from
+the Simons Foundation
+and member institutions
+arXiv.org > cs > arXiv:1503.05786
+( Help | Advanced search )
+Full-text links:
+Download:
+
+    PDF
+    Other formats
+
+( license )
+Current browse context:
+cs.CV
+< prev  |  next >
+new  | recent  | 1503
+Change to browse by:
+cs
+References & Citations
+
+    NASA ADS
+
+DBLP - CS Bibliography
+listing | bibtex
+François Chung
+Tomás Rodríguez
+Bookmark
+( what is this? )
+CiteULike logo BibSonomy logo Mendeley logo del.icio.us logo Digg logo Reddit logo ScienceWISE logo
+Computer Science > Computer Vision and Pattern Recognition
+Title: A General Framework for Multi-focal Image Classification and Authentication: Application to Microscope Pollen Images
+Authors: François Chung , Tomás Rodríguez
+(Submitted on 19 Mar 2015)
+
+    Abstract: In this article, we propose a general framework for multi-focal image classification and authentication, the methodology being demonstrated on microscope pollen images. The framework is meant to be generic and based on a brute force-like approach aimed to be efficient not only on any kind, and any number, of pollen images (regardless of the pollen type), but also on any kind of multi-focal images. All stages of the framework's pipeline are designed to be used in an automatic fashion. First, the optimal focus is selected using the absolute gradient method. Then, pollen grains are extracted using a coarse-to-fine approach involving both clustering and morphological techniques (coarse stage), and a snake-based segmentation (fine stage). Finally, features are extracted and selected using a generalized approach, and their classification is tested with four classifiers: Weighted Neighbor Distance, Neural Network, Decision Tree and Random Forest. The latter method, which has shown the best and more robust classification accuracy results (above 97\% for any number of pollen types), is finally used for the authentication stage. 
+
+Subjects: 	Computer Vision and Pattern Recognition (cs.CV)
+Cite as: 	arXiv:1503.05786 [cs.CV]
+  	(or arXiv:1503.05786v1 [cs.CV] for this version)
+Submission history
+From: François Chung Ph.D. [ view email ]
+[v1] Thu, 19 Mar 2015 14:44:29 GMT (13529kb,D)
+Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? )
+
+Link back to: arXiv , form interface , contact .
+Twitter

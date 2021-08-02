@@ -1,0 +1,173 @@
+
+close
+Skip to main content
+
+This service is more advanced with JavaScript available, learn more at http://activatejavascript.org
+SpringerLink
+Search
+
+    Home
+    Contact us
+    Log in
+
+Menu
+
+    Home
+    Contact us
+    Log in
+
+Advances in Visual Computing
+International Symposium on Visual Computing
+
+ISVC 2016 : Advances in Visual Computing pp 321-330 | Cite as
+Pollen Grain Recognition Using Deep Learning
+
+    Authors
+    Authors and affiliations
+
+    Amar Daood Email author
+    Eraldo Ribeiro
+    Mark Bush
+
+    Amar Daood
+        1
+    Email author
+    Eraldo Ribeiro
+        2
+    Mark Bush
+        3
+
+    1. Department of Electrical and Computer Engineering Florida Institute of Technology Melbourne USA
+    2. Department of Computer Sciences and Cybersecurity Florida Institute of Technology Melbourne USA
+    3. Department of Biological Sciences Florida Institute of Technology Melbourne USA
+
+Conference paper
+First Online: 10 December 2016
+
+    1.4k Downloads
+
+Part of the Lecture Notes in Computer Science book series (LNCS, volume 10072)
+Abstract
+
+Pollen identification helps forensic scientists solve elusive crimes, provides data for climate-change modelers, and even hints at potential sites for petroleum exploration. Despite its wide range of applications, most pollen identification is still done by time-consuming visual inspection by well-trained experts. Although partial automation is currently available, automatic pollen identification remains an open problem. Current pollen-classification methods use pre-designed features of texture and contours, which may not be sufficiently distinctive. Instead of using pre-designed features, our pollen-recognition method learns both features and classifier from training data under the deep-learning framework. To further enhance our network’s classification ability, we use transfer learning to leverage knowledge from networks that have been pre-trained on large datasets of images. Our method achieved \(\approx \) 94% classification rate on a dataset of 30 pollen types. These rates are among the highest obtained in this problem.
+Cite paper
+
+    How to cite?
+    .RIS Papers Reference Manager RefWorks Zotero
+    .ENW EndNote
+    .BIB BibTeX JabRef Mendeley
+
+References
+
+    1.
+    Flenley, J.: The problem of pollen recognition. In: Clowes, M.B., Penny, J.P. (eds.) Problems in Picture Interpretation, pp. 141–145. CSIRO, Canberra (1968) Google Scholar
+    2.
+    Treloar, W.J., Taylor, G.E., Flenley, J.R.: Towards automation of palynology 1: analysis of pollen shape and ornamentation using simple geometric measures, derived from scanning electron microscope images. J. Quat. Sci. 19 , 745–754 (2004) CrossRef Google Scholar
+    3.
+    Mildenhall, D., Wiltshire, P., Bryant, V.: Forensic palynology: why do it and how it works. Foren. Sci. Int. 163 , 163–172 (2006). Forensic Palynology CrossRef Google Scholar
+    4.
+    Hopping, C.: Palynology and the oil industry. Rev. Palaeobot. Palynol. 2 , 23–48 (1967) CrossRef Google Scholar
+    5.
+    del Pozo-Banos, M., Ticay-Rivas, J.R., Alonso, J.B., Travieso, C.M.: Features extraction techniques for pollen grain classification. Neurocomputing 150 (Part B), 377–391 (2015) CrossRef Google Scholar
+    6.
+    Dell’Anna, R., Cristofori, A., Gottardini, E., Monti, F.: A critical presentation of innovative techniques for automated pollen identification in aerobiological monitoring networks. Pollen: Structure, Types and Effects, 273–288 (2010) Google Scholar
+    7.
+    Travieso, C.M., Briceno, J.C., Ticay-Rivas, J.R., Alonso, J.B.: Pollen classification based on contour features. In: 2011 15th IEEE International Conference on Intelligent Engineering Systems (INES), pp. 17–21. IEEE (2011) Google Scholar
+    8.
+    García, N.M., Chaves, V.A.E., Briceño, J.C., Travieso, C.M.: Pollen grains contour analysis on verification approach. In: Corchado, E., Snášel, V., Abraham, A., Woźniak, M., Graña, M., Cho, S.-B. (eds.) HAIS 2012. LNCS (LNAI), vol. 7208, pp. 521–532. Springer, Heidelberg (2012). doi:   10.1007/978-3-642-28942-2_47 CrossRef Google Scholar
+    9.
+    Xie, Y., OhEigeartaigh, M.: 3D discrete spherical Fourier descriptors based on surface curvature voxels for pollen classification. In: 2010 WASE International Conference on Information Engineering (ICIE), vol. 1, pp. 207–211. IEEE (2010) Google Scholar
+    10.
+    Fernandez-Delgado, M., Carrion, P., Cernadas, E., Galvez, J.F.: Improved classification of pollen texture images using SVM and MLP (2003) Google Scholar
+    11.
+    Da Silva, D.S., Quinta, L.N.B., Gonccalves, A.B., Pistori, H., Borth, M.R.: Application of wavelet transform in the classification of pollen grains. Afr. J. Agric. Res. 9 , 908–913 (2014) CrossRef Google Scholar
+    12.
+    Ticay-Rivas, J.R., Pozo-Baños, M., Travieso, C.M., Arroyo-Hernández, J., Pérez, S.T., Alonso, J.B., Mora-Mora, F.: Pollen classification based on geometrical, descriptors and colour features using decorrelation stretching method. In: Iliadis, L., Maglogiannis, I., Papadopoulos, H. (eds.) AIAI/EANN -2011. IAICT, vol. 364, pp. 342–349. Springer, Heidelberg (2011). doi:   10.1007/978-3-642-23960-1_41 CrossRef Google Scholar
+    13.
+    Chica, M.: Authentication of bee pollen grains in bright-field microscopy by combining one-class classification techniques and image processing. Microsc. Res. Tech. 75 , 1475–1485 (2012) CrossRef Google Scholar
+    14.
+    Ngiam, J., Khosla, A., Kim, M., Nam, J., Lee, H., Ng, A.Y.: Multimodal deep learning. In: Proceedings of the 28th International Conference on Machine Learning, ICML 2011, June 28 – July 2 2011, Bellevue, Washington, USA, pp. 689–696 (2011) Google Scholar
+    15.
+    Krizhevsky, A., Sutskever, I., Hinton, G.E.: ImageNet classification with deep convolutional neural networks. In Pereira, F., Burges, C., Bottou, L., Weinberger, K. (eds.) Advances in Neural Information Processing Systems 25, pp. 1097–1105. Curran Associates Inc. (2012) Google Scholar
+    16.
+    Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., Salakhutdinov, R.: Dropout: a simple way to prevent neural networks from overfitting. J. Mach. Learn. Res. 15 , 1929–1958 (2014) MathSciNet MATH Google Scholar
+    17.
+    Ba, J., Frey, B.: Adaptive dropout for training deep neural networks. In: Advances in Neural Information Processing Systems, pp. 3084–3092 (2013) Google Scholar
+    18.
+    Vedaldi, A., Lenc, K.: MatConvNet - convolutional neural networks for MATLAB. CoRR abs/1412.4564 (2014) Google Scholar
+    19.
+    Yosinski, J., Clune, J., Bengio, Y., Lipson, H.: How transferable are features in deep neural networks? ArXiv e-prints (2014) Google Scholar
+    20.
+    Chatfield, K., Simonyan, K., Vedaldi, A., Zisserman, A.: Return of the devil in the details: delving deep into convolutional nets. In: British Machine Vision Conference (2014) Google Scholar
+    21.
+    Marcos, J.V., Nava, R., Cristobal, G., Redondo, R., Escalante-Ramirez, B., Bueno, G., Deniz, O., Gonzalez-Porto, A., Pardo, C., Chung, F., Rodriguez, T.: Automated pollen identification using microscopic imaging and texture analysis. Micron 68 , 36–46 (2015) CrossRef Google Scholar
+    22.
+    Sokolova, M., Lapalme, G.: A systematic analysis of performance measures for classification tasks. Inf. Process. Manage. 45 (4), 427–437 (2009). Elsevier CrossRef Google Scholar
+
+Copyright information
+© Springer International Publishing AG 2016
+About this paper
+
+Cite this paper as:
+    Daood A., Ribeiro E., Bush M. (2016) Pollen Grain Recognition Using Deep Learning. In: Bebis G. et al. (eds) Advances in Visual Computing. ISVC 2016. Lecture Notes in Computer Science, vol 10072. Springer, Cham
+
+    DOI https://doi.org/10.1007/978-3-319-50835-1_30
+    Publisher Name Springer, Cham
+    Print ISBN 978-3-319-50834-4
+    Online ISBN 978-3-319-50835-1
+    eBook Packages Computer Science
+
+    About this book
+    Reprints and Permissions
+
+Personalised recommendations
+Pollen Grain Recognition Using Deep Learning
+Cite paper
+
+    How to cite?
+    .RIS Papers Reference Manager RefWorks Zotero
+    .ENW EndNote
+    .BIB BibTeX JabRef Mendeley
+
+Buy options
+Actions
+Log in to check access
+Buy eBook
+EUR 83.29
+Buy paper (PDF)
+EUR 30.19
+
+    Instant download
+    Readable on all devices
+    Own it forever
+    Local sales tax included if applicable
+
+Learn about institutional subscriptions
+Cite paper
+
+    How to cite?
+    .RIS Papers Reference Manager RefWorks Zotero
+    .ENW EndNote
+    .BIB BibTeX JabRef Mendeley
+
+Cookies
+We use cookies to improve your experience with our site. More information
+Accept
+
+Over 10 million scientific documents at your fingertips
+Switch Edition
+
+    Academic Edition
+    Corporate Edition
+
+    Home
+    Impressum
+    Legal information
+    Accessibility
+    Contact us
+
+Springer Nature
+
+© 2017 Springer International Publishing AG. Part of Springer Nature .
+
+Not logged in Not affiliated 81.0.54.165

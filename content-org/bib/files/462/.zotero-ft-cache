@@ -1,0 +1,202 @@
+Skip to Main Content
+Wiley Online Library
+Log in / Register
+Log In
+E-Mail Address
+Password
+
+Forgotten Password?
+Remember Me
+
+    Register
+    Institutional Login
+
+Advertisement
+
+    Home >
+    Earth Sciences >
+    Hydrological Sciences >
+    Hydrological Processes >
+    Vol 22 Issue 25 >
+    Abstract
+
+JOURNAL TOOLS
+
+    Get New Content Alerts
+    Get RSS feed
+    Save to My Profile
+    Get Sample Copy
+    Recommend to Your Librarian
+
+JOURNAL MENU
+
+    Journal Home
+
+FIND ISSUES
+
+    Current Issue
+    All Issues
+
+FIND ARTICLES
+
+    Early View
+    Accepted Articles
+    Most Cited
+
+GET ACCESS
+
+    Subscribe / Renew
+
+FOR CONTRIBUTORS
+
+    Open Access
+    Author Guidelines
+    For Referees
+    Submit an Article
+
+ABOUT THIS JOURNAL
+
+    News
+    Overview
+    Editorial Board
+    Permissions
+    Advertise
+    Contact
+
+SPECIAL FEATURES
+
+    Review Issues
+    HPToday - 15 High Impact Invited Commentaries
+    Aims and Scope
+    SEO Guidelines for Authors
+    Wiley Job Network
+    CHINA Collection
+    MG Anderson Outstanding Paper of the Year: Dynamic, discontinuous stream networks: hydrologically driven variations in active drainage density, flowing channels and stream order
+    Jobs
+
+Advertisement
+Advertisement
+
+Research Article
+Estimation of suspended sediment concentration and yield using linear models, random forests and quantile regression forests
+
+    T. Francke 1,* ,
+    J.A. López-Tarazón 2 and
+    B. Schröder 1
+
+Article first published online: 21 AUG 2008
+
+DOI: 10.1002/hyp.7110
+
+Copyright © 2008 John Wiley & Sons, Ltd.
+
+Issue
+Hydrological Processes
+Hydrological Processes
+
+Volume 22 , Issue 25 , pages 4892–4904 , 15 December 2008
+
+Additional Information (Show All)
+
+How to Cite Author Information Publication History Funding Information
+How to Cite
+
+Francke, T., López-Tarazón, J.A. and Schröder, B. (2008), Estimation of suspended sediment concentration and yield using linear models, random forests and quantile regression forests. Hydrol. Process., 22: 4892–4904. doi: 10.1002/hyp.7110
+Author Information
+
+    1
+
+    Institute of Geoecology, University of Potsdam, Germany
+    2
+
+    Department of Environment and Soil Sciences, University of Lleida, Catalonia, Spain
+
+Email: T. Francke (francke@uni-potsdam.de)
+
+* Institute of Geoecology, University of Potsdam, Karl-Liebknecht-Str. 24-25, 14476 Potsdam, Germany.
+Publication History
+
+    Issue published online: 19 NOV 2008
+    Article first published online: 21 AUG 2008
+    Manuscript Accepted: 3 JUN 2008
+    Manuscript Received: 25 JAN 2008
+
+Funded by
+
+    German Science Foundation. Grant Number: BR 1731/3-1
+    Catalan Government and the European Social Fund
+    Ebro Water Authorities (SAIH)
+
+SEARCH
+Search Scope
+Search String
+
+    Advanced >
+    Saved Searches >
+
+SEARCH BY CITATION
+Volume:
+Issue:
+Page:
+ARTICLE TOOLS
+
+    Get PDF (486K) Get PDF (486K)
+    Save to My Profile
+    E-mail Link to this Article
+    Export Citation for this Article
+    Get Citation Alerts
+    Request Permissions
+
+Share |
+
+    Abstract
+    References
+    Cited By
+
+Get PDF (486K) Get PDF (486K)
+Keywords:
+
+    suspended sediment concentration;
+    sediment rating curve;
+    generalized linear model;
+    Random Forests;
+    Quantile Regression Forests
+
+Abstract
+
+For sediment yield estimation, intermittent measurements of suspended sediment concentration (SSC) have to be interpolated to derive a continuous sedigraph. Traditionally, sediment rating curves (SRCs) based on univariate linear regression of discharge and SSC (or the logarithms thereof) are used but alternative approaches (e.g. fuzzy logic, artificial neural networks, etc.) exist. This paper presents a comparison of the applicability of traditional SRCs, generalized linear models (GLMs) and non-parametric regression using Random Forests (RF) and Quantile Regression Forests (QRF) applied to a dataset of SSC obtained for four subcatchments (0·08, 41, 145 and 445 km 2 ) in the Central Spanish Pyrenees. The observed SSCs are highly variable and range over six orders of magnitude. For these data, traditional SRCs performed inadequately due to the over-simplification of relating SSC solely to discharge. Instead, the multitude of acting processes required more flexibility to model these nonlinear relationships. Thus, alternative advanced machine learning techniques that have been successfully applied in other disciplines were tested. GLMs provide the option of including other relevant process variables (e.g. rainfall intensities and temporal information) but require the selection of the most appropriate predictors. For the given datasets, the investigated variable selection methods produced inconsistent results. All proposed GLMs showed an inferior performance, whereas RF and QRF proved to be very robust and performed favourably for reproducing sediment dynamics. QRF additionally provides estimates on the accuracy of the predictions and thus allows the assessment of uncertainties in the estimated sediment yield that is not commonly found in other methods. The capabilities of RF and QRF concerning the interpretation of predictor effects are also outlined. Copyright © 2008 John Wiley & Sons, Ltd.
+Get PDF (486K) Get PDF (486K)
+More content like this
+Find more content:
+
+    like this article
+
+Find more content written by:
+
+    T. Francke
+    J.A. López-Tarazón
+    B. Schröder
+    All Authors
+
+    Publications
+    Browse by Subject
+    Resources
+
+    About Us
+    Help
+    Contact Us
+    Agents
+    Advertisers
+    Media
+    Privacy
+    Cookies
+    Terms & Conditions
+    Site Map
+
+Copyright © 1999-2016 John Wiley & Sons, Inc. All Rights Reserved.
+
+    About Wiley
+    Wiley.com
+    Wiley Job Network
+    Wiley
+

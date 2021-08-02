@@ -1,0 +1,244 @@
+Screen reader users, click here to load entire article This page uses JavaScript to progressively load the article content as a user scrolls. Screen reader users, click the load entire article button to bypass dynamically loaded article content.
+Please note that Internet Explorer version 8.x will not be supported as of January 1, 2016. Please refer to this blog post for more information. Close
+ScienceDirect
+
+    Sign in
+    Sign in using your ScienceDirect credentials
+    Username
+    Password
+    Remember me
+    Register now
+    Forgotten username or password?
+    Sign in via your institution
+        OpenAthens login
+        Other institution login
+    Help
+
+    Journals
+    Books
+
+    Journals
+    Books
+
+Sign in
+Help
+close
+Sign in using your ScienceDirect credentials
+Username
+Password
+Remember me
+Register now
+Forgotten username or password?
+Sign in via your institution
+
+    OpenAthens login
+    Other institution login
+
+    Purchase
+     
+    Help
+        Direct export
+         
+         
+        Export file
+          RIS (for EndNote, Reference Manager, ProCite)
+          BibTeX
+          Text
+          RefWorks Direct Export
+        Content
+          Citation Only
+          Citation and Abstract
+
+Advanced search
+
+ 
+Article outline
+Show full outline
+
+    Highlights
+    Abstract
+    Keywords
+    1. Introduction
+    2. Data and methods
+    2.1. Modelling domain
+    2.2. Particle number concentration (PNC) data
+    2.2.1. Tram-based PNC measurements
+    2.2.2. PNC measurements at permanent sites
+    2.3. Geo-referenced data
+    2.4. Modelling approach
+    2.4.1. Generalized additive models
+    2.4.2. Variable selection process
+    2.4.3. PNC model predictions
+    3. Results
+    3.1. Selected variables
+    3.2. Model performance
+    3.2.1. Comparison with measurements at fixed monitoring sites
+    3.2.2. Comparison with measurements obtained by pedestrians
+    3.2.3. Leave-one-out cross-validation
+    3.3. Intra-urban differences in PNC
+    4. Discussion
+    4.1. Network operation and measuring technique
+    4.2. Spatial predictors
+    4.3. Statistical modelling
+    5. Example application using PNC maps with high spatio-temporal resolution
+    6. Conclusions
+    Acknowledgements
+    Appendix A. Supplementary data
+    References
+
+Alert message
+JavaScript is disabled on your browser.
+Please enable JavaScript to use all the features on this page.
+Figures and tables
+
+    Map of the municipal area of Zurich. The white triangles depict the locations of ...
+    Table 1
+    Table 2
+    Table 3
+    Frequency a particular predictor is selected in total, is selected first and is ...
+    Table 4
+    Comparison of model predictions and corresponding 30 min mean PNC observed at ...
+    Table 5
+    Results of the leave-one-out cross-validation. The figure depicts the comparison ...
+    (a) Map of the city centre of Zurich depicting the locations for which the ...
+    Comparison of the distributions of predictor values within the city of Zurich ...
+    Table 6
+    Table 7
+    Map of Zurich
+    ec1
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. View full text
+
+Atmospheric Environment
+
+Volume 126 , February 2016, Pages 171–181
+Cover image Cover image
+Statistical modelling of particle number concentration in Zurich at high spatio-temporal resolution utilizing data from a mobile sensor network
+
+    M.D. Mueller a , , ,
+    David Hasenfratz b , 1 ,
+    Olga Saukh b ,
+    Martin Fierz c ,
+    Christoph Hueglin a
+
+    a Empa, Swiss Federal Laboratories for Materials Science and Technology, Duebendorf, Switzerland
+    b ETH Zurich, Computer Engineering and Networks Laboratory, Zurich, Switzerland
+    c University of Applied Sciences and Arts Northwestern Switzerland, Windisch, Switzerland
+
+    Received 22 July 2015, Revised 12 November 2015, Accepted 13 November 2015, Available online 2 December 2015
+
+  Show more   Show less
+Choose an option to locate/access this article:
+Check if you have access through your login credentials or your institution
+Check access
+Purchase $35.95
+
+    doi:10.1016/j.atmosenv.2015.11.033 
+    Get rights and content 
+
+Highlights
+
+•
+
+    Computation of highly resolved 30 min particle number concentration maps for the city of Zurich.
+•
+
+    Statistical models utilizing PNC data from a mobile sensor network and geoinformation.
+•
+
+    Maps revealing the high spatio-temporal variability of PNC in the urban environment.
+•
+
+    Route finding algorithm as an example for PNC map based applications.
+
+Abstract
+
+Highly resolved pollution maps are a valuable resource for many issues related to air quality including exposure modelling and urban planning. We present an approach for their generation based on data from a mobile sensor network and statistical modelling.
+
+An extensive record of particle number concentrations (PNCs) spanning more than 1.5 years was compiled by the tram-based OpenSense mobile sensor network in the City of Zurich. The sensor network consists of 10 sensor nodes installed on the roof of trams operating on different services according to their regular operation schedules. We developed a statistical modelling approach based on Generalized Additive models (GAMs) utilizing the PNC data obtained along the tram tracks as well as georeferenced information as predictor variables. Our approach includes a variable selection algorithm to ensure that individual models rely on the optimal set of predictor variables. Our models have high temporal and spatial resolutions of 30 min and 10 m by 10 m, respectively, and allow the spatial prediction of PNC in the municipal area of Zurich.
+
+We applied our approach to PNC data from two dedicated time periods: July–Sept. 2013 and Dec. 2013–Feb. 2014. The models strongly rely on traffic related predictor variables (vehicle counts) and, due to the hilly topography of Zurich, on elevation. We assessed the model performance by leave-one-out cross-validation and by comparing PNC predictions to measurements at fixed reference sites and to PNC measurements obtained by pedestrians. Model predictions reproduce well the main features of the PNC field in environment types similar to those passed by individual trams. Model performance is worse at elevated background locations probably due to the weak coverage of similar spots by the tram network.
+
+We end the paper by outlining a route finding algorithm which utilizes the highly resolved PNC maps providing the exposure minimal route for cyclists.
+Keywords
+
+    Particle number concentration (PNC) ;
+    Statistical modelling ;
+    Mobile sensor network ;
+    Geoinformation ;
+    Pollution maps ;
+    Urban environment
+
+    Corresponding author.
+
+1
+
+    Now at: Sensirion AG, Staefa, Switzerland.
+
+Copyright © 2015 Elsevier Ltd. All rights reserved.
+Elsevier
+About ScienceDirect Remote access Shopping cart Contact and support Terms and conditions Privacy policy
+Cookies are used by this site. For more information, visit the cookies page .
+Copyright © 2016 Elsevier B.V. or its licensors or contributors. ScienceDirect ® is a registered trademark of Elsevier B.V.
+RELX Group
+  Recommended articles
+
+        Comparative estimates of anthropogenic heat emission in relation to surface energy balance of a subtropical urban neighborhood
+        2016, Atmospheric Environment
+        more
+            Changhyoun Park, , Gunnar W. Schade, , Nicholas D. Werner, , David J. Sailor, , Cheol-Hee Kim,
+            Comparative estimates of anthropogenic heat emission in relation to surface energy balance of a subtropical urban neighborhood
+            Atmospheric Environment, Volume 126, February 2016, Pages 182–191
+            Original Research Article
+                PDF (3020 K)
+        Deriving high-resolution urban air pollution maps using mobile sensor nodes
+        2015, Pervasive and Mobile Computing
+        more
+            David Hasenfratz, , Olga Saukh, , Christoph Walser, , Christoph Hueglin, , Martin Fierz, , Tabita Arn, , Jan Beutel, , Lothar Thiele,
+            Deriving high-resolution urban air pollution maps using mobile sensor nodes
+            Pervasive and Mobile Computing, Volume 16, Part B, January 2015, Pages 268–285
+            Original Research Article
+                PDF (4226 K)
+        Two-week NO 2 maps for the City of Zurich, Switzerland, derived by statistical modelling utilizing data from a routine passive diffusion sampler network
+        2015, Atmospheric Environment
+        more
+            M.D. Mueller, , M. Wagner, , I. Barmpadimos, , Ch. Hueglin,
+            Two-week NO 2 maps for the City of Zurich, Switzerland, derived by statistical modelling utilizing data from a routine passive diffusion sampler network
+            Atmospheric Environment, Volume 106, April 2015, Pages 1–10
+            Original Research Article
+                PDF (2732 K)
+    View more articles »
+
+  Citing articles ( 0 )
+
+    This article has not been cited.
+
+  Related book content
+
+    No articles found.
+
+  Metrics
+Altmetric score of 1. Open Altmetric details page 1
+Help
+
+    1 Tweeter
+
+Saved to reference managers
+
+    19 Mendeley readers
+
+View more details »
+
++ Show more applications
+- Show fewer applications
+ 
+Download PDFs
+Help
+Help
+ 
+  close
+
+Click to get updates and verify authenticity.
+[Entitle Gadget]
+Entitle Gadget
+

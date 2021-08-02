@@ -1,0 +1,302 @@
+/* ---- Start http://elsevier-apps.sciverse.com/MatlabWeb/javascript/jquery.iframetracker.js ---- */
+/**
+ * jQuery iframe click tracking plugin demo
+ * Version 1.0 (2013-03-30)
+ * Copyright © 2013 Vincent Paré, www.finalclap.com
+ */
+(function($){
+        // Registering new tracking handler
+        $.fn.iframeTracker = function(handler){
+                // Storing the new handler into handler list
+                $.iframeTracker.handlersList.push(handler);
+                
+                // Binding boundary listener
+                $(this)
+                        .bind('mouseover', {handler: handler}, function(e){
+                                e.data.handler.over = true;
+                                try{ e.data.handler.overCallback(this); } catch(ex){}
+                        })
+                        .bind('mouseout',  {handler: handler}, function(e){
+                                e.data.handler.over = false;
+                                try{ e.data.handler.outCallback(this); } catch(ex){}
+                        });
+        };
+        
+        // Iframe tracker common object
+        $.iframeTracker = {
+                // Attributes
+                focusRetriever: null,  // Element used for restoring focus on window (element)
+                focusRetrieved: false, // Says if the focus was retrived on the current page (bool)
+                handlersList: [],      // Store a list of every trakers (created by calling $(selector).iframeTracker...)
+                isIE8AndOlder: false,  // true for Internet Explorer 8 and older
+                
+                // Init (called once on document ready)
+                init: function(){
+                        // Determine browser version (IE8-) ($.browser.msie is deprecated since jQuery 1.9)
+                        try{
+                                if( $.browser.msie == true && $.browser.version < 9 ){
+                                        this.isIE8AndOlder = true;
+                                }
+                        } catch(ex){
+                                try{
+                                        var matches = navigator.userAgent.match(/(msie) ([\w.]+)/i);
+                                        if( matches[2] < 9 ){
+                                                this.isIE8AndOlder = true;
+                                        }
+                                } catch(ex2){}
+                        }
+                        
+                        // Listening window blur
+                        $(window).focus();
+                        $(window).blur(function(e){
+                                $.iframeTracker.windowLoseFocus(e);
+                        });
+                        
+                        // Focus retriever
+                        $('body').append('<div style="position:fixed; top:0; left:0; overflow:hidden;"><input style="position:absolute; left:-300px;" type="text" value="" id="focus_retriever" /></div>');
+                        this.focusRetriever = $('#focus_retriever');
+                        this.focusRetrieved = false;
+                        $(document).mousemove(function(e){ // Focus back to page
+                                if( document.activeElement.tagName == 'IFRAME' ){
+                                        $.iframeTracker.focusRetriever.focus();
+                                        $.iframeTracker.focusRetrieved = true;
+                                }
+                        });
+                        // Blur doesn't works correctly on IE8-, so we need to trigger it manually
+                        if( this.isIE8AndOlder ){
+                                this.focusRetriever.blur(function(e){
+                                        e.stopPropagation();
+                                        e.preventDefault();
+                                        $.iframeTracker.windowLoseFocus(e);
+                                });
+                        }
+                        
+                        // Keep focus on window (fix bug IE8- elements focusables)
+                        if( this.isIE8AndOlder ){
+                                $('body').click(function(e){ $(window).focus(); });
+                                $('form').click(function(e){ e.stopPropagation(); });
+                        }
+                },
+                
+                // Blur on window => calling blurCallback for every handler with over=true
+                windowLoseFocus: function(event){
+                        for(var i in this.handlersList){
+                                if( this.handlersList[i].over == true ){
+                                        try{ this.handlersList[i].blurCallback(); } catch(ex){}
+                                }
+                        }
+                }
+        };
+        
+        // Init the iframeTracker on document ready
+        $(document).ready(function(){
+                $.iframeTracker.init();
+        });
+})(jQuery);/* ---- End http://elsevier-apps.sciverse.com/MatlabWeb/javascript/jquery.iframetracker.js ---- */
+/* ---- Start http://cdn.els-cdn.com/gadgets/prod/js/v3/s_code_1.js ---- */
+var scPlatform = "";
+var scGadgetName = "";
+var scGadgetClickEvent = "";
+var scIssnNumber = "";
+var scRepositoryName;
+var scPiiValue ="";
+
+var newImpression = 0;
+
+function logSCDisplay(){
+                s.linkTrackVars='events,eVar44,eVar45,eVar5';
+                s.linkTrackEvents='event24';
+                s.events = 'event24';
+                s.eVar44 = scPlatform;
+                s.eVar45 = scGadgetName;
+                if (typeof scRepositoryName != 'undefined') {
+                                if (scRepositoryName != "") {
+                                                s.linkTrackVars=s.linkTrackVars + ",eVar47";
+                                                s.eVar47 = scRepositoryName;
+                                }
+                }
+                if (typeof scIssnNumber != 'undefined') {
+                                if (scIssnNumber != "") {
+                                                s.linkTrackVars=s.linkTrackVars + ",eVar14";
+                                                s.eVar14 = scIssnNumber;
+                                }
+                }
+                s.tl(this, 'o', "Gadget load");
+                s.linkTrackVars="None";
+                s.linkTrackEvents="None";
+                newImpression = 1;
+}
+
+function logSCUsage(detail){
+                var s = s_gi(s_account);
+                s.linkTrackVars='events,eVar44,eVar45,eVar5';
+                s.linkTrackEvents='event25';
+                s.events = 'event25';
+                s.eVar44 = scPlatform;
+                if (typeof scIssnNumber != 'undefined') {
+                                if (scIssnNumber != "") {
+                                                s.linkTrackVars=s.linkTrackVars + ",eVar14";
+                                                s.eVar14 = scIssnNumber;
+                                }
+                }
+                if (typeof scRepositoryName != 'undefined') {
+                                if (scRepositoryName != "") {
+                                                s.linkTrackVars=s.linkTrackVars + ",eVar47";
+                                                s.eVar47 = scRepositoryName;
+                                }
+                }
+                s.eVar45 = scGadgetName;
+                if (detail === undefined) {
+                                if ( typeof scGadgetClickEvent != 'undefined') {
+                                                if (scGadgetClickEvent != "") {
+                                                                s.eVar48 = scGadgetClickEvent;
+                                                                s.linkTrackVars=s.linkTrackVars + ",eVar48";
+                                                }
+                                                else {
+                                                                s.linkTrackVars=s.linkTrackVars + ",eVar46";
+                                                }
+                                }
+                }
+                else {
+                               s.eVar48 = detail;
+                                s.linkTrackVars=s.linkTrackVars + ",eVar48";
+                }
+               s.tl(this, 'o', "Gadget Click");
+                if (newImpression == 1) {
+                                newImpression = 0;
+                                s.linkTrackEvents='event69';
+                                s.events = 'event69';
+                                s.tl(this, 'o', "First Click Count");
+                }
+                s.linkTrackVars="None";
+                s.linkTrackEvents="None";
+}
+
+function logSCWorkspaceClick(detail){
+    var s = s_gi(s_account);
+    s.linkTrackVars='events,eVar44,eVar45,eVar5';
+    s.linkTrackEvents='event70';
+    s.events = 'event70';
+    s.eVar44 = scPlatform;
+    if (typeof scIssnNumber != 'undefined') {
+                    if (scIssnNumber != "") {
+                                    s.linkTrackVars=s.linkTrackVars + ",eVar14";
+                                    s.eVar14 = scIssnNumber;
+                    }
+    }
+    if (typeof scRepositoryName != 'undefined') {
+                    if (scRepositoryName != "") {
+                                    s.linkTrackVars=s.linkTrackVars + ",eVar47";
+                                    s.eVar47 = scRepositoryName;
+                    }
+    }
+    s.eVar45 = scGadgetName;
+    if (detail === undefined) {
+                    if ( typeof scGadgetClickEvent != 'undefined') {
+                                    if (scGadgetClickEvent != "") {
+                                                    s.eVar48 = scGadgetClickEvent;
+                                                    s.linkTrackVars=s.linkTrackVars + ",eVar48";
+                                    }
+                                    else {
+                                                    s.linkTrackVars=s.linkTrackVars + ",eVar46";
+                                    }
+                    }
+    }
+    else {
+                   s.eVar48 = detail;
+                    s.linkTrackVars=s.linkTrackVars + ",eVar48";
+    }
+   s.tl(this, 'o', "Gadget Workspace Click");
+    s.linkTrackVars="None";
+    s.linkTrackEvents="None";
+}
+
+function logSCToggleClick(detail){
+    var s = s_gi(s_account);
+    s.linkTrackVars='events,eVar44,eVar45,eVar5';
+    s.linkTrackEvents='event71';
+    s.events = 'event71';
+    s.eVar44 = scPlatform;
+    if (typeof scIssnNumber != 'undefined') {
+                    if (scIssnNumber != "") {
+                                    s.linkTrackVars=s.linkTrackVars + ",eVar14";
+                                    s.eVar14 = scIssnNumber;
+                    }
+    }
+    if (typeof scRepositoryName != 'undefined') {
+                    if (scRepositoryName != "") {
+                                    s.linkTrackVars=s.linkTrackVars + ",eVar47";
+                                    s.eVar47 = scRepositoryName;
+                    }
+    }
+    s.eVar45 = scGadgetName;
+    if (detail === undefined) {
+                    if ( typeof scGadgetClickEvent != 'undefined') {
+                                    if (scGadgetClickEvent != "") {
+                                                    s.eVar49 = scGadgetClickEvent;
+                                                    s.linkTrackVars=s.linkTrackVars + ",eVar49";
+                                    }
+                                    else {
+                                                    s.linkTrackVars=s.linkTrackVars + ",eVar46";
+                                    }
+                    }
+    }
+    else {
+                   s.eVar49 = detail;
+                    s.linkTrackVars=s.linkTrackVars + ",eVar49";
+    }
+   s.tl(this, 'o', "Gadget Toggle Click");
+    s.linkTrackVars="None";
+    s.linkTrackEvents="None";
+}
+
+/* Adobe Tag Container Loader version: 1.0.7
+Copyright 1996-2013 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com */
+var s=new TagContainerLoader();
+s.tagContainerDC="d1";
+s.tagContainerNamespace="elsevier";
+s.tagContainerName="elseviergadget";
+var pp = decodeURIComponent(window.location.search);
+var scGadProm = false;
+if (pp.indexOf("pre/private") === -1) scGadProm = true;
+if ((window.location.host.indexOf("sciverse-shindig") === 0 || window.location.host.indexOf("elsevier-apps.sciverse.com") === 0) && scGadProm === true)  {
+	//s.tagContainerEnv="prod"; //this line commented out on purpose
+}else {
+	s.tagContainerEnv="dev";
+}
+s.loadTagContainer();
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+function TagContainerLoader(){var t=this,w=t.w=window;t.d=w.document;t._c='s_l';if(!w.s_c_il){w.s_c_il=[];w.s_c_in=0}t._il=w.s_c_il;t._in=w.s_c_in;t._il[t._in]=t;w.s_c_in++;t.timeout=5000;t.to=
+new Function('var t=s_c_il['+t._in+'];if(t.mt)t.mt(0)');t.loadTagContainer=function(){var t=this,l,p=t.d.body,n,a=t.tagContainerServer?t.tagContainerServer:'www.adobetag.com',b=
+t.tagContainerServerSecure?t.tagContainerServerSecure:a,c=t.d.cookie,d=t.tagContainerEnv?t.tagContainerEnv:(c?(c.indexOf('s_tagEnv=dev')>=0?'dev':(c.indexOf('s_tagEnv=stage')>=0?'stage':'live')):
+'live'),u=(t.w.location.protocol.toLowerCase().indexOf('https')>=0?'https://'+b:'http://'+a)+'/'+(t.tagContainerDC?t.tagContainerDC+'/':'')+t.tagContainerNamespace+'/'+d+'/'+t.tagContainerName+'.js'
+if(t.tagContainerURL)u=t.tagContainerURL;if(t.timeout)t.ti=setTimeout(t.to,t.timeout);if(t.d.getElementsByTagName){l=t.d.getElementsByTagName('HEAD');if(l&&l[0])p=l[0]}else p=0;if(
+p&&!t.tagContainerSynchronous){n=t.d.createElement('SCRIPT');if(n){n.type='text/javascript';n.setAttribute('async','async');n.src=u;if(p.firstChild)p.insertBefore(n,p.firstChild);else p.appendChild(n)
+}}else t.d.write('<sc'+'ript language="JavaScript" type="text/javascript" sr'+'c="'+u+'"></sc'+'ript>')};t.fs=function(x,y){if(x&&y){var a=x.split(','),b=y.split(','),i,j;for(i=0;i<a.length;i++){
+for(j=0;j<b.length;j++)if(a[i]==b[j])return 1}}return 0};t.aa=function(a){var b=0,i;if(a){b=[];for(i=0;i<a.length;i++)b[i]=a[i]}return b};t.wl=[];t.wq=[];t.createAsynchronousCustomTagHandler=function(
+o,f){var t=this,x,i;if(!f){f=o;o=0;x=t.w}else{if(!t.w[o])t.w[o]={};x=t.wl[o]=t.w[o]}if(typeof(f)!='object')f=[f];for(i=0;i<f.length;i++)if(!x[f[i]])x[f[i]]=new Function('var t=s_c_il['+t._in+
+'];t.wq[t.wq.length]={'+(o?'o:"'+o+'",':'')+'f:"'+f[i]+'",a:t.aa(arguments)}')};t.as=function(x){var y=[],i;for(i=1;i<x.length;i++)y[y.length]=x[i];return y};t.s=0;t.contextData={}
+t.retrieveLightData={};if(!w.s_giq)w.s_giq=[];t._gi=w.s_gi;w.s_gi=new Function('u','var t=s_c_il['+t._in+
+'],w=t.w,l=t._il,i,j,x,s;u=u.toLowerCase();if(l)for(j=0;j<2;j++)for(i=0;i<l.length;i++){s=l[i];x=s._c;if((!x||x=="s_c"||(j>0&&x=="s_l"))&&s.oun&&(s.oun==u||(s.fs&&s.sa&&s.fs(s.oun,u)))){'+
+'if(s.sa)s.sa(u);return s}}if(!t.oun){t.sa(u);return t}if(t._gi)return t._gi(u);s=new TagContainerLoader();s.tagContainerName="s_tca_"+w.s_giq.length;s.sa(u);w.s_giq[w.s_giq.length]=s;return s');t.sa=
+function(u){var t=this;if(t.s)t.s.sa(u);t.un=u;if(!t.oun)t.oun=u;else if(!t.fs(t.oun,u))t.oun+=','+u};t.tq=[];t.track=t.t=function(vo){var t=this,m;if(t.s)return t.s.t(vo);if(!vo)vo={};for(m in t){if(
+m!='un'||t.u!=t.un)vo[m]=t[m]}t.tq[t.tq.length]=vo;t.lnk=t.linkName=t.linkType='';return '';};t.trackLink=t.tl=function(o,u,n,vo){var t=this;if(t.s)return t.s.tl(o,u,v,vo);t.lnk=o;t.linkType=u
+t.linkName=n;return t.t(vo)};t.trackLight=function(p,ss,i,vo){var t=this;if(t.s)return t.s.trackLight(p,ss,i,vo);t.lightProfileID=p;t.lightStoreForSeconds=ss;t.lightIncrementBy=i;return t.t(vo)}
+t.lmq=[];t.loadModule=function(n,u,d){var t=this;if(t.s)return t.s.loadModule(n,u,d);t.lmq[t.lmq.length]={n:n,u:u,d:d};return 0};t.ml=[];t.mmq=[];t.mo=function(m,f){var t=this,i;t.ml[m]=t[m]={};if(f)
+for(i=0;i<f.length;i++)t[m][f[i]]=new Function('var t=s_c_il['+t._in+'];t.mmq[t.mmq.length]={m:"'+m+'",f:"'+f[i]+'",a:t.aa(arguments)}')};t.mo('Media',['open','play','stop','close','track']);t.mo(
+'Survey',['launch']);t.mci=[];t.mn=[];t.mc=function(n,m,p,k){var t=this,b,l=0;if(typeof(mboxFactoryDefault)=='undefined'||t.d.getElementById(m)==null)return;if(!mboxFactoryDefault.isEnabled()){
+clearInterval(t.mci[k]);t.mt(true);return}if(typeof(mboxFactoryDefault.get(t.mn[0],0))!='undefined')l=mboxFactoryDefault.get(t.mn[0],0).isShown();if(k==0||l){clearInterval(t.mci[k]);b=
+mboxFactoryDefault.create(n,p.split("&"));if(b)b.load()}};if(!w.mboxCreate&&!w.mboxDefine&&!w.mboxUpdate){w.mboxVersion='mini';if(!t.d.getElementById('mboxScriptContainer'))t.d.write(
+'<div id="mboxScriptContainer" style="display:none;visibility:hidden;"></div><style>.mboxDefault{visibility:hidden;}</style>');t.mt=function(f){var t=this,i,j,l,d;if(typeof(mboxFactoryDefault)==
+'undefined'||f){for(i in t.mci)clearInterval(t.mci[i]);d=(t.d.getElementsByClassName)?t.d.getElementsByClassName('mboxDefault'):t.d.getElementsByTagName('div');for(j=0,l=d.length;j<l;j++)if(d[j]
+.className=="mboxDefault")d[j].style.visibility="visible"}};t.mpi={};t.mp=function(x,m){var t=this;t.mpi[x]=setInterval(function(){if(typeof(mboxFactoryDefault)==='undefined')return;m();clearInterval(
+t.mpi[x])},13)};w.mboxCreate=function(n){var j=0,i,m,p,k;for(i in t.mn)if(t.mn[i]==n)j++;t.mn[t.mn.length]=n;m='mboxMarker-default-'+n+'-'+j;t.d.write('<div id="'+m+
+'" style="visibility:hidden;display:none">&nbsp;</div>');p=t.as(arguments).join("&");k=t.mci.length;t.mci[k]=setInterval(function(){t.mc(n,m,p,k);},5)};w.mboxDefine=function(d,n){var a=t.as(arguments)
+t.mp('define_'+n,function(){mboxFactoryDefault.create(n,a,d);})};w.mboxUpdate=function(n){var a=t.as(arguments),x;x='update_'+n;t.mpi[x]=setInterval(function(){if(typeof(mboxFactoryDefault)===
+'undefined'||typeof(mboxFactoryDefault.get(n))==='undefined')return;mboxFactoryDefault.update(n,a);clearInterval(t.mpi[x]);},13)};w.mboxLoadSCPlugin=function(s){(function(){if(typeof(
+mboxFactoryDefault)==='undefined'||typeof(mboxExternalLoadSCPlugin)==='undefined'||(s._c=='s_l'&&!s.s)){setTimeout(arguments.callee,19);return}if(s._c=='s_l')s=s.s;mboxExternalLoadSCPlugin(s)})()};}}		 
+/* ---- End http://cdn.els-cdn.com/gadgets/prod/js/v3/s_code_1.js ---- */
+/* ---- Start http://cdn.els-cdn.com/gadgets/prod/js/v1/s_beacon.js ---- */
+var CIPA={_gadgetContext:"",setGadgetContext:function(e){_gadgetContext=e},init:function(){$(window).load(CIPA.sendPage());$(window).load(CIPA.sendResources(2e3));$(window).unload(function(){CIPA.sendResources(0)})},hashCode:function(e){var t=0;if(e.length==0)return t;for(i=0;i<e.length;i++){var n=e.charCodeAt(i);t=(t<<5)-t+n;t=t&t}return t},sendPage:function(){var e=window.performance;var t="";t+="cpc="+_gadgetContext.platform;t+="&pagetype="+_gadgetContext.pageType;t+="&sdsh="+CIPA.hashCode(_gadgetContext.sds);t+="&tidh="+CIPA.hashCode(_gadgetContext.tid);if(document.location.href)t+="&href="+encodeURIComponent(document.location.href);t+="&domCount="+document.getElementsByTagName("*").length;if("performance"in window){if(e.timing){var n=e.timing;if(n.loadEventEnd>0){for(var r in n)t+="&"+r+"="+n[r];var i=_gadgetContext.prDevice+"/gadgets?"+t;$("body").append('<img style="display:none" src="'+i+'">')}else setTimeout(CIPA.sendPage,100)}}else{var i=_gadgetContext.prDevice+"/gadgets?"+t;$("body").append('<img style="display:none" src="'+i+'">')}},toInt:function(e){return Math.round(Number(e)).toString()},buildResources:function(e,t){var n=window.performance.timing;var r=$("iframe");var i=n.navigationStart;var s=n.responseStart-i;var o=n.domInteractive-i;var u=n.loadEventEnd-i;var a=window.performance.getEntries();var f=[];var l=CIPA.hashCode(_gadgetContext.sds);var c=CIPA.hashCode(_gadgetContext.tid);f.push({sdsh:l,tidh:c,ns:i});var h=CIPA.sc[CIPA.sc.length-1];for(var p=h;p<e;p++){var d=a[p].name.match(/^https?\:\/\/([^\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/i);if(d===null){var v="";var m=""}else{var g=d[2].split("/");if(g.length>=4)var v=g[1]+"/"+g[2]+"/"+g[3];else if(g.length==3)var v=g[1]+"/"+g[2];else if(g.length==2)var v=g[1];else var v="";var m=d[1];if(g[2]=="frag")if(d[4].split("_")[1]!=undefined)fragID=d[4].split("_")[1];else if(d[4]=="maps")fragID=0;else if(d[4]=="all")fragID=32767;else fragID="";else fragID=""}f.push({i:p,tm:CIPA.toInt(a[p].startTime)+"|"+CIPA.toInt(a[p].responseStart)+"|"+CIPA.toInt(a[p].duration),t:a[p].initiatorType,h:m,p:v})}var y=encodeURI(JSON.stringify(f));var a=_gadgetContext.prDevice+"/resource?"+y;$("body").append('<img style="display:none" src="'+a+'">');CIPA.sc.push(e);CIPA.loopc=[0]},ec:[0],sc:[0],loopc:[0],u:0,sendResources:function(e){if(typeof e!="undefined"&&e>0)var t=e;else var t=0;var n=CIPA.ec;if("performance"in window){var r=window.performance;if("timing"in r)var i=r.timing;if("getEntries"in r){var s=r.getEntries().length;CIPA.ec.push(s);ecl=CIPA.ec.length-1;ecC=CIPA.ec[ecl]-CIPA.ec[ecl-1];ecLast=CIPA.ec[ecl-1];var o=CIPA.ec[ecl]-CIPA.ec[ecl-1];if(CIPA.ec[ecl]==CIPA.ec[ecl-1]||CIPA.ec[ecl]-CIPA.ec[ecl-1]<5){CIPA.loopc.push(0);if(CIPA.loopc.length<3)setTimeout(function(){CIPA.sendResources(t)},t)}else{var u=CIPA.sc[CIPA.sc.length-1];for(var a=u;s-a>0;a=a+15){var u=CIPA.sc[CIPA.sc.length-1];CIPA.buildResources(a,s);if(s-a<15){var f=s-a;CIPA.buildResources(s,s)}}}}}}}/* ---- End http://cdn.els-cdn.com/gadgets/prod/js/v1/s_beacon.js ---- */

@@ -1,0 +1,634 @@
+/*
+    CONTACT CSS
+    ------------------------
+    Stephen Turvey
+    April - June 2018
+*/
+
+
+.contact-home [tabindex="-1"]:focus {
+    outline: 0 !important;
+}
+
+/* box sizing */
+
+.contact-home .ou-content * {box-sizing: border-box;}
+
+/* clear */
+
+.ou-clear:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+
+
+/*
+-------------------------------------------
+    Layout
+-------------------------------------------
+*/
+
+.contact div.ou-content {padding: 0;}
+
+.contact-home p.staff {margin-top: 15px;}
+
+.contact-home #ou-content .content-bottom {
+    margin: 0 auto;
+    max-width: 95%;
+}
+
+
+/*
+-------------------------------------------
+    Headings
+-------------------------------------------
+*/
+
+/* !important values necessary to override student theme */
+
+.ou-heading {
+    font-weight: bold !important;
+    margin-bottom: 20px;
+    line-height: 130%;
+}
+
+.ou-heading--xsmall {
+    font-size: 1em !important;
+    margin-bottom: 10px;
+}
+
+.ou-heading--small {
+    font-size: 1.1em !important;
+    margin-bottom: 10px;
+}
+
+.ou-heading--medium {
+    font-size: 1.2em !important;
+    margin-bottom: 10px;
+}
+
+.ou-heading--large {
+    font-size: 1.4em !important;
+    margin-bottom: 15px;
+}
+
+.ou-heading--xlarge {
+    font-size: 1.6em !important;
+    margin-bottom: 20px;
+}
+
+
+/*
+-------------------------------------------
+    Various
+-------------------------------------------
+*/
+
+.ou-contact-wizard {
+    padding: 20px 0 20px 0;
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+.ou-contact-wizard__header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.ou-contact-note {
+    font-size: 0.9em;
+    background-color: #FDF6CD;
+    border-radius: 5px 5px 0 0;
+    color: #444;
+    padding: 15px 20px;
+    margin:0;
+}
+
+.ou-link-back,
+.ou-link-back:visited {
+    text-decoration: none;
+    color: #039;
+    background-color: transparent;
+    display: inline-block;
+    padding-left: 2px;
+    margin-bottom: 15px;
+}
+
+.ou-link-back:before {
+    content: "";
+    border: solid #039;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-right: 5px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.ou-link-back:hover:before {border-color:#cc3300;}
+
+.ou-smallprint {
+    font-size: 1em;
+    color: #666;
+}
+
+.ou-address {font-style: normal;}
+
+
+/*
+-------------------------------------------
+    Forms
+-------------------------------------------
+*/
+
+.ou-form fieldset {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.ou-form-group {margin-bottom: 30px;}
+
+.ou-form-label-wrap {margin-bottom: 5px;}
+
+.ou-form-label {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+.ou-form-label-support,
+.ou-form-label-required {
+    display: block;
+    font-size: .9em;
+    color: #666;
+}
+
+.ou-form-label-required {display: inline-block;}
+
+.ou-form-input {
+    display: block;
+    width: 100%;
+    border: 2px solid #999;
+    background-color: #fff;
+    padding: 10px 12px;
+    font-size: 1em;
+    box-sizing: border-box;
+    border-radius: 0;
+    -webkit-appearance:none;
+}
+
+.ou-form-input:focus {
+    border-color: #549DD0;
+    box-shadow: none;
+    outline: none;
+}
+
+.ou-form-button,
+input.ou-form-button[type=submit] {
+    background-color: #549DD0;
+    color: #fff;
+    padding:10px 15px;
+    display: inline-block;
+    font-weight: bold;
+    border:none;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+    outline: none;
+    -webkit-appearance:none;
+}
+
+.ou-form-button:focus,
+input.ou-form-button[type=submit]:focus,
+.ou-form-button:hover,
+input.ou-form-button[type=submit]:hover {
+    background-color: #036;
+}
+
+
+/*
+-------------------------------------------
+    Contact groups
+-------------------------------------------
+*/
+
+.ou-contact-depts {
+    padding: 30px 0;
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+.contact-home .ou-contact-department {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.ou-contact-department:last-child {border-bottom: none;}
+
+.ou-contact-department__contact,
+div#ou-region1 .ou-contact-department__contact {
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.ou-contact-department__group {margin-bottom: 20px;}
+
+.ou-contact-department__meta {
+    color: #666;
+    background: transparent;
+    display: block;
+    padding-top: 3px;
+}
+
+.ou-contact-department__c1of2 {
+    width: 70px;
+    float: left;
+}
+
+.ou-contact-department__c2of2 {padding-left: 80px;}
+
+.ou-contact-department__module {
+    display: inline-block;
+    border:1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px 6px;
+    color: #F26522;
+    background-color: transparent;
+    font-size: .9em;
+    line-height: 1em;
+}
+
+
+
+/*
+-------------------------------------------
+    Lists
+-------------------------------------------
+*/
+
+/* reset */
+
+.ou-list {
+    margin:0 0 20px 0; 
+    padding:0;
+    list-style:none;
+    list-style-type:none;
+}
+
+.ou-list ul {
+    margin:10px 0;
+    padding:0 0 0 30px;
+}
+
+.ou-list li {
+    list-style:none;
+    list-style-type:none;
+    display:block;
+    margin:0;
+    line-height:150%;
+}
+
+
+/* icons */
+
+.ou-list--icons--ticks li {
+    background: url(icons/icon-tick.png);
+    background: url(icons/icon-tick.svg), linear-gradient(transparent, transparent);
+    background-repeat: no-repeat;
+}
+
+.ou-list--icons--crosses li {
+    background: url(icons/icon-cross.png);
+    background: url(icons/icon-cross.svg), linear-gradient(transparent, transparent);
+    background-repeat: no-repeat;
+}
+
+.ou-list--icons li {
+    padding:0 0 0 22px;
+    margin:0 0 8px 0;
+    background-position:0 2px;
+    background-repeat:no-repeat;
+    background-color:transparent;
+    background-size: 16px 16px;
+}
+
+/* wizard custom */
+
+.ou-list--wizard {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1em;
+}
+
+.ou-list--wizard li {margin-bottom: 12px;}
+
+.ou-list--wizard a {text-decoration: none;}
+
+.ou-list--wizard a.other {font-style: italic;}
+
+/* breadcrumb */
+
+.ou-contact-wizard__breadcrumb {
+    list-style: none;
+    margin:0 0 30px 0;
+    padding: 0;
+}
+
+.ou-contact-wizard__breadcrumb li {display:inline-block;}
+
+.ou-contact-wizard__breadcrumb li:after {
+    content: "/";
+    color: #549DD0;
+    display: inline-block;
+    padding: 0 8px;
+}
+
+.ou-contact-wizard__breadcrumb a {
+    color: #036;
+    text-decoration: none;
+}
+
+/* actions */
+
+.ou-contact-wizard-actions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ou-contact-wizard-actions-inline li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.ou-contact-wizard-actions a,
+.ou-contact-wizard-actions a:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: #039;
+    background-color: transparent;
+}
+
+.ou-contact-wizard-actions a:hover {color: #cc3300;}
+
+.ou-contact-wizard-actions__email {
+    padding: 5px 10px 5px 25px;
+    background: url(icons/icon-wizard-email.png);
+    background: url(icons/icon-wizard-email.svg), linear-gradient(transparent, transparent);
+    background-position: 0 7px;
+    background-repeat: no-repeat;
+}
+
+.ou-contact-wizard-actions__call {
+    padding: 5px 10px 5px 25px;
+    background: url(icons/icon-wizard-call.png);
+    background: url(icons/icon-wizard-call.svg), linear-gradient(transparent, transparent);
+    background-position: 3px 6px;
+    background-repeat: no-repeat;
+}
+
+.ou-contact-wizard-actions__callback {
+    padding: 5px 10px 5px 25px;
+    background: url(icons/icon-wizard-callback.png);
+    background: url(icons/icon-wizard-callback.svg), linear-gradient(transparent, transparent);
+    background-position: 3px 6px;
+    background-repeat: no-repeat;
+}
+
+.ou-contact-wizard-actions__webchat,
+div.ou-contact-wizard div.webchat-button,
+div.ou-contact-depts div.webchat-button {
+    padding: 5px 10px 5px 25px;
+    background: url(icons/icon-webchat.png);
+    background: url(icons/icon-webchat.svg), linear-gradient(transparent, transparent);
+    background-position: 0 6px;
+    background-repeat: no-repeat;
+}
+
+.ou-contact-wizard-actions__post {
+    padding: 5px 10px 5px 25px;
+    background: url(icons/icon-pin.png);
+    background: url(icons/icon-pin.svg), linear-gradient(transparent, transparent);
+    background-position: 0 6px;
+    background-repeat: no-repeat;
+}
+
+
+/*
+-------------------------------------------
+    Toggle
+-------------------------------------------
+*/
+
+
+#ou-site-body .ou-toggle {
+    text-decoration: none;
+    line-height: 100%;
+    display: none;
+    padding-left: 20px;
+}
+
+#ou-site-body .ou-toggle--closed {
+    display: inline-block;
+    background: url(icons/icon-plus.png);
+    background: url(icons/icon-plus.svg), linear-gradient(transparent, transparent);
+    background-position: 0 2px;
+    background-repeat: no-repeat;
+}
+
+#ou-site-body .ou-toggle--open {
+    display: inline-block;
+    background: url(icons/icon-minus.png);
+    background: url(icons/icon-minus.svg), linear-gradient(transparent, transparent);
+    background-position: 0 6px;
+    background-repeat: no-repeat;
+}
+
+
+/*
+-------------------------------------------
+    OU Content region styles
+-------------------------------------------
+*/
+
+.ou-contact-wizard .oucontent-region ul {
+    margin: 0 0 20px 0;
+    padding: 0 0 0 15px;
+}
+
+.ou-contact-wizard .oucontent-region li {margin-bottom: 5px;}
+
+.ou-contact-wizard .oucontent-region h2 {
+    font-weight: bold !important;
+    font-size: 1.2em;
+    margin: 25px 0 15px 0;
+}
+
+
+
+/*
+-------------------------------------------
+    Utilities
+-------------------------------------------
+*/
+
+
+/* margins */
+
+.m-0 {margin:0;}
+
+.mt-0 {margin-top: 0px;}
+.mt-5 {margin-top: 5px;}
+.mt-10 {margin-top: 10px;}
+.mt-20 {margin-top: 20px;}
+.mt-30 {margin-top: 30px;}
+.mt-40 {margin-top: 40px;}
+.mt-50 {margin-top: 50px;}
+
+.mb-0 {margin-bottom: 0;}
+.mb-5 {margin-bottom: 5px;}
+.mb-10 {margin-bottom: 10px;}
+.mb-15 {margin-bottom: 15px;}
+.mb-20 {margin-bottom: 20px;}
+.mb-25 {margin-bottom: 25px;}
+.mb-30 {margin-bottom: 30px;}
+.mb-40 {margin-bottom: 40px;}
+.mb-50 {margin-bottom: 50px;}
+
+.ml-0 {margin-left: 0;}
+.ml-5 {margin-left: 5px;}
+.ml-10 {margin-left: 10px;}
+.ml-15 {margin-left: 15px;}
+.ml-20 {margin-left: 20px;}
+.ml-30 {margin-left: 30px;}
+.ml-40 {margin-left: 40px;}
+.ml-50 {margin-left: 50px;}
+
+.mr-0 {margin-right: 0;}
+.mr-5 {margin-right: 5px;}
+.mr-10 {margin-right: 10px;}
+.mr-15 {margin-right: 15px;}
+.mr-20 {margin-right: 20px;}
+.mr-30 {margin-right: 30px;}
+.mr-40 {margin-right: 40px;}
+.mr-50 {margin-right: 50px;}
+
+/* text */
+
+.ta-l {text-align: left;}
+.ta-c {text-align: center;}
+.ta-r {text-align: right;}
+
+
+
+
+
+@media (min-width: 600px) {
+
+    .ou-heading--xsmall {font-size: 1em !important;}
+    .ou-heading--small {font-size: 1.2em !important;}
+    .ou-heading--medium {font-size: 1.4em !important;}
+    .ou-heading--large {font-size: 1.6em !important;}
+    .ou-heading--xlarge {font-size: 1.8em !important;}
+
+    .contact div.ou-content {padding: 20px;}
+    .contact-home div.ou-content {padding: 0;}
+
+    .contact-home p.staff, 
+    .contact-home div.box-staff {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 95%;
+    }
+
+    .contact-home .ou-contact-department p.staff {max-width: 100%;}
+
+    .contact-home .ou-contact-wizard {padding:50px 20px 30px 20px;}
+
+    .ou-contact-depts {padding:40px 20px 30px 20px;}
+
+    .ou-contact-wizard__content {padding: 0 20px;}
+
+    .ou-list--wizard {
+        font-size: 1.2em;
+        -moz-column-count: 2;
+        -moz-column-gap: 30px;
+        -webkit-column-count: 2;
+        -webkit-column-gap: 30px;
+        column-count: 2;
+        column-gap: 30px;
+    }
+
+    .ou-list--wizard li {
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .ou-form-label-wrap {
+        width:20%;
+        float: left;
+    }
+
+    .ou-form-label-wrap-inline {text-align: right;}
+
+    .ou-form-field-wrap {
+        width: 75%;
+        float: right;
+    }
+
+    .ou-form-label,
+    .ou-form-label-required {display: block;}
+
+    .ou-contact-department__col1,
+    .ou-contact-department__col2 {
+        width: 45%;
+        float: left;
+        margin-right: 4%;
+    }
+
+    .ou-contact-department__group--single-item {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
+
+    .ou-contact-wizard .oucontent-region h2 {font-size: 1.4em;}
+
+
+    /* utilties */
+
+    .md-ta-l {text-align: left;}
+    .md-ta-c {text-align: center;}
+    .md-ta-r {text-align: right;}
+
+} /* end mq */
+
+
+@media (min-width: 800px) {
+
+    .ou-contact-department__group--2cols {
+        float: left;
+        width:45%;
+        margin-right: 4%;
+    }
+
+    /* if 3 or more tutors/SSTs */
+    .ou-contact-department__group--3cols {
+        float: left;
+        width: 30%;
+        margin-right: 3%;
+    }
+
+} /* end mq */
+
+

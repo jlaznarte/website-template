@@ -1,0 +1,2169 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://www.koreascience.or.kr/article/articleresultdetail.jsp?no=34521203&searchtype=JJB&listlen=6&listno=4">
+<meta name="wpd_url" content="http://www.koreascience.or.kr/article/articleresultdetail.jsp?no=34521203&searchtype=JJB&listlen=6&listno=4">
+<meta name="wpd_date" content="2010-00-24T13:03Z">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Korea Science</title><title>KoreaScience</title>
+<link rel="stylesheet" type="text/css" href="articleresultdetail.css" media="all">
+</head>
+<body topmargin="0" leftmargin="0">
+<script language="JavaScript">
+
+	function OpenWindowReg(link_file) {
+		window.open("/member/"+link_file,"regi","top=0,left=0,width=550,height=370,resizable=1,scrollbars=no");
+	}
+
+	function forgotpwd() {
+		window.open("/member/forgotpass.jsp","pwd","top=0,left=0,width=550,height=300,resizable=1,scrollbars=no");
+	}
+
+
+	//정규식을 이용한 E-Mail 주소 검증
+	function checkemail(str){
+		var testresults;
+		var str=str;
+		var filter=/^(\w+(?:\.\w+)*)@((?:\w+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+		if (filter.test(str)) {
+			testresults = true;
+		}else{
+			alert(" It is not a valid email address. ")
+			testresults = false;
+		}
+
+		return testresults;
+	}
+
+	//로그인을 위한 스크립트
+	function login(){
+		form = document.login;
+		if(form.email.value == ""){
+			alert("Please enter your email address. ");
+			form.email.focus();
+			return;
+		}
+		if(form.passwd.value == ""){
+			alert("Please enter your passwd. ");
+			form.passwd.focus();
+			return;
+		}
+
+		form.action = "/member/login_submit.jsp";
+		form.submit();
+	}
+
+
+	function isKorean( koreanChar ) {
+		if ( koreanChar.value == null ) return false ;
+		for(var i=0; i < koreanChar.value.length; i++){
+			var c=koreanChar.value.charCodeAt(i);
+			//( 0xAC00 <= c && c <= 0xD7A3 ) 초중종성이 모인 한글자
+			//( 0x3131 <= c && c <= 0x318E ) 자음 모음
+			if( !( ( 0xAC00 <= c && c <= 0xD7A3 ) || ( 0x3131 <= c && c <= 0x318E ) ) ) {
+				return false ;
+			}
+		}
+		return true ;
+	}
+	function mailWindow(no, mode){
+		window.open("/article/sendmail_form.jsp?no="+no+"&mode="+mode,"mail","top=0,left=0,width=550,height=250,resizable=1,scrollbars=no");
+	}
+
+	function LinkOutPopup(linkurl){
+		window.open(linkurl,"linkout","top=0,left=0,width=550,height=750,resizable=1,scrollbars=yes");
+	}
+
+</script>
+<script language="javascript">
+
+    var btnposition = 'a';
+
+    var cgs_msgLanguage   = "ENG";
+    var cgs_userUniqueId  = "";
+    var cgs_userIP        = "150.214.205.116";
+</script>
+
+
+<!-- ------------------------------------------ -->
+<iframe src="articleresultdetail_1.html" name="tongexcel" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" style="display: none;" scrolling="no" frameborder="0" height="100" width="100"></iframe>
+
+
+	
+	
+	
+	<script src="common.js"></script>
+	<script language="javascript">
+
+		function printWindow(){
+			window.open('articleresultdetailprint.jsp?no=34521203', 'print' ,'width=770, height=760, top=100, left=100, scrollbars=yes,resizable=yes');
+		}
+
+		function doSear1(no) {
+		var form = document.j_sech;
+		var query = '';
+		var type = '';
+
+		if (form.journal_sech.value == "0"){
+			type="tall";
+		}else if (form.journal_sech.value == "1"){
+			type="title";
+		}else if (form.journal_sech.value == "2"){
+			type="author";
+		}else if (form.journal_sech.value == "3"){
+			type="abstract";
+		}
+
+		query = lf_QueryMake(form.searchWord.value, type);
+		query = "and(" + query +", intflds01:\""+ no + "\")";
+
+		form.hd_srchquery.value = query;
+		form.target = "searResult";
+		form.action = "../article/searchinjournal.jsp";
+		form.submit();
+		}
+
+		function doSear2() {
+		var form = document.j_sech2;
+		form.target = "searResult";
+		form.action = "searchinjournal2.jsp";
+		form.submit();
+		}
+		function doSave() {
+			var form = document.fexcel;
+			form.target = "downexcel";
+			form.action = "articleresultdetailexcel.jsp";
+			form.submit();
+		}
+
+		function DetailQuick(SearWord_Quick) {
+			var query = '';
+
+			query = lf_QueryMake(SearWord_Quick, "tall");
+
+			// new line 문자 제거
+			query = Char_Replace(query,'\r','');
+			query = Char_Replace(query,'\n','');
+
+			/* 검색대상 Target 선택 배열에 담기 - 통합검색을 위한 임시방편 .11.01*/
+			var lo_chkform = AuthorQuick.sTarget;
+			AuthorQuick.hd_srchquery.value = query;
+			AuthorQuick.submit();
+		}
+
+		function DetailQuick_author(SearWord_Quick) {
+			var query = '';
+
+			query = "comauthor:string(\""+ SearWord_Quick + "\")";
+
+			// new line 문자 제거
+			query = Char_Replace(query,'\r','');
+			query = Char_Replace(query,'\n','');
+
+			/* 검색대상 Target 선택 배열에 담기 - 통합검색을 위한 임시방편 .11.01*/
+			var lo_chkform = AuthorQuick.sTarget;
+			AuthorQuick.hd_srchquery.value = query;
+			AuthorQuick.submit();
+		}
+
+		function lf_QueryMake(kwy, ls_type) {
+			var index = 0;
+			var fieldcheck = 0;
+
+			var ls_buf = '';
+			var ls_query = '';
+			var ls_arr = new Array();
+			var ls_feildarr = new Array();
+			var ls_srcharr = new Array();
+			var l_Sresult = "";
+			var li_Rtn = 0;
+
+			var l_result1 = "";
+			var l_result2 = "";
+
+
+			if(kwy != ''){
+				ls_buf = cgf_FieldPhas(ls_type,kwy).split('%');
+				if (ls_buf = "0"){
+					return;
+				}
+				ls_arr[index]=ls_buf[0];
+				index++;
+			}
+
+			if (index > 1) {
+				ls_query = 'and('
+				for(var i=0; i< ls_arr.length; i++){
+
+					if (i >= 1) {ls_query += ', ';}
+					ls_query += ls_arr[i];
+				}
+				ls_query += ')'
+			}else if (index > 0) {
+				ls_query += ls_arr[0];
+			}
+
+			return ls_query;
+		}
+
+		function ResultListGo(){
+			var form = document.ResultList;
+			form.action="../article/search_result.jsp";
+
+			form.submit();
+		}
+
+		function ArticleMove(currpage ,pageno){
+			var form = document.ResultList;
+
+			form.listno.value = pageno;
+			form.hd_currpage.value = currpage;
+
+			form.action="../article/articleresultdetail.jsp";
+			form.submit();
+		}
+
+		/*
+		Funtion : fc_chk2()
+		Description : Enter키를 못치게 한다.
+		*/
+		function fc_chk2()
+		{
+			if(event.keyCode == 13)
+				event.returnValue=false;
+		}
+	</script>
+<iframe src="articleresultdetail_2.html" name="downexcel" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" style="display: none;" scrolling="no" frameborder="0" height="100" width="100"></iframe>
+
+
+<table class="main_table" cellpadding="0" cellspacing="0" border="0">
+<form action="http://www.koreascience.or.kr/article/articleresultdetail.jsp?no=34521203&searchtype=JJB&listlen=6&listno=4" name="fexcel"></form>
+	<input name="no" value="34521203" type="hidden">
+
+	<tbody><tr>
+		<td class="main_align">
+			<table class="subbody_table" cellpadding="0" cellspacing="0" border="0">
+				<tbody><tr>
+					<td>
+						<!-- 상단 공통 테이블 시작 -->
+					
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<script language="javascript">
+
+function gf_CutSpecialChar(as_str) {
+	var ls_SpecialChar = " ~`!@#$%^&()_-+=|\\:;\"'{}[]<>?,./";
+	var ls_return=as_str, buf='';
+
+	for (var i = 0; i < ls_SpecialChar.length;i++) {
+		ls_return = Char_Replace(ls_return, ls_SpecialChar.substr(i,1), ' ');
+		if (ls_SpecialChar.substr(i,1) == "\r" || ls_SpecialChar.substr(i,1) == "\n")
+			ls_return = Char_Replace(ls_return, ls_SpecialChar.substr(i,1), ' ');
+	}
+
+	for (var i = 0; i < ls_return.length;i++) {
+		if (ls_return.charCodeAt(i) == 10 || ls_return.charCodeAt(i) == 13) continue;
+		buf += ls_return.charAt(i);
+	}
+	return (buf);
+}
+
+function gf_Trim(as_str,as_gubun) {
+	var i=0;
+	var dummy='';
+	as_gubun = as_gubun.toLowerCase();
+
+	if (as_str == null) return;
+	if (as_gubun == 'r' || as_gubun == 'a') {
+		for (i=as_str.length;i>=1;i--) {
+			if (as_str.substr(i-1,1) != ' ') {
+				as_str = as_str.substr(0,i);
+				dummy='*';
+				break;
+			}
+		}
+		if (dummy == '') {as_str='';dummy=''};
+	}
+
+	if (as_gubun == 'l' || as_gubun == 'a') {
+		for (i=1;i<=as_str.length;i++) {
+			if (as_str.substr(i - 1,1) != ' ') {
+				as_str = as_str.substr(i - 1,999);
+				dummy='*';
+				break;
+			}
+		}
+		if (dummy == '') as_str='';
+	}
+	return(as_str);
+}
+
+function cgf_FieldCheck(as_keyword) {
+	// Double quotation 양쪽 갯수 체크
+	var doublequote_pos = 0;
+	var doublequote_cnt = 0;
+	while(1) {
+		doublequote_pos = as_keyword.indexOf('\"', doublequote_pos);
+		if(doublequote_pos == -1) break;
+		if(doublequote_pos != -1) doublequote_cnt++;
+		doublequote_pos = doublequote_pos+1;
+	}
+
+	if((doublequote_cnt % 2) != 0) {
+		var ls_Msg = "[Keyword in " + as_gubun + "] Double quotation\'s number is wrong.";
+	}
+
+	//gi_count++;
+	//괄호 갯수 Check
+	var Rparentheses=0;
+	var Lprentheses=0;
+	for (i=0;i<as_keyword.length;i++) {
+		if(as_keyword.charAt(i)=='(') Lprentheses++;
+		if(as_keyword.charAt(i)==')') Rparentheses++;
+	}
+
+	if (Lprentheses || Rparentheses) {
+		alert(" '(' or ')' is not available ");
+		return -1;
+	}
+
+
+
+	// 2001.08.06 정숙영: 일치검색시 '"'를 "'"로 잘못 입력했을 경우 처리
+	var li_pos =gf_Pos(as_keyword, "'",0);
+	if (li_pos >= 0){
+		alert(" ' is not available ");
+		return -1;
+	}
+
+	li_pos =gf_Pos(as_keyword, "?",0);
+	if (li_pos >= 0){
+		alert(" ? is not available ");
+		return -1;
+	}
+
+	li_pos =gf_Pos(as_keyword, "~",0);
+	if (li_pos >= 0){
+		alert(" ~ is not available ");
+		return -1;
+	}
+
+	li_pos =gf_Pos(as_keyword, "@",0);
+	if (li_pos >= 0){
+		alert(" @ is not available ");
+		return -1;
+	}
+
+	li_pos =gf_Pos(as_keyword, "$",0);
+	if (li_pos >= 0){
+		alert(" $ is not available ");
+		return -1;
+	}
+
+	li_pos =gf_Pos(as_keyword, "^",0);
+	if (li_pos >= 0){
+		alert(" ^ is not available ");
+		return -1;
+	}
+
+	return 0;
+}
+
+function Char_Replace(Str,BeforeChar,AfterChar) {
+
+	var AfterString='';
+
+	for (cnt = 0; cnt < Str.length; cnt++) {
+		switch(Str.charAt(cnt)) {
+			case BeforeChar:
+				AfterString+=AfterChar;
+				break;
+			default:
+				AfterString+=Str.charAt(cnt);
+				break;
+		}
+	}
+
+	return AfterString;
+}
+
+function Word_Check(TargetSourceString,BeforeChangeString,AfterChangeString) {
+        var AfterString='';
+        var While=1;
+        var NextPos=0;
+        var LeftString='';
+        var RightString='';
+        var StartPos=0;
+        var StartString=BeforeChangeString.substr(0,1);
+        var BeforeChangeStringLength=BeforeChangeString.length;
+
+        while(While) {
+		StartPos=TargetSourceString.indexOf(StartString,NextPos);
+			if (StartPos == -1)	return TargetSourceString;
+                if(TargetSourceString.substr(StartPos,BeforeChangeStringLength)==BeforeChangeString) {
+                	var pWord=TargetSourceString.substr(StartPos-1,1);
+                	var nWord=TargetSourceString.substr(StartPos+BeforeChangeString.length,1);
+
+        			if((pWord=='-' || pWord==' ' || pWord=='(' || pWord==')') && (nWord=='-' || nWord==' ' || nWord=='(' || nWord==')')) {
+
+						LeftString=TargetSourceString.substr(0,StartPos);
+	                    RightString=TargetSourceString.substr(StartPos+BeforeChangeString.length);
+	                    AfterString=LeftString+AfterChangeString+RightString;
+
+						TargetSourceString = AfterString;
+					}
+					NextPos=StartPos+1;
+                }
+                else {
+                    NextPos=StartPos+1;
+                    if(NextPos>TargetSourceString.length) {
+						While=0;
+                        AfterString=TargetSourceString;
+                    }
+				}
+			}
+        return AfterString;
+}
+
+
+function OperateChange(field_value) {
+	field_value=Word_Check(field_value,'and','&');
+	field_value=Word_Check(field_value,'or','|');
+	field_value=Word_Check(field_value,'not','!');
+	field_value=Word_Check(field_value,'near','♨');
+	return field_value;
+}
+
+
+function OnlyOneSpace(TargetSourceString) {
+	var AfterString='';
+
+	for (cnt = 0; cnt < TargetSourceString.length; cnt++) {
+		switch(TargetSourceString.charAt(cnt)) {
+			case ' ':
+				if(TargetSourceString.charAt(cnt+1)!=' ')
+					AfterString+=TargetSourceString.charAt(cnt);
+				break;
+			default:
+				AfterString+=TargetSourceString.charAt(cnt);
+				break;
+		}
+
+	}
+
+	return AfterString;
+}
+
+function gf_SpaceJob(field_value,token,gubun) {
+	var ls_nTempPos;
+	var ls_cTempPos=0;
+	var ls_lfield_value='';
+	var ls_cfield_value='';
+	var ls_rfield_value='';
+	var ls_dfield_value='';
+
+	switch(gubun) {
+		case 'p':
+			while(1) {
+				ls_cTempPos=field_value.indexOf(token,ls_cTempPos);
+				if(ls_cTempPos != -1) {
+					if(field_value.substr(ls_cTempPos-1,1)==' ') {
+						ls_lfield_value=field_value.substr(0,ls_cTempPos-1);
+						ls_rfield_value=field_value.substr(ls_cTempPos);
+						field_value=ls_lfield_value+ls_rfield_value;
+					}
+					else {
+						ls_cTempPos++;
+					}
+				}
+				else break;
+			}
+			break;
+		case 'n':
+			while(1) {
+				ls_cTempPos=field_value.indexOf(token,ls_cTempPos);
+				if(ls_cTempPos != -1) {
+					if(field_value.substr(ls_cTempPos+1,1)==' ') {
+						ls_lfield_value=field_value.substr(0,ls_cTempPos+1);
+						ls_rfield_value=field_value.substr(ls_cTempPos+2);
+						field_value=ls_lfield_value+ls_rfield_value;
+					}
+					else {
+						ls_cTempPos++;
+					}
+				}
+				else break;
+			}
+			break;
+		case 'a':
+			ls_cTempPos=0;
+			while(1) {
+				ls_cTempPos=field_value.indexOf(token,ls_cTempPos);
+				if(ls_cTempPos != -1) {
+
+
+					if(field_value.substr(ls_cTempPos+1,1)==' ') {
+						ls_lfield_value=field_value.substr(0,ls_cTempPos+1);
+						ls_rfield_value=field_value.substr(ls_cTempPos+2);
+						field_value=ls_lfield_value+ls_rfield_value;
+					}
+
+					else if(field_value.substr(ls_cTempPos-1,1)==' ') {
+						ls_lfield_value=field_value.substr(0,ls_cTempPos-1);
+						ls_rfield_value=field_value.substr(ls_cTempPos);
+						field_value=ls_lfield_value+ls_rfield_value;
+					}
+
+					else {
+						ls_cTempPos++;
+					}
+
+				}
+				else break;
+			}
+			break;
+	}
+	return field_value;
+}
+	var cgs_TagDelimit = '》';
+	var cgs_SubDelimit = '▼';
+	var cgs_RcdDelimit = '◈';
+	var cgs_FldDelimit = '◇';
+function gf_Pos(dest, src, start)
+{
+	var i=0;
+
+	if (start > dest.length) return (0);
+	if (src == cgs_TagDelimit) {
+		i = dest.indexOf(src,start);
+		if (i < 0)  return(-1);
+		if ( dest.charAt(i+1) >= '0' && dest.charAt(i+1) <= '9') return(i);
+		else {
+			while(1) {
+				i = dest.indexOf(cgs_TagDelimit,i+1);
+				if ( i < 0 ) return(-2);
+				if ( dest.charAt(i+1) >= '0' && dest.charAt(i+1) <= '9') return(i);
+			}
+		}
+	}
+	else if (src == cgs_SubDelimit) {
+		i = dest.indexOf(src,start);
+		if (i < 0)  return(-3);
+		if ( ( dest.charAt(i+1) >= '0' && dest.charAt(i+1) <= '9') ||
+		     ( dest.charAt(i+1) >= 'a' && dest.charAt(i+1) <= 'z') ||
+		     ( dest.charAt(i+1) >= 'A' && dest.charAt(i+1) <= 'Z') ) return(i);
+		else {
+			while(1) {
+				i = dest.indexOf(cgs_SubDelimit,i+1);
+				if ( i < 0 ) return(-4);
+				if ( ( dest.charAt(i+1) >= '0' && dest.charAt(i+1) <= '9') ||
+				     ( dest.charAt(i+1) >= 'a' && dest.charAt(i+1) <= 'z') ||
+				     ( dest.charAt(i+1) >= 'A' && dest.charAt(i+1) <= 'Z') ) return(i);
+			}
+		}
+	}
+	else {
+		i = dest.indexOf(src,start);
+		if (i < 0)  return(-5);
+		return(i);
+	}
+
+	return(i);
+}
+
+function cgf_FieldPhas(field_name,field_value) {
+
+
+	var ls_value = '';
+	var ls_temp = '';
+
+	var p=0;
+	var q=0;
+	var li_start=0;
+	var li_end=0;
+	var token='';
+	var query = '';
+	var temp_query = '';
+	var srchstr = '';
+
+	var oper_arr;
+	var oper_name = '';
+	var ls_splitgubun = '%';
+	var ls_sstringgubun = '^^';
+
+	var ls_value1 = '';
+	var ls_value2 = '';
+	var ls_value3 = '';
+	var multis = 0;
+
+
+	//병섭 추가 01-07-2008
+	var addQuery1;
+	var addQuery2;
+	var addQuery3;
+	var addQuery4;
+	var addQuery5;
+	var oper_name1 = '';
+	var oper_name2 = '';
+
+	p = gf_Pos(field_value, '"', p);
+
+	if (p>=0) {
+		field_value=gf_SpaceJob(field_value,'"','a');
+		field_value = OnlyOneSpace(field_value);
+
+		q = gf_Pos(field_value, '"', p+1);
+
+		if(p!=0) {
+			alert(" \" And \" must be in between ");
+			return "0";
+		}
+
+		var temp = field_value.substring(q+1, field_value.length);
+		if(temp.length>0){
+			alert(" \" And \" must be in between ");
+			return "0";
+		}
+
+		query = 'string(';
+		query += field_value;
+		query += ')';
+		if(field_name=='tall'||field_name=='all'||field_name=='keywords'||field_name=='title'||field_name=='abstract'||field_name=='author'||field_name=='py01'||field_name=='j_name'){
+			if(field_name=='tall'||field_name=='all'||field_name=='keywords'){
+				ls_value1 = "comkeywords:"+query;
+			}
+			if(field_name=='tall'||field_name=='all'||field_name=='title'){
+				ls_value2 = "comtitle:"+query;
+			}
+			if(field_name=='tall'||field_name=='all'||field_name=='abstract'){
+				ls_value3 = "comabstract:"+query;
+			}
+
+			if(field_name=='tall'||field_name=='author'){
+				ls_value4 = "comauthor:"+query;
+			}
+
+			if(field_name=='py01'){
+				ls_value5 = "py01:"+query;
+			}
+
+			if(field_name=='j_name'){
+				ls_value6 = "comstrfld01lem:"+query;
+			}
+
+			if(field_name=='tall'){
+				ls_value7 = "filter(fdocid:"+query+")";
+			}
+
+			if(field_name=='all'){
+				ls_value = "or("+ls_value1+","+ls_value2+","+ls_value3+")";
+			}else if(field_name=='tall'){
+				ls_value = "or("+ls_value1+","+ls_value2+","+ls_value3+","+ls_value4+","+ls_value7+")";
+
+			}else{
+				if(field_name=='keywords') ls_value = ls_value1;
+				if(field_name=='title') ls_value = ls_value2;
+				if(field_name=='abstract') ls_value = ls_value3;
+				if(field_name=='author') ls_value = ls_value4;
+				if(field_name=='py01') ls_value = ls_value5;
+				if(field_name=='j_name') ls_value = ls_value6;
+			}
+		}else{
+			ls_value = field_name+":"+query;
+		}
+
+
+		ls_temp = field_value;
+		ls_temp = ls_temp.substring(1, ls_temp.length-1);
+
+		srchstr += field_name+"="+ls_temp;
+		srchstr += ls_sstringgubun;
+
+	}else{
+
+		field_value = OperateChange(field_value);
+		field_value = OnlyOneSpace(field_value);
+
+		field_value=gf_SpaceJob(field_value,'&','a');
+		field_value=gf_SpaceJob(field_value,'|','a');
+		field_value=gf_SpaceJob(field_value,'!','a');
+		field_value=gf_SpaceJob(field_value,'♨','a');
+		field_value=gf_SpaceJob(field_value,'*','p');
+
+		field_value = Char_Replace(field_value,' ','&');
+
+
+		var a = gf_Pos(field_value, '&', 1);
+		var b = gf_Pos(field_value, '|', 1);
+		var c = gf_Pos(field_value, '!', 1);
+		var d = gf_Pos(field_value, '♨', 1);
+		var f = gf_Pos(field_value, '*', 1);
+
+		if(a>0 && b<0 && c<0 && d<0){
+			oper_arr=field_value.split("&");
+			oper_name = 'and(';
+
+		}else if(b>0 && a<0 && c<0 && d<0 && f<0){
+			oper_arr=field_value.split("|");
+			oper_name = 'or(';
+
+
+		}else if(c>0 && b<0 && a<0 && d<0 && f<0){
+			oper_arr=field_value.split("!");
+			oper_name = 'andnot(';
+
+
+		}else if(d>0 && b<0 && c<0 && a<0 && f<0){
+			oper_arr=field_value.split("♨");
+			oper_name = 'near(';
+
+
+		}else if (a>0 && b>0 && c<0 && d<0 && f<0) {
+			if (a < b){
+				oper_arr = field_value.split("|");
+				addQuery1 = oper_arr[0].split("&");
+				oper_name1 = "and(";
+				oper_name2 = "or(";
+			}else{
+				oper_arr = field_value.split("&");
+				addQuery1 = oper_arr[0].split("|");
+				oper_name1 = "or(";
+				oper_name2 = "and(";
+			}
+
+			oper_name = "double";
+
+		}else if (a>0 && b<0 && c>0 && d<0 && f<0) {
+			if (a < c){
+				oper_arr = field_value.split("!");
+				addQuery1 = oper_arr[0].split("&");
+				oper_name1 = "and(";
+				oper_name2 = "andnot(";
+			}else{
+				oper_arr = field_value.split("&");
+				addQuery1 = oper_arr[0].split("!");
+				oper_name1 = "andnot(";
+				oper_name2 = "and(";
+			}
+
+			oper_name = "double";
+
+		}else if (a>0 && b<0 && c<0 && d>0 && f<0) {
+			if (a < d){
+				oper_arr = field_value.split("♨");
+				addQuery1 = oper_arr[0].split("&");
+				oper_name1 = "and(";
+				oper_name2 = "near(";
+			}else{
+				oper_arr = field_value.split("&");
+				addQuery1 = oper_arr[0].split("♨");
+				oper_name1 = "near(";
+				oper_name2 = "and(";
+			}
+
+			oper_name = "double";
+
+		}else if (a<0 && b>0 && c>0 && d<0 && f<0) {
+			if (b < c){
+				oper_arr = field_value.split("!");
+				addQuery1 = oper_arr[0].split("|");
+				oper_name1 = "or(";
+				oper_name2 = "andnot(";
+			}else{
+				oper_arr = field_value.split("|");
+				addQuery1 = oper_arr[0].split("!");
+				oper_name1 = "andnot(";
+				oper_name2 = "or(";
+			}
+
+			oper_name = "double";
+
+		}else if (a<0 && b>0 && c<0 && d>0 && f<0) {
+			if (b < d){
+				oper_arr = field_value.split("♨");
+				addQuery1 = oper_arr[0].split("|");
+				oper_name1 = "or(";
+				oper_name2 = "near(";
+			}else{
+				oper_arr = field_value.split("|");
+				addQuery1 = oper_arr[0].split("♨");
+				oper_name1 = "near(";
+				oper_name2 = "or(";
+			}
+
+			oper_name = "double";
+
+		}else if (a<0 && b<0 && c>0 && d>0 && f<0) {
+			if (c < d){
+				oper_arr = field_value.split("♨");
+				addQuery1 = oper_arr[0].split("!");
+				oper_name1 = "andnot(";
+				oper_name2 = "near(";
+			}else{
+				oper_arr = field_value.split("!");
+				addQuery1 = oper_arr[0].split("♨");
+				oper_name1 = "near(";
+				oper_name2 = "andnot(";
+			}
+
+			oper_name = "double";
+
+		}else if(f>0){
+			var g = field_value.length-1;
+			if(f != g){
+				alert(" Please enter the form of Query* ");
+				return "0";
+			}
+
+			oper_arr=field_value;
+			oper_name = 'string(';
+
+
+		}else{
+			oper_arr=field_value;
+			oper_name = '';
+		}
+
+		if(oper_name == '' || oper_name == 'string('){
+			query += oper_name;
+			query += "\"";
+			query += oper_arr;
+			query += "\"";
+			if(oper_name == 'string(') query += ')';
+
+			if(field_name=='tall'||field_name=='all'||field_name=='keywords'||field_name=='title'||field_name=='abstract'||field_name=='author'||field_name=='py01'||field_name=='j_name'){
+				if(field_name=='tall'||field_name=='all'||field_name=='keywords'){
+					ls_value1 = "comkeywords:"+query;
+				}
+				if(field_name=='tall'||field_name=='all'||field_name=='title'){
+					ls_value2 = "comtitle:"+query;
+				}
+				if(field_name=='tall'||field_name=='all'||field_name=='abstract'){
+					ls_value3 = "comabstract:"+query;
+				}
+
+				if(field_name=='tall'||field_name=='author'){
+					ls_value4 = "comauthor:"+query;
+				}
+
+				if(field_name=='py01'){
+					ls_value5 = "py01:"+query;
+				}
+
+				if(field_name=='j_name'){
+					ls_value6 = "comstrfld01lem:"+query;
+				}
+
+				if(field_name=='tall'){
+					ls_value7 = "filter(fdocid:"+query+")";
+				}
+
+				if(field_name=='all'){
+					ls_value = "or("+ls_value1+","+ls_value2+","+ls_value3+")";
+				}else if(field_name=='tall'){
+					ls_value = "or("+ls_value1+","+ls_value2+","+ls_value3+","+ls_value4+","+ls_value7+")";
+
+				}else{
+					if(field_name=='keywords') ls_value = ls_value1;
+					if(field_name=='title') ls_value = ls_value2;
+					if(field_name=='abstract') ls_value = ls_value3;
+					if(field_name=='author') ls_value = ls_value4;
+					if(field_name=='py01') ls_value = ls_value5;
+					if(field_name=='j_name') ls_value = ls_value6;
+
+				}
+			}else{
+				ls_value = field_name+":"+query;
+			}
+
+			ls_temp = oper_arr;
+			if(f>0){
+				ls_temp = ls_temp.substring(0, ls_temp.length-1);
+			}
+			srchstr += field_name+"="+ls_temp;
+			srchstr += ls_sstringgubun;
+
+		}else if (oper_name == 'double') {
+
+			query = oper_name1;
+
+			for(var i=0; i< addQuery1.length; i++){
+				temp_query = '';
+				if(i>0 ) query += ",";
+				temp_query += "\"";
+				temp_query += addQuery1[i];
+				temp_query += "\"";
+
+				multis = 0;
+				if(field_name=='tall'||field_name=='all'||field_name=='keywords'||field_name=='title'||field_name=='abstract'||field_name=='author'||field_name=='py01'||field_name=='j_name'){
+						multis = 1;
+						if(field_name=='tall'||field_name=='all'||field_name=='keywords'){
+							ls_value1 = "comkeywords:"+temp_query;
+						}
+						if(field_name=='tall'||field_name=='all'||field_name=='title'){
+							ls_value2 = "comtitle:"+temp_query;
+						}
+						if(field_name=='tall'||field_name=='all'||field_name=='abstract'){
+							ls_value3 = "comabstract:"+temp_query;
+						}
+
+						if(field_name=='tall'||field_name=='author'){
+							ls_value4 = "comauthor:"+temp_query;
+						}
+
+						if(field_name=='py01'){
+							ls_value5 = "py01:"+temp_query;
+						}
+
+
+						if(field_name=='j_name'){
+							ls_value6 = "comstrfld01lem:"+temp_query;
+						}
+
+						if(field_name=='tall'){
+							ls_value7 = "filter(fdocid:"+temp_query+")";
+						}
+
+						if(field_name=='all'){
+							query += "or("+ls_value1+","+ls_value2+","+ls_value3+")";
+						}else if(field_name=='tall'){
+							query += "or("+ls_value1+","+ls_value2+","+ls_value3+","+ls_value4+","+ls_value7+")";
+
+						}else{
+							if(field_name=='keywords') query += ls_value1;
+							if(field_name=='title') query += ls_value2;
+							if(field_name=='abstract') query += ls_value3;
+							if(field_name=='author') query += ls_value4;
+							if(field_name=='py01') query += ls_value5;
+							if(field_name=='j_name') query += ls_value6;
+						}
+					}else{
+						query += temp_query;
+					}
+				srchstr += field_name+"="+addQuery1[i];
+				srchstr += ls_sstringgubun;
+			}
+
+			if (oper_name1 == "near("){
+				query = oper_name2 + query + ", n=3),";
+			} else {
+				query = oper_name2 + query + "),";
+			}
+
+			temp_query = "\"" + oper_arr[1] + "\"";
+			if(field_name=='tall'||field_name=='all'||field_name=='keywords'||field_name=='title'||field_name=='abstract'||field_name=='author'||field_name=='py01'||field_name=='j_name'){
+				multis = 1;
+				if(field_name=='tall'||field_name=='all'||field_name=='keywords'){
+					ls_value1 = "comkeywords:"+temp_query;
+				}
+				if(field_name=='tall'||field_name=='all'||field_name=='title'){
+					ls_value2 = "comtitle:"+temp_query;
+				}
+				if(field_name=='tall'||field_name=='all'||field_name=='abstract'){
+					ls_value3 = "comabstract:"+temp_query;
+				}
+
+				if(field_name=='tall'||field_name=='author'){
+					ls_value4 = "comauthor:"+temp_query;
+				}
+
+				if(field_name=='py01'){
+					ls_value5 = "py01:"+temp_query;
+				}
+
+
+				if(field_name=='j_name'){
+					ls_value6 = "comstrfld01lem:"+temp_query;
+				}
+
+				if(field_name=='tall'){
+					ls_value7 = "filter(fdocid:"+temp_query+")";
+				}
+
+				if(field_name=='all'){
+					query += "or("+ls_value1+","+ls_value2+","+ls_value3+")";
+				}else if(field_name=='tall'){
+					query += "or("+ls_value1+","+ls_value2+","+ls_value3+","+ls_value4+","+ls_value7+")";
+
+				}else{
+					if(field_name=='keywords') query += ls_value1;
+					if(field_name=='title') query += ls_value2;
+					if(field_name=='abstract') query += ls_value3;
+					if(field_name=='author') query += ls_value4;
+					if(field_name=='py01') query += ls_value5;
+					if(field_name=='j_name') query += ls_value6;
+				}
+			}else{
+				query += temp_query;
+			}
+			if (oper_name2 == "near("){
+				query+= ", n=3)";
+			} else {
+				query += ")";
+			}
+			srchstr += field_name+"="+oper_arr[1];
+			srchstr += ls_sstringgubun;
+
+			if(multis) ls_value = query;
+			else ls_value = field_name+":"+query;
+
+		}else{
+			query += oper_name;
+			for(var i=0; i< oper_arr.length; i++){
+				temp_query = '';
+				if(i>0 ) query += ",";
+				temp_query += "\"";
+				temp_query += oper_arr[i];
+				temp_query += "\"";
+
+				multis = 0;
+				if(field_name=='tall'||field_name=='all'||field_name=='keywords'||field_name=='title'||field_name=='abstract'||field_name=='author'||field_name=='py01'||field_name=='j_name'){
+					multis = 1;
+					if(field_name=='tall'||field_name=='all'||field_name=='keywords'){
+						ls_value1 = "comkeywords:"+temp_query;
+					}
+					if(field_name=='tall'||field_name=='all'||field_name=='title'){
+						ls_value2 = "comtitle:"+temp_query;
+					}
+					if(field_name=='tall'||field_name=='all'||field_name=='abstract'){
+						ls_value3 = "comabstract:"+temp_query;
+					}
+
+					if(field_name=='tall'||field_name=='author'){
+						ls_value4 = "comauthor:"+temp_query;
+					}
+
+					if(field_name=='py01'){
+						ls_value5 = "py01:"+temp_query;
+					}
+
+
+					if(field_name=='j_name'){
+						ls_value6 = "comstrfld01lem:"+temp_query;
+					}
+
+					if(field_name=='tall'){
+						ls_value7 = "filter(fdocid:"+temp_query+")";
+					}
+
+					if(field_name=='all'){
+						query += "or("+ls_value1+","+ls_value2+","+ls_value3+")";
+					}else if(field_name=='tall'){
+						query += "or("+ls_value1+","+ls_value2+","+ls_value3+","+ls_value4+","+ls_value7+")";
+
+					}else{
+						if(field_name=='keywords') query += ls_value1;
+						if(field_name=='title') query += ls_value2;
+						if(field_name=='abstract') query += ls_value3;
+						if(field_name=='author') query += ls_value4;
+						if(field_name=='py01') query += ls_value5;
+						if(field_name=='j_name') query += ls_value6;
+					}
+				}else{
+					query += temp_query;
+				}
+
+				ls_temp = oper_arr[i];
+				if(f>0){
+					ls_temp = ls_temp.substring(0, ls_temp.length-1);
+				}
+
+				srchstr += field_name+"="+ls_temp;
+				srchstr += ls_sstringgubun;
+
+			}
+
+			if(oper_name == "near("){
+				query += ",n=3";
+			}
+
+			query += ')';
+
+			if(multis) ls_value = query;
+			else ls_value = field_name+":"+query;
+
+		}
+	}
+
+	var returnstr = ls_value+ls_splitgubun+srchstr;
+	return returnstr;
+}
+
+</script>
+
+<script language="javascript">
+
+	function Submit() {
+
+	var form = document.quickSear_h;
+	var query = '';	//FAST에 넘길 Query String
+	var ls_target = new Array();
+
+	if(form.quik_query.value == ""){
+		alert("Please enter search term(s).");
+	return;
+	}
+
+
+	/*** 유효성 체크 ***/
+	li_Rtn = cgf_FieldCheck(form.quik_query.value.toLowerCase());
+
+	if ( li_Rtn !=0 ){
+		return;
+	}
+	/*** 여기까지 ***/
+
+	query = lf_QueryMake(form.quik_query.value.toLowerCase(), "tall");	//frmSearch.txa_query.value;
+
+	if (query == "0"){
+		return;
+	}
+
+	// new line 문자 제거
+	query = Char_Replace(query,'\r','');
+	query = Char_Replace(query,'\n','');
+
+	/* 검색대상 Target 선택 배열에 담기 - 통합검색을 위한 임시방편 .11.01*/
+	var lo_chkform = form.sTarget;
+	quickSear_h.hd_srchquery.value = query;
+	quickSear_h.hd_viewquery.value = "all=" + form.quik_query.value;
+	quickSear_h.submit();
+
+	return;
+	}
+
+	function lf_QueryMake(kwy, ls_type) {
+		var index = 0;
+		var fieldcheck = 0;
+
+
+		var ls_buf = '';
+		var ls_query = '';
+		var ls_arr = new Array();
+		var ls_feildarr = new Array();
+		var ls_srcharr = new Array();
+		var l_Sresult = "";
+		var li_Rtn = 0;
+
+		var l_result1 = "";
+		var l_result2 = "";
+
+
+		if(kwy != ''){
+			ls_buf = cgf_FieldPhas(ls_type,kwy).split('%');
+			if (ls_buf == "0"){
+				return;
+			}
+			ls_arr[index]=ls_buf[0];
+			index++;
+		}
+
+
+		if (index > 1) {
+			ls_query = 'and('
+			for(var i=0; i< ls_arr.length; i++){
+
+				if (i >= 1) {ls_query += ', ';}
+				ls_query += ls_arr[i];
+			}
+			ls_query += ')'
+		}else if (index > 0) {
+			ls_query += ls_arr[0];
+		}
+
+		return ls_query;
+	}
+</script>
+
+
+<table cellpadding="0" cellspacing="0" width="100%" border="0">
+	<tbody><tr class="subbody_table">
+		<td class="subtop_td"><a href="http://www.koreascience.or.kr/index.jsp"><img src="sub_logo2.gif" alt="Korea Science logo" border="0"></a></td>
+	</tr>
+	<tr>
+		<td>
+			<table cellpadding="0" cellspacing="0" width="100%" border="0">
+				<tbody><tr>
+					<td>
+						<table cellpadding="0" cellspacing="0" width="100%" border="0">
+							<tbody><tr>
+
+								<td width="153"><a href="http://www.koreascience.or.kr/article/basic_search.jsp?searchtype=ABS"><img src="menu_article_off.gif" border="0"></a></td>
+								<td width="153"><img src="menu_journal_on.gif" border="0"></td>
+								<td width="153"><a href="http://www.koreascience.or.kr/ktkp/index.jsp?searchtype=KBS"><img src="menu_knowledge_off.gif" border="0"></a></td>
+
+								<td style="padding: 4px 10px 0pt 0pt;" align="right" background="about:blank?menu_topbg.gif">
+									<!-- 로그인 창 -->
+									<div id="login1" style="left: 0px; top: 0px; width: 0px; position: relative; height: 0px;">
+									<div id="login2" style="left: -290px; top: 15px; visibility: hidden; width: 280px; position: absolute; height: 90px;">
+									<table cellpadding="0" cellspacing="0" border="0">
+										<tbody><tr>
+											<td><img src="loginbox_topbg.gif"></td>
+										</tr>
+										<tr>
+											<td style="padding: 2px 0pt 0pt;" height="68" valign="top" align="center" background="about:blank?loginbox_bg.gif">
+											<form action="http://www.koreascience.or.kr/article/articleresultdetail.jsp?no=34521203&searchtype=JJB&listlen=6&listno=4" name="login" method="post">
+												<table cellpadding="0" cellspacing="0" width="92%" border="0">
+													<tbody><tr>
+														<td height="25" width="66"><img src="login_email.gif"></td>
+														<td width="157" align="center"><input name="email" class="input_login" type="text"></td>
+														<td rowspan="2" style="padding: 2px 0pt 0pt;" valign="top" width="32"><a href="javascript:login()"><img src="btn_go.gif" border="0"></a></td>
+													</tr>
+													<tr>
+														<td><img src="login_password.gif"></td>
+														<td align="center"><input name="passwd" class="input_login" type="password"></td>
+													</tr>
+												</tbody></table>
+												<table cellpadding="0" cellspacing="0" height="15" width="92%" border="0">
+													<tbody><tr valign="bottom">
+														<td width="96" align="right"><a href="http://www.koreascience.or.kr/article/register.jsp"><img src="login_register.gif" border="0"></a></td>
+														<td width="110"><a href="javascript:forgotpwd()"><img src="login_forgot.gif" border="0"></a></td>
+														<td width="32" align="right"><a href="#"><img src="btn_close.gif" onclick="MM_showHideLayers('login','','hide','login2','','hide')" border="0"></a></td>
+													</tr>
+												</tbody></table>
+											</form></td>
+										</tr>
+										<tr>
+											<td><img src="loginbox_bottombg.gif"></td>
+										</tr>
+										
+									</tbody></table>
+									</div>
+									</div>
+									<!-- 로그인창 -->
+
+									
+					<a href="http://www.koreascience.or.kr/article/register.jsp"><img src="topmenu_register.gif" alt="Register" border="0"></a>
+
+					<img src="topmenu_line.gif">
+
+					<img src="topmenu_login.gif" onclick="MM_showHideLayers('login2','','show','login','','show')" style="" border="0">
+
+					<img src="topmenu_line.gif">
+
+					<a href="http://www.koreascience.or.kr/common/sitemap.jsp"><img src="topmenu_sitemap.gif"></a>
+
+
+
+<!--
+
+			
+									<a href="javascript:OpenWindowReg('register.jsp')"><img src="../img/btn_register.gif" border="0"></a>
+									&nbsp;&nbsp;&nbsp;&nbsp;
+							<img src="../img/btn_login.gif" border="0"onClick="MM_showHideLayers('login2','','show','login','','show')" style="cursor:hand">
+									&nbsp;&nbsp;&nbsp;&nbsp;
+			
+
+
+-->
+								</td>
+								<td valign="bottom" width="4"><img src="menu_toprignt.gif" width="4"></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table cellpadding="0" cellspacing="0" width="100%" border="0">
+							<tbody><tr>
+								<td width="4"><img src="menu_center_left.gif"></td>
+								<td align="center" background="about:blank?menu_center.gif">
+									<table cellpadding="0" cellspacing="0" width="96%" border="0">
+										<tbody><tr>
+											<td>
+
+												<a href="http://www.koreascience.or.kr/browse/journalbrowse.jsp?searchtype=JJB"><img src="menu_journal_sub1on.gif" height="18" width="117" border="0"></a>
+													<img src="menu_vertical.gif">
+												<a href="http://www.koreascience.or.kr/browse/subjectbrowse.jsp?searchtype=JSB&ino=null&jno=null"><img src="menu_journal_sub2.gif" height="18" width="117" border="0"></a>
+
+											</td>
+										</tr>
+									</tbody></table>
+								</td>
+								<td width="4"><img src="menu_center_right.gif"></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<!-- Quick Search-->
+						<form name="quickSear_h" method="post" action="http://www.koreascience.or.kr/article/search_result.jsp">
+						<!--공통-->
+						<input name="currpage" value="1" type="hidden">
+						<input name="numHits" value="" type="hidden">
+						<!--검색-->
+						<input name="hd_srchquery" value="" type="hidden">
+						<input name="hd_viewquery" value="" type="hidden">
+						<input name="searchtype" value="QUI" type="hidden">
+						<table cellpadding="0" cellspacing="0" width="100%" border="0">
+							<tbody><tr>
+								<td width="4"><img src="menu_bottom_left.gif"></td>
+								<td align="center" background="about:blank?menu_bottom.gif">
+									<!-- 탉쩌짯치?L쨘?식?-->
+									<table cellpadding="0" cellspacing="0" width="96%" border="0">
+										<tbody><tr>
+											<td width="118"><img src="quick_search_img1.gif"></td>
+											<td width="342"><input name="quik_query" class="input_search2" style="width: 340px;" onkeydown="if(event.keyCode == 13) Submit();" type="text"></td>
+											<td width="81"><a href="javascript:Submit();"><img src="btn_search2.gif" border="0"></a></td>
+											<td><a href="http://www.koreascience.or.kr/common/searchTip.jsp"><img src="btn_tip2.gif" border="0"></a></td>
+										</tr>
+									</tbody></table>
+								</td>
+								<td width="4"><img src="menu_bottom_right.gif"></td>
+							</tr>
+						</tbody></table>
+						</form>
+					</td>
+				</tr>
+
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+<!--// 상단 공통 테이블 여기까지 -->
+						<!-- 타이틀 테이블 시작 -->
+
+						<table cellpadding="0" cellspacing="0" width="100%" border="0">
+						<form action="http://www.koreascience.or.kr/article/articleresultdetail.jsp?no=34521203&searchtype=JJB&listlen=6&listno=4" name="ResultList" method="post"></form>
+
+						<input name="searchtype" value="JJB" type="hidden">
+						<input name="hd_srchquery2" value="" type="hidden">
+						<input name="hd_srchmorequery" value="" type="hidden">
+						<input name="hd_chknavi2" value="" type="hidden">
+						<input name="listno" value="" type="hidden">
+						<input name="listlen" value="6" type="hidden">
+						<input name="no" value="" type="hidden">
+						<input name="hd_currpage" value="" type="hidden">
+						<input name="hd_pagecnt" value="25" type="hidden">
+						<input name="mode" value="detail" type="hidden">
+							<!-- <tr>
+								<td height="2" class="title_space"></td>
+							</tr> -->
+							<tbody><tr>
+								<td>
+									<table class="title_table" cellspacing="1">
+										<tbody><tr>
+											<td class="title_td" width="45%">
+
+												<table cellpadding="0" cellspacing="0" width="100%" border="0">
+													<tbody><tr>
+														<td width="51%">
+															<img src="bullet_title.gif" height="10" width="10" align="absmiddle">&nbsp;
+															<span style="color: rgb(17, 68, 130); font-size: 16px; font-weight: 600; letter-spacing: -0.2pt;">Full Record</span>
+														</td>
+														<td style="padding: 0pt 10px 0pt 0pt;" width="49%" align="right">
+															<span class="Combine">
+															<img src="bullet_mini.gif" height="5" width="5" align="absmiddle">
+
+
+															<a href="http://www.koreascience.or.kr/article/articlelist.jsp?bno=24100&sno=96&vol=55&iss=10&subjcode=62&maxyear=2006&minyear=1999&pubdate=October&searchtype=JJB&maxyear_2=2006">Result List</a>&nbsp;&nbsp;
+
+															<a href="http://www.koreascience.or.kr/article/articleresultdetail.jsp?no=34521206&searchtype=JJB&listlen=6&listno=3"><img src="list_pre.gif" align="absmiddle" border="0"></a>
+
+															</span>&nbsp;
+															<span class="page_text"><strong>4</strong> of 6</span>
+
+															<a href="http://www.koreascience.or.kr/article/articleresultdetail.jsp?no=34521204&searchtype=JJB&listlen=6&listno=5"><img src="list_next.gif" align="absmiddle" border="0"></a>
+
+														</td>
+													</tr>
+												</tbody></table>
+											</td>
+										</tr>
+									</tbody></table>
+								</td>
+							</tr>
+							<tr>
+								<td class="title_space"></td>
+							</tr>
+						</tbody></table>
+						
+						<!--// 타이틀 테이블 여기까지 -->
+						<table cellpadding="0" cellspacing="0" width="100%" border="0">
+							<tbody><tr>
+								<td class="result_box_td1">
+									<!-- 간략정보테이블 시작 -->
+									<table class="detail_box" cellpadding="0" cellspacing="0" border="0">
+										<tbody><tr>
+											<td><a href="http://www.koreascience.or.kr/browse/browseresult.jsp?no=24100&minyear=1999&maxyear=2006&subjcode=62&searchtype=JJB" class="link">The transactions of the Korean Institute of Electrical Engineers. A</a><br>
+												<a href="http://www.koreascience.or.kr/article/articlelist.jsp?bno=24100&sno=96&vol=55&iss=10&subjcode=62&maxyear=2006&minyear=1999&pubdate=20061001&searchtype=JJB&maxyear_2=2006" class="link">Volume 55, Issue 10</a>,&nbsp;&nbsp;October 2006, pp.426-432<br>
+
+													The Korean Institute of Electrical Engineers<br>
+													Subject Category :
+												<a href="http://www.koreascience.or.kr/browse/journalbrowse.jsp?searchtype=JSB&ino=62&jno=&subject_name=Technology%20%28Applied%20sciences%29" class="category">Technology (Applied sciences)</a> /
+												<a href="http://www.koreascience.or.kr/browse/journalbrowse.jsp?searchtype=JSB&ino=&jno=62&subject_name=Engineering%20and%20allied%20operations" class="category">Engineering and allied operations</a><br>
+												ISSN : 1229-2443
+											</td>
+										</tr>
+									</tbody></table>
+									<!--// 간략정보테이블 여기까지 -->
+									<table class="result_margintable" cellpadding="0" cellspacing="0" border="0">
+										<tbody><tr>
+											<td></td>
+										</tr>
+									</tbody></table>
+									<!--상세정보테이블 시작 -->
+									<table cellpadding="0" cellspacing="0" width="100%" border="0">
+										<tbody><tr>
+											<td height="8" align="right"><img src="dotline.gif"></td>
+										</tr>
+										<tr>
+											<td align="right">
+												<!-- 기능 아이콘 -->
+												<table cellpadding="0" cellspacing="0" height="28" width="80" border="0">
+													<tbody><tr>
+														<td height="28" align="center" bgcolor="#e6e6e6">
+															<table cellpadding="0" cellspacing="0" width="70" border="0">
+																<tbody><tr align="center">
+																	<td><a href="javascript:printWindow()"><img src="icon_print.gif" alt="print" border="0"></a></td>
+																	<td><a href="javascript:mailWindow('34521203','detail')"><img src="icon_mail.gif" alt="mail" border="0"></a></td>
+																	<td>
+																	<a href="javascript:doSave('34521203');"><img src="icon_excel.gif" alt="save" border="0"></a>
+																	</td>
+																	<!-- <td>
+																		<a href="#"><img src="../img/icon_endnote.gif" alt="endnote" border="0"></a>
+																	</td> -->
+																</tr>
+															</tbody></table>
+														</td>
+													</tr>
+												</tbody></table>
+												<!--// 기능 아이콘 여기까지 -->
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<!-- 논문명과  저자/키워드 등-->
+												<form name="AuthorQuick" method="post" action="http://www.koreascience.or.kr/article/search_result.jsp">
+												<input name="hd_srchquery" value="" type="hidden">
+												<input name="searchtype" value="QUI" type="hidden">
+												<table class="detail_table1" cellpadding="0" cellspacing="0" border="0">
+
+													<tbody><tr>
+														<td colspan="2">
+															<span style="font-size: 15px; color: rgb(0, 0, 0);">A Study on Utilization Ratio and Operation of Transmission Lines</span>
+															
+															
+															<a href="http://koix.kisti.re.kr/root_resolution.jsp?koi=KISTI1.1003/JNL.JAKO200634742901226" target="_top"><img src="icon_acro.gif"></a><br>
+															
+
+
+															<a href="javascript:DetailQuick_author('Kim,%20Dong+Min%20')" class="link">Kim, Dong-Min 
+															;
+
+															</a>
+
+
+															<a href="javascript:DetailQuick_author('%20Bae,%20In+Su%20')" class="link"> Bae, In-Su 
+															;
+
+															</a>
+
+
+															<a href="javascript:DetailQuick_author('%20Cho,%20Jong+Man%20')" class="link"> Cho, Jong-Man 
+															;
+
+															</a>
+
+
+															<a href="javascript:DetailQuick_author('%20Kim,%20Jin+O')" class="link"> Kim, Jin-O
+															
+															</a>
+
+															&nbsp;
+															<!-- <a href="#">
+																<img src="../img/icon_email.gif" alt="mail" border="0" align="absmiddle">
+															</a> -->
+														</td>
+													</tr>
+													<tr height="8">
+														<td colspan="2" height="8"></td>
+													</tr>
+													<tr>
+														<td valign="top" width="75"><span class="detail_item">Abstract</span></td>
+
+														<td>This paper describes the concepts of Static Line Rating (SLR) and Dynamic Line Rating (DLR) and the computational methods to demonstrate them. Calculation of the line capacity needs the heat balance equation which is also used for computing the reduced tension in terms of line aging. SLR is calculated with the data from the worst condition of weather throughout the year. Even now, the utilization ratio is obtained from this SLR data in Korea. DLR is the improved method compared to SLR. A process for DLR reveals not only improved line ratings but also more accurate allowed line ratings based on line aging and real time conditions of weather. In order to reflect overhead transmission line aging in DLR, this paper proposes the method that considers the amount of decreased tension since the lines have been installed. Therefore, the continuous allowed temperature for remaining life time is newly acquired. In order to forecast DLR, this paper uses weather forecast models, and applies the concept of Thermal Overload Risk Probability (TORP). Then, the new concept of Dynamic Utilization Ratio (DUR) is defined, replacing Static Utilization Ratio (SUR). For the case study, the two main transmission lines which are responsible for the north bound power flow in the Seoul metropolitan area are chosen for computing line rating and utilization ratio. And then line rating and utilization ratio are analyzed for each transmission line, so that comparison of the present and estimated utilization ratios becomes available. Finally, this paper proves the validity of predictive DUR as the objective index, with simulations of emergency state caused by system outages, overload and so on.</td>
+													</tr>
+													<tr height="4">
+														<td colspan="2" height="4"></td>
+													</tr>
+
+													<tr>
+														<td valign="top"><span class="detail_item">Keywords</span></td>
+														<td>
+
+															<a href="javascript:DetailQuick('Static%20Line%20Rating')" class="link">Static Line Rating;&nbsp;</a>
+
+															<a href="javascript:DetailQuick('Dynamic%20Line%20Rating')" class="link">Dynamic Line Rating;&nbsp;</a>
+
+															<a href="javascript:DetailQuick('Aging')" class="link">Aging;&nbsp;</a>
+
+															<a href="javascript:DetailQuick('Forecast%20Rating')" class="link">Forecast Rating;&nbsp;</a>
+
+															<a href="javascript:DetailQuick('Utilization%20Ratio')" class="link">Utilization Ratio&nbsp;</a>
+
+														</td>
+													</tr>
+
+													<tr height="4">
+														<td colspan="2" height="4"></td>
+													</tr>
+
+													<tr>
+														<td><span class="detail_item">Language</span></td>
+														<td>Korean</td>
+													</tr>
+													<tr height="4">
+														<td colspan="2" height="4"></td>
+													</tr>
+													<tr>
+
+													</tr>
+												</tbody></table>
+												</form>
+												<!--// 논문명과  저자/키워드 등 여기까지-->
+												<!-- 레퍼런스 테이블 시작 -->
+
+												<table class="detail_table1" cellpadding="0" cellspacing="0" border="0">
+													<tbody><tr>
+														<td>&nbsp;</td>
+													</tr>
+													<tr>
+														<td class="References">References (11) : </td>
+													</tr>
+													<tr>
+														<td>
+
+															<table class="detail_table1" cellpadding="0" cellspacing="0" width="100" border="0">
+
+
+																<tbody><tr>
+																	<td colspan="2">1. Chakrabarti, A.;Mukhopadhyay, A.K.</td>
+																</tr>
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td class="References_title2" width="685">
+
+																		Operating problems in longitudinal power supply systems
+																	</td>
+																</tr>
+
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+
+
+																		TENCON '89. Fourth IEEE Region 10 International Conference,  932-935, 1989
+
+																	</td>
+																</tr>
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+																		<a href="http://click.ndsl.kr/servlet/resolverService?sid=ksci&id=doi:10.1109/TENCON.1989.177084&aufirst=Chakrabarti&atitle=Operating+problems+in+longitudinal+power+supply+systems&title=TENCON+%2789.+Fourth+IEEE+Region+10+International+Conference%2C&volume=&issue=&date=1989&spage=932&issn=&genre=conference&pid=%3Cprivate_id%3Eorg_code%3DO260%26site_code%3DSS9999%26cn%3D%26kscino%3D4190641%3C%2Fprivate_id%3E" target="_top"><img src="btn_click.gif" alt="click" align="absmiddle" border="0"></a>&nbsp;&nbsp;<a href="http://dx.doi.org/10.1109/TENCON.1989.177084" target="_top"><img src="crossref_icon.gif" alt="click" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+																<tr>
+																	<td colspan="2" height="15"></td>
+																</tr>
+															</tbody></table>
+
+															<table class="detail_table1" cellpadding="0" cellspacing="0" width="100" border="0">
+
+
+																<tbody><tr>
+																	<td colspan="2">2. 한전전력연구원</td>
+																</tr>
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td class="References_title2" width="685">
+
+																		송전설계기준 제개정 및 보완연구(최종보고서)
+																	</td>
+																</tr>
+
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+
+
+																		  207, 2001
+
+																	</td>
+																</tr>
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+																		<a href="http://click.ndsl.kr/servlet/resolverService?sid=ksci&id=&aufirst=%C7%D1%C0%FC%C0%FC%B7%C2%BF%AC%B1%B8%BF%F8&atitle=%BC%DB%C0%FC%BC%B3%B0%E8%B1%E2%C1%D8+%C1%A6%B0%B3%C1%A4+%B9%D7+%BA%B8%BF%CF%BF%AC%B1%B8%28%C3%D6%C1%BE%BA%B8%B0%ED%BC%AD%29&title=&volume=&issue=&date=2001&spage=207&issn=&genre=report&pid=%3Cprivate_id%3Eorg_code%3DO260%26site_code%3DSS9999%26cn%3D%26kscino%3D4190642%3C%2Fprivate_id%3E" target="_top"><img src="btn_click.gif" alt="click" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+																<tr>
+																	<td colspan="2" height="15"></td>
+																</tr>
+															</tbody></table>
+
+															<table class="detail_table1" cellpadding="0" cellspacing="0" width="100" border="0">
+
+
+																<tbody><tr>
+																	<td colspan="2">3. Douglass, D.A.;Edris, A.A.</td>
+																</tr>
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td class="References_title2" width="685">
+
+																		Real-time monitoring and dynamic thermal rating of power transmission circuits
+																	</td>
+																</tr>
+
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+
+
+																		Power Delivery, IEEE Transactions on, 11(3) : 1407 - 1418, 1996
+
+																	</td>
+																</tr>
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+																		<a href="http://click.ndsl.kr/servlet/resolverService?sid=ksci&id=doi:10.1109/61.517499&aufirst=Douglass&atitle=Real-time+monitoring+and+dynamic+thermal+rating+of+power+transmission+circuits&title=Power+Delivery%2C+IEEE+Transactions+on%2C&volume=11&issue=3&date=1996&spage=1407&issn=0885-8977&genre=journal&pid=%3Cprivate_id%3Eorg_code%3DO260%26site_code%3DSS9999%26cn%3D%26kscino%3D4190643%3C%2Fprivate_id%3E" target="_top"><img src="btn_click.gif" alt="click" align="absmiddle" border="0"></a>&nbsp;&nbsp;<a href="http://dx.doi.org/10.1109/61.517499" target="_top"><img src="crossref_icon.gif" alt="click" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+																<tr>
+																	<td colspan="2" height="15"></td>
+																</tr>
+															</tbody></table>
+
+															<table class="detail_table1" cellpadding="0" cellspacing="0" width="100" border="0">
+
+
+																<tbody><tr>
+																	<td colspan="2">4. Seppa, T.O.</td>
+																</tr>
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td class="References_title2" width="685">
+
+																		Increasing transmission capacity by real time monitoring
+																	</td>
+																</tr>
+
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+
+
+																		Power Engineering Society Winter Meeting, 2002. IEEE, 2 1208 - 1211, 2002
+
+																	</td>
+																</tr>
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+																		<a href="http://click.ndsl.kr/servlet/resolverService?sid=ksci&id=doi:10.1109/PESW.2002.985201&aufirst=Seppa&atitle=Increasing+transmission+capacity+by+real+time+monitoring&title=Power+Engineering+Society+Winter+Meeting%2C+2002.+IEEE%2C&volume=2&issue=&date=2002&spage=1208&issn=&genre=conference&pid=%3Cprivate_id%3Eorg_code%3DO260%26site_code%3DSS9999%26cn%3D%26kscino%3D4190644%3C%2Fprivate_id%3E" target="_top"><img src="btn_click.gif" alt="click" align="absmiddle" border="0"></a>&nbsp;&nbsp;<a href="http://dx.doi.org/10.1109/PESW.2002.985201" target="_top"><img src="crossref_icon.gif" alt="click" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+																<tr>
+																	<td colspan="2" height="15"></td>
+																</tr>
+															</tbody></table>
+
+															<table class="detail_table1" cellpadding="0" cellspacing="0" width="100" border="0">
+
+
+																<tbody><tr>
+																	<td colspan="2">5. IEEE Standard for Calculating the Current-Temperature Relationship of Bare Overhead Conductors, IEEE Std 738</td>
+																</tr>
+
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+																		<a href="http://click.ndsl.kr/servlet/resolverService?sid=ksci&id=&aufirst=&atitle=IEEE+Standard+for+Calculating+the+Current-Temperature+Relationship+of+Bare+Overhead+Conductors%2C+IEEE+Std+738&title=&volume=&issue=&date=1993&spage=&issn=&genre=standard&pid=%3Cprivate_id%3Eorg_code%3DO260%26site_code%3DSS9999%26cn%3D%26kscino%3D4190648%3C%2Fprivate_id%3E" target="_top"><img src="btn_click.gif" alt="click" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+																<tr>
+																	<td colspan="2" height="15"></td>
+																</tr>
+															</tbody></table>
+
+															<table class="detail_table1" cellpadding="0" cellspacing="0" width="100" border="0">
+
+
+																<tbody><tr>
+																	<td colspan="2">6. 조종만;배인수;김동민;김진오</td>
+																</tr>
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td class="References_title2" width="685">
+
+																		확률적 기법을 이용한 가공 송전선로 도체의 장력감소 계산
+																	</td>
+																</tr>
+
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+
+
+																		대한전기학회 추계 학술대회 논문집,  226-229, 2005
+
+																	</td>
+																</tr>
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+																		<a href="http://click.ndsl.kr/servlet/resolverService?sid=ksci&id=&aufirst=%C1%B6%C1%BE%B8%B8&atitle=%C8%AE%B7%FC%C0%FB+%B1%E2%B9%FD%C0%BB+%C0%CC%BF%EB%C7%D1+%B0%A1%B0%F8+%BC%DB%C0%FC%BC%B1%B7%CE+%B5%B5%C3%BC%C0%C7+%C0%E5%B7%C2%B0%A8%BC%D2+%B0%E8%BB%EA&title=%B4%EB%C7%D1%C0%FC%B1%E2%C7%D0%C8%B8+%C3%DF%B0%E8+%C7%D0%BC%FA%B4%EB%C8%B8+%B3%ED%B9%AE%C1%FD%2C&volume=&issue=&date=2005&spage=226&issn=&genre=conference&pid=%3Cprivate_id%3Eorg_code%3DO260%26site_code%3DSS9999%26cn%3D%26kscino%3D4190649%3C%2Fprivate_id%3E" target="_top"><img src="btn_click.gif" alt="click" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+																<tr>
+																	<td colspan="2" height="15"></td>
+																</tr>
+															</tbody></table>
+
+															<table class="detail_table1" cellpadding="0" cellspacing="0" width="100" border="0">
+
+
+																<tbody><tr>
+																	<td colspan="2">7. 가공송전의 전류용량, 일본전기학회 기술보고, 제 660호</td>
+																</tr>
+
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+																		<a href="http://click.ndsl.kr/servlet/resolverService?sid=ksci&id=&aufirst=&atitle=%B0%A1%B0%F8%BC%DB%C0%FC%C0%C7+%C0%FC%B7%F9%BF%EB%B7%AE%2C+%C0%CF%BA%BB%C0%FC%B1%E2%C7%D0%C8%B8+%B1%E2%BC%FA%BA%B8%B0%ED%2C+%C1%A6+660%C8%A3&title=&volume=&issue=&date=1997&spage=&issn=&genre=report&pid=%3Cprivate_id%3Eorg_code%3DO260%26site_code%3DSS9999%26cn%3D%26kscino%3D4190651%3C%2Fprivate_id%3E" target="_top"><img src="btn_click.gif" alt="click" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+																<tr>
+																	<td colspan="2" height="15"></td>
+																</tr>
+															</tbody></table>
+
+															<table class="detail_table1" cellpadding="0" cellspacing="0" width="100" border="0">
+
+
+																<tbody><tr>
+																	<td colspan="2">8. Schmidt, N.P.</td>
+																</tr>
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td class="References_title2" width="685">
+
+																		Comparison between IEEE and CIGRE ampacity standards
+																	</td>
+																</tr>
+
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+
+
+																		Power Delivery, IEEE Transactions on, 14(4) : 1555 - 1559, 1999
+
+																	</td>
+																</tr>
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+																		<a href="http://click.ndsl.kr/servlet/resolverService?sid=ksci&id=doi:10.1109/61.796253&aufirst=Schmidt&atitle=Comparison+between+IEEE+and+CIGRE+ampacity+standards&title=Power+Delivery%2C+IEEE+Transactions+on%2C&volume=14&issue=4&date=1999&spage=1555&issn=0885-8977&genre=journal&pid=%3Cprivate_id%3Eorg_code%3DO260%26site_code%3DSS9999%26cn%3D%26kscino%3D4190654%3C%2Fprivate_id%3E" target="_top"><img src="btn_click.gif" alt="click" align="absmiddle" border="0"></a>&nbsp;&nbsp;<a href="http://dx.doi.org/10.1109/61.796253" target="_top"><img src="crossref_icon.gif" alt="click" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+																<tr>
+																	<td colspan="2" height="15"></td>
+																</tr>
+															</tbody></table>
+
+															<table class="detail_table1" cellpadding="0" cellspacing="0" width="100" border="0">
+
+
+																<tbody><tr>
+																	<td colspan="2">9. ACSR 전선수명 예측시스템 개발</td>
+																</tr>
+
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+
+
+																		  18, 2000
+
+																	</td>
+																</tr>
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+																		<a href="http://click.ndsl.kr/servlet/resolverService?sid=ksci&id=&aufirst=&atitle=ACSR+%C0%FC%BC%B1%BC%F6%B8%ED+%BF%B9%C3%F8%BD%C3%BD%BA%C5%DB+%B0%B3%B9%DF&title=&volume=&issue=&date=2000&spage=18&issn=&genre=report&pid=%3Cprivate_id%3Eorg_code%3DO260%26site_code%3DSS9999%26cn%3D%26kscino%3D4190656%3C%2Fprivate_id%3E" target="_top"><img src="btn_click.gif" alt="click" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+																<tr>
+																	<td colspan="2" height="15"></td>
+																</tr>
+															</tbody></table>
+
+															<table class="detail_table1" cellpadding="0" cellspacing="0" width="100" border="0">
+
+
+																<tbody><tr>
+																	<td colspan="2">10. 가공송전운영업무기준</td>
+																</tr>
+
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+
+
+																		  110, 2006
+
+																	</td>
+																</tr>
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+																		<a href="http://click.ndsl.kr/servlet/resolverService?sid=ksci&id=&aufirst=&atitle=%B0%A1%B0%F8%BC%DB%C0%FC%BF%EE%BF%B5%BE%F7%B9%AB%B1%E2%C1%D8&title=&volume=&issue=&date=2006&spage=110&issn=&genre=standard&pid=%3Cprivate_id%3Eorg_code%3DO260%26site_code%3DSS9999%26cn%3D%26kscino%3D4190657%3C%2Fprivate_id%3E" target="_top"><img src="btn_click.gif" alt="click" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+																<tr>
+																	<td colspan="2" height="15"></td>
+																</tr>
+															</tbody></table>
+
+															<table class="detail_table1" cellpadding="0" cellspacing="0" width="100" border="0">
+
+
+																<tbody><tr>
+																	<td colspan="2">11. 김동민;배인수;조종만;장경;김진오</td>
+																</tr>
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td class="References_title2" width="685">
+
+																		시계열 기상모델을 이용한 열적 위험확률 기반 동적 송전용량의 예측
+																	</td>
+																</tr>
+
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+
+
+																		대한전기학회논문지:전력기술부문A, 55(7) : 273-280, 2006
+
+																	</td>
+																</tr>
+
+																<tr>
+																	<td width="15">&nbsp;</td>
+																	<td width="685">
+																		<a href="http://click.ndsl.kr/servlet/resolverService?sid=ksci&id=&aufirst=%B1%E8%B5%BF%B9%CE&atitle=%BD%C3%B0%E8%BF%AD+%B1%E2%BB%F3%B8%F0%B5%A8%C0%BB+%C0%CC%BF%EB%C7%D1+%BF%AD%C0%FB+%C0%A7%C7%E8%C8%AE%B7%FC+%B1%E2%B9%DD+%B5%BF%C0%FB+%BC%DB%C0%FC%BF%EB%B7%AE%C0%C7+%BF%B9%C3%F8&title=%B4%EB%C7%D1%C0%FC%B1%E2%C7%D0%C8%B8%B3%ED%B9%AE%C1%F6%3A%C0%FC%B7%C2%B1%E2%BC%FA%BA%CE%B9%AEA%2C&volume=55&issue=7&date=2006&spage=273&issn=1229-2443&genre=journal&pid=%3Cprivate_id%3Eorg_code%3DO260%26site_code%3DSS9999%26cn%3DJAKO200625121590167%26kscino%3D4190658%3C%2Fprivate_id%3E" target="_top"><img src="btn_click.gif" alt="click" align="absmiddle" border="0"></a>&nbsp;&nbsp;<a href="http://koix.kisti.re.kr/root_resolution.jsp?koi=KISTI1.1003/JNL.JAKO200625121590167" target="_top"><img src="kslogo.gif" alt="click" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+																<tr>
+																	<td colspan="2" height="15"></td>
+																</tr>
+															</tbody></table>
+
+														</td>
+													</tr>
+												</tbody></table>
+												<!-- 레퍼런스 테이블 여기까지 -->
+
+											</td>
+										</tr>
+									</tbody></table>
+									<!--//상세정보테이블 여기까지 -->
+								</td>
+								<td class="result_box_td2">&nbsp;</td>
+								<td valign="top">
+									<!-- 해상도에 구애받지않고 가운데 정렬하기위한 이중 DIV 사용입니다. -->
+									<!-- 아웃풋 레코드 테이블 시작 -->
+									<div id="floater2" style="left: 0px; top: 0px; width: 0px; height: 0px; position: relative;">
+									<div id="floater" style="position: absolute; left: -185px; top: 0px; width: 190px; height: 170px; z-index: 1; visibility: visible;">
+									<table class="output_box" cellspacing="3" border="0">
+										<tbody><tr>
+											<td class="output_td" align="center">
+												<table cellpadding="0" cellspacing="0" width="100%" border="0">
+													<tbody><tr>
+														<td align="center">
+															<form action="http://www.koreascience.or.kr/article/articleresultdetail.jsp?no=34521203&searchtype=JJB&listlen=6&listno=4" name="j_sech" method="post">
+															<input name="bno" value="24100" type="hidden">
+															<input name="searchtype1" value="JJB" type="hidden">
+															<input name="hd_srchquery" value="" type="hidden">
+															<table cellpadding="0" cellspacing="0" width="166" border="0">
+																<tbody><tr>
+																	<td class="output_line4">Search in this title</td>
+																</tr>
+																<tr>
+																	<td height="25"><input name="searchWord" class="page_input2" onkeypress="fc_chk2()" value="" type="text"></td>
+																</tr>
+																<tr>
+																	<td height="25">
+																		<select name="journal_sech" class="output_select">
+																			<option value="0"> All Fields
+																			</option><option value="1"> Article Title
+																			</option><option value="2"> Author(s)
+																			</option><option value="3"> Abstract
+																		</option></select>
+																		<a href="javascript:doSear1('24100')"><img src="btn_go.gif" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+															</tbody></table>
+															</form>
+														</td>
+													</tr>
+													<tr>
+														<td height="8" align="center"><img src="output_line.gif" height="1" width="174"></td>
+													</tr>
+													<tr>
+														<td align="center">
+															<form action="http://www.koreascience.or.kr/article/articleresultdetail.jsp?no=34521203&searchtype=JJB&listlen=6&listno=4" name="j_sech2" method="post">
+															<input name="bno" value="24100" type="hidden">
+															<input name="searchtype1" value="JJB" type="hidden">
+															<input name="hd_srchquery" value="" type="hidden">
+															<table cellpadding="0" cellspacing="0" width="166" border="0">
+																<tbody><tr>
+																	<td colspan="4" class="output_line4">Search by citation</td>
+																</tr>
+																<tr>
+																	<td class="output_line3" width="43">Vol:</td>
+																	<td class="output_line3" width="43">Issue:</td>
+																	<td class="output_line3" width="43">Page:</td>
+																	<td>&nbsp;</td>
+																</tr>
+																<tr>
+																	<td><input name="j_vol" class="page_input3" value="" type="text"></td>
+																	<td><input name="j_iss" class="page_input3" value="" type="text"></td>
+																	<td><input name="j_page" class="page_input3" value="" type="text"></td>
+																	<td align="right">
+																		<a href="javascript:doSear2()"><img src="btn_go.gif" align="absmiddle" border="0"></a>
+																	</td>
+																</tr>
+															</tbody></table>
+															</form>
+														</td>
+													</tr>
+													<tr>
+
+														<td style="padding: 7px 0pt;" height="200" align="center">
+															<iframe name="searResult" src="articleresultdetail_3.html" style="width: 100%; height: 100%;" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" scrolling="auto" frameborder="0">
+															</iframe>
+														</td>
+
+														<td>
+														</td>
+
+													</tr>
+												</tbody></table>
+											</td>
+										</tr>
+									</tbody></table>
+									</div>
+									</div>
+									<!--// 아웃풋 레코드 테이블 끝 -->
+									<!--//이중 DIV 여기까지 -->
+								</td>
+							</tr>
+						</tbody></table>
+						<!-- 하단 공통 테이블 시작 -->
+						
+
+
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript">
+
+	function OpenWindowReg(link_file) {
+		window.open("/member/"+link_file,"regi","top=0,left=0,width=550,height=370,resizable=1,scrollbars=no");
+	}
+
+	function forgotpwd() {
+		window.open("/member/forgotpass.jsp","pwd","top=0,left=0,width=550,height=300,resizable=1,scrollbars=no");
+	}
+
+
+	//정규식을 이용한 E-Mail 주소 검증
+	function checkemail(str){
+		var testresults;
+		var str=str;
+		var filter=/^(\w+(?:\.\w+)*)@((?:\w+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+		if (filter.test(str)) {
+			testresults = true;
+		}else{
+			alert(" It is not a valid email address. ")
+			testresults = false;
+		}
+
+		return testresults;
+	}
+
+	//로그인을 위한 스크립트
+	function login(){
+		form = document.login;
+		if(form.email.value == ""){
+			alert("Please enter your email address. ");
+			form.email.focus();
+			return;
+		}
+		if(form.passwd.value == ""){
+			alert("Please enter your passwd. ");
+			form.passwd.focus();
+			return;
+		}
+
+		form.action = "/member/login_submit.jsp";
+		form.submit();
+	}
+
+
+	function isKorean( koreanChar ) {
+		if ( koreanChar.value == null ) return false ;
+		for(var i=0; i < koreanChar.value.length; i++){
+			var c=koreanChar.value.charCodeAt(i);
+			//( 0xAC00 <= c && c <= 0xD7A3 ) 초중종성이 모인 한글자
+			//( 0x3131 <= c && c <= 0x318E ) 자음 모음
+			if( !( ( 0xAC00 <= c && c <= 0xD7A3 ) || ( 0x3131 <= c && c <= 0x318E ) ) ) {
+				return false ;
+			}
+		}
+		return true ;
+	}
+	function mailWindow(no, mode){
+		window.open("/article/sendmail_form.jsp?no="+no+"&mode="+mode,"mail","top=0,left=0,width=550,height=250,resizable=1,scrollbars=no");
+	}
+
+	function LinkOutPopup(linkurl){
+		window.open(linkurl,"linkout","top=0,left=0,width=550,height=750,resizable=1,scrollbars=yes");
+	}
+
+</script>
+
+
+
+
+
+
+<script type="text/JavaScript">
+
+	function mail() {
+		window.open("../../mail.jsp","win","width=712,height=650,scrollbars=no,resizable=1, menubar=no, toolbar=no, titlebar=no")
+	}
+</script>
+
+<!-- bottom start -->
+	<table cellpadding="0" cellspacing="0" width="950" border="0">
+		<tbody><tr>
+			<td height="10"></td>
+		</tr>
+		<tr>
+			<td><img src="bottom_01.gif"></td>
+		</tr>
+		<tr>
+			<td align="center" background="about:blank?bottom_02.gif">
+			<table cellpadding="0" cellspacing="0" width="920" border="0">
+				<tbody><tr>
+					<td><img src="bottom_copyright.gif" usemap="#Map"></td>
+					<td align="right">
+					<!-- bottom_menu start -->
+					<table cellpadding="0" cellspacing="0" border="0">
+						<tbody><tr>
+							<td><a href="http://koreascience.or.kr/common/about.jsp"><img src="bottommenu_about.gif"></a></td>
+							<td><img src="topmenu_line.gif"></td>
+							<td><a href="javascript:mail()"><img src="bottommenu_contact.gif"></a></td>
+							<td><img src="topmenu_line.gif"></td>
+							<td><a href="http://koreascience.or.kr/common/policies.jsp"><img src="bottommenu_privacy.gif"></a></td>
+						</tr>
+					</tbody></table>
+					<!-- bottom_menu end -->
+					</td>
+				</tr>
+			</tbody></table>
+			</td>
+		</tr>
+		<tr>
+			<td><img src="bottom_03.gif"></td>
+		</tr>
+		<tr>
+			<td height="10"></td>
+		</tr>
+	</tbody></table>
+<!-- bottom end -->
+<map name="Map" id="Map"><area shape="rect" coords="-2,-2,74,48" href="http://www.kisti.re.kr/english/"></map>
+						<!--//하단 공통 테이블 여기까지 -->
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+</body>
+</html>

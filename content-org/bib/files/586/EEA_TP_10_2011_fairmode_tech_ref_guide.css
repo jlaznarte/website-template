@@ -1,0 +1,313 @@
+
+/* ::::: http://www.eionet.europa.eu/styles/eionet2007/screen.css ::::: */
+
+@media screen {
+  #workarea ul.menu { list-style: none outside none; padding: 0px; margin: 0px; }
+  .indented { padding-left: 2em; }
+  .documentDescription { font-weight: bold; display: block; margin: 0em 0em 0.5em; line-height: 1.5em; }
+  .documentByLine { font-size: 85%; font-weight: normal; color: rgb(118, 121, 124); margin: 0em 0em 0.5em; }
+  .skiplink, .noscreen { display: none; }
+  .loader { min-width: 50px; height: 50px; background: url('ajax-loader.gif') no-repeat scroll center center transparent; }
+  p ul { background-color: rgb(255, 221, 32); }
+  p li { background-color: rgb(194, 194, 194); }
+  body { background: none repeat scroll 0% 0% rgb(255, 255, 255); color: rgb(0, 0, 0); padding: 0px 1em; margin: 0px; font-size: 90%; font-family: "Nimbus sans L",Helvetica,Arial,Verdana,sans-serif; }
+  #workarea h1 { padding: 0.2em 0em; margin: 0px; font-size: 135%; background-color: transparent; color: rgb(49, 80, 118); }
+  #workarea h2 { font-size: 125%; }
+  #workarea h3 { font-size: 115%; }
+  #workarea h4 { font-size: 105%; }
+  #workarea h2, #workarea h3, #workarea h4 { font-weight: bold; padding: 0.2em 0.4em; background-color: rgb(240, 244, 245); color: rgb(0, 0, 0); border-top: 1px solid rgb(224, 231, 215); }
+  #workarea h1 a:link, #workarea h2 a:link, #workarea h3 a:link, #workarea h4 a:link, #workarea h5 a:link, #workarea h6 a:link { color: rgb(0, 0, 0); text-decoration: none; background: url('headinglink.gif') no-repeat scroll right center transparent; padding-right: 11px; }
+  a:link { color: rgb(42, 100, 149); }
+  a:visited { color: rgb(142, 0, 77); }
+  a:hover { color: rgb(42, 100, 149); }
+  a:active { color: rgb(245, 130, 31); }
+  dt { font-weight: bold; }
+  dd { line-height: 1.5em; margin-bottom: 1em; }
+  abbr, acronym, .explain { text-decoration: none; border-bottom: 1px dotted black; color: black; background-color: transparent; cursor: help; }
+  q { font-style: italic; }
+  code { font-family: Monaco,"Courier New",Courier,monospace; color: black; background-color: rgb(238, 247, 249); padding: 0px 0.1em; }
+  pre { font-family: Monaco,"Courier New",Courier,monospace; font-size: 100%; padding: 1em; color: black; background-color: rgb(238, 247, 249); overflow: auto; }
+  #workarea blockquote { width: 70%; font-family: Baskerville,Georgia,serif; margin: 2em auto; padding: 10px 10px 10px 30px; color: rgb(0, 0, 0); background: url('open_quote.gif') no-repeat scroll 5px 5px rgb(238, 247, 249); }
+  #workarea blockquote p.source { text-align: right; }
+  #workarea .highlight-fragment { background-color: rgb(178, 253, 226); }
+  #workarea ul { line-height: 1.5em; margin: 0.5em 0px 0px 1.5em; padding: 0px; list-style-image: url('bullet.gif'); list-style-type: square; }
+  #workarea ol { line-height: 1.5em; margin: 0.5em 0px 0px 2.5em; padding: 0px; list-style-image: none; }
+  #workarea li.zebraeven { background-color: rgb(246, 246, 246); }
+  #container { width: 100%; position: relative; margin: 0px auto; max-width: 80em; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); border-left: 1px solid rgb(102, 102, 102); border-right: 1px solid rgb(102, 102, 102); }
+  #pagehead { clear: both; height: 102px; background: url('top_01.png') repeat-y scroll 0% 0% rgb(165, 206, 209); border-top: 1px solid rgb(75, 82, 87); }
+  #pagehead a { position: absolute; right: 40px; top: 36px; height: 101px; width: 323px; background: url('top_graphic.gif') no-repeat scroll left center transparent; }
+  #logo { display: none; }
+  #networktitle { color: white; padding-left: 25px; padding-top: 20px; font-size: 200%; font-weight: bold; font-variant: small-caps; }
+  #sitetitle { color: white; padding-left: 25px; font-weight: bold; font-size: 120%; }
+  #sitetagline { display: none; }
+  #workarea { margin-left: 200px; min-height: 450px; height: auto ! important; border-left: 1px dotted rgb(143, 167, 113); padding: 1em; }
+  .threecolumns #workarea { margin-right: 200px; border-right: 1px dotted rgb(143, 167, 113); }
+  .threecolumns #rightcolumn { display: block; }
+  .fullscreen #workarea { margin-left: 0px; margin-right: 0px; border-left: medium none; border-right: medium none; }
+  .fullscreen #leftcolumn { display: none; }
+  #leftcolumn { position: absolute; left: 0px; width: 180px; margin: 0px; padding: 10px; }
+  #rightcolumn { background-color: white; float: right; width: 180px; margin: 0px; padding: 10px; }
+  .fullscreen #rightcolumn { display: none; }
+  .fullscreen #container, .fullscreen #pagefoot { max-width: none; }
+  #pagefoot { clear: both; width: 100%; position: relative; margin: 0px auto; max-width: 80em; color: black; background-color: rgb(206, 220, 50); padding: 1em 0em; border-left: 1px solid rgb(102, 102, 102); border-right: 1px solid rgb(102, 102, 102); }
+  #pagefoot p { padding: 0.1em; margin: 0px 0.5em; }
+  #emas-msg { float: right; }
+  .localnav h2 { color: rgb(73, 91, 107); font-size: 115%; font-style: normal; line-height: normal; padding-top: 0px; margin: 10px 0px 6px; font-weight: bold; text-align: left; text-decoration: none; }
+  .localnav ul { list-style: none outside none; padding-left: 0px; margin: 0px 0px 0.5em; border-bottom: 1px dotted rgb(0, 149, 144); }
+  .localnav ul ul { margin: 0px; border: medium none; }
+  .localnav li { font-size: 90%; font-weight: bold; padding: 0px; line-height: 100%; vertical-align: bottom; margin: 0px; border-top: 1px dotted rgb(0, 149, 144); }
+  .localnav li a { display: block; font-weight: bold; text-decoration: none; color: rgb(73, 91, 107); background: url('lnav_menu.gif') no-repeat scroll left top transparent; padding: 3px 6px 3px 25px; border: medium none; margin: 0px; }
+  .localnav li a:hover { background: url('lnav_menu_h.gif') no-repeat scroll left top rgb(185, 207, 226); color: black; }
+  .localnav li li a { background: url('lnav_submenu.gif') no-repeat scroll left top transparent; padding-left: 35px; }
+  .localnav li li a:hover { background: url('lnav_submenu_h.gif') repeat-y scroll left top rgb(222, 239, 242); color: black; }
+  .localnav form { text-align: center; padding-right: 40px; }
+  #calendar { background: url('calendar_blue.gif') repeat-y scroll center top white; width: 171px; margin: 0px auto; padding: 1px; border: 1px solid rgb(177, 172, 174); font-family: Verdana,Geneva,Arial,Helvetica,sans-serif; text-align: center; }
+  #calendar caption { background-color: rgb(227, 242, 245); color: black; border-top: 1px solid rgb(177, 172, 174); border-left: 1px solid rgb(177, 172, 174); border-right: 1px solid rgb(177, 172, 174); }
+  #calendar th { padding: 0.1em; text-align: center; }
+  #calendar th img { margin: 4px; }
+  #calendar tr.month { background: url('calendar_green.gif') repeat-y scroll 0% 0% rgb(197, 211, 159); color: black; font-size: 90%; text-align: center; }
+  #calendar tr.month a { text-decoration: none; }
+  #calendar tr.week th { color: rgb(160, 96, 96); font-size: 85%; font-weight: normal; text-align: center; background: none repeat scroll 0% 0% rgb(197, 211, 159); border-bottom: 1px solid black; }
+  #calendar td { background: none repeat scroll 0% 0% transparent; color: black; font-size: 75%; vertical-align: top; text-align: center; border: 1px none transparent; }
+  #calendar td a { display: block; background-color: rgb(216, 215, 0); }
+  #calendar td.today { border: 1px solid rgb(248, 178, 34); }
+  #toolribbon { height: 30px; width: 100%; font-size: 80%; color: rgb(49, 80, 118); background-color: rgb(255, 255, 255); border-bottom: 4px solid rgb(111, 112, 114); }
+  #toolribbon label { display: inline-block; height: 16px; padding: 3px 0px 1px; vertical-align: middle; }
+  #toolribbon img { vertical-align: middle; }
+  #toolribbon a { display: inline-block; height: 16px; color: rgb(49, 80, 118); background-color: rgb(255, 255, 255); text-decoration: none; vertical-align: middle; padding: 3px 0.5em 1px; border-right: 1px dotted rgb(111, 112, 114); }
+  a#eealink { padding-left: 18px; background: url('eeaicon.gif') no-repeat scroll left center transparent; }
+  a#ewlink { display: none; }
+  a#loginlink { padding-left: 18px; background: url('login.gif') no-repeat scroll left center transparent; }
+  a#logoutlink { padding-left: 18px; background: url('logout.gif') no-repeat scroll left center transparent; }
+  a#printlink { padding: 3px 0.5em 1px 16px; background: url('print_icon.gif') no-repeat scroll left center transparent; }
+  a#printlink span { display: none; }
+  a#rsslink { padding: 3px 0.5em 1px 16px; background: url('rss_icon.gif') no-repeat scroll left center transparent; }
+  a#rsslink span { display: none; }
+  a#skiplink { display: none; }
+  .fullscreen a#fullscreenlink { padding: 3px 0.5em 1px 16px; background: url('fullscreencollapse_icon.gif') no-repeat scroll left center transparent; }
+  a#fullscreenlink { padding: 3px 0.5em 1px 16px; background: url('fullscreenexpand_icon.gif') no-repeat scroll left center transparent; }
+  a#fullscreenlink span { display: none; }
+  a#pagehelplink { padding-left: 18px; background: url('help_icon.gif') no-repeat scroll left center transparent; }
+  #freesrchform, #toolribbon form { display: inline; padding: 0px; margin: 0px; }
+  #toolribbon input { vertical-align: middle; margin: 0px; padding: 0px; }
+  #lefttools { float: left; height: 20px; padding: 4px 0.5em; text-align: left; vertical-align: middle; }
+  #righttools { float: right; width: 60%; height: 20px; padding: 4px 0.5em; text-align: right; }
+  #freesrchfld { font-size: 95%; width: 9em; height: 14px; }
+  #menuribbon { font: 80% Helvetica,Verdana,Geneva,Arial,sans-serif; width: 100%; height: 1.3em; padding: 0px; background: none repeat scroll 0% 0% rgb(0, 68, 106); border-top: 1px solid black; border-bottom: 1px solid black; }
+  #dropdowns, #dropdowns ul { padding: 0px; margin: 0px; list-style: none outside none; }
+  #dropdowns li { float: left; position: relative; text-transform: uppercase; width: 10em; border-right: 1px dotted rgb(255, 255, 255); background-color: rgb(0, 68, 106); color: rgb(255, 255, 255); z-index: 11; }
+  #dropdowns a:link, #dropdowns a:visited { display: block; text-decoration: none; padding: 0.1em 0.5em; color: rgb(255, 255, 255); }
+  #dropdowns ul { display: none; position: absolute; top: 1.5em; left: 0px; background-color: rgb(238, 238, 238); }
+  #dropdowns li > ul { top: auto; left: auto; }
+  #dropdowns ul li { float: none; border-right: 0px none transparent; border-bottom: 1px dotted rgb(0, 0, 0); background-color: rgb(238, 238, 238); text-transform: none; margin: 0px; padding: 0.1em 0px; color: rgb(255, 255, 255); }
+  #dropdowns li ul li a:link, #dropdowns li ul li a:visited { background: url("arrow-normal.png") no-repeat scroll 3px center transparent; padding: 0.1em 0px 0.1em 15px; color: rgb(0, 0, 0); }
+  #dropdowns li ul li a:hover { background-color: white; }
+  #dropdowns li:hover ul, #dropdowns li.over ul { display: block; }
+  #dropdowns li:hover ul li, #dropdowns li.over ul li { width: 20em; }
+  .breadcrumbtrail { clear: left; padding: 3px 0px 1px 10px; font-size: 0.75em; line-height: 2; color: rgb(125, 125, 125); border-bottom: 1px dotted rgb(143, 167, 113); }
+  .breadcrumbitem { float: left; padding-right: 11px; margin-right: 3px; background-image: url("arrow-normal.png"); background-repeat: no-repeat; background-position: 100% 7px; }
+  .breadcrumbitemlast {  }
+  .breadcrumbtrail a { font-weight: bold; color: rgb(125, 125, 125); text-decoration: none; }
+  .breadcrumbtrail a:hover { font-weight: bold; color: black; text-decoration: underline; }
+  .breadcrumbhead { float: left; margin-right: 3px; }
+  .breadcrumbtail { font-size: 0.1px; float: right; width: 1px; }
+  #tabbedmenu { float: left; width: 100%; background: url("tab_bg.png") repeat-x scroll center bottom transparent; font-size: 0.9em; line-height: normal; }
+  #tabbedmenu ul { margin: 0px; padding: 0px 10px; list-style: none outside none; }
+  #tabbedmenu li { float: left; background: url("tab_left.png") no-repeat scroll left top transparent; border-bottom: 3px solid rgb(49, 80, 118); margin: 0px; padding: 0px 0px 0px 6px; white-space: nowrap; }
+  #tabbedmenu a { display: block; text-decoration: none; font-weight: bold; color: black; background: url("tab_right.png") no-repeat scroll right top transparent; padding: 3px 8px 2px 0px; }
+  #tabbedmenu a:hover { text-decoration: none; background-color: transparent; }
+  #tabbedmenu #currenttab { background-image: url("tab_left_on.png"); border-bottom: 3px solid rgb(206, 220, 50); }
+  #tabbedmenu #currenttab span, #tabbedmenu #currenttab a { display: block; text-decoration: none; font-weight: bold; background: url("tab_right_on.png") no-repeat scroll right top transparent; padding: 3px 8px 2px 0px; }
+  #tabbedmenuend { clear: left; }
+  #workarea table { empty-cells: show; background-color: rgb(255, 255, 255); }
+  td { line-height: normal; text-decoration: none; }
+  th { font-weight: bold; line-height: normal; padding: 0.1em 0.5em; text-decoration: none; }
+  th a, th a:link, th a:visited { color: black; }
+  table .number { text-align: right; }
+  table .sum { font-weight: bold; }
+  table .center { text-align: center; }
+  .datatable caption { font-weight: bold; }
+  .datatable th { text-align: center; background-color: rgb(246, 246, 246); font-weight: bold; border-bottom: 2px solid white; }
+  .datatable th.scope-row { text-align: right; vertical-align: top; }
+  .datatable th[scope="row"] { text-align: right; vertical-align: top; }
+  .datatable td, .datatable th { margin: 0px; padding: 0.3em; vertical-align: top; }
+  .datatable td { border-bottom: 2px solid rgb(246, 246, 246); }
+  table.datatable { border: 1px solid rgb(182, 182, 182); color: rgb(102, 102, 102); margin: 1em 0em; }
+  .sortable { color: rgb(102, 102, 102); font-size: 0.9em; line-height: normal; }
+  .sortable tbody tr {  }
+  .sortable tr.zebraeven { background-color: rgb(246, 246, 246); }
+  .sortable td { padding: 0.3em 0.4em; vertical-align: top; border-bottom: 1px dotted rgb(182, 182, 182); }
+  .sortable th { background: none repeat scroll 0% 0% rgb(165, 206, 209); border: 2px outset rgb(103, 132, 132); margin: 0px; padding: 0px; white-space: nowrap; vertical-align: top; }
+  .sortable th a:link, .sortable th a:visited, .sortable th span { display: block; text-decoration: none; font-weight: bold; color: black; padding: 0.3em 0.5em; }
+  #workarea .sortable thead th a:hover { background: none repeat scroll 0% 0% rgb(121, 154, 165); text-decoration: none; }
+  select { background-color: white; }
+  .question { vertical-align: top; font-weight: bold; }
+  label.required { background: url("mandatory.gif") no-repeat scroll right center transparent; padding-right: 12px; }
+  input.error, textarea.error { color: black; font-style: italic; background: none repeat scroll 0% 0% rgb(255, 128, 128); border: 2px inset rgb(164, 35, 34); }
+  input.error[type="radio"], input.error[type="checkbox"], select.error { background-color: white; color: rgb(164, 35, 34); font-style: normal; border: 2px solid rgb(164, 35, 34); }
+  .error-hint { font-size: 80%; margin: 2px; padding: 2px; border: 1px dotted black; background-color: rgb(255, 255, 128); color: black; }
+  .input-hint { font-size: 80%; vertical-align: top; }
+  table.formtable { border-collapse: collapse; }
+  .formtable th { vertical-align: top; text-align: right; border: medium none; background: none repeat scroll 0% 0% transparent; }
+  .formtable th.scope-col { text-align: left; border-bottom: 1px dotted rgb(49, 80, 118); }
+  .formtable th[scope="col"] { text-align: left; border-bottom: 1px dotted rgb(49, 80, 118); }
+  .formtable td { vertical-align: top; }
+  a img { border: medium none; }
+  .figure, .figure-plus { font-size: x-small; text-indent: 0px; }
+  .figure-title, .figure-nr { font-weight: bold; }
+  .figure-image { text-align: center; }
+  .figure-source-copyright { text-align: right; }
+  .figure-plus-container { padding: 0px 6px 6px 0px ! important; background: url("shadow.png") no-repeat scroll right bottom white ! important; margin: 10px 5px 5px 10px ! important; width: 33%; }
+  .figure-plus { display: block; position: relative; background-color: rgb(249, 249, 249); border: 1px solid rgb(169, 169, 169); margin: -6px 0px 0px -6px; padding: 4px; }
+  .figure-right { float: right; margin-left: 6px; }
+  .figure-left { float: left; margin-right: 6px; }
+  .dropshadow, .figure { padding: 0px 6px 6px 0px ! important; background: url("shadow.png") no-repeat scroll right bottom transparent ! important; margin: 10px 5px 5px 10px ! important; }
+  .shadowed, .figure img { display: block; position: relative; background-color: rgb(255, 255, 255); margin: -6px 0px 0px -6px; border: 1px solid rgb(169, 169, 169); padding: 4px; }
+  .figure-plus .figure-image a { display: block; padding-bottom: 13px; background: url("magnify-clip.png") no-repeat scroll right bottom transparent; }
+  img.scaled { width: 100%; }
+  img.border { border: 1px solid rgb(169, 169, 169); padding: 4px; }
+  img.centered { display: block; margin: 0px auto; }
+  .quickjumps { float: right; width: 140px; padding: 0.5em 10px; margin: 0px 10px; border: 1px solid rgb(73, 91, 107); background-color: rgb(229, 226, 220); }
+  #rightcolumn.quickjumps { border: medium none; background-color: white; }
+  .quickjumps ul { list-style-image: url("bullet.gif"); list-style-type: square; margin-left: 0px; padding-left: 1.5em; }
+  .quickjumps li { font-size: 80%; font-style: normal; line-height: normal; font-weight: bold; padding-bottom: 0.4em; }
+  .quickjumps a, .quickjumps a:visited { color: rgb(2, 65, 118); }
+  .quickjumps h2 { background-color: rgb(238, 247, 249); text-align: center; margin-bottom: 0px; font-size: 110%; }
+  .quickjumps p { border-top: 1px dotted black; margin-bottom: 0px; margin-top: 0.5em; }
+  .operations { background-color: white; margin: 0px; }
+  .operations h2 { color: black; font-weight: bold; background-color: transparent; font-size: 120%; padding-left: 10px; }
+  .operations ul { list-style: none outside none; margin: 0px; padding: 0px; }
+  .operations li { font-size: 0.75em; font-weight: bold; line-height: 100%; white-space: nowrap; }
+  .operations li a { display: block; font-weight: bold; color: rgb(69, 91, 107); text-decoration: none; background: url("button_right.gif") no-repeat scroll 0% 0% transparent; padding: 5px 0px 0px 10px; border-bottom: medium none; width: 170px; height: 22px; }
+  .operations li a:hover { color: rgb(178, 13, 0); background-color: transparent; }
+  .operations li a:active { color: rgb(178, 13, 0); background: url("button_right.gif") no-repeat scroll 0% 0% transparent; }
+  .operations li.help a { background: url("button_right.gif") no-repeat scroll 0% 0% transparent; }
+  .operations li.help a:active { background: url("button_right.gif") no-repeat scroll 0% 0% transparent; }
+  #operations { float: right; background-color: white; margin: 0px; }
+  #operations h2 { color: black; font-weight: bold; background-color: transparent; font-size: 120%; padding-left: 10px; }
+  #operations ul { list-style: none outside none; margin: 0px; padding: 0px; }
+  #operations li { font-size: 0.75em; font-weight: bold; line-height: 100%; white-space: nowrap; }
+  #operations li a { display: block; font-weight: bold; color: rgb(69, 91, 107); text-decoration: none; background: url("button_right.gif") no-repeat scroll 0% 0% transparent; padding: 5px 0px 0px 10px; border-bottom: medium none; width: 170px; height: 22px; }
+  #operations li a:hover { color: rgb(178, 13, 0); background-color: transparent; }
+  #operations li a:active { color: rgb(178, 13, 0); background: url("button_right.gif") no-repeat scroll 0% 0% transparent; }
+  #operations li.help a { background: url("button_right.gif") no-repeat scroll 0% 0% transparent; }
+  #operations li.help a:active { background: url("button_right.gif") no-repeat scroll 0% 0% transparent; }
+  .link-comment { background: url("comment.png") no-repeat scroll left center transparent; padding: 1px 0px 1px 18px; }
+  .link-comments { background: url("comments.png") no-repeat scroll left center transparent; padding: 1px 0px 1px 18px; }
+  .link-external { background: url("external.png") no-repeat scroll 0px 3px transparent; padding: 1px 0px 1px 11px; }
+  .link-folder { background: url("folder.gif") no-repeat scroll 0% 1px transparent; padding: 2px 0px 2px 18px; }
+  .link-parent { background: url("goup_icon.gif") no-repeat scroll 0% 1px transparent; padding: 2px 0px 2px 18px; text-decoration: none; }
+  .link-plain { background-image: none; padding: 0px; }
+  .link-unknown { background: url("fileicons/file.png") no-repeat scroll 0% 50% transparent; padding: 2px 0px 2px 18px; }
+  .link-user { background: url("user.png") no-repeat scroll 0px 1px transparent; padding: 1px 0px 1px 18px; }
+  .link-webcal { background: url("date.png") no-repeat scroll 0px 1px transparent; padding: 1px 0px 1px 16px; }
+  .link-newsitem { background: url("newspaper.png") no-repeat scroll 0px 1px transparent; padding: 1px 0px 1px 16px; }
+  .link-https { background: url("lock_icon.gif") no-repeat scroll 0px 0.1em transparent; padding: 1px 0px 1px 18px; }
+  .link-mailto { background: url("mail_icon.gif") no-repeat scroll 0px 1px transparent; padding: 1px 0px 1px 18px; }
+  .link-news { background: url("topic_icon.gif") no-repeat scroll 0px 1px transparent; padding: 1px 0px 1px 18px; }
+  .link-ftp { background: url("external.png") no-repeat scroll 0px 3px transparent; padding: 1px 0px 1px 11px; }
+  .link-irc { background: url("discussionitem_icon.gif") no-repeat scroll 0px 1px transparent; padding: 1px 0px 1px 18px; }
+  .link-callto, .link-tel { background: url("link_tel_icon.gif") no-repeat scroll 0px 1px transparent; padding: 1px 0px 1px 16px; }
+  .link-sms { background: url("link_sms_icon.gif") no-repeat scroll 0px 1px transparent; padding: 1px 0px 1px 16px; }
+  .link-fax { background: url("link_fax_icon.gif") no-repeat scroll 0px 1px transparent; padding: 1px 0px 1px 18px; }
+  .link-geo { background: url("link_geo_icon.png") no-repeat scroll 0px 1px transparent; padding: 1px 0px 1px 18px; }
+  .link-feed, .link-rss { background: url("rss.gif") no-repeat scroll 0px 1px transparent; padding: 1px 0px 1px 18px; }
+  .link-anchor { color: rgb(118, 121, 124); text-decoration: none; font-weight: normal; }
+  .link-ai, .link-aif, .link-aifc, .link-aiff, .link-asf, .link-asx, .link-avi, .link-csv, .link-dbf, .link-doc, .link-docx, .link-dot, .link-eps, .link-exe, .link-gif, .link-jpe, .link-jpeg, .link-jpg, .link-kml, .link-kmz, .link-m1v, .link-m3u, .link-m4a, .link-mdb, .link-mov, .link-mp2, .link-mp3, .link-mp4, .link-mpa, .link-mpe, .link-mpeg, .link-mpega, .link-mpg, .link-mpga, .link-odg, .link-odi, .link-odp, .link-ods, .link-odt, .link-otg, .link-oti, .link-otp, .link-ots, .link-ott, .link-pdf, .link-png, .link-ppa, .link-pps, .link-ppt, .link-pptx, .link-ps, .link-pwz, .link-qt, .link-rdf, .link-rtf, .link-svg, .link-swf, .link-swfl, .link-tar, .link-tgz, .link-tif, .link-tiff, .link-txt, .link-wav, .link-wiz, .link-wma, .link-webpage, .link-wmf, .link-wmv, .link-xlb, .link-xls, .link-xlsx, .link-xlsm, .link-xlt, .link-xml, .link-xsd, .link-xsd, .link-xsl, .link-xslt, .link-zip { background: url("fileicons/html.png") no-repeat scroll 0% 1px transparent; padding: 2px 0px 2px 18px; }
+  .link-aif, .link-aifc, .link-aiff { background-image: url("mediaicons/audio.png"); }
+  .link-asf, .link-asx, .link-avi { background-image: url("mediaicons/video.png"); }
+  .link-doc, .link-docx, .link-dot, .link-wiz { background-image: url("fileicons/doc.png"); }
+  .link-exe { background-image: url("mediaicons/application.png"); }
+  .link-gif, .link-jpe, .link-jpeg, .link-jpg, .link-png { background-image: url("fileicons/jpeg.png"); }
+  .link-kml, .link-kmz { background-image: url("kml.gif"); }
+  .link-m4a, .link-mp2, .link-mp3, .link-mpega, .link-mpga, .link-m3u { background-image: url("mediaicons/audio.png"); }
+  .link-m1v, .link-mpa, .link-mpe, .link-mpeg, .link-mpg, .link-mov, .link-qt, .link-mp4 { background-image: url("mediaicons/video.png"); }
+  .link-odg, .link-otg { background-image: url("fileicons/odg.png"); }
+  .link-odi, .link-oti { background-image: url("fileicons/odi.png"); }
+  .link-odp, .link-otp { background-image: url("fileicons/odp.png"); }
+  .link-ods, .link-ots { background-image: url("fileicons/ods.png"); }
+  .link-odt, .link-ott { background-image: url("fileicons/odt.png"); }
+  .link-pdf { background-image: url("fileicons/pdf.png"); }
+  .link-ppa, .link-pps, .link-ppt, .link-pptx, .link-pwz { background-image: url("fileicons/ppt.png"); }
+  .link-rdf, .link-xml, .link-xsd { background-image: url("fileicons/xml.png"); }
+  .link-rtf { background-image: url("fileicons/rtf.png"); }
+  .link-ai, .link-eps, .link-ps { background-image: url("fileicons/ps.png"); }
+  .link-swf, .link-swfl { background-image: url("fileicons/swf.png"); }
+  .link-svg { background-image: url("mediaicons/application.png"); }
+  .link-tar { background-image: url("fileicons/tar.png"); }
+  .link-tgz { background-image: url("fileicons/tgz.png"); }
+  .link-tif, .link-tiff { background-image: url("fileicons/jpeg.png"); }
+  .link-mdb, .link-dbf { background-image: url("fileicons/mdb.png"); }
+  .link-txt { background-image: url("fileicons/txt.png"); }
+  .link-wav { background-image: url("fileicons/wav.png"); }
+  .link-wma { background-image: url("fileicons/wma.png"); }
+  .link-wmv, .link-wmf { background-image: url("fileicons/wmv.png"); }
+  .link-xlb, .link-xls, .link-xlsm, .link-xlsx, .link-xlt, .link-csv { background-image: url("fileicons/xls.png"); }
+  .link-xsd { background-image: url("fileicons/xsd.png"); }
+  .link-xsl, .link-xslt { background-image: url("fileicons/xsl.png"); }
+  .link-zip { background-image: url("fileicons/zip.png"); }
+  .tip-msg, .note-msg, .important-msg, .caution-msg, .warning-msg, .error-msg { padding: 0.5em 0.5em 0.5em 30px; margin: 0.5em 2em; font-weight: bold; }
+  .tip-msg strong, .note-msg strong, .important-msg strong, .caution-msg strong, .warning-msg strong { font-weight: bold; }
+  .tip-msg p, .note-msg p, .important-msg p, .caution-msg p, .warning-msg p { font-weight: normal; margin: 0.2em 0px; padding: 0.6em 2px 2px 0px; }
+  #workarea .tip-msg ul, #workarea .note-msg ul, #workarea .important-msg ul, #workarea .caution-msg ul, #workarea .warning-msg ul { font-weight: normal; margin: 0.2em 0px; padding: 0.6em 2px 2px 0px; list-style-type: none; list-style-image: none; }
+  .system-msg { border: 2px dashed black; padding: 0.5em; margin: 0.5em 2em; font-weight: bold; }
+  #workarea .system-msg ul { list-style-type: none; list-style-image: none; padding: 0px; margin: 0px; }
+  .tip-msg { border: 1px dotted rgb(108, 142, 192); color: rgb(49, 80, 118); background: url("admonitions/tip_ea.gif") no-repeat scroll 3px 3px transparent; }
+  .note-msg { border: 1px dashed black; background: url("admonitions/note_ea.gif") no-repeat scroll 3px 3px transparent; }
+  .important-msg { border: 1px solid rgb(170, 170, 170); background: url("admonitions/important_ea.gif") no-repeat scroll 3px 3px transparent; }
+  .caution-msg { border: 1px dashed black; background: url("admonitions/caution_ea.gif") no-repeat scroll 3px 3px transparent; }
+  .warning-msg { border: 1px dashed red; background: url("admonitions/warning_ea.gif") no-repeat scroll 3px 3px transparent; }
+  .error-msg { border: 2px dashed red; background: url("admonitions/error.gif") no-repeat scroll 5px 5px transparent; color: rgb(128, 0, 0); font-size: 110%; font-weight: bold; }
+  .advice-msg, .advise-msg { padding: 0.2em; border: 1px solid rgb(170, 170, 170); background-color: rgb(247, 247, 247); }
+  .notfound-msg { padding: 1em 0.2em; border: 1px solid rgb(170, 170, 170); background-color: rgb(255, 170, 144); font-weight: bold; }
+  .popup { margin: 10px; background-image: none; background-color: white; }
+  .popup #popuphead { height: 50px; width: 100%; background: url("top_01.png") repeat-y scroll 0% 0% rgb(165, 206, 209); border-top: 4px solid rgb(111, 112, 114); border-bottom: 1px solid rgb(49, 80, 118); }
+  .popup #sitetitle { padding-left: 0.5em; font-size: 200%; }
+  .popup #popupbody { margin-left: 0px; border-left: 0px none; padding: 1em; min-height: 0px; }
+  .popup h1 { padding: 0.2em 0em; margin: 0px; font-size: 135%; background-color: transparent; color: rgb(49, 80, 118); }
+  .popup #close { float: right; }
+}
+@media only screen and (max-width: 700px) {
+  .nohandheld { display: none; }
+  body { margin: 0px; padding: 3px; font-family: Helvetica,Arial,sans-serif; font-size: 10pt; font-style: normal; line-height: normal; background: none repeat scroll 0% 0% rgb(255, 255, 255); color: rgb(0, 0, 0); }
+  #toolribbon { height: 30px; width: 100%; font-size: 80%; color: rgb(49, 80, 118); background-color: rgb(255, 255, 255); border-bottom: 4px solid rgb(111, 112, 114); }
+  #lefttools { float: left; height: 20px; padding: 4px 0.5em; text-align: left; vertical-align: middle; }
+  #righttools { float: right; width: 60%; height: 20px; padding: 4px 0.5em; text-align: right; }
+  a#ewlink, a#printlink, a#xfullscreenlink, a#acronymlink, a#rsslink { display: none; }
+  #freesrchfld { font-size: 95%; width: auto; height: auto; }
+  #container { position: static; margin: 0px; border: medium none; }
+  #pagehead { background-color: rgb(108, 129, 126); background-image: none; border-top: 1px solid rgb(75, 82, 87); border-bottom: 1px solid rgb(204, 204, 204); padding: 0.3em 0.5em; right: 0px; top: 0px; position: static; height: auto; }
+  #pagehead a { position: static; right: 0px; top: 0px; height: auto; width: auto; background-color: transparent; background-image: none; }
+  #networktitle { padding: 0px; font-size: 14pt; }
+  #sitetitle { padding: 0px; font-size: 12pt; font-weight: bold; }
+  #logo { display: none; }
+  #sitetagline { display: none; }
+  #menuribbon { font: 80% Verdana,Geneva,Arial,Helvetica,sans-serif; width: 100%; height: 1.3em; padding: 0px; background: none repeat scroll 0% 0% rgb(0, 68, 106); border-top: 1px solid black; border-bottom: 1px solid black; }
+  #dropdowns { padding: 0px; margin: 0px; list-style: none outside none; }
+  #dropdowns li { float: left; position: relative; text-transform: uppercase; width: 9em; border-right: 1px dotted rgb(255, 255, 255); background-color: rgb(0, 68, 106); color: rgb(255, 255, 255); }
+  #dropdowns ul { display: none; }
+  #dropdowns a:link, #dropdowns a:visited { display: block; text-decoration: none; padding: 0.1em 0.5em; color: rgb(255, 255, 255); }
+  a img { border: medium none; margin: 0px; padding: 0px; }
+  #workarea { clear: both; margin: 0.5em 0px 0px; height: auto; border-right: medium none; border-width: 1px medium medium; border-style: dotted none none; border-color: rgb(143, 167, 113) -moz-use-text-color -moz-use-text-color; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; padding: 0px; }
+  .threecolumns #workarea { margin-right: 0px; border-right: medium none; }
+  .threecolumns #rightcolumn { display: block; }
+  .fullscreen #workarea { margin-left: 0px; margin-right: 0px; border-left: medium none; border-right: medium none; }
+  .fullscreen #leftcolumn { display: none; }
+  .fullscreen #rightcolumn { display: none; }
+  .fullscreen #container, .fullscreen #pagefoot { max-width: none; }
+  #workarea h1 { font-size: 150%; }
+  q { font-size: 100%; }
+  pre { overflow: hidden; }
+  #workarea blockquote { width: auto; margin: 1em 0.5em; }
+  #leftcolumn { position: static; float: left; width: 50%; left: 0px; margin: 0px; padding: 0.5em 0px; }
+  #rightcolumn { background-color: white; border-left: 1px dotted rgb(143, 167, 113); width: 49%; float: right; margin: 0px; padding: 0.5em 0px; }
+  .localnav h2 { color: black; font-size: 110%; font-style: normal; line-height: normal; padding-top: 0px; margin-bottom: 0px; font-weight: bold; text-decoration: none; }
+  .breadcrumbtrail { clear: both; padding: 3px 0px; border-bottom: 1px dotted black; }
+  .breadcrumbhead { display: inline; }
+  .breadcrumbitem { display: inline; padding-right: 11px; margin-right: 3px; background-image: url('bcarrow.gif'); background-repeat: no-repeat; background-position: 100% 4px; }
+  .breadcrumbitemlast { display: inline; }
+  .quickjumps { padding-left: 1em; margin-left: 0.5em; padding-bottom: 15px; padding-top: 1em; border: 1px solid black; background-color: rgb(204, 204, 204); }
+  #pagefoot { clear: both; margin: 0px; max-width: none; color: black; border: medium none; }
+  img { max-width: 100%; }
+  img.border { max-width: 98%; }
+}

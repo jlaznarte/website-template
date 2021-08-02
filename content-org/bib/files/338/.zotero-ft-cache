@@ -1,0 +1,188 @@
+Screen reader users, click here to load entire article This page uses JavaScript to progressively load the article content as a user scrolls. Screen reader users, click the load entire article button to bypass dynamically loaded article content.
+ScienceDirect is phasing out support for older versions of Internet Explorer on Jan 12, 2016. For the best product experience, we recommend you upgrade to a newer version of IE or use a different browser: Firefox or Chrome . For additional information please see the ScienceDirect Blog page. Close
+ 
+
+    Journals
+    Books
+
+    Shopping cart
+    Sign in
+    Sign in
+    OpenAthens login
+    Login via your institution
+    Other institution login
+    Sign in using your ScienceDirect credentials
+    Username:
+    Password:
+    Remember me
+    | Not Registered?
+    Forgotten username or password?
+    Help
+
+    Purchase
+     
+    Help
+        Direct export
+         
+         
+        Export file
+          RIS (for EndNote, Reference Manager, ProCite)
+          BibTeX
+          Text
+          RefWorks Direct Export
+        Content
+          Citation Only
+          Citation and Abstract
+
+Advanced search
+
+ 
+Article outline
+Show full outline
+
+    Abstract
+    Keywords
+    1. Introduction
+    2. Methodology
+    2.1. Basic approach: Adaptation of SMOKE to European conditions
+    2.2. Emission datasets
+    2.3. Chemical speciation
+    2.4. Temporal allocation
+    2.5. Spatial allocation
+    2.6. Layer assignment
+    3. Results: Application to Spain and the Greater Madrid Area
+    3.1. Emission summary
+    3.2. Chemical speciation
+    3.3. Temporal allocation
+    3.4. Spatial allocation
+    3.5. Layer assignment
+    4. Conclusions
+    Acknowledgements
+    References
+
+Alert message
+JavaScript is disabled on your browser.
+Please enable JavaScript to use all the features on this page.
+Figures and tables
+
+    Modelling domains. (a) The solid rectangles represent the SMOKE and CMAQ ...
+    Generation of emission activity codes for SMOKE.
+    Generation of geographical administrative codes for SMOKE (a) and NUTS-3 ...
+    Emission activity and geographical codes across the emission model. Code ...
+    Schematic of emission databases and main tables involved in the generation of ...
+    Table 1
+    Table 2
+    Generation of future year inventories for SMOKE.
+    Schematic of international emission processing. The figure illustrates the ...
+    Different diurnal profiles (weekday and weekend) used for the temporal ...
+    Pollutant-specific temporal profiles constructed for the temporal allocation of ...
+    Schematic of spatial allocation of emissions from area sources. The figure ...
+    Table 3
+    Allocation of area source emissions to discrete locations through the ...
+    Vertical structure of the lower modelling domain (it covers the whole ...
+    Table 4
+    Annual total emissions (kilotons) in the mother domain by Country.
+    Table 5
+    Chemical speciation (% in mass) of Volatile Organic Compounds in Spain in 2000 ...
+    Chemical speciation (% in mass) of primary fine particles in Spain in 2000 (a) ...
+    Monthly emissions in the mother modelling domain (D1). Ships and non-Spanish ...
+    Gridded emissions from area sources in the mother domain (D1). NOX spatial ...
+    Gridded emissions from area sources in the nested modelling domain (D2). Results ...
+    Point source emission vertical profiles. Aggregated figures for the mother ...
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. View full text
+
+Environmental Modelling & Software
+
+Volume 23, Issue 8 , August 2008, Pages 1026–1044
+Cover image Cover image
+Development of a high-resolution emission inventory for Spain using the SMOKE modelling system: A case study for the years 2000 and 2010
+
+    Rafael Borge , ,
+    Julio Lumbreras ,
+    Encarnacion Rodríguez
+
+    Department of Chemical and Environmental Engineering, Technical University of Madrid (UPM), c/ José Gutiérrez Abascal 2, 28006 Madrid, Spain
+
+    Received 16 April 2007, Revised 12 November 2007, Accepted 18 November 2007, Available online 4 March 2008
+
+  Show more   Show less
+Choose an option to locate/access this article:
+Check if you have access through your login credentials or your institution
+Check access
+Purchase $19.95
+
+    doi:10.1016/j.envsoft.2007.11.002 
+    Get rights and content 
+
+Abstract
+
+Emission preparation is a critical stage in air quality modelling. The generation of input information from regulatory emission inventories compatible with the requirements of eulerian chemical-transport models needs a computationally efficient, reliable, and flexible emissions data processing system. The Sparse Matrix Operator Kernel System (SMOKE) was developed in the United States and redesigned by the US Environmental Protection Agency to support air quality modelling activities in the framework of the USEPA Models-3 system. In this contribution the adaptation of the SMOKE system to European conditions is discussed. The system has been applied to the Iberian Peninsula and the Madrid Region (Spain) to process Spain's official emission inventories and projections for the years 2000 and 2010. This software tool has been found useful to generate emission input information for the CMAQ model as well as providing a valuable platform for emission scenario analysis. The model has been proved flexible enough to accommodate and process emissions based on the EMEP/CORINAIR methodology, although the lack of meaningful ancillary information may hinder its application outside the US. This study has established a practical methodology for the adaptation of the SMOKE system to Spain and potentially to any other European country.
+Keywords
+
+    Air quality ;
+    Atmospheric emissions ;
+    Emission preparation for modelling ;
+    SMOKE ;
+    Spain
+
+    Corresponding author. Tel.: +34 91 336 3189; fax: +34 91 336 3009.
+
+Copyright © 2007 Elsevier Ltd. All rights reserved.
+
+    About ScienceDirect
+
+    Contact and support
+
+    Terms and conditions
+
+    Privacy policy
+
+Copyright © 2015 Elsevier B.V. or its licensors or contributors. ScienceDirect® is a registered trademark of Elsevier B.V.
+Cookies are used by this site. To decline or learn more, visit our Cookies page.
+Switch to Mobile Site
+  Recommended articles
+
+        Performance characteristics of MM5–SMOKE–CMAQ for a summer photochemical episode in southeast England, United Kingdom
+        2008, Atmospheric Environment
+        more
+            Y. Yu, R.S. Sokhi, N. Kitwiroon, D.R. Middleton, B. Fisher
+            Performance characteristics of MM5–SMOKE–CMAQ for a summer photochemical episode in southeast England, United Kingdom
+            Atmospheric Environment, Volume 42, Issue 20, June 2008, Pages 4870–4883
+            Original Research Article
+                PDF (1403 K)
+        Influence of boundary conditions on CMAQ simulations over the Iberian Peninsula
+        2010, Atmospheric Environment
+        more
+            Rafael Borge, Javier López, Julio Lumbreras, Adolfo Narros, Encarnación Rodríguez
+            Influence of boundary conditions on CMAQ simulations over the Iberian Peninsula
+            Atmospheric Environment, Volume 44, Issue 23, July 2010, Pages 2681–2695
+            Original Research Article
+                PDF (4666 K)
+        A model to calculate consistent atmospheric emission projections and its application to Spain
+        2008, Atmospheric Environment
+        more
+            Julio Lumbreras, Rafael Borge, Juan Manuel de Andrés, Encarnación Rodríguez
+            A model to calculate consistent atmospheric emission projections and its application to Spain
+            Atmospheric Environment, Volume 42, Issue 21, July 2008, Pages 5251–5266
+            Original Research Article
+                PDF (1094 K)
+    View more articles »
+
+  Citing articles ( 36 )
+
+    This article has not been cited.
+
+  Related book content
+
+    No articles found.
+
++ Show more applications
+- Show fewer applications
+ 
+Download PDFs
+Help
+Help
+[Entitle Gadget]
+Entitle Gadget
+

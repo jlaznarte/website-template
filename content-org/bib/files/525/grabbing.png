@@ -1,0 +1,444 @@
+﻿<html lang="es" xml:lang="es" class=""><head>
+	<!--[if IE 8]>         <html class="no-js ie8"> <![endif]-->
+	<!--[if gt IE 8]><!-->  <!--<![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>www.madrid.es - Contenido no disponible</title>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="robots" content="noindex, nofollow">
+
+	<link href="/assets/css/vendor.css" rel="stylesheet">
+    <link href="/assets/css/ayuntamiento-madrid-bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/ayuntamiento-madrid.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="/assets/css/ayuntamiento-madrid_ie8.min.css">
+    <![endif]-->
+    <link href="/assets/css/ayuntamiento-madrid-custom.css" rel="stylesheet">
+	<link media="print" href="/assets/css/ayuntamiento-madrid-print.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/assets/js/vendorIE8.js"></script>
+    <![endif]-->
+	
+    <script>
+        var aytmad = {};
+        aytmad.config = {
+			routes:{
+				menu:'/ContentPublisher/new/menu/menurwd.jsp',
+				menuTramites:'/ContentPublisher/new/menu/menurwd.jsp?site=tramites',
+				calendar:'',
+				taxonomias:''
+			},
+	        constants:{	        	
+	            numVisibleLinks:3,
+	            API_KEY: "AIzaSyAQszpO0XYaBvQhxOlLsjndoI_XCafLiXg"
+	        }
+        };
+    </script>
+	<script src="/new/js/jquery-1.3.2.min.js" type="text/javascript"></script>
+	<script src="/assets/js/locale/i18n_es.js"></script>
+</head>
+
+<body>
+	<a id="top"></a>	
+	<div id="wrapper">
+
+
+<header class="header">
+
+    <div class="container">
+
+	<div class="row visible-md-block visible-lg-block">
+	    <div class="col-md-5 pull-right">
+	        <div class="quick-links-header">
+	            <ul>
+	                <li><a href="http://www.madrid.es/vgn-ext-templating/v/index.jsp?vgnextchannel=1ade43db40317010VgnVCM100000dc0ca8c0RCRD" class="qlh-item ">
+	                    Accesibilidad</a></li>
+	                <li><a href="http://www.madrid.es/vgn-ext-templating/v/index.jsp?vgnextoid=78eb6d2552dfc110VgnVCM100000c90da8c0RCRD" class="qlh-item ">
+	                    Mis suscripciones</a></li>
+	                <li><a href="http://www.madrid.es/portales/munimadrid/tramites/micarpeta.html" class="qlh-item qlh-item-myfolder">
+	                    Mi carpeta</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</div>
+
+	<div class="navigation-bar" id="navbar">
+		<div class="row">
+			<div class="col-md-3">
+				<h1 class="header-logo">
+					<a href="http://www.madrid.es">
+					   <span class="text-hide">Ayuntamiento de Madrid</span> 
+					   <img src="/assets/images/logo-madrid.png" alt="Ayuntamiento de Madrid"></a>
+				</h1>
+			</div>
+			<div class="col-md-9">
+				<div class="search-toggle-cont">
+					<div class="visible-md-block visible-lg-block">
+						<ul class="main-menu">
+                        
+                        
+                            <li class="">
+                            	<a class="main-menu-item " href="https://sede.madrid.es/">
+                                    <span>Trámites</span>
+                                </a>
+                            </li>
+                        
+                        
+                            <li class="">
+                            	<a class="main-menu-item " href="http://www.madrid.es/portales/munimadrid/actualidad.html">
+                                    <span>Actualidad</span>
+                                </a>
+                            </li>
+                        
+                        
+                            <li class="">
+                            	<a class="main-menu-item " href="http://www.madrid.es/portales/munimadrid/ayuntamiento.html">
+                                    <span>El Ayuntamiento</span>
+                                </a>
+                            </li>
+                        
+                        
+                            <li class="">
+                            	<a class="main-menu-item " href="http://www.madrid.es/portales/munimadrid/contacto.html">
+                                    <span>Contacto</span>
+                                </a>
+                            </li>
+                        
+						</ul>
+					</div>
+
+					
+					<form name="formularioBusqueda" action="http://www.madrid.es/vgn-ext-templating/v/index.jsp" id="searcher-form" class="searcher-form">					   
+					    <input type="hidden" name="vgnextoid" value="d4cade31bd2ac410VgnVCM100000171f5a0aRCRD">
+						<div class="row">
+							<div class="col-xs-10">
+								<label for="search-field">
+                                <span class="hidden">Buscar</span>
+                                <input type="text" placeholder="¿Qué estás buscando?" id="search-field" class="searcher-item" name="q"></label>
+							</div>
+							<div class="col-xs-2">
+								<button class="searcher-link" type="submit">
+									<span>Buscar</span>
+								</button>
+							</div>
+						</div>
+					</form>
+					
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+		<div class="section-cont">
+
+			
+			<img src="/new/img/General_1400X351.jpg" alt="" class="section-image" id="section-image">
+           	
+		
+				<h2 class="section-name"><span class="section-name-title">www.madrid.es</span></h2>
+
+		</div>
+
+    
+	</div>
+
+
+</header>
+  		
+
+ 		<div class="bg-fluid1">
+          <div class="container">
+				
+			<div class="row">
+              <ul class="breadcrumbs hidden-xs">
+    
+		        <li>
+		        	<a href="http://www.madrid.es" class="bc-item bc-item-home" title="Ayuntamiento de Madrid"><span>Inicio</span></a>
+		        </li>
+				<li><span class="bc-item bc-item-last">Contenido no disponible</span></li>
+			  </ul>
+            </div>
+            
+          </div>
+      </div>
+
+		
+  		<div class="content">
+	  		<a id="content"></a>		   
+			
+
+
+<div class="bg-fluid0">  
+
+	<div class="container ">
+		<div class="row">
+			
+			<div class="col-md-12">
+				<main class="mainContent">
+					<div class="nofluid ">    
+						<h2 class="summary-title hidden">Contenido no disponible</h2>
+					</div>
+					<div class="detalle"> 
+					<!--[if lt IE 9 ]>
+					  <style>
+						.modal-alert.modal-error .title-modal:after { left:-56px; }
+						</style>
+					 <![endif]-->						
+						<div class="nofluid"> 
+							<div class="info-seccion">
+								<div class="modal-alert modal-error">
+			
+									<h3 class="title-modal">Contenido no disponible</h3>
+										<p>Lo sentimos, <strong>la página que ha solicitado no existe o ha sido borrada del servidor</strong>.</p>
+										<p> Puede tratar de encontrar la página que busca desde la portada de madrid.es o utilizando el buscador. </p>
+										<p>Para realizar preguntas o sugerencias visite nuestra página de Contacto. </p>
+										<p>Si tiene dudas sobre cómo navegar en madrid.es visite nuestra zona de Ayuda</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+  		
+
+<footer class="footer">
+    <div class="bg-fluid2">
+        <div class="container">
+            <div class="row footer-logo nofluid">
+			    <div class="col-sm-4 fl-image">
+			        <a class="fl-link" href="http://www.madrid.es">
+			            <span class="text-hide">Ayuntamiento de Madrid</span>
+			            <img alt="Ayuntamiento de Madrid" src="/assets/images/logo-madrid.png">
+			        </a>
+			    </div>
+
+			</div>
+					
+            <ul class="footer-menu row">
+    
+		        <li class="col-md-3 col-sm-6">
+		            <div class="collapse-item">
+		                <h2 class="fm-title">Gestiones y Trámites</h2>
+		                <ul class="fm-level">
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/tramites/ciudadanos.html" class="fm-item">Ciudadanos</a></li>
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/tramites/empresas.html" class="fm-item">Empresas</a></li>
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/tramites/conozca.html" class="fm-item">Conozca la Sede</a></li>
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/tramites/micarpeta.html" class="fm-item">Mi Carpeta</a></li>
+		                
+		                </ul>
+		            </div>
+		        </li>
+    
+		        <li class="col-md-3 col-sm-6">
+		            <div class="collapse-item">
+		                <h2 class="fm-title">Actualidad</h2>
+		                <ul class="fm-level">
+		                
+		                	<li><a href="http://www.madrid.es/portales/munimadrid/actualidad.html" class="fm-item">En portada</a></li>
+		                	
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/actividadeseventos.html" class="fm-item">Actividades y eventos</a></li>
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/medios.html" class="fm-item">Noticias</a></li>
+		                	<!--  si bien es el canal nuevo de Noticias, la dirección apunta a medios hasta que haya nueva distributiva de noticias -->
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/redesociales.html" class="fm-item">Redes Sociales</a></li>
+		                
+		                </ul>
+		            </div>
+		        </li>
+    
+		        <li class="col-md-3 col-sm-6 clear-left-sm">
+		            <div class="collapse-item">
+		                <h2 class="fm-title">El Ayuntamiento</h2>
+		                <ul class="fm-level">
+		                	
+		                	<li><a href="http://www.madrid.es/portales/munimadrid/ayuntamiento.html" class="fm-item">En portada</a></li>
+		                	
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/juntaGobierno.html" class="fm-item">Gobierno</a></li>
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/pleno.html" class="fm-item">El Pleno</a></li>
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/alcaldesa.html" class="fm-item">La alcaldesa</a></li>
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/organizacion.html" class="fm-item">Organización municipal</a></li>
+		                    
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/gobiernoabierto.html" class="fm-item">Gobierno abierto</a></li>
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/publicaciones.html" class="fm-item">Publicaciones y convocatorias</a></li>
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/medios.html" class="fm-item">Medios</a></li>
+		                </ul>
+		            </div>
+		        </li>
+    
+		        <li class="col-md-3 col-sm-6">
+		            <div class="collapse-item">
+		                <h2 class="fm-title">Contacto</h2>
+		                <ul class="fm-level">
+		                	
+		                	<li><a href="http://www.madrid.es/portales/munimadrid/contacto.html" class="fm-item">En portada</a></li>
+		                	
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/direcciones.html" class="fm-item">Direcciones y teléfonos</a></li>
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/sugerencias.html" class="fm-item">Sugerencias y reclamaciones</a></li>
+		                
+		                    <li><a href="http://www.madrid.es/portales/munimadrid/atencion.html" class="fm-item">Atención al ciudadano</a></li>
+		                
+		                </ul>
+		            </div>
+		        </li>
+    
+			</ul>
+        </div>
+    </div>
+    
+    <div class="bg-fluid3">
+        <div class="container">
+            <div class="footer-quick-links">
+    			<h2 class="fql-title hidden-xs">NAVEGACIÓN POR...</h2>
+    			<ul class="row footer-menu">
+        
+			        <li class="col-md-3 col-sm-4">
+			            <div class="collapse-item">
+			                <h3 class="fm-title">Usuario</h3>
+			                <ul class="fm-level">
+			                
+			                    <li><a href="http://www.madrid.es/vgn-ext-templating/v/index.jsp?vgnextoid=aa56df2c54872210VgnVCM2000000c205a0aRCRD" class="fm-item">para infancia y familia</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/vgn-ext-templating/v/index.jsp?vgnextoid=c432de1f33872210VgnVCM2000000c205a0aRCRD" class="fm-item">para mayores</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/vgn-ext-templating/v/index.jsp?vgnextoid=d33d9ad016e07010VgnVCM100000dc0ca8c0RCRD" class="fm-item">para inmigrantes</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/vgn-ext-templating/v/index.jsp?vgnextoid=720613f89b24f310VgnVCM2000000c205a0aRCRD" class="fm-item">para personas con discapacidad</a></li>
+			                
+			                </ul>
+			            </div>
+			        </li>
+    
+			        <li class="col-md-3 col-sm-4">
+			            <div class="collapse-item">
+			                <h3 class="fm-title">Temas</h3>
+			                <ul class="fm-level">
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/temas/consumoComercio.html" class="fm-item">Consumo y comercio</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/temas/culturaOcio.html" class="fm-item">Cultura y ocio</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/temas/deportes.html" class="fm-item">Deportes</a></li>
+			                
+			                    <li><a defaulttext="254a171c30036010VgnVCM100000dc0ca8c0RCRD" href="http://www.madrid.es/portales/munimadrid/temas/economia.html" class="fm-item"></a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/temas/educacion.html" class="fm-item">Educación</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/temas/emergencias.html" class="fm-item">Emergencias y seguridad</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/temas/hacienda.html" class="fm-item">Hacienda</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/temas/medioAmbiente.html" class="fm-item">Medio ambiente</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/temas/movilidad.html" class="fm-item">Movilidad y transportes</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/temas/oposiciones.html" class="fm-item">Oposiciones y empleo</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/temas/salud.html" class="fm-item">Salud</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/temas/serviciosSociales.html" class="fm-item">Servicios sociales</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/temas/urbanismo.html" class="fm-item">Urbanismo y vivienda</a></li>
+			                
+			                </ul>
+			            </div>
+			        </li>
+    
+			        <li class="col-md-6 matched col-sm-4">
+			            <div class="collapse-item">
+			                <h3 class="fm-title">Distritos</h3>
+			                <ul class="fm-level">
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/arganzuela.html" class="fm-item">Arganzuela</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/barajas.html" class="fm-item">Barajas</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/carabanchel.html" class="fm-item">Carabanchel</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/centro.html" class="fm-item">Centro</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/chamartin.html" class="fm-item">Chamartín</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/chamberi.html" class="fm-item">Chamberí</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/ciudadLineal.html" class="fm-item">Ciudad Lineal</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/fuencarral.html" class="fm-item">Fuencarral-El pardo</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/hortaleza.html" class="fm-item">Hortaleza</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/latina.html" class="fm-item">Latina</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/moncloa.html" class="fm-item">Moncloa-Aravaca</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/moratalaz.html" class="fm-item">Moratalaz</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/puenteVallecas.html" class="fm-item">Puente de Vallecas</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/retiro.html" class="fm-item">Retiro</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/salamanca.html" class="fm-item">Salamanca</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/sanBlas.html" class="fm-item">San Blas-Canilejas</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/tetuan.html" class="fm-item">Tetuán</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/usera.html" class="fm-item">Usera</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/vicalvaro.html" class="fm-item">Vicálvaro</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/villaVallecas.html" class="fm-item">Villa de Vallecas</a></li>
+			                
+			                    <li><a href="http://www.madrid.es/portales/munimadrid/villaverde.html" class="fm-item">Villaverde</a></li>
+			                
+			                </ul>
+			            </div>
+			        </li>
+    
+    			</ul>
+			</div>
+			
+            <div class="footer-other-sites text-right nofluid">
+			    <a href="http://www.madrid.es/portales/munimadrid/otraswebs.html" class="button button2 button-icon">Otras webs del Ayuntamiento de Madrid<i class="button-icon-arrowright"></i></a>
+			</div>
+        </div>
+    </div>
+  
+    <div class="bg-fluid4">
+        <div class="container">
+            <div class="row footer-copy nofluid">
+			    
+			    <div class="col-sm-5">
+			        <span class="fc-title">Ayuntamiento de Madrid, 2015. <strong>Todos los derechos reservados</strong></span>
+			    </div>
+			</div>
+       </div>
+    </div>
+</footer>
+
+	</div>	
+
+	<script src="/assets/js/vendor.min.js" type="text/javascript"></script>
+	<script src="/assets/js/ayuntamiento-madrid.min.js" type="text/javascript"></script>
+
+</body></html>

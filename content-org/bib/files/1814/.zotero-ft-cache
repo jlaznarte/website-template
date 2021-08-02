@@ -1,0 +1,472 @@
+Principles and methods for automated palynology - Holt - 2014 - New Phytologist - Wiley Online Library
+
+    Skip to Article Content
+    Skip to Article Information
+
+By continuing to browse this site, you agree to its use of cookies as described in our Cookie Policy . ×
+New Phytologist Trust
+New Phytologist Trust
+Search within
+
+    Search term
+    Advanced Search Citation Search
+    Search term
+    Advanced Search Citation Search
+    Search term
+    Advanced Search Citation Search
+
+Login / Register
+
+    Journals
+        New Phytologist
+        Plants, People, Planet
+
+    newphytologist.org
+
+New Phytologist
+Volume 203, Issue 3 New Phytologist banner
+Research review
+Free Access
+Principles and methods for automated palynology
+K. A. Holt
+
+Corresponding Author
+
+Soil and Earth Sciences, Institute of Agriculture and Environment, Massey University, Palmerston North, New Zealand
+
+Author for correspondence:
+
+Katherine A. Holt
+
+Tel: +64 6 356 9099, ext 81708
+
+Email: k.holt@massey.ac.nz
+Search for more papers by this author
+K. D. Bennett
+
+School of Geography, Archaeology and Palaeoecology, Queen's University, Belfast, Northern Ireland, UK
+Search for more papers by this author
+K. A. Holt
+
+Corresponding Author
+
+Soil and Earth Sciences, Institute of Agriculture and Environment, Massey University, Palmerston North, New Zealand
+
+Author for correspondence:
+
+Katherine A. Holt
+
+Tel: +64 6 356 9099, ext 81708
+
+Email: k.holt@massey.ac.nz
+Search for more papers by this author
+K. D. Bennett
+
+School of Geography, Archaeology and Palaeoecology, Queen's University, Belfast, Northern Ireland, UK
+Search for more papers by this author
+First published:  27 May 2014
+https://doi.org/10.1111/nph.12848
+Citations: 23
+About
+
+        References
+        Related
+        Information
+    ePDF PDF
+    PDF PDF
+
+Sections
+
+    Summary
+    Introduction
+    Progress
+    What is the ideal system?
+    Protocols and standards
+    Conclusions
+    Acknowledgements
+    References
+    Citing Literature
+
+ePDF PDF
+PDF PDF
+Tools
+
+    Request permission
+    Export citation
+    Add to favorites
+    Track citation
+
+Share
+
+Give access
+Share full text access
+Close modal
+
+Share full text access
+Please review our Terms and Conditions of Use and check box below to share full-text version of article.
+I have read and accept the Wiley Online Library Terms and Conditions of Use.
+Shareable Link
+
+Use the link below to share a full-text version of this article with your friends and colleagues. Learn more.
+Copy URL
+
+Share a link
+Share on
+
+    Email
+    Facebook
+    Twitter
+    LinkedIn
+    Reddit
+
+Summary
+
+Pollen grains are microscopic so their identification and quantification has, for decades, depended upon human observers using light microscopes: a labour‐intensive approach. Modern improvements in computing and imaging hardware and software now bring automation of pollen analyses within reach. In this paper, we provide the first review in over 15 yr of progress towards automation of the part of palynology concerned with counting and classifying pollen, bringing together literature published from a wide spectrum of sources. We consider which attempts offer the most potential for an automated palynology system for universal application across all fields of research concerned with pollen classification and counting. We discuss what is required to make the datasets of these automated systems as acceptable as those produced by human palynologists, and present suggestions for how automation will generate novel approaches to counting and classifying pollen that have hitherto been unthinkable.
+Introduction
+
+Almost two decades ago, Stillman & Flenley ( 1996 ) published a concise consideration of the needs of palynology, many of which they envisaged could be satisfied by partial or complete automation. Their ideas were presented largely from a Quaternary palaeoecological perspective; however, the majority of potential benefits highlighted are highly relevant to the other fields of pollen analysis. These needs and benefits fall into four key areas, summarized in Table  1 . These needs persist today in most areas of palynology, and if anything are stronger than ever before. Any technique that can improve the speed, efficiency and volume of material processed in research is obviously advantageous. An automated system has the potential to not only save time and money, but also open up further opportunities to propel pollen‐based research in directions that would not otherwise be possible.
+Table 1. Summary of the four key areas in palynology in need of improvement (after Stillman & Flenley, 1996 ) and the resultant benefits
+Need 	Benefit
+Volume 	• More pollen grains counted per sample
+• More samples counted per ‘batch’ (e.g. increased temporal resolution for vegetation reconstructions or airborne pollen samples, or increased replicates for Pollen production or pollen biology studies)
+• More sites sampled (where relevant)
+Speed/time 	• Generate data sooner
+• Generate data more efficiently, reduce labour hours
+Objectivity and consistency 	• Reduce intra‐ and inter‐analyst biasing
+• Improve consistency across all levels of pollen analysis, including within individual samples (intra‐analyst), within a suite of samples from the same site (typically intra‐analyst), between suites of samples from different sites projects (most likely inter‐analyst) etc.
+Taxonomic resolution 	• Increased precision in pollen based vegetation reconstructions
+• Applications in ‘alpha taxonomy’ (MacLeod et al ., 2010 )
+
+Since the late 1960s, when Flenley ( 1968 ) first highlighted the need for automated palynology, many groups have made attempts at automating some component of the aspect of palynology concerned with quantifying and/or identifying pollen grains within some form of sample. Table  2 presents a selected summary of known published work representing various attempts at partial or complete automation of palynology. Typically, each attempt has been prompted by a technological advance which has offered new potential for grasping the ‘holy grail’ of palynology.
+Table 2. Selected published attempts at automated palynology published since 1996
+	Discriminate pollen from nonpollen or locate pollen 	Classify (+/− count) 	Count only 	No. of taxa 	Primary technique for data capture 	Classifier type (where relevant) 	Intended application 	Success rate (where given) in percent correct or r value
+Bechar et al . ( 1997 ) 			x 	1 	Image processing (RL) 		Plant biology 	
+Li & Flenley ( 1999 ) 		x 		4 	Image processing (TL) 	NN 	General palynology 	100%
+France et al . ( 2000 ) 	x 	x 		3 	Image processing (TL) 	NN 	General Palynology 	c . 82%
+Parker et al . ( 2000 ) 	x 	x 		6 	LAMS 	Multivariate patch algorithm 	Aerobiology 	
+Boucher et al . ( 2002 ) 	x 	x 		4 	Image processing (TL) 		Aeropalynology 	77%
+Ronneberger et al . ( 2002 ) 		x 		26 	Image processing (FL) 	SVM 	Aeropalynology 	92–97%
+Li et al . ( 2004 ) 		x 		4 – 13 	Image processing (TL) 	LDA, NN 	General palynology 	100%
+De Sa‐Otero et al . ( 2004 ) 	x 	x 		3 	Image processing (TL) 	MDC 	Aeropalynology 	> 86%
+Treloar et al . ( 2004 ) 		x 		12 	Image processing (TL) 		General palynology 	81–100%
+Zhang et al . ( 2004 ) 		x 		5 	Image processing (TL) 	NN 	General palynology 	> 97%
+Chun et al . ( 2006 ) 		x 		3 	Image processing (TL) 	many 	Aeropalynology 	97%
+Ileva et al . ( 2005 ) 				4 	Raman microscopy 	many 	Aeropalynology 	
+Allen ( 2006 ); Holt et al . ( 2011 ) 	x 	x 		6 	Image processing (DF) 	NN 	General palynology 	
+Kawashima et al . ( 2007 ) 	x 	x 		3 	Laser scattering 	Scatter plots 	Aeropalynology 	0.8
+Costa & Yang ( 2009 ) 			x 	2 	Image processing (RL) 		Plant biology 	86%
+Dell'Anna et al . ( 2009 ) 		x 		11 	FT‐IR 	k‐nearest neighbour, hierarchical cluster analysis 	Aeropalynology 	84%
+Mitsumoto et al . ( 2009 ) 	x 	x 		9 	Flow cytometry & FL 		Aeropalynology 	
+Ticay‐Rivas et al . ( 2011 ) 		x 		17 	Image processing (TL) 	NN 	Biodiversity, pollination biology 	96%
+Surbek et al . ( 2011 ) 		x 		8 	Elastically scattered light 		Aeropalynology 	60–100%
+Punyasena et al . ( 2012 ) 		x 		2 	Image processing (FL) 	Bias‐optimisation 	Quaternary palynology 	> 93%
+Kaya et al . ( 2013 ) 		x 		19 	Image processing (TL) 	Rough Set 	Quaternary palynology and taxonomy 	91%
+Johnsrud et al . ( 2013 ) 	x 			3 	Image processing (TL, FL & AP) 		General palynology 	97%
+Dhawale et al . ( 2013 ) 		x 		10 	Image processing (SEM) 	NN 	General palynology 	85%
+Hoshimiya ( 2013 ) 	x 		x 	1 	Photoacoustic imaging 		Aeropalynology 	
+Nguyen et al . ( 2013 ) 		x 		9 	Image processing (TL) 	Adaptive boosting 	General palynology 	92%
+
+    TL, transmitted light microscopy (bright field); DF, dark field microscopy; RL, reflected light; FL, fluorescence; AP, apotome; FT‐IR, fourier transform infra‐red; LAMS, laser ablation mass spectrometry; NN, neural network; SVM, support vector machine; LDA, linear discriminant analysis; MDC, minimum distance classifier.
+
+At the time of publication of Stillman & Flenley ( 1996 ), progress with automated systems was largely limited to efforts using computer‐based texture analysis to classify a limited number of pollen types (Mirkin & Bagdasaryan, 1972 ; Witte, 1988 ; Langford et al ., 1990 ; Vezey & Skvarla, 1990 ). Images used were typically sourced from either a light microscope or a scanning electron microscope, and the classifiers were either statistical or machine learning. Since the start of the 21 st century, there has been acceleration in the amount of research directed at automating palynology. The strategy of image processing of microscope images combined with a statistical or machine learning classifier has been prominent among this more recent research, but other techniques have also been employed. These include fluorescence microscopy, flow cytometry, photoacoustic microscopy, fluorescence spectroscopy, Raman miscroscopy, fourier‐transform infra‐red (FTIR), laser ablation mass spectrometry (LAMS) and elastically scattered light.
+Progress
+
+Given the wealth of research and development accomplished since the publication of Stillman & Flenley ( 1996 ), are we any further along in being able to satisfy the goals that they presented?
+Taxonomic diversity and volume
+
+The existing studies on automated classification cited by Stillman & Flenley ( 1996 ) had only attempted to classify a maximum of six pollen types. This number was regarded, rightly, as being too small to realistically represent the complexity of pollen counting. Stillman & Flenley ( 1996 ) suggested that any automated system would need to be able to classify c . 40 types to be useful (in Quaternary palaeoecology). Despite this, Table  2 shows that only limited progress has been made in extending the number of classes an automated system can cope with. Out of all attempts published post‐1996, over 50% have worked with ≤ 6 taxa. Only seven have attempted classification of 10 or more types. Many of the systems are proof‐of‐concept, whereby the aim was to see if it was even possible to classify pollen by the chosen method, but more progress towards higher numbers of classes might have been expected by now.
+
+Obviously, success rates are also important but, interestingly, they are only loosely correlated with the number of pollen types across these studies. In general it is expected that success rate would be inversely proportional to the number of taxa, as identifying more types (and the more individuals) brings greater opportunities for misclassifications. The highest success rates (100%) have been achieved using image processing combined with a neural network classifier, with a maximum of 13 pollen types (Li et al ., 2004 ). Although this classifies more pollen types than the majority of systems in Table  1 , it is still much lower than Stillman & Flenley's ( 1996 ) target. Impressive results were produced by Ronneberger et al . ( 2002 ), who classified 26 different types of pollen at 92% success rate. More recently, Ticay‐Rivas et al . ( 2011 ) have achieved even better success rates (>94%) in a 17‐type pollen set.
+
+Although 17–26 taxa are an improvement on the 1996 maximum of six, we are still far from the target of 40. Despite this shortcoming, it is possible that within a few years, if not already, automated palynology systems could be applied to certain tasks which will improve the volume of material processed and extend the range of questions addressed, even if the number of identifiable types remains relatively low. Some of these tasks are simple, but are often particularly time‐consuming for the human palynologist. Examples include large counts (> 10 000 grains) of a few pollen types, and/or a large number of samples (> 1000) for a low number of taxa. This facility would be useful in fields of palynology where simple information on pollen abundance/and concentration (regardless of taxon) is needed (e.g. melissopalynology and pollination biology). It may also be useful when working with samples where the analyst is interested only in counting certain key taxa/indicator taxa.
+
+Stillman & Flenley ( 1996 ) commented on the need to improve the speed of pollen counting, mostly because of the costs involved. However, minimizing the time it takes to generate datasets obviously contributes to enhancing the rate at which discoveries can be made and reducing time to publication. In terms of progress with speed, it is too early to make firm statements, as few of the systems in Table  2 make any comment on the speed at which counting and classification takes place. In many cases the image processing and classification may, in fact, be quick, but if the capture of the images must be done manually, then there is still some time involved here. Also, because so many of these systems are experimental and may not cope with appropriate numbers of pollen types, and are not yet directly applicable, their current speed is irrelevant. Ideal automated systems could be operated 24/7, providing a potential gain in time for a project over human systems by nearly an order of magnitude (168 h wk −1 for an automated system, 5 d of 4 h each for a human analyst).
+
+In the ideal situation, an automated system should also be faster than a human palynologist, in the sense of counting and classifying more grains per unit time. However, even if an automated system performs at the same speed as a human palynologist, or slower, it should still provide benefits in the time and money saved through the freeing of the palynologist for other tasks.
+Higher taxonomic resolution
+
+The need to enhance taxonomic resolution exists in virtually all fields of palynology, and is arguably stronger than ever before. For example, in palaeoecology it is well known that pollen of members of the same genus or even family often exhibit very little morphological variation (e.g. Poaceae), yet these taxa may have vastly different environmental requirements, and often limit the accuracy of palaeoenvironmental reconstructions. It is envisaged that higher taxonomic resolution would be facilitated by the potential for computer‐based systems to be more sensitive than the human eye to subtle but systematic morphological variation. This technology is also being called for in general taxonomy and species identification as the volumes of material gathered for identification and taxonomic classification far exceed the capacity to perform the task (MacLeod et al ., 2010 ; Gaston & O'Neill, 2011 ).
+
+There has been progress in improving taxonomic resolution for problem pollen groups through improved microscopy techniques (Sivaguru et al ., 2012 ), but these are difficult to apply in routine pollen counting. The automated systems, hitherto, have been applied on sets of morphologically distinctive types, usually from separate genera, if not separate families. However, Rodriguez‐Damian et al . ( 2006 ), Punyasena et al . ( 2012 ) and Kaya et al . ( 2013 ) have attempted to differentiate between members of the same genus using different techniques, with successes of 89%, > 93% and > 90%, respectively. There is room for improvement here, but potential has been demonstrated for computer‐based classifiers to differentiate between morphologically similar taxa, as well as morphologically distinct taxa.
+Objectivity and consistency
+
+The need for improved objectivity and consistency is crucial to all branches of science. Palynology is a highly skilled discipline, requiring patience, observation and an eye for detail. Human palynologists do their utmost to ensure that they are consistent, both in terms of the individual palynologist remaining consistent through time, and inter‐analyst/inter‐lab consistency, facilitated through the use of reference collections, databases and counting protocols (to minimise missing or re‐counting grains). Yet there is still a degree of subjectivity in pollen counting – the ‘personal equation’ of Stillman & Flenley ( 1996 ). Further to this, inconsistency in the performance of the individual analyst can arise through issues like fatigue and over‐familiarity with their samples (MacLeod et al ., 2010 ). By its very nature, a machine‐based system should be objective and consistent both in terms of individual performance and inter‐system performance. Machines do not suffer from fatigue and cannot change their minds.
+
+Consistency in performance of the system (i.e. repeatability) should be fundamental, but few reports have been published (but see Holt et al ., 2011 ). Where repeatability has been assessed, machine systems have always been shown to be more consistent than human palynologists.
+
+There is also potential for improved consistency across the discipline, currently an assumed but untested notion. It is expected to increase through removing the influence of the ‘personal equation’, and through the ability to standardize the reference material used as the basis of identification. In nearly all assessed systems (Table  2 ), classification is facilitated through comparison of ‘data’ that represent the unknown pollen type with equivalent ‘data’ obtained from known (cf. reference) pollen types. Human palynologists operate in the same way, except reference information is a mixture of books, databases and reference slides (of fresh or vouchered herbarium material). Reference slides are probably the best option, but the extent to which they can be shared is limited, with implications for consistency of identification. Automated systems have the potential to base their identifications on exactly the same reference data, shared electronically. Reference data (images) generated by systems located in labs across the world would be uploaded to a global database in a standardized file format, and a ‘master’ library or reference file for that taxon created, downloadable and usable by everyone for classification.
+
+Automated systems can collect and store images of all grains located and classified. This offers the potential of recounting in the future, based on updated reference data, including the potential for finer discrimination, bringing older sites up to the same identification standard as current sites. This possibility scarcely exists at present, as few human analysts have the time or inclination to re‐count older in preference to newer material. For very large projects, spread over many years, the possibility of maintaining all counts to the same standard regardless of when first analysed may provide a significant improvement in consistency across the whole dataset.
+
+There has been clear progress towards developing automated palynology systems which will be able to address the needs in palynology described by Stillman & Flenley ( 1996 ). Other areas of potential benefit have also been highlighted. Current systems are still only halfway to the target of 40 taxa, but there has been considerable improvement on the 6 taxa classification problems. Attempts to classify morphologically similar types from the same family/genus have seen promising results. Speed and consistency are not yet of concern, as it does not matter whether systems are fast or consistent if the classification problems they are dealing with are not yet fully representative of ‘real‐world’ problems.
+What is the ideal system?
+
+The automated systems in Table  2 were typically developed to target specific uses. While some could only be applied in their particular field, many are equally useful in others. Particularly attractive systems are considered to be those that could be universally adopted across the majority of fields of palynology and within all labs. Systems that can be applied to conventional preparations mounted on slides are also preferable, by offering the potential to apply the capacity for increased volume and enhanced taxonomic resolution retrospectively, by re‐visiting and re‐analysing existing archives of slides.
+
+At face value, number of taxa classified and success rate would be the simplest metrics by which to judge the potential of a pollen counting system. Highest success rates have generally been achieved with a combination of image processing and a machine learning‐based (neural network) classifier (i.e. Li et al ., 2004 ; Ticay‐Rivas et al ., 2011 ). However, the highest number of taxa classified so far was achieved by Ronneberger et al . ( 2002 ), using processed images of fresh pollen collected through a combination of fluorescence and confocal microscopy. This combination is theoretically attractive as 3D volume images overcome issues with viewing angle, images are free from light noise (refraction/defraction) and the use of fluorescence helps distinguish pollen grains from nonbiological debris and isolates them from their background. Ronneberger et al . ( 2002 ) developed their system for an aeropalynological application, with the aim of coupling it to an automatic sampler to produce a real‐time pollen monitor. This has now been realised, in the production of the MICROBUS bioaerosol monitor (see http://world-of-photonics.net/link/en/20250274 ). However, although use of fluoresence is a significant advance in the old problem of separating pollen and nonpollen, the MICROBUS system may not be suitable for automated analysis of pre‐existing pollen slides prepared under different techniques/treatments.
+
+Several of the other aeropalynology‐focussed systems presented in Table  2 perform direct measurements, and count and classify the pollen continuously as it is drawn out of the air, using techniques such as flow cytometry and autofluorescence. These systems have obvious advantages for their targeted field (quick, real‐time counts) but offer limited potential in other areas of palynology where counting and identification is typically slide‐based. Airborne samples captured via more traditional methods (e.g. Hirst‐type samplers; Hirst, 1952 ) and mounted on slides are storable and can be re‐analysed at a later date where necessary. Such samples can potentially contribute to important research into the impact of climate change on flowering phenology and consequently allergenicity (Ziska et al ., 2011 ). At present, however, the majority of flow‐cytometry based systems do not offer the opportunity to (easily) retain and re‐analyse airborne pollen samples, nor are these systems readily open to other fields where sample material is extracted from a medium other than air. While there is undoubtedly a pressing need for real‐time pollen monitoring and reporting, there is currently still a place for ‘slide‐based’ aeropalynology, so that airborne pollen samples can be relevant for more than just aeroallergen research.
+
+If palynology generally is to remain largely slide‐based, then it seems probable that the system that is most likely to satisfy the greatest range of needs will be one that combines automatic slide scanning with image processing routines to detect and locate pollen, as well as capturing morphological information from pollen grains, and then classifying them through some sort of artificial classifier.
+
+Any system for automated palynology should, we suggest, be one which requires very little modification of existing techniques for collection and preparation of pollen samples, and should impart no new limitations to what can be done. For example, if a particular automated system were to require that absolutely no nonpollen debris were present in a sample for it to produce accurate results, then the time saved in counting would be absorbed or even exceeded in the extra preparation time needed to clean the samples. However, it may be that some compromises will need to be made to facilitate optimum results from a given system and these may not be too unreasonable. For example, changing the type of staining method used to facilitate better feature resolution in an image‐processing based system.
+Protocols and standards
+
+The whole scientific system of obtaining, evaluating and publishing pollen analyses has developed by practice over a century or more. Automated pollen counts lack this accumulated authority, but any system, to be truly usable, needs to be acceptable to the scientific community, including editors and reviewers. This means establishing protocols to provide quality assurance.
+Accuracy and reliability
+
+The goal of such protocols should be to make automated counts at least as acceptable in scientific literature as human counts. Potential systems need to be thoroughly evaluated, their accuracy, precision and consistency assessed, and results of these evaluations published. Automated counts can then be used against a background of known limitations, in exactly the same way as the limitations of human counts are known and accepted. In reality, neither is nor will be perfect, but each represents an approach towards the true, but unknown, actual composition of a sample. Machine counts are more likely to reach these ‘true’ values simply through being able to obtain higher counts. As described by Maher ( 1980 ), the confidence interval narrows as the number of grains counted ( n ) increases. To halve the width of a confidence interval requires increasing n fourfold. This is of no consequence to a machine‐based system, assuming material is available in ample supply.
+
+The performance of a pollen counter (human or machine) can be broken down into two key aspects: finding the pollen grains (discriminating pollen from nonpollen), and identifying them (classification). Failure in one or both of these areas introduces error into the final results. Classification performance for machine systems is easy to assess. But what is an acceptable minimum rate of success for an artificial classifier? 100% is ideal, but arguably unrealistic. It is highly unlikely that an artificial classifier could be developed that would be 100% correct, 100% of the time, simply because it is most likely impossible to train for all possible appearances of a given taxon, particularly damaged or clumped grains. An accuracy of 95% is in our opinion a far more reasonable expectation. An ideal system would also be able to rate the strength of its classifications, with the results provided to the analyst for scrutiny. The analyst would neither need (nor want) to check the classification of every grain. However, a system with an average accuracy of 95% could provide only those 5% of images with the poorest classification strength values to the analyst for checking and reassignment to correct classes if necessary. For example a sample count of 500 grains would require that only 25 grains actually be examined by the analyst. Doubling or quadrupling the count would still only require 50–100 grains to be examined manually (in contrast to 2000 for the same degree of precision). Although this is a departure from complete automation ( sensu stricto ), it offers a degree of quality control that should be retained in palynology, particularly for instances where novel/unknown taxa occur.
+
+Performance in the area of finding pollen grains is potentially more difficult to quantify accurately, depending on the nature of the system in use. The true challenge here lies in knowing what is present in a test sample in the first place. Human counts can provide a baseline, but have their own inherent errors (MacLeod et al ., 2010 ). Precision manufacturing of designer test slides is a possible option here. But in practice, the best way of assessing accuracy and precision will likely be thorough comparison with human counts of the same material. However, as human counts are also < 100% accurate, human and machine counts of the same material are always likely to differ by some amount. The key is minimizing this difference. If a system can be shown to produce counts in which the difference between its counts and the human counts falls within the standard error of the sample counted, then it should be regarded as performing as accurately as a human palynologist, with the potential added benefit of narrower confidence intervals through increased counts.
+Data handling protocols
+
+Once a system has been suitably tested and adopted, protocols for data storage, handling and sharing will need to be followed. Reference images and image libraries should be shared globally, facilitating the realization of maximum objectivity and consistency, as previously discussed. These libraries need to be developed using consistent (or convertible) image file formats, so that all systems can share the same base reference material, contributing to the goal of increased consistency. The same libraries should also store the images collected from pollen counts, so that they can be re‐run in the future, perhaps with improved hardware or software for analysis. All images collected (reference or otherwise) should be tagged with as much information as possible. This would include data produced through the counting and classification process (i.e. co‐ordinates of object on slide, classification/ID, classification score), as well as a wealth of additional information which would vary depending on the type of sample the image is from (Table  3 ). Access to this information for what would eventually be millions of individual images would open the door to addressing many important research questions through simple database querying. An example of such a question is ‘how does pollen morphology vary through space and time?’ There have been reported instances of intraspecific variation in pollen morphology which could be related to geographic or temporal factors (Dajoz, 1999 ; Ejsmond et al ., 2011 ) and, as suggested by Flenley ( 2003 ) using the example of Alnus , such cases may offer opportunities for using pollen morphology itself as an additional proxy for environmental change. Databases for pollen morphological information and imagery already exist ( www.paldat.org ; Bush & Weng, 2007 ), but image capture, data tagging and upload is very much a set of manual processes. Machine systems could do this automatically, for every grain in a sample if necessary, exponentially increasing the amount of data available for analysis.
+Table 3. Information that should be tagged to images/data of pollen grains captured by an automated system for different fields of palynology. This information could be entered to the system at the start of analysis of a sample and then tagged on to every digital record (i.e. image of a pollen grain) produced from that sample
+	Paleopalynology 	Melissopalynology 	Aeropalynology 	Pollination biology 	Reference material 	Forensic palynology
+Temporal info 	
+
+Likely age of sample (e.g. from 14 C dating)
+
+Date of sample collection
+	
+
+Date of collection from hive
+
+Time period honey produced over
+	Date and time of collection 	— — — — — —Date of collection— — — — — — —
+Spatial info (lat., long., elevation) 	
+
+Sample site location
+
+Site type
+	Hive location 	Sampler location 	Plant/pollinator sample location 	Plant location 	Sample location
+Preparation 	— — — — — — — — — — — —Chemical treatments, mounting medium, staining— — — — — — — — — — — — — — — — — —
+Field‐ specific info (examples) 	Sediment characteristics (peat, lake mud etc.) 	Honey characteristics (monofloral, mixed, etc.) 	Weather conditions during time sample collected 	Pollinator type (bee, bird, etc.) 	Herbarium info, voucher number 	
+
+Case number
+
+Crime details
+
+Origin of sample
+
+A protocol for publication of automatically generated pollen data is also required, which should enable exact repetition of the analysis through accessing the samples or images and libraries, and running with the same (or alternate) equipment and/or software. This would require providing basic information on the hardware and software used, along with reference library and sample information (Table  4 ), that would again, ideally be available as supplementary information. With respect to libraries upon which automatic identifications are based, images included in such libraries should all be independent (of different grains, not different views of the same grain), preferably including grains collected from a number of different flowers, plants and localities, and would be tagged with appropriate information (as per Table  3 ).
+Table 4. Information to accompany publication of automatically generated pollen data
+Counting system 	Library 	Samples
+
+• Hardware used (manufacturer, version, serial numbers)
+
+• Software used (developer, version)
+	
+
+• Details of the ‘library’ used as the basis for pollen identification, including:
+
+• The number of images in the library
+
+• Source information for each image (as per Table  3 )
+	
+
+• Unique slide/sample identifiers
+
+• Physical location of slides and residues
+
+• Ideally, link to online repository where images/data from sample scans can be obtained
+Conclusions
+
+The automation of pollen counting appears now to be within reach. A system which is fast and can deal with an unlimited number of taxa, as well as broken, deformed and clumped pollen, is perhaps still some way off, but certain simple, time‐consuming tasks can be carried out, with more complex problems addressed within the next few decades.
+
+Automated systems should be treated as tools to maximise research capability, rather than to replace the human palynologist. They should allow the widening of the scope of pollen analysis into areas that the human palynologist cannot reach. But the ability for external accuracy checking by human analysts is a key feature of any such system (Holt et al ., 2011 ). However, now is the time to begin thinking about the protocols that may need to be adopted in order to maximize the benefits offered by automated systems, particularly those in the realm of consistency.
+Acknowledgements
+
+We wish to thank three anonymous reviewers for their comments and suggestions which improved the manuscript.
+
+References
+
+    Allen GP . 2006 . An automated pollen recognition system . Master's thesis, Massey University, New Zealand .
+    Google Scholar
+    Bechar A , Gan‐Mor S , Vaknin Y , Shemulevich I , Ronen B , Eisikowitch D . 1997 . An image analysis technique for accurate counting of pollen on stigmas . New Phytologist 137 : 639 – 643 .
+    Wiley Online Library Web of Science® Google Scholar
+    Boucher A , Hidalgo PJ , Thonnat M , Belmonte J , Galan C , Bonton P , Tomczak R . 2002 . Development of a semi‐automatic system for pollen recognition . Aerobiologia 18 : 195 – 201 .
+    Crossref Web of Science® Google Scholar
+    Bush MB , Weng C . 2007 . Introducing a new (freeware) tool for palynology . Journal of Biogeography 34 : 377 – 380 .
+    Wiley Online Library Web of Science® Google Scholar
+    Chun C , Hendriks EA , Duin RPW , Reiber JHC , Hiemstra PS , de Weger LA , Stoel B . 2006 . Feasibility study on automated recognition of allergenic pollen: grass, birch and mugwort . Aerobiologia 22 : 275 – 284 .
+    Crossref Web of Science® Google Scholar
+    Costa CM , Yang S . 2009 . Counting pollen grains using readily available, free image processing and analysis software . Annals of Botany 104 : 1005 – 1010 .
+    Crossref PubMed Web of Science® Google Scholar
+    Dajoz I . 1999 . The distribution of pollen heteromorphism in Viola : ecological and morphological correlates . Evolutionary Ecology Research 1 : 97 – 109 .
+    Web of Science® Google Scholar
+    De Sa‐Otero MP , Gonzalez AP , Rodriguez‐Damian M , Cernadas E . 2004 . Computer‐aided identification of allergenic species of Urticaceae pollen . Grana 43 : 224 – 230 .
+    Crossref Web of Science® Google Scholar
+    Dell'Anna R , Lazzeri P , Frisanco M , Monti F , Malvezzi Campeggi F , Gottardini E , Bersani M . 2009 . Pollen discrimination and classification by Fourier transform infrared (FT‐IR) microspectroscopy and machine learning . Analytical and Bioanalytical Chemistry 394 : 1443 – 1452 .
+    Crossref CAS PubMed Web of Science® Google Scholar
+    Dhawale VR , Tidke JA , Dudul SV . 2013 . Neural network based classification of pollen grains . 2013 International Conference on Advances in Computing, Communications and Informatics (ICACCI) 22–25 August 2013. Mysore, India : IEEE – Institute of Electrical and Electronics Engineers, 79 – 84 .
+    Google Scholar
+    Ejsmond MJ , Wrońska‐Pilarek D , Ejsmond A , Dragosz‐Kluska D , Karpińska‐Kołaczek M , Kozłowski J . 2011 . Does climate affect pollen morphology? Optimal size and shape of pollen grains under various desiccation intensity . Ecosphere 2 : UNSP 117 .
+    Wiley Online Library Web of Science® Google Scholar
+    Flenley JR . 1968 . The problem of pollen recognition . In: MB Clowes , JP Penny , eds. Problems of picture interpretation . Canberra, ACT, Australia : CSIRO, 141 – 145 .
+    Google Scholar
+    Flenley JR . 2003 . Some prospects for lake sediment analysis in the 21st century . Quaternary International 105 : 77 – 80 .
+    Crossref Web of Science® Google Scholar
+    France I , Duller AWG , Duller GAT , Lamb HF . 2000 . A new approach to automated pollen analysis . Quaternary Science Reviews 19 : 537 – 546 .
+    Crossref Web of Science® Google Scholar
+    Gaston KJ , O'Neill MA . 2011 . Automated species identification: why not? Philosophical Transactions of the Royal Society B 359 : 655 – 667 .
+    Crossref PubMed Web of Science® Google Scholar
+    Hirst JM . 1952 . An automatic volumetric spore trap . Annals of Applied Biology 39 : 257 – 265 .
+    Wiley Online Library Web of Science® Google Scholar
+    Holt K , Allen G , Hodgson R , Marsland S , Flenley J . 2011 . Progress towards an automated trainable pollen location and classifier system for use in the palynology laboratory . Review of Palynology and Palaeobotany 167 : 175 – 183 .
+    Crossref Web of Science® Google Scholar
+    Hoshimiya T . 2013 . On the pollen detection with photoacoustic imaging . American Journal of Plant Sciences 4 : 29 – 32 .
+    Crossref Google Scholar
+    Ileva NP , Niessner R , Panne U . 2005 . Characterisation and discrimination of pollen by Raman microscopy . Analytical and Bioanalytical Chemistry 381 : 261 – 267 .
+    Crossref CAS PubMed Web of Science® Google Scholar
+    Johnsrud S , Yang H , Nayak A , Punyasena SW . 2013 . Semi‐automatic segmentation of pollen grains in microscopic images: a tool for three imaging modes . Grana 52 : 181 – 191 .
+    Crossref Web of Science® Google Scholar
+    Kawashima S , Clot B , Fujita T , Takahashi Y , Nakamura K . 2007 . An algorithm and a device for counting airborne pollen automatically using laser optics . Atmospheric Environment 41 : 7987 – 7993 .
+    Crossref CAS Web of Science® Google Scholar
+    Kaya Y , Mesut P , Erez E , Fidan M . 2013 . An expert classification system of pollen of Onopordum using a rough set approach . Review of Palaeobotany and Palynology 189 : 50 – 56 .
+    Crossref Web of Science® Google Scholar
+    Langford M , Taylor GE , Flenley JR . 1990 . Computerized identification of pollen grains by texture analysis . Review of Palaeobotany and Palynology 64 : 197 – 203 .
+    Crossref Web of Science® Google Scholar
+    Li P , Flenley JR . 1999 . Pollen texture identification using neural networks . Grana 38 : 59 – 64 .
+    Crossref CAS Web of Science® Google Scholar
+    Li P , Treloar WJ , Flenley JR , Empson L . 2004 . Towards automation of palynology 2: the use of texture measures and neural network analysis for automated identification of optical images of pollen grains . Journal of Quaternary Science 19 : 755 – 762 .
+    Wiley Online Library Web of Science® Google Scholar
+    MacLeod N , Benfield M , Culverhouse P . 2010 . Time to automate identification . Nature 467 : 154 – 155 .
+    Crossref CAS PubMed Web of Science® Google Scholar
+    Maher LJ . 1980 . The confidence limit is a necessary statistic for relative and absolute pollen data . In: Proceedings of the Fourth International Palynological Conference, Lucknow, India, 1976/77, 152 – 162 .
+    Google Scholar
+    Mirkin GR , Bagdasaryan LL . 1972 . The feasibility of identifying paleontological objects with the aid of optical analyzing systems . Paleontology Journal 6 : 103 – 108 .
+    Google Scholar
+    Mitsumoto K , Yabusaki K , Aoyagi H . 2009 . Classification of pollen species using autofluorescence image analysis . Journal of Bioscience and Bioengineering 107 : 90 – 94 .
+    Crossref CAS PubMed Web of Science® Google Scholar
+    Nguyen NR , Donlason‐Matasci M , Shin MC . 2013 . Improving pollen classification with less training effort . Proceedings of the IEEE Workshop on the Applications of Computer Visions (WACV), Clearwater Beach, FL, USA. 17–18 January 2013. Washington, DC, USA : IEEE (Institute of Electrical and Electronics Engineers) Computer Society.
+    Google Scholar
+    Parker EP , Trahan MW , Wagner JS , Rosenthal SE , Whitten WB , Gieray RA , Reilly PTA , Lazar AC , Ramsey JM . 2000 . Detection and classification of individual airborne microparticles using laser ablation mass spectroscopy and multivariate analysis . Field Analytical Chemistry and Technology 4 : 31 – 42 .
+    Wiley Online Library CAS Web of Science® Google Scholar
+    Punyasena SW , Tcheng DK , Wesseln C , Mueller PG . 2012 . Classifying black and white spruce pollen using layered machine learning . New Phytologist 196 : 937 – 944 .
+    Wiley Online Library PubMed Web of Science® Google Scholar
+    Rodriguez‐Damian M , Cernadas E , Formella A , Fernández‐Delgado M , De Sá‐Otero P . 2006 . Automatic detection and classification of grains of pollen based on shape and texture . IEEE Transactions on Systems, Man, and Cybernetics, Part C: Applications and Reviews 36 : 531 – 542 .
+    Crossref Web of Science® Google Scholar
+    Ronneberger O , Schultz E , Burkhardt H . 2002 . Automated pollen recognition using 3D volume images from fluorescence microscopy . Aerobiologia 18 : 107 – 115 .
+    Crossref Google Scholar
+    Sivaguru M , Mander L , Fried G , Punyasena SW . 2012 . Capturing the surface texture and shape of pollen: a comparison of microscopy techniques . PLoS ONE 7 : e39129 .
+    Crossref CAS PubMed Web of Science® Google Scholar
+    Stillman EC , Flenley JR . 1996 . The needs and prospects for automation in palynology . Quaternary Science Reviews 15 : 1 – 5 .
+    Crossref Web of Science® Google Scholar
+    Surbek M , Esen C , Schweiger G , Ostendorf A . 2011 . Pollen characterisation and identification by elastically scattered light . Journal of Biophotonics 4 : 49 – 56 .
+    Wiley Online Library PubMed Web of Science® Google Scholar
+    Ticay‐Rivas JR , delPozo‐Baños M , Travieso CM , Arroyo‐Hernández J , Pérez ST , Alonso JB , Mora‐Mora F . 2011 . Pollen classification based on geometrical, descriptors and colour features using decorrelation stretching method . In: L Iliadis , I Maglogiannis , H Papadopoulos , eds. Artificial Intelligence Applications and Innovations . IFIP Advances in Information and Communications Technology 364. Berlin, Germany : Springer, 342 – 349 .
+    Google Scholar
+    Treloar WJ , Taylor GE , Flenley JR . 2004 . Towards automation of palynology 1: analysis of pollen shape and ornamentation using simple geometric measures, derived from scanning electron microscope images . Journal of Quaternary Science 19 : 745 – 754 .
+    Wiley Online Library Web of Science® Google Scholar
+    Vezey EL , Skvarla JJ . 1990 . Computerised feature analysis of exine sculpture patterns . Review of Palaeobotany and Palynology 64 : 187 – 196 .
+    Crossref Web of Science® Google Scholar
+    Witte HJL . 1988 . Preliminary research into possibilities of automated pollen counting . Pollen et Spores 30 : 111 – 124 .
+    Google Scholar
+    Zhang Y , Fountain DW , Hodgson RM , Flenley JR , Gunetileke S . 2004 . Towards automation of palynology 3: pollen pattern recognition using gabor transforms and digital moments . Journal of Quaternary Science 19 : 763 – 768 .
+    Wiley Online Library Web of Science® Google Scholar
+    Ziska L , Knowlton K , Rogers C , Dalan D , Tierney N , Elder M , Filley W , Shropshire J , Ford LB , Hedberg C et al . 2011 . Recent warming by latitude associated with increased length of ragweed pollen season in central North America . Proceedings of the National Academy of Sciences, USA 108 : 4248 – 4251 .
+    Crossref CAS PubMed Web of Science® Google Scholar
+
+Citing Literature
+Publication cover image
+
+Volume 203 , Issue 3
+
+August 2014
+
+Pages 735-742
+
+    References
+    Related
+    Information
+
+    Metrics
+    Citations: 23
+    Article has an altmetric score of 2
+    Details
+
+    © 2014 The Authors. New Phytologist © 2014 New Phytologist Trust
+
+    Keywords
+        automation
+        palynology
+        pollen counting
+        pollen identification
+        protocols
+    Publication History
+        Issue Online: 10 July 2014
+        Version of Record online: 27 May 2014
+        Manuscript accepted: 11 April 2014
+        Manuscript received: 11 February 2014
+
+Close Figure Viewer
+Browse All Figures Return to Figure
+Previous Figure Next Figure
+Caption
+back
+New Phytologist Trust
+Facebook Twitter Linkedin
+© 2019 New Phytologist Trust
+© 2019 New Phytologist Trust
+Additional links
+About Wiley Online Library
+
+    Privacy Policy
+    Terms of Use
+    Cookies
+    Accessibility
+
+Help & Support
+
+    Contact Us
+
+Opportunities
+
+    Subscription Agents
+    Advertisers & Corporate Partners
+
+Connect with Wiley
+
+    The Wiley Network
+    Wiley Press Room
+
+Copyright © 1999-2019 John Wiley & Sons, Inc . All rights reserved
+Wiley Home Page
+Log in to Wiley Online Library
+Email or Customer ID
+Password
+Forgot password?
+NEW USER > INSTITUTIONAL LOGIN >
+Change Password
+Old Password
+New Password
+Too Short Weak Medium Strong Very Strong Too Long
+Password Changed Successfully
+
+Your password has been changed
+Create a new account
+Email or Customer ID
+Returning user
+Forgot your password?
+
+Enter your email address below.
+Email or Customer ID
+
+"Please check your email for instructions on resetting your password. If you do not receive an email within 10 minutes, your email address may not be registered, and you may need to create a new Wiley Online Library account.
+Request Username
+
+Can't sign in? Forgot your username?
+
+Enter your email address below and we will send you your username
+Email or Customer ID
+Close
+
+If the address matches an existing account you will receive an email with instructions to retrieve your username
+Close crossmark popup
+
+Tweeted by 4
+72 readers on Mendeley
+See more details

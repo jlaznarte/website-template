@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://www.sciencedirect.com/science/article/pii/S1352231011001853">
+<meta name="wpd_url" content="http://www.sciencedirect.com/science/article/pii/S1352231011001853">
+<meta name="wpd_date" content="2015-08-01T09:33Z">
+<script async="async" type="text/javascript">s_c_il[1].cdw=s_c_il[1].d.write;s_c_il[1].cdwb="";s_c_il[1].d.write=function(m){s_c_il[1].cdwb+=m};
+s.channel="publications";
+s.pageName="article";
+if (typeof (SDM) != 'undefined') {
+  if (typeof(SDM.pageType) != 'undefined' &&
+      typeof(SDM.pm) != 'undefined' &&
+      typeof(SDM.pm.pii) != 'undefined' &&
+      typeof(SDM.pm.issnisbn) != 'undefined' &&
+      typeof(SDM.pm.contentType) != 'undefined') {
+      var ct=SDM.pm.contentType.toLowerCase();
+      if (ct=="jl") {
+        s.prop1="journal";
+      } else if (ct=="bk") {
+         s.prop1="book";
+      } else if (ct=="rw") {
+          s.prop1="refwork";
+      } else if (ct=="bs") {
+          s.prop1="bookseries";
+      } else if (ct=="hb") {
+           s.prop1="handbook";
+      }
+      s.eVar17=SDM.pageType.toLowerCase();
+      s.eVar14=SDM.pm.issnisbn; 
+      s.eVar28=SDM.pm.issnisbn;
+      s.products=";"+SDM.pm.pii;
+    }
+}
+
+var referrerURL=document.referrer;
+if(referrerURL ){
+	referrerURL.toLowerCase();
+	var fromSD=referrerURL.match("sciencedirect.com");
+	if(fromSD == null) {
+		var path=referrerURL.split('/');	
+		if(path[2]){
+			if(path[2].match("linkinghub.elsevier.com")){
+				s.eVar40="Alert"
+			} else {
+				s.eVar40=path[2];
+			}
+		} else {
+			s.eVar40='External';
+		}
+	}
+} else {
+	s.eVar40='Typed/Bookmark';
+}
+
+s.events="prodView,event5";
+
+s.prop2=s.prop1;
+s.prop4="article";
+
+//For TOC search in books
+var scTocPanelWaitCounter=60;
+var scTocPanelWaitTimer=setInterval(scSetupTocSrchEvents, 1000);
+var tocSrchObj=null;
+
+//For Ad Impressions-left pane
+var scAdImpressWaitCounter=10;
+var scAdImpressWaitTimer=setInterval(scCaptureAdImpress, 2000);
+
+//  The following are written in such a way that the events can be handled by links not yet created
+
+// Toggle opening and closing 5 main sections
+$( "#rightPane div#ref_mod_articles" ).on( "click" , "h2 > a.toggle" , { eventName: "RefModArticleToggleClickEvent" , nav: false } , articleLinkEvent );  // RefMod articles
+$( "#rightPane div#recommend_related_articles" ).on( "click" , "h2 > a.toggle" , { eventName: "RecommendedArticleToggleClickEvent" , nav: false } , articleLinkEvent );  // Recommended articles 
+$( "#rightPane div#cited_by_articles" ).on( "click" , "h2 > a.toggle" , { eventName: "CitingArticleToggleClickEvent" , nav: false } , articleLinkEvent );  // Cited By articles
+$( "#rightPane div#related_book_content" ).on( "click" , "h2 > a.toggle" , { eventName: "RelatedBookContentToggleClickEvent" , nav: false } , articleLinkEvent );  // Related Book Content
+
+//  Link to Full text article
+$( "#rightPane div#ref_mod_articles" ).on( "click" , "li.artTitle > a" , { eventName: "RefModArticleFTAClickEvent" , nav: true } , articleLinkEvent );  // RefMod articles
+$( "#rightPane div#recommend_related_articles" ).on( "click" , "li.artTitle > a" , { eventName: "RecommendedArticleFTAClickEvent" , nav: true } , articleLinkEvent );  // Recommended articles 
+$( "#rightPane div#cited_by_articles" ).on( "click" , "li.artTitle > a" , { eventName: "CitingArticleFTAClickEvent" , nav: false } , articleLinkEvent );  // Cited By articles
+$( "#rightPane div#related_book_content" ).on( "click" , "li.artTitle > a" , { eventName: "RelatedBookContentFTAClickEvent" , nav: true } , articleLinkEvent );  // Related Book Content
+
+//  Link to PDF download
+$( "#rightPane div#ref_mod_articles" ).on( "click" , "li.showMore a" , { eventName: "RefModArticlePDFClickEvent" , nav: false } , articleLinkEvent );  // RefMod articles
+$( "#rightPane div#recommend_related_articles" ).on( "click" , "li.showMore a" , { eventName: "RecommendedArticlePDFClickEvent" , nav: false } , articleLinkEvent );  // Recommended articles
+$( "#rightPane div#cited_by_articles" ).on( "click" , "li.showMore a" , { eventName: "CitingArticlePDFClickEvent" , nav: false } , articleLinkEvent );  // Cited By articles
+$( "#rightPane div#related_book_content" ).on( "click" , "li.showMore a" , { eventName: "RelatedBookContentPDFClickEvent" , nav: false } , articleLinkEvent );  // Related Book Content
+ 
+//  Link to more articles
+$( "#rightPane div#ref_mod_articles" ).on( "click" , "a:contains('View more')" , { eventName: "RefModArticleViewMoreClickEvent" , nav: true } , articleLinkEvent );  // RefMod articles
+$( "#rightPane div#recommend_related_articles" ).on( "click" , "a:contains('View more')" , { eventName: "RecommendedArticleViewMoreClickEvent" , nav: true } , articleLinkEvent );  // Recommended articles
+$( "#rightPane div#cited_by_articles" ).on( "click" , "a:contains('View more')" , { eventName: "CitingArticleViewMoreClickEvent" , nav: false } , articleLinkEvent );  // Cited By articles
+$( "#rightPane div#related_book_content" ).on( "click" , "a:contains('View more')" , { eventName: "RelatedBookContentViewMoreClickEvent" , nav: true } , articleLinkEvent );  // Related Book Content
+
+//Capture Links to Bibliography on center pane
+$("#centerPane ul.authorGroup a.authorName").on( "click",{eventName:"AuthorBibClickEvent",nav:false}, articleLinkEvent ) ;//Author link
+$("#centerPane ul.authorGroup a.intra_ref.auth_aff").on( "click",{eventName:"AuthorBibAffiliationClickEvent",nav:false}, articleLinkEvent ) ;//Affiliation link
+$("#centerPane ul.authorGroup a.intra_ref.auth_corr").on( "click",{eventName:"CorrespondingAuthorContactClickEvent",nav:false}, articleLinkEvent ) ;//Corresponding Author link
+$("#centerPane ul.authorGroup a.auth_mail").on( "click",{eventName:"AuthorBibEmailClickEvent",nav:false}, articleLinkEvent ) ;//Author Email link
+
+//  Capture Get rights and content link
+$( "#centerPane dd.rightsLink a.S_C_outLinks" ).on( "click" , { eventName: "RightsAndContentClickEvent" , nav: false } , articleLinkEvent );  // View in Workspace image click
+
+//  Capture How to cite or link using DOI
+$( "#centerPane a.icon_doiLink" ).on( "click" , { eventName: "HowToCiteOrLinkUsingDOIClickEvent" , nav: false } , articleLinkEvent );  // How to cite or link using DOI click
+
+var scFragmentWaitTimer=setInterval(scWaitForFragmentsLoading, 2000);
+
+var scWaitRPaneRecommendTimer;
+var scRecommendArticlesLoaded = false;
+function waitRPaneRecommend() {
+	if($("#rightPane div#recommend_related_articles div.moreInfo a.toggleMoreInfo").length) {
+		$("#rightPane div#recommend_related_articles div.moreInfo a.toggleMoreInfo").on("click", { eventName: "RecommendedArticleMoreInfoClickEvent", nav: false } , articleLinkEvent);
+		clearInterval(scWaitRPaneRecommendTimer);
+		scRecommendArticlesLoaded = true;
+	}
+	else {return;}
+}
+
+var scWaitRPaneRefModTimer;
+function waitRPaneRefMod() {
+	if($("#rightPane div#ref_mod_articles div.moreInfo a.toggleMoreInfo").length) {
+		$("#rightPane div#ref_mod_articles div.moreInfo a.toggleMoreInfo").on("click", { eventName: "RefModArticleMoreInfoClickEvent", nav: false }, articleLinkEvent);  // Special articles
+		clearInterval(scWaitRPaneRefModTimer);
+	}
+	else {return;}
+}
+
+var scWaitRPaneSpecialTimer;
+function waitRPaneSpecial() {
+	if($("#rightPane div#special_articles div.moreInfo a.toggleMoreInfo").length) {
+		$("#rightPane div#special_articles div.moreInfo a.toggleMoreInfo").on("click", { eventName: "SpecialArticleMoreInfoClickEvent", nav: false }, articleLinkEvent);  // Special articles
+		clearInterval(scWaitRPaneSpecialTimer);
+	}
+	else {return;}
+}
+
+var scWaitRPaneCitingTimer;
+var scCitingArticlesAttempts = 0;
+var scCitingArticlesLoaded = false;
+function waitRPaneCiting() {
+	if($("#rightPane div#cited_by_articles div.moreInfo a.toggleMoreInfo").length) {
+		$("#rightPane div#cited_by_articles div.moreInfo a.toggleMoreInfo").on("click", { eventName: "CitingArticleMoreInfoClickEvent", nav: false } , articleLinkEvent);
+		clearInterval(scWaitRPaneCitingTimer);
+		scCitingArticlesLoaded = true;
+	}
+	else if($( scCitingArticlesAttempts > 10 && $("#citedByList > li > p").text().search(/This article has not been cited/) != -1)) {
+		clearInterval(scWaitRPaneCitingTimer);
+		scCitingArticlesLoaded = true;
+	}
+	scCitingArticlesAttempts++;
+}
+
+var scFirstBlkWaitCounter=10;
+var scFirstBlkWaitTimer=setInterval(scFirstBlockWait, 1000);
+
+function scFirstBlockWait() {
+	var firstBlkID = $("#rightPane .firstBlk").attr("id");
+	if(firstBlkID == null) {
+		scFirstBlkWaitCounter--;
+		if(scFirstBlkWaitCounter == 0) {
+			clearInterval(scFirstBlkWaitTimer);
+			return;
+		}
+		else {
+			return;
+		}
+	}
+	clearInterval(scFirstBlkWaitTimer);
+	if( firstBlkID == "recommend_related_articles") {
+		scWaitRPaneRecommendTimer = setInterval(waitRPaneRecommend, 1000);
+	} else if(firstBlkID == "special_articles") {
+		$( "#rightPane div#special_articles" ).on( "click" , "h2 > a.toggle" , { eventName: "SpecialArticleToggleClickEvent" , nav: false } , articleLinkEvent );  // Special articles
+		$( "#rightPane div#special_articles" ).on( "click" , "li.specIssTitle > a" , { eventName: "SpecialArticleFTAClickEvent" , nav: true } , articleLinkEvent );  // Special articles
+		$( "#rightPane div#special_articles" ).on( "click" , "li.artTitle > a" , { eventName: "OtherSpecialArticleFTAClickEvent" , nav: true } , articleLinkEvent );  // Other Special articles
+		$( "#rightPane div#special_articles" ).on( "click" , "li.showMore a" , { eventName: "SpecialArticlePDFClickEvent" , nav: false } , articleLinkEvent );  // Special articles
+		$( "#rightPane div#special_articles" ).on( "click" , "a:contains('View more')" , { eventName: "SpecialArticleViewMoreClickEvent" , nav: true } , articleLinkEvent );  // Special articles
+		scWaitRPaneSpecialTimer = setInterval(waitRPaneSpecial, 1000);	
+	} else if(firstBlkID == "ref_mod_articles") {
+		scWaitRPaneRefModTimer = setInterval(waitRPaneRefMod, 1000);
+	}
+}
+
+var scBookContentWaitTimer;
+var scBookContentAttempts = 0;
+var bookContentHandlersAdded = false;
+
+function addBookContentHandlers() {
+	if($("#rightPane div#related_book_content #relBkList .toggleMoreInfo").length ) {		
+		$("#rightPane div#related_book_content #relBkList .toggleMoreInfo").on("click", { eventName: "RelatedBookContentMoreInfoClickEvent", nav: false }, articleLinkEvent);
+		clearInterval(scBookContentWaitTimer);
+		bookContentHandlersAdded = true;
+	}
+	else if(scBookContentAttempts > 10 && $( $("#relBkList > li > p").text().search(/No articles found/) != -1)) {
+		clearInterval(scBookContentWaitTimer);
+		bookContentHandlersAdded = true;
+	}
+	scBookContentAttempts++;
+}
+
+function articleLinkEvent( event ) {
+	
+	if( event.target != null && event.target.href != null ) {
+		s.eVar52=s_eventHandlers.publicGetZone(event.target.href);
+	}
+	else {
+		s.eVar52="";
+	}
+	var clickSection = s_eventHandlers.publicGetClickSection(event);
+
+	if( !bookContentHandlersAdded && clickSection.search(/article:rightPane:related_book_content/) != -1) {
+		scBookContentWaitTimer = setInterval(addBookContentHandlers, 1000);
+	}
+	if( !scCitingArticlesLoaded && clickSection.search(/article:rightPane:cited_by_articles/) != -1) {
+		scWaitRPaneCitingTimer = setInterval(waitRPaneCiting, 1000);
+	}
+	if( !scRecommendArticlesLoaded && clickSection.search(/article:rightPane:recommend_related_articles/) != -1) {
+		scWaitRPaneRecommendTimer = setTimeout(waitRPaneRecommend, 1000);
+	}
+
+	s.eVar53=clickSection + ":" + event.data.eventName;
+	s.eVar54='+1';
+	s.eVar55='+1';
+	s.eVar56=s.pageName;
+			
+	s.events="event28";
+	s.linkTrackVars="events,eVar52,eVar53,eVar54,eVar55,eVar56";
+	s.linkTrackEvents="event28";
+	s.tl(true,'o',event.data.eventName);
+	
+}
+
+
+/* function to wait and check for toc panel to load */
+function scSetupTocSrchEvents() {
+	scTocPanelWaitCounter--;
+	tocSrchObj=$("div#searchWithin");
+	if(tocSrchObj == []) {
+		if(scTocPanelWaitCounter == 0) {clearInterval(scTocPanelWaitTimer);}
+		return;
+	}
+	else {
+		clearInterval(scTocPanelWaitTimer);
+		tocSrchObj.find("button.submit").on("click",function(e) {s_eventHandlers.clickTarget=this;s_eventHandlers.articleTocSearchSubmit();});
+		tocSrchObj.find("form[name=searchWithinForm]").on("submit",s_eventHandlers.articleTocSearchSubmit);
+	}
+}
+
+function scLeftAdClick( event ) {
+	
+	if( event.target != null && event.target.href != null ) {
+		s.eVar52=s_eventHandlers.publicGetZone(event.target.href);
+	}
+	else {
+		s.eVar52="";
+	}
+
+	s.eVar53='article:leftPane:articleLeftAd:LeftAdClickEvent';
+	s.eVar54='+1';
+	s.eVar55='+1';
+	s.eVar56=s.pageName;
+	s.prop21='LeftAdClickEvent';
+	var sc_saveEvents = s.events;
+	s.events = 'event22';
+	s.linkTrackEvents='event22';
+			
+	s.linkTrackVars="events,eVar52,eVar53,eVar54,eVar55,eVar56,prop21";
+	s.tl(true,'o','LeftAdClickEvent');
+	s.events = sc_saveEvents;
+}
+
+
+function scCaptureAdImpress() {
+	scAdImpressWaitCounter--;
+	if(scAdImpressWaitCounter == 0) {clearInterval(scAdImpressWaitTimer);}
+	var adFrame=document.getElementsByTagName('iframe')[0];
+	if(adFrame) {
+		if(adFrame.src.search('sciencedirect.com/science/advertisement') == -1 ) {
+			if(scAdImpressWaitCounter == 0) {clearInterval(scAdImpressWaitTimer);}
+			return;
+		}
+		var adDoc=adFrame.contentWindow || adFrame.contentDocument;
+	}
+	if( adDoc == null ||
+			adDoc.document == null) { //not yet
+		if(scAdImpressWaitCounter == 0) {clearInterval(scAdImpressWaitTimer);}
+		return;
+	}
+	else { // capture ad impress, setup click
+		clearInterval(scAdImpressWaitTimer);
+		s.prop20='left';
+		var sc_saveEvents = s.events;
+		s.events = 'event21';
+		s.linkTrackEvents='event21';
+		s.linkTrackVars="events,prop20";
+		s.tl(true,'o','LeftAdImpress');
+		s.events = sc_saveEvents;
+		
+		adDoc = adDoc.document;
+		adDoc.body.addEventListener('click', scLeftAdClick);
+	}
+}
+var scFragmentsList = [];
+var paginationOff = s.getQueryParam("np") == "y" ? true : false;
+
+
+/* function to wait for tables & figures to load */
+function scWaitForFragmentsLoading() {
+	if (paginationOff || typeof Fragment === 'undefined') {
+		//no fragments, just install all handlers
+		$("#centerInner [id^=table] .menuButtonLinks .btnHolder .menuTitle").on( "click" , {eventName: "TableOptionsButtonClickEvent", nav: false} , articleLinkEvent);
+		$("#centerInner [id^=table] .menuButtonLinks .menuButton .viewWS.S_C_table_view_WS").on("click", {eventName: "ViewTableInWorkspaceClickEvent", nav: false} , articleLinkEvent);
+		$("#centerInner [id^=table] .menuButtonLinks .menuButton .downloadCsv .S_C_csv_download").on("click", {eventName: "DownloadTableAsCSVClickEvent", nav: false} , articleLinkEvent);
+		$("#centerInner [id^=figure] .menuButtonLinks .btnHolder .menuTitle").on( "click", {eventName: "FigureOptionsButtonClickEvent", nav: false} , articleLinkEvent);
+		$("#centerInner [id^=figure] a.figureLink").on( "click", { eventName: "ViewInWorkspaceImgClickEvent" , nav: false } , articleLinkEvent );
+		$("#centerInner [id^=figure] .menuButtonLinks .menuButton .ppt.S_C_ppt").on( "click", { eventName: "DownloadAsPowerPointClickEvent" , nav: false } , articleLinkEvent );
+		$("#centerInner [id^=figure] .menuButtonLinks .menuButton .S_C_full_size").on("click", { eventName: "DownloadFullSizeImageClickEvent" , nav: false } , articleLinkEvent );
+		$("#centerInner [id^=figure] .menuButtonLinks .menuButton .S_C_high_quality").on("click", { eventName: "ViewHighQualityImageClickEvent" , nav: false } , articleLinkEvent );				
+		clearInterval(scFragmentWaitTimer);
+		return;
+	}
+	if(Fragment.isFragmentMapLoaded() != true) {
+		return;		
+	}
+	if( Fragment.mapTables == [] && Fragment.mapFigures == []) { // no tables or figures
+		clearInterval(scFragmentWaitTimer);
+		return;
+	}
+	if(!scFragmentsList.length) {
+		scFragmentsList = Fragment.fragmentMap.concat();
+	}
+	for (var i=0; i<scFragmentsList.length; i++) {
+		if( scFragmentsList[i] == undefined ) { continue;}
+		var fragID = scFragmentsList[i];
+		if( $("#" + fragID).length) {
+			delete scFragmentsList[i];
+			if( $("#"+ fragID + " [id^=table]").length ) {
+				$("#" + fragID + " [id^=table] .menuButtonLinks .btnHolder .menuTitle").on( "click" , {eventName: "TableOptionsButtonClickEvent", nav: false} , articleLinkEvent);
+				$("#" + fragID + " [id^=table] .menuButtonLinks .menuButton .viewWS.S_C_table_view_WS").on("click", {eventName: "ViewTableInWorkspaceClickEvent", nav: false} , articleLinkEvent);
+				$("#" + fragID + " [id^=table] .menuButtonLinks .menuButton .downloadCsv .S_C_csv_download").on("click", {eventName: "DownloadTableAsCSVClickEvent", nav: false} , articleLinkEvent);
+			}
+			if( $("#"+ fragID + " [id^=figure]").length) {
+				$("#" + fragID + " [id^=figure] .menuButtonLinks .btnHolder .menuTitle").on( "click", {eventName: "FigureOptionsButtonClickEvent", nav: false} , articleLinkEvent);
+				$("#" + fragID + " [id^=figure] a.figureLink").on( "click", { eventName: "ViewInWorkspaceImgClickEvent" , nav: false } , articleLinkEvent );
+				$("#" + fragID + " [id^=figure] .menuButtonLinks .menuButton .ppt.S_C_ppt").on( "click", { eventName: "DownloadAsPowerPointClickEvent" , nav: false } , articleLinkEvent );
+				$("#" + fragID + " [id^=figure] .menuButtonLinks .menuButton .S_C_full_size").on("click", { eventName: "DownloadFullSizeImageClickEvent" , nav: false } , articleLinkEvent );
+				$("#" + fragID + " [id^=figure] .menuButtonLinks .menuButton .S_C_high_quality").on("click", { eventName: "ViewHighQualityImageClickEvent" , nav: false } , articleLinkEvent );				
+			}
+		}
+		else {
+			return;
+		}
+	}
+	if(Fragment.isAllLoaded() == true) {
+		clearInterval(scFragmentWaitTimer);
+	}
+
+
+}
+s_c_il[1].d.write=s_c_il[1].cdw;s_c_il[1].crl(0,1)</script><script src="sciencedirect.js" async="async" type="text/javascript"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="robots" content="NOARCHIVE">
+<meta name="robots" content="noodp">
+<meta name="robots" content="noydir">
+
+<link rel="canonical" href="http://www.sciencedirect.com/science/article/pii/S1352231011001853">
+
+
+<link rel="shortcut icon" href="favSD.ico" type="image/x-icon">
+<title>
+
+ Influence of seasonal factors on the atmospheric particle number concentration and size distribution in Madrid
+ </title> 
+
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" Title="Default Styles" href="http://cdn.els-cdn.com/sd/css/css_gen_ielt9_1508R2.css" type="text/css">
+<![endif]-->
+
+<script>
+
+var ab=new Object();
+ab.entitled = true;
+</script>
+<script>
+
+(function() {
+var scriptTag = document.createElement('script'); 
+scriptTag.type = 'text/javascript';
+scriptTag.async = true;
+scriptTag.src = '//cdn.optimizely.com/js/204774041.js';
+var head = document.getElementsByTagName('head')[0];
+head.parentNode.insertBefore(scriptTag, head);
+})();
+function optimizelyTimeout() {
+window.optimizely = window.optimizely|| []; 
+if(!window.optimizely.data) {
+ window.optimizely.push("timeout"); 
+} }
+setTimeout(optimizelyTimeout, 1000); 
+</script>
+
+<script>
+
+var prs = new Object();prs.rt=function(label,ts){this[label]=(ts||ts==0?ts:new Date().getTime());};
+</script>
+
+
+
+<!--[if lte IE 7]>
+<script src="http://cdn.els-cdn.com/sd/ut/js/json2_1508R2.js.min"></script>
+<![endif]-->
+<script charset="utf-8" class="lazyload" src="shindig-containerpubsub-2.js"></script><script charset="utf-8" class="lazyload" src="SciverseShindigService,GadgetToolBar,jquery-outside,jquery.ba-bbq.min,SciverseShindigContainer,Sc.js"></script>
+<link rel="stylesheet" type="text/css" href="S1352231011001853.css" media="all">
+</head>
+<body><div id="isIE9test"><!--[if  IE 9]><div id="isIE9"></div><![endif]--></div><div id="isIE8test"><!--[if  IE 8]><div id="isIE8"></div><![endif]--></div><div id="isIE7test"><!--[if  IE 7]><div id="isIE7"></div><![endif]--></div><div id="isIElte8test"><!--[if lte IE 8]><div id="isIElte8"></div><![endif]--></div><div id="lightningjs-usabilla_live" style="display: none;"><div><iframe src="update" id="lightningjs-frame-usabilla_live" frameborder="0"></iframe></div></div><div id="isIElt7test"><!--[if lt IE 7]><div id="isIElt7"></div><![endif]--></div>
+
+<div class="ua_btn" role="region" aria-label="screen reader compatability"><a role="button" rel="nofollow" href="http://www.sciencedirect.com/science/article/pii/S1352231011001853?np=y">Screen reader users, click here to load entire article</a>This page uses JavaScript to progressively load the article content as a user scrolls.  Screen reader users, click the load entire article button to bypass dynamically loaded article content.</div>
+
+
+
+<script>
+
+var refLinkURL = "http://www.sciencedirect.com/science/relLink/ajaxReq?_eid=1-s2.0-S1352231011001853";
+var updatedCitedBy = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_updateCitedBy=";
+var refResolvePath = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_pii=S1352231011001853&_refCnt=39&_docType=article";
+
+// these variables handle the reference resolution. Please ignore the naming.
+// the first variable myMap will hold an associative array of links by bibID
+// the second variable myXabsCounts holds the scopus counts.
+var myMap = []; // html of links for references.
+var myXabsCounts = []; // scopus counts
+</script>
+<div id="header-area">
+  
+
+
+<!-- ************* For A/B testing FAST and SOLR Proxy ***************** -->
+
+<!-- *************End for A/B testing FAST and SOLR Proxy *****************-->
+
+
+
+<div id="ieWarningMsg">
+    <span class="infoIcon_ie spErrorIcon">
+
+        ScienceDirect is phasing out support for older versions of Internet Explorer on Jan 12, 2016.  For the best product experience, we recommend you upgrade to a  
+<a href="http://www.microsoft.com/download/internet-explorer.aspx"> newer version of IE</a> 
+or use a different browser:<a href="https://www.mozilla.org/firefox/new/"> Firefox </a> or <a href="https://www.google.com/chrome/browser/">Chrome</a>. 
+For additional information please see the <a href="http://blog.sciencedirect.com/"> ScienceDirect Blog </a> page.
+    </span>
+    <a class="closeBt" title="Close Internet Explorer 7 warning">Close</a>
+</div>
+
+
+
+<div id="header">
+<div class="headerBlk">
+    <div class="headerInner" role="navigation" aria-label="ScienceDirect">
+        <div class="home">
+            <iframe style="display: none;" src="update_001.dat"></iframe><iframe style="display: none;" src="update_002.dat"></iframe><iframe style="display: none;" src="update_003.dat"></iframe><iframe style="display: none;" src="S1352231011001853_5.html"></iframe>
+            <!--INSERTS THE TEMPLATE VARIABLES POPULATED FROM DB for SCIVERSE and PRODUCT labels-->
+            
+                <a href="http://www.sciencedirect.com/" title="ScienceDirect -The world's leading full-text scientific database"> <span class="logoScienceDirectImg">&nbsp;</span></a>
+            
+        </div>
+
+        
+            <ul class="publication">
+                <!-- Journals link -->
+                
+                    
+                        <li>
+                            <a href="http://www.sciencedirect.com/science/journals">Journals</a>
+                        </li>
+                     
+                
+
+                <!-- Books link -->
+                
+                    
+                        <li class="sep">
+                            <a href="http://www.sciencedirect.com/science/bookbshsrw">Books</a>
+                        </li>
+                     
+                
+            </ul>
+        
+
+    </div>
+    
+         <!-- if not logged in -->
+         
+            
+            <div id="login" class="clearfix" aria-label="Help and Sign In" role="navigation" style="margin-right: 230px;">
+            <ul class="userlinks">
+                
+                
+                
+            
+                <!--top right widget-->
+                <li id="loginPlus">
+                    <h2><a id="loginPlusScript" href="javascript:LoginBox.flipLogin('loginBox',null);" title="Sign in to ScienceDirect" class="novisit plus nojs S_C_SignIn" aria-haspopup="true" aria-expanded="false" aria-controls="loginBox" role="button">Sign in</a></h2>
+                    <noscript><a href="http://www.sciencedirect.com/science?_ob=HomePageURL&_method=userHomePage&_fl=y&md5=6dada1fb726164470bad9e40bbc4d7fa" title="Open the Sign in Box" class="plus S_C_SignIn" id="loginPlusNoScript" >Sign in</a></noscript>
+					
+                    <div id="loginBox" role="dialog" aria-labelledby="headingSignIn" class="bannerAvail" style="width: 600px; display: none;"> 
+                        
+                        <div style="width: 285px; float: right; border-left: 1px solid rgb(155, 155, 155); padding-left: 10px; min-height: 180px;">
+                            
+                                <div class="openAthens"><a href="https://auth.elsevier.com/ShibAuth/institutionLogin?entityID=https%3A%2F%2Fidp.eduserv.org.uk%2Fopenathens&amp;appReturnURL=http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS1352231011001853" title="Log in using OpenAthens">OpenAthens login</a></div>
+                            
+                            
+                            <div class="sampletext">
+                                <div style="font-weight: bold; padding-bottom: 7px;"><h3><b>Login via your institution</b></h3></div>
+                                
+                                
+                                    <div class="fedLink"><a href="http://www.sciencedirect.com/science/externallogin" title="Other institution login">Other institution login</a></div>
+                                
+                            </div>
+                            
+                            
+                            
+                                
+                            
+                            
+                            
+                        </div>
+                        
+                        <div class="padding" style="width: 285px;">
+                            <form name="sdLogin" method="POST" action="https://www.sciencedirect.com/science/login" id="login-box-form" style="margin: 0px;">
+                            <b><h3 id="headingSignIn">Sign in using your ScienceDirect credentials</h3></b>
+                            <input name="login" value="login" type="hidden">
+                            <div style="margin-top: 20px;">
+                            <label for="username"><span style="text-align: right;">Username:</span>
+                            <input id="username" name="userid" title="Please enter your username here" type="text"></label>
+                            </div>
+                            
+                            <div style="margin-top: 7px;">
+                            <label for="password"><span style="text-align: right;">Password:</span>
+                            <input id="password" name="password" maxlength="20" title="Please enter your password here" onkeypress="if(13==event.keyCode)this.form.submit();if (13==event.keyCode)return false;" type="password"></label>
+                            </div>
+                                   
+                                       
+                            
+                            <div class="remember">
+                            <input checked="" name="rememberid" id="rememberMe" value="Y" class="allCheck top2fix" title="Checking this option will log you in automatically next time you visit ScienceDirect" type="checkbox">
+                            <label for="rememberMe" title="Checking this option will log you in automatically next time you visit ScienceDirect">Remember me</label>
+                            </div>
+                            
+                            <input name="_ob" value="MiamiLogonURL" type="hidden">
+                            <input name="targetURL" value="http://www.sciencedirect.com/science/article/pii/S1352231011001853" type="hidden">
+                            <input name="returnURL" value="http://www.sciencedirect.com/science/article/pii/S1352231011001853" type="hidden">
+                            <div class="submit">
+                            
+                            <div style="float: left; padding-left: 0px;"><input class="button" name="arrow" alt="Sign in to ScienceDirect" title="Sign in to ScienceDirect" value="Sign in" type="Submit"></div>
+                        
+                            
+                            <div class="notRegistered"><span class="astPad">| </span><span><a href="https://www.sciencedirect.com/science/register-new-user" title="" target="_top">Not Registered?</a></span></div>
+                            
+                            
+                            <div style="clear: left;"></div>
+                            </div>
+                            
+                            <div class="forgotpass">
+                            <a href="http://www.sciencedirect.com/science?_ob=ReminderURL&amp;_method=display&amp;md5=4a97631c25ac81c09ad2f961106e9da2" target="passwd" onclick="var remindWin;remindWin=window.open('','passwd','scrollbars=yes,resizable=yes,directories=no,toolbar=n,menubar=no,status=no,width=650,height=300');" title="Click here for help in recovering your ScienceDirect access">Forgotten username or password?</a>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="last"><a class="S_C_helpLink" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=browse_open_doc.htm&amp;_btn=Y&amp;_zone=TopNavBar&amp;_origin=article" target="sdhelp" title="Help (Opens new window)">Help</a></li>
+                
+            </ul>
+            </div>
+            
+            
+        <!-- logged in -->
+             
+    
+</div>
+
+
+    
+                        
+        <div class="clearfix" id="bannerTop" role="banner" aria-label="Institutional Access">                        
+            
+                <a href="http://147.96.1.110/" onclick="openNS('http://147.96.1.110'); return false;">
+                    <img src="UNED.jpg" border="0">
+                </a>
+            
+        </div>
+        
+    
+           
+
+
+</div><!--header-->
+
+
+
+
+
+
+
+
+
+</div><!--header-area-->
+<div class="pgBorder" id="page-area">
+    
+    <div data-top="42" id="articleToolbar" class="clearfix quicksearch prd_sci_dir fixedPane">
+        <div style="margin-left: 237px;" id="articleNav">
+  <ul aria-label="Article options" role="navigation" class="clearfix">
+    <!-- return to gateway -->
+     
+
+
+
+
+
+
+<li>
+  <div class="icon_pdf toolbar">
+    <div class="largeIcon"></div>
+    <a id="pdfLink" rel="nofollow" href="http://www.sciencedirect.com/science/article/pii/S1352231011001853/pdfft?md5=3cccf883921dda8eb5c505cb116b26d6&amp;pid=1-s2.0-S1352231011001853-main.pdf" querystr="?_origin=article&amp;_zone=toolbar" target="newPdfWin" pdfurl="http://www.sciencedirect.com/science/article/pii/S1352231011001853/pdfft?md5=3cccf883921dda8eb5c505cb116b26d6&amp;pid=1-s2.0-S1352231011001853-main.pdf" suggestedarturl="http://www.sciencedirect.com/science/suggestedArt/citeList/pii/S1352231011001853/eid/1-s2.0-S1352231011001853/serial" class="S_C_pdfLink big pdf ext_sdlink cLink" style="cursor: pointer;" title="Download PDF">Download PDF
+    <span id="pdfExplanation" class="offscreen">Opens in a new window.  Article suggestions will be shown in a dialog on return to ScienceDirect.</span>
+    </a>
+  </div>
+</li>
+ 
+ 
+
+
+
+
+
+
+
+<li class="exportPopupListitem">
+<div class="pulldown">
+    <div class="exportDivision" title="Export citations">
+    <div class="exportIconText">
+    <div class="icon_exportarticlesci_dir initialImage export_icon" tabindex="0"> &nbsp; </div>
+    <input id="icon_exportarticle" value="Export" name="export" class="listAction export export_general" tabindex="-1" type="button">
+     <span class="downSM_sci_dir exportArrow"></span>
+    </div>
+    <input class="zone" name="zone" value="exportDropDown" type="hidden">
+    </div>
+    <div class="menu export_popup hidden" id="export_popup">
+    <div style="display: none;" class="warningIcon" title="Warning Icon" alt="Warning Icon"></div>
+    <form name="exportCite" method="post" action="http://www.sciencedirect.com/science?_ob=DownloadURL&amp;_method=finish&amp;_eidkey=1-s2.0-S1352231011001853&amp;count=1&amp;_docType=FLA&amp;md5=cc489448f6edb57592bcfd5693978120" target="">
+    <input class="zone" name="zone" value="exportDropDown" type="hidden">
+            <script language="javascript" type="text/javascript">
+
+<!--
+
+function checkExportFormat(limit) {
+
+    var msg = "";
+
+    for (i=0;i<document.exportCite.elements.length;i++) {
+        if (document.exportCite.elements[i].value == "REFWX") {
+            if (document.exportCite.elements[i].checked) {
+                document.exportCite.setAttribute('target',"RefWorksMain");
+                if (checkLimit()) {
+                    if (limit) {
+                        msg = "It is possible that some users may experience problems when downloading large numbers of citations. If this happens please contact RefWorks support at your regionally hosted site or e-mail support@refworks.com to assist you further.\n\n";
+                    }
+                    msg += "Exporting to RefWorks may take some time, please wait....";
+                    alert(msg);
+                }
+            }
+            else {
+                document.exportCite.setAttribute('target',"");
+            }
+            break;
+        }
+    }
+    return true;
+}
+
+function determineCount(numStr) {
+    var count=1;
+
+    if(numStr.indexOf("-")) {
+        var rangeStr = numStr.split("-");
+
+        if(rangeStr.length == 2) {
+            var highNum = parseInt(rangeStr[1]);
+            var lowNum = parseInt(rangeStr[0]);
+
+            if(highNum >= lowNum) { count = (highNum - lowNum) + 1; }
+        }
+    }
+    return count;
+}
+
+function checkLimit(){
+
+    var selectNum = "";
+    var useSelected = false;
+    var allNum = 0;
+    var count = 0;
+    var rdoc = 0;
+
+    for (i=0;i<document.exportCite.elements.length;i++) {
+        if (document.exportCite.elements[i].name == "count") {
+            allNum = document.exportCite.elements[i].value;
+        }
+        if (document.exportCite.elements[i].name == "NUMBER_LIST") {
+            selectNum = document.exportCite.elements[i].value;
+        }
+        if (document.exportCite.elements[i].name == "_rdoc") {
+            rdoc = document.exportCite.elements[i].value;
+        }
+        if (document.exportCite.elements[i].value == "selected") {
+            if (document.exportCite.elements[i].checked) {
+                useSelected = true;
+            }
+        }
+    }
+
+    if (useSelected) {
+        selectNum = selectNum.replace(/ /g,"");
+        if(selectNum.indexOf(",")) {
+            var commaList = selectNum.split(",");
+            for(i=0; i < commaList.length; i++) {
+                count += determineCount(commaList[i]);
+            }
+        }
+        else {
+            count += determineCount(selectNum);
+        }
+    }
+    else { 
+        if (rdoc > 0) {
+            count = 1;
+        }
+        else {
+            count = allNum;
+        }
+    }
+
+    if(count > 50) { return true; }
+  
+    return false;
+}
+
+//-->
+</script>
+
+    <div class="exportInfo">
+        <div class="chkboxCount"></div>
+        <div class="exportHelp">
+            <a target="sdhelp" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=art_export.htm&amp;_btn=Y&amp;_zone=TopNavBar&amp;_origin=article" title="Help (Opens new window)">Help</a>
+        </div>
+    </div>
+
+    <div class="expContainer">
+      <ul class="Export_Popup" width="100%">
+        <li class="subHeading"><h3> Direct export </h3></li>
+        <li class="direct_export">
+         
+            <div>
+              <div class="btn_export directExport">
+                <div class="icon_Mendeley" title="Save to Mendeley">&nbsp;</div>
+                <input id="directExport" value="Save to Mendeley" name="Save to Mendeley" alt="Save to Mendeley" class="mendeleyBT button" type="button">
+              </div>
+            </div>
+        
+        
+            <div class="btnLine">
+              <div class="btn_export refworks">
+                <div class="icon_Refworks" title="Save to RefWorks">&nbsp;</div>
+                <input id="REFWX" value="Save to RefWorks" name="Save to RefWorks" alt="Save to RefWorks" class="button refworks" type="button">
+              </div> 
+            </div>
+            <div class="clear"> </div>
+        
+        </li>
+        <li class="subHeading big"> <h3>Export file</h3></li>
+        <li class="export_radio RIS"><input id="RIS" checked="" name="citation-type" value="RIS" class="artRadio expRadio RIS" type="radio">&nbsp;<label for="RIS">RIS&nbsp;(for EndNote, Reference Manager, ProCite)</label>
+        </li>
+        <li class="export_radio"><input id="BIBTEX" name="citation-type" value="BIBTEX" class="artRadio expRadio BIBTEX" type="radio">&nbsp;<label for="BIBTEX">BibTeX</label>
+        </li>
+        <li class="export_radio"><input id="ASCII" name="citation-type" value="ASCII" class="artRadio expRadio ASCII" type="radio">&nbsp;<label for="ASCII">Text</label>
+        </li>
+        <li class="export_radio hidden"><input id="REFWX" name="citation-type" value="REFWX" class="artRadio expRadio REFWX" type="radio">&nbsp;<label for="REFWX">RefWorks Direct Export</label>
+        </li>
+        <li class="subHeading big"><h3>Content</h3></li>
+        <li class="expCitab export_radio"><input id="cite" class="cite artRadio expRadio" name="format" value="cite" type="radio">&nbsp;<label class="cit" for="cite"> Citation Only </label>
+        </li>
+        <li class="expCitab export_radio citab"><input id="cite-abs" class="cite-abs artRadio expRadio" name="format" value="cite-abs" checked="" type="radio">&nbsp;<label class="cab" for="cite-abs"> Citation and Abstract </label>
+        </li>
+        <li class="export_submit">
+            <div class="downBtn export_downBtn">
+               <input value="Export" name="export" alt="Export" class="button export_button" id="export_button" type="submit">
+            </div> 
+        </li>
+      </ul>
+
+    </div>
+
+
+        
+        
+            
+         
+
+    </form>
+    </div> 
+</div>    
+</li>
+  
+
+
+
+</ul>
+</div>
+
+<div class="sdSearch" aria-label="Quick search" role="search">
+    <fieldset>
+        <div class="left">
+            <form id="quickSearch" name="qkSrch" method="get" target="_top" action="http://www.sciencedirect.com/science">
+            <input name="_ob" value="QuickSearchURL" type="hidden">
+            <input name="_method" value="submitForm" type="hidden">
+            <input name="_acct" value="C000034358" type="hidden">
+            <input name="searchtype" value="a" type="hidden">
+            <input name="_origin" value="article" type="hidden">
+            <input name="_zone" value="qSearch" type="hidden">
+            <input name="md5" value="93c3db4f6f8b4c269845e3a690e78323" type="hidden">
+            
+            <input id="quickSearch" name="qs_all" placeholder="Search ScienceDirect" value="" size="30" maxlength="450" title="Perform a quick search on ScienceDirect" type="text"><input class="submit" value="" title="Submit quick search" type="submit">
+            
+            <a class="advanced S_C_advanced" href="http://www.sciencedirect.com/science/search">Advanced search</a>
+            </form>
+        </div>
+    </fieldset>
+</div>
+<div class="clear"></div>
+<div id="erToolbar"></div>
+
+
+<div style="color: rgb(255, 0, 0); font-weight: bold; border: 0px solid red;">
+  
+  
+  
+  
+</div>
+
+
+
+
+
+    </div>
+    <div style="display: block; height: 56px;" id="articleToolbarDummy"></div>
+  <div style="clear: both;"></div>
+  
+    <!--For now, we will use similar styling as "MigratedStatus" div but will need to tweak later (plus tweak the links too) -->
+     
+     
+  <div style="height: 402px;" id="leftPane" class="column" aria-label="table of contents" role="navigation">
+    <div class="fixedPane" style="height: 444px; width: 260px; top: 56px; left: 78px;" id="leftPaneInner">
+        <div>
+        <div id="leftButton">
+            <ul>
+                <li class="tocbutton">
+                    <a class="outline-toggle" title="Open to view article outline" alt="Open to view article outline" href="#" aria-expanded="false">
+                        <span class="icon outline_big"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div style="" id="outlineContainer">
+            <a class="closeBt" title="Close">&nbsp;</a>
+            <div style="overflow: hidden;" data-st="0" id="outline" class="outline"><div id="olGraphCbBox"><div class="olHead"><h2 id="toc_title">Article outline</h2><label style="display: block;"><input id="outlineGraphicsCheckBox" type="checkBox">Show full outline</label></div><ul id="itemOutline"><li class="li_h2"><div id="ol_author1" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#author1" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">Abstract<br></a></div></li><li class="li_h3"><div id="ol_secGabs_1" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#secGabs_1" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">Highlights<br></a></div></li><li class="li_h2"><div id="ol_kwd_1" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#kwd_1" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">Keywords<br></a></div></li><li class="li_h2"><div id="ol_sec1" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#sec1" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">1. Introduction<br></a></div></li><li class="li_h2 outlineFocusFirst outlineFocus outlineFocusLast"><div id="ol_sec2" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#sec2" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">2. Experimental<br></a></div></li><li class="li_h3"><div id="ol_sec2.1" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#sec2.1" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">2.1. Description of the measurement site<br></a></div></li><li class="li_h3"><div id="ol_sec2.2" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#sec2.2" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">2.2. Instrumentation<br></a></div></li><li class="li_h2"><div id="ol_sec3" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#sec3" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">3. Results<br></a></div></li><li class="li_h3"><div id="ol_sec3.1" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#sec3.1" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">3.1. Particle number concentrations<br></a></div></li><li class="li_h3"><div id="ol_sec3.2" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#sec3.2" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">3.2. Particle number distributions<br></a></div></li><li class="li_h3"><div id="ol_sec3.3" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#sec3.3" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">3.3. Wind speed influence<br></a></div></li><li class="li_h3"><div id="ol_sec3.4" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#sec3.4" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">3.4. Nucleation events<br></a></div></li><li class="li_h2"><div id="ol_sec4" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#sec4" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">4. Conclusions<br></a></div></li><li class="li_h2"><div id="ol_ack001" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#ack001" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">Acknowledgments<br></a></div></li><li class="li_h2"><div id="ol_cebib0010" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#cebib0010" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">References<br></a></div></li></ul><script>prs.rt('scr_toc')</script></div>
+              <script type="text/javascript">
+
+              document.write("<div class='outlineMsg'>Article outline is loading...</div>");
+              </script>
+              <noscript>
+
+              <div class="infoMsg">
+              <div style="float: left; width: 20px; "><img border="0" src="http://cdn.els-cdn.com/sd/alertIcon.gif" valign="top" alt="Alert message"></div>
+              <div style="padding-left:25px;">JavaScript is disabled on your browser. 
+<div style="padding-top:10px;">
+              Please enable JavaScript to use all the features on this page.</div></div>
+              </div>
+              </noscript>
+            <div id="fig" role="navigation" aria-labelledby="fig_title"><hr><h2 id="fig_title">Figures and tables</h2><ol class="figures " role="tree"><li><div id="ol_fig1" class="io item fig" data-parent="sec2.1"><a class="tocLink S_C_tocLinkFig" href="#fig1" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S1352231011001853-gr1.sml" class="displayImg" title="Location of the measurement point (CIEMAT) in the Madrid area. It includes the ..." alt="Location of the measurement point (CIEMAT) in the Madrid area. It includes the ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr1.sml" data-thumbheight="164"></a></div></li><li><div id="ol_fig2" class="io item fig" data-parent="sec3.1"><a class="tocLink S_C_tocLinkFig" href="#fig2" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S1352231011001853-gr2.sml" class="displayImg" title="The monthly averaged evolution of the main meteorological parameters measured at ..." alt="The monthly averaged evolution of the main meteorological parameters measured at ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr2.sml" data-thumbheight="153"></a></div></li><li><div id="ol_fig3" class="io item fig" data-parent="sec3.1"><a class="tocLink S_C_tocLinkFig" href="#fig3" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S1352231011001853-gr3.sml" class="displayImg" title="Evolution of the particle number concentration during the measurement period. ..." alt="Evolution of the particle number concentration during the measurement period. ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr3.sml" data-thumbheight="155"></a></div></li><li><div id="ol_fig4" class="io item fig" data-parent="sec3.1"><a class="tocLink S_C_tocLinkFig" href="#fig4" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S1352231011001853-gr4.sml" class="displayImg" title="The annual averaged daily pattern for the particle number concentration during ..." alt="The annual averaged daily pattern for the particle number concentration during ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr4.sml" data-thumbheight="153"></a></div></li><li><div id="ol_fig5" class="io item fig" data-parent="sec3.1"><a class="tocLink S_C_tocLinkFig" href="#fig5" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S1352231011001853-gr5.sml" class="displayImg" title="The seasonal averaged daily pattern for the total particle number concentration ..." alt="The seasonal averaged daily pattern for the total particle number concentration ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr5.sml" data-thumbheight="164"></a></div></li><li><div id="ol_fig6" class="io item fig" data-parent="sec3.1"><a class="tocLink S_C_tocLinkFig" href="#fig6" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S1352231011001853-gr6.sml" class="displayImg" title="The seasonal averaged daily pattern for the particle number concentration for dp ..." alt="The seasonal averaged daily pattern for the particle number concentration for dp ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr6.sml" data-thumbheight="164"></a></div></li><li><div id="ol_fig7" class="io item fig" data-parent="sec3.2"><a class="tocLink S_C_tocLinkFig" href="#fig7" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S1352231011001853-gr7.sml" class="displayImg" title="Median diameters evolution during the years 2007 and 2008." alt="Median diameters evolution during the years 2007 and 2008." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr7.sml" data-thumbheight="160"></a></div></li><li><div id="ol_fig8" class="io item fig" data-parent="sec3.2"><a class="tocLink S_C_tocLinkFig" href="#fig8" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S1352231011001853-gr8.sml" class="displayImg" title="Evolution of a) particle size distribution, b) median diameters for the ..." alt="Evolution of a) particle size distribution, b) median diameters for the ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr8.sml" data-thumbheight="164"></a></div></li><li><div id="ol_fig9" class="io item fig" data-parent="sec3.2"><a class="tocLink S_C_tocLinkFig" href="#fig9" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S1352231011001853-gr9.sml" class="displayImg" title="Evolution of a) particle size distribution, b) median diameters for the ..." alt="Evolution of a) particle size distribution, b) median diameters for the ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr9.sml" data-thumbheight="164"></a></div></li><li><div id="ol_fig10" class="io item fig" data-parent="sec3.3"><a class="tocLink S_C_tocLinkFig" href="#fig10" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S1352231011001853-gr10.sml" class="displayImg" title="Mean particle size distributions measured during low wind speeds (a) and high ..." alt="Mean particle size distributions measured during low wind speeds (a) and high ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr10.sml" data-thumbheight="164"></a></div></li><li><div id="ol_fig11" class="io item fig" data-parent="sec3.3"><a class="tocLink S_C_tocLinkFig" href="#fig11" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S1352231011001853-gr11.sml" class="displayImg" title="Evolution of a) the meteorological parameters and b) daily averaged size ..." alt="Evolution of a) the meteorological parameters and b) daily averaged size ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr11.sml" data-thumbheight="163"></a></div></li><li><div id="ol_fig12" class="io item fig" data-parent="sec3.4"><a class="tocLink S_C_tocLinkFig" href="#fig12" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S1352231011001853-gr12.sml" class="displayImg" title="Evolution of the particle size distribution (a) for the period 10–15 July 2007, ..." alt="Evolution of the particle size distribution (a) for the period 10–15 July 2007, ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr12.sml" data-thumbheight="164"></a></div></li><li><div id="ol_fig13" class="io item fig" data-parent="sec3.4"><a class="tocLink S_C_tocLinkFig" href="#fig13" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img src="grey_pxl.gif" class="smlImgLazyJSB greyImg" title="Number of nucleation event classified and distributed by months along the ..." alt="Number of nucleation event classified and distributed by months along the ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr13.sml" data-thumbheight="164"></a></div></li></ol></div><div style="height: 671px;" id="articleLeftAd" class="adBlock"><hr style="margin-left: 12px;"><div class="adText">ADVERTISEMENT<div class="closeBt"><a href="#" title="Close Advertisement">&nbsp;</a></div></div><iframe style="height: 606px;" scrolling="no" border="0" cellspacing="0" src="S1352231011001853_6.html" frameborder="0"></iframe></div></div>
+        </div>
+        </div>
+    </div>
+  </div>
+  <div tabindex="-1" id="centerPane" class="column">
+    <div style="top: 56px; left: 338px;" class="topBorder fixedPane"></div>
+    <div id="centerContent" class="centerContent">
+    <div id="centerInner" class="centerInner svBigBox" aria-label="Article" role="main">
+        
+      
+      <noscript>
+
+      <div class="msgBox" style="margin-top:10px;">
+          <span class="errMsg">
+            <div>JavaScript is disabled on your browser.  Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. <a rel="nofollow" href="http://www.sciencedirect.com/science/article/pii/S1352231011001853?np=y">View full text</a></div>
+         </span>
+      </div><br/>
+      </noscript>
+      <div class="head headTemplate page_fragment_ind">
+
+  
+<div class="publisherLogo">
+  <span class="spElsevierPubIcon"></span>
+</div>
+
+
+  
+    <!--?xml version="1.0" encoding="UTF-8"?--><div xmlns:bk="http://www.elsevier.com/xml/bk/dtd" class="publicationHead"><div class="title"><a title="Go to Atmospheric Environment on ScienceDirect" href="http://www.sciencedirect.com/science/journal/13522310" querystr="?zone=centerPane" class="cLink"><span>Atmospheric Environment</span></a></div><p class="volIssue"><a class="S_C_volIss" title="Go to table of contents for this volume/issue" href="http://www.sciencedirect.com/science/journal/13522310/45/18">Volume 45, Issue 18</a>, June 2011, Pages 3169–3180</p></div>
+  
+    <div class="publicationCover cover2">
+    
+      
+    <a querystr="?zone=publicationLogo" class="cLink" href="http://www.sciencedirect.com/science/journal/13522310/45/18">
+      
+    
+    <img alt="Cover image" src="1-s2.0-S1352231011X00158-cov150h.gif" class="toprightlogo">
+    <noscript><img alt="Cover image" src="http://ars.els-cdn.com/content/image/1-s2.0-S1352231011X00158-cov150h.gif" class="toprightlogo" /></noscript>
+    </a>
+    
+  </div>
+
+
+</div><div id="frag_1" class="page_fragment auth_frag" data-first="true" data-fid="1"><div class="module_topic_paths"></div><h1 class="svTitle" id="">Influence of seasonal factors on the atmospheric particle number concentration and size distribution in Madrid</h1><ul style="display: block;" class="authorGroup noCollab svAuthor"><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N6718a120N78fc0d6c" data-t="a" data-fn="F.J." data-ln="Gómez-Moreno" data-pos="1" data-tb="">F.J. Gómez-Moreno</a><a title="Corresponding author contact information" href="#cor1" id="bcor1" class="intra_ref auth_corr"></a><sup>, </sup><a href="mailto:FJ.Gomez@ciemat.es" class="auth_mail" title="E-mail the corresponding author"></a>, </li><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N6718a120N78fc0e5c" data-t="a" data-fn="M." data-ln="Pujadas" data-pos="2" data-tb="">M. Pujadas</a>, </li><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N6718a120N78fc0e98" data-t="a" data-fn="J." data-ln="Plaza" data-pos="3" data-tb="">J. Plaza</a><a title="Footnote: 2" href="#fn2" class="intra_ref auth_footnote" id="bfn2"><sup>2</sup></a>, </li><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N6718a120N78fc0f4c" data-t="a" data-fn="J.J." data-ln="Rodríguez-Maroto" data-pos="4" data-tb="">J.J. Rodríguez-Maroto</a>, </li><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N6718a120N78fc0f88" data-t="a" data-fn="P." data-ln="Martínez-Lozano" data-pos="5" data-tb="">P. Martínez-Lozano</a><a title="Footnote: 1" href="#fn1" class="intra_ref auth_footnote" id="bfn1"><sup>1</sup></a>, </li><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N6718a120N78fc103c" data-t="a" data-fn="B." data-ln="Artíñano" data-pos="6" data-tb="">B. Artíñano</a></li></ul><!--VALIDHTML--><ul style="display: none;" class="affiliation authAffil smh"><li> <span id="">CIEMAT, Environment Department, Av. Complutense 22, E-28040 Madrid, Spain</span></li></ul><!--VALIDHTML--><!--VALIDHTML--><div id="currtAsOf"></div><dl style="display: none;" class="articleDates smh"><dd>Received 28 October 2010, Revised 4 February 2011, Accepted 16 February 2011, Available online 30 March 2011</dd></dl><!--VALIDHTML--><div id="showMoreButtons"><a class="showLess moreLink"><span class="CollapseText">&nbsp;</span><span class="showInfo expand" title="Show more author and article information">Show more</span></a><a class="showLess lessLink"><span style="display: none;" class="ExpandText">&nbsp;</span><span class="showInfo collapse" title="Hide more author and article information">Show less</span></a></div><script>prs.rt('scr_ppv')</script><!--VALIDHTML--><dl class="extLinks nonEmpty"><dd class="doiLink"><dd class="doi"><a id="ddDoi" class="S_C_ddDoi" href="http://dx.doi.org/10.1016/j.atmosenv.2011.02.041" target="doilink" onclick="var doiWin; doiWin=window.open('http://dx.doi.org/10.1016/j.atmosenv.2011.02.041','doilink','scrollbars=yes,resizable=yes,directories=yes,toolbar=yes,menubar=yes,status=yes'); doiWin.focus()">doi:10.1016/j.atmosenv.2011.02.041</a></dd></dd><dd class="rightsLink linkRender"><a class=" cExLink S_C_outLinks" href="https://s100.copyright.com/AppDispatchServlet?publisherName=ELS&amp;contentID=S1352231011001853&amp;orderBeanReset=true" data-url="/science/RedirectURL?_method=outwardLink&amp;_partnerName=936&amp;_eid=1-s2.0-S1352231011001853&amp;_pii=S1352231011001853&amp;_origin=article&amp;_zone=art_page&amp;_targetURL=https://s100.copyright.com/AppDispatchServlet?publisherName%3DELS%26contentID%3DS1352231011001853%26orderBeanReset%3Dtrue" target="_top" title="Get rights and content"><span class="outText">Get rights and content</span></a></dd></dl><div class="moreInformation"><dl class="citation"></dl></div><div class="articleOAlabelForced"></div><div id="refersToAndreferredToBy"><dl id="referredToBy" class="documentThread"><!--Referred To By--></dl></div><!--FRAGMENTEND--><div class="page_fragment_ind auth_frag" data-id="frag_2"></div></div><div id="frag_2" class="page_fragment" data-fid="2"><script>prs.rt("abs_1st_beg");</script><!--VALIDHTML--><hr id="abs_author1" class="artHeader"><div class="abstract svAbstract " data-etype="ab"><h2 class="secHeading" id="author1">Abstract</h2><p id="abspara0010">The ambient particle number concentration and size distribution have been measured in an urban background site in Madrid, a continental Mediterranean area, over more than two years (Oct 2006–Dec 2008). The objective was to study the sources and processes affecting or contributing to fine and ultrafine particles in this area. They have been measured with a TSI–SMPS (15–600&nbsp;nm) instrument and with a modified Vienna type DMA (3–80&nbsp;nm) and a CPC 3025 (TSI) during 6 months. The average particle number concentration was lower than in other sites as it is an urban background site and because of its location in the Mediterranean area. The particle number concentrations have shown a clear seasonal influence: maximum values were observed every year in the period November–January, coinciding with atmospheric stagnant conditions and pollution episodes, while minimum values were measured in springtime, a period in which wind speed produced high atmospheric dilution. The Aitken and accumulation modes have shown similar seasonal behavior, with two maxima related to vehicle emissions. The nucleation mode had a third maximum observed at noon during spring and summer. The size distributions were bimodal during most of the time: the first mode was centered on 20–50&nbsp;nm and was associated with fresh particles related to vehicle exhaust emission; the second mode, between 50 and 160&nbsp;nm, mainly corresponded to the evolution of the first mode. The evolution of the size distributions reveals a marked annual cycle related to the season, with an increase of median diameters during summer and a decrease during winter. Different evolutions of particle size distribution corresponding to different meteorological and seasonal scenarios were identified. The influence of higher wind speeds on particle size distribution has been confirmed to cause a decrease in the particle number concentration and in the size distribution mode. Particle nucleation is not a frequent phenomenon in this measurement site, where 63 events per year have been observed. They mainly occurred during spring and summer periods, with the minimum number during winter. This suggests that insolation and temperature are important variables in nucleation. Class Ia nucleation events mainly occurred during spring and summer. High wind speeds were important during class II events, as the particles suffered low growth or lost their semivolatile compounds.</p></div><!--VALIDHTML--><hr id="absgraphical1" class="artHeader"><div class="abstract svAbstract" data-etype="ab"><h4 id="secGabs_1">Highlights</h4><div id="abspara0015"><p>► The particle number concentrations have shown a clear seasonal influence. ► Different meteorological and seasonal scenarios gave different distribution evolutions. ► High wind speeds cause decrease in particle concentration and size distribution mode. ► Particle nucleation mainly occurred during spring and summer periods.</p></div></div><!--VALIDHTML--><div id="embeddedPDF" style="display: none;"></div><script>prs.rt("abs_end");</script><div id="SD_BA1P" class="sgfNoTitleBar sgfNoGadgetBorder svDoNotLink"><div class="containerApplOver invisible" id="SD_BA1P_298231"><div id="remote_iframe_0_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-right: 1px solid rgb(205, 240, 164); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_0" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_0" onload="sgf.killTimer('298231', 'SD_BA1P');" name="remote_iframe_0" src="S1352231011001853_7.html" style="text-align: left; height: 0px;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div></div><!--VALIDHTML--><h2 id="kwd_1" class="svKeywords">Keywords</h2><ul class="keyword" id=""><li id="" class="svKeywords"><span id="">Fine particles</span>; </li><li id="" class="svKeywords"><span id="">Particle number concentration</span>; </li><li id="" class="svKeywords"><span id="">Particle size distribution</span>; </li><li id="" class="svKeywords"><span id="">Nucleation mode</span>; </li><li id="" class="svKeywords"><span id="">Particle nucleation</span>; </li><li id="" class="svKeywords"><span id="">Wind speed</span></li></ul><!--VALIDHTML--><hr class="artHeader"><h2 class="svArticle" id="sec1">1. Introduction</h2><p class="svArticle section" id="p0010">Atmospheric particles can affect air quality and human health in urban areas (<span id="bbib11"><a href="#bib11" id="ancbbib11" class="intra_ref">Dockery and Pope, 1994</a></span>). The health effects of particles are linked to particle size, as this parameter determines the region of the respiratory system in which the particle will be deposited. Some toxicological studies have even indicated that toxicity per unit mass increases as particle size decreases (<a href="#bib21" id="bbib21" class="intra_ref">Lingard et&nbsp;al., 2005</a>&nbsp;and&nbsp;<a href="#bib24" id="bbib24" class="intra_ref">Oberdorster, 2000</a>). At the same time, atmospheric aerosol particles can play an important role in global climate through the Earth’s radiation budget (<span id="bbib17"><a href="#bib17" id="ancbbib17" class="intra_ref">IPCC, 2007</a></span>). The quantification of aerosol radiative forcing is more complex than the quantification of greenhouse gas effects because aerosol mass and particle number concentrations are highly variable in space and time (heterogeneity). A detailed knowledge of some chemical and physical properties of aerosols is needed to estimate and predict direct and indirect forcing. Several parameters such as size distribution changes could become relevant to perform these estimations; it is therefore important to characterize the particle size distributions in different geographical areas. For this reason, in the last decade measurements of particle number concentrations and size distributions have been performed on a long-term basis in different locations in the world.</p><!--VALIDHTML--><p class="svArticle section" id="p0015">The Mediterranean area has some characteristics that make it different from other European scenarios. Climate is warmer than in other European areas due in the case of the Iberian Peninsula to the constant influence of the semi-permanent Azores high-pressure system and as a result precipitation amounts are low, especially in summer. It has an abrupt topography with coastal ranges influencing the synoptic winds, and there are intense temperature, humidity and rainfall contrasts between seasons (<a href="#bib31" id="bbib31" class="intra_ref">Querol et&nbsp;al., 2009</a>&nbsp;and&nbsp;<a href="#bib23" id="bbib23" class="intra_ref">Millán et&nbsp;al., 1997</a>) among other characteristics. Although most of the territory is covered by typical Mediterranean species (coniferous, oaks trees and shrubs), this area includes extensive regions of semi-arid soils and large quantities of biomass are not available as fuel for domestic heating systems as they are in central and northern Europe. This last fact produces different emissions profiles in these areas. Throughout the year, but especially during summer, there are events of African dust outbreaks with a strong influence on the aerosol load. The insolation is very high, producing an important rate of photochemical reactions, i.e. organic compound oxidations whose heavier mass allows them to be incorporated into the existing particles that grow, increasing their size. This also influences the potential new particle formation when none or very few particles are available.</p><!--VALIDHTML--><p class="svArticle section" id="p0020"><span id="bbib37"><a href="#bib37" id="ancbbib37" class="intra_ref">Van Dingenen et&nbsp;al. (2004)</a></span> compiled data on physical characteristics of aerosols, including particle distributions measured at 15 sites throughout Europe, and compared the different type of locations and periods of the day using long-term averages. This work showed that there is a lack of data of this kind in the Mediterranean area and in Eastern Europe. <span id="bbib25"><a href="#bib25" id="ancbbib25" class="intra_ref">Petäjä et&nbsp;al. (2007)</a></span> tried to fill this data gap by measuring in Marseille and Athens during an intensive campaign in both places in a summer month; <span id="bbib26"><a href="#bib26" id="ancbbib26" class="intra_ref">Pey et&nbsp;al. (2008)</a></span> did the same in Barcelona during one year and <span id="bbib8"><a href="#bib8" id="ancbbib8" class="intra_ref">Costabile et&nbsp;al. (2010)</a></span> did so in the area of Rome during one year and a half. Also significant is <span id="bbib33"><a href="#bib33" id="ancbbib33" class="intra_ref">Rodríguez et&nbsp;al. (2007)</a></span>, where two Mediterranean sites (Barcelona and Ispra (IT)) are compared with London. <span id="bbib30"><a href="#bib30" id="ancbbib30" class="intra_ref">Putaud et&nbsp;al. (2010)</a></span> have recently updated the <span id="bbib37"><a href="#bib37" id="ancbbib37" class="intra_ref">Van Dingenen et&nbsp;al. (2004)</a></span> review and incorporated further data on measurements of the particle number concentration. It also includes new data from some campaigns in Portugal (Sangres and Mt. Foia) and in Milan. <span id="bbib12"><a href="#bib12" id="ancbbib12" class="intra_ref">Fernández-Camacho et&nbsp;al. (2010)</a></span> discussed one year and a half of measurements in Huelva, in southwestern Spain. A larger database in this geographical area will help to understand atmospheric aerosol behavior under Mediterranean continental conditions.</p><!--VALIDHTML--><p class="svArticle section" id="p0025">Meteorology and seasonality affect both particle size distributions and concentration in two different ways. On the one hand, they affect the boundary layer stability. This is, in the Iberian Peninsula the boundary layer is more stable during winter than during spring, so that particle concentrations are higher in the former season as the air volume for dilution is smaller. On the contrary, strong winds can either produce lower concentrations (<a href="#bib18" id="bbib18" class="intra_ref">Kumar et&nbsp;al., 2008a</a>&nbsp;and&nbsp;<a href="#bib19" id="bbib19" class="intra_ref">Kumar et&nbsp;al., 2008b</a>) or higher ones by re-suspension processes for particles larger than 100&nbsp;nm (<span id="bbib6"><a href="#bib6" id="ancbbib6" class="intra_ref">Charron and Harrison, 2003</a></span>). The influence of these strong winds on the particle size distribution has been studied in a few works. <span id="bbib1"><a href="#bib1" id="ancbbib1" class="intra_ref">Agus et&nbsp;al. (2007)</a></span> observed a shift in the size distribution to smaller diameter particles at the same time as the Aitken mode region was reduced on windy days. <span id="bbib15"><a href="#bib15" id="ancbbib15" class="intra_ref">Hussein et&nbsp;al. (2006)</a></span> found a good correlation between particle number concentration and ambient temperature and local wind conditions in Helsinki.</p><!--VALIDHTML--><p class="svArticle section" id="p0030">In addition, meteorology and seasonality also affect the particle emission profile, e.g. heating system emissions during winter, and the generation of new particles, e.g. particle nucleation during spring and summer. But, in the Madrid area, not only emitted or generated particles coexist as it is also possible to find particles transported from other sites. The most typical long-range transport processes of aerosol in this region are the African dust outbreaks (<span id="bbib35"><a href="#bib35" id="ancbbib35" class="intra_ref">Salvador et&nbsp;al., 2008</a></span>), which will not significantly influence on the submicron particle concentrations and distributions (<span id="bbib26"><a href="#bib26" id="ancbbib26" class="intra_ref">Pey et&nbsp;al., 2008</a></span>), probably because they may act as condensation sink for those gases which can nucleate.</p><!--VALIDHTML--><p class="svArticle section" id="p0035">The seasonal effects on the particle number concentration have shown annual cycles of different particle size. <span id="bbib20"><a href="#bib20" id="ancbbib20" class="intra_ref">Laakso et&nbsp;al. (2003)</a></span> found in several Finnish sites a maximum in the nucleation mode particle concentration in spring and a second maximum in the Aitken mode in autumn.</p><!--VALIDHTML--><p class="svArticle section" id="p0040">The current work is aimed at studying the sources and processes affecting or contributing to fine and ultrafine particles in a representative continental Mediterranean area for the period October 2006–December 2008. To reach this objective, the work focuses on the seasonal evolution of the particle number concentration and distribution, and particularly the wind speed effects on both parameters. Additionally some nucleation events have been identified and characterized to find out the most likely conditions to lead to their appearance in the measuring site. This study has been performed at CIEMAT, an urban background site in Madrid, in the central part of the Iberian Peninsula.</p><!--VALIDHTML--><div class="page_fragment_ind" data-id="frag_3"></div><script>prs.rt("abs_1st_end");</script></div><div id="frag_3" class="page_fragment" data-fid="3"><h2 class="svArticle" id="sec2">2. Experimental</h2><h3 class="svArticle" id="sec2.1">2.1. Description of the measurement site</h3><p class="svArticle section" id="p0045">The Madrid metropolitan area is located in the center of the Iberian Peninsula, bordered by the Sierra de Guadarrama (a high mountain range, 2400&nbsp;m) 40&nbsp;km from the city to the north–northwest, and by lower mountainous terrain to the northeast and east. The metropolitan area of Madrid has more than 6 million inhabitants and more than 2.5 million residents live in the surrounding towns. It comprises a car fleet of 4 million vehicles (fifty percent of which are diesel powered, including more than six hundred thousand medium- and heavy-duty trucks) with very intense traffic on weekdays on the connecting roads and the two existing ring roads. In addition to the regional fleet, there is an important number of trucks crossing the region, as Madrid is a relevant crossroads and includes a large dry port. Since its industrial activity consists essentially of light factories, the Madrid plume is typically urban, fed by traffic emissions and also by heating systems in winter. These features, together with the long distance between the Madrid metropolitan area and other significant urban or industrial areas in Spain (around 200&nbsp;km), allow studying its plume as a typical urban plume.</p><!--VALIDHTML--><p class="svArticle section" id="p0050">The weather in Madrid is typical of a mid-latitude continental area, with hot dry summers and cold winters, most days being under clear-sky conditions. Mean annual precipitation is around 400&nbsp;mm, mainly concentrated in the autumn and spring months. Previous studies focused on air pollution episodes in the Madrid air basin have characterized their driving meteorological conditions, as well as their typical atmospheric transport patterns (<a href="#bib28" id="bbib28" class="intra_ref">Plaza et&nbsp;al., 1997</a>, <a href="#bib29" id="bbib29" class="intra_ref">Pujadas et&nbsp;al., 2000</a>&nbsp;and&nbsp;<a href="#bib3" id="bbib3" class="intra_ref">Artíñano et&nbsp;al., 2003</a>). In summer, the development of strong thermal convective activity and the influence of the mountains produce characteristic circulations and mixing layer development (<span id="bbib9"><a href="#bib9" id="ancbbib9" class="intra_ref">Crespí et&nbsp;al., 1995</a></span>). In winter, the general synoptic situation leading to the occurrence of episodic events corresponds to stagnant anticyclone conditions, light winds and clear-sky conditions, with the usual formation of radiative nocturnal surface inversions. That is why the worst pollution episodic situations in this region usually coincide with typical winter weather.</p><!--VALIDHTML--><p class="svArticle section" id="p0055">The measurements analyzed in this work were carried out at the CIEMAT facilities (40° 27.5′N, 3° 43.5′W), located in the NW corner of the city of Madrid, which can be considered as an urban background site (<span id="bfig1"><a href="#fig1" id="ancbfig1" class="intra_ref">Fig.&nbsp;1</a></span>). It is close to a park, Dehesa de la Villa (71&nbsp;ha), and not very far from Casa de Campo (1723&nbsp;ha), a bigger park in the&nbsp;metropolitan area. An important forested area, Monte del Pardo (16 000&nbsp;ha), extends over the north of the city. This particular location of the experimental site in the city border allows receiving different kinds of air masses depending on the wind direction. This implies the arrival of air masses with different origins, characteristics and pollution levels.</p><!--VALIDHTML--><div class="figTblUpiOuter svArticle" id="figure_fig1"><div><dl class="figure" id="fig1" data-t="f"><dt class="autoScroll" data-style="height:545px;width:508px;"><a class="figureLink" href="#gr1" title="Location of the measurement point (CIEMAT) in the Madrid area. It includes the ..."><img data-loaded="true" style="display: inline; height: 545px; width: 508px;" class="imgLazyJSB figure large nrmImg" alt="Location of the measurement point (CIEMAT) in the Madrid area. It includes the ..." src="1-s2.0-S1352231011001853-gr1.jpg" data-thumbeid="1-s2.0-S1352231011001853-gr1.sml" data-fulleid="1-s2.0-S1352231011001853-gr1.jpg" data-imgeids="1-s2.0-S1352231011001853-gr1.jpg" data-thumbheight="164" data-thumbwidth="153" data-fullheight="545" data-fullwidth="508" border="0" height="545" width="508"><noscript class="figure large" border="0" alt="Full-size image" data-thumbeid="1-s2.0-S1352231011001853-gr1.sml" data-fulleid="1-s2.0-S1352231011001853-gr1.jpg"><img class="figure large" border="0" alt="Location of the measurement point (CIEMAT) in the Madrid area. It includes the ..." src="http://origin-ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr1.jpg" data-thumbEID="1-s2.0-S1352231011001853-gr1.sml" data-imgEIDs="1-s2.0-S1352231011001853-gr1.jpg" data-fullEID="1-s2.0-S1352231011001853-gr1.jpg"></noscript></a></dt><dd id="labelCaptionfig1"><div class="caption">Fig.&nbsp;1.&nbsp;<p id="fspara0010">Location of the measurement point (CIEMAT) in the Madrid area. It includes the biggest parks which could affect some measurements.</p><!--caption--></div></dd><dd class="menuButtonLinks"><div class="btnHolder"><a class="menuTitle" href="#">Figure options</a><div class="down_Btn"></div></div><ul class="menuButton"><li><a class="S_C_full_size" data-src="/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_eid=1-s2.0-S1352231011001853&amp;_image=1-s2.0-S1352231011001853-gr1.jpg&amp;_cid=271798&amp;_explode=defaultEXP_LIST&amp;_idxType=defaultREF_WORK_INDEX_TYPE&amp;_alpha=defaultALPHA&amp;_ba=&amp;_rdoc=1&amp;_fmt=FULL&amp;_issn=13522310&amp;_pii=S1352231011001853&amp;md5=9ae4d223141cdd6860f78f2db80da266" data-label="labelCaptionfig1" data-ref="" data-format="S1352231011001853" href="#gr1" title="View full-size image - Opens in new window">Download full-size image</a></li><li><a class="S_C_high_quality" data-src="/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_eid=1-s2.0-S1352231011001853&amp;_image=1-s2.0-S1352231011001853-gr1_lrg.jpg&amp;_cid=271798&amp;_explode=defaultEXP_LIST&amp;_idxType=defaultREF_WORK_INDEX_TYPE&amp;_alpha=defaultALPHA&amp;_ba=&amp;_rdoc=1&amp;_fmt=FULL&amp;_isHiQual=Y&amp;_issn=13522310&amp;_pii=S1352231011001853&amp;md5=d5641c90b1c95912b4da00ecee2c888a" data-label="labelCaptionfig1" data-ref="" data-format="S1352231011001853" href="#gr1" title="View high quality image - Opens in new window">Download high-quality image (731 K)</a></li><li><a class="ppt S_C_ppt" title="Download as PowerPoint slide" href="http://services.elsevier.com/SDWebExport/export/figure/S1352231011001853/1-s2.0-S1352231011001853-gr1.jpg/ppt">Download as PowerPoint slide</a></li></ul></dd></dl></div></div><!--VALIDHTML--><h3 class="svArticle" id="sec2.2">2.2. Instrumentation</h3><p class="svArticle section" id="p0060">The particle size distributions were measured by a TSI–SMPS (DMA 3071 and CPC 3022) (<a href="#bib36" id="bbib36" class="intra_ref">Stanier et&nbsp;al., 2004</a>&nbsp;and&nbsp;<a href="#bib39" id="bbib39" class="intra_ref">Wang and Flagan, 1990</a>) for the range 15–600&nbsp;nm and by a home-built modified Vienna type DMA and a TSI–CPC 3025 for the range 3–80&nbsp;nm. The latter DMA (<em>R</em>2&nbsp;=&nbsp;33&nbsp;mm; <em>R</em>1&nbsp;=&nbsp;25&nbsp;mm; <em>L</em>&nbsp;=&nbsp;90&nbsp;mm) features an exhaust path with reduced pressure drop, thereby allowing high flow rates to be reached (i.e. Reynolds numbers) with modest pumping capacity. The soundness of this prototype in the nanometer range was tested during a series of preliminary experiments measuring electrosprayed tetraheptylammonium ions ( <span id="bbib34"><a href="#bib34" id="ancbbib34" class="intra_ref">Rosell et&nbsp;al., 1996</a></span>). For the flow rates used during these measurements, the resolution was similar to the traditional Vienna type DMA. The system, namely the DMA voltage ramp and CNC signal collection, was controlled through a LabVIEW home-developed code. The SMPS worked in scanning mode and was available for the period October 2006–December 2008. The modified Vienna type DMA worked in step mode and was available from March to October 2007. Both cases had the exception of periods in which the instruments were checked, revised and occasionally repaired.</p><!--VALIDHTML--><p class="svArticle section" id="p0065">A weatherproof inlet was used to prevent rain entering the sampling line. This aerosol sampling point was around 2-m high and the line was 2-m long before the sample was neutralized by a radioactive source (Kr-85). After this neutralizer, the flow was split into two secondary flows before reaching the DMAs. Both systems were located in a laboratory continuously ventilated with outside air for radiological reasons, so that the relative humidity inside and outside were similar. As the sheath flow rate used by both DMAs was taken from indoor air in an open loop, the particle size distribution was measured close to ambient conditions (<a href="#bib1" id="bbib1" class="intra_ref">Agus et&nbsp;al., 2007</a>&nbsp;and&nbsp;<a href="#bib22" id="bbib22" class="intra_ref">Mäkelä et&nbsp;al., 2000</a>). In the SMPS instrument each measurement cycle required 12&nbsp;min, while in the modified Vienna type DMA it required 20&nbsp;min.</p><!--VALIDHTML--><p class="svArticle section" id="p0070">In addition to particle size distributions, several meteorological parameters were measured at the experimental site by a permanent tower: wind direction and speed, precipitation, solar irradiance, temperature, humidity and pressure. Furthermore, some gaseous and particulate measurements were continuously and routinely performed at the site. These measurements have been used to support the result discussion.</p><!--VALIDHTML--><h2 class="svArticle" id="sec3">3. Results</h2><h3 class="svArticle" id="sec3.1">3.1. Particle number concentrations</h3><p class="svArticle section" id="p0075">The particle number concentration obtained by the TSI–SMPS (15–600&nbsp;nm) varied along the measurement period in a seasonal basis. The average total concentration was smaller during 2008 (7325&nbsp;cm<sup>−3</sup>) than during 2007 (9918&nbsp;cm<sup>−3</sup>), which is related to the higher average wind speed (3.5&nbsp;m&nbsp;s<sup>−1</sup>) that year than during 2007 (3.1&nbsp;m&nbsp;s<sup>−1</sup>) and the occurrence of several windy periods during the spring months in 2008 (<span id="bfig2"><a href="#fig2" id="ancbfig2" class="intra_ref">Fig.&nbsp;2</a></span>). Instead, during the winter of 2007 there were several strong inversion periods associated with very light or calm winds. In <span id="bbib30"><a href="#bib30" id="ancbbib30" class="intra_ref">Putaud et&nbsp;al. (2010)</a></span> it is possible to find a summary of several measurements done in Europe. In their annex 3 and <span id="bfig4"><a href="#fig4" id="ancbfig4" class="intra_ref">Fig.&nbsp;4</a></span> it is clear that the lowest concentrations were measured in southern Europe compared with central and northwestern Europe. This is caused by the differences in temperature, boundary layer behavior and sun hours, among other ambient conditions, between northern Europe and the Mediterranean area, as has been previously mentioned. The concentrations obtained in Madrid had similar values to those for Ispra (near city site), and somewhat lower than in a Barcelona urban site. In the case of the Sagres and Mt Foia rural sites, their concentrations were lower in summer. There is also a clear decrease in the particle number concentration when moving from urban to rural stations (<span id="bbib30"><a href="#bib30" id="ancbbib30" class="intra_ref">Putaud et&nbsp;al., 2010</a></span>). As the CIEMAT site is an urban background site, the concentration measured is between that of a southern city and a rural site, similar to a near city site. In the Iberian Peninsula, <span id="bbib12"><a href="#bib12" id="ancbbib12" class="intra_ref">Fernández-Camacho et&nbsp;al. (2010)</a></span> measured a particle number concentration of 22,000&nbsp;cm<sup>−3</sup> in Huelva, a higher value probably because the site is affected by vehicle and industrial emissions.</p><!--VALIDHTML--><div class="figTblUpiOuter svArticle" id="figure_fig2"><div><dl class="figure" id="fig2" data-t="f"><dt class="autoScroll" data-style="height:265px;width:380px;"><a class="figureLink" href="#gr2" title="The monthly averaged evolution of the main meteorological parameters measured at ..."><img data-loaded="true" style="display: inline; height: 265px; width: 380px;" class="imgLazyJSB figure large nrmImg" alt="The monthly averaged evolution of the main meteorological parameters measured at ..." src="1-s2.0-S1352231011001853-gr2.jpg" data-thumbeid="1-s2.0-S1352231011001853-gr2.sml" data-fulleid="1-s2.0-S1352231011001853-gr2.jpg" data-imgeids="1-s2.0-S1352231011001853-gr2.jpg" data-thumbheight="153" data-thumbwidth="219" data-fullheight="265" data-fullwidth="380" border="0" height="265" width="380"><noscript class="figure large" border="0" alt="Full-size image" data-thumbeid="1-s2.0-S1352231011001853-gr2.sml" data-fulleid="1-s2.0-S1352231011001853-gr2.jpg"><img class="figure large" border="0" alt="The monthly averaged evolution of the main meteorological parameters measured at ..." src="http://origin-ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr2.jpg" data-thumbEID="1-s2.0-S1352231011001853-gr2.sml" data-imgEIDs="1-s2.0-S1352231011001853-gr2.jpg" data-fullEID="1-s2.0-S1352231011001853-gr2.jpg"></noscript></a></dt><dd id="labelCaptionfig2"><div class="caption">Fig.&nbsp;2.&nbsp;<p id="fspara0015">The monthly averaged evolution of the main meteorological parameters measured at the measurement site.</p><!--caption--></div></dd><dd class="menuButtonLinks"><div class="btnHolder"><a class="menuTitle" href="#">Figure options</a><div class="down_Btn"></div></div><ul class="menuButton"><li><a class="S_C_full_size" data-src="/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_eid=1-s2.0-S1352231011001853&amp;_image=1-s2.0-S1352231011001853-gr2.jpg&amp;_cid=271798&amp;_explode=defaultEXP_LIST&amp;_idxType=defaultREF_WORK_INDEX_TYPE&amp;_alpha=defaultALPHA&amp;_ba=&amp;_rdoc=1&amp;_fmt=FULL&amp;_issn=13522310&amp;_pii=S1352231011001853&amp;md5=d73418ef8ff08accdaa10dfac35df7c2" data-label="labelCaptionfig2" data-ref="" data-format="S1352231011001853" href="#gr2" title="View full-size image - Opens in new window">Download full-size image</a></li><li><a class="S_C_high_quality" data-src="/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_eid=1-s2.0-S1352231011001853&amp;_image=1-s2.0-S1352231011001853-gr2_lrg.jpg&amp;_cid=271798&amp;_explode=defaultEXP_LIST&amp;_idxType=defaultREF_WORK_INDEX_TYPE&amp;_alpha=defaultALPHA&amp;_ba=&amp;_rdoc=1&amp;_fmt=FULL&amp;_isHiQual=Y&amp;_issn=13522310&amp;_pii=S1352231011001853&amp;md5=121f123dc0ebf90ad7371de392cf5fde" data-label="labelCaptionfig2" data-ref="" data-format="S1352231011001853" href="#gr2" title="View high quality image - Opens in new window">Download high-quality image (240 K)</a></li><li><a class="ppt S_C_ppt" title="Download as PowerPoint slide" href="http://services.elsevier.com/SDWebExport/export/figure/S1352231011001853/1-s2.0-S1352231011001853-gr2.jpg/ppt">Download as PowerPoint slide</a></li></ul></dd></dl></div></div><!--VALIDHTML--><p class="svArticle section" id="p0080">Following the work of <span id="bbib14"><a href="#bib14" id="ancbbib14" class="intra_ref">Hussein et&nbsp;al. (2004)</a></span>, the particle number concentrations have been integrated from the number size distributions for different intervals: the total range, the nucleation mode (dp&nbsp;&lt;&nbsp;30&nbsp;nm), the Aitken mode (within 20–100&nbsp;nm) and the accumulation mode (dp&nbsp;&gt;&nbsp;90&nbsp;nm). The averaged values for every month with more than 50% of available data are shown in <span id="bfig3"><a href="#fig3" id="ancbfig3" class="intra_ref">Fig.&nbsp;3</a></span>. It can be seen that in every year the maximum concentration was reached in November–January, a period prone to strong thermal inversion formation. The highest concentrations were reached in January 2007, coinciding with maximum values reached by other different pollutants routinely measured at the site, i.e. elemental carbon, particulate nitrate, nitrogen oxides. The minimum particle number concentration values were reached in springtime, when the high wind speeds produced the highest particle dilutions. The lowest concentrations were measured during the period March–May 2008, exactly when the wind speeds were the highest (a mean value of 4.2&nbsp;m&nbsp;s<sup>−1</sup> for March) in the experimental period, and the rains were also greater than in 2007. For the entire period the Aitken mode was the main mode, while the nucleation and accumulation modes had similar concentrations, or possibly slightly higher concentrations for the former.</p><!--VALIDHTML--><div class="page_fragment_ind" data-id="frag_4"></div></div><div id="frag_4" class="page_fragment" data-fid="4"><div class="figTblUpiOuter svArticle" id="figure_fig3"><div><dl class="figure" id="fig3" data-t="f"><dt class="autoScroll" data-style="height:219px;width:310px;"><a class="figureLink" href="#gr3" title="Evolution of the particle number concentration during the measurement period. ..."><img style="display: inline;" class="imgLazyJSB figure large nrmImg" alt="Evolution of the particle number concentration during the measurement period. ..." src="grey_pxl.gif" data-thumbeid="1-s2.0-S1352231011001853-gr3.sml" data-fulleid="1-s2.0-S1352231011001853-gr3.jpg" data-imgeids="1-s2.0-S1352231011001853-gr3.jpg" data-thumbheight="155" data-thumbwidth="219" data-fullheight="219" data-fullwidth="310" border="0" height="219" width="310"><noscript class="figure large" border="0" alt="Full-size image" data-thumbeid="1-s2.0-S1352231011001853-gr3.sml" data-fulleid="1-s2.0-S1352231011001853-gr3.jpg"><img class="figure large" border="0" alt="Evolution of the particle number concentration during the measurement period. ..." src="http://origin-ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr3.jpg" data-thumbEID="1-s2.0-S1352231011001853-gr3.sml" data-imgEIDs="1-s2.0-S1352231011001853-gr3.jpg" data-fullEID="1-s2.0-S1352231011001853-gr3.jpg"></noscript></a></dt><dd id="labelCaptionfig3"><div class="caption">Fig.&nbsp;3.&nbsp;<p id="fspara0020">Evolution of the particle number concentration during the measurement period. The total and the different mode concentrations are shown.</p><!--caption--></div></dd><dd class="menuButtonLinks"><div class="btnHolder"><a class="menuTitle" href="#">Figure options</a><div class="down_Btn"></div></div><ul class="menuButton"><li><a class="S_C_full_size" data-src="/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_eid=1-s2.0-S1352231011001853&amp;_image=1-s2.0-S1352231011001853-gr3.jpg&amp;_cid=271798&amp;_explode=defaultEXP_LIST&amp;_idxType=defaultREF_WORK_INDEX_TYPE&amp;_alpha=defaultALPHA&amp;_ba=&amp;_rdoc=1&amp;_fmt=FULL&amp;_issn=13522310&amp;_pii=S1352231011001853&amp;md5=f813f65ba4286309a76ed230c3a516b4" data-label="labelCaptionfig3" data-ref="" data-format="S1352231011001853" href="#gr3" title="View full-size image - Opens in new window">Download full-size image</a></li><li><a class="S_C_high_quality" data-src="/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_eid=1-s2.0-S1352231011001853&amp;_image=1-s2.0-S1352231011001853-gr3_lrg.jpg&amp;_cid=271798&amp;_explode=defaultEXP_LIST&amp;_idxType=defaultREF_WORK_INDEX_TYPE&amp;_alpha=defaultALPHA&amp;_ba=&amp;_rdoc=1&amp;_fmt=FULL&amp;_isHiQual=Y&amp;_issn=13522310&amp;_pii=S1352231011001853&amp;md5=7a1c039d63fefa98de42cde9734ea357" data-label="labelCaptionfig3" data-ref="" data-format="S1352231011001853" href="#gr3" title="View high quality image - Opens in new window">Download high-quality image (155 K)</a></li><li><a class="ppt S_C_ppt" title="Download as PowerPoint slide" href="http://services.elsevier.com/SDWebExport/export/figure/S1352231011001853/1-s2.0-S1352231011001853-gr3.jpg/ppt">Download as PowerPoint slide</a></li></ul></dd></dl></div></div><!--VALIDHTML--><div class="figTblUpiOuter svArticle" id="figure_fig4"><div><dl class="figure" id="fig4" data-t="f"><dt class="autoScroll" data-style="height:217px;width:311px;"><a class="figureLink" href="#gr4" title="The annual averaged daily pattern for the particle number concentration during ..."><img style="display: inline;" class="imgLazyJSB figure large nrmImg" alt="The annual averaged daily pattern for the particle number concentration during ..." src="grey_pxl.gif" data-thumbeid="1-s2.0-S1352231011001853-gr4.sml" data-fulleid="1-s2.0-S1352231011001853-gr4.jpg" data-imgeids="1-s2.0-S1352231011001853-gr4.jpg" data-thumbheight="153" data-thumbwidth="219" data-fullheight="217" data-fullwidth="311" border="0" height="217" width="311"><noscript class="figure large" border="0" alt="Full-size image" data-thumbeid="1-s2.0-S1352231011001853-gr4.sml" data-fulleid="1-s2.0-S1352231011001853-gr4.jpg"><img class="figure large" border="0" alt="The annual averaged daily pattern for the particle number concentration during ..." src="http://origin-ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr4.jpg" data-thumbEID="1-s2.0-S1352231011001853-gr4.sml" data-imgEIDs="1-s2.0-S1352231011001853-gr4.jpg" data-fullEID="1-s2.0-S1352231011001853-gr4.jpg"></noscript></a></dt><dd id="labelCaptionfig4"><div class="caption">Fig.&nbsp;4.&nbsp;<p id="fspara0025">The annual averaged daily pattern for the particle number concentration during the year 2007. The total and the different mode concentrations are shown.</p><!--caption--></div></dd><dd class="menuButtonLinks"><div class="btnHolder"><a class="menuTitle" href="#">Figure options</a><div class="down_Btn"></div></div><ul class="menuButton"><li><a class="S_C_full_size" data-src="/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_eid=1-s2.0-S1352231011001853&amp;_image=1-s2.0-S1352231011001853-gr4.jpg&amp;_cid=271798&amp;_explode=defaultEXP_LIST&amp;_idxType=defaultREF_WORK_INDEX_TYPE&amp;_alpha=defaultALPHA&amp;_ba=&amp;_rdoc=1&amp;_fmt=FULL&amp;_issn=13522310&amp;_pii=S1352231011001853&amp;md5=3f0fa60fa3e3c76a97f4eb9ee81a4920" data-label="labelCaptionfig4" data-ref="" data-format="S1352231011001853" href="#gr4" title="View full-size image - Opens in new window">Download full-size image</a></li><li><a class="S_C_high_quality" data-src="/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_eid=1-s2.0-S1352231011001853&amp;_image=1-s2.0-S1352231011001853-gr4_lrg.jpg&amp;_cid=271798&amp;_explode=defaultEXP_LIST&amp;_idxType=defaultREF_WORK_INDEX_TYPE&amp;_alpha=defaultALPHA&amp;_ba=&amp;_rdoc=1&amp;_fmt=FULL&amp;_isHiQual=Y&amp;_issn=13522310&amp;_pii=S1352231011001853&amp;md5=74d91176e3fbb4c84d8a69291faff538" data-label="labelCaptionfig4" data-ref="" data-format="S1352231011001853" href="#gr4" title="View high quality image - Opens in new window">Download high-quality image (159 K)</a></li><li><a class="ppt S_C_ppt" title="Download as PowerPoint slide" href="http://services.elsevier.com/SDWebExport/export/figure/S1352231011001853/1-s2.0-S1352231011001853-gr4.jpg/ppt">Download as PowerPoint slide</a></li></ul></dd></dl></div></div><!--VALIDHTML--><p class="svArticle section" id="p0085">The annual averaged daily pattern did not show big differences between the years 2007 (<span id="bfig4"><a href="#fig4" id="ancbfig4" class="intra_ref">Fig.&nbsp;4</a></span>) and 2008. The daily evolution was similar for both years, with a maximum at 8 UTC corresponding to the morning traffic rush hour, and a second and smaller peak at 21 UTC associated with the evening traffic peak. Particles corresponding to this second maximum arrived at the sampling site some time after being emitted because of the transport delay, longer than in the morning. Because of the atmospheric dynamics associated with this area, the sampling point is downwind of the city during the morning, but not during the evening, so that the polluted air masses take a longer time to arrive (<a href="#bib29" id="bbib29" class="intra_ref">Pujadas et&nbsp;al., 2000</a>&nbsp;and&nbsp;<a href="#bib2" id="bbib2" class="intra_ref">Artíñano et&nbsp;al., 1994</a>). For this reason, their aging degree is higher when they arrive at the measurement site and the Aitken mode is more significant than in the morning. The decreasing sense for the mode concentrations was the same for both years: Aitken (7257&nbsp;cm<sup>−3</sup> on average for 2007 and 5336&nbsp;cm<sup>−3</sup> for 2008), nucleation (2848&nbsp;cm<sup>−3</sup> on average for 2007 and 2019&nbsp;cm<sup>−3</sup> for 2008) and accumulation modes (1930&nbsp;cm<sup>−3</sup> on average for 2007 and 1449&nbsp;cm<sup>−3</sup> for 2008). These peaks corresponding with vehicle exhaust emissions can be found in other cities, although the time can be somewhat different as a function of local habits and site location. <span id="bbib20"><a href="#bib20" id="ancbbib20" class="intra_ref">Laakso et&nbsp;al. (2003)</a></span> showed that in the Helsinki urban area the maximum also corresponded with vehicle exhaust emissions in the early morning, but in other Finnish background stations it appeared between 15 and 18&nbsp;h because of new particle formation. The decreasing sense for the mode concentrations was different in Helsinki (<span id="bbib14"><a href="#bib14" id="ancbbib14" class="intra_ref">Hussein et&nbsp;al., 2004</a></span>), where the order was nucleation, Aitken and accumulation modes, while in Barcelona (<span id="bbib26"><a href="#bib26" id="ancbbib26" class="intra_ref">Pey et&nbsp;al., 2008</a></span>) the order was the same as in Madrid. In Huelva (<span id="bbib12"><a href="#bib12" id="ancbbib12" class="intra_ref">Fernández-Camacho et&nbsp;al., 2010</a></span>), the daily evolution of the particle number concentration clearly showed a peak corresponding with vehicle exhaust emissions and a second peak around noon. This last peak was not related with traffic, so these particles can be from industrial emissions or from new particle nucleation. The fact that it appeared also during the weekend pointed toward the second possibility.</p><!--VALIDHTML--><p class="svArticle section" id="p0090">The seasonal variations of the averaged daily patterns of the total particle number concentrations were studied for spring (April, May, June), summer (July, August, September), autumn (October, November, December), and winter (January, February, March). The two previously described maxima remained (<span id="bfig5"><a href="#fig5" id="ancbfig5" class="intra_ref">Fig.&nbsp;5</a></span>) throughout the four seasons, although the morning maxima appeared at two different positions depending on the local standard time (winter UTC+1, summer UTC+2). The evening peak was recorded at the same time in both years but it was better observed in winter than in summer, in spite that the weather did not allow this pattern to be produced during winter 2008. A possible third maximum could be observed around noon during the 2007 and 2008 spring and summer seasons, which could correspond to some nucleation episodes, as will be shown later.</p><!--VALIDHTML--><div class="figTblUpiOuter svArticle" id="figure_fig5"><div><dl class="figure" id="fig5" data-t="f"><dt class="autoScroll" data-style="height:449px;width:313px;"><a class="figureLink" href="#gr5" title="The seasonal averaged daily pattern for the total particle number concentration ..."><img style="display: inline;" class="imgLazyJSB figure large nrmImg" alt="The seasonal averaged daily pattern for the total particle number concentration ..." src="grey_pxl.gif" data-thumbeid="1-s2.0-S1352231011001853-gr5.sml" data-fulleid="1-s2.0-S1352231011001853-gr5.jpg" data-imgeids="1-s2.0-S1352231011001853-gr5.jpg" data-thumbheight="164" data-thumbwidth="114" data-fullheight="449" data-fullwidth="313" border="0" height="449" width="313"><noscript class="figure large" border="0" alt="Full-size image" data-thumbeid="1-s2.0-S1352231011001853-gr5.sml" data-fulleid="1-s2.0-S1352231011001853-gr5.jpg"><img class="figure large" border="0" alt="The seasonal averaged daily pattern for the total particle number concentration ..." src="http://origin-ars.els-cdn.com/content/image/1-s2.0-S1352231011001853-gr5.jpg" data-thumbEID="1-s2.0-S1352231011001853-gr5.sml" data-imgEIDs="1-s2.0-S1352231011001853-gr5.jpg" data-fullEID="1-s2.0-S1352231011001853-gr5.jpg"></noscript></a></dt><dd id="labelCaptionfig5"><div class="caption">Fig.&nbsp;5.&nbsp;<p id="fspara0030">The seasonal averaged daily pattern for the total particle number concentration during the years: (a) 2007 and (b) 2008.</p><!--caption--></div></dd><dd class="menuButtonLinks"><div class="btnHolder"><a class="menuTitle" href="#">Figure options</a><div class="down_Btn"></div></div><ul class="menuButton"><li><a class="S_C_full_size" data-src="/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_eid=1-s2.0-S1352231011001853&amp;_image=1-s2.0-S1352231011001853-gr5.jpg&amp;_cid=271798&amp;_explode=defaultEXP_LIST&amp;_idxType=defaultREF_WORK_INDEX_TYPE&amp;_alpha=defaultALPHA&amp;_ba=&amp;_rdoc=1&amp;_fmt=FULL&amp;_issn=13522310&amp;_pii=S1352231011001853&amp;md5=420b750fc54929ffc05e9f2f169540c1" data-label="labelCaptionfig5" data-ref="" data-format="S1352231011001853" href="#gr5" title="View full-size image - Opens in new window">Download full-size image</a></li><li><a class="S_C_high_quality" data-src="/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_eid=1-s2.0-S1352231011001853&amp;_image=1-s2.0-S1352231011001853-gr5_lrg.jpg&amp;_cid=271798&amp;_explode=defaultEXP_LIST&amp;_idxType=defaultREF_WORK_INDEX_TYPE&amp;_alpha=defaultALPHA&amp;_ba=&amp;_rdoc=1&amp;_fmt=FULL&amp;_isHiQual=Y&amp;_issn=13522310&amp;_pii=S1352231011001853&amp;md5=33a91373648202d1354dcbd983477f32" data-label="labelCaptionfig5" data-ref="" data-format="S1352231011001853" href="#gr5" title="View high quality image - Opens in new window">Download high-quality image (292 K)</a></li><li><a class="ppt S_C_ppt" title="Download as PowerPoint slide" href="http://services.elsevier.com/SDWebExport/export/figure/S1352231011001853/1-s2.0-S1352231011001853-gr5.jpg/ppt">Download as PowerPoint slide</a></li></ul></dd></dl></div></div><!--VALIDHTML--><p class="svArticle section" id="p0095">Daily patterns were very similar for spring and summer of 2007. In autumn there was an increase in the morning maximum, which became much more important in winter when the maximum reached double that of the autumn one. The main reason for this high value in winter was the occurrence of several aforementioned long stagnant periods, mainly in January. During the year 2008 a different seasonal behavior was observed. Summer and spring had a similar pattern, but the total particle concentration was higher during summer. Autumn and winter also had similar patterns, but in this case the concentration was lower in winter, just&nbsp;the opposite of the previous year. The main reason for this opposite behavior is the different meteorology that did not allow the occurrence of long and frequent stagnant periods during 2007 autumn and 2008 winter as they occurred during 2007 winter and 2008 autumn.</p><!--VALIDHTML--><p class="svArticle section" id="p0100">The most interesting mode of the three analyzed was the nucleation mode, as it showed a slightly different behavior (<span id="bfig6"><a href="#fig6" id="ancbfig6" class="intra_ref">Fig.&nbsp;6</a></span>). The autumn and winter patterns were similar to the total number concentration ones (<span id="bfig5"><a href="#fig5" id="ancbfig5" class="intra_ref">Fig.&nbsp;5</a></span>) but during the spring and summer of 2007 and 2008 a third maximum was occasionally observed at noon. This was very clear during the 2008 summer (<span id="bfig6"><a href="#fig6" id="ancbfig6" class="intra_ref">Fig.&nbsp;6</a></span>b), when this noon peak reached the same values as the emission peak during the morning and the two did not overlap. The 2007 summer showed a similar behavior. These peaks corresponded to nucleation episodes, as was confirmed subsequently by the particle distribution evolution. In the Mediterranean area, <span id="bbib26"><a href="#bib26" id="ancbbib26" class="intra_ref">Pey et&nbsp;al. (2008)</a></span> also observed different seasonal behavior for the nucleation mode compared with the Aitken mode. There was a secondary maximum observed at midday during summer, not observed during winter and not correlated with the traffic markers, which can be attributed to photochemical nucleation. <span id="bbib14"><a href="#bib14" id="ancbbib14" class="intra_ref">Hussein et&nbsp;al. (2004)</a></span> showed the daily patterns of the number concentration for the different seasons in the Helsinki area. They observed a clear variation in the concentration for the nucleation mode with two peaks related with vehicle exhaust during winter and spring and one during summer and autumn. A third peak around midday was not observed as it has been in the southern Europe.</p><!--VALIDHTML--><div class="page_fragment_ind" data-id="frag_5"></div></div>
+
+      
+
+               
+
+       
+   
+        
+    </div>
+    <div id="footer-area-dummy"></div>
+    <div id="footer-area" aria-label="product support" role="contentinfo">
+      <div id="sdFoot">
+      <div id="footer" aria-label="Footer" role="navigation">	
+  <div class="bottomArticle"></div>
+  <div class="padding">
+    <div id="linkArea">
+      <div class="padding links">
+        <div style="float: left; width: 0px; height: 1px;"></div>
+        <div id="banner-bottom">
+          <a class="S_C_aboutElsevier" href="http://www.elsevier.com/" target="_top" title="Elsevier homepage (opens in a new window)"></a>
+        </div>
+        <ul class="col5">
+<li><a target="_top" href="http://www.info.sciverse.com/sciencedirect?utm_source=sciencedirect&amp;utm_medium=link&amp;utm_campaign=aboutsd">About ScienceDirect</a></li>
+</ul>
+<ul class="col5">
+<li> <a target="_top" href="http://www.sciencedirect.com/science/contactus">Contact and support</a></li>
+</ul>
+<ul class="col5">
+<li><a target="_top" href="http://www.elsevier.com/locate/termsandconditions?utm_source=sciencedirect&amp;utm_medium=link&amp;utm_campaign=terms">Terms and conditions</a></li>
+</ul>
+<ul class="col5">
+<li><a target="_top" href="http://www.elsevier.com/privacypolicy?utm_source=sciencedirect&amp;utm_medium=link&amp;utm_campaign=privacy">Privacy policy</a></li>
+</ul>
+<script>function loadSCode(){if(typeof SDM!="undefined"){var e=document.getElementsByTagName("body")[0],t=document.createElement("script");var prefix = "";if(document.location.protocol == "https:"){prefix = "origin-";}t.src = "//" + prefix + "cdn.els-cdn.com/sd/js/adobe/s_code_131.js";e.appendChild(t);sendSCStats()}else{setTimeout(loadSCode,100)}}function sendSCStats(){if(typeof s_tc_sciencedirect!="undefined"){s.t()}else{setTimeout(sendSCStats,100)}}if(window.addEventListener){window.addEventListener("load",loadSCode,false)}else if(window.attachEvent){window.attachEvent("onload",loadSCode)}else{window.onload=loadSCode}</script>
+<script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/11e800d34be0.js");
+/*]]>{/literal}*/</script>
+        <div class="clear"></div>
+        <!-- CSAS will be providing the links-->
+      </div>
+      <div class="padding copyright">
+	<hr>
+        Copyright © 2015 Elsevier B.V. or its licensors or contributors. ScienceDirect® is a registered trademark of Elsevier B.V.
+      </div>
+      <div class="padding" style="padding-bottom: 4px; font-size: 11px;">
+
+              Cookies are used by this site. To decline or learn more, visit our <a href="http://www.info.sciverse.com/sciencedirect/cookies" target="_top">Cookies</a> page.
+        </div> 
+      
+        
+          <div class="padding links">
+            <div id="goToggleSite"><a class="mLink" site="Mobile" cknm="Site" lnkorg="article" lnkzn="footer" href="#">Switch to Mobile Site</a></div>
+          </div>
+	  <form id="pgReload" method="get" action="http://www.sciencedirect.com/science/article/pii/S1352231011001853"></form>
+        
+      
+    </div>
+  </div>
+</div> <!--footer-->
+
+      </div><!--sdFooter-->
+    </div><!--footer-area-->
+    </div>
+ </div>
+ <div style="width: 363px;" id="rightPane" class="column" aria-label="Related content" role="complementary">
+  <div style="height: 10039px;" id="rightOuter" class="rightOuter">
+    <div id="rightInner" class="rightInner">
+       <div class="innerPadding">
+
+    <div id="SD_BIB" class="hidden entry separator appBox sgfNoTitleBar sgfNoGadgetBorder"></div>
+ 
+
+    
+    
+        <div id="recommend_related_articles" class="entry separator related rendered firstBlk">
+            
+                <h2><a href="#articles" class="toggle" aria-controls="relArtList" aria-expanded="true"><span class="iconArrow">&nbsp;</span>Recommended articles</a></h2>
+             
+             <ol id="relArtList"><li><ol class="articles"><li class="artTitle"><a style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" title="Daily patterns of the multi-modal structure of the particle number size distribution in Milan, Italy" href="http://www.sciencedirect.com/science/article/pii/S1352231011001270" class="cLink S_C_artTitle" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S1352231011001853&amp;_srcFr=EPFL">Daily patterns of the multi-modal structure of the particle number size distribution in Milan, Italy</a></li><li style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" class="srcTitle">2011, Atmospheric Environment<div class="moreInfo"><a data-url="http://www.sciencedirect.com/science/more/S1352231011001270/2/issn/13522310" class="toggleMoreInfo">more</a></div></li><li class="showMore hidden"><div class="moreInfoContent"><ol class="details"><li>G. Lonati, M. Crippa, V. Gianelle, R. Van Dingenen</li><li class="title">Daily patterns of the multi-modal structure of the particle number size distribution in Milan, Italy</li><li class="fullSrcTitle">Atmospheric Environment, Volume 45, Issue 14, May 2011, Pages 2434–2442</li><li class="docSubType">Original Research Article</li><div class="abs"></div><ul class="links"><li class="clearfix pdf"><div class="icon_pdf"><a rel="nofollow" title="Download PDF" target="_top" class="cLink pdfRightPaneLink" href="http://www.sciencedirect.com/science/article/pii/S1352231011001270/pdfft?md5=f1e33e60b6cc59caa712f32a536ee777&amp;pid=1-s2.0-S1352231011001270-main.pdf" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S1352231011001853&amp;_srcFr=EPFL"> PDF (555 K)</a><div id="entitlement" class="checkEntitlement" style="display: none;"></div></div></li></ul></ol></div></li></ol></li><li><ol class="articles"><li class="artTitle"><a style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" title="Particle number size distribution in the urban atmosphere of Beijing, China" href="http://www.sciencedirect.com/science/article/pii/S1352231008006213" class="cLink S_C_artTitle" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S1352231011001853&amp;_srcFr=EPFL">Particle number size distribution in the urban atmosphere of Beijing, China</a></li><li style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" class="srcTitle">2008, Atmospheric Environment<div class="moreInfo"><a data-url="http://www.sciencedirect.com/science/more/S1352231008006213/2/issn/13522310" class="toggleMoreInfo">more</a></div></li><li class="showMore hidden"><div class="moreInfoContent"><ol class="details"><li>Zhijun Wu, Min Hu, Peng Lin, Shang Liu, Birgit Wehner, Alfred Wiedensohler</li><li class="title">Particle number size distribution in the urban atmosphere of Beijing, China</li><li class="fullSrcTitle">Atmospheric Environment, Volume 42, Issue 34, November 2008, Pages 7967–7980</li><li class="docSubType">Original Research Article</li><div class="abs"></div><ul class="links"><li class="clearfix pdf"><div class="icon_pdf"><a rel="nofollow" title="Download PDF" target="_top" class="cLink pdfRightPaneLink" href="http://www.sciencedirect.com/science/article/pii/S1352231008006213/pdfft?md5=0a705608dda1e0ad1885f379313c3ce1&amp;pid=1-s2.0-S1352231008006213-main.pdf" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S1352231011001853&amp;_srcFr=EPFL"> PDF (1103 K)</a><div id="entitlement" class="checkEntitlement" style="display: none;"></div></div></li></ul></ol></div></li></ol></li><li><ol class="articles"><li class="artTitle"><a style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" title="Measurements of ultrafine particle size distribution near Rome" href="http://www.sciencedirect.com/science/article/pii/S0169809510001365" class="cLink S_C_artTitle" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S1352231011001853&amp;_srcFr=EPFL">Measurements of ultrafine particle size distribution near Rome</a></li><li style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" class="srcTitle">2010, Atmospheric Research<div class="moreInfo"><a data-url="http://www.sciencedirect.com/science/more/S0169809510001365/2/issn/01698095" class="toggleMoreInfo">more</a></div></li><li class="showMore hidden"><div class="moreInfoContent"><ol class="details"><li>Fenjuan Wang, Francesca Costabileb, Hong Li, Dong Fang, Ivo Alligrini</li><li class="title">Measurements of ultrafine particle size distribution near Rome</li><li class="fullSrcTitle">Atmospheric Research, Volume 98, Issue 1, October 2010, Pages 69–77</li><li class="docSubType">Original Research Article</li><div class="abs"></div><ul class="links"><li class="clearfix pdf"><div class="icon_pdf"><a rel="nofollow" title="Download PDF" target="_top" class="cLink pdfRightPaneLink" href="http://www.sciencedirect.com/science/article/pii/S0169809510001365/pdfft?md5=5eb52b1ae02d872377fa93ce8eaa5fee&amp;pid=1-s2.0-S0169809510001365-main.pdf" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S1352231011001853&amp;_srcFr=EPFL"> PDF (1282 K)</a><div id="entitlement" class="checkEntitlement" style="display: none;"></div></div></li></ul></ol></div></li></ol></li><li><a href="http://www.sciencedirect.com/science/recommended-articles/S1352231011001853" class="viewMoreArticles cLink">View more articles »</a></li></ol>
+        </div><script>prs.rt('scr_rec_art')</script>
+    
+    
+    
+        <div id="cited_by_articles" class="entry separator related closed">
+            <h2><a href="#articles" class="toggle" aria-controls="relArtList" aria-expanded="false"><span class="iconArrow">&nbsp;</span>Citing articles (<span id="hitcount">17</span>)</a></h2>
+            <ol id="citedByList"><li class="note"><p>This article has not been cited.</p></li></ol> 
+        </div>
+    
+    
+    
+        <div id="SD_CRA" class="hidden entry separator appBox sgfNoTitleBar sgfNoGadgetBorder"></div>  
+    
+    
+        
+            <div id="related_book_content" class="entry separator related closed">
+                <h2><a href="#articles" class="toggle" aria-controls="relArtList" aria-expanded="false"><span class="iconArrow">&nbsp;</span>Related book content</a></h2>
+                <ol id="relBkList"><li class="note" style="margin-left: 15px;"><p>No articles found.</p></li></ol>
+            </div>
+        
+     
+    
+        <div id="metrics" class="entry separator rendered related">
+            <h2><a id="metrics_info" aria-expanded="true" aria-controls="metrics" class="toggle" href="#articles"><span class="iconArrow">&nbsp;</span>Metrics</a></h2>
+            <div id="metric_details"></div>
+        </div>
+     
+
+
+
+    
+        <div style="height: 165px; display: block;" class="appContainerDummy"></div>
+        <div data-top="390" style="top: 56px; max-height: 444px; width: 363px; overflow-y: hidden; right: 78px;" data-scroll="4704" class="appContainer js_application_content fixedPane">
+            <ul class="hidden" id="dataRepHolder"></ul>
+            
+                <div id="SD_AT1P" class="boxLink sgfNoTitleBar sgfNoGadgetBorder"><div class="containerApplOver invisible" id="SD_AT1P_299100"><div id="remote_iframe_1_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-right: 1px solid rgb(205, 240, 164); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_1" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_1" onload="sgf.killTimer('299100', 'SD_AT1P');" name="remote_iframe_1" src="S1352231011001853_9.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div><div class="containerApplOver invisible" id="SD_AT1P_301408"><div id="remote_iframe_2_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-right: 1px solid rgb(205, 240, 164); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_2" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_2" onload="sgf.killTimer('301408', 'SD_AT1P');" name="remote_iframe_2" src="S1352231011001853_11.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div><div class="containerApplOver invisible" id="SD_AT1P_323460"><div id="remote_iframe_3_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-right: 1px solid rgb(205, 240, 164); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_3" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_3" onload="sgf.killTimer('323460', 'SD_AT1P');" name="remote_iframe_3" src="S1352231011001853_12.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div><div class="containerApplOver invisible" id="SD_AT1P_300959"><div id="remote_iframe_4_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-right: 1px solid rgb(205, 240, 164); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_4" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_4" onload="sgf.killTimer('300959', 'SD_AT1P');" name="remote_iframe_4" src="S1352231011001853_13.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div></div>
+            
+
+            
+                <div id="SD_FTA1" class="boxLink sgfHorToolbar sgfShowMyApps sgfShowMoreLessApps"><div id="sciverse_toolbar" class="sgfSciverseHoriToolBar">	<div class="toolbarfoot">		<div class="toolbarBodyHorizontal" id="toolbarBody">			<div id="toolbar_SD_FTA1" class="sgfInnerToolbar" style="width: 97%; min-height: 155px; text-align: center; margin: 5px auto;"></div>			<div id="showMoreApps">				<a onclick="showMore()" class="plusSign">+</a>				<a title="Show more applications" id="showMore" onclick="showMore()" class="showMoreLessApps">Show more applications</a>			</div>			<div id="showLessApps">				<a onclick="showLess()" class="plusSign">-</a>				<a title="Show fewer applications" id="showFew" onclick="showLess()" class="showMoreLessApps">Show fewer applications</a>			</div>		</div>	</div></div><div style="display: none;" class="sgfToolBarToggleImage">	<div id="sgfSlideBar" class="sgfSideCollapse" onmouseout="sgfToggleToolBarOut();" onmouseover="sgfToggleToolBarOver();" title="undefined"></div>	<div class="clear"></div></div></div>
+            
+        </div>
+    
+
+
+</div>
+
+<div class="js_workspace_content popup" aria-live="polite" role="region" aria-label="Overlay" aria-describedby="skuip-3">
+    <a aria-label="close overlay" title="close overlay" alt="close overlay" href="#" id="buttonClose" role="button" class="closeBt">&nbsp;</a>
+    <div class="scrollArea"><div id="workSpaceView"></div></div>
+</div>
+
+    </div><!--rightInner-->
+  </div><!--rightOuter-->
+ </div><!--rightPane-->
+</div><!--page-area-->
+
+
+
+<div style="clear: both;"></div>
+
+<form name="citationInfo" id="citationInfo" method="POST" action="http://www.sciencedirect.com/science/article/pii/S1352231011001853">
+    <input name="art_citation" value="" type="hidden">
+</form>
+<div id="pdfModalWindow" class="pdfModalWindow" style="display: none;" onclick="pdfCite.closePopup();"></div>
+
+
+<!-- PDFKING/PDFCITE -->
+<div id="suggestedPdfList" style="display: none;">
+ 
+<div id="suggestedPdfList" style="display: block;" class="newStyles">
+  <div id="modalBoxDisplay" class="nojs" tabindex="0" role="dialog" aria-labelledby="hdSDSuggestions">
+    <div class="pdfModalWindowMsgBox" id="pdfModalWindowMsgBox">
+	  <div class="modal" style="box-shadow: none; margin-left: 12px; margin-right: 12px;">
+        <div id="displayPdfKing" style="display: block;">
+           <form method="get" name="Tag" action="http://www.sciencedirect.com/science/suggestedArt/export" style="padding: 0px; margin: 0px;" target="">
+            <input name="pdfDownload" value="download" type="hidden">
+            
+                <input name="PDF_DDM_MAX" value="20" type="hidden">
+             
+            <input name="_retainOrder" value="Y" type="hidden">
+            <input class="zone" name="zone" value="DDM" type="hidden">
+            <div class="header" style="height: auto; padding-bottom: 20px; background: none repeat ; 0% rgb(255, 255, 255);">
+            <div class="pdfKingHeading" style="display: block;">Other users also viewed these articles
+            <a class="newCloseBtn" onclick="pdfCite.closePopup();" href="#" title="Close Article Suggestions" alt="Close Article Suggestions"><img src="closeButton.png"></a></div></div>
+            <div id="SuggestedArtList" style="min-height: 100px;">
+                <div class="toolBar">
+                <ul class="group"> 
+                    
+                    <li class="pdfDownloader" style="display: inline-block; padding: 4px 4px 0px; border: 1px solid rgb(201, 201, 201);">
+                        <input value="Download All PDFs" name="pdfDownloadButton" class="listAction iconBg" id="multiPdfIcon" aria-describedby="downloadAllPdfAx" style="font-size: 14px; color: rgb(49, 108, 157); background-image: url('pdf.png');" type="submit">
+                        <span class="arrow"></span>
+                        <span id="downloadAllPdfAx" class="hidden">Opens document download manager</span>
+                    </li>
+                    
+                </ul>
+                </div>
+                
+                <div id="pdfkingContent" style="display: none;">
+                    <div class="popcontent"></div> 
+                    <div id="relatedArtList" data-entitled="Y"></div>
+                </div>
+                
+            </div>
+                
+                <div class="newFooter">
+                <a class="do-not-show" href="http://www.sciencedirect.com/science/suggestedArt/optOut" style="cursor: pointer; float: none; line-height: normal;">Do not show again</a>
+                </div>
+          </form>
+        </div>
+        <div id="pdfKingMessage" style="display: none;">
+          <div class="pdfKingHeading" style="display: block;">
+            <span class="downloadMsg">Downloading zip file containing 3 articles...</span>
+            <a class="newCloseBtn" onclick="pdfCite.closePopup();" href="#" title="Close Article Suggestions" alt="Close Article Suggestions"><img src="closeButton.png"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<script src="sdX_1508R2.js"></script>
+
+
+
+
+<script src="sd_1508R2.js"></script>
+
+
+
+<script src="pa_1508R2.js"></script>
+
+
+<script>
+
+var sciverse="empty";
+var SDM=new Object;
+SDM.tm=new Object;
+SDM.tm.ahm='m'
+
+
+
+SDM.ep=new Object;
+SDM.ep.downloadCsvURL = "http://services.elsevier.com/SDWebExport/export/table/csv";
+SDM.ep.downloadActionURL = "http://www.sciencedirect.com/science/downloadActions/keyEvent/S1352231011001853/13522310";
+SDM.ep.gigyaLib="//cdn.gigya.com/JS/socialize.js?apiKey=3__Bt7bHrGM8mjKPwBuOVjWyMi678aF6-PewcnoHJJ6UR1fS5t9NG9RBbKHjE0oA6J";
+SDM.ep.imgUrlPrefix = "http://ars.els-cdn.com/content/image/";
+SDM.ep.mendeleyJS = "https://www.mendeley.com/minified/bookmarklet.js";
+SDM.ep.prDevice = "http://pa.elsevier.com";
+SDM.ep.pru = "http://pa.elsevier.com";
+SDM.ep.ref2ref2by = "http://www.sciencedirect.com/science/relLink/ajaxReq?_eid=1-s2.0-S1352231011001853";
+SDM.ep.staticImgUrlPrefix = "http://cdn.els-cdn.com/sd";
+SDM.ep.urlPrefix = "http://www.sciencedirect.com/science";
+SDM.ep.urlQualifier = "science";
+SDM.ep.urlScheme = "http://www.sciencedirect.com";
+SDM.ep.userActionURL = "http://www.sciencedirect.com/science/UserActions";
+ SDM.helpUrlDomain="http://help.sciencedirect.com/flare"; 
+
+
+
+
+SDM.pm=new Object;
+SDM.pm.cid = '271798';
+SDM.pm.contentFamily = "serial";
+SDM.pm.contentType = "JL";
+SDM.pm.coverDate = '30-Jun-2011';
+
+SDM.pm.doi = '10.1016/j.atmosenv.2011.02.041';
+
+SDM.doi = '10.1016/j.atmosenv.2011.02.041';
+SDM.pm.eid = '1-s2.0-S1352231011001853';
+SDM.pm.entitled = true;
+ SDM.pm.hubEid = '1-s2.0-S1352231011X00158'; 
+SDM.pm.indexType = '';
+SDM.pm.issnisbn = "13522310";
+
+SDM.pm.itemWeight = 'FULL-TEXT';
+SDM.pm.mod_cid="";
+SDM.pm.mod_srcTitle="";
+SDM.pm.mod_ISBN = "";
+SDM.pm.pdfEid = '1-s2.0-S1352231011001853-main.pdf';
+SDM.pm.pdfSize = '2029540';
+SDM.pm.pii = 'S1352231011001853';
+SDM.pm.prodColor="sci_dir";if(SDM.pm.prodColor=="sci_dir")SDM.pm.prodColor="";
+ SDM.pm.rev = '20150515T053703536306'; 
+ SDM.pm.hrev = 'vH.10'; 
+ SDM.pm.pptURL = 'http://services.elsevier.com/SDWebExport/export/figure/'; 
+
+SDM.pm.altmetric_avail = 'TRUE';
+SDM.pm.altmetric_helpurl = '/science?_ob=HelpURL&_file=metrics.htm';
+
+
+
+
+SDM.pf = new Object;
+SDM.pf.pdfAvail = true;
+
+
+SDM.pf.relatedBkAvail=true;
+SDM.pf.mlktAvail = true;
+SDM.pf.hpccAvail = true;
+SDM.pf.blkSocialLogins=true;
+
+
+SDM.browserUserMsg=true;
+
+
+SDM.pf.citedByScAvail = true;
+SDM.pf.aetEnabled = false;
+ SDM.pf.suggestedArtPDFMaxWait="2000";
+
+
+SDM.pf.ads = new Object;
+SDM.pf.ads.leftUrl="/science/advertisement/left/num/909298/mainCat/general/cat/general/acct/0663a9eb5160246f83055c65cf6aa49c/isn/13522310/doi/10.1016_j.atmosenv.2011.02.041/page/article/artOAstatus/N";
+
+
+
+
+SDM.pf.dc = new Object;
+SDM.pf.dc.retry = 10;
+SDM.pf.dc.retryDelay = 300;
+SDM.pf.dc.retryFactor = 1.0;
+SDM.pf.dc.respObj = '';
+
+
+SDM.pf.er = new Object();
+
+
+
+
+
+
+SDM.pf.frag = new Object();
+SDM.pf.frag.fat = '29a34633e688cc6908b6b03c6eaff730569f26cd273bf7bd46178db5691e822424078a632c4091cba4df55be63f99dbae143b9932b6cece57cc90b18fe9a6f5ebc6984037101615d3f6ae8227f755792957563df7cb3439ce1871140781b4440853cceb2c81d9459c66d890e34a54e9f3658dd907ee645e5fc07a2e11fc84c02518dd4993c38c82cf772266215293571225b34d540cc4fc2';
+SDM.pf.frag.mapRetry = 20;
+SDM.pf.frag.mapRetryDelay = 2000;
+SDM.pf.frag.mapRetryFactor = 1.1;
+SDM.pf.frag.retry = 5;
+SDM.pf.frag.retryDelay = 2000;
+SDM.pf.frag.foldFactor = 1.5;
+SDM.pf.frag.hashWait = 5000;
+
+
+
+
+
+
+SDM.pf.gadget = new Object();
+SDM.pf.gadget.displayGadgets=true;
+SDM.pf.gadget.sciverseUrlPfx="http://www.sciencedirect.com";
+SDM.pf.gadget.sciverseJsonObject='';
+SDM.pf.gadget.sciverseGadgetDetailsID = "";
+SDM.pf.gadget.svShindigLib="http://sciverse-shindig.elsevier.com/gadgets/js/shindig-container:pubsub-2.js?c=1";
+SDM.pf.gadget.svSciverseLib="http://www.sciencedirect.com/gadgetservices/gadgets/v9/js/SciverseShindigService,GadgetToolBar,jquery-outside,jquery.ba-bbq.min,SciverseShindigContainer,ScienceDirectShindigServices.js";
+
+
+
+SDM.pf.mrwmod = new Object();
+SDM.pf.mrwmod.breadCrumbPathURL = "http://www.sciencedirect.com/science/module/breadCrumbPaths/isbn//pii/S1352231011001853";
+
+SDM.pf.mrwmod.ldrAvail = true;
+
+
+ 
+
+
+SDM.pf.oa = new Object();
+
+
+
+
+
+
+
+
+SDM.pf.ref = new Object();
+SDM.pf.ref.bs = 20;
+SDM.pf.ref.citedByURL = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_updateCitedBy=";
+SDM.pf.ref.fd = 300;
+
+SDM.pf.ref.resolveURL = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_pii=S1352231011001853&_refCnt=39&_docType=article";
+
+
+
+
+
+SDM.pf.toc=new Object;
+SDM.pf.toc.retry = 20;
+SDM.pf.toc.retryDelay = 1000;
+SDM.pf.toc.retryFactor = 1.09;
+SDM.pf.toc.outlineGraphics = false;
+SDM.pf.toc.outlineTab = "";
+
+SDM.pf.toc.urlTOCLink="http://www.sciencedirect.com/science/article/pii/S1352231011001853";
+SDM.pf.toc.urlTOCLinkQueryStr="?_rdoc=1&_fmt=full&_origin=&md5=22543fb95e34d36391c44b9d9cd72533";
+
+SDM.pf.ddm = new Object();
+SDM.pf.ddm.endpoint = "http://services.elsevier.com/SDWebExport/export/pdfdownload/pdf";
+
+
+
+
+
+
+SDM.si = new Object();
+SDM.si.webUserId = "641661";
+SDM.si.sds = "0f357c4538ba0299f77bcbeb3f56ad5c27f2a8475b28f1c85e42c173201289843566d61f771d7b88339f32987bb7d791";
+SDM.si.euidCookieObject='a5ea17e70c82c5476a9112a1ed7e642d78ad518a597248d5a88316d942da8ffe31a7bc7629b51aac';
+
+SDM.pageTransKey = "09/01/2015 05:31:27 EDT#1847_006#67473#62.204.199.202";
+SDM.pageType = "article_full";
+SDM.tid = "38798eb0-508c-11e5-9f39-00000aab0f26";
+SDM.ud = "641661|<SAInfo><SAId>202</SAId><SAName>MADRID CONSORTIUM</SAName><SANum>S000000202</SANum></SAInfo>|C000034358|51368|IPRANGE";
+SDM.ieVersion="8";
+
+SDM.dac = new Object;
+SDM.svapi = SVApi;
+
+</script>
+
+
+<script src="importer-api_1508R2.js.min"></script>
+
+
+<script>
+
+
+initializeArticlePage();
+</script>
+
+
+
+
+<script>if("undefined"==typeof window.ab){var cI="SDES",esLink="http://survey.confirmit.com/wix/p3073184390.aspx",esChance=0.02;window.ES={surveyInvite:function(){if(void 0==ES.getCookie(cI)&&Math.random()<=esChance && document.referrer.indexOf("/science/article/pii") != -1){ES.setCookie(cI,"true"),$("#sdHeader").append('<div id="surveyDialog"></div>');var e='<div id="header"><h1 class="headline">ScienceDirect</h1></div>';e+='<div class="sContent">',e+='<div class="sHeading">Your opinion matters!</div>',e+='<div class="sInvite">Would you provide feedback on your experience with ScienceDirect today? <br> Your feedback will be used to enhance our product in the future. Thanks! <br><br>  Your survey will begin after completing your visit. ',e+='<div class="links"><a class="yL" href="#"> Yes, I\'ll take the survey </a>&nbsp;|&nbsp;<a href="#" class="nL"> No, thank you </a></div></div>',e+="</div>",$("#surveyDialog").html(e).css("right",$(window).width()-($("#sdHeader").position().left+$("#sdHeader").width())).show(),$("#surveyDialog").html(e).css("display","block"),$("#surveyDialog").delay(2e3).animate({bottom:"+=250px"},1e3,"swing",function(){}),$(".yL").click(ES.surveyAccept),$("#surveyDialog .nL, #surveyDialog #closeWindow").click(ES.surveyClose)}},surveyAccept:function(){var e="http://"+window.location.hostname,i="width=900,height=600,location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes",o=window.open(e,"",i);try{var t=o.window.open("","_blank","");t&&t.close(),o.blur(),window.focus(),o&&(exitSurveyHTML=ES.gHTML(),o.document.write(exitSurveyHTML),o.document.close()),ES.surveyClose()}catch(n){ES.surveyClose()}},surveyClose:function(e){e&&e.preventDefault(),$("#surveyDialog").css("display","none")},gHTML:function(){var e="";return e+='<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">',e+="<html>",e+="<head>",e+="<title>Feedback</title>",e+='<style type="text/css">',e+="body {    color: #5c5c5c;    font-family: Arial Unicode MS; margin: 0;} .sBody {    padding: 20px 40px;}.sSubHeading {    font-size: 16px;}.sHeading {   font-size: 20px;}.sButton input {    height: 30px;    margin: 0; color: #5c5c5c; background: #eee; border: 1px solid #c9c9c9;}.sButton {    font-size: 13px;    font-weight: bold;    margin: 20px 0;}.sText {   font-size: 13px;} .header {    background-color: #6d9d30;    color: #fff;    font-size: 25px;    height: 40px;    text-align: left;} .header span {margin-left: 10px}",e+="</style>",e+="</head>",e+="<body>",e+='<div class="header"><span>ScienceDirect</span></div>',e+='<div class="sBody">',e+='<div class="sHeading">Thank you for agreeing to help us!</div>',e+='<div class="sSubHeading">Please minimize window to continue using ScienceDirect. Your survey will begin after completing your visit.</div>',e+="</div>",e+='<script type="text/javascript">',e+="var intl;",e+="function loadSurvey() {",e+="clearInterval(intl);",e+="window.resizeTo(900,600);",e+='this.location="'+esLink+'";',e+="}",e+="var lastseen = window.opener.location.hostname;",e+="function CheckParent() {",e+="try {",e+="var host = window.opener.location.hostname;",e+="if (host != lastseen){",e+="lastseen = host;",e+="}",e+="return;",e+="} catch(error){",e+="clearInterval(intl);",e+="moveTo(screen.width/2-450,screen.height/2-300);",e+="this.focus();",e+='if (navigator.appName != "Microsoft Internet Explorer") {',e+='alert("Click ok to begin your survey");',e+="}",e+='this.location="'+esLink+'";',e+="}",e+="}",e+='intl = setInterval("CheckParent()", 500);',e+="<\/script>",e+="</body>",e+="</html>"},setCookie:function(e,i){var o=new Date;o.setDate(o.getDate()+180);var t=escape(i)+("; expires="+o.toUTCString());document.cookie=e+"="+t+";path=/"},getCookie:function(e){var i=document.cookie.match(e+"=([^;]*)");return i?i[1]:void 0}},$(document).ready(function(){ES.surveyInvite()})}</script>
+
+
+<div id="sdpa"></div>
+<script>SDPA.init();</script>
+<div id="appBackground"></div>
+<div style="position: fixed;" id="appDialog" class="files">
+    <div id="header">
+        <h1 class="headline">Download PDFs</h1>
+        <img id="logo" class="sd-bubbles" src="sciencedirect.svg" onerror="this.src='http://cdn.els-cdn.com/sd/sciencedirect.png'">
+        <a class="close" id="closeWindow" href="#"><img src="close-icon.png"></a>
+    </div>
+    <div id="contentBlk" class="view">
+        <div class="help_button" id="ddmMainHelp"><a class="ddmHelp" target="sdhelp" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=DM_main.htm&amp;_btn=Y&amp;_zone=TopNavBar&amp;_origin=article" title="Help (Opens new window)">Help</a></div>
+        <div class="help_button" id="ddmNewformatHelp"><a class="ddmHelp" target="sdhelp" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=DM_newformat.htm&amp;_btn=Y&amp;_zone=TopNavBar&amp;_origin=article" title="Help (Opens new window)">Help</a></div>
+        <div id="filesTemplate"></div>
+        <div id="namingTemplate"></div> 
+    </div>
+    <div class="footer"></div>
+</div>
+
+
+
+
+
+<script src="s_code_131.js"></script><img src="idx" style="display: none;" height="0" width="0"><img src="pageReport" style="display: none;" height="0" width="0"><div style="margin-top: -70px; position: fixed; width: 30px; height: 140px; z-index: 999; right: 0px; top: 50%;" tabindex="0" class="usabilla_live_button_container"><iframe title="Visual Feedback Button" data-tags="right" scrolling="no" marginheight="0" marginwidth="0" style="width: 30px; height: 140px; margin: 0px; padding: 0px; border: 0px none; overflow: hidden; z-index: 9998; position: absolute; left: 0px; top: 0px; background-color: transparent;" src="S1352231011001853_14.html" frameborder="0"></iframe></div><div id="sgfGhost" style="display: none;"><div class="containerApplOver invisible" id="sgfGhost_299152"><div id="footergadgets-gadget-title-bar-5" class="curveBoxleftNormal ActiveGadget  sgfOpen"><img src="icon.jpg" class="headingGadgetIcon " title="Entitle Gadget" border="none"><h3 style="cursor: default;" title="" id="GadgetName5" class="elsevierTimeLOver truncateTitle">Entitle Gadget</h3><div id="Controls_5" class="Controls menuControlParent" align="right"><ul class="menu"><li class="menuControls"> <a href="javascript:void(0);" onclick="shindig.container.getGadget(5).handleToggle(this);"><div id="toggleBtn_5" class="sprite-close openCloseBtn" title="Close This Application" style="background-image: url('gsframeworksprite.png');"></div></a></li><li class="menuControls"><a href="javascript:void(0);" id="button-remote_iframe_5_userPrefsDialog" onclick="shindig.container.getGadget(5).openMenuOptions();return false;"><div class="sprite-options" title="Open Options" style="background-image: url('gsframeworksprite.png');"></div></a></li><ul class="submenu" id="sb-remote_iframe_5_userPrefsDialog"></ul></ul></div><div id="Close_5" class="Controls_close" style="display: none;"><a href="javascript:shindig.container.getGadget(5).closeGadget();"><div class="sprite-close_hoover" title="Close" style="background-image: url('gsframeworksprite.png');"></div></a></div></div><div id="remote_iframe_5_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-right: 1px solid rgb(205, 240, 164); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_5" style="border-style: solid;" class="containerAppDetails "><iframe id="remote_iframe_5" onload="sgf.killTimer('299152', 'sgfGhost');" name="remote_iframe_5" src="S1352231011001853_15.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div></div></body>
+</html>

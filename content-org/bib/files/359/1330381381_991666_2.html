@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html style="overflow: hidden;" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://ccaa.elpais.com/ccaa/2012/02/27/madrid/1330381381_991666.html">
+<meta name="wpd_url" content="http://elpais.com/Comentarios/comentarios.html?ghi=1330414416-c37d437104d2e6a5f178cb840101ee7b&amp;gww=460&amp;gcss=/estilos/v1.x/v1.4/eskup_widget_comentarios_noticia.css&amp;gjs=1&amp;ghw=1&amp;gll=1">
+<meta name="wpd_date" content="2015-07-25T11:06Z">
+
+<title>Comentarios</title>
+
+<meta name="Description" content="Conversa sobre los temas que te interesan y que proponen nuestros expertos.">
+<meta name="Keywords" content="widget, eskup, red, actualidad, noticias, informacion, videos, fotografias, temas, expertos, usuarios, opinion, participacion">
+<meta name="Generator" content="EDICIONES EL PAIS, S.L.">
+<meta name="Origen" content="EDICIONES EL PAIS, S.L.">
+<meta name="Author" content="EDICIONES EL PAIS, S.L.">
+<meta name="Locality" content="Madrid, España">
+<meta name="lang" content="es">
+<meta name="revisit-after" content="1 days">
+<meta name="robots" content="NOINDEX,NOFOLLOW">
+<link href="http://eskup.elpais.com/" rel="canonical">
+
+
+<script language="Javascript" type="text/javascript" src="eskup-20150804-01.js"></script>
+<script language="Javascript" type="text/javascript" src="eskup_widget-20141022-01.js"></script>
+<script language="Javascript" type="text/javascript">
+
+
+var LANGESKUP = 'es';
+//<![CDATA[
+//
+// CODIGO JS INLINE
+//
+var _idContenedorMsgs = "contenedor_mensajes";
+var _idContenedorPag  = "contenedor_paginacion";
+var _idContenedorForm = "contenedor_formulario";
+var _idContenedorErr  = "contenedor_error";
+var _idPlantillaMsg   = "plantilla_mensaje";
+var _idPlantillaPag   = "plantilla_paginacion";
+var _idContenedorRefr = "contenedor_refresco";
+
+var _idContenedorEscribeMsg  = "id_escribir_mensaje";
+var _idContenedorHiloCerrado = "id_hilo_cerrado";
+// var _idNumMensajesHilo       = "id_num_mensajes_hilo";
+
+var _numMsgCache      = 40;
+var _numPagActual     = 1;
+var _numPagCache      = 1;
+var _numMsgPag        = 20;
+
+var _tablon           = "";
+var _nickname         = "";
+var _tablon1          = "";
+var _hilo             = "1330414416-c37d437104d2e6a5f178cb840101ee7b";
+var _hashMsgs         = Array();
+var _hashExtraMsgs    = Array();
+
+var _tipoTablon       = 1;
+var _tipoHilo         = "1";
+
+var _longIdMensaje    = 43;
+
+var _ultimaRecargaServidor   = 0;
+var _ultimaRecargaProteccion = 0;
+
+// Para portada
+var _segsRecRapida = 14;
+var _segsRecLenta  = 60;
+
+var _segsMinEntreRecargas = _segsRecRapida/2;
+var _intRecarga    = undefined;
+var _tsTablon1     = 0;
+var _tsTablon2     = 0;
+var _tsTablon3     = 0;
+var _tsTablonTodos = 0;
+var _tsTablonOp    = 0;
+var _tsTablonSeg   = 0;
+
+
+//////////////////////////
+var _arrayEventosSeleccionadosParaEscribir = Array();
+var _texto_inicializacion_textarea              = "";
+var _texto_inicializacion_textarea_responder    = _ESKUPhashMsgByLang[LANGESKUP]['tu_respuesta'];
+
+var _idContenedorHilo    = "contenedor_mensajes";
+var _idPlantillaMsgHilo  = "plantilla_mensaje_hilo";
+var _idHilo              = "";
+
+var _hashEventosSeguidos     = Array();
+var _hashEventosParaEscribir = Array();
+var _numeroEventosSeguidos  = 0;
+var _numeroEventosParaEscribir  = 0;
+
+// Para indicar si el tema esta cerrado
+var _evento_actual_cerrado = 0;
+
+///////////////////////////////
+
+var _obtenidosEventosParaEscribir = false;
+var _mostrarPanelAclaracion = true;
+
+var _url_imagen_por_defecto = "/Iconos/v1.x/v1.0/varios/no_foto_tema.png";
+var _url_imagen_usuario_por_defecto = "/Iconos/v1.x/v1.0/varios/no_foto.jpg";
+var _url_servidor = 'http://eskup.elpais.com';
+
+var _numero_maximo_caracteres_mensaje  = 1120;
+
+var _dimension_maxima_imagen_x = 250;
+
+var _es_primera_carga           = 1;
+var _es_primera_llamada_publi   = 1;
+var _es_primera_contabilizacion = 1;
+
+var _maxAnchoFoto        = 410;
+var _maxAnchoFotoDefecto = 432;
+
+var _formatoVisualizacion = 'web';
+var _formatoVisualizacionReal = 'c';
+
+var _mostrarPanelAclaracion = false;
+var _mostrarVideosEnMensaje   = '1';
+var _pintarPaginacion         = '1';
+// var _activarRecargaAutomatica = '1';
+var _activarRecargaAutomatica = false;
+
+var _identificadorWidget      = 'comentarios_noticia_1330414416-c37d437104d2e6a5f178cb840101ee7b';
+
+var _tsHoraActual = 0;
+var _quiensoy = "comentarios";
+var _comentariosActivos = false;
+var _s = "0d5a7523e35c5332bf458e05ebb89261";
+var _quitaEnlacesEskup = '1'; // No queremos enlaces a eskup
+
+
+// Variable que activa/desactiva el lazy load de las imagenes del flujo de mensajes
+var _lazyfy = true;
+
+//]]>
+</script>
+<script language="Javascript" type="text/javascript">
+
+//<![CDATA[
+//
+// CODIGO JS INLINE
+//
+var _htmlPlantillaPersonalizadaUsuario = null;
+var _htmlPlantillaPersonalizadaEvento  = null;
+
+var _htmlPlantillaPersonalizadaMsg = null;
+var _htmlPlantillaPersonalizadaPag = null;
+
+var _htmlPlantillaPersonalizadaPestana = null;
+//]]>
+</script>
+<script language="Javascript" type="text/javascript">
+
+
+var _altoVentana               = 0;
+var _numMensajes               = null;
+var _objIframeContenedor       = null;
+var _objDivNumComentarios      = null;
+var _objDivNumComentariosFirma = null;
+var _objDivNumComentariosHSup  = null;
+var _objDivNumComentariosHInf  = null;
+var _intAltoVentana            = null;
+var _mostrarScroll             = '0';
+
+var _objDivNumComentariosPestana    = null;
+var _objDivNumComentariosPestanaOp  = null;
+var _objDivNumComentariosPestanaSeg = null;
+
+var _urlNoticia = 'http://elpais.com/';
+
+function obtenerObjetoIframe() {
+    try {
+        if (window.parent.document) {
+            if (window.parent.document.getElementById('comentarios_noticia_1330414416-c37d437104d2e6a5f178cb840101ee7b')) {
+                _objIframeContenedor = window.parent.document.getElementById('comentarios_noticia_1330414416-c37d437104d2e6a5f178cb840101ee7b');
+            } else {
+                if (typeof _lazyfy != "undefined") {
+                    _lazyfy = false;
+                }
+            }
+            if (window.parent.document.getElementById('num_comentarios_noticia_1330414416-c37d437104d2e6a5f178cb840101ee7b')) {
+                _objDivNumComentarios = window.parent.document.getElementById('num_comentarios_noticia_1330414416-c37d437104d2e6a5f178cb840101ee7b');
+            }
+            if (window.parent.document.getElementById('num_comentarios_noticia_firma_1330414416-c37d437104d2e6a5f178cb840101ee7b')) {
+                _objDivNumComentariosFirma = window.parent.document.getElementById('num_comentarios_noticia_firma_1330414416-c37d437104d2e6a5f178cb840101ee7b');
+            }
+            if (window.parent.document.getElementById('num_comentarios_header_superior_1330414416-c37d437104d2e6a5f178cb840101ee7b')) {
+                _objDivNumComentariosHSup = window.parent.document.getElementById('num_comentarios_header_superior_1330414416-c37d437104d2e6a5f178cb840101ee7b');
+            }
+            if (window.parent.document.getElementById('num_comentarios_header_inferior_1330414416-c37d437104d2e6a5f178cb840101ee7b')) {
+                _objDivNumComentariosHInf = window.parent.document.getElementById('num_comentarios_header_inferior_1330414416-c37d437104d2e6a5f178cb840101ee7b');
+            }
+        }
+        if (window.parent.location) {
+            _urlNoticia = window.parent.location;
+        }
+    } catch (e) {
+        // 
+        if (typeof _lazyfy != "undefined") {
+            _lazyfy = false;
+        }
+    }
+    if (document.getElementById('num_comentarios_pestana')) {
+        _objDivNumComentariosPestana = document.getElementById('num_comentarios_pestana');
+    }
+    if (document.getElementById('num_comentarios_pestana_opinadores')) {
+        _objDivNumComentariosPestanaOp = document.getElementById('num_comentarios_pestana_opinadores');
+    }
+    if (document.getElementById('num_comentarios_pestana_loquesigo')) {
+        _objDivNumComentariosPestanaSeg = document.getElementById('num_comentarios_pestana_loquesigo');
+    }
+}
+
+function comprobarAltoVentana() {
+
+    if (!_objIframeContenedor && !parent.postMessage) {
+        clearInterval(_intAltoVentana);
+        return false;
+    }
+
+    var _offsetAltoVentana = 15;
+
+    if (typeof _mostrarScroll == "undefined" || _mostrarScroll != '1') {
+        var altoVentanaActual = document.getElementById('contenedor').clientHeight || document.getElementById('contenedor').offsetHeight;
+//         if ((altoVentanaActual) != _altoVentana) {
+        if ((altoVentanaActual > (_altoVentana+_offsetAltoVentana)) ||
+            (altoVentanaActual < (_altoVentana-_offsetAltoVentana)) ) {
+            _altoVentana = altoVentanaActual;
+            if (_objIframeContenedor) {
+                _objIframeContenedor.style.height = (_altoVentana) + "px";
+            }
+            if (parent.postMessage && typeof _identificadorWidget != "undefined") {
+                parent.postMessage("{'id':'" + _identificadorWidget + "','command':'resizeIframe','params':['" + (_altoVentana) + "']}", "*");
+            }
+        }
+    }
+
+    if (typeof _hashMsgs.perfilesHilos != "undefined" && 
+        typeof _hashMsgs.perfilesHilos['_'+_hilo] != "undefined" &&
+        typeof _hashMsgs.perfilesHilos['_'+_hilo].numero_mensajes != "undefined" ) {
+        var numMensajes           = 0;
+        var numMensajesTodos      = 0;
+        var numMensajesOpinadores = 0;
+        if (_hashMsgs.numMensajes > 0) {
+            numMensajes = _hashMsgs.numMensajes;
+        }
+        if (_hashMsgs.perfilesHilos['_'+_hilo].numero_mensajes > 0) {
+            numMensajesTodos = _hashMsgs.perfilesHilos['_'+_hilo].numero_mensajes;
+        }
+        if (typeof _hashMsgs.perfilesHilos['_'+_hilo].numero_mensajes_opinadores != "undefined" && 
+                   _hashMsgs.perfilesHilos['_'+_hilo].numero_mensajes_opinadores > 0) {
+            numMensajesOpinadores = _hashMsgs.perfilesHilos['_'+_hilo].numero_mensajes_opinadores;
+        }
+
+        // Al cambiar de pestana, es posible que estemos recuperando alguna version cacheada
+        // del hilo con un numero menor de mensajes (algo que nunca ocurre). Si es asi, restauramos
+        if (_objDivNumComentariosPestana &&
+            parseInt(_objDivNumComentariosPestana.innerHTML) > numMensajesTodos) {
+            numMensajesTodos = _objDivNumComentariosPestana.innerHTML;
+        }
+        if (_objDivNumComentariosPestanaOp && 
+            parseInt(_objDivNumComentariosPestanaOp.innerHTML) > numMensajesOpinadores) {
+            numMensajesOpinadores = _objDivNumComentariosPestanaOp.innerHTML;
+        }
+
+        if (_objDivNumComentarios) {
+            if (numMensajesTodos == 0) {
+                _objDivNumComentarios.innerHTML = "";
+            } else {
+                _objDivNumComentarios.innerHTML = "<span class=\"numero\">" + numMensajesTodos + "</span> comentario";
+                if (numMensajesTodos > 1) {
+                    _objDivNumComentarios.innerHTML += "s";
+                }
+            }
+        }
+        if (_objDivNumComentariosFirma) {
+            if (numMensajesTodos == 0) {
+                _objDivNumComentariosFirma.innerHTML = "";
+                _objDivNumComentariosFirma.style.display = "none";
+            } else {
+                if (_objDivNumComentariosFirma.innerHTML != numMensajesTodos) {
+                    _objDivNumComentariosFirma.innerHTML = numMensajesTodos;
+                    _objDivNumComentariosFirma.style.display = "inline-block";
+                }
+            }
+        }
+        if (_objDivNumComentariosHSup) {
+            if (numMensajesTodos == 0) {
+                _objDivNumComentariosHSup.innerHTML = "";
+            } else {
+                if (_objDivNumComentariosHSup.innerHTML != numMensajesTodos) {
+                    _objDivNumComentariosHSup.innerHTML = numMensajesTodos;
+                }
+            }
+        }
+        if (_objDivNumComentariosHInf) {
+            if (numMensajesTodos == 0) {
+                _objDivNumComentariosHInf.innerHTML = "";
+            } else {
+                if (_objDivNumComentariosHInf.innerHTML != numMensajesTodos) {
+                    _objDivNumComentariosHInf.innerHTML = numMensajesTodos;
+                }
+            }
+        }
+        if (_objDivNumComentariosPestana && document.getElementById('flecha_num_comentarios_pestana')) {
+            if (numMensajesTodos == 0) {
+//                document.getElementById('flecha_num_comentarios_pestana').style.display = 'none';
+            } else {
+                document.getElementById('flecha_num_comentarios_pestana').style.display = 'block';
+                _objDivNumComentariosPestana.innerHTML = numMensajesTodos;
+            }
+        }
+        if (_objDivNumComentariosPestanaOp && document.getElementById('flecha_num_comentarios_pestana_opinadores')) {
+            if (numMensajesOpinadores == 0) {
+//                document.getElementById('flecha_num_comentarios_pestana_opinadores').style.display = 'none';
+            } else {
+                document.getElementById('flecha_num_comentarios_pestana_opinadores').style.display = 'block';
+                _objDivNumComentariosPestanaOp.innerHTML = numMensajesOpinadores;
+            }
+        }
+        if (_objDivNumComentariosPestanaSeg && document.getElementById('flecha_num_comentarios_pestana_loquesigo') && _tipoHilo == '2') {
+            if (numMensajes == 0) {
+//                document.getElementById('flecha_num_comentarios_pestana_opinadores').style.display = 'none';
+            } else {
+                document.getElementById('flecha_num_comentarios_pestana_loquesigo').style.display = 'block';
+                _objDivNumComentariosPestanaSeg.innerHTML = numMensajes;
+            }
+        }
+        // Comunicamos el nuevo numero de mensajes a la pagina contenedora
+        if (parent.postMessage && typeof _identificadorWidget != "undefined" && numMensajesTodos != _numMensajes) {
+            _numMensajes = numMensajesTodos;
+            parent.postMessage("{'id':'" + _identificadorWidget + "','command':'setNumMensajes','params':['" + numMensajesTodos + "']}", "*");
+        }
+    } else {
+/*
+        if (_objDivNumComentarios) {
+            // _objDivNumComentarios.innerHTML = "<span class=\"numero\">0</span> comentarios";
+            _objDivNumComentarios.innerHTML = "";
+        }
+        if (_objDivNumComentariosFirma) {
+            // _objDivNumComentariosFirma.innerHTML = "0";
+            _objDivNumComentariosFirma.innerHTML = "";
+            _objDivNumComentariosFirma.style.display = "none";
+        }
+        if (parent.postMessage && typeof _identificadorWidget != "undefined") {
+            parent.postMessage("{'id':'" + _identificadorWidget + "','command':'setNumMensajes','params':['']}", "*");
+        }
+        if (_objDivNumComentariosPestana && document.getElementById('flecha_num_comentarios_pestana')) {
+            document.getElementById('flecha_num_comentarios_pestana').style.display = 'none';
+        }
+        if (_objDivNumComentariosPestanaOp && document.getElementById('flecha_num_comentarios_pestana_opinadores')) {
+            document.getElementById('flecha_num_comentarios_pestana_opinadores').style.display = 'none';
+        }
+*/
+    }
+
+}
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="1330381381_991666_2.css" media="all">
+</head>
+<body style="overflow: hidden;" onload="recargaLenta(); obtenerObjetoIframe(); _intAltoVentana = setInterval(comprobarAltoVentana, 100);"><script type="text/javascript">PEPuid='W9g/8FXbZndNxH+rCTvPAg==';</script><div id="pxlhddncntrl" style="display: none;"><script language="Javascript" type="text/javascript">var rndPXL=parseInt(Math.random()*10000000);var imgMMD=new Image(1,1);imgMMD.src="/pxlctl.gif?m=1&r=2&w="+rndPXL;</script><script language="JavaScript" src="s_code.js"></script><img src="advert_001.gif"><noscript></noscript><script language="Javascript" type="text/javascript" src="comun.js"></script><script language="Javascript" type="text/javascript" src="avisopc.js"></script></div><img style="display: none;" height="1" width="1"><img style="display: none;" height="1" width="1">
+<script language="Javascript" type="text/javascript">
+
+//<![CDATA[
+
+
+var _soyOpinador        = false;
+var _arrayListaSeguidos = Array();
+var _estadoPostulacion  = 'NOPOSTULADO';
+
+function irAForoElPais() {
+    window.parent.location='http://elpais.com/foro-abierto/?backURL='+encodeURIComponent(_urlNoticia);
+}
+
+//]]>
+</script>
+<div id="contenedor">
+<!--     <div id="id_num_mensajes_hilo"></div> -->
+<div id="id_hilo_cerrado" style="display: none;" class="escribirmensaje"><div class="aviso"><p class="variaslineas">Comentarios cerrados</p></div></div>
+<div id="contenedor_refresco" class="refresco" style="display: none;"><a href="javascript:void(0);" title="Refrescar página" onclick="javascript:f_forzar_recarga_mensajes();">Hay mensajes nuevos</a></div>
+<div id="id_contenedor_paginacion"></div>
+<div id="contenedor_error" class="mensajes" style="display: none;"></div>
+<div id="contenedor_refresco" class="refresco" style="display: none;"><a href="javascript:void(0);" title="Refrescar página" onclick="javascript:f_forzar_recarga_mensajes();">Hay mensajes nuevos</a></div>
+<div id="contenedor_mensajes" class="mensajes"></div>
+<div id="contenedor_paginacion" class="paginacion" style="display: none;"></div>
+<div class="contenedorpaginacion">
+<div id="contenedor_paginacion_abajo" class="paginacion" style="display: none;"></div>
+<a id="div_subir_pagina" title="Subir" href="javascript:void(0);" onclick="javascript:f_ir_arriba();" class="subir" style="display: none;"></a>
+</div>
+</div>
+<div id="plantilla_mensaje" style="display: none;">
+
+#MSG:INI_MSG_PROVISIONAL#<div id="provisional" class="provisional">#MSG:FIN_MSG_PROVISIONAL#
+<div id="mensaje_#MSG:ID#" class="article #MSG:INI_MSG_OPINADOR#opinador#MSG:FIN_MSG_OPINADOR#">
+
+#MSG:INI_MSG_BORRADO#<div class="borrado">#MSG:FIN_MSG_BORRADO#
+#MSG:INI_MSG_NUEVO#<div class="nuevo" title="Mensaje nuevo"></div>#MSG:FIN_MSG_NUEVO#
+#MSG:INI_MSG_PROVISIONAL#<div class="explicacion" id="explicacion_#MSG:ID#"></div>#MSG:FIN_MSG_PROVISIONAL#
+<div class="contenedorcolumnas" id="contenedortexto_#MSG:ID#">
+<div class="comentario" id="comentario_#MSG:ID#">
+<div id="flotante_#MSG:ID#" class="flotante"></div>
+#MSG:INI_FOTO_IZQUIERDA#
+<div class="fotoizquierda">
+<a href="javascript:void(0);" class="boton ver_imagen" onclick="this.style.display='none';document.getElementById('imagenmensaje_#MSG:ID#').style.display='';">Ver imagen</a>
+#MSG:ETIQUETA_INICIO_IMG# src="#MSG:FOTO#" alt="?php print $_ESKUPhashMsgByLang[$idioma_textos]['foto_mensaje'];?&gt;" style="max-width: #MSG:FOTO_WIDTH#px; max-height: #MSG:FOTO_HEIGHT#px; display: none;" id="imagenmensaje_#MSG:ID#" width="#MSG:FOTO_WIDTH#" height="#MSG:FOTO_HEIGHT#" #MSG:ETIQUETA_FIN_IMG#
+</div>
+#MSG:FIN_FOTO_IZQUIERDA#
+<div class="foto">#MSG:ETIQUETA_INICIO_IMG# src="#MSG:FOTO_USUARIO#" width="100" height="100" alt="avatar" #MSG:ETIQUETA_FIN_IMG# </div>
+<p class="autor">#MSG:NOMBRE_USUARIO#</p>
+#MSG:INI_DIV_CONVERSACION#
+#MSG:INI_DIV_RESPUESTA#
+<p class="respuesta">
+
+#MSG:NOMBRE_USUARIO_RESPUESTA#
+<a id="enlacemostrarrespuesta_#MSG:ID#" href="javascript:void(0);" onclick="javascript:mostrarComentarioRespuesta('#MSG:ID#', '#MSG:ID_HILO#', '#MSG:ID_MSG_RESPUESTA#');" class="respondea" title="Ver mensaje al que responde"></a></p>
+#MSG:FIN_DIV_RESPUESTA#
+#MSG:FIN_DIV_CONVERSACION#
+<p id="contenidomensaje_#MSG:ID#"> #MSG:CONTENIDO# 
+#MSG:INI_MSG_OPINADOR#
+<span class="chapa_opinador">
+<span class="remate"></span>
+<span class="literal">Usuario destacado</span>
+</span>
+ 
+#MSG:FIN_MSG_OPINADOR#
+#MSG:INI_MSG_PTE_PREMODERACION#
+<span class="chapa_premoderacion">
+<span class="remate"></span>
+<span class="literal">En moderación</span>
+</span>
+#MSG:FIN_MSG_PTE_PREMODERACION#
+</p>
+#MSG:INI_FOTO_COMPLETA#
+<div class="fotocompleta">
+<a href="javascript:void(0);" class="boton ver_imagen" onclick="this.style.display='none';document.getElementById('imagenmensaje_#MSG:ID#').style.display='';">Ver imagen</a>
+#MSG:ETIQUETA_INICIO_IMG# src="#MSG:FOTO#" alt="Foto del mensaje" style="max-width: #MSG:FOTO_WIDTH#px; max-height: #MSG:FOTO_HEIGHT#px; display: none;" id="imagenmensaje_#MSG:ID#" width="#MSG:FOTO_WIDTH#" height="#MSG:FOTO_HEIGHT#" #MSG:ETIQUETA_FIN_IMG#
+</div>
+#MSG:FIN_FOTO_COMPLETA#
+#MSG:INI_FOTO_COMPLETA_CON_LARGE#
+<div class="fotocompleta">
+<a href="javascript:void(0);" class="boton ver_imagen" onclick="this.style.display='none';document.getElementById('imagenmensaje_#MSG:ID#').style.display='';">Ver imagen</a>
+<a href="javascript:void(0);" class="posicionador" title="ampliar foto" id="imagenmensaje_#MSG:ID#" style="display: none;" onmouseover="javascript:EPETalternacampos('capaAmpliarFotoHover_#MSG:ID#', 'block', 'capaAmpliarFotoReposo_#MSG:ID#', 'none');" onmouseout="javascript:EPETalternacampos('capaAmpliarFotoHover_#MSG:ID#', 'none', 'capaAmpliarFotoReposo_#MSG:ID#', 'block');" onclick="javascript:ampliaFotoEskup(this, '#MSG:FOTO_LARGE#', '#MSG:FOTO_WIDTH_LARGE#', '#MSG:FOTO_HEIGHT_LARGE#', 'Foto del mensaje');">
+
+#MSG:ETIQUETA_INICIO_IMG# src="#MSG:FOTO#" width="#MSG:FOTO_WIDTH#" height="#MSG:FOTO_HEIGHT#" title="" alt="" #MSG:ETIQUETA_FIN_IMG#
+<span class="ampliar_foto reposo" id="capaAmpliarFotoReposo_#MSG:ID#" style="display: block;"></span>
+<span class="ampliar_foto encima" id="capaAmpliarFotoHover_#MSG:ID#" style="display: none;">Ampliar foto</span>
+</a>
+</div>
+#MSG:FIN_FOTO_COMPLETA_CON_LARGE#
+#MSG:INI_DIV_MENU#
+<div class="contenedorbotones" id="enlaces_#MSG:ID#">
+<span class="fecha"><a href="http://elpais.com/Comentario/#MSG:ID#" target="_top" title="Ver el enlace permanente">#MSG:HORA#</a></span>
+</div>
+#MSG:FIN_DIV_MENU#
+<div id="contenedor_formulario_#MSG:ID#" style="display: none;"></div>
+<div class="capainfo" id="capainfo_#MSG:ID#" style="display: none;"></div>
+</div>
+<div class="rompedor"></div>
+</div>
+<div class="rompedor"></div>
+#MSG:INI_MSG_BORRADO#</div>#MSG:FIN_MSG_BORRADO#
+</div>
+#MSG:INI_MSG_PROVISIONAL#</div>#MSG:FIN_MSG_PROVISIONAL#
+</div>
+<div id="plantilla_mensaje_hilo" style="display: none;">
+<div class="pico"></div>
+<div id="mensaje_#MSG:ID#" class="article #MSG:INI_MSG_OPINADOR#opinador#MSG:FIN_MSG_OPINADOR#">
+
+#MSG:INI_MSG_BORRADO#<div class="borrado">#MSG:FIN_MSG_BORRADO#
+<div class="contenedorcolumnas" id="contenedortexto_#MSG:ID#">
+<div class="comentario" id="comentario_#MSG:ID#">
+
+#MSG:INI_FOTO_IZQUIERDA#
+<div class="fotoizquierda">
+
+#MSG:ETIQUETA_INICIO_IMG# src="#MSG:FOTO#" alt="Foto del mensaje" style="max-width: #MSG:FOTO_WIDTH#px; max-height: #MSG:FOTO_HEIGHT#px;" width="#MSG:FOTO_WIDTH#" height="#MSG:FOTO_HEIGHT#" #MSG:ETIQUETA_FIN_IMG#
+</div>
+#MSG:FIN_FOTO_IZQUIERDA#
+<div class="foto">#MSG:ETIQUETA_INICIO_IMG# src="#MSG:FOTO_USUARIO#" width="100" height="100" alt="avatar" #MSG:ETIQUETA_FIN_IMG# </div>
+<p class="autor">#MSG:NOMBRE_USUARIO#</p>
+#MSG:INI_DIV_CONVERSACION#
+#MSG:INI_DIV_RESPUESTA#
+<p class="respuesta"><a class="iconorespuesta" href="http://eskup.elpais.com/C#MSG:ID_HILO#/#MSG:ID#" title="Responder a" alt="Responder a" target="_top"></a><a href="http://eskup.elpais.com/C#MSG:ID_HILO#/#MSG:ID#" title="Ver conversaci&amp;ooacute;n completa" alt="Ver conversaci&amp;ooacute;n completa" target="_top">#MSG:NOMBRE_USUARIO_RESPUESTA#</a></p>
+#MSG:FIN_DIV_RESPUESTA#
+#MSG:FIN_DIV_CONVERSACION#
+<a href="javascript:void(0);" onclick="javascript:cerrarMensajeFlotanteContenedor(this);" class="cerrar" title="Cerrar"></a>
+<p id="contenidomensaje_#MSG:ID#"> #MSG:CONTENIDO# 
+#MSG:INI_MSG_OPINADOR#
+<span class="chapa_opinador">
+<span class="remate"></span>
+<span class="literal">Usuario destacado</span>
+</span>
+ 
+#MSG:FIN_MSG_OPINADOR#
+</p>
+#MSG:INI_FOTO_COMPLETA#
+<div class="fotocompleta">
+
+#MSG:ETIQUETA_INICIO_IMG# src="#MSG:FOTO#" alt="Foto del mensaje" style="max-width: #MSG:FOTO_WIDTH#px; max-height: #MSG:FOTO_HEIGHT#px;" width="#MSG:FOTO_WIDTH#" height="#MSG:FOTO_HEIGHT#" #MSG:ETIQUETA_FIN_IMG#
+</div>
+#MSG:FIN_FOTO_COMPLETA#
+#MSG:INI_FOTO_COMPLETA_CON_LARGE#
+<div class="fotocompleta">
+<a href="javascript:void(0);" class="boton ver_imagen" onclick="this.style.display='none';document.getElementById('imagenmensaje_#MSG:ID#').style.display='';">Ver imagen</a>
+<a href="javascript:void(0);" class="posicionador" title="ampliar foto" id="imagenmensaje_#MSG:ID#" style="display: none;" onmouseover="javascript:EPETalternacampos('capaAmpliarFotoHover_#MSG:ID#', 'block', 'capaAmpliarFotoReposo_#MSG:ID#', 'none');" onmouseout="javascript:EPETalternacampos('capaAmpliarFotoHover_#MSG:ID#', 'none', 'capaAmpliarFotoReposo_#MSG:ID#', 'block');" onclick="javascript:ampliaFotoEskup(this, '#MSG:FOTO_LARGE#', '#MSG:FOTO_WIDTH_LARGE#', '#MSG:FOTO_HEIGHT_LARGE#', 'Foto del mensaje');">
+
+#MSG:ETIQUETA_INICIO_IMG# src="#MSG:FOTO#" width="#MSG:FOTO_WIDTH#" height="#MSG:FOTO_HEIGHT#" title="" alt="" #MSG:ETIQUETA_FIN_IMG#
+<span class="ampliar_foto reposo" id="capaAmpliarFotoReposo_#MSG:ID#" style="display: block;"></span>
+<span class="ampliar_foto encima" id="capaAmpliarFotoHover_#MSG:ID#" style="display: none;">Ampliar foto</span>
+</a>
+</div>
+#MSG:FIN_FOTO_COMPLETA_CON_LARGE#
+#MSG:INI_DIV_MENU#
+<div class="contenedorbotones" id="enlaces_#MSG:ID#">
+<span class="fecha">#MSG:HORA#</span>
+</div>
+#MSG:FIN_DIV_MENU#
+<div class="capainfo" id="capainfo_#MSG:ID#" style="display: none;"></div>
+</div>
+<div class="rompedor"></div>
+</div>
+<div class="rompedor"></div>
+#MSG:INI_MSG_BORRADO#</div>#MSG:FIN_MSG_BORRADO#
+</div>
+</div>
+<script language="Javascript" type="text/javascript">
+
+//<![CDATA[
+
+function cerrarMensajeFlotanteContenedor(el) {
+
+    while (el.parentNode) {
+        el = el.parentNode;
+        if (typeof el.id != "undefined" && el.id.match(/^flotante_(.*)/)) {
+            // Vaciamos el contenido del DIV
+            el.innerHTML = '';
+            // Y cambiamos el title del icono
+            if (RegExp.$1 && document.getElementById("enlacemostrarrespuesta_" + RegExp.$1)) {
+                document.getElementById("enlacemostrarrespuesta_" + RegExp.$1).title = "Ver mensaje al que responde";
+            }
+        }
+    }
+
+
+}
+
+//]]>
+</script>
+<div id="contenedor_formulario" style="display: none;">
+<div class="escribirmensaje" id="escribirmensaje_#ID#">
+<div class="recipientes" id="id_recipientes_#ID#" style="display: none;"></div> 
+<form method="post" action="http://elpais.com/Ineskup" enctype="multipart/form-data" id="form_#ID#">
+<input id="x_#ID#" name="x" value="" type="hidden">
+<input id="t_#ID#" name="t" value="" type="hidden">
+<input id="c_#ID#" name="c" type="hidden">
+<input id="d_#ID#" name="d" value="" type="hidden">
+<input name="f" value="html" type="hidden">
+<input name="s" id="s" value="0d5a7523e35c5332bf458e05ebb89261" type="hidden">
+<input id="rp_#ID#" name="rp" value="0" type="hidden">
+<div class="contenedorsuperior">
+<div class="contenedor_textarea">
+<textarea id="m_#ID#" name="m" class="cajareposo" onkeypress="javascript:return f_tecleando(event, 'm_#ID#', 'etiqueta_numero_maximo_caracteres_#ID#');" onkeyup="javascript:return f_tecleando(event, 'm_#ID#', 'etiqueta_numero_maximo_caracteres_#ID#');" onkeydown="javascript:return f_tecleando(event, 'm_#ID#', 'etiqueta_numero_maximo_caracteres_#ID#');" onchange="javascript:f_tecleando(event, 'm_#ID#', 'etiqueta_numero_maximo_caracteres_#ID#');" onfocus="javascript:f_activa_caja_escribir('m_#ID#', _texto_inicializacion_textarea_responder);"></textarea>
+</div>
+<div id="secundario_m_#ID#" class="secundario">
+<div class="caracteres">
+<p class="numero" id="etiqueta_numero_maximo_caracteres_#ID#">#NUMERO_CARACTERES_MENSAJE#</p>
+<p>caracteres</p>
+</div>
+<a href="javascript:void(0);" class="publicar" onclick="submitFormularioMensaje('#ID#');" id="submitresponder_#ID#">Publicar</a>
+</div>
+<div class="rompedor"></div>
+</div>
+<div class="contenedorinferior">
+<div class="botones">
+<a class="boton negrita" id="boton_negrita" href="javascript:void(0);" onclick="javascript:insertaTagEnMensaje('m_#ID#', 'b');" title="Negrita. También puedes pulsar las teclas CONTROL+N"><strong>N</strong></a>
+<a class="boton cursiva" id="boton_cursiva" href="javascript:void(0);" onclick="javascript:insertaTagEnMensaje('m_#ID#', 'i');" title="Cursiva. También puedes pulsar las teclas CONTROL+I"><em>I</em></a>
+<a class="boton imagen" id="boton_adjuntar_#ID#" href="javascript:void(0);" onclick="javascript:mostrarOcultarAdjuntarImagen('#ID#');">Adjuntar imagen</a>
+<span class="borrarimagenadjunta"><a id="boton_borrar_adjunto_#ID#" class="boton" style="display: none;" href="javascript:void(0)" onclick="javascript:f_marcar_imagen_para_borrar('#ID#');">Borrar imagen</a></span>
+<a class="cancelar" href="javascript:void(0);" onclick="javascript:f_ocultar_formulario_mensaje('#ID#');">Cancelar</a>
+<div class="rompedor"></div>
+</div>
+<div class="opciones" id="capaopciones_adjuntar_#ID#" style="display: none;">
+<span><input id="p_#ID#" name="p" size="20" type="file"></span>
+<a href="javascript:void(0);" onclick="javascript:f_quita_imagen_adjuntada('p_#ID#');" class="boton borrarimagen" title="borrar imagen">Borrar imagen</a>
+</div>
+</div>
+</form>
+<div class="rompedor"></div>
+</div>
+</div>
+<script language="Javascript" type="text/javascript">
+
+//<![CDATA[
+//	recuperarInformacionMensajes();
+// Recuperamos los mensajes
+f_lanza_eventos_carga_mensajes();
+
+// Hay que comprobar si el texto del mensaje hay que cambiarlo por ser premoderado
+var cambiaTexto= setInterval("cambiaTextoMensaje()",100);
+//]]>
+/* Comprobamos si el hilo no esta premoderado para cambiar el mensaje de aviso al usuario 
+*  ya que si es premoderado no debe salir "estamos moderando". Hay que hacerlo en JS porque el campo
+*  premoderado viene en el json de OutEskup y solo se puede sacar en JS. Por eso se hace con setInterval
+*/
+function cambiaTextoMensaje(){
+	if (typeof _hashMsgs.perfilesHilos != "undefined" && typeof _hashMsgs.perfilesHilos['_'+_hilo] != "undefined"){
+		var premoderacion = _hashMsgs.perfilesHilos['_'+_hilo]['premoderacion'];
+		if (premoderacion=='0' || !premoderacion){
+			document.getElementById("explicacion_#MSG:ID#").innerHTML='';
+		}
+		clearInterval(cambiaTexto);
+	}
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,817 @@
+<html><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="analytics.js"></script><script type="text/javascript" async="" src="2589.js"></script><script async="" src="analytics.js"></script><script async="" src="gtm.js"></script><script type="text/javascript" async="" src="geo2.js"></script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="u3nBLH9pJek1Rntv2WcjvU9SMPt30IMohjlHp5bV">
+  <meta name="description" content="Student Policies and Regulations">
+
+  <title>Student Policies and Regulations - Open University</title>
+
+  <!-- OUICE v3 Head, detached and edited -->
+  <link rel="stylesheet" type="text/css" href="screen.css" media="screen, projection">
+  <link rel="stylesheet" type="text/css" href="print.css" media="print">
+  <!--[if lt IE 9]>
+  <link rel="stylesheet" type="text/css" href="/includes/ouice/3/ie.css" />
+  <![endif]-->
+  <!--[if lt IE 7]>
+  <link rel="stylesheet" type="text/css" href="/includes/ouice/3/ie6.css" />
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="mobile.css" media="only screen and (max-device-width:640px)">
+  <link rel="stylesheet" type="text/css" href="mobile.css" media="only screen and (max-width:640px)">
+  <!-- /OUICE v3 Head -->  <!-- ou-head v1.1.1.47 -->
+<script type="text/javascript" src="221317523.js">//</script>
+
+<!-- DTM tag -->
+<script src="satelliteLib-05638696b6b1957263568043144849476ce12d0d.js">
+
+<!-- Google Tag Manager Generic Data Layer -->
+<!-- Make sure any site specific layers happen before this line -->
+<script>/*<![CDATA[*/dataLayer = [];/*]]>*/</script>
+<!-- End Google Tag Manager Generic Data Layer -->
+
+<!-- Start JS replacement --><!-- Everything between these tags will be replaced with a .min file containing the contents of the .js folder -->
+<script type="text/javascript" src="ou-cookie-policy.js">//</script>
+<script type="text/javascript" src="ou-header.js">//</script>
+<script type="text/javascript" src="ou-translate.js">//</script>
+<!-- End JS replacement -->
+
+<!-- Stylesheets --><link rel="stylesheet" type="text/css" href="headerfooter.css" media="screen, projection">
+
+<!--[if lt IE 9]><link rel="stylesheet" href="/ouheaders/gui/header-footer-ie.css" /><![endif]-->
+<link rel="stylesheet" href="headerfooter-print.css" media="print">
+
+<!-- End ou-head v1.1.1.47 -->
+  <script>
+    // Used by OUCommon
+    var ouGlobals = {
+      'baseUrl': 'https://help.open.ac.uk',
+      'urlHash': '6e78c90ef9b412a04aa456429ead70a5',
+      'pageName': 'policies.show',
+      'env': 'production',
+      'isDebug': ''
+    };
+    var searchConfig = {"appId":"IUJ22TOYBE","appKey":"b61ee0152f0c890089cb93a20deb6661","indexName":"shc_live_helpcentre_searchables","facetFilters":"(audiences:public),published:true,hidden:false,equivalentPage:false,(equivalentChild:true,equivalentChild:false)"};
+  </script>
+
+  <script src="vendor.js"></script>
+  <script src="app.js"></script>
+
+  <script>
+    $('html').addClass('js');
+    OUHelpCentre.MetaData.userId = '';
+    OUHelpCentre.MetaData.userIdAuthentic = '';
+    OUHelpCentre.MetaData.userDisplayName = '';
+    OUHelpCentre.MetaData.userType = '';
+    OUHelpCentre.MetaData.isAliasing = false;
+    var pgwBrowser = $.pgwBrowser();
+  </script>  <link media="all" type="text/css" rel="stylesheet" href="OUCommon.css">
+
+<link media="all" type="text/css" rel="stylesheet" href="oucarousel.css">
+
+<link media="all" type="text/css" rel="stylesheet" href="mediaelementplayer.css">
+<link media="all" type="text/css" rel="stylesheet" href="ouaudio.css">
+
+<link media="all" type="text/css" rel="stylesheet" href="ouvideo.css">
+<link media="all" type="text/css" rel="stylesheet" href="minimalist.css">
+<!--[if IE 7]>
+<link media="all" type="text/css" rel="stylesheet" href="https://help.open.ac.uk/oufabric/ouvideo/ie7.css?id=b94b6eb99b8efa71952e">
+<![endif]-->
+<link rel="stylesheet" href="ouvideo-mobile.css" media="only screen and (max-device-width:640px)">
+<link rel="stylesheet" href="ouvideo-mobile.css" media="only screen and (max-width:640px)">
+
+<link media="all" type="text/css" rel="stylesheet" href="ouforms.css">
+
+<link media="all" type="text/css" rel="stylesheet" href="widget.css">
+
+<link media="all" type="text/css" rel="stylesheet" href="styles.css">
+
+<link media="all" type="text/css" rel="stylesheet" href="contact.css">  
+  <link media="all" type="text/css" rel="stylesheet" href="policy.css">
+
+  
+  <script>
+    var policySearchConfig = {"appId":"IUJ22TOYBE","appKey":"b61ee0152f0c890089cb93a20deb6661","indexName":"shc_live_policies","facetFilters":"published:true"};
+    var searchClient = algoliasearch(policySearchConfig.appId, policySearchConfig.appKey);
+    var searchIndex = searchClient.initIndex(policySearchConfig.indexName);
+
+    $(function () {
+      $('body.student-policies div.ou-search input[type="text"].ou-search__input')
+          .autocomplete(
+              {
+                  hint: false,
+                  openOnFocus: true
+              },
+              [
+                  {
+                      source: $.fn.autocomplete.sources.hits(searchIndex, { hitsPerPage: 5, facetFilters: policySearchConfig.facetFilters }),
+                      displayKey: 'title',
+                      templates: {
+                          suggestion: function(hit) {
+                              return '<div class="aa-suggestion-type-' + hit.type + '"><span>' + hit.title + '</span></div>';
+                          }
+                      }
+                  }
+              ]
+          )
+          .on('autocomplete:selected', function(evt, hit, type) {
+              var parser = document.createElement('a');
+              parser.href = hit.url;
+
+              OUHelpCentre.Analytics.event('Policy Search: Auto Suggest', 'Result selected', parser.pathname.replace(/^\//, ''), {
+                  'hitCallback': function() {
+                      window.location.href = hit.url;
+                  }
+              });
+          });
+    });
+  </script>
+
+</head>
+
+<body class="ou-ia-student ou-blend view-public template-content-fullwidth student-policies">
+
+  <div id="ou-org">
+    
+<!-- ou-header v1.1.1.47 -->
+
+<!-- Google Tag Manager -->
+<noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPS2SH" style="display:none;visibility:hidden" name="GTM" width="0" height="0">&amp;nbsp;</iframe>
+</noscript>
+
+<script>/*<![CDATA[*/   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+   j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+   '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+   })(window,document,'script','dataLayer','GTM-PPS2SH');
+   /*]]>*/
+</script>
+
+<!-- End Google Tag Manager -->
+
+
+<div id="ou-header">
+   
+   <a class="ou-skip" href="#ioemenu" data-translate="true" data-oulink="anchor">
+      <i class="int-icon int-icon-arrow-circle-down">&nbsp;</i> Skip to content
+      
+   </a>
+   
+   <div id="ou-logo">
+      
+      <a class="ou-logo england" href="http://www.open.ac.uk/" title="The Open University">
+         
+         <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="The Open University">
+         
+      </a>
+      
+   </div>
+   <div class="ou-identity">
+      <p class="ou-identity-name" data-hj-masked=""></p>
+   </div>
+   <a href="#" class="ou-mobile-menu-toggle icon-up" id="ou-mobile-menu-toggle">
+      <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="Toggle service links" title="Toggle service links">
+   </a>
+   
+   <div id="ou-header-nav">
+      <div id="ou-service-links" role="navigation">
+         <div id="ou-identity" class="ou-header-remove">
+            <p class="ou-identity-name" data-hj-masked=""></p>
+            <p id="ou-identity-id" data-hj-masked=""></p>
+         </div>
+         <ul>
+            <li class="ou-role-signin" id="ou-signin1">
+               <a href="https://msds.open.ac.uk/signon/sams001.aspx?nsh=2&amp;URL=https://help.open.ac.uk/documents/policies/ethical-use-of-student-data" id="ou-signin2" data-translate="true">Sign in</a>
+               <span>|</span>
+            </li>
+            <li class="ou-role-signout ou-header-remove" id="ou-signout">
+               <a href="https://msds.open.ac.uk/signon/samsoff.aspx" id="ou-signout2" data-translate="true">Sign out</a>
+               <span>|</span>
+            </li>
+            
+            <li id="ou-tutorhome" class="ou-header-remove">
+               
+               <a href="https://msds.open.ac.uk/tutorhome/" data-translate="true">TutorHome</a>
+               
+               <span>|</span>
+               
+            </li>
+            
+            <li id="ou-intranethome" class="ou-header-remove">
+               
+               <a href="http://intranet.open.ac.uk/oulife-home/" data-translate="true">IntranetHome</a>
+               
+               <span>|</span>
+               
+            </li>
+            
+            <li id="ou-contact">
+               <a href="http://www.open.ac.uk/contact" data-translate="true" class="ou-ia-public">Contact the OU</a>
+               <a href="http://www2.open.ac.uk/students/help/your-contacts" data-translate="true" class="ou-ia-student">Contact the OU</a>
+               <a href="http://www2.open.ac.uk/tutors/help/who-to-contact" data-translate="true" class="ou-ia-tutor">Contact the OU</a>
+               <span>|</span>
+            </li>
+            <li>
+               <a href="http://www.open.ac.uk/about/main/strategy-and-policies/policies-and-statements/website-accessibility-open-university" data-translate="true" class="ou-display-public-tutor">Accessibility</a>
+               <a href="http://www2.open.ac.uk/students/help/accessibility-using-a-computer-for-ou-study" data-translate="true" class="ou-ia-student">Accessibility</a>
+            </li>
+            <li class="ou-search ou-ia-public">
+               <label for="ou-header-search-public" class="ou-hide" data-translate="true">Search the OU</label>
+               <input id="ou-header-search-public" class="ou-header-search" name="q" data-translate="true" placeholder="Search the OU" onkeyup="javascript: onSearchBoxInput(event);" type="search">
+               <div class="ou-button-container">
+                  <button type="button" value="Search" form="ou-search" onclick="submitSearch('ou-header-search-public');">
+                     <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="Search" title="Search">
+                  </button>
+               </div>
+            </li>
+         </ul>
+      </div>
+      <!-- end ou-service-links -->
+      <div class="ou-ia-nav" id="ou-ia-nav" role="navigation">
+         
+         <ul class="ou-ia-students">
+            
+            <li class="ou-ia-studenthome">
+               
+               <a href="https://msds.open.ac.uk/students/">StudentHome</a>
+               
+            </li>
+            
+            <li class="ou-ia-profile">
+               
+               <a href="https://msds.open.ac.uk/students/profile.aspx">Profile</a>
+               
+            </li>
+            
+            <li class="ou-ia-study student">
+               
+               <a href="https://learn2.open.ac.uk/course/format/ousubject/redirect.php">Study</a>
+               
+            </li>
+            
+            <li class="ou-ia-library">
+               
+               <a href="http://www.open.ac.uk/library/">Library</a>
+               
+            </li>
+            
+            <li class="ou-ia-careers">
+               
+               <a href="http://www.open.ac.uk/careers/">Careers</a>
+               
+            </li>
+            
+            <li class="ou-ia-community">
+               
+               <a href="http://www2.open.ac.uk/students/community">Community</a>
+               
+            </li>
+            
+            <li class="ou-ia-helpcentre">
+               
+               <a href="http://www2.open.ac.uk/students/help/">Help Centre</a>
+               
+            </li>
+            
+         </ul>
+         
+      </div>
+      <!-- end ou-ia-nav -->
+      
+   </div>
+   <!--end ou-header-navigation-->
+   
+</div>
+<!-- End ou-header v1.1.1.47 -->
+    <div id="ou-site" class="ou-site">
+      <div id="ou-site-body">
+        <div id="ou-page">
+          <div id="ou-region0">
+              <nav role="navigation" class="breadcrumb">
+  <h2 id="breadcrumblabel" class="hidden-except-screenreader">You are here:</h2>
+  <ol id="breadcrumb" class="ou-ancestors" aria-labelledby="breadcrumblabel">
+    <li><a href="https://help.open.ac.uk/documents/policies">Student Polices and Regulations</a></li>
+    <li aria-current="page">Ethical use of Student Data for Learning Analytics</li>
+  </ol>
+</nav>          </div>
+          <div id="ou-region1">
+            <div id="ioemenu" class="ou-region-headline">
+              <h1>Student Policies and Regulations</h1>
+            </div>
+            <div id="ou-content" class="ou-content">
+              <div class="content-body">
+
+                
+                                  <script>
+  $(function() {
+    $(".ou-js-hidden").hide();
+    $(".ou-js-toggle").addClass('ou-toggle--closed');
+    $(".ou-js-toggle").click(function(){
+      $(this).next(".ou-js-hidden").slideToggle();
+      $(this).toggleClass('ou-toggle--open ou-toggle--closed');
+      return false;
+    });
+  });
+  </script>
+
+  <div class="ou-wrap ou-wrap--small">
+
+    <h2>Ethical use of Student Data for Learning Analytics</h2>
+    <p>This policy aims to set out how the University will use student 
+data in an ethical way in order to shape the student support provided.</p>
+    <p>The policy is based around eight key principles, each of which is linked to particular aspects of learning analytics.</p>
+    
+    
+    <hr>
+
+    <h3>Policy Document</h3>
+
+    <div class="mt-30 mb-30">
+
+      
+              <div class="">
+
+  
+      <ul class="ou-list ou-list--docs ou-list--docs--pdf ou-list--docs--spotlight-pdf">
+  
+      <li>
+      <h5 class="ou-heading ou-heading--smallest mb-5">
+        <a href="https://help.open.ac.uk/documents/policies/ethical-use-of-student-data/files/22/ethical-use-of-student-data-policy.pdf" data-track-event="downloadLink">
+          Policy on Ethical use of Student Data for Learning Analytics (PDF, 148KB)
+        </a>
+      </h5>
+                </li>
+      <li>
+      <h5 class="ou-heading ou-heading--smallest mb-5">
+        <a href="https://help.open.ac.uk/documents/policies/ethical-use-of-student-data/files/23/ethical-student-data-faq.pdf" data-track-event="downloadLink">
+          Policy on Ethical use of Student Data for Learning Analytics FAQs (PDF, 125KB)
+        </a>
+      </h5>
+                </li>
+      <li>
+      <h5 class="ou-heading ou-heading--smallest mb-5">
+        <a href="https://help.open.ac.uk/documents/policies/ethical-use-of-student-data/files/24/using-information-to-support-student-learning.pdf" data-track-event="downloadLink">
+          Using information to support student learning (PDF, 277KB)
+        </a>
+      </h5>
+                </li>
+  
+  </ul>
+
+</div>
+      
+      
+    </div> <!-- /ou-timeline -->
+
+  </div> <!-- /ou-wrap -->
+                                </div>
+              <div class="content-bottom">
+                                              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="ou-site-footer">
+        <p>For more information about changes to policy, terms and conditions, and curriculum <a href="http://www2.open.ac.uk/students/changes/">visit the change log</a>.</p>
+      </div>
+    </div>
+    
+<!-- ou-footer v1.1.1.47 -->
+<div id="ou-org-footer" class="ou-footer" role="contentinfo">
+   <div class="ou-container">
+      <div class="ou-header">
+         <div class="ou-crest">
+            <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?[UILD_NUMBER] 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="The Open University Crest" title="The Open University Crest">
+         </div>
+         <div class="ou-footer-title">
+            <h3 data-translate="true">The Open University</h3>
+         </div>
+      </div>
+      <div class="ou-footer-nav">
+         
+         <div id="ou-ia-student" role="tablist">
+            
+            <div class="ou-row">
+               
+               <div class="ou-grid3">
+                  
+                  <ul>
+                     
+                     <li>
+                        
+                        <h4 class="ou-collapsible-footer" id="ou-footer-ou-community-toggle" aria-controls="ou-footer-ou-community" role="tab" tabindex="-1">
+                           
+                           <span>OU Community</span>
+                           
+                           <span class="ou-mobile-menu-toggle icon-up">
+                              
+                              <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="Menu toggle" title="Menu toggle">
+                              
+                           </span>
+                           
+                        </h4>
+                        
+                        <div class="ou-mobile-menu-toggle" id="ou-footer-ou-community" aria-labelledby="ou-footer-ou-community-toggle" role="tabpanel">
+                           
+                           <ul class="ou-inline">
+                              
+                              <li class="facebook">
+                                 
+                                 <a href="https://www.facebook.com/theopenuniversity" title="Facebook">
+                                    
+                                    <span>
+                                       
+                                       <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="Facebook" title="Facebook">
+                                       
+                                    </span>
+                                    
+                                 </a>
+                                 
+                              </li>
+                              
+                              <li class="twitter">
+                                 
+                                 <a href="https://twitter.com/OpenUniversity" title="Twitter">
+                                    
+                                    <span>
+                                       
+                                       <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="Twitter" title="Twitter">
+                                       
+                                    </span>
+                                    
+                                 </a>
+                                 
+                              </li>
+                              
+                              <li class="youtube">
+                                 
+                                 <a href="https://www.youtube.com/ou" title="Youtube">
+                                    
+                                    <span>
+                                       
+                                       <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="YouTube" title="YouTube">
+                                       
+                                    </span>
+                                    
+                                 </a>
+                                 
+                              </li>
+                              
+                              <li class="linkedin">
+                                 
+                                 <a href="https://www.linkedin.com/edu/school?id=12659&amp;trk=edu-cp-title" title="LinkedIn">
+                                    
+                                    <span>
+                                       
+                                       <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="LinkedIn" title="LinkedIn">
+                                       
+                                    </span>
+                                    
+                                 </a>
+                                 
+                              </li>
+                              
+                              <li class="googleplus">
+                                 
+                                 <a href="https://plus.google.com/+TheOpenUniversity" title="Google+">
+                                    
+                                    <span>
+                                       
+                                       <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="Google+" title="Google+">
+                                       
+                                    </span>
+                                    
+                                 </a>
+                                 
+                              </li>
+                              
+                           </ul>
+                           
+                           <ul>
+                              
+                              <li>
+                                 
+                                 <a href="http://www.open.edu/openlearn/">
+                                    OpenLearn: free
+                                    learning
+                                    
+                                 </a>
+                                 
+                              </li>
+                              
+                              <li>
+                                 
+                                 <a href="http://www.open.edu/openlearn/whats-on/ou-on-the-bbc-week">OU on TV and radio</a>
+                                 
+                              </li>
+                              
+                           </ul>
+                           
+                        </div>
+                        
+                        <hr>
+                        
+                        <h4 class="ou-collapsible-footer" id="ou-footer-ou-students-community-toggle" aria-controls="ou-footer-ou-students-community" role="tab" tabindex="-1">
+                           
+                           <span>OU Students Community</span>
+                           
+                           <span class="ou-mobile-menu-toggle icon-up">
+                              
+                              <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="Menu toggle" title="Menu toggle">
+                              
+                           </span>
+                           
+                        </h4>
+                        
+                        <ul class="ou-mobile-menu-toggle" id="ou-footer-ou-students-community" aria-labelledby="ou-footer-ou-students-community-toggle">
+                           
+                           <li>
+                              
+                              <a href="http://www.open.ac.uk/ousa/">
+                                 OU Students
+                                 Association
+                                 
+                              </a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="http://www.open.ac.uk/ousa/shop-ousa">
+                                 OU Students
+                                 Shop (including exam papers)
+                                 
+                              </a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="http://learn1.open.ac.uk/course/view.php?id=100061">OU Students Forums</a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="https://www.facebook.com/OUstudents">
+                                 OU Students on
+                                 Facebook
+                                 
+                              </a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="https://twitter.com/OUstudents">
+                                 OU Students on
+                                 Twitter
+                                 
+                              </a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="http://www.open.ac.uk/ousa/freshers">
+                                 OU Students
+                                 Freshers
+                                 
+                              </a>
+                              
+                           </li>
+                           
+                        </ul>
+                        
+                     </li>
+                     
+                  </ul>
+                  
+               </div>
+               
+               <div class="ou-grid3">
+                  
+                  <h4 class="ou-collapsible-footer" id="ou-footer-support-toggle" aria-controls="ou-footer-support" role="tab" tabindex="-1">
+                     
+                     <span>Support</span>
+                     
+                     <span class="ou-mobile-menu-toggle icon-up">
+                        
+                        <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="Menu toggle" title="Menu toggle">
+                        
+                     </span>
+                     
+                  </h4>
+                  
+                  <div class="ou-mobile-menu-toggle" id="ou-footer-support" aria-labelledby="ou-footer-support-toggle">
+                     
+                     <p>
+                        Find your personal contacts including your tutor and student support
+                        team:
+                        
+                     </p>
+                     
+                     <a href="http://www2.open.ac.uk/students/help/your-contacts">
+                        Contact the OU
+                        
+                     </a>
+                     
+                     <hr>
+                     
+                     <p>
+                        Help with the University’s computing systems:
+                        
+                     </p>
+                     
+                     <a href="http://www.open.ac.uk/computingguide">
+                        Computing Guide
+                        
+                     </a>
+                     
+                     <a href="http://learn1.open.ac.uk/admin/tool/redirector/redirect.php/chd">Computing Helpdesk</a>
+                     
+                     <a href="https://status.open.ac.uk/">
+                        System Status
+                        
+                     </a>
+                     
+                     <hr>
+                     
+                     <p>
+                        Help with accessing the online library, referencing and using libraries near you:
+                        
+                     </p>
+                     
+                     <a href="http://www.open.ac.uk/library/help-and-support">
+                        Library help
+                        and support
+                        
+                     </a>
+                     
+                  </div>
+                  
+               </div>
+               
+               <div class="ou-grid3">
+                  
+                  <ul>
+                     
+                     <li>
+                        
+                        <h4 class="ou-collapsible-footer" id="ou-footer-study-toggle" aria-controls="ou-footer-study" role="tab" tabindex="-1">
+                           
+                           <span>Study</span>
+                           
+                           <span class="ou-mobile-menu-toggle icon-up">
+                              
+                              <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="Menu toggle" title="Menu toggle">
+                              
+                           </span>
+                           
+                        </h4>
+                        
+                        <ul class="ou-mobile-menu-toggle" id="ou-footer-study" aria-labelledby="ou-footer-study-toggle">
+                           
+                           <li>
+                              
+                              <a href="http://www2.open.ac.uk/students/careers/">Careers</a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="http://www2.open.ac.uk/students/help">
+                                 Help
+                                 Centre
+                                 
+                              </a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="http://www.open.ac.uk/library/">Library</a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="https://msds.open.ac.uk/students/study-record.aspx">Study planning and funding</a>
+                              
+                           </li>
+                           
+                        </ul>
+                        
+                     </li>
+                     
+                  </ul>
+                  
+               </div>
+               
+               <div class="ou-grid3">
+                  
+                  <ul>
+                     
+                     <li>
+                        
+                        <h4 class="ou-collapsible-footer" id="ou-footer-policy-toggle" aria-controls="ou-footer-policy" role="tab" tabindex="-1">
+                           
+                           <span>Policy</span>
+                           
+                           <span class="ou-mobile-menu-toggle icon-up">
+                              
+                              <img src="sprite.png" srcset="/ouheaders/gui/sprite.png?1.1.1.47 1x, /ouheaders/gui/sprite-x3.png?1.1.1.47 2x" alt="Menu toggle" title="Menu toggle">
+                              
+                           </span>
+                           
+                        </h4>
+                        
+                        <ul class="ou-mobile-menu-toggle" id="ou-footer-policy" aria-labelledby="ou-footer-policy-toggle">
+                           
+                           <li>
+                              
+                              <a href="http://www2.open.ac.uk/students/help/accessibility-using-a-computer-for-ou-study">Accessibility</a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="http://www.open.ac.uk/about/main/strategy-and-policies/policies-and-statements/conditions-use-open-university-websites">Conditions of use</a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="http://www.open.ac.uk/about/main/strategy-and-policies/policies-and-statements/copyright-ou-websites">Copyright</a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="http://www.open.ac.uk/wales/cy">Cymraeg</a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="http://www.open.ac.uk/about/main/strategy-and-policies/policies-and-statements/website-privacy-ou">Privacy and cookies</a>
+                              
+                           </li>
+                           
+                           <li>
+                              
+                              <a href="http://www.open.ac.uk/students/charter/">
+                                 Student
+                                 Charter and policies
+                                 
+                              </a>
+                              
+                           </li>
+                           
+                        </ul>
+                        
+                     </li>
+                     
+                  </ul>
+                  
+               </div>
+               
+            </div>
+            
+         </div>
+         
+         
+         <div class="ou-small-print">
+            <p class="ou-copyright">
+               <small>
+                  ©
+                  <span id="ou-copyright-year">2019</span>. 
+                  <span data-translate="true" id="ou-footer-statement">All
+ rights reserved. The Open University is incorporated by Royal Charter 
+(RC 000391), an exempt charity in England &amp; Wales and a charity 
+registered in Scotland (SC 038302). The Open University is authorised 
+and regulated by the Financial Conduct Authority in relation to its 
+secondary activity of credit broking.</span>
+               </small>
+            </p>
+            
+         </div>
+         
+      </div>
+      
+   </div>
+   
+</div>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+<!-- End ou-footer v1.1.1.47 -->
+  </div>
+
+  
+
+    
+
+<iframe src="https://a221317523.cdn.optimizely.com/client_storage/a221317523.html" aria-hidden="true" tabindex="-1" style="display: none;" width="0" hidden="" height="0"></iframe> </body></html>

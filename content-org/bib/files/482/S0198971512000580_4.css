@@ -1,0 +1,31 @@
+
+/* ::::: http://elsevier-apps.sciverse.com/GoogleMaps/css/googlemaps.css ::::: */
+
+body { width: 100%; margin: 0px; padding-right: 0px; font-family: Arial; }
+IMG.cursorON { cursor: pointer; }
+A.cursorON { cursor: pointer; }
+DIV#outer-frame { overflow-y: hidden; overflow-x: auto; position: relative; }
+DIV#inner-frame { min-width: 500px; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px solid red; position: relative; }
+DIV#heading-bar { background-color: rgb(225, 227, 229); background-image: url('appheader-background.png'); background-repeat: repeat-x; border: 1px solid rgb(215, 215, 215); border-radius: 3px 3px 0px 0px; color: rgb(92, 92, 92); height: 30px; line-height: 30px; }
+DIV#heading-bar-left { float: left; margin-left: 10px; white-space: nowrap; width: 85%; }
+DIV#heading-bar-left a { font-size: 11pt; text-decoration: none; color: rgb(92, 92, 92); display: block; }
+DIV#heading-bar-right { font-size: 12px; line-height: 30px; float: right; margin-right: 10px; text-align: center; white-space: nowrap; }
+DIV#map-frame { padding: 7px; border-right: 1px solid rgb(215, 215, 215); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(215, 215, 215) rgb(215, 215, 215); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; height: 450px; width: auto; clear: both; position: relative; }
+DIV#map-count-bar { display: none; }
+A#prev-button, A#next-button { background: url('sprites.png') repeat scroll 0px -32px rgb(248, 248, 248); border-width: 1px; border-style: solid; border-color: rgb(231, 236, 243) rgb(182, 186, 190) rgb(186, 189, 194) rgb(224, 231, 240); border-radius: 3px; color: rgb(69, 66, 61); display: inline-block; padding: 0px 8px 1px; text-align: center; text-decoration: none; width: 56px; }
+A#prev-button.button-enabled:hover, A#next-button.button-enabled:hover { background: url('sprites.png') repeat scroll 0px -60px rgb(235, 236, 237); border-width: 1px; border-style: solid; border-color: rgb(189, 192, 196) rgb(227, 233, 241) rgb(234, 238, 245) rgb(185, 188, 192); color: rgb(69, 66, 61); }
+A#prev-button.button-enabled:active, A#next-button.button-enabled:active { color: rgb(149, 142, 132); }
+A#prev-button, A#next-button, SPAN#map-position-text { font-weight: bold; font-size: 10pt; }
+SPAN#map-position-text { padding-left: 3px; padding-right: 3px; }
+DIV#map-canvas { visibility: visible; display: inline; width: 100%; height: 100%; padding: 0px; margin: 0px; position: relative; float: left; }
+DIV.map-canvas-multi { width: 95.5%; height: 95.5%; margin-top: 15px; }
+DIV#footer { padding-top: 10px; height: 30px; }
+DIV#footer-left { float: left; }
+DIV#navigator { display: none; float: right; }
+DIV#host { float: left; }
+DIV.bubble { overflow: auto; }
+.infowindow { overflow-y: auto; }
+
+/* ::::: null ::::: */
+
+.mboxDefault { visibility: hidden; }

@@ -1,0 +1,1364 @@
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2485657">
+<meta name="wpd_url" content="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2485657">
+<meta name="wpd_date" content="2016-01-19T11:19Z">
+<script src="300lo.json" type="text/javascript"></script><script language="JavaScript">
+
+var beforeload = (new Date()).getTime();
+var totalTime = 0;
+var clientTime = 0;
+var serverTime = 0;
+var XmlHttpObj1;
+function Sign(X) { return X>0 ? "+" : X<0 ? "-" : " " }
+function CreateXmlHttpObj1() {
+	try {XmlHttpObj1 = new ActiveXObject("Msxml2.XMLHTTP");}
+	catch(e) {try{XmlHttpObj1 = new ActiveXObject("Microsoft.XMLHTTP");}
+		catch(oc) {XmlHttpObj1 = null;}}
+	if(!XmlHttpObj1 && typeof XMLHttpRequest != "undefined") {XmlHttpObj1 = new XMLHttpRequest();}}
+
+function updateTime() {
+			var sQuery = "abstract_id=2485657";
+			var sURL = "/sol3/papers.cfm";
+
+			var sNameDom = "papers.ssrn.com";
+			var sIP = "62.204.199.202";
+			var sBrowser = "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.4.0";
+			var sProtocol = location.protocol;
+			var requestUrl = sProtocol+ "//"+sNameDom+"/AjaxStatic.cfm?file=updateLoadTime";
+
+			var mydate= new Date();
+			var sTZOffset = mydate.getTimezoneOffset()/60;
+			var getSign = Sign(sTZOffset);
+
+			if (getSign == '-') {sTZOffset = "GMT+ "+ Math.abs(sTZOffset)+":00";}
+			else {if (getSign == '+') {sTZOffset = "GMT- "+ Math.abs(sTZOffset)+":00";}
+				  else {sTZOffset = "GMT";}
+			}
+
+			CreateXmlHttpObj1();
+			if(XmlHttpObj1) {
+				XmlHttpObj1.open('POST',requestUrl,false);
+				XmlHttpObj1.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+				XmlHttpObj1.send("url1=" +encodeURIComponent(sURL)+ "&qry=" +encodeURIComponent(sQuery)+ "&ip=" +sIP+ "&zone=" +encodeURIComponent(sTZOffset)+ "&ua=" +encodeURIComponent(sBrowser)+ "&setime=" +serverTime+ "&totime=" +totalTime);
+
+			}
+}
+
+function loadingTime() {
+	//calculate the current time in afterload
+	var afterload = (new Date()).getTime();
+	//calculate the seconds
+	clientTime = (afterload-beforeload)/1000;
+	serverTime =  parseFloat(document.getElementById("serverTime").innerHTML);
+	totalTime = (clientTime + serverTime).toFixed(3);
+	document.getElementById("loadingtime").innerHTML = "and delivered in " + totalTime + " seconds";
+	updateTime();
+}
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+		
+			
+			
+		
+
+		
+		
+	
+
+	
+
+	
+
+
+
+	
+	
+	
+	
+
+	<script type="text/javascript" src="jquery.js"></script>
+
+	<script language="javascript">
+
+		//Language functions
+		function changeLanguage(language, response){
+
+			$.ajax({
+				url: '/AltLanguage_ajax.cfm?type=changeLanguage&partid=1&strCode=' + language,
+				cache: false,
+				success: function(data) {
+					// Update values in cookies
+					Set_Cookie('SITEID',language,'-1','/','.ssrn.com','');
+					Set_Cookie('SITEID',language,'1000','/','.ssrn.com','');
+
+					// Finally, perform redirection
+					if (response == 'reload') {
+						window.location.reload();
+					}
+					else {
+						window.location.href=response;
+					}
+				}
+			});
+		}
+
+		function Set_Cookie( name, value, expires, path, domain, secure ) {
+			// set time, its in milliseconds
+			var today = new Date();
+			today.setTime( today.getTime() );
+
+			/*
+			if the expires variable is set, make the correct
+			expires time, the current script below will set
+			it for x number of days, to make it for hours,
+			delete * 24, for minutes, delete * 60 * 24
+			*/
+			if ( expires ) {
+				expires = expires * 1000 * 60 * 60 * 24;
+			}
+
+			var expires_date = new Date( today.getTime() + (expires) );
+
+			document.cookie = name + "=" +escape( value ) +
+			( ( expires ) ? ";expires=" + expires_date.toGMTString() : "" ) +
+			( ( path ) ? ";path=" + path : "" ) +
+			( ( domain ) ? ";domain=" + domain : "" ) +
+			( ( secure ) ? ";secure" : "" );
+		}
+
+
+		/*
+		* We use this function when the language should be stripped from an object, like a form RADIO
+		*/
+		function getLanguage ( oObj ) {
+			var specialChars = "!@#$^&%*()+=-[]\/{}|:<>?,.";
+
+			// Need to clean up code if object came from Mura site.
+			sCode = oObj.value;
+			if (sCode.length > 2) {
+				for (var i = 0; i < specialChars.length; i++) {
+					sCode = sCode.replace(new RegExp("\\" + specialChars[i], 'gi'), '');
+				}
+				// After cleaning up special chars, we take the first two chars.
+				sCode = sCode.substring(0,2).trim();
+			}
+
+			return sCode;
+		}
+	</script>
+
+
+
+
+
+	
+    
+	
+	
+    <link rel="image_src" href="http://papers.ssrn.com/sol3/images/iSSRN_a.png">
+
+	
+
+	<title>Quantile Regression for Peak Demand Forecasting by Charles  Gibbons, Ahmad  Faruqui :: SSRN</title>
+    
+<meta name="description" content="We demonstrate that annual peak demand days are characterized by both extreme values of predictors (such as weather) and large unpredictable &quot;shocks&quot; ">
+<meta name="keywords" content=" SSRN, Quantile Regression for Peak Demand Forecasting, Charles  Gibbons, Ahmad  Faruqui">
+<meta name="citation_author" content="Gibbons, Charles ">
+<meta name="citation_author" content="Faruqui, Ahmad ">
+<meta name="citation_title" content="Quantile Regression for Peak Demand Forecasting">
+<meta name="citation_online_date" content="2014/08/24">
+
+<meta name="citation_publication_date" content="2014/07/31">
+
+<meta name="citation_doi" content="10.2139/ssrn.2485657">
+<meta name="citation_abstract_html_url" content="http://papers.ssrn.com/abstract=2485657">
+<meta name="citation_keywords" content="">
+<meta name="citation_pdf_url" content="http://papers.ssrn.com/sol3/Delivery.cfm?abstractid=2485657"> 
+
+	
+	
+
+
+	
+	<script type="text/javascript" src="jquery.min.js"></script>
+    <script language="JavaScript">
+
+        function openDigg() {
+            var ua = navigator.userAgent.toLowerCase();
+            var isSafari = (ua.indexOf('safari') > -1);
+            if (document.getElementById('diggarea').style.display=='none') {
+                document.getElementById('diggarea').style.display='block';
+                document.getElementById('downloadFullText').style.display='none';
+                document.getElementById('openShareLink').className = 'menuItemsOpened';
+				if (document.getElementById('hardCopyLink')){
+					document.getElementById('hardcopySection').style.display='none';
+					document.getElementById('hardCopyLink').className = 'menuItems';
+				}
+                if (document.getElementById('openDownloadLink'))
+                    document.getElementById('openDownloadLink').className = 'menuItemsDownload';
+				if (document.getElementById('captchaSectionForm')) {
+					document.getElementById('captchaSectionForm').style.display='none';
+				}
+            }
+            else {
+                document.getElementById('diggarea').style.display='none';
+                document.getElementById('openShareLink').className = 'menuItems';
+            }
+        }
+     	var bSafari_Ver5 = 'False';
+	 	var bMac = 'False';
+		var bIE = 'False';
+
+		function openHardCopy() {
+            var ua = navigator.userAgent.toLowerCase();
+            var isSafari = (ua.indexOf('safari') > -1);
+
+            if (document.getElementById('hardcopySection').style.display=='none') {
+                document.getElementById('hardcopySection').style.display='block';
+                document.getElementById('diggarea').style.display='none';
+				document.getElementById('downloadFullText').style.display='none';
+                document.getElementById('hardCopyLink').className = 'menuItemsDownloadOpened';
+				if (document.getElementById('openDownloadLink')){
+					document.getElementById('openDownloadLink').className =	'menuItems';
+				}
+                document.getElementById('openShareLink').className = 'menuItems';
+				if (document.getElementById('captchaSectionForm')) {
+					document.getElementById('captchaSectionForm').style.display='none';
+				}
+			}
+            else {
+                document.getElementById('hardcopySection').style.display='none';
+                document.getElementById('hardCopyLink').className = 'menuItems';
+				if (document.getElementById('openDownloadLink')){
+					document.getElementById('openDownloadLink').className =	'menuItemsDownload';
+				}
+	            }
+        }
+
+        function openKindleSendMail(ab_id) {
+        	window.open("Email_Kindle.cfm?abid="+ab_id,"Email_Kindle","toolbar=no,menubar=no,scrollbars=no,resizable=no,width=600,height=270");
+
+        }
+
+        function openPermalink(param) {
+            var ua = navigator.userAgent.toLowerCase();
+            var isSafari = (ua.indexOf('safari') > -1);
+
+            if (document.getElementById('permalink').style.display=='none') {
+                document.getElementById('permalink').style.display='block';
+                param.className='menuItemsShareSelected';
+				if (document.getElementById('captchaSectionForm')) {
+					document.getElementById('captchaSectionForm').style.display='none';
+				}
+            }
+            else {
+                document.getElementById('permalink').style.display='none';
+                param.className='menuItems';
+            }
+        }
+
+        function openDelicious() {
+            document.getElementById('permalink').style.display='none';
+            window.open("http://del.icio.us/post?v=4&noui&jump=close&url="+ encodeURIComponent(location.href) +"&title="+ encodeURIComponent(document.getElementById('titleDigg').value), "delicious", "toolbar=no,width=700,height=400");
+            return false;
+        }
+
+        function changeCountShow() {
+            if (document.getElementById('firstthree').style.display=='none') {
+                document.getElementById('firstten').style.display='none';
+                document.getElementById('firstthree').style.display='block';
+            }
+            else {
+                document.getElementById('firstthree').style.display='none';
+                document.getElementById('firstten').style.display='block';
+            }
+        }
+
+        function openProblemWindow() {
+            currWindow = window.open ("AcrobatIssues.html", "Acrobat_Issues","toolbar=no,menubar=no,scrollbars=yes,width=650,height=400");
+        }
+
+        function WinOpen(id) {
+            //currWindow = window.open ("http://papers2.ssrn.com/paper.taf?pip_jrnl=209249","PIP","toolbar=yes,menubar=yes,scrollbars=yes,resizable=yes,width=500,height=350");
+            sUrl = "PIP_Journal.cfm?pip_jrnl=" + id;
+            currWindow = window.open (sUrl,"PIP","toolbar=yes,menubar=yes,scrollbars=yes,resizable=yes,width=500,height=350");
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////
+        // Check if fieldValue is Integer												 //
+        ///////////////////////////////////////////////////////////////////////////////////
+        //-------------------------------------------------------------------------------//
+        var decimalpoint=".";
+        function checkinteger(fieldValue)
+        {
+            if (fieldValue.length > 0){
+                if (isNaN(fieldValue) || fieldValue == ""){
+                    return false;
+                }else{
+                    if (fieldValue.indexOf(decimalpoint) > -1){
+                        return false;
+                    }else{return true;}
+                }
+            }else{return true;}
+        }
+        //-------------------------------------------------------------------------------//
+	var XmlHttpObj;
+
+	function CreateXmlHttpObj() {
+	// try creating for IE (note: we don't know the user's browser type here, just attempting IE first.)
+		try {XmlHttpObj = new ActiveXObject("Msxml2.XMLHTTP");}
+		catch(e) {
+			try {XmlHttpObj = new ActiveXObject("Microsoft.XMLHTTP");}
+			catch(oc){ XmlHttpObj = null;}
+		}
+		// if unable to create using IE specific code then try creating for Mozilla (FireFox)
+		if(!XmlHttpObj && typeof XMLHttpRequest != "undefined") {
+			XmlHttpObj = new XMLHttpRequest();
+		}
+	}
+
+
+	function openCaptcha() {
+		var dt = new Date();
+		var action;
+		action = 1;
+
+		var requestUrl;
+		requestUrl = "ctCheckCaptchaStatus.cfm?id=" + encodeURIComponent(action) + "&dt=" + encodeURIComponent(dt);
+
+		CreateXmlHttpObj();
+
+		// verify XmlHttpObj variable was successfully initialized
+		if(XmlHttpObj) {
+			XmlHttpObj.onreadystatechange = StateChangeHandler;
+			XmlHttpObj.open("GET", requestUrl, true);
+			XmlHttpObj.send(null);
+		}
+	}
+
+	function StateChangeHandler() {
+		// state ==4 indicates receiving response data from server is completed
+		if(XmlHttpObj.readyState == 4) {
+			// To make sure valid response is received from the server, 200 means response received is OK
+			if(XmlHttpObj.status == 200) {
+				var srta = (XmlHttpObj.responseText).replace(/^\s+/g,'').replace(/\s+$/g,'');
+				if ( srta == 'no'){
+					if (document.getElementById('hardCopyLink')){
+						document.getElementById('hardcopySection').style.display='none';
+						document.getElementById('hardCopyLink').className = 'menuItems';
+					}
+                	document.getElementById('openShareLink').className = 'menuItems';
+					if (document.getElementById('diggarea')) {
+						document.getElementById('diggarea').style.display='none';
+					}
+					if (document.getElementById('captchaSection')){
+		    	    	document.getElementById('captchaSection').style.display='block';
+						document.getElementById('captchaSectionForm').style.display='block';
+					}
+					Recaptcha.focus_response_field();
+				}
+				else {
+					clickDownloadLink();
+				}
+			}
+		}
+	}
+
+	function closeCaptcha() {
+		if (document.getElementById('captchaSectionForm')) {
+			document.getElementById('captchaSectionForm').style.display='none';
+		}
+	}
+
+	function clickDownloadLink() {
+		closeCaptcha();
+		if (bIE == "True"){
+			document.getElementById('captchaLink').click();
+		}
+		else {
+			$(document).ready(function(){
+			     $("#captchaLink").click(function(){
+		          window.location = ($(this).attr("href"));
+			     }).trigger("click");
+			});
+		}
+	}
+
+
+	function verifyCaptcha() {
+		var dt = new Date();
+		sChallange = document.form1.recaptcha_challenge_field.value ;
+		sResponse = document.form1.recaptcha_response_field.value ;
+
+		var requestUrl;
+		requestUrl = "ctVerifyCaptcha.cfm?challange=" + encodeURIComponent(sChallange) + "&response=" + encodeURIComponent(sResponse) + "&dt=" + encodeURIComponent(dt);
+
+		CreateXmlHttpObj();
+
+		// verify XmlHttpObj variable was successfully initialized
+		if(XmlHttpObj) {
+			XmlHttpObj.onreadystatechange = StateChangeHandler1;
+			XmlHttpObj.open("GET", requestUrl, true);
+			XmlHttpObj.send(null);
+		}
+	}
+
+	function StateChangeHandler1() {
+		// state ==4 indicates receiving response data from server is completed
+		if(XmlHttpObj.readyState == 4) {
+			// To make sure valid response is received from the server, 200 means response received is OK
+			if(XmlHttpObj.status == 200) {
+				var srta = (XmlHttpObj.responseText).replace(/^\s+/g,'').replace(/\s+$/g,'');
+				if ( srta == 'true'){
+					clickDownloadLink();
+				}
+				else {
+					Recaptcha.reload();
+				}
+			}
+		}
+	}
+
+	function preventDoubleClickAndProceed (oButton, action) {
+		// first, execute the action for this button.
+		if(action){
+			eval(action);
+		}
+
+		// after first click, disable the button to prevent multiple clicks.
+		disableButton (oButton);
+
+		// after a X-milliseconds delay, re-enable the button again.
+		window.setTimeout(function () {enableButton(oButton, action);}, 5000);
+	}
+
+
+	// disables the button specified and sets its style to a disabled "look".
+	function disableButton (oButton) {
+		// set button to disabled so you can't click on it.
+		$(oButton).attr("disabled", true);
+
+		// change the style to look as disabled.
+		$(oButton).addClass('disabled_button');
+
+		// disable onclick action.
+		oButton.onclick = function () {return false;};
+	}
+
+
+	// enables the button after delay so that user can click it again.
+	function enableButton (oButton, action) {
+		// set the onclick event again.
+		oButton.onclick = function () {preventDoubleClickAndProceed(oButton, action); };
+
+		// remove the disabled style.
+		$(oButton).removeClass('disabled_button');
+
+		// enable the button.
+		$(oButton).attr("disabled", false);
+	}
+    </script>
+
+    <script type="text/javascript" src="tooltip2.js"></script><script src="440.6e28a9232bbb34a52e8f.js" async="" charset="utf-8" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="papers.css" media="all">
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" class="" marginheight="0" marginwidth="0"><div id="ToolTip2" style="position: absolute; z-index: 299;"></div>
+    <script type="text/javascript" src="searchhi.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	    
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+		
+	
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tbody><tr>
+		<td colspan="3" align="left">
+			
+			
+	
+
+
+
+
+
+
+
+
+
+	
+	
+		<table width="100%" cellpadding="0" cellspacing="0" border="0">	
+			<tbody><tr>
+				<td background="fondo_encabezado.jpg">
+					<a href="http://www.ssrn.com/" target="_top">
+						<img src="logo_social.jpg" height="51" width="133" border="no">
+					</a>
+					<img src="social.jpg" height="51" width="420">
+				</td>
+			</tr>
+		</tbody></table>	
+	
+
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="border-bottom: 2px solid rgb(76, 76, 117);" valign="top" bgcolor="#CCCCCC">
+			
+			
+
+
+
+
+	<table valign="middle" width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tbody><tr>
+		<td class="tdLinks" color="CCCCCC" width="100%" background="">
+		<nobr>
+			<div style="position: relative;">
+				
+				
+				
+					
+				
+				 
+
+				
+
+				<div class="ltrMenu">
+					<a class="textMenu" href="http://www.ssrn.com/" target="_parent">Home</a>
+					<a class="textMenu" href="http://papers.ssrn.com/" target="_parent">Search</a>
+					<a class="textMenu" href="http://papers.ssrn.com/sol3/DisplayJournalBrowse.cfm" target="_parent">Browse</a>
+					<a class="textMenu" href="http://hq.ssrn.com/submissions/CreateNewAbstract.cfm" target="_parent">Submit</a>
+					<a class="textMenu" href="http://www.ssrn.com/en/index.cfm/subscribe/">Subscribe</a>
+					<a class="textMenu" href="http://papers.ssrn.com/sol3/ShoppingCart.cfm" target="_parent">Shopping Cart</a>
+					<a class="textMenu" href="http://hq.ssrn.com/Briefcase/myBriefcase.cfm" target="_parent">MyBriefcase</a>
+					<a class="textMenu" href="http://hq.ssrn.com/rankings/Ranking_display.cfm?TRN_gID=10" target="_parent">Top Papers</a>
+					<a class="textMenu" href="http://www.ssrn.com/en/index.cfm/top-authors/" target="_parent">Top Authors</a>
+					<a class="textMenu" href="http://www.ssrn.com/en/index.cfm/top-organizations/" target="_parent">Top Organizations</a>
+					<a class="textMenu" href="http://ssrnblog.com/" target="new">SSRN Blog</a>
+				</div>
+
+			</div>
+		</nobr>
+		</td>
+	<td color="FFFFFF" width="100%" background="">
+	</td>
+	</tr>
+	</tbody></table>
+
+
+		</td>
+    </tr>
+</tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	
+</table>
+<br>
+
+
+
+	
+
+
+
+
+		
+
+        
+
+	
+	<table width="100%">
+		<tbody><tr>
+			
+				<td valign="top" width="100%">
+					<div id="bodyHolder">
+<script type="text/javascript">
+
+function select_all(obj) {
+if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined") {
+var range = document.createRange();
+range.selectNodeContents(obj);
+var sel = window.getSelection();
+sel.removeAllRanges();
+sel.addRange(range);
+} else if (typeof document.selection != "undefined" && typeof document.body.createTextRange != "undefined") {
+var textRange = document.body.createTextRange();
+textRange.moveToElementText(obj);
+textRange.select();
+}
+}
+</script>
+<div id="containerTabs" style="width: 100%;" dir="ltr">
+<div class="selectedTab" style="position: relative; top: 10px; margin-top: -6px; float: left;">
+<table style="vertical-align: top;" cellpadding="0" cellspacing="0" border="0">
+<tbody><tr>
+<td style="vertical-align: top; padding: 2px 0px;" class="leftdeselect">&nbsp;</td>
+<td style="vertical-align: top; padding: 3px;" dir="ltr">
+<h3>Abstract</h3>
+<div onclick="select_all(this)" style="border: 1px solid rgb(204, 204, 204); background-color: rgb(242, 242, 242); color: rgb(0, 51, 102); padding: 1px;">http://ssrn.com/abstract=2485657</div>
+</td>
+<td style="vertical-align: top; padding: 0px;" class="rightdeselect">&nbsp;</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<p style="margin-top: 5px;"><br>&nbsp;</p>
+<div id="outerLightBlue" style="position: relative;">
+<br>
+<div style="position: absolute; top: 10px; width: 100%;">
+<center>
+<table style="background-color: rgb(222, 228, 255);">
+<tbody><tr>
+<td style="white-space: nowrap;" align="center">
+<a class="downloadBt" href="http://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID2485657_code2274066.pdf?abstractid=2485657&amp;mirid=1" onclick="preventDoubleClickAndProceed(this, 'openDownloadFulltext()');" id="openDownloadLink1" title="Download Full-Text Paper">Download This Paper</a>
+<a class="downloadBt" href="http://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID2485657_code2274066.pdf?abstractid=2485657&amp;mirid=1&amp;type=2" onclick="preventDoubleClickAndProceed(this);" id="openPDF" title="Open Full-Text Paper in Browser">Open PDF in Browser</a>
+|
+<a class="menuItems" style="font-weight: bolder;" href="javascript:void(0);" onclick="openDigg();" id="openShareLink">Share</a>
+|
+<a class="menuItems" style="font-weight:bolder;" href="#" onclick="window.open(&quot;Email_Friend.cfm?abid=2485657&quot;,&quot;Email_Friend&quot;,&quot;toolbar=no,menubar=no,scrollbars=yes,resizable=yes,width=740,height=600&quot;)">Email</a>
+| <a class="menuItems" style="font-weight: bolder;" title="Add to MyFavorites tab in MyBriefcase" href="http://hq.ssrn.com/briefcase/myBriefcase.cfm?abid=2485657" target="_top">Add to MyBriefcase</a>
+| <a class="menuItems" style="font-weight: bolder;" title="Purchase Bound Hard Copy" href="javascript:void(0);" onclick="openHardCopy();" id="hardCopyLink">Purchase Bound Hard Copy</a>
+</td>
+</tr>
+</tbody></table>
+</center>
+</div>
+<div style="padding-bottom: 5px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-top: 1px solid white;">
+<br>
+<table width="90%" align="center">
+<tbody><tr>
+<td align="center">
+<div style="display: none;" id="diggarea">
+<!-- AddThis Share Buttons BEGIN -->
+<div class="addthis_toolbox addthis_default_style" style="width: 900px; margin: 0px auto;" align="center">
+<a href="#" title="Facebook" class="addthis_button_facebook addThBtn at300b" style="font-weight:bolder; "><span style="background-color: rgb(59, 89, 152); line-height: 16px; height: 16px; width: 16px;" class="at-icon-wrapper"><svg alt="Facebook" title="Facebook" style="width: 16px; height: 16px;" class="at-icon at-icon-facebook" viewBox="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><path fill-rule="evenodd" d="M21 6.144C20.656 6.096 19.472 6 18.097 6c-2.877 0-4.85 1.66-4.85 4.7v2.62H10v3.557h3.247V26h3.895v-9.123h3.234l.497-3.557h-3.73v-2.272c0-1.022.292-1.73 1.858-1.73h2V6.143z"></path></g></svg></span> Facebook</a>
+<span class="addthis_separator addThBtn">|</span>
+<a href="#" title="Tweet" class="addthis_button_twitter addThBtn at300b" style="font-weight:bolder;"><span style="background-color: rgb(85, 172, 238); line-height: 16px; height: 16px; width: 16px;" class="at-icon-wrapper"><svg alt="Twitter" title="Twitter" style="width: 16px; height: 16px;" class="at-icon at-icon-twitter" viewBox="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><path d="M26.67 9.38c-.78.35-1.63.58-2.51.69.9-.54 1.6-1.4 1.92-2.42-.85.5-1.78.87-2.78 1.06a4.38 4.38 0 0 0-7.57 3c0 .34.04.68.11 1-3.64-.18-6.86-1.93-9.02-4.57-.38.65-.59 1.4-.59 2.2 0 1.52.77 2.86 1.95 3.64-.72-.02-1.39-.22-1.98-.55v.06c0 2.12 1.51 3.89 3.51 4.29a4.37 4.37 0 0 1-1.97.07c.56 1.74 2.17 3 4.09 3.04a8.82 8.82 0 0 1-5.44 1.87c-.35 0-.7-.02-1.04-.06a12.43 12.43 0 0 0 6.71 1.97c8.05 0 12.45-6.67 12.45-12.45 0-.19-.01-.38-.01-.57.84-.62 1.58-1.39 2.17-2.27z"></path></g></svg></span> Twitter</a>
+<span class="addthis_separator addThBtn">|</span>
+<a href="#" title="CiteULike" target="_top" class="addthis_button_citeulike addThBtn at300b" style="font-weight:bolder;"><span style="background-color: rgb(8, 136, 200); line-height: 16px; height: 16px; width: 16px;" class="at-icon-wrapper"><svg alt="CiteULike" title="CiteULike" style="width: 16px; height: 16px;" class="at-icon at-icon-citeulike" viewBox="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><path d="M26.41 8.25H4.82a1.25 1.25 0 0 1 0-2.5h21.59a1.25 1.25 0 0 1 0 2.5zM26.41 14.25H4.82a1.25 1.25 0 0 1 0-2.5h21.59a1.25 1.25 0 0 1 0 2.5zM26.41 20.25H4.82a1.25 1.25 0 0 1 0-2.5h21.59a1.25 1.25 0 0 1 0 2.5zM26.41 26.25H4.82a1.25 1.25 0 0 1 0-2.5h21.59a1.25 1.25 0 0 1 0 2.5z"></path></g></svg></span> CiteULike</a>
+<span class="addthis_separator">|</span>
+<a class="menuItems" style="font-weight: bolder; width: auto; float: left;" href="javascript:void(0);" onclick="openPermalink(this);" title="Permalink">Permalink</a>
+<div class="atclear"></div></div>
+<div id="permalink" style="display: none;">
+
+Using the URL or DOI link below will<br>
+ensure access to this page indefinitely<br>
+<input class="simField" readonly="" size="35" value="http://ssrn.com/abstract=2485657" onclick="javascript:this.focus();this.select();" type="text"><br>
+<input class="simField" readonly="" size="35" value="http://dx.doi.org/10.2139/ssrn.2485657" onclick="javascript:this.focus();this.select();" type="text"><br>
+</div>
+<script type="text/javascript" src="addthis_widget.js"></script>
+<!-- AddThis Share Buttons END -->
+</div>
+<div id="downloadFullText" style="display: none;" class="downloadText">
+<a name="PaperDownload"> </a>
+<table width="80%" align="center">
+<tbody><tr align="center">
+<td colspan="5">
+<strong>
+
+Based on your IP address, your paper is being delivered by:
+</strong>&nbsp;&nbsp;
+</td>
+</tr>
+<tr align="center">
+<td><a href="http://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID2485657_code2274066.pdf?abstractid=2485657&amp;mirid=1" onclick="switchMirror(1);"><img src="ssrntiny.gif" id="id1" onmouseover="this.src='../sol3//images/ssrntiny_over.gif'" onmouseout="this.src='../sol3//images/ssrntiny.gif'"></a></td>
+<td><a href="http://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID2485657_code2274066.pdf?abstractid=2485657&amp;mirid=2" onclick="switchMirror(2);"><img src="chicago.gif" id="id2" onmouseover="this.src='../sol3//images/chicago_over.gif'" onmouseout="this.src='../sol3//images/chicago.gif'"></a></td>
+<td><a href="http://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID2485657_code2274066.pdf?abstractid=2485657&amp;mirid=3" onclick="switchMirror(3);"><img src="ecgi.gif" id="id3" onmouseover="this.src='../sol3//images/ecgi_over.gif'" onmouseout="this.src='../sol3//images/ecgi.gif'"></a></td>
+<td><a href="http://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID2485657_code2274066.pdf?abstractid=2485657&amp;mirid=4" onclick="switchMirror(4);"><img src="korea.gif" id="id4" onmouseover="this.src='../sol3//images/korea_over.gif'" onmouseout="this.src='../sol3//images/korea.gif'"></a></td>
+<td><a href="http://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID2485657_code2274066.pdf?abstractid=2485657&amp;mirid=5" onclick="switchMirror(5);"><img src="stanford.gif" id="id5" onmouseover="this.src='../sol3//images/stanford_over.gif'" onmouseout="this.src='../sol3//images/stanford.gif'"></a></td>
+</tr>
+<tr align="center">
+<td class="selectedMirror">New York, USA
+<div id="processingMessage1" style="display: none;">
+<span>Processing request.</span>
+<img src="progress_bar_2.gif" title="Processing request." height="13" width="65" border="1">
+</div>
+</td>
+<td class="selectedMirror">Illinois, USA
+<div id="processingMessage2" style="display: none;">
+<span>Processing request.</span>
+<img src="progress_bar_2.gif" title="Processing request." height="13" width="65" border="1">
+</div>
+</td>
+<td class="selectedMirror" nowrap="">Brussels, Belgium
+<div id="processingMessage3" style="display: none;">
+<span>Processing request.</span>
+<img src="progress_bar_2.gif" title="Processing request." height="13" width="65" border="1">
+</div>
+</td>
+<td class="selectedMirror">Seoul, Korea
+<div id="processingMessage4" style="display: none;">
+<span>Processing request.</span>
+<img src="progress_bar_2.gif" title="Processing request." height="13" width="65" border="1">
+</div>
+</td>
+<td class="selectedMirror">California, USA
+<div id="processingMessage5" style="display: none;">
+<span>Processing request.</span>
+<img src="progress_bar_2.gif" title="Processing request." height="13" width="65" border="1">
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="5" align="center">
+<br>
+<b>If you have any problems downloading this paper,<br>please click on another Download Location above, or <a href="http://www.ssrn.com/en/index.cfm/ssrn-faq/#dl_help" target="_top" class="menuItems">view our FAQ</a></b>
+<br><b>File name:</b> SSRN-id2485657. ; &nbsp; <b>Size:</b>    469K
+</td>
+</tr>
+</tbody></table>
+<br>
+<script language="JavaScript">
+
+function formatCurrency(num) {
+num = num.toString().replace(/\$|\,/g,'');
+if(isNaN(num))
+num = "0";
+sign = (num == (num = Math.abs(num)));
+num = Math.floor(num*100+0.50000000001);
+cents = num%100;
+num = Math.floor(num/100).toString();
+if(cents<10)
+cents = "0" + cents;
+for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
+num = num.substring(0,num.length-(4*i+3))+','+
+num.substring(num.length-(4*i+3));
+return (((sign)?'':'-') + '$' + num + '.' + cents);
+}
+function CheckVals(checkout){
+var dir = 'http://papers.ssrn.com/sol3/ShoppingCart.cfm?funct=add';
+if (!checkinteger(document.form1.txtQuantity.value)){
+alert("Illegal character. Must be an integer.");
+return false;
+}
+if (document.form1.txtQuantity.value.length < 1){
+alert("Please enter the quantity of papers you would like to purchase!");
+return false;
+}
+else if (document.form1.txtQuantity.value < 1){
+alert("You have to enter a number greater then 0 for the quantity!");
+return false;
+}
+calcTotal();
+dir+='&txtQuantity=' + document.form1.txtQuantity.value
+dir+='&txtTotalPrice=' + document.form1.txtTotalPrice.value;
+dir+='&txtAbID=2485657';
+if (checkout && checkout == 'yes') {
+dir+='&checkout=yes';
+}
+document.location.href=dir;
+}
+function switchMirror ( mirror ) {
+showBar(mirror);
+setTimeout("hideBar(" + mirror + ")", 8000 );
+// hide the rest of the progress bars
+for (i=1; document.getElementById('processingMessage'+i);i++) {
+if (i != mirror) hideBar(i);
+}
+}
+</script>
+</div>
+<div id="hardcopySection" style="display: none;" class="downloadText">
+<br>
+<table width="90%" align="center">
+<tbody><tr>
+<td>
+<form action="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2485657" name="form2" method="post">
+<table cellpadding="3" align="center">
+<tbody><tr>
+<td rowspan="3"><a class="menuItems" href="javascript:void(0);" onclick="window.open(&quot;BoundHardCopy.cfm?img=2&quot;,&quot;SampleCover&quot;,&quot;toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=580,height=540&quot;)"><img src="Purchase_thumb.gif" alt="Sample Cover"></a> </td>
+<td colspan="1" style="text-align: center; padding-left: 30px;"><b>You will receive a <a class="menuItems" href="javascript:void(0);" onclick="window.open(&quot;BoundHardCopy.cfm?img=2&quot;,&quot;BoundHardCopy&quot;,&quot;toolbar=no,menubar=no,scrollbars=no,resizable=yes,width=580,height=540&quot;)">perfect bound</a>, 8.5 x 11 inch, black and white printed copy of this PDF document with a glossy color cover. Currently shipping to U.S. addresses only. Your order will ship within 3 business days. For more details, <a class="menuItems" href="http://www.ssrn.com/en/index.cfm/ssrn-faq/#purchase_bhc" title="SSRN FAQ" target="_top">view our FAQ</a>.</b></td>
+</tr>
+<tr>
+<td style="text-align: center; padding-top: 15px;">
+<b>Quantity:</b>
+<input style="text-decoration: none;" name="txtQuantityHC" value="1" maxlength="6" size="6" onkeyup="calcTotalHC();" type="text">
+<span id="totalprice"><b>Total Price = $9.99 plus shipping (U.S. Only)</b></span>
+<input name="txtTotalPriceHC" value="9.99" type="hidden">
+<input name="txtPriceHC" value="9.99" type="hidden">
+<input name="txtAbIDHC" value="2485657" type="hidden">
+</td>
+</tr>
+<tr>
+<td colspan="1" style="padding-top: 10px;" align="center">
+<input name="cmdAddCart" value="Add to Cart" style="text-decoration: none;" onclick="CheckValsHC();" type="button">&nbsp;
+<input name="cmdCheckout" value="Add to Cart &amp; Checkout" style="text-decoration: none;" onclick="CheckValsHC('yes');" type="button">
+<br><p style="font-weight: bold;">If you have any problems with this purchase, please contact us for assistance by email: <a class="menuItems" href="mailto:support@ssrn.com">Support@SSRN.com </a> or by phone: 877-SSRNHelp (877 777 6435) in the United States, or +1 585 442 8170 outside of the United States. We are open Monday through Friday between the hours of 8:30AM and 6:00PM, United States Eastern.</p>
+</td>
+</tr>
+</tbody></table>
+</form>
+</td>
+</tr>
+</tbody></table>
+<script language="JavaScript">
+
+function calcTotalHC(){
+var lngTotal;
+lngTotal = (document.form2.txtPriceHC.value * document.form2.txtQuantityHC.value);
+document.form2.txtTotalPriceHC.value = lngTotal;
+lngTotal =  formatCurrency(lngTotal);
+document.getElementById("totalprice").innerHTML = "<b>Total Price = "+ lngTotal +" plus shipping (U.S. Only)</b>";
+}
+function CheckValsHC(checkout){
+var dir = 'http://papers.ssrn.com/sol3/ShoppingCart.cfm?funct=addHC';
+if (!checkinteger(document.form2.txtQuantityHC.value)){
+alert("Illegal character. Must be an integer.");
+return false;
+}
+if (document.form2.txtQuantityHC.value.length < 1){
+alert("Please enter the quantity of papers you would like to purchase!");
+return false;
+}
+else if (document.form2.txtQuantityHC.value < 1){
+alert("You have to enter a number greater then 0 for the quantity!");
+return false;
+}
+calcTotalHC();
+dir+='&txtQuantity=' + document.form2.txtQuantityHC.value
+dir+='&txtTotalPrice=' + document.form2.txtTotalPriceHC.value;
+dir+='&txtAbID=2485657';
+if (checkout && checkout == 'yes') {
+dir+='&checkout=yes';
+}
+document.location.href=dir;
+}
+</script>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div id="innerWhite">
+<div id="abstractTitle">
+<h1 style="font-size: 18px;">Quantile Regression for Peak Demand Forecasting</h1>
+</div>
+<center>
+<font face="Myriad Roman, Arial, Helvetica, Sans-serif;" size="2">
+<br><a href="http://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2274066" class="textlink" style="font-size: 14px; font-weight: bold;" target="_top" title="View other papers by this author"><h2 style="font-size: 14px; font-weight: bold; margin: 0px; display: inline;">Charles  Gibbons </h2></a><br>The Brattle Group<br><br><a href="http://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1022882" class="textlink" style="font-size: 14px; font-weight: bold;" target="_top" title="View other papers by this author"><h2 style="font-size: 14px; font-weight: bold; margin: 0px; display: inline;">Ahmad  Faruqui </h2></a><br>The Brattle Group<br>
+</font>
+<br>
+<font face="Myriad Roman, Arial, Helvetica, Sans-serif;" size="2">July 31, 2014</font><br>
+<br>
+</center>
+<br>
+<strong>
+<font face="Myriad Roman, Arial, Helvetica, Sans-serif;" size="2">Abstract: </font>
+</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<font face="Myriad Roman, Arial, Helvetica, Sans-serif;" size="2">
+<div id="abstract">We demonstrate that annual peak demand days are characterized by both extreme values of predictors (such as weather) and large unpredictable "shocks" to demand. OLS approaches incorporate the former feature, but not the latter, leading OLS to produce downwardly-biased estimates of the annual peak. We develop a new estimation procedure, optimal forecast quantile regression (OFQR), that uses quantile regression to estimate a model of daily peak demand, then uses a loss function framework to estimate a quantile to predict the annual peak. We compare the results of the OLS and OFQR estimation approaches for 32 utility zones. While the OFQR approach is unbiased, OLS under-forecasts by nearly 5% on average. Further, OFQR reduces the average absolute percent error by 43%. A bootstrapping procedure generates forecast intervals with accurate 95% coverage in sample and 87% coverage out of sample.</div> </font><p><font face="Myriad Roman, Arial, Helvetica, Sans-serif;" size="2">
+</font>
+</p><p><font face="Myriad Roman, Arial, Helvetica, Sans-serif;" size="2"><b>Number of Pages in PDF File:</b> 25</font></p>
+<p>
+<font face="Myriad Roman, Arial, Helvetica, Sans-serif;" size="2"><b>JEL Classification:</b> C53, C13, C15</font>
+</p>
+
+<center>
+</center>
+<br>
+</div>
+<div class="clearBtn"></div>
+<a class="downloadBt downloadBtRight" href="http://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID2485657_code2274066.pdf?abstractid=2485657&amp;mirid=1&amp;type=2" onclick="preventDoubleClickAndProceed(this);" id="openPDF" title="Open Full-Text Paper in Browser">Open PDF in Browser</a>
+<a class="downloadBt downloadBtRight" href="http://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID2485657_code2274066.pdf?abstractid=2485657&amp;mirid=1" onclick="preventDoubleClickAndProceed(this, 'openDownloadFulltext()');" id="openDownloadLink2" title="Download Full-Text Paper">Download This Paper</a>
+<h4 style="margin-left: 15px;" class="dateInfo">
+
+Date posted: <font style="font-weight: normal;">August 24, 2014</font>
+&nbsp;
+</h4>
+<div id="suggestedCitation" class="regtext11">
+<h4 style="margin-left: 15px; font-weight: bold ! important;">Suggested Citation</h4><p style="margin-left: 15px ! important; margin-right: 10px ! important;" class="regtext11"></p><div class="simField" style="text-decoration: none; font-size: 11px; overflow: hidden; margin-left: 15px; width: 544px;">Gibbons, Charles and Faruqui, Ahmad, Quantile Regression for Peak Demand Forecasting (July 31, 2014).  Available at SSRN: <a href="http://ssrn.com/abstract=2485657" class="textlink" target="_top">http://ssrn.com/abstract=2485657</a> or <a href="http://dx.doi.org/10.2139/ssrn.2485657" class="textlink" target="_top">http://dx.doi.org/10.2139/ssrn.2485657 </a></div><p></p>
+</div>
+<div id="ContactInfo">
+<h4 style="margin-left: 15px ! important; margin-bottom: 0px ! important;">Contact Information</h4><table id="affiliations" style="width: 90%;"><tbody><tr> <td class="affilliationHold" width="60%"><h5 style="margin-top: 15px ! important; margin-bottom: 5px ! important;">Charles E Gibbons  (Contact Author)</h5><div class="affiliation"> <span class="boldMe">The Brattle Group</span> ( <a href="http://papers.ssrn.com/sol3/GetAuthorEmail.cfm?abid=2485657&amp;pag=papers" class="textlink">email</a> )<div class="affilAddress">201 Mission Street Suite 2800<br>San Francisco, CA  94105<br>United States<br>(415) 217-1055 (Phone)<br></div>HOME PAGE: <a href="http://cgibbons.us/" target="HOMEPAGE" title="http://cgibbons.us" class="textlink">http://cgibbons.us</a><br></div></td><td></td></tr><tr> <td class="affilliationHold" width="60%"><h5 style="margin-top: 15px ! important; margin-bottom: 5px ! important;">Ahmad Faruqui </h5><div class="affiliation"> <span class="boldMe">The Brattle Group</span> ( <a href="http://papers.ssrn.com/sol3/GetAuthorEmail.cfm?abid=2485657&amp;pag=papers" class="textlink">email</a> )<div class="affilAddress">Suite 2800<br>201 Mission Street<br>San Francisco, CA  94105<br>United States<br></div></div></td><td></td></tr></tbody></table>
+</div>
+</div>
+</div>
+				</td>
+				<td valign="top" width="170px">
+					<table style="vertical-align: top;" width="170px">
+<tbody><tr>
+<td>
+<div style="position: relative; margin-top: -18px;">
+
+<form action="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2485657" name="formSuggestions" id="openbox" style="display: none; margin-top: 0px;">
+<table class="leftColBox" style="z-index: 100;" width="100%" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td style="width: 93%; vertical-align: middle;" class="leftColBoxHead">
+<nobr><strong style="color: rgb(0, 0, 0);">Feedback to SSRN</strong></nobr>
+</td>
+<td style="width: 7%; vertical-align: middle; text-align: right;" class="leftColBoxHead">
+<a href="javascript:void(0);" onclick="closeBox();">
+<img class="leftboxarrow" src="expanded.gif"></a>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="line-height: 10px; padding: 5px; background-color: rgb(255, 255, 255);">
+<br>Feedback (Required)
+<br><textarea name="txtFeedback" id="txtFeedback" rows="10" title="Feedback (Required)" class="styTextArea" onkeyup="checkFields(); return imposeMaxLength(this,1000);" style="color: rgb(153, 153, 153);" onclick="checkFeedback(this);" onfocus="checkFeedback(this);">[enter your feedback here]</textarea><br>
+1,000 character maximum
+</td>
+</tr>
+<tr>
+<td colspan="2" style="line-height: 10px; padding: 5px; background-color: rgb(255, 255, 255);" width="100%">
+<br>Email Address (Required)
+<br><input name="txtEmail" id="txtEmail" title="Email Address (Required)" class="styTextArea2" onkeyup="checkFields();" style="color: rgb(153, 153, 153);" onclick="checkEmailContent(this);" onfocus="checkEmailContent(this);" value="[enter valid email address here]" type="text"><br>
+<p align="center">
+<input name="txtReferer" value="/UserHome.cfm" type="hidden">
+<input name="btnSuggest" id="btnSuggest" value="Submit" disabled="true" onclick="sendSuggest();" type="button">
+<br><br><font style="font-size: xx-small;">If you need immediate assistance, call 877-SSRNHelp (877 777 6435) in the United States, or +1 585 442 8170 outside of the United States, 8:30AM to 6:00PM U.S. Eastern, Monday - Friday.</font>
+</p>
+</td>
+</tr>
+</tbody></table>
+</form>
+<table id="closedbox" style="" class="leftColBox" width="100%" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td style="width: 93%; vertical-align: middle;" class="leftColBoxHead"><nobr><strong style="color: rgb(0, 0, 0);">Feedback to SSRN</strong></nobr></td>
+<td style="width: 7%; vertical-align: middle; text-align: right;" class="leftColBoxHead">
+<a href="javascript:void(0);" onclick="openBox();">
+<img class="leftboxarrow" src="collapsed.gif"></a>
+</td>
+</tr>
+</tbody></table>
+<script language="javascript" type="text/javascript">
+
+var url = "http://papers.ssrn.com/AjaxStatic.cfm?file=SuggBoxProcess"; // The server-side script
+var isWorking = false;
+var windowwidth = 0;
+var windowheight = 0;
+var TZOffset = 0;
+var w_width = 0;
+var w_height = 0;
+if (window.outerWidth) {
+w_width = window.outerWidth;
+w_height = window.outerHeight;
+}
+else if (document.body.clientWidth) {
+w_width = document.body.clientWidth;
+w_height = document.body.clientHeight;
+}
+var mydate= new Date();
+var TZOffset = mydate.getTimezoneOffset()/60;
+function sendSuggest() {
+if (document.formSuggestions.txtEmail.value.length > 1000) {
+alert("Please make sure your suggestion is less then 1000 characters long.");
+}
+else {
+if (!isWorking && http) {
+var SugPageFrom = "/sol3/papers.cfm";
+var IpAddr = "62.204.199.202";
+var FullUrl = Trim(prepareString("papers.ssrn.com/sol3/papers.cfm?abstract_id=2485657"));
+var strEmail = document.getElementById("txtEmail").value;
+var strFeedback = Trim(document.getElementById("txtFeedback").value);
+strFeedback = Trim(prepareString(strFeedback));
+http.open('POST',url,false);
+http.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+http.send("txtFeedback="+strFeedback+"&txtEmail="+strEmail+"&SugPageFrom="+SugPageFrom+"&IPAddr="+IpAddr+"&FullUrl="+FullUrl+"&w_width="+w_width+"&w_height="+w_height+"&TZOffset="+TZOffset);
+}
+resetForm();
+}
+}
+function getHTTPObject() {
+var xmlhttp;
+if (!xmlhttp && typeof XMLHttpRequest != 'undefined') {
+try {
+xmlhttp = new XMLHttpRequest();
+}
+catch (e) {
+xmlhttp = false;
+}
+}
+return xmlhttp;
+}
+var http = getHTTPObject(); // We create the HTTP Object
+function closeBox() {
+document.getElementById('openbox').style.display='none';
+document.getElementById('closedbox').style.display='block';
+}
+function openBox() {
+document.getElementById('closedbox').style.display='none';
+document.getElementById('openbox').style.display='block';
+}
+function Trim(stringToTrim) {
+return stringToTrim.replace(/^\s+|\s+$/g,"");
+}
+function checkEmailContent(valueEmail) {
+if (valueEmail.value && valueEmail.value == '[enter valid email address here]'){
+if (valueEmail.value != ''){
+valueEmail.value='';
+}
+valueEmail.style.color='black';
+}
+checkFields();
+}
+function checkFeedback(valueFeedback){
+if (valueFeedback.value && valueFeedback.value == '[enter your feedback here]'){
+valueFeedback.value='';
+valueFeedback.style.color='black';
+}
+checkFields();
+}
+function checkFields(){
+var feedbackPost = Trim(document.getElementById('txtFeedback').value);
+var emailPost = Trim(document.getElementById('txtEmail').value);
+var bChkEmail = /^([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$/;
+if (feedbackPost == '[enter your feedback here]' || feedbackPost.length == 0 || !bChkEmail.test(emailPost)) {
+document.formSuggestions.btnSuggest.disabled=true;
+}
+else {
+document.formSuggestions.btnSuggest.disabled=false;
+}
+}
+function resetForm(){
+// Reset form fields
+document.forms['formSuggestions'].reset();
+// Close Feedback Module
+closeBox();
+// Disable submit button
+document.formSuggestions.btnSuggest.disabled=true;
+// Set fields color
+if (Trim(document.getElementById('txtFeedback').value) == '[enter your feedback here]'){
+document.getElementById('txtFeedback').style.color='#999999';
+}
+if (Trim(document.getElementById('txtEmail').value) == '[enter valid email address here]'){
+document.getElementById('txtEmail').style.color='#999999';
+}
+}
+/*
+This function prepare string for special characteres.
+javascript use:	str = str.replace(/stringToSearch/g,'stringToReplace');
+cfscript use:		str = replaceAll(str, 'stringToSearch','stringToReplace');
+*/
+function prepareString ( str ){
+str = str.replace(/%/g,'|-.2.-|');
+str = encodeURI(str);
+str = str.replace(/&/g,'|-.1.-|');
+str = str.replace(/‘/g,'|-.7.-|');
+str = str.replace(/’/g,'|-.8.-|');
+// need to make these replacement b/c a bug that appeared after the CF upgrade
+str = str.replace(/%u2019/g,"'");
+str = str.replace(/%u2018/g,"'");
+// need to make these replacement b/c a bug in Safari
+str = str.replace(/%u201C/g,'%22');
+str = str.replace(/%u201D/g,'%22');
+str = str.replace(/%u2013/g,'-');
+str = str.replace(/%u2014/g,'-');
+str = str.replace(/%uF0FC/g,'*');
+str = str.replace(/%u2022/g,'*');
+str = str.replace(/%uF0A7/g,'*');
+return str;
+}
+function imposeMaxLength(Object, MaxLen){
+var tecla, int_value, out_value;
+if (Object.value.length > MaxLen){
+in_value = Object.value;
+out_value = in_value.substring(0,MaxLen);
+Object.value = out_value;
+return false;
+}
+return true;
+}
+</script>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<br><br>
+<div class="statistics">
+<font style="font-size: 12px;">Paper statistics</font>
+<br>
+<div class="lineDiv1"></div>
+<table style="margin-top: 0px; margin-bottom: 0px;" width="99%" cellpadding="0" cellspacing="0" border="0">
+<tbody><tr>
+<td align="left">
+<span class="statisticsText">Abstract Views:</span>
+</td>
+<td width="40px" align="right">
+<span class="statNumber">      561</span>
+</td>
+</tr>
+</tbody></table>
+<table style="margin-top: 0px; margin-bottom: 0px;" width="99%" cellpadding="0" cellspacing="0" border="0">
+<tbody><tr>
+<td align="left">
+<span class="statisticsText">Downloads:</span>
+</td>
+<td width="40px" align="right">
+<span class="statNumber">       95</span>
+</td>
+</tr>
+</tbody></table>
+<table style="margin-top: 0px; margin-bottom: 0px;" width="99%" cellpadding="0" cellspacing="0" border="0">
+<tbody><tr>
+<td align="left">
+<span class="statisticsText">Download Rank:</span>
+</td>
+<td width="40px" align="right">
+<span class="statNumber">   193,646</span>
+</td>
+</tr>
+</tbody></table>
+</div>
+<script type="text/javascript" src="jquery.js"></script>
+<script language="javascript">
+
+var times = 0; //  track the number of times the MORE link has been clicked (to avoid fraud)
+// Track Recommendations appearances
+function trackAppearances ()	{
+times++; // to avoid fraud - we only track these the first time the additional recommendations are shown
+var ab_id_source = '2485657';
+var list_of_ab_id_target = '';
+var initial_limit = '3';
+var algorithm = '1';
+var fraud = '1';
+if (times == 1) {
+$.ajax({
+url: 'TrackRecommendationsAppearances.cfm?ab_id_source=' + ab_id_source + '&list_of_ab_id_target=' + list_of_ab_id_target + '&initial_limit=' + initial_limit + '&algorithm=' + algorithm + '&fraud=' + fraud,
+cache: false,
+success: function(data) {
+}
+});
+}
+}
+</script>
+</td>
+</tr>
+<tr>
+<td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2197154964274421";
+google_alternate_ad_url = "http://papers.ssrn.com/sol3/google_adsense_script.html";
+google_ad_width = 170;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></script>
+<script type="text/javascript" src="show_ads.js"></script>
+</td>
+</tr>
+</tbody></table>
+				</td>
+			
+		</tr><tr>
+	</tr></tbody></table><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;"><iframe src="papers_1.html" style="height: 1px; width: 1px; position: absolute; top: 0px; z-index: 100000; border: 0px none; left: 0px;" title="AddThis utility frame" id="_atssh264"></iframe></div>
+
+<!--Includes footer -->
+<!-- includes piwik Trakcer -->
+ 
+
+
+	 
+
+
+<!-- Piwik -->
+<script type="text/javascript">
+
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.ssrn.com/" : "http://piwik.ssrn.com/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="piwik.js" type="text/javascript"></script><script type="text/javascript">
+
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 7);
+
+
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://piwik.ssrn.com/piwik.php?idsite=7" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+
+<!--Includesss footer -->
+
+
+
+	
+	<p class="ssrn_ft" align="center">© 2016 Social Science Electronic Publishing, Inc. All Rights Reserved.&nbsp;
+	<a href="http://www.ssrn.com/en/index.cfm/ssrn-faq/" target="_top" title="SSRN's Database and Services (FAQ)">FAQ</a>&nbsp;&nbsp;
+	<a href="http://www.ssrn.com/en/index.cfm/terms-of-use/" target="_top" title="Terms of Use">Terms of Use</a>&nbsp;&nbsp;
+	<a href="http://www.ssrn.com/en/index.cfm/privacy-policy/" target="_top" title="Privacy Policy">Privacy Policy</a>&nbsp;&nbsp;
+	<a href="http://www.ssrn.com/en/index.cfm/dmca-notice-policy/" target="_top" title="Copyright">Copyright</a>&nbsp;&nbsp;
+	<a href="http://www.ssrn.com/en/index.cfm/contactus/" target="_top" title="Contact">Contact Us</a>
+	<br>This page was processed by apollo8 in <span id="serverTime">  1.594</span> seconds
+    <span id="loadingtime">and delivered in 3.325 seconds</span></p>
+	<a href="http://papers.ssrn.com/bots.not.allowed/"></a>
+
+	
+	
+
+	
+
+
+
+<script language="javascript">
+
+	if (window.loadingTime) {
+	addLoadEvent(loadingTime); }
+</script>
+
+
+
+
+
+
+
+
+
+<a href="http://papers.ssrn.com/sol3/updateInformationLog.cfm?process=true"><img src="pixel.gif" alt=" " height="1" width="1" border="0"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+	
+
+ <script language="JavaScript">
+
+   	var ua = navigator.userAgent.toLowerCase();
+	var isSafari = (ua.indexOf('safari') > -1);
+ 	var bMac = 'False';
+	var bCaptcha = 'no';
+	function showBar(mirrorID){
+		if (document.getElementById('processingMessage'+mirrorID)) {
+			document.getElementById('processingMessage'+mirrorID).style.display="";
+		}
+	}
+
+	function hideBar(mirrorID){
+		if (document.getElementById('processingMessage'+mirrorID)) {
+			document.getElementById('processingMessage'+mirrorID).style.display="none";
+		}
+	}
+    function openDownloadFulltext() {
+        if (document.getElementById('downloadFullText').style.display=='none') {
+        	document.getElementById('downloadFullText').style.display='block';
+            document.getElementById('diggarea').style.display='none';
+			if (document.getElementById('openDownloadLink')){
+	            document.getElementById('openDownloadLink').className = 'menuItemsDownloadOpened';
+			}
+            document.getElementById('openShareLink').className = 'menuItems';
+   			if (document.getElementById('hardCopyLink')){
+				document.getElementById('hardcopySection').style.display='none';
+				document.getElementById('hardCopyLink').className = 'menuItems';
+				}
+			showBar(1);
+			setTimeout("hideBar(1)", 8000 );
+		}
+		return true;
+	}
+
+	if (bCaptcha == "yes" && bIE == "True"){
+		document.form1.recaptcha_response_field.style.top = "18px" ;
+	}
+</script></body>
+</html>

@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html class="js" lang="en-gb"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.5,user-scalable=yes">
+    <meta name="citation_publisher" content="Springer, Cham">
+    <meta name="citation_title" content="Pollen Image Classification Using the Classifynder System: Algorithm Comparison and a Case Study on New Zealand Honey">
+    <meta name="citation_doi" content="10.1007/978-3-319-10984-8_12">
+    <meta name="citation_language" content="en">
+    <meta name="citation_abstract_html_url" content="https://link.springer.com/chapter/10.1007/978-3-319-10984-8_12">
+    <meta name="citation_fulltext_html_url" content="https://link.springer.com/chapter/10.1007/978-3-319-10984-8_12">
+    <meta name="citation_pdf_url" content="https://link.springer.com/content/pdf/10.1007%2F978-3-319-10984-8_12.pdf">
+    <meta name="citation_springer_api_url" content="http://api.springer.com/metadata/pam?q=doi:10.1007/978-3-319-10984-8_12&amp;api_key=">
+    <meta name="citation_firstpage" content="207">
+    <meta name="citation_lastpage" content="226">
+    <meta name="citation_author" content="Ryan Lagerstrom">
+    <meta name="citation_author_institution" content="CSIRO">
+    <meta name="citation_author_email" content="ryan.lagerstrom@csiro.au">
+    <meta name="citation_author" content="Katherine Holt">
+    <meta name="citation_author_institution" content="Massey University">
+    <meta name="citation_author" content="Yulia Arzhaeva">
+    <meta name="citation_author_institution" content="CSIRO">
+    <meta name="citation_author" content="Leanne Bischof">
+    <meta name="citation_author_institution" content="CSIRO">
+    <meta name="citation_author" content="Simon Haberle">
+    <meta name="citation_author_institution" content="The Australian National University">
+    <meta name="citation_author" content="Felicitas Hopf">
+    <meta name="citation_author_institution" content="The Australian National University">
+    <meta name="citation_author" content="David Lovell">
+    <meta name="citation_author_institution" content="CSIRO">
+    <meta name="dc.identifier" content="10.1007/978-3-319-10984-8_12">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="We describe an investigation into how Massey University’s Pollen Classifynder can accelerate the understanding of pollen and its role in nature. The Classifynder is an imaging microscopy system that c">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Pollen Image Classification Using the Classifynder System: Algorithm C">
+    <meta name="twitter:image" content="https://static-content.springer.com/cover/book/978-3-319-10984-8.jpg">
+    <meta name="twitter:image:alt" content="Content cover image">
+    <meta name="twitter:site" content="SpringerLink">
+    <meta name="twitter:description" content="We describe an investigation into how Massey University’s Pollen Classifynder can accelerate the understanding of pollen and its role in nature. The Classifynder is an imaging microscopy system that c">
+    <meta name="citation_inbook_title" content="Signal and Image Analysis for Biomedical and Life Sciences">
+    <meta name="citation_publication_date" content="2015">
+    <meta property="og:title" content="Pollen Image Classification Using the Classifynder System: Algorithm Comparison and a Case Study on New Zealand Honey">
+    <meta property="og:type" content="Paper">
+    <meta property="og:url" content="https://link.springer.com/chapter/10.1007/978-3-319-10984-8_12">
+    <meta property="og:image" content="https://static-content.springer.com/cover/book/978-3-319-10984-8.jpg">
+    <meta property="og:site_name" content="SpringerLink">
+    <meta property="og:description" content="We describe an investigation into how Massey University’s Pollen Classifynder can accelerate the understanding of pollen and its role in nature. The Classifynder is an imaging microscopy system that c">
+
+        <title>Pollen Image Classification Using the Classifynder 
+System: Algorithm Comparison and a Case Study on New Zealand Honey | 
+SpringerLink</title>
+        <link rel="canonical" href="https://link.springer.com/chapter/10.1007/978-3-319-10984-8_12">
+        <link rel="shortcut icon" href="https://link.springer.com/springerlink-static/389320050/images/favicon/favicon.ico">
+<link rel="icon" sizes="16x16 32x32 48x48" href="https://link.springer.com/springerlink-static/389320050/images/favicon/favicon.ico">
+<link rel="icon" sizes="16x16" type="image/png" href="https://link.springer.com/springerlink-static/389320050/images/favicon/favicon-16x16.png">
+<link rel="icon" sizes="32x32" type="image/png" href="https://link.springer.com/springerlink-static/389320050/images/favicon/favicon-32x32.png">
+<link rel="icon" sizes="48x48" type="image/png" href="https://link.springer.com/springerlink-static/389320050/images/favicon/favicon-48x48.png">
+<link rel="apple-touch-icon" href="https://link.springer.com/springerlink-static/389320050/images/favicon/app-icon-iphone@3x.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://link.springer.com/springerlink-static/389320050/images/favicon/ic_launcher_hdpi.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://link.springer.com/springerlink-static/389320050/images/favicon/app-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://link.springer.com/springerlink-static/389320050/images/favicon/app-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://link.springer.com/springerlink-static/389320050/images/favicon/app-icon-iphone@2x.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://link.springer.com/springerlink-static/389320050/images/favicon/ic_launcher_xxhdpi.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://link.springer.com/springerlink-static/389320050/images/favicon/app-icon-ipad@2x.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://link.springer.com/springerlink-static/389320050/images/favicon/app-icon-iphone@3x.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/springerlink-static/389320050/images/favicon/ic_launcher_xxhdpi.png">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://google-analytics.com/">
+<link rel="dns-prefetch" href="https://www.google-analytics.com/">
+<link rel="dns-prefetch" href="https://www.googletagservices.com/">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+<link rel="dns-prefetch" href="https://static-content.springer.com/">
+        <link rel="stylesheet" href="basic.css" media="screen">
+<link rel="stylesheet" href="styles.css" class="js-ctm" media="only screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0), (-ms-high-contrast: none), only all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)">
+<link rel="stylesheet" href="print.css" media="print">
+
+
+            <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="controltag.js"></script><script async="" type="text/javascript" src="111111111111111.asc"></script><script async="" type="text/javascript" src="gpt.js"></script><script type="text/javascript" async="" src="KDqyaFZ_.js"></script><script async="" src="gtm.js"></script><script id="webtrekk-properties">
+    var webtrekkProperties = {
+          trackDomain : "springergmbh01.webtrekk.net",
+          trackId : "935649882378213",
+      };
+    </script>
+    <script type="text/javascript" async="" src="webtrekk_v4.js"></script>
+
+            <script>
+        var dataLayer = [{
+                'GA Key':'UA-26408784-1',
+                'Event Category':'Chapter',
+                'Open Access':'N',
+                'Labs':'Y',
+                'DOI':'10.1007\/978-3-319-10984-8_12',
+                'VG Wort Identifier':'pw-vgzm.415900-10.1007-978-3-319-10984-8_12',
+                'HasAccess':'N',
+                'Full HTML':'N',
+                'Has Body':'Y',
+                'Static Hash':'389320050',
+                'Has Preview':'N',
+                'user':{'license': {'businessPartnerID': [], 'businessPartnerIDString': ''}},
+                'content':{'type': 'chapter', 'book': {'seriesTitle': 'Advances in Experimental Medicine and Biology', 'bookProductType': 'Contributed volume', 'eIsbn': '978-3-319-10984-8', 'seriesId': '5584', 'title': 'Signal and Image Analysis for Biomedical and Life Sciences', 'doi': '10.1007/978-3-319-10984-8'}, 'chapter': {'doi': '10.1007/978-3-319-10984-8_12'}, 'category': {'pmc': {'primarySubject': 'Computer Science', 'primarySubjectCode': 'I', 'secondarySubjects': {'1': 'Image Processing and Computer Vision', '2': 'Biomedicine general', '3': 'Life Sciences, general'}, 'secondarySubjectCodes': {'1': 'I22021', '2': 'B0000X', '3': 'L00004'}}}},
+                'Access Type':'noaccess',
+                'Page':'chapter',
+                'Bpids':'',
+                'Bpnames':'',
+                'SubjectCodes':'SCI, SCI22021, SCB0000X, SCL00004',
+                'Keywords':'Pollen, Palynology, Image analysis, Statistical classification, Automation, Machine learning',
+                'Webtrekk parent prefix':'book',
+                'Webtrekk leaf prefix':'chapter',
+                'Webtrekk toc prefix':'book',
+                'Country':'ES',
+        }];
+    </script>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?cache-busting=' + new Date().getTime() + '&id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WCF9Z9');</script>
+
+    <link rel="preload" href="integrator.js"><script type="text/javascript" src="integrator.js"></script><link rel="preload" href="integrator_002.js"><script type="text/javascript" src="integrator_002.js"></script><script src="pubads_impl_172.js" async=""></script><script language="javascript" type="text/javascript" src="https://cdn.wbtrk.net/js/geid.min.js"></script><script language="javascript" type="text/javascript" src="https://cdn.wbtrk.net/js/geid.min.js"></script><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-14/html/container.html"></head>
+    <body><button href="javascript:;" title="focus catcher" class="js-focus-catcher u-screenreader-only" tabindex="-1"></button><div id="popup-search" class="u-composite-layer popup-search-theme" style="top:-60px;left:-60px;visibility:hidden;opacity:0;" aria-hidden="true" aria-label="popup"><svg class="popup-arrow" xmlns="http://www.w3.org/2000/svg" width="33.7" height="18.4" viewBox="0 0 33.7 18.4"><path class="fill" fill="#F7FBFE" d="M1.4 18.4h30.9l-15.5-16.9z"></path><path class="stroke" fill="#98BED7" d="M0 18.4h1.4l15.4-16.9 15.5 16.9h1.4l-16.9-18.4z"></path></svg><div class="popup-arrow popup-arrow-shadow icon--popup-arrow-shadow"></div><div class="popup__search"><div class="popup-base-theme__inner" data-component="SpringerLink-Popup-inner"></div></div><button tabindex="-1" class="popup-close icon--close-btn" data-component="SpringerLink-Popup-close">close</button></div>
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WCF9Z9"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <nav class="skip-to">
+    <a class="skip-to__link skip-to__link--article" href="#main-content">Skip to main content</a>
+</nav>
+        <div class="page-wrapper">
+            <noscript>
+    <div class="nojs-banner u-interface">
+        <p>This service is more advanced with JavaScript available, learn more at <a
+                href="http://activatejavascript.org" target="_blank" rel="noopener">http://activatejavascript.org</a>
+        </p>
+    </div>
+</noscript>
+                    <div id="leaderboard" class="leaderboard u-hide" data-component="SpringerLink.GoogleAds" data-namespace="leaderboard"></div>
+
+                <header id="header" class="header u-interface" role="banner">
+        <div class="header__content">
+            <div class="header__menu-container">
+                    <a id="logo" class="site-logo" href="https://link.springer.com/" title="Go to homepage">
+                <div class="u-screenreader-only">SpringerLink</div>
+    <svg class="site-logo__springer" width="148" height="30" role="img" aria-label="SpringerLink Logo">
+        <image width="148" height="30" alt="SpringerLink Logo" src="/springerlink-static/389320050/images/png/springerlink.png" xlink="http://www.w3.org/1999/xlink" xlink:href="/springerlink-static/389320050/images/svg/springerlink.svg"></image>
+    </svg>
+
+    </a>
+
+
+                    <nav id="search-container" class="u-inline-block">
+                        <div class="search">
+                            <div class="search__content">
+                                <form class="u-form-single-input" action="/search" method="get" role="search">
+    <input aria-label="Search" name="query" autocomplete="off" placeholder="Search" type="text">
+    <input class="u-hide-text" value="Submit" title="Submit" type="submit">
+    <svg class="u-vertical-align-absolute" width="13" height="13" viewBox="222 151 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M227 159C228.7 159 230 157.7 230 156 230 154.3 228.7 153 227 153 225.3 153 224 154.3 224 156 224 157.7 225.3 159 227 159L227 159 227 159 227 159ZM230 160.1L231.1 159 233.9 161.7C234.2 162.1 234.2 162.6 233.9 162.9 233.6 163.2 233.1 163.2 232.7 162.9L230 160.1 230 160.1 230 160.1 230 160.1ZM227 161L227 161C224.2 161 222 158.8 222 156 222 153.2 224.2 151 227 151 229.8 151 232 153.2 232 156 232 158.8 229.8 161 227 161L227 161 227 161 227 161 227 161Z" stroke="none" fill-rule="evenodd"></path>
+    </svg>
+</form>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <nav class="nav-container u-interface">
+    <div class="global-nav__wrapper">
+        <div class="search-button">
+            <a class="search-button__label" href="#search-container" role="button" aria-pressed="false" aria-haspopup="true" aria-controls="popup-search">
+                <span class="search-button__title">Search</span><svg width="12" height="12" viewBox="222 151 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M227 159C228.7 159 230 157.7 230 156 230 154.3 228.7 153 227 153 225.3 153 224 154.3 224 156 224 157.7 225.3 159 227 159L227 159 227 159 227 159ZM230 160.1L231.1 159 233.9 161.7C234.2 162.1 234.2 162.6 233.9 162.9 233.6 163.2 233.1 163.2 232.7 162.9L230 160.1 230 160.1 230 160.1 230 160.1ZM227 161L227 161C224.2 161 222 158.8 222 156 222 153.2 224.2 151 227 151 229.8 151 232 153.2 232 156 232 158.8 229.8 161 227 161L227 161 227 161 227 161 227 161Z" stroke="none" fill-rule="evenodd"></path>
+                </svg>
+            </a>
+        </div>
+
+        <ul class="global-nav" data-component="SpringerLink.Menu" data-title="Navigation menu" data-text="Menu">
+            <li>
+                <a href="https://link.springer.com/">
+                    <span class="u-overflow-ellipsis">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://link.springer.com/contactus">
+                    <span class="u-overflow-ellipsis">Contact us</span>
+                </a>
+            </li>
+
+                <li class="global-nav__logged-out">
+                    <a class="test-login-link" href="https://link.springer.com/signup-login?previousUrl=https%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%252F978-3-319-10984-8_12">
+                        <span class="u-overflow-ellipsis">Log in</span>
+                    </a>
+                </li>
+
+        </ul><div class="main-menu u-composite-layer c-button-dropdown c-button-dropdown--ghost" data-component="SV.Dropdown" data-namespace="Menu" aria-label="button with dropdown options" style=""><button type="button" title="Navigation menu" class="c-button-dropdown__button" data-role="button-dropdown__control" aria-pressed="false" aria-expanded="false" aria-controls="Dropdown.Menu-dropdown"><span class="u-overflow-ellipsis c-button-dropdown__button-title">Menu</span><span class="c-button-dropdown__icon"></span></button><div class="u-composite-layer c-button-dropdown__container" aria-hidden="true" aria-label="dropdown" id="Dropdown.Menu-dropdown"><ul class="main-menu__content" data-role="button-dropdown__content"><li>
+                <a href="https://link.springer.com/">
+                    <span class="u-overflow-ellipsis">Home</span>
+                </a>
+            </li><li>
+                <a href="https://link.springer.com/contactus">
+                    <span class="u-overflow-ellipsis">Contact us</span>
+                </a>
+            </li><li class="global-nav__logged-out">
+                    <a class="test-login-link" href="https://link.springer.com/signup-login?previousUrl=https%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%252F978-3-319-10984-8_12">
+                        <span class="u-overflow-ellipsis">Log in</span>
+                    </a>
+                </li></ul></div></div>
+    </div> 
+</nav> 
+            </div>
+
+        </div>
+    </header>
+
+            
+            
+
+            <main id="main-content" class="main-wrapper">
+                <div class="main-container uptodate-recommendations-off">
+                    <aside class="main-sidebar-left">
+                        <div class="main-sidebar-left__content">
+                            <div class="test-cover cover-image" itemscope="">
+        <a class="test-cover-link" href="https://link.springer.com/book/10.1007/978-3-319-10984-8" title="Signal and Image Analysis for Biomedical and Life Sciences">
+            <img class="test-cover-image" src="978-3-319-10984-8.jpg" alt="Signal and Image Analysis for Biomedical and Life Sciences" itemprop="image">
+        </a>
+
+</div>
+                        </div>
+                    </aside>
+                    <div class="main-body" data-role="NavigationContainer">
+                        
+
+
+
+                        <article class="main-body__content">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="FulltextWrapper"><div class="ArticleHeader main-context"><div id="enumeration" class="enumeration"><p class="test-LocationInConferenceProceeding"><span class="BookTitle"><a href="https://link.springer.com/book/10.1007/978-3-319-10984-8" class="gtm-book-link">Signal and Image Analysis for Biomedical and Life Sciences</a></span><span class="page-numbers-info">
+                pp 207-226</span><span class="u-inline-block u-ml-4"> |
+                <a class="gtm-cite-link" href="#citeas">Cite as</a></span></p></div><div class="MainTitleSection"><h1 class="ChapterTitle" lang="en">Pollen Image Classification Using the Classifynder System: Algorithm Comparison and a Case Study on New Zealand Honey</h1></div><div class="authors u-clearfix authors--enhanced" data-component="SpringerLink.Authors"><ul class="u-interface u-inline-list authors__title" data-role="AuthorsNavigation"><li><a href="#authors" class="gtm-tab-authors selected">Authors</a></li><li><a href="#authorsandaffiliations" class="gtm-tab-authorsandaffiliations">Authors and affiliations</a></li></ul><span class="marker" style="width: 160px;"></span><div class="authors__list" data-role="AuthorsList" id="authors"><ul class="test-contributor-names"><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors__name">Ryan&nbsp;Lagerstrom</span><span class="author-information"><span class="authors__contact"><a href="mailto:ryan.lagerstrom@csiro.au" title="ryan.lagerstrom@csiro.au" itemprop="email" class="gtm-email-author">Email author</a></span></span></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors__name">Katherine&nbsp;Holt</span></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors__name">Yulia&nbsp;Arzhaeva</span></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors__name">Leanne&nbsp;Bischof</span></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors__name">Simon&nbsp;Haberle</span></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors__name">Felicitas&nbsp;Hopf</span></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors__name">David&nbsp;Lovell</span></li></ul></div><div class="authors__affiliations" id="authorsandaffiliations"><div class="authors-affiliations u-interface"><ul class="test-contributor-names"><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors-affiliations__name">Ryan&nbsp;Lagerstrom</span><ul class="authors-affiliations__indexes u-inline-list" data-role="AuthorsIndexes"><li data-affiliation="affiliation-1">1</li></ul><span class="author-information"><span class="author-information__contact u-icon-before icon--email-before"><a href="mailto:ryan.lagerstrom@csiro.au" title="ryan.lagerstrom@csiro.au" itemprop="email" class="gtm-email-author">Email author</a></span></span></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors-affiliations__name">Katherine&nbsp;Holt</span><ul class="authors-affiliations__indexes u-inline-list" data-role="AuthorsIndexes"><li data-affiliation="affiliation-2">2</li></ul></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors-affiliations__name">Yulia&nbsp;Arzhaeva</span><ul class="authors-affiliations__indexes u-inline-list" data-role="AuthorsIndexes"><li data-affiliation="affiliation-1">1</li></ul></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors-affiliations__name">Leanne&nbsp;Bischof</span><ul class="authors-affiliations__indexes u-inline-list" data-role="AuthorsIndexes"><li data-affiliation="affiliation-1">1</li></ul></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors-affiliations__name">Simon&nbsp;Haberle</span><ul class="authors-affiliations__indexes u-inline-list" data-role="AuthorsIndexes"><li data-affiliation="affiliation-3">3</li></ul></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors-affiliations__name">Felicitas&nbsp;Hopf</span><ul class="authors-affiliations__indexes u-inline-list" data-role="AuthorsIndexes"><li data-affiliation="affiliation-3">3</li></ul></li><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors-affiliations__name">David&nbsp;Lovell</span><ul class="authors-affiliations__indexes u-inline-list" data-role="AuthorsIndexes"><li data-affiliation="affiliation-4">4</li></ul></li></ul><ol class="test-affiliations"><li class="affiliation" data-test="affiliation-1" data-affiliation-highlight="affiliation-1" itemscope="" itemtype="http://schema.org/Organization"><span class="affiliation__count">1.</span><span class="affiliation__item"><span itemprop="department" class="affiliation__department">Digital Productivity Flagship</span><span itemprop="name" class="affiliation__name">CSIRO</span><span itemprop="city" class="affiliation__city">North Ryde, Sydney</span><span itemprop="country" class="affiliation__country">Australia</span></span></li><li class="affiliation" data-test="affiliation-2" data-affiliation-highlight="affiliation-2" itemscope="" itemtype="http://schema.org/Organization"><span class="affiliation__count">2.</span><span class="affiliation__item"><span itemprop="department" class="affiliation__department">Institute of Natural Resources</span><span itemprop="name" class="affiliation__name">Massey University</span><span itemprop="city" class="affiliation__city">Palmerston North</span><span itemprop="country" class="affiliation__country">New Zealand</span></span></li><li class="affiliation" data-test="affiliation-3" data-affiliation-highlight="affiliation-3" itemscope="" itemtype="http://schema.org/Organization"><span class="affiliation__count">3.</span><span class="affiliation__item"><span itemprop="department" class="affiliation__department">School of Culture, History and Language, H C Coombs Blg 9</span><span itemprop="name" class="affiliation__name">The Australian National University</span><span itemprop="city" class="affiliation__city">Canberra</span><span itemprop="country" class="affiliation__country">Australia</span></span></li><li class="affiliation" data-test="affiliation-4" data-affiliation-highlight="affiliation-4" itemscope="" itemtype="http://schema.org/Organization"><span class="affiliation__count">4.</span><span class="affiliation__item"><span itemprop="department" class="affiliation__department">Digital Productivity Flagship</span><span itemprop="name" class="affiliation__name">CSIRO</span><span itemprop="city" class="affiliation__city">Canberra</span><span itemprop="country" class="affiliation__country">Australia</span></span></li></ol></div></div></div><div class="main-context__container" data-component="SpringerLink.ArticleMetrics"><div class="main-context__column"><span><span class="test-render-category">Chapter</span></span><div class="article-dates" data-component="SpringerLink.ArticleDates"><div class="article-dates__entry"><span class="article-dates__label">First Online: </span><span class="article-dates__first-online"><time datetime="2014-10-13">13 October 2014</time></span></div><div class="article-dates__history"></div></div></div><div class="main-context__column">    <ul id="book-metrics" class="article-metrics u-sansSerif">
+            <li class="article-metrics__item">
+                    <a class="article-metrics__link gtm-chapterreaders-count" href="http://www.bookmetrix.com/detail/chapter/96fe96da-5829-4c01-b91d-d3a8456a16a4#readers" target="_blank" rel="noopener" title="Visit Bookmetrix for full Mendeley reader details" id="chapterreaders-link">
+                       <span id="chapterreaders-count-number" class="test-metric-count c-button-circle gtm-chapterreaders-count">2</span>
+                       <span class="test-metric-name article-metrics__label gtm-chapterreaders-count">Readers</span>
+                    </a>
+            </li>
+            <li class="article-metrics__item">
+                    <a class="article-metrics__link gtm-chapterdownloads-count" href="http://www.bookmetrix.com/detail/chapter/96fe96da-5829-4c01-b91d-d3a8456a16a4#downloads" target="_blank" rel="noopener" title="Visit Bookmetrix for full download details" id="chapterdownloads-link">
+                       <span id="chapterdownloads-count-number" class="test-metric-count c-button-circle gtm-chapterdownloads-count">1.1k</span>
+                       <span class="test-metric-name article-metrics__label gtm-chapterdownloads-count">Downloads</span>
+                    </a>
+            </li>
+    </ul>
+</div></div><span id="test-SeriesTitle" class="vol-info">
+                Part of the
+                <a class="gtm-book-series-link" href="https://link.springer.com/bookseries/5584">Advances in Experimental Medicine and Biology</a>
+                book series (AEMB, volume 823)</span></div><section class="Abstract" id="Abs1" tabindex="-1" lang="en"><h2 class="Heading">Abstract</h2><p class="Para">We
+ describe an investigation into how Massey University’s Pollen 
+Classifynder can accelerate the understanding of pollen and its role in 
+nature. The Classifynder is an imaging microscopy system that can 
+locate, image and classify slide based pollen samples. Given the 
+laboriousness of purely manual image acquisition and identification it 
+is vital to exploit assistive technologies like the Classifynder to 
+enable acquisition and analysis of pollen samples. It is also vital that
+ we understand the strengths and limitations of automated systems so 
+that they can be used (and improved) to compliment the strengths and 
+weaknesses of human analysts to the greatest extent possible. This 
+article reviews some of our experiences with the Classifynder system and
+ our exploration of alternative classifier models to enhance both 
+accuracy and interpretability. Our experiments in the pollen analysis 
+problem domain have been based on samples from the Australian National 
+University’s pollen reference collection (2,890 grains, 15 species) and 
+images bundled with the Classifynder system (400 grains, 4 species). 
+These samples have been represented using the Classifynder image feature
+ set. We additionally work through a real world case study where we 
+assess the ability of the system to determine the pollen make-up of 
+samples of New Zealand honey. In addition to the Classifynder’s native 
+neural network classifier, we have evaluated linear discriminant, 
+support vector machine, decision tree and random forest classifiers on 
+these data with encouraging results. Our hope is that our findings will 
+help enhance the performance of future releases of the Classifynder and 
+other systems for accelerating the acquisition and analysis of pollen 
+samples.</p></section><div class="KeywordGroup" lang="en"><h3 class="Heading">Keywords</h3><span class="Keyword">Pollen&nbsp;</span><span class="Keyword">Palynology&nbsp;</span><span class="Keyword">Image analysis&nbsp;</span><span class="Keyword">Statistical classification&nbsp;</span><span class="Keyword">Automation&nbsp;</span><span class="Keyword">Machine learning&nbsp;</span></div><div class="article-actions--inline" id="article-actions--inline" data-component="article-actions--inline"><div class="citations u-interface c-button-dropdown" data-component="SV.Dropdown" data-namespace="citations--inline" aria-label="button with dropdown options">
+        <button type="button" class="c-button-dropdown__button" data-role="button-dropdown__control" aria-pressed="false" aria-expanded="false" aria-controls="Dropdown.citations--inline-dropdown"><span class="u-overflow-ellipsis c-button-dropdown__button-title">
+    <span>Cite</span>
+    <span class="hide-text-small">chapter</span>
+</span><span class="c-button-dropdown__icon"></span></button>
+<div class="u-composite-layer c-button-dropdown__container" aria-hidden="true" aria-label="dropdown" id="Dropdown.citations--inline-dropdown"><ul class="citations__content" data-role="button-dropdown__content">
+    <li>
+        <a href="#citeas" class="gtm-cite-dropdown">How to cite?</a>
+    </li>
+        <li>
+            <a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-319-10984-8_12?format=refman&amp;flavour=citation" title="Download this chapter's citation as a .RIS file" class="gtm-export-citation" data-gtmlabel="RIS">
+                <span class="citations__extension" data-gtmlabel="RIS">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"></path></svg>
+                    .RIS
+                </span>
+                <span class="citations__types">
+                        <span>
+                            Papers
+                        </span>
+                        <span>
+                            Reference Manager
+                        </span>
+                        <span>
+                            RefWorks
+                        </span>
+                        <span>
+                            Zotero
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-319-10984-8_12?format=endnote&amp;flavour=citation" title="Download this chapter's citation as a .ENW file" class="gtm-export-citation" data-gtmlabel="ENW">
+                <span class="citations__extension" data-gtmlabel="ENW">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"></path></svg>
+                    .ENW
+                </span>
+                <span class="citations__types">
+                        <span>
+                            EndNote
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-319-10984-8_12?format=bibtex&amp;flavour=citation" title="Download this chapter's citation as a .BIB file" class="gtm-export-citation" data-gtmlabel="BIB">
+                <span class="citations__extension" data-gtmlabel="BIB">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"></path></svg>
+                    .BIB
+                </span>
+                <span class="citations__types">
+                        <span>
+                            BibTeX
+                        </span>
+                        <span>
+                            JabRef
+                        </span>
+                        <span>
+                            Mendeley
+                        </span>
+                </span>
+            </a>
+        </li>
+</ul></div>
+    </div></div><section class="Section1 RenderAsSection1" id="Bib1" tabindex="-1"><h3 class="Heading" data-role="collapsible-handle">References<span class="section-icon"></span></h3><div class="content"><ol class="BibliographyWrapper"><li class="Citation"><div class="CitationNumber">1.</div><div class="CitationContent" id="CR1">L. Breiman, J.H. Friedman, R.A. Olschen, C.J. Stone, <em class="EmphasisTypeItalic ">Classification and Regression Trees</em> (Chapman Hall, New York, 1999)<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Classification%20and%20Regression%20Trees&amp;author=L..%20Breiman&amp;author=J.H..%20Friedman&amp;author=R.A..%20Olschen&amp;author=C.J..%20Stone&amp;publication_year=1999"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">2.</div><div class="CitationContent" id="CR2">L. Breiman, Random forests. Mach. Learn. <strong class="EmphasisTypeBold ">45</strong>(1), 5–32 (2001)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1023/A%3A1010933404324"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceZLBID"><a class="gtm-reference" data-reference-type="MATH" target="_blank" rel="noopener" href="http://www.emis.de/MATH-item?1007.68152"><span><span>MATH</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Random%20forests&amp;author=L..%20Breiman&amp;journal=Mach.%20Learn.&amp;volume=45&amp;issue=1&amp;pages=5-32&amp;publication_year=2001"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">3.</div><div class="CitationContent" id="CR3">V.M. Bryant, D.C. Mildenhall, Forensic palynology in the United States of America. Palynology <strong class="EmphasisTypeBold ">14</strong>, 193–208 (1990)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1080/01916122.1990.9989380"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Forensic%20palynology%20in%20the%20United%20States%20of%20America&amp;author=V.M..%20Bryant&amp;author=D.C..%20Mildenhall&amp;journal=Palynology&amp;volume=14&amp;pages=193-208&amp;publication_year=1990"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">4.</div><div class="CitationContent" id="CR4">C. Cortes, V. Vapnik, Support-vector networks. Mach. Learn. <strong class="EmphasisTypeBold ">20</strong>(3), 273–297 (1995)<span class="Occurrences"><span class="Occurrence OccurrenceZLBID"><a class="gtm-reference" data-reference-type="MATH" target="_blank" rel="noopener" href="http://www.emis.de/MATH-item?0831.68098"><span><span>MATH</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Support-vector%20networks&amp;author=C..%20Cortes&amp;author=V..%20Vapnik&amp;journal=Mach.%20Learn.&amp;volume=20&amp;issue=3&amp;pages=273-297&amp;publication_year=1995"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">5.</div><div class="CitationContent" id="CR5">C.
+ Chun, E.A. Hendriks, R.P.W. Duin, J.H.C. Reiber, P.S. Hiemstra, L.A. de
+ Weger, B. Stoel, Feasibility study on automated recognition of 
+allergenic pollen: grass, birch and mugwort. Aerobiologia. <strong class="EmphasisTypeBold ">22</strong>, 275–284 (2006)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1007/s10453-006-9040-0"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Feasibility%20study%20on%20automated%20recognition%20of%20allergenic%20pollen%3A%20grass%2C%20birch%20and%20mugwort&amp;author=C..%20Chun&amp;author=E.A..%20Hendriks&amp;author=R.P.W..%20Duin&amp;author=J.H.C..%20Reiber&amp;author=P.S..%20Hiemstra&amp;author=L.A..%20Weger&amp;author=B..%20Stoel&amp;journal=Aerobiologia.&amp;volume=22&amp;pages=275-284&amp;publication_year=2006"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">6.</div><div class="CitationContent" id="CR6">A.
+ Cristofori, F. Cristofolini, E. Gottardini, Twenty years of 
+aerobiological monitoring in Trentino (Italy): assessment and evaluation
+ of airborne pollen variability. Prog. Phys. Geogr. Aerobiol. <strong class="EmphasisTypeBold ">26</strong>, 553–261 (2010)<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Twenty%20years%20of%20aerobiological%20monitoring%20in%20Trentino%20%28Italy%29%3A%20assessment%20and%20evaluation%20of%20airborne%20pollen%20variability&amp;author=A..%20Cristofori&amp;author=F..%20Cristofolini&amp;author=E..%20Gottardini&amp;journal=Prog.%20Phys.%20Geogr.%20Aerobiol.&amp;volume=26&amp;pages=553-261&amp;publication_year=2010"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">7.</div><div class="CitationContent" id="CR7">R.
+ Dell’Anna, P. Lazzeri, M. Frisanco, F. Monti, F.M. Campeggi, E. 
+Gottardini, M. Bersani, Pollen discrimination and classification by 
+Fourier transform infrared (FT-IR) microspectroscopy and machine 
+learning. Anal. Bioanal. Chem. <strong class="EmphasisTypeBold ">394</strong>, 1443–1452 (2009)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1007/s00216-009-2794-9"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Pollen%20discrimination%20and%20classification%20by%20Fourier%20transform%20infrared%20%28FT-IR%29%20microspectroscopy%20and%20machine%20learning&amp;author=R..%20Dell%E2%80%99Anna&amp;author=P..%20Lazzeri&amp;author=M..%20Frisanco&amp;author=F..%20Monti&amp;author=F.M..%20Campeggi&amp;author=E..%20Gottardini&amp;author=M..%20Bersani&amp;journal=Anal.%20Bioanal.%20Chem.&amp;volume=394&amp;pages=1443-1452&amp;publication_year=2009"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">8.</div><div class="CitationContent" id="CR8">M.P.
+ De Sa-Otero, A.P. Gonzalez, M. Rodriguez-Damian, E. Cernadas, 
+Computer-aided identification of allergenic species of Urticaceae 
+pollen. Grana <strong class="EmphasisTypeBold ">43</strong>, 224–230 (2004)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1080/00173130410000749"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Computer-aided%20identification%20of%20allergenic%20species%20of%20Urticaceae%20pollen&amp;author=M.P..%20Sa-Otero&amp;author=A.P..%20Gonzalez&amp;author=M..%20Rodriguez-Damian&amp;author=E..%20Cernadas&amp;journal=Grana&amp;volume=43&amp;pages=224-230&amp;publication_year=2004"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">9.</div><div class="CitationContent" id="CR9">R.A. Fisher, The use of multiple measurements in taxonomic problems. Ann. Eugen. <strong class="EmphasisTypeBold ">7</strong>(2), 179–188 (1936)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1111/j.1469-1809.1936.tb02137.x"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=The%20use%20of%20multiple%20measurements%20in%20taxonomic%20problems&amp;author=R.A..%20Fisher&amp;journal=Ann.%20Eugen.&amp;volume=7&amp;issue=2&amp;pages=179-188&amp;publication_year=1936"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">10.</div><div class="CitationContent" id="CR10">J.R. Flenley, The problem of pollen recognition, in <em class="EmphasisTypeItalic ">Problems of Picture Interpretation</em>, ed. by M.B. Clowes, J.P. Penny (CSIRO, Canberra, 1968), pp. 141–145<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=The%20problem%20of%20pollen%20recognition&amp;author=J.R..%20Flenley&amp;pages=141-145&amp;publication_year=1968"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">11.</div><div class="CitationContent" id="CR11">I. France, A.W.G. Duller, G.A.T. Duller, H.F. Lamb, A new approach to automated pollen analysis. Quat. Sci. Rev. <strong class="EmphasisTypeBold ">19</strong>, 537–546 (2000)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1016/S0277-3791%2899%2900021-9"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20new%20approach%20to%20automated%20pollen%20analysis&amp;author=I..%20France&amp;author=A.W.G..%20Duller&amp;author=G.A.T..%20Duller&amp;author=H.F..%20Lamb&amp;journal=Quat.%20Sci.%20Rev.&amp;volume=19&amp;pages=537-546&amp;publication_year=2000"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">12.</div><div class="CitationContent" id="CR12">M.H.M.
+ Groot, R.G. Bogota, L.J. Lourens, H. Hooghiemstra, M. Vriend, J.C. 
+Berrio, E. Tuenter, J. Van der Plicht, B. Van Geel, M. Ziegler, S.L. 
+Weber, A. Betancourt, L. Contreras, S. Gaviria, C. Giraldo, N. Gonzalez,
+ J.H.F. Jansen, M. Konert, D. Ortega, O. Rangel, G. Sarmiento, J. 
+Vandenberghe, T. Van der Hammen, M. Van der Linden, W. Westerhoff, 
+Ultra-high resolution pollen record from the northern Andes reveals 
+rapid shifts in montane climates within the last two glacial cycles. 
+Clim. Past <strong class="EmphasisTypeBold ">7</strong>, 299–316 (2011)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.5194/cp-7-299-2011"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Ultra-high%20resolution%20pollen%20record%20from%20the%20northern%20Andes%20reveals%20rapid%20shifts%20in%20montane%20climates%20within%20the%20last%20two%20glacial%20cycles&amp;author=M.H.M..%20Groot&amp;author=R.G..%20Bogota&amp;author=L.J..%20Lourens&amp;author=H..%20Hooghiemstra&amp;author=M..%20Vriend&amp;author=J.C..%20Berrio&amp;author=E..%20Tuenter&amp;author=J..%20Plicht&amp;author=B..%20Geel&amp;author=M..%20Ziegler&amp;author=S.L..%20Weber&amp;author=A..%20Betancourt&amp;author=L..%20Contreras&amp;author=S..%20Gaviria&amp;author=C..%20Giraldo&amp;author=N..%20Gonzalez&amp;author=J.H.F..%20Jansen&amp;author=M..%20Konert&amp;author=D..%20Ortega&amp;author=O..%20Rangel&amp;author=G..%20Sarmiento&amp;author=J..%20Vandenberghe&amp;author=T..%20Hammen&amp;author=M..%20Linden&amp;author=W..%20Westerhoff&amp;journal=Clim.%20Past&amp;volume=7&amp;pages=299-316&amp;publication_year=2011"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">13.</div><div class="CitationContent" id="CR13">J.A. Hertz, A. Krogh, R.G. Palmer, <em class="EmphasisTypeItalic ">An Introduction to the Theory of Neural Computing</em> (Addison-Wesley, Reading, 1991)<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=An%20Introduction%20to%20the%20Theory%20of%20Neural%20Computing&amp;author=J.A..%20Hertz&amp;author=A..%20Krogh&amp;author=R.G..%20Palmer&amp;publication_year=1991"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">14.</div><div class="CitationContent" id="CR14">K.
+ Holt, G. Allen, R. Hodgson, S. Marsland, J. Flenley, Progress towards 
+an automated trainable pollen location and classifier system for use in 
+the palynology laboratory. Rev. Palaeobot. Palynol. <strong class="EmphasisTypeBold ">167</strong>, 175–183 (2011)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1016/j.revpalbo.2011.08.006"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Progress%20towards%20an%20automated%20trainable%20pollen%20location%20and%20classifier%20system%20for%20use%20in%20the%20palynology%20laboratory&amp;author=K..%20Holt&amp;author=G..%20Allen&amp;author=R..%20Hodgson&amp;author=S..%20Marsland&amp;author=J..%20Flenley&amp;journal=Rev.%20Palaeobot.%20Palynol.&amp;volume=167&amp;pages=175-183&amp;publication_year=2011"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">15.</div><div class="CitationContent" id="CR15">C.A. Hopping, Palynology and the oil industry. Rev. Palaeobot. Palynol. <strong class="EmphasisTypeBold ">2</strong>, 372–399 (1967)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1016/0034-6667%2867%2990136-4"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Palynology%20and%20the%20oil%20industry&amp;author=C.A..%20Hopping&amp;journal=Rev.%20Palaeobot.%20Palynol.&amp;volume=2&amp;pages=372-399&amp;publication_year=1967"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">16.</div><div class="CitationContent" id="CR16">S. Hu, D.L. Dilcher, D.M. Jarzen, D.W. Taylor, Early steps of angiosperm-pollinator coevolution. Proc. Natl. Acad. Sci. <strong class="EmphasisTypeBold ">105</strong>, 240–245 (2007)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1073/pnas.0707989105"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Early%20steps%20of%20angiosperm-pollinator%20coevolution&amp;author=S..%20Hu&amp;author=D.L..%20Dilcher&amp;author=D.M..%20Jarzen&amp;author=D.W..%20Taylor&amp;journal=Proc.%20Natl.%20Acad.%20Sci.&amp;volume=105&amp;pages=240-245&amp;publication_year=2007"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">17.</div><div class="CitationContent" id="CR17">G.D. Jones, V.M. Bryant, Melissopalynology in the United States: a review and critique. Palynology <strong class="EmphasisTypeBold ">16</strong>, 63–71 (1992)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1080/01916122.1992.9989407"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Melissopalynology%20in%20the%20United%20States%3A%20a%20review%20and%20critique&amp;author=G.D..%20Jones&amp;author=V.M..%20Bryant&amp;journal=Palynology&amp;volume=16&amp;pages=63-71&amp;publication_year=1992"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">18.</div><div class="CitationContent" id="CR18">S.
+ Kawashima, B. Clot, T. Fujita, Y. Takahashi, K. Nakamura, An algorithm 
+and a device for counting airborne pollen automatically using laser 
+optics. Atmos. Environ. <strong class="EmphasisTypeBold ">41</strong>, 7987–7993 (2007)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1016/j.atmosenv.2007.09.019"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=An%20algorithm%20and%20a%20device%20for%20counting%20airborne%20pollen%20automatically%20using%20laser%20optics&amp;author=S..%20Kawashima&amp;author=B..%20Clot&amp;author=T..%20Fujita&amp;author=Y..%20Takahashi&amp;author=K..%20Nakamura&amp;journal=Atmos.%20Environ.&amp;volume=41&amp;pages=7987-7993&amp;publication_year=2007"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">19.</div><div class="CitationContent" id="CR19">R.
+ Lagerstrom, Y. Arzhaeva, L. Bischof, S. Haberle, F. Hopf, D. Lovell, A 
+comparison of classification algorithms within the classifynder pollen 
+imaging system, in <em class="EmphasisTypeItalic ">International Symposium on Computational Models for Life Sciences</em>, Sydney, Nov 2013, vol. 1559, pp. 250–259<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=R.%20Lagerstrom%2C%20Y.%20Arzhaeva%2C%20L.%20Bischof%2C%20S.%20Haberle%2C%20F.%20Hopf%2C%20D.%20Lovell%2C%20A%20comparison%20of%20classification%20algorithms%20within%20the%20classifynder%20pollen%20imaging%20system%2C%20in%20International%20Symposium%20on%20Computational%20Models%20for%20Life%20Sciences%2C%20Sydney%2C%20Nov%202013%2C%20vol.%201559%2C%20pp.%20250%E2%80%93259"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">20.</div><div class="CitationContent" id="CR20">P.
+ Li, W.J. Treloar, J.R. Flenley, L. Empson, Towards automation of 
+palynology 2: the use of texture measures and neural network analysis 
+for automated identification of optical images of pollen grains. J. 
+Quat. Sci. <strong class="EmphasisTypeBold ">19</strong>, 755–762 (2004)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1002/jqs.874"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Towards%20automation%20of%20palynology%202%3A%20the%20use%20of%20texture%20measures%20and%20neural%20network%20analysis%20for%20automated%20identification%20of%20optical%20images%20of%20pollen%20grains&amp;author=P..%20Li&amp;author=W.J..%20Treloar&amp;author=J.R..%20Flenley&amp;author=L..%20Empson&amp;journal=J.%20Quat.%20Sci.&amp;volume=19&amp;pages=755-762&amp;publication_year=2004"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">21.</div><div class="CitationContent" id="CR21">L.J. Maher, Nomograms for computing 0.95 confidence limits of pollen data. Rev. Palaeobot. Palynol. <strong class="EmphasisTypeBold ">13</strong>, 85–93 (1971)<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=L.J.%20Maher%2C%20Nomograms%20for%20computing%200.95%20confidence%20limits%20of%20pollen%20data.%20Rev.%20Palaeobot.%20Palynol.%2013%2C%2085%E2%80%9393%20%281971%29"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">22.</div><div class="CitationContent" id="CR22">M. McGlone, J. Wilmshurst, Dating initial Maori environmental impact in New Zealand. Quat. Int. <strong class="EmphasisTypeBold ">59</strong>, 5–16 (1999)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1016/S1040-6182%2898%2900067-6"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Dating%20initial%20Maori%20environmental%20impact%20in%20New%20Zealand&amp;author=M..%20McGlone&amp;author=J..%20Wilmshurst&amp;journal=Quat.%20Int.&amp;volume=59&amp;pages=5-16&amp;publication_year=1999"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">23.</div><div class="CitationContent" id="CR23">D.C.
+ Mildenhall, R. Tremain, Pollen analysis of New Zealand honey. Institute
+ of Geological and Nuclear Sciences science report, 2009, pp. 6–19<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=D.C.%20Mildenhall%2C%20R.%20Tremain%2C%20Pollen%20analysis%20of%20New%20Zealand%20honey.%20Institute%20of%20Geological%20and%20Nuclear%20Sciences%20science%20report%2C%202009%2C%20pp.%206%E2%80%9319"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">24.</div><div class="CitationContent" id="CR24">K.
+ Mitsumoto, K. Yabusaki, K. Kobayashi, H. Aoyagi, Development of a novel
+ real-time pollen-sorting counter using species-specific pollen 
+autofluoresence. Aerobiologia <strong class="EmphasisTypeBold ">26</strong>, 99–111 (2010)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1007/s10453-009-9147-1"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Development%20of%20a%20novel%20real-time%20pollen-sorting%20counter%20using%20species-specific%20pollen%20autofluoresence&amp;author=K..%20Mitsumoto&amp;author=K..%20Yabusaki&amp;author=K..%20Kobayashi&amp;author=H..%20Aoyagi&amp;journal=Aerobiologia&amp;volume=26&amp;pages=99-111&amp;publication_year=2010"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">25.</div><div class="CitationContent" id="CR25">B.V. Odgaard, Fossil pollen as a record of past biodiversity. J. Biogeogr. <strong class="EmphasisTypeBold ">26</strong>, 5–16 (1999)<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Fossil%20pollen%20as%20a%20record%20of%20past%20biodiversity&amp;author=B.V..%20Odgaard&amp;journal=J.%20Biogeogr.&amp;volume=26&amp;pages=5-16&amp;publication_year=1999"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">26.</div><div class="CitationContent" id="CR26">S. Petersen, V.M. Bryant, The study of pollen and its role in the honey market. Am. Bee J. <strong class="EmphasisTypeBold ">151</strong>, 591–594 (2011)<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=The%20study%20of%20pollen%20and%20its%20role%20in%20the%20honey%20market&amp;author=S..%20Petersen&amp;author=V.M..%20Bryant&amp;journal=Am.%20Bee%20J.&amp;volume=151&amp;pages=591-594&amp;publication_year=2011"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">27.</div><div class="CitationContent" id="CR27">R Development Core Team, <em class="EmphasisTypeItalic ">R: A Language and Environment for Statistical Computing</em> (R Foundation for Statistical Computing, Vienna, 2010)<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=R%20Development%20Core%20Team%2C%20R%3A%20A%20Language%20and%20Environment%20for%20Statistical%20Computing%20%28R%20Foundation%20for%20Statistical%20Computing%2C%20Vienna%2C%202010%29"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">28.</div><div class="CitationContent" id="CR28">O.
+ Ronneberger, E. Schultz, H. Burkhardt, Automated pollen recognition 
+using 3D volume images from fluourescence microscopy. Aerobiologia <strong class="EmphasisTypeBold ">18</strong>, 107–115 (2002)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1023/A%3A1020623724584"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Automated%20pollen%20recognition%20using%203D%20volume%20images%20from%20fluourescence%20microscopy&amp;author=O..%20Ronneberger&amp;author=E..%20Schultz&amp;author=H..%20Burkhardt&amp;journal=Aerobiologia&amp;volume=18&amp;pages=107-115&amp;publication_year=2002"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">29.</div><div class="CitationContent" id="CR29">H. Seppa, K.D. Bennett, Quaternary pollen analysis: recent progress in palaeoecology and palaeoclimatology. Prog. Phys. Geogr. <strong class="EmphasisTypeBold ">27</strong>, 548–579 (2003)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1191/0309133303pp394oa"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Quaternary%20pollen%20analysis%3A%20recent%20progress%20in%20palaeoecology%20and%20palaeoclimatology&amp;author=H..%20Seppa&amp;author=K.D..%20Bennett&amp;journal=Prog.%20Phys.%20Geogr.&amp;volume=27&amp;pages=548-579&amp;publication_year=2003"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">30.</div><div class="CitationContent" id="CR30">E.C. Stillman, J.R. Flenley, The needs and prospects for automation in palynology. Quat. Sci. Rev. <strong class="EmphasisTypeBold ">15</strong>, 1–5 (1996)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1016/0277-3791%2895%2900076-3"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=The%20needs%20and%20prospects%20for%20automation%20in%20palynology&amp;author=E.C..%20Stillman&amp;author=J.R..%20Flenley&amp;journal=Quat.%20Sci.%20Rev.&amp;volume=15&amp;pages=1-5&amp;publication_year=1996"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">31.</div><div class="CitationContent" id="CR31">J. Stockmarr, Tablets with spores used in absolute pollen analysis. Pollen et Spores <strong class="EmphasisTypeBold ">13</strong>, 615–621 (1971)<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Tablets%20with%20spores%20used%20in%20absolute%20pollen%20analysis&amp;author=J..%20Stockmarr&amp;journal=Pollen%20et%20Spores&amp;volume=13&amp;pages=615-621&amp;publication_year=1971"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">32.</div><div class="CitationContent" id="CR32">W. Von der Ohe, L. Persano Oddo, M.L. Piana, M. Morlot, P. Martin, Harmonized methods of melissopalynology. Apidologie <strong class="EmphasisTypeBold ">35</strong>, S18–S25 (2004)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1051/apido%3A2004050"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Harmonized%20methods%20of%20melissopalynology&amp;author=W..%20Ohe&amp;author=L..%20Persano%20Oddo&amp;author=M.L..%20Piana&amp;author=M..%20Morlot&amp;author=P..%20Martin&amp;journal=Apidologie&amp;volume=35&amp;pages=S18-S25&amp;publication_year=2004"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">33.</div><div class="CitationContent" id="CR33">Y.
+ Zhang, D.W. Fountain, R.M. Hodgson, J.R. Flenley, S. Gunetileke, 
+Towards automation of palynology 3: pollen pattern recognition using 
+Gabor transforms and digital moments. J. Quat. Sci. <strong class="EmphasisTypeBold ">19</strong>, 763–768 (2004)<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1002/jqs.875"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Towards%20automation%20of%20palynology%203%3A%20pollen%20pattern%20recognition%20using%20Gabor%20transforms%20and%20digital%20moments&amp;author=Y..%20Zhang&amp;author=D.W..%20Fountain&amp;author=R.M..%20Hodgson&amp;author=J.R..%20Flenley&amp;author=S..%20Gunetileke&amp;journal=J.%20Quat.%20Sci.&amp;volume=19&amp;pages=763-768&amp;publication_year=2004"><span><span>Google Scholar</span></span></a></span></span></div></li></ol></div></section><section class="Section1 RenderAsSection1"><h2 class="Heading" id="copyrightInformation" data-role="collapsible-handle">Copyright information<span class="section-icon"></span></h2><div class="ArticleCopyright content"><div class="ChapterCopyright">©&nbsp;Springer International Publishing Switzerland&nbsp;2015</div></div></section></div>
+                        </article>
+                        <aside class="section section--collapsible" id="AboutThisContent">
+    <h2 class="section__heading" id="aboutcontent" data-role="collapsible-handle">About this chapter<span class="section-icon"></span></h2>
+    <div class="section__content bibliographic-information">
+        
+        <div class="crossmark__adjacent">
+            <dl class="citation-info u-highlight-target u-mb-16" id="citeas">
+    <dt class="test-cite-heading">
+        Cite this chapter as:
+    </dt>
+    <dd id="citethis-text">Lagerstrom R. et al. (2015) Pollen Image 
+Classification Using the Classifynder System: Algorithm Comparison and a
+ Case Study on New Zealand Honey. In: Sun C., Bednarz T., Pham T., 
+Vallotton P., Wang D. (eds) Signal and Image Analysis for Biomedical and
+ Life Sciences. Advances in Experimental Medicine and Biology, vol 823. 
+Springer, Cham</dd>
+</dl>
+                <ul class="bibliographic-information__list bibliographic-information__list--inline">
+        <li class="bibliographic-information__item">
+            <span class="bibliographic-information__title"><abbr title="Digital Object Identifier">DOI</abbr></span>
+            <span class="bibliographic-information__value u-overflow-wrap" id="doi-url">https://doi.org/10.1007/978-3-319-10984-8_12</span>
+        </li>
+            <li class="bibliographic-information__item">
+                <span class="bibliographic-information__title">Publisher Name</span>
+                <span class="bibliographic-information__value" id="publisher-name">Springer, Cham</span>
+            </li>
+            <li class="bibliographic-information__item">
+                <span class="bibliographic-information__title">Print ISBN</span>
+                <span class="bibliographic-information__value" id="print-isbn">978-3-319-10983-1</span>
+            </li>
+            <li class="bibliographic-information__item ">
+                <span class="bibliographic-information__title">Online ISBN</span>
+                <span class="bibliographic-information__value" id="electronic-isbn">978-3-319-10984-8</span>
+            </li>
+
+                <li class="bibliographic-information__item">
+            <span class="bibliographic-information__title">eBook Packages</span>
+                <span class="bibliographic-information__value"><a id="ebook-package" href="https://link.springer.com/search?facet-content-type=%22Book%22&amp;package=11642&amp;facet-start-year=2015&amp;facet-end-year=2015">Biomedical and Life Sciences</a></span>
+        </li>
+
+    </ul>
+
+            <ul class="bibliographic-information__list">
+            <li class="bibliographic-information__item">
+                <a id="about-book" href="https://www.springer.com/978-3-319-10983-1?wt_mc=ThirdParty.SpringerLink.3.EPR653.About_eBook" class="gtm-about-this ">About this book</a>
+            </li>
+                    <li class="bibliographic-information__item">
+                        <a id="reprintsandpermissions-link" class="u-external" target="_blank" rel="noopener" href="https://s100.copyright.com/AppDispatchServlet?publisherName=SpringerNature&amp;orderBeanReset=true&amp;orderSource=SpringerLink&amp;author=Ryan+Lagerstrom%2C+Katherine+Holt%2C+Yulia+Arzhaeva+et+al&amp;contentID=10.1007%2F978-3-319-10984-8_12&amp;openAccess=false&amp;endPage=226&amp;publicationDate=2015&amp;startPage=207&amp;title=Pollen+Image+Classification+Using+the+Classifynder+System%3A+Algorithm+Comparison+and+a+Case+Study+on+New+Zealand+Honey&amp;imprint=Springer+International+Publishing+Switzerland&amp;publication=eBook" title="Visit RightsLink for information about reusing this chapter">Reprints and Permissions</a>
+                    </li>
+</ul>
+
+        </div>
+      
+      
+          
+    </div>
+</aside>
+
+                        <div class="section section--collapsible uptodate-recommendations gtm-recommendations">
+    <h2 class="uptodate-recommendations__title section__heading gtm-recommendations__title" id="uptodaterecommendations" data-role="collapsible-handle">Personalised recommendations<span class="section-icon"></span></h2>
+    <div class="section__content">
+        <div class="uptodate-recommendations__container">
+             <link rel="uptodate-inline" href="https://link.springer.com/springerlink-static/389320050/css/recommendations.css">
+        </div>
+    </div>
+</div>
+                        
+
+
+
+    <div class="sticky-banner sticky-banner--buybox u-interface u-js-screenreader-only" aria-hidden="true" data-component="SpringerLink.StickyBanner" data-namespace="hasLink">
+        <div class="sticky-banner__container"><span class="sticky-banner__title sticky-banner__title--long u-overflow-ellipsis" title="Pollen Image Classification Using the Classifynder System: Algorithm Comparison and a Case Study on New Zealand Honey">Pollen Image Classification Using the Classifynder System: Algorithm Comparison and a Case Study on New Zealand Honey</span>
+                <div class="citations c-button-dropdown" data-component="SV.Dropdown" data-namespace="citationsSticky" aria-label="button with dropdown options" style="">
+        <button type="button" class="c-button-dropdown__button" data-role="button-dropdown__control" aria-pressed="false" aria-expanded="false" aria-controls="Dropdown.citationsSticky-dropdown"><span class="u-overflow-ellipsis c-button-dropdown__button-title">
+    <span>Cite</span>
+    <span class="hide-text-small">chapter</span>
+</span><span class="c-button-dropdown__icon"></span></button>
+<div class="u-composite-layer c-button-dropdown__container" aria-hidden="true" aria-label="dropdown" id="Dropdown.citationsSticky-dropdown"><ul class="citations__content" data-role="button-dropdown__content">
+    <li>
+        <a href="#citeas" class="gtm-cite-dropdown">How to cite?</a>
+    </li>
+        <li>
+            <a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-319-10984-8_12?format=refman&amp;flavour=citation" title="Download this chapter's citation as a .RIS file" class="gtm-export-citation" data-gtmlabel="RIS">
+                <span class="citations__extension" data-gtmlabel="RIS">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"></path></svg>
+                    .RIS
+                </span>
+                <span class="citations__types">
+                        <span>
+                            Papers
+                        </span>
+                        <span>
+                            Reference Manager
+                        </span>
+                        <span>
+                            RefWorks
+                        </span>
+                        <span>
+                            Zotero
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-319-10984-8_12?format=endnote&amp;flavour=citation" title="Download this chapter's citation as a .ENW file" class="gtm-export-citation" data-gtmlabel="ENW">
+                <span class="citations__extension" data-gtmlabel="ENW">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"></path></svg>
+                    .ENW
+                </span>
+                <span class="citations__types">
+                        <span>
+                            EndNote
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-319-10984-8_12?format=bibtex&amp;flavour=citation" title="Download this chapter's citation as a .BIB file" class="gtm-export-citation" data-gtmlabel="BIB">
+                <span class="citations__extension" data-gtmlabel="BIB">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"></path></svg>
+                    .BIB
+                </span>
+                <span class="citations__types">
+                        <span>
+                            BibTeX
+                        </span>
+                        <span>
+                            JabRef
+                        </span>
+                        <span>
+                            Mendeley
+                        </span>
+                </span>
+            </a>
+        </li>
+</ul></div>
+    </div>
+
+                
+
+
+
+                <div class="sticky-banner__buybox-link sticky-banner__buybox-link--sticky">
+        <a href="#buy" class="gtm-buybox-anchor">
+            Buy options
+        </a>
+    </div>
+
+        </div>
+    </div>
+
+
+                    </div>
+                    <aside class="main-sidebar-right u-interface">
+                        <div data-role="sticky-wrapper">
+                            <div class="main-sidebar-right__content u-composite-layer" data-component="SpringerLink.StickySidebar">
+                                <div class="article-actions" id="article-actions">
+                                    <h2 class="u-screenreader-only">Actions</h2>
+
+                                        <div id="buy">
+                                            
+
+
+<style type="text/css">
+    .buybox {
+        margin: 16px 0 0;
+        position: relative;
+    }
+    .buybox {
+        font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-size: 1.4rem;
+    }
+    .buybox {
+        zoom: 1;
+    }
+    .buybox:after,
+    .buybox:before {
+        content: '';
+        display: table;
+    }
+    .buybox:after {
+        clear: both;
+    }
+    /*---------------------------------*/
+    .buybox .buybox__header {
+        border: 1px solid #b3b3b3;
+        border-bottom: 0;
+        padding: 8px;
+        position: relative;
+        background-color: #f2f2f2;
+    }
+    .buybox__header .buybox__login {
+        font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-size: 1.4rem;
+        letter-spacing: .017em;
+        display: inline-block;
+        line-height: 1.2;
+        padding: 0;
+    }
+    .buybox__header .buybox__login:before {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: perspective(1px) translateY(-50%);
+        transform: perspective(1px) translateY(-50%);
+        content: '\A';
+        width: 34px;
+        height: 34px;
+        left: 10px;
+    }
+    /*---------------------------------*/
+    .buybox .buybox__body {
+        padding: 0;
+        padding-bottom: 16px;
+        position: relative;
+        text-align: center;
+        background-color: #fcfcfc;
+        border: 1px solid #b3b3b3;
+    }
+    /******/
+    .buybox__body .buybox__section {
+        padding: 16px 12px 0 12px;
+        text-align: left;
+    }
+    .buybox__section .buybox__buttons {
+        text-align: center;
+        width: 100%;
+    }
+    /********** mycopy buybox specific **********/
+    .buybox.mycopy__buybox .buybox__body {
+        background-color: transparent;
+    }
+    .buybox.mycopy__buybox .buybox__section .buybox__buttons {
+        border-top: 0;
+        padding-top: 0;
+    }
+    /******/
+    .buybox__section:nth-child(2) .buybox__buttons {
+        border-top: 1px solid #b3b3b3;
+        padding-top: 20px;
+    }
+    .buybox__buttons .buybox__buy-button {
+        display: inline-block;
+        text-align: center;
+        margin-bottom: 5px;
+        padding: 6px 12px;
+        max-width: 180px
+    }
+    .buybox__buttons .buybox__price {
+        white-space: nowrap;
+        text-align: center;
+        font-size: larger;
+        padding-top: 6px;
+    }
+    .buybox__section .buybox__meta {
+        letter-spacing: 0;
+        padding-top: 12px;
+    }
+    .buybox__section .buybox__meta:only-of-type {
+        padding-top: 0;
+        position: relative;
+        bottom: 6px;
+    }
+    /********** mycopy buybox specific **********/
+    .buybox.mycopy__buybox .buybox__section .buybox__meta {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    /******/
+    .buybox__meta .buybox__product-title {
+        display: inline;
+        font-weight: bold;
+    }
+    .buybox__meta .buybox__list {
+        line-height: 1.3;
+    }
+    .buybox__meta .buybox__list li {
+        position: relative;
+        padding-left: 1em;
+        list-style: none;
+        margin-bottom: 5px;
+    }
+    .buybox__meta .buybox__list li:before {
+        font-size: 1em;
+        content: '\2022';
+        float: left;
+        position: relative;
+        top: .1em;
+        font-family: serif;
+        font-weight: 600;
+        text-align: center;
+        line-height: inherit;
+        color: #666;
+        width: auto;
+        margin-left: -1em;
+    }
+    .buybox__meta .buybox__list li:last-child {
+        margin-bottom: 0;
+    }
+    /********** chapter buybox specific **********/
+    .buybox.chapter__buybox .buybox__section .buybox__meta {
+        border-top: 1px solid #d3d3d3;
+        padding-top: 12px;
+    }
+    .buybox.chapter__buybox .buybox__section .buybox__buy-ebook {
+        margin-bottom: 12px;
+    }
+    /******/
+    /*---------------------------------*/
+    .buybox .buybox__footer {
+        border: 1px solid #b3b3b3;
+        border-top: 0;
+        padding: 8px;
+        position: relative;
+        border-style: dashed;
+        line-height: 1.3;
+    }
+    .buybox .deepdyve {
+        display: none;
+        text-align: left;
+        margin: 8px 12px 0 12px;
+        padding-top: 5px;
+        border-top: 1px solid #d3d3d3;
+    }
+    /*-----------------------------------------------------------------*/
+    @media screen and (min-width: 460px) and (max-width: 1074px) {
+        .buybox__body .buybox__section {
+            display: inline-block;
+            vertical-align: top;
+            padding: 12px 12px;
+            padding-bottom: 0;
+            text-align: left;
+            width: 48%;
+        }
+        .buybox__body .buybox__section {
+            padding-top: 16px;
+            padding-left: 0;
+        }
+        .buybox__section:nth-of-type(2) .buybox__meta {
+            border-left: 1px solid #d3d3d3;
+            padding-left: 28px;
+        }
+        .buybox__section:nth-of-type(2) .buybox__buttons {
+            border-top: 0;
+            padding-top: 0;
+            padding-left: 16px ;
+        }
+        .buybox__buttons .buybox__buy-button {
+        }
+        /********** article buybox specific **********/
+        .buybox.article__buybox .buybox__section:nth-of-type(2) {
+            margin-top: 16px;
+            padding-top: 0;
+        }
+        .buybox.article__buybox .buybox__section:nth-of-type(2) .buybox__meta {
+            margin-top: 40px;
+            padding-top: 0;
+            padding-bottom: 45px;
+        }
+        .buybox.article__buybox .buybox__section:nth-of-type(2) .buybox__meta:only-of-type {
+            margin-top: 8px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        /********** mycopy buybox specific **********/
+        .buybox.mycopy__buybox .buybox__section:first-child {
+            width: 69%;
+            padding-left: 12px ;
+        }
+        .buybox.mycopy__buybox .buybox__section:last-child {
+            width: 29%;
+        }
+        /********** chapter buybox specific **********/
+        .buybox.chapter__buybox .buybox__body {
+            display: flex;
+            align-items: stretch;
+            padding-left: 12px;
+            padding-top: 12px;
+        }
+        .buybox.chapter__buybox .buybox__section .buybox__meta {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            border-top: 0;
+            padding-top: 0;
+        }
+        /******/
+    }
+    /*-----------------------------------------------------------------*/
+    @media screen and (max-width: 459px) {
+        /********** mycopy buybox specific **********/
+        .buybox.mycopy__buybox .buybox__body {
+            padding-bottom: 5px;
+        }
+        .buybox.mycopy__buybox .buybox__section:last-child {
+            text-align: center;
+            width: 100%;
+        }
+        .buybox.mycopy__buybox .buybox__buttons {
+            display: inline-block;
+            width: 150px ;
+        }
+        /******/
+    }
+    /*-----------------------------------------------------------------*/
+</style>
+
+<div class="buybox chapter__buybox" data-webtrekktrackid="196033507532344" data-webtrekkcontentid="SL-chapter">
+    <div class="buybox__header">
+        <span class="buybox__login">Log in to check access</span>
+    </div>
+    <div class="buybox__body">
+        <div class="buybox__section">
+            <div class="buybox__buttons">
+            
+                <div class="buybox__buy-ebook">
+                    <a data-product-id="978-3-319-10984-8_Signal and Image Analysis for Biom" data-tracking-category="ebook" data-ecommerceparam_11="chapter-page" href="https://checkout.springer.com/checkout/add?wt_mc=ThirdParty.SpringerLink.3.EPR653.AbstractPage_EBook-new&amp;isbn=978-3-319-10984-8" class="buybox__buy-button c-button c-button--blue" data-gtm="buybox__buy-button-ebook">
+                        <span class="buybox__buy" data-gtm="buybox__buy-button">Buy eBook</span>
+                    </a>
+                    <div class="buybox__price" data-gtm="buybox__buy-button">
+                        EUR&nbsp;118.99
+                    </div>
+                </div>
+            
+            
+                <form class="buybox__form" action="https://checkout.springer.com/checkout/add?wt_mc=ThirdParty.SpringerLink.3.EPR653.AbstractPage_Chapter-new" method="POST">
+                    
+                        <input name="type" value="chapter" type="hidden">
+                    
+                        <input name="doi" value="10.1007/978-3-319-10984-8_12" type="hidden">
+                    
+                        <input name="isxn" value="978-3-319-10984-8" type="hidden">
+                    
+                        <input name="contenttitle" value="Pollen Image Classification Using the Classifynder System: Algorithm Comparison and a Case Study on New Zealand Honey" type="hidden">
+                    
+                        <input name="copyrightyear" value="2015" type="hidden">
+                    
+                        <input name="year" value="2014" type="hidden">
+                    
+                        <input name="authors" value="Ryan Lagerstrom, et al." type="hidden">
+                    
+                        <input name="title" value="Signal and Image Analysis for Biomedical and Life Sciences" type="hidden">
+                    
+                        <input name="mac" value="ed9394cb63174a10506e51a0914eef42" type="hidden">
+                    
+                        <input name="returnurl" value="https://link.springer.com/chapter/10.1007%2F978-3-319-10984-8_12" type="hidden">
+                    
+                    <button data-product-id="10.1007/978-3-319-10984-8_12_Pollen Image Classification Using " data-tracking-category="ppv" data-ecommerceparam_11="chapter-page" type="submit" class="buybox__buy-button c-button c-button--blue" data-gtm="buybox__buy-button">
+                        <span class="buybox__buy" data-gtm="buybox__buy-button">Buy chapter (PDF)</span>
+                    </button>
+                    <div class="buybox__price" data-gtm="buybox__buy-button">
+                        EUR&nbsp;30.19
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+        <div class="buybox__section">
+            <div class="buybox__meta">
+                <ul class="buybox__list">
+                    <li>Instant download</li>
+                    <li>Readable on all devices</li>
+                    <li>Own it forever</li>
+                    <li>Local sales tax included if applicable</li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    <div class="buybox__footer">
+        <a class="js-buybox__inst-sub-link" data-gtm="buybox__inst-sub-link" href="http://www.springer.com/gp/shop/subscriptions?wt_mc=ThirdParty.SpringerLink.3.EPR653.ChapterPage_Institutional-customers">
+            Learn about institutional subscriptions</a>
+    </div>
+
+    
+
+</div>
+
+<script>
+(function () {
+    var forEach = function (array, callback, scope) {
+        for (var i = 0; i < array.length; i++) {
+            callback.call(scope, i, array[i]);
+        }
+    };
+
+    var trackDomain = 'springergmbh01.webtrekk.net';
+    var domain = 'link.springer.com';
+    var loadEventSent = false;
+
+    var buyboxRoot = document.getElementsByClassName('buybox')[0];
+    var webtrekkTrackId = buyboxRoot.getAttribute('data-webtrekkTrackId');
+    var webtrekkContentId = buyboxRoot.getAttribute('data-webtrekkContentId');
+
+    function SubscriptionTrack(webtrekkTrackId) {
+        if (!webtrekkTrackId) return;
+
+        var data = {
+            trackDomain: trackDomain,
+            trackId: webtrekkTrackId,
+            domain: domain,
+            contentId: 'springer_com.buybox',
+            customSessionParameter: {
+                2: getBusinessPartnerIds()
+            }
+        };
+
+        if (!window.webtrekkV3 && console) {
+            console.log('No webtrekk found.', data);
+            return;
+        }
+
+        return new webtrekkV3(data);
+    }
+
+    function Track(product, webtrekkTrackId, eCommerceParam_11, action) {
+        if (!product) return;
+
+        var data = {
+            trackDomain: trackDomain,
+            trackId: webtrekkTrackId,
+            domain: domain,
+            contentId: webtrekkContentId,
+            product: product.id,
+            productStatus: action,
+            productCategory: {
+                1: product.trackingCategory
+            },
+            customEcommerceParameter: {
+                9: domain,
+                11: eCommerceParam_11
+            },
+            customSessionParameter: {
+                2: getBusinessPartnerIds()
+            }
+        };
+
+        if (!window.webtrekkV3 && console) {
+            console.log('No webtrekk found.', data);
+            return;
+        }
+
+        return new webtrekkV3(data);
+    }
+
+    function trackAddToCart(trackingConfig) {
+        if (!trackingConfig) return;
+        trackingConfig.sendinfo();
+    }
+
+    function trackOnLoad(trackingConfig) {
+        if (loadEventSent) return;
+        loadEventSent = true;
+        if (!trackingConfig) return;
+        trackingConfig.sendinfo();
+    }
+
+    function trackSubscription(trackingConfig) {
+        if (!trackingConfig) return;
+        trackingConfig.sendinfo({linkId: 'inst. subscription info'});
+    }
+
+    function getBusinessPartnerIds() {
+        var businessPartnerIDs = [];
+        try {
+            var ids = window.dataLayer[0]["user"]["license"]["businessPartnerID"];
+            if(ids && ids.length) businessPartnerIDs = ids;
+        } catch(e) {}
+        return businessPartnerIDs.join(";");
+    }
+
+    var bindClickLinkHandle = function (link) {
+        if (!link) return;
+
+        link.addEventListener('click', function (event) {
+            trackSubscription(SubscriptionTrack(webtrekkTrackId));
+        });
+    };
+
+    var bindLoadButtonHandle = function (button) {
+        if (!button) return;
+
+        var productId = button.getAttribute('data-product-id');
+        var trackingCategory = button.getAttribute('data-tracking-category');
+        var eCommerceParam_11 = button.getAttribute('data-eCommerceParam_11');
+
+        window.addEventListener('load', function (event) {
+            trackOnLoad(Track({
+                id: productId,
+                trackingCategory: trackingCategory
+            }, webtrekkTrackId, eCommerceParam_11, 'view'));
+        });
+    };
+
+    var bindClickButtonHandle = function (button) {
+        if (!button) return;
+
+        var productId = button.getAttribute('data-product-id');
+        var trackingCategory = button.getAttribute('data-tracking-category');
+        var eCommerceParam_11 = button.getAttribute('data-eCommerceParam_11');
+
+        button.addEventListener('click', function (event) {
+            trackAddToCart(Track({
+                id: productId,
+                trackingCategory: trackingCategory
+            }, webtrekkTrackId, eCommerceParam_11, 'add'));
+        });
+    };
+
+    var buyButtons = document.getElementsByClassName('buybox__buy-button');
+    forEach(buyButtons, function (index, button) {
+        bindLoadButtonHandle(button);
+        bindClickButtonHandle(button);
+    });
+
+    var sublinks = document.getElementsByClassName('js-buybox__inst-sub-link');
+    forEach(sublinks, function (index, link) {
+        bindClickLinkHandle(link);
+    });
+})();
+</script>
+
+                                        </div>
+
+                                    <div class="u-js-hide u-js-show-two-col">
+                                        
+        
+
+
+
+
+                                            <div class="citations c-button-dropdown" data-component="SV.Dropdown" data-namespace="citations" aria-label="button with dropdown options">
+        <button type="button" class="c-button-dropdown__button" data-role="button-dropdown__control" aria-pressed="false" aria-expanded="false" aria-controls="Dropdown.citations-dropdown"><span class="u-overflow-ellipsis c-button-dropdown__button-title">
+    <span>Cite</span>
+    <span class="hide-text-small">chapter</span>
+</span><span class="c-button-dropdown__icon"></span></button>
+<div class="u-composite-layer c-button-dropdown__container" aria-hidden="true" aria-label="dropdown" id="Dropdown.citations-dropdown"><ul class="citations__content" data-role="button-dropdown__content">
+    <li>
+        <a href="#citeas" class="gtm-cite-dropdown" tabindex="-1">How to cite?</a>
+    </li>
+        <li>
+            <a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-319-10984-8_12?format=refman&amp;flavour=citation" title="Download this chapter's citation as a .RIS file" class="gtm-export-citation" data-gtmlabel="RIS" tabindex="-1">
+                <span class="citations__extension" data-gtmlabel="RIS">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"></path></svg>
+                    .RIS
+                </span>
+                <span class="citations__types">
+                        <span>
+                            Papers
+                        </span>
+                        <span>
+                            Reference Manager
+                        </span>
+                        <span>
+                            RefWorks
+                        </span>
+                        <span>
+                            Zotero
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-319-10984-8_12?format=endnote&amp;flavour=citation" title="Download this chapter's citation as a .ENW file" class="gtm-export-citation" data-gtmlabel="ENW" tabindex="-1">
+                <span class="citations__extension" data-gtmlabel="ENW">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"></path></svg>
+                    .ENW
+                </span>
+                <span class="citations__types">
+                        <span>
+                            EndNote
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="https://citation-needed.springer.com/v2/references/10.1007/978-3-319-10984-8_12?format=bibtex&amp;flavour=citation" title="Download this chapter's citation as a .BIB file" class="gtm-export-citation" data-gtmlabel="BIB" tabindex="-1">
+                <span class="citations__extension" data-gtmlabel="BIB">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#0176C3"></path></svg>
+                    .BIB
+                </span>
+                <span class="citations__types">
+                        <span>
+                            BibTeX
+                        </span>
+                        <span>
+                            JabRef
+                        </span>
+                        <span>
+                            Mendeley
+                        </span>
+                </span>
+            </a>
+        </li>
+</ul></div>
+    </div>
+
+                                            
+
+
+
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                                    <div class="skyscraper-ad u-hide" data-component="SpringerLink.GoogleAds" data-namespace="skyscraper"></div>
+
+                        </div>
+                    </aside>
+                </div>
+            </main>
+            <section class="banner banner--cookies-policy u-composite-layer" data-component="SpringerLink.CookiePolicy">
+    <div class="banner__content u-interface">
+        <h2 class="u-screenreader-only">Cookies</h2>
+        <span class="banner__cookie-text">We use cookies to improve your experience with our site.</span>
+        <a class="banner__link banner__link--cookie" href="https://link.springer.com/termsandconditions#cookies">More information</a>
+
+        <form class="banner__form" action="/acceptcookies" method="POST">
+            <button class="u-link-like banner__right-ui">Accept</button>
+        </form>
+    </div>
+</section>
+
+                <footer class="footer u-interface">
+        <div class="footer__aside-wrapper">
+            <div class="footer__content">
+                <div class="footer__aside">
+                    <p class="footer__strapline">Over 10 million scientific documents at your fingertips</p>
+                                <div class="footer__edition c-button-dropdown c-button-dropdown--ghost" data-component="SpringerLink.EditionSwitcher" aria-label="button with dropdown options">
+                                    <button type="button" title="Switch between Academic &amp; Corporate Edition" class="c-button-dropdown__button" data-role="button-dropdown__control" aria-pressed="false" aria-expanded="false" aria-controls="EditionSwitcher.1601015149-dropdown"><span class="u-overflow-ellipsis c-button-dropdown__button-title">Switch Edition</span><span class="c-button-dropdown__icon"></span></button>
+                                    <div class="u-composite-layer c-button-dropdown__container" aria-hidden="true" aria-label="dropdown" id="EditionSwitcher.1601015149-dropdown"><ul data-role="button-dropdown__content">
+                                        <li class="selected"><a href="https://link.springer.com/siteEdition/link" id="siteedition-academic-link">Academic Edition</a></li>
+                                        <li><a href="https://link.springer.com/siteEdition/rd" id="siteedition-corporate-link" tabindex="-1">Corporate Edition</a></li>
+                                    </ul></div>
+                                </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__content">
+            <ul class="footer__nav">
+                <li>
+                    <a href="https://link.springer.com/">Home</a>
+                </li>
+                <li>
+                    <a href="https://link.springer.com/impressum">Impressum</a>
+                </li>
+                <li>
+                    <a href="https://link.springer.com/termsandconditions">Legal information</a>
+                </li>
+                <li>
+                    <a href="https://link.springer.com/accessibility" class="gtm-footer-accessibility">Accessibility</a>
+                </li>
+                <li>
+                    <a id="contactus-footer-link" href="https://link.springer.com/contactus">Contact us</a>
+                </li>
+            </ul>
+            <a class="parent-logo" target="_blank" rel="noopener" href="https://www.springernature.com/" title="Go to Springer Nature">
+                <span class="u-screenreader-only">Springer Nature</span>
+                <svg width="125" height="12">
+                    <image width="125" height="12" alt="Springer Nature logo" src="/springerlink-static/389320050/images/png/springernature.png" xlink="http://www.w3.org/1999/xlink" xlink:href="/springerlink-static/389320050/images/svg/springernature.svg">
+                    </image>
+                </svg>
+            </a>
+
+            <p class="footer__copyright">© 2017 Springer International Publishing AG. Part of <a target="_blank" rel="noopener" href="https://www.springernature.com/">Springer Nature</a>.</p>
+
+                <p class="footer__user-access-info">
+                    <span>Not logged in</span>
+                    <span>Not affiliated</span>
+                    <span>81.0.54.165</span>
+                </p>
+        </div>
+    </footer>
+
+        </div>
+        
+<script type="text/javascript">
+    (function() {
+        var linkEl = document.querySelector('.js-ctm');
+        var scriptsList = [];
+        var polyfillFeatures = '';
+
+        if (window.matchMedia && window.matchMedia(linkEl.media)) {
+            (function(h){h.className = h.className.replace('no-js', 'js')})(document.documentElement);
+            
+            window.SpringerLink = window.SpringerLink || {};
+            window.SpringerLink.staticLocation = '/springerlink-static/389320050';
+            
+            polyfillFeatures = 'default,fetch,Promise,Object.setPrototypeOf,Object.entries,Number.isInteger,MutationObserver';
+            
+            scriptsList = [
+                window.SpringerLink.staticLocation + '/js/jquery-3.2.1.min.js',
+                window.SpringerLink.staticLocation + '/js/mustache-2.3.0.min.js',
+                'https://cdn.polyfill.io/v2/polyfill.js?features=' + polyfillFeatures,
+                window.SpringerLink.staticLocation + '/js/main.js'
+            ];
+
+            scriptsList.forEach(function(script) {
+                var tag = document.createElement('script');
+                
+                tag.async = false;
+                tag.src = script;
+
+                document.body.appendChild(tag);
+            });
+        }
+    })();
+</script><script src="jquery-3.js"></script><script src="mustache-2.js"></script><script src="polyfill.js"></script><script src="main.js"></script>
+
+<script>
+
+   function viewport() {
+        if (document.documentElement.clientWidth < 620) {
+            size = 'small';
+        }
+        else if(document.documentElement.clientWidth < 1075 ) {
+            size = 'medium';
+        }
+        else {
+            size = 'wide';
+        }
+        return size;
+    };
+
+    function reportForMouseEvents(linkCssSelectors, nolardUrl, experiment, abgroup) {
+        var counter = 0;
+        linkCssSelectors.forEach(function(cssSelector) {
+            $('body').delegate(cssSelector, 'click', function() {
+                if(counter == 0) {
+                    reportConversion(nolardUrl, experiment, abgroup);
+                    counter++;
+                }
+            });
+        });
+    };
+
+    function reportConversion(nolardUrl, experiment, abgroup) {
+        $.ajax({ url: nolardUrl + '/convert/' + experiment + '/' + abgroup });
+    };
+
+    function reportForMouseEvent(linkCssSelector, nolardUrl, experiment, abgroup) {
+        var counter = 0;
+        var elem = document.querySelector(linkCssSelector)
+
+        if (elem.addEventListener) {
+            elem.addEventListener("click", function(e) {
+                if(counter == 0) {
+                    reportConversion(nolardUrl, experiment, abgroup);
+                    counter++;
+                }
+            });
+        } else  {
+            elem.attachEvent("click", function(e) {
+                if(counter == 0) {
+                    reportConversion(nolardUrl, experiment, abgroup);
+                    counter++;
+                }
+            });
+        }
+    };
+
+    function reportParticipation(nolardUrl, experiment, abgroup, participations) {
+        if (participations)
+            participations.push(experiment + '/' + abgroup)
+
+        var xhr = new XMLHttpRequest()
+        xhr.open('GET', nolardUrl + '/participate/' + experiment + '/' + abgroup);
+        xhr.send();
+    };
+
+        function recordCurrentExperiment() {
+            var participations = [];
+            if (document.querySelector('#reprintsandpermissions-bottom-link') !== null) {
+                reportParticipation('https://ab-reporting.live.cf.public.springer.com', 'bunsen-article-reprints-permissions-location', 'featureoff', participations);
+                reportForMouseEvent('#reprintsandpermissions-bottom-link', 'https://ab-reporting.live.cf.public.springer.com', 'bunsen-article-reprints-permissions-location', 'featureoff');
+            } else if(document.querySelector('#reprintsandpermissions-top-link') !== null) {
+                reportParticipation('https://ab-reporting.live.cf.public.springer.com', 'bunsen-article-reprints-permissions-location', 'featureon', participations);
+                reportForMouseEvent('#reprintsandpermissions-top-link', 'https://ab-reporting.live.cf.public.springer.com', 'bunsen-article-reprints-permissions-location', 'featureon');
+            }
+            return participations;
+        };
+
+</script>
+
+<script>
+    window.onload = function() {
+    var linkEl = document.querySelector('.js-ctm');
+
+
+        if (window.matchMedia && window.matchMedia(linkEl.media)) {
+          var bookProductType = dataLayer[0].content && dataLayer[0].content.book && dataLayer[0].content.book.bookProductType
+          var hasBody = dataLayer[0]['Has Body'] == 'Y';
+          var userHasAccess = dataLayer[0]['HasAccess'] == 'Y';
+          var liveOrStatic = dataLayer[0].content && dataLayer[0].content.version
+
+          // Baseline reference work page
+          var isReferenceWork = window.location.pathname.startsWith('/referencework/');
+          var isReferenceWorkEntry = window.location.pathname.startsWith('/referenceworkentry/');
+          var isEncOrDict = bookProductType == 'Encyclop(a)edia' || bookProductType == 'Dictionary';
+
+          // Baseline static reference work entry page pdf download
+          if (isReferenceWorkEntry && isEncOrDict && $('.test-rwepdf-link').length) {
+            reportParticipation('https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwepage-enc-pdf-download', 'baseline');
+            reportForMouseEvents(['.test-rwepdf-link'], 'https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwepage-enc-pdf-download', 'baseline');
+          }
+          if (isReferenceWorkEntry && !isEncOrDict && $('.gtm-pdf-link').length) {
+            reportParticipation('https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwepage-nonenc-pdf-download', 'baseline');
+            reportForMouseEvents(['.gtm-pdf-link'], 'https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwepage-nonenc-pdf-download', 'baseline');
+
+            if (($('.test-bookpdf-link').length || $('.test-bookepub-link').length)) {
+                reportParticipation('https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwpage-nonenc-book-download', 'baseline');
+                reportForMouseEvents(['.test-bookpdf-link', 'test-bookepub-link'], 'https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwpage-nonenc-book-download', 'baseline');
+            }
+          }
+
+          // Baseline static reference work page pdf download
+          if (isReferenceWork && isEncOrDict && ($('.test-bookpdf-link').length || $('.test-bookepub-link').length)) {
+            reportParticipation('https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwpage-enc-book-download', 'baseline');
+              reportForMouseEvents(['.test-bookpdf-link', 'test-bookepub-link'], 'https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwpage-enc-book-download', 'baseline');
+          }
+
+          if (isReferenceWork && !isEncOrDict) {
+            if (($('.test-bookpdf-link').length || $('.test-bookepub-link').length)) {
+                reportParticipation('https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwpage-nonenc-book-download', 'baseline');
+                reportForMouseEvents(['.test-bookpdf-link', 'test-bookepub-link'], 'https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwpage-nonenc-book-download', 'baseline');
+            }
+
+            if ($('.test-book-toc-download-link').length) {
+                reportParticipation('https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwpage-nonenc-pdf-download', 'baseline');
+                reportForMouseEvents(['.test-book-toc-download-link'], 'https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwpage-nonenc-pdf-download', 'baseline');
+            }
+          }
+
+          // Baseline static rwe page fulltext html view with access
+          if (isReferenceWorkEntry && isEncOrDict && hasBody) {
+            reportParticipation('https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwepage-enc-html-download', 'baseline');
+            if (userHasAccess)
+                reportConversion('https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwepage-enc-html-download', 'baseline');
+          }
+          if (isReferenceWorkEntry && !isEncOrDict && hasBody) {
+            reportParticipation('https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwepage-nonenc-html-download', 'baseline');
+            if (userHasAccess)
+                reportConversion('https://ab-reporting.live.cf.public.springer.com', 'bunsen-'+liveOrStatic+'-rwepage-nonenc-html-download', 'baseline');
+          }
+      }
+
+            if (window.matchMedia && window.matchMedia(linkEl.media)) {
+                recordCurrentExperiment()
+            }
+   };
+
+</script>
+
+<script class="kxct" data-id="KDqyaFZ_" data-timing="async" data-version="3.0" type="text/javascript">
+ window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]);
+ (function(){
+   var k=document.createElement('script');k.type='text/javascript';k.async=true;
+   k.src=(location.protocol==='https:'?'https:':'http:')+'//cdn.krxd.net/controltag/KDqyaFZ_.js';
+   var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);
+ }());
+</script>
+
+<script>
+    window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]);
+    (function(){
+        function retrieve(n){
+            var m, k='kx'+n;
+            if (window.localStorage) {
+                return window.localStorage[k] || "";
+            } else if (navigator.cookieEnabled) {
+                m = document.cookie.match(k+'=([^;]*)');
+                return (m && unescape(m[1])) || "";
+            } else {
+                return '';
+            }
+        }
+        Krux.user = retrieve('user');
+        Krux.segments = retrieve('segs') && retrieve('segs').split(',') || [];
+    })();
+</script>
+
+    <script type="text/javascript">
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        (function() {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') +
+                    '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        })();
+    </script>
+    <script type="text/javascript" id="googletag-push">
+        
+            var adSlot = '270604982/springerlink/book/chapter';
+        
+
+        var definedSlots = [
+                {slot: [728, 90], containerName: 'doubleclick-leaderboard-ad'},
+                {slot: [160, 600], containerName: 'doubleclick-ad'},
+        ];
+
+        googletag.cmd.push(function() {
+                googletag.pubads().setTargeting("doi","10.1007-978-3-319-10984-8_12");
+                googletag.pubads().setTargeting("kwrd",["Pollen","Palynology","Image_analysis","Statistical_classification","Automation","Machine_learning"]);
+                googletag.pubads().setTargeting("pmc",["I","I22021","B0000X","L00004"]);
+                googletag.pubads().setTargeting("BPID",["1"]);
+                googletag.pubads().setTargeting("edition","academic");
+                googletag.pubads().setTargeting("sucode","SUCO11642");
+                googletag.pubads().setTargeting("eisbn","978-3-319-10984-8");
+                googletag.pubads().setTargeting("eissn","2214-8019");
+                googletag.pubads().setTargeting("pisbn","978-3-319-10983-1");
+                googletag.pubads().setTargeting("pissn","0065-2598");
+                googletag.pubads().setTargeting("ksg",Krux.segments);
+                googletag.pubads().setTargeting("kuid",Krux.uid);
+                googletag.pubads().setTargeting("logged","N");
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().enableAsyncRendering();
+            googletag.enableServices();
+        });
+    </script>
+
+
+        
+        <span id="chat-widget" class="u-hide"></span>
+        
+    
+
+<button href="javascript:;" title="focus catcher" class="js-focus-catcher u-screenreader-only" tabindex="-1"></button><div style="display: none; visibility: hidden;"><script type="text/javascript">window.CustomWebTrekk||document.write("\x3cscript src\x3d'/springerlink-static/389320050/js/gtm-webtrekk.js' type\x3d'text/javascript'\x3e\x3c/script\x3e");</script><script src="/springerlink-static/389320050/js/gtm-webtrekk.js" type="text/javascript"></script>
+
+<script type="text/javascript">"function"==typeof CustomWebTrekk&&(new CustomWebTrekk).sendInfo("10.1007\/978-3-319-10984-8_12","Chapter","10.1007\/978-3-319-10984-8 | Signal and Image Analysis for Biomedical and Life Sciences","chapter html denial","rd_springer_com.book.chapter_denial","N","N","Y");</script></div><div style="display: none; visibility: hidden;"><script type="text/javascript">window.CustomWebTrekk||document.write("\x3cscript src\x3d'/springerlink-static/389320050/js/gtm-webtrekk.js' type\x3d'text/javascript'\x3e\x3c/script\x3e");</script>
+
+<script type="text/javascript">"function"==typeof CustomWebTrekk&&(new CustomWebTrekk).sendInfo("10.1007\/978-3-319-10984-8_12","Chapter","10.1007\/978-3-319-10984-8 | Signal and Image Analysis for Biomedical and Life Sciences","abstract","rd_springer_com.book.chapter_abstract","N","N","Y");</script></div><script type="text/javascript" id="">(function(d,z){function n(){for(var a in dataLayer)if(dataLayer.hasOwnProperty(a)&&dataLayer[a]["Event Category"])return dataLayer[a]["Event Category"];return"warning: no event category"}function v(a,b,c,h){"undefined"!==typeof dataLayer?dataLayer.push({event:"Scroll To Section",eventCategory:n(),eventAction:a,eventLabel:b,eventValue:1,eventNonInteraction:h}):("undefined"!==typeof ga&&ga("send","event",n(),a,b,1,{nonInteraction:1}),"undefined"!==typeof _gaq&&_gaq.push(["_trackEvent",n(),a,b,1,!0]))}
+function k(b,g,c,h){if(-1===a[c].cache.indexOf(c+"-"+h)&&document.querySelectorAll(b).length){var f="viewed"===h?document.querySelectorAll(b)[0].getBoundingClientRect().height:0,x=document.querySelectorAll(b)[0].getBoundingClientRect().top+d.pageYOffset;g>=x+f&&(v(p(c)+" "+p(h),b,c,!1),a[c].cache.push(c+"-"+h),q++)}}function r(a){a=document.querySelectorAll(a);return a.length?a[0].offsetHeight||0:0}function m(b,g,c){var f=d.pageYOffset+d.innerHeight;if(q>=w)"handleClick"===g&&d.removeEventListener(b,
+t),"throttle"===g&&d.removeEventListener(b,u);else if(c)setTimeout(function(){0<r(a[c].content)&&(a[c].reached&&k(a[c].content,f,c,"reached"),a[c].viewed&&k(a[c].content,f,c,"viewed"))},10);else for(var e in a)a.hasOwnProperty(e)&&0<r(a[e].content)&&(a[e].reached&&k(a[e].content,f,e,"reached"),a[e].viewed&&k(a[e].content,f,e,"viewed"))}function y(b){b=document.querySelectorAll(a[b].content).length;return 0<b?!0:!1}function p(a){return a.charAt(0).toUpperCase()+a.slice(1)}function u(a,b){var c,f,e,
+g=null,d=0,k=function(){d=new Date;g=null;e=a.apply(c,f)};return function(){var h=new Date;d||(d=h);var l=b-(h-d);c=this;f=arguments;0>=l?(clearTimeout(g),g=null,d=h,e=a.apply(c,f)):g||(g=setTimeout(k,l));return e}}function t(a,b){return function(c){a(c,b)}}var w=0,q=0,a={recommendations:{content:".gtm-recommendations iframe",clickable:".gtm-recommendations .gtm-recommendations__title",exists:!1,reached:!1,viewed:!0,size:0,cache:[]},"abstract":{content:"Section.Abstract",clickable:null,exists:!0,
+reached:!1,viewed:!0,size:0,cache:[]},references:{content:".Bibliography \x3e .content, [id^\x3dBib1] \x3e .content",clickable:".Bibliography \x3e .Heading, [id^\x3dBib1] \x3e .Heading",exists:!0,reached:!0,viewed:!0,size:0,cache:[]},about:{content:"#AboutThisContent",clickable:"#AboutThisContent \x3e #aboutcontent",exists:!1,reached:!1,viewed:!0,size:0,cache:[]}};d.addEventListener("scroll",u(function(){m("scroll","throttle")},500));d.addEventListener("orientationchange",u(function(){m("orientationchange",
+"throttle")},500));for(var b in a)if(a.hasOwnProperty(b)&&(a[b].exists&&a[b].size++,a[b].reached&&a[b].size++,a[b].viewed&&a[b].size++,w+=a[b].size,a[b].exists&&y(b)||!a[b].exists)){a[b].exists&&-1===a[b].cache.indexOf(b+"-exists")&&(v(p(b)+" Exists",a[b].content,b,!0),a[b].cache.push(b+"-exists"),q++);if(0<r(a[b].content)){var l=d.pageYOffset+d.innerHeight;a[b].reached&&k(a[b].content,l,b,"reached");a[b].viewed&&k(a[b].content,l,b,"viewed")}a[b].clickable&&(l=document.querySelectorAll(a[b].clickable)[0])&&
+(l.addEventListener("click",t(function(a,b){m("click","handleClick",b)},b)),l.addEventListener("click",t(function(a,b){13==a.keyCode&&m("click","handleClick",b)},b)))}})(window);</script></body><iframe id="kx-proxy-KDqyaFZ_" src="https://cdn.krxd.net/partnerjs/xdi/proxy.3d2100fd7107262ecb55ce6847f01fa5.html#%21kxcid=KDqyaFZ_&amp;kxt=https%3A%2F%2Flink.springer.com&amp;kxcl=cdn&amp;kxp=" style="display: none; visibility: hidden; height: 0; width: 0;"></iframe></html>

@@ -1,0 +1,33 @@
+
+/* ::::: http://assets.altmetric.com/widgets/sciencedirect/gadget.min.css?v=1 ::::: */
+
+a { color: rgb(49, 108, 157); font-size: 0.9em; text-decoration: none; }
+a:hover { text-decoration: underline; color: rgb(92, 92, 92); }
+html { font-family: Arial,Helvetica,sans-serif; color: rgb(46, 46, 46); font-size: 13px; padding: 0px; margin: 0px; }
+body { margin: 0px; }
+#profile { padding: 6px; }
+#donut-canvas-link { float: left; display: block; text-decoration: none; padding-top: 6px; }
+#panel { margin-left: 80px; }
+#panel.bar_panel { margin-left: 130px; }
+#highlight { clear: both; }
+#donut-image { padding-bottom: 15px; }
+ul { list-style: none outside none; padding-left: 0px; }
+li { padding-left: 0.5em; margin-bottom: 3px; }
+.last { margin-bottom: 19px; }
+a img { border: 0px none; }
+.clearfix {  }
+.clearfix:before, .clearfix:after { display: table; content: ""; }
+.clearfix:after { clear: both; }
+.footer { text-align: center; font-size: 0.9em; color: rgb(92, 92, 92); border-top: 1px dashed rgb(204, 204, 204); padding: 6px; }
+p { margin-top: 0px; }
+#donut-score { text-decoration: none; font-size: 18px; color: rgb(153, 153, 153); font-weight: bold; padding-left: 6px; }
+#highlight { background-color: rgb(245, 246, 246); border: 1px solid rgb(183, 183, 183); padding: 9px; color: rgb(92, 92, 92); }
+.share_button img { width: 16px; height: 16px; vertical-align: middle; }
+.share_button { line-height: 16px; }
+#share_panel.line { margin-left: 0px; }
+.bar_group #share_panel.line { margin-left: 0px; }
+#share_panel.line div.share_button { display: inline; margin-right: 6px; width: 74px; min-width: 74px; max-width: 74px; font-size: 0.9em; }
+#share_panel.stacked { clear: left; float: left; width: 120px; max-width: 120px; }
+#title_panel { font-size: 13px; color: rgb(92, 92, 92); padding-bottom: 15px; font-weight: bold; }
+#share_panel_label { display: block; font-size: 13px; color: rgb(92, 92, 92); padding-top: 15px; padding-bottom: 15px; }
+#share_buttons_set { display: block; width: 240px; min-width: 240px; max-width: 240px; overflow: hidden; }

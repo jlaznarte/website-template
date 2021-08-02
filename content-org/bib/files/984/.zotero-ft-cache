@@ -1,0 +1,685 @@
+
+
+InTech uses cookies to offer you the best online experience. By continuing to use our site, you agree to our Privacy Policy .
+World’s largest Science, Technology & Medicine Open Access book publisher.
+Publish, read & share novel research.
+
+    Home
+    Subjects
+    Physical Sciences, Engineering and Technology
+
+    Chemistry Computer and Information Science Earth and Planetary Sciences Engineering Materials Science Mathematics Nanotechnology and Nanomaterials Physics Robotics Technology
+    Life Sciences
+
+    Agricultural and Biological Sciences Biochemistry, Genetics and Molecular Biology Environmental Sciences Immunology and Microbiology Neuroscience
+    Health Sciences
+
+    Medicine Pharmacology, Toxicology and Pharmaceutical Science Veterinary Medicine and Science
+    Social Sciences and Humanities
+
+    Business, Management and Economics
+
+    Psychology
+
+    Social Sciences
+    All Books
+    Journals Archive
+    Open For Submission
+    Books
+    About Open Access
+    Publish with us
+    News
+    Author Panel Sign In
+
+        Forgot password?
+
+Environmental Sciences  »  "Biodiversity Enrichment in a Diverse World" , book edited by Gbolagade Akeem Lameed, ISBN 978-953-51-0718-7, Published: August 29, 2012 under CC BY 3.0 license . © The Author(s).
+Chapter 19
+Image Processing for Pollen Classification
+[In 2015, InTech marked its 10th anniversary since publishing the first book. In these 10 years we published some exceptional research, and to highlight this, we complied the Research Collection Books containing the leading chapters on a specific research topic. The chapters have been selected following different criteria, among which are the number of downloads of a chapter, the number of views, readers feedback and citations. In celebration of our 10th year anniversary, and to thank our authors for their contributions and acknowledge the specific merit of their work, their chapter has been included in one of our Research Collection Books. Note: The Research Collection books are to be found in our Book Catalog in order to avoid duplicating chapters in our reading platform.]
+
+By Marcos del Pozo-Baños, Jaime R. Ticay-Rivas, Jousé Cabrera-Falcón, Jorge Arroyo, Carlos M. Travieso-González, Luis Sánchez-Chavez, Santiago T. Pérez, Jesús B. Alonso and Melvín Ramírez-Bogantes
+DOI: 10.5772/48456
+
+    Read Chapter
+    Author Details
+    Chapter Statistics
+    How To Link and Reference
+    References
+
+Share this page
+
+    Facebook
+    Twitter
+    Bibsonomy
+    CiteULike
+    Reddit
+    LinkedIn
+    Google +
+    StumbleUpon
+    Mail to a Friend
+
+    Ris format
+    BibTeX format
+
+ Show thumbnails  Show tables  Show equations Article top
+Overview
+1. Introduction
+2. Related work
+3. Pollen extraction
+An example of a pollen grain manually selected by the user.
+Figure 1. An example of a pollen grain manually selected by the user.
+3.1. Preprocessing
+Automatic preprocessing steps for pollen extraction.
+Figure 2. Automatic preprocessing steps for pollen extraction.
+The result of applying each preprocessing step to a pollen grain image. Note that the sequence followed is the same as in figure 2.
+Figure 3. The result of applying each preprocessing step to a pollen grain image. Note that the sequence followed is the same as in figure 2.
+4. Feature extraction
+4.1. Geometric parameters
+4.2. Texture parameters
+Example of the inner rectangle area computing from the BoudingBox.
+Figure 4. Example of the inner rectangle area computing from the BoudingBox.
+Example of a grey level co-occurrence matrix.
+Figure 5. Example of a grey level co-occurrence matrix.
+Images used to compute the entropy measures. They correspond to channels blue, saturationand value (left-right) and outer and inner bounding box (up-down).
+Figure 6. Images used to compute the entropy measures. They correspond to channels blue, saturationand value (left-right) and outer and inner bounding box (up-down).
+Results of applying thresholds 0.3, 0.4, 0.5, 0.6 and 0.7 respectively to a pollen image.
+Figure 7. Results of applying thresholds 0.3, 0.4, 0.5, 0.6 and 0.7 respectively to a pollen image.
+Images used to compute the relative objects.
+Figure 8. Images used to compute the relative objects.
+5. Classification
+Architecture of the multilayer perceptron.
+Figure 9. Architecture of the multilayer perceptron.
+6. Experimentation methodology, results and discussion
+6.1. Database
+Database image sample. Note that more than one pollen grain can be extracted from thisimage.
+Figure 10. Database image sample. Note that more than one pollen grain can be extracted from thisimage.
+Samples of the 17 different pollen grain species.
+Figure 11. Samples of the 17 different pollen grain species.
+Table 1. The exact information about family, gender and specie of the 17 classes included in the DDBBused. The last column expresses the number of samples of pollen grains extracted from the database.
+6.2. Experiments
+6.3. Results
+Performance progress for different number of units in the hidden layer of the ANN.
+Figure 12. Performance progress for different number of units in the hidden layer of the ANN.
+Table 2. Performance progress for different number of units in the hidden layer of the ANN.
+Table 3. Results for 30 iterations of different experiments.
+6.4. Discussion
+7. Conclusions
+Image Processing for Pollen Classification
+Marcos del Pozo-Baños 1 , Jaime R. Ticay-Rivas 1 , Jousé Cabrera-Falcón 1 , Carlos M. Travieso 1 , Santiago T. Pérez 1 , Jesús B. Alonso 1 , Jorge Arroyo 2 , Luis Sánchez-Chavez 2 and Melvin Ramírez-Bogantes 2
+
+[1] Signal and Communication Department Institute for Technological Development and Innovation in Communications University of Las Palmas de Gran CanariaIde TIC-ULPGC. Las Palmas de GranCanaria, Spain
+
+[2] Escuela de Matemáticas, Universidad Nacional, Costa Rica
+1. Introduction
+
+Palynology - “ The study of pollen grains and other spores, especially as found in archaeological or geological deposits. Pollen extracted from such deposits may be used for radiocarbon dating and for studying past climates and environments by identifying plants then growing. ” [ 1 ]
+
+Over 20% of all the world’s plants are already at the edge of becoming extinct [ 2 ]. Saving earth’s biodiversity for future generations is an important global task [ 3 ] and asmanymethods as available must be combined to achieve this goal. This involves mapping plants distribution by collecting pollen and identifying them in a laboratory environment.
+
+Pollen grain classification has been an expensive qualitative process, involving observation and discrimination of features by a highly qualified palynologist. It is still the most accurate and effective method. But it certainly limits research progress, taking considerable amounts of time and resources [ 4 ].
+
+Automatic recognition of pollen grains can overcome these problems, producing purely objective results faster. Such a tool would provide invaluable in the studies of flora. This advantages were obvious for Flenley [ 5 ] [ 6 ], who proposed the implementation of an automatic pollen grain classification systemin 1968. However, the idea was intractable at that time. Mainly, because of technology restrictions. Nowadays, technology is not a barrier any more, and the discussed system is a reality thanks to computer vision.
+
+This chapter presents the latest results obtained by the authors in the field of automatic pollen grain classification. This will be done by introducing a developed system, paying special attention to the phases of preprocessing (section 3.1) and feature extraction (section 4). Results for a 17 pollen species database obtained with the commented system will also be shown (section 6).
+2. Related work
+
+The begins of automatic pollen identification were based on scanning electron microscope (SEM) images. Langford applied statistical classifiers on texture parameters on 1988, reporting a 94.30% of accuracy on a six pollen class database [ 7 ]. Later, artificial neural networks (ANN) were used on the classification task, achieving a success rate of 100% with 3 classes [ 8 ].
+
+However, SEM images are expensive and difficult to produce and the use of light microscope (LM) images were explored in 1998 [ 9 ]. Again, first attempts were not fruitful due to the low quality images provided by the technology of the time. But recent works has demonstrated that the use of LMs images is, in fact, possible.
+
+For example, [ 10 ] reported a 100% of success with a small database containing 4 classes. Moreover, it was one of the first works using artificial neural networks for the classification phase, along with texture parameters. Again, [ 11 ] used artificial neural networks for classification. This time, brightness and shape descriptors were extracted as pollen features. A 90% of accuracy with a 3 class database was reported.
+
+[ 12 ] and [ 13 ] presented a more complex work, combining shape and ornamentation of the grains; using simple geometric measures, and concurrence matrices applied for the measurement of texture. Again, artificial neural networks were used for classification. These works reported a 87.7% recognition rate for a 5 classes database and a 97.7% for a three class database respectively.
+
+[ 14 ] describes an automatic optical recognition and classification of pollen grains system. This is able to locate pollen grains on slides, focus and photograph them before identify the species applying a trained neural network. The system achieved a 90% of recognition rate with a 3 class database.
+
+Other works usemore sophisticate capturemethods, achieving 3 dimensional representations of the pollen grains. [ 15 ] presented a combination of statistical reasoning, feature learning and expertise knowledge. A feature extraction algorithm was applied alternating 2D and 3D representations. Iterative refinement of hypotheseswas used during the classification process. This work reported a 77% of accurate rate in a database with 30 classes and 97% when only 4 classes were used. An other example, [ 16 ], which used a confocal laser microscope to create the 3D models, achieved a 90% recognition rate with 3 classes database.
+3. Pollen extraction
+
+At the actual development stage of the system, the detection of pollen grain is highly but not fully automatic. This should not be of any surprise, as the task of pollen location inside sample images is itself a different problem, which is as much complicated as the problem studied in this chapter.
+
+Thus, users should first select and area with a pollen grain inside. Preferably, an area, as small as possible, where an isolated pollen grain is located. This user selected region of interest (ROI) is then automatically preprocessed to detect the contour of the grain (see figure 1) .
+media/image1.jpeg
+Figure 1.
+
+An example of a pollen grain manually selected by the user.
+3.1. Preprocessing
+
+This section introduces the automatic preprocessing algorithm used for pollen extraction and preparation. It is important to remind that this process is applied to the image area manually selected by the user, like that showed on figure 1 . The preprocessing steps are (see figure 2) :
+media/image2.jpeg
+Figure 2.
+
+Automatic preprocessing steps for pollen extraction.
+
+    Decorrelation stretching : This process aims to reduce the autocorrelation of the information contained in the image [ 17 ]. This is done as a three steps process:
+
+(a) The original bands are transformed to their principal components.
+
+(b) The principal components are then stretched separately.
+
+(c) The resulting data is transformed back to the original space applying the inverse of the principal component transformation.
+
+The results is a linear transformation of the spectral bands, resulting in uncorrelatedvariables with unit variance, and enhancing displays. The result can be seen in figure 3 .
+media/image3.jpeg
+Figure 3.
+
+The result of applying each preprocessing step to a pollen grain image. Note that the sequence followed is the same as in figure 2 .
+
+    Saturation :The saturation channel of the image represents the amount of colour used at each pixel, i.e. the lower the saturation is the greyer the pixel is. This channel is actually extracted from the HSV image representation [ 18 ].
+
+In particular, the saturation channel is computed as:
+S = { 0 , if M A X = 0 1 − M I N M A X  otherwise S = { 0 , 1 − M I N M A X if M A X = 0  otherwise
+	(1)
+Options
+
+    View Equation
+    Bookmark
+
+The result of computing the saturation channel of the docorrelation stretched image is shown on figure 3 . The simplification of the task of differentiating pollen and background is obvious.
+
+    Histogram equalization : Equalizing the histogram of an image aims to obtain a uniform distribution of the pixel values. This maximizes the contrast without loosing structural information, i.e., conserving the entropy [ 19 ].
+
+    Binarization : The binarization of an image consist of transform each pixel’s value to ’0’ or ’1’ depending on whether it has a value lower or higher (respectively) than a set threshold. This results on a simple image containing pure geometric information.
+
+    Mask : Finally, in a bid to obtain a clear mask of the pollen grain, several image processing functions are applied such as “imfill” and “bwareaopen” provided by the Image Processing Toolbox of Matlab [ 20 ].
+
+The resulting mask can be either used for feature extraction or to remove the background of the pollen grain image. The result of applying each preprocessing step can be seen on figure 3
+4. Feature extraction
+
+Pollen images by their own does not prove to be a high quality information for the task of automatic pollen grain classification. Although they contain the necessary information, this information is hidden and diffused around the image and behind other unimportant data. In order to extract the relevant information from raw samples, they need to be further processed by the feature extractor .
+
+A total of 50 features are extracted from the pollen images. I.e. the output of the feature extraction block is a vector with length 50. These 50 features corresponds to 24 geometricparameters carrying information regarding size and basic shape, and 26 texture parameterswith information about how pixel intensities are distributed on the image. A detailed view ofeach of these features will be given here.
+
+Certainly, colour may be an attractive source of information. However, since the preparation of pollen grain samples imply the use of a stain, it is not recommended to use it. Moreover, the stain effects is not constant along time and the colour of the same sample may change.
+4.1. Geometric parameters
+
+Geometric parameters contain information about the size and the basic shape of the pollen grains. The 24 geometric parameters extracted in the systems presented in this chapter are:
+
+    Area : Refers to the amount of pixels with level ’1’ in the pollen mask.
+
+    BoundingBox : Smallest rectangle enclosing the pollen. In particular, parameters width and hight are used as:
+
+B o u n d i n g B o x ( 1 ) = width B o u n d i n g B o x ( 2 ) = hight
+B o u n d i n g B o x ( 1 ) = width B o u n d i n g B o x ( 2 ) = hight
+	(2)
+Options
+
+    View Equation
+    Bookmark
+
+    Centroide : Refers to the mass centre of the pollen grain. Coordinates ( x , y ).
+
+    MajorAxisLength : Length of the major axis of the ellipse with the same second order normalized central moment of the object.
+
+    MinorAxisLength : Length of the minor axis of the ellipse with the same second order normalized central moment of the object.
+
+    ConvexArea : Area of the smallest convex shape enclosing the object.
+
+    EquivDiameter : Diameter of the circle with the same area as the object.
+
+E q u i v D i a m e t e r = √ 4 × A r e a π E q u i v D i a m e t e r = 4 × A r e a π ‾ ‾ ‾ ‾ ‾ ‾ √
+	(3)
+Options
+
+    View Equation
+    Bookmark
+
+    Solidity : Portion of the area of the convex region contained in the pollen.
+
+S o l i d i t y = A r e a C o n v e x A r e a S o l i d i t y = A r e a C o n v e x A r e a
+	(4)
+Options
+
+    View Equation
+    Bookmark
+
+    Perimeter : Length of the perimeter of themask image.
+
+    Extent : Portion of the area of the bounding box contained in the pollen.
+
+E x t e n t = A r e a A r e a B o u n d i n g B o x E x t e n t = A r e a A r e a B o u n d i n g B o x
+	(5)
+Options
+
+    View Equation
+    Bookmark
+
+    Eccentricity : Relation between the distance of the focus of the ellipse and the length of the principal axis.
+
+    WeightedCentroid : This is a centroid computing weighted by the pixel values of the grey-scale image.
+
+    Shape : Measures how circular is the pollen. Its values are in the range [ 0 , 1 ], where 1 corresponds to a perfect circle.
+
+S h a p e = 4 × π × A r e a P e r i m e t e r 2 S h a p e = 4 × π × A r e a P e r i m e t e r 2
+	(6)
+Options
+
+    View Equation
+    Bookmark
+
+    Thickness : This is the number of times that the mask has to be eroded with a 3x3 square filter, until it disappears, e.i. the image gets black.
+
+    Box : These are the coordinates of an inner rectangle area computed from the BoundingBox parameters as:
+
+B o x ( 1 ) = B o u n d i n g B o x ( 1 ) 4 B o x ( 2 ) = B o u n d i n g B o x ( 2 ) 4 B o x ( 3 ) = B o u n d i n g B o x ( 1 ) 2 B o x ( 4 ) = B o u n d i n g B o x ( 2 ) 2 B o x ( 1 ) = B o u n d i n g B o x ( 1 ) 4 B o x ( 2 ) = B o u n d i n g B o x ( 2 ) 4 B o x ( 3 ) = B o u n d i n g B o x ( 1 ) 2 B o x ( 4 ) = B o u n d i n g B o x ( 2 ) 2
+	(7)
+Options
+
+    View Equation
+    Bookmark
+
+    Hight : Length of the largest line enclosed in the pollen.
+
+    Width : Length of the largest line enclosed in the pollen and perpendicular to Hight .
+
+4.2. Texture parameters
+
+Texture parameters provide information regarding how pixels are distributed on the image, such as contour changes or objects inside the pollen grain.
+media/image11.jpeg
+Figure 4.
+
+Example of the inner rectangle area computing from the BoudingBox .
+
+The first 4 of the 26 texture parameters introduced in this section are computed using the grey level co-occurrence matrix (GLCM). This matrix gives information about the frequency of pixel value pairs combinations. In particular, the value of GLCM(i,j) is the number of times that a pixel with value ’j’ sits next and at the left of a pixel with value ’i’. Figure 5 shows and example of this.
+media/image12.jpeg
+Figure 5.
+
+Example of a grey level co-occurrence matrix.
+
+    Contrast : Mean intensity difference between a pixel and its neighbours. This value is computed as:
+
+C o n t r a s t = ∑ i , j | i − j | 2 p ( i , j ) C o n t r a s t = ∑ i , j ∣ ∣ ∣ ∣ i − j ∣ ∣ ∣ ∣ 2 p ( i , j )
+	(8)
+Options
+
+    View Equation
+    Bookmark
+
+    Correlation : Measures how must correlated it a pixel with respect to its neighbours. This value is computed as:
+
+C o r r e l a t i o n = ∑ i , j ( i − μ i ) ( j − μ j ) p ( i , j ) σ i σ j C o r r e l a t i o n = ∑ i , j ( i − μ i ) ( j − μ j ) p ( i , j ) σ i σ j
+	(9)
+Options
+
+    View Equation
+    Bookmark
+
+    Energy : Sum of the squared elements of the GLCM. This is:
+
+E n e r g y = ∑ i , j p ( i , j ) E n e r g y = ∑ i , j p ( i , j )
+	(10)
+Options
+
+    View Equation
+    Bookmark
+
+    Homogeneity : Measures how close the distribution of objects of the GLCM are to the diagonal of the GLCM. This is:
+
+H o m o g e n e i t y = ∑ i , j p ( i , j ) 1 + | i − j | H o m o g e n e i t y = ∑ i , j p ( i , j ) 1 + ∣ ∣ i − j ∣ ∣
+	(11)
+Options
+
+    View Equation
+    Bookmark
+
+    Entropy : This measure is applied to six different images derived from the original pollen grain image. These images are the the outer and inner bounding box ( BoundingBox and Box ) of the blue channel of the RGB representation, the saturation and the value channels of the HSV representation. A representation can be seen in figure 6 .
+
+media/image17.jpeg
+Figure 6.
+
+Images used to compute the entropy measures. They correspond to channels blue, saturationand value (left-right) and outer and inner bounding box (up-down).
+
+Entropies are are scalar values representing a statistical measure of the randomness of thepixel values. Each value is computed as:
+E n t r o p y = ∑ p log 2 p , E n t r o p y = ∑ p log 2 p ,
+	(12)
+Options
+
+    View Equation
+    Bookmark
+
+where p is the histogram count of the corresponding image.
+
+    Fourier Descriptors : These measures are based on the analysis of the pollen contour points,and it provides information about the pollen shape. It is worth it to mention that a majorproperty of the fourier descriptors is its invariance to geometric transformations, such asrotation, scale and sift.
+
+To compute these parameters, the complex representation of the contour z i = x i + jy i isused, where i = 0, 1, 2..., N c −1 with N c the number of points of the contour. Moreover,the contour is sampled every 2 degrees. Now, the discrete Fourier transform (DFT) of z is:
+a ( u ) = 1 N c N c − 1 ∑ i = 0 z i e − j 2 π u / N b u = 0 , 1 , 2 , ... , N b − 1 a ( u ) = 1 N c ∑ i = 0 N c − 1 z i e − j 2 π u / N b u = 0 , 1 , 2 , ... , N b − 1
+	(13)
+Options
+
+    View Equation
+    Bookmark
+
+The resultant complex coefficients a ( u ) are transformer in a power spectrum | a ( u )| 2 .Finally, the discrete cosine transform (DCT) is applied to reduce the dimensionality of thevector, ending up with a vector of length 5.
+
+    Relative areas : This is a 5 elements vector which values correspond to the number of activepixels (pixels with value ’1’) after binarizing the pollen image with different thresholds. Inparticular, the thresholds used are 0.3, 0.4, 0.5, 0.6 and 0.7. Figure 7 shows an example ofthis.
+
+media/image20.jpeg
+Figure 7.
+
+Results of applying thresholds 0.3, 0.4, 0.5, 0.6 and 0.7 respectively to a pollen image.
+
+    Relative objects : In this case the number of objects (group of connected pixels with value’1’ and surrounded of pixels with value ’0’) contained inside the pollen grain are counted,using an inverted and masked version of the binarized images computed the relative areas .See figure 8 for an example.
+
+media/image21.jpeg
+Figure 8.
+
+Images used to compute the relative objects .
+5. Classification
+
+Several works such as [ 10 ], [ 22 ], [ 11 ] and [ 13 ] used artificial neural networks (ANNs) asclassifiers. These algorithms works as follow:
+
+    Parameters are computed from a set of training samples.
+
+    The computed parameters are passed to the ANN so that it gets trained. This meansthat the ANN automatically adjusts its parameters to solve the problem of classify theparameters in different classes.
+
+    After the training process, a new testing parameters vector can be passed to the ANN andit will produce an output regarding the sample class.
+
+An ANN is a mathematical model inspired in the structure and functional aspects of thebiological neural networks. It could be defined as a set of simple computational elementsmassively interconnected following a hierarchical organization [ 21 ].
+
+In this case, a multilayer perceptron architecture trained by a back propagation algorithm(MLP-BP) is proposed. The principal characteristic of this algorithm is its ability to solvenon-lineal problems. Its architecture is composed of several layers. Each layer correspondsto a set of neurons receiving data from the previous layer and transmit data to the next layer.This layer can be divided in “input layer”, “hidden layer” and “output layer” as shown infigure 9. In this case, the number of hidden layers is set to one.
+media/image22.jpeg
+Figure 9.
+
+Architecture of the multilayer perceptron.
+
+It is important note that the training process of the ANN contain an aleatory factor whichdetermines the solution found. In other words, the training process does not avoid localminimums. To overcome this limitation, the proposed classifier implements 11 individualANNs and sum their resulting scores to obtain a final response. The idea behind this fusionis that the set of computed solutions complement each other, i.e. some solutions correct theerrors produced by others.
+6. Experimentation methodology, results and discussion
+
+A systemwere implemented in order to test the quality of the proposed approach. This systemuses all the techniques introduced in previous sections (preprocessing, feature extraction and classification). This section gives the details about the database used and the experimentalprocedure, along with a detailed explanation of the obtained results.
+6.1. Database
+
+The database used for the experimentation contains 345 images of 17 different pollen grainclasses. Images has been captured with a 2 mega-pixels digital camera connected to amicroscope set to apply a 40 times zoom.
+
+More precisely, these images correspond to 17 sub-genders and species of 11 different familiesof tropical honey plants situated in Costa Rica (Central America). Table 1 shows the exactinformation about family, gender and specie.
+Class 	Family 	Gender 	Specie 	Samples
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17 	Asteraceae
+Asteraceae
+Asteraceae
+Asteraceae
+Bombacaceae
+Caesalpinaceae
+Combretaceae
+Comvulvulaceae
+Fabaceae
+Fabaceae
+Fabaceae
+Fabaceae
+Myrsinaceae
+Malpighiaceae
+Saphindaceae
+Saphindaceae
+Verbenaceae 	Baltimora
+Tridats
+Critonia
+Elephentopus
+Bombacptis
+Cassea
+Combretum
+Ipomea
+Aeschynomene
+Cassia
+Miroespermyn
+Enterolobium
+Ardisia
+Bunchosin
+Cardioesperman
+Melicocca
+Lantana 	Recta
+Procumbels
+Morifolia
+Mollis
+Quinata
+Gradis
+Fructicosum
+Batatas
+Sensitiva
+Fistula
+Frutesens
+Cyclocarpun
+Revoluta
+Cornifolia
+Grandiflorus
+Bijuga
+Camara 	24
+47
+21
+17
+18
+35
+25
+15
+24
+36
+18
+18
+18
+36
+20
+26
+25
+Table 1.
+
+The exact information about family, gender and specie of the 17 classes included in the DDBBused. The last column expresses the number of samples of pollen grains extracted from the database.
+
+Applying the pollen grain extraction algorithm introduced in section 3, a total of 423 pollenimages distributed on all species were obtained. The number of samples extracted for eachsample was greater than one. This was possible thanks to images such as that shown in figure10 where more than one pollen grain could be extracted. Figure 11 shows a sample of eachpollen specie included in the DDBB.
+media/image23.jpeg
+Figure 10.
+
+Database image sample. Note that more than one pollen grain can be extracted from thisimage.
+media/image24.jpeg
+Figure 11.
+
+Samples of the 17 different pollen grain species.
+6.2. Experiments
+
+First, remember from section 5 that the design of the classifier include 30 ANNs fused at thescore level. Thus, the number of hidden units on the ANNs had to be specified. To do so,a set of experiments with different configurations were executed to find the optimal value.To obtain a valid measure of the performance of the system, 30 iterations of a hold 50% outcross-validation procedure was executed. Results will be shown and discussed in sections 6.3and 6.4 respectively. For now, it is enough to note that the optimal value were found with a 30neurons hidden layer.
+
+Thus, using this optimal configuration of the ANNs, further experiments were executed toevaluate the performance of the designed system. In this case, 30 iterations of a K-foldscross-validation procedure were applied with values of ’K’ equal 3 , 5 , 7 and 10 .
+
+Note that the set of all experimental procedures (hold-50%-out and 3, 5, 7 and 10 folds) arebased on divisions of the database in disjoint training and test sets. Moreover, this experimentscan be seen as using different proportions of the database of training, i.e. using a differentnumber of samples for training. In particular, the proportions of samples used for training are1/2, 2/3, 4/5, 6/7 and 9/10 respectively.
+6.3. Results
+
+It is important to note that every experiment was repeated 30 times in order to obtain a validmeasure of the system’s performance. Therefore, results are given in terms of mean percentageand standard deviation (mean % and std).
+
+The first experiment tested different configurations of the ANNs. Figure 12 shows the progressof the success rate when the number of units in the hidden layer increased from 10 to 150. Ahighest rate of 90.54% of success rate were obtained with 30 units (see table 2) .
+media/image25.jpeg
+Figure 12.
+
+Performance progress for different number of units in the hidden layer of the ANN.
+
+A second group of experiments aimed to measure the system’s performance with differentnumber of samples for training. Table 3 shows the results obtained for 3, 5, 7 and 10 folds.Note that the success rate increased with the number of training samples (from 90.54% to92.81%), while the std decreased (from 1.29 to 0.74).
+Neurons in the hidden unit 	Mean % ± std
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+130
+140
+150 	89.29% ± 2.11
+90.40% ± 1.69
+90.54% ± 1.29
+90.00% ± 1.66
+90.05% ± 1.78
+90.19% ± 1.33
+90.38% ± 1.52
+90.09% ± 1.37
+89.92% ± 1.42
+89.64% ± 1.49
+89.90% ± 1.34
+89.76% ± 1.55
+89.87% ± 1.37
+89.95% ± 1.42
+89.72% ± 1.64
+Table 2.
+
+Performance progress for different number of units in the hidden layer of the ANN.
+Experiment 	Mean % ± std
+Hold-50%-Out
+3 k -folds
+5 k -folds
+7 k -folds
+10 k -folds 	90.54% ± 1.29
+91.40% ± 1.05
+92.38% ± 0.75
+92.43% ± 0.82
+92.81% ± 0.74
+Table 3.
+
+Results for 30 iterations of different experiments.
+6.4. Discussion
+
+It can be argued that the number of hidden units of the ANNs could be further optimizedexecuting a finer search around the point found. However, based on the similar accuracymeasures obtained between 10 and 80 units and stds higher than the range of accuracypercentages, paying the cost of running a finer search for a minimal increment of performancewas not worth it. Therefore, 30 units were chosen as the optimal point.
+
+On the other hand, the results obtained for the second round of experiments show anincreasing in both system’s performance and stability. This seems to indicate that theperformance of the system may increase with a bigger training database.
+7. Conclusions
+
+This chapter has introduced the problem of automatic pollen grain classification, which isvital for biologists and flora researches among others. As pointed out in section 3, the taskof automatically detecting the pollen grains from samples is a complex problem itself and fallbeyond the scope of this chapter. Thus, a semi-automatic algorithm for pollen extraction wasexplored instead,
+
+The chapter mainly focused its attention in giving a fair amount of both geometric and textureparameters. Moreover, the extraction of this parameters relied on the good work performedby the preprocessing block during the pollen’s perimeter definition.
+
+Finally, these parameters were tested implementing a completed system. In particular, thesystem used the semi-automatic pollen detection and preprocessing algorithms introduced,along with the mentioned feature extraction techniques and a classifier based on the fusion of11 ANNs at the score level. The system was tested executing a number of experiments usingdifferent hold-out and k-folds cross-validation procedures. The results showed success ratesbetween 90.54% and 92,81%, pointing out the quality of the presented parameters for pollengrain classification. Moreover, these results improve those achieved by other authors such as[ 10 ], [ 22 ], [ 11 ] and [ 13 ], even though the number of classified species was significantly larger.
+Acknowledgement
+
+This work has been supported by Spanish Government, in particular by “Agencia Españolade CooperaciónInternacionalpara el Desarrollo” under funds from D/027406/09 for 2010,D/033858/10 for 2011, and A1/039531/11 for 2012. ToM.Sc. LuisA. Sánchez Chaves, TropicalBee Research Center (CINAT) at UniversidadNacional de Costa Rica, for provide the databaseimages and palynology knowledge.
+References
+1 - Definition of “palynology” by the Oxford Dictionaies site (http://oxforddictionaries.com/definition/palynology).Visited last time on April 2011
+2 - Plants under pressure: a global assessment.The first report of the IUCN Sampled RedList Index for Plants. Royal Botanic Gardens, Kew, UK (2010
+3 - Sytnik KM2010Preservation of biological diversity: Top-priority tasks of society andstate. Ukrainian Journal of Physical Optics 11(suppl. 1), S2S10
+4 - Stillman EC, Flenley JR1996The Needs and Prospects for Automation in Palynology.Quaternary Science Reviews 1515
+5 - Flenley JR1968The problem of pollen recognition. In: Problems in PictureInterpretation, (ed. M. B. Clowes and J. P. Penny), 141145CSIRO, Canberra.
+6 - Flenley JR1990Some prospects for palynology in the South- West Pacific Region.Massey University Faculty of Social Sciences Occasional Papers, 1
+7 - M. Langford, G. E. Taylor, J. R. Flenley, 1990Computerized identification of pollen grainsby texture analysis. Review of Palaeobotany and Palynology, 641-4October 1990, 197203
+8 - Treloar WJ1992Digital image processing techniques and their application to theautomation of palynology. Ph.D. Thes., University of Hull, Hull UK.
+9 - TreloarWJ and Flenley JR1996An investigation into the potential of light microscopyfor the automatic identification of pollen grains by the analysis of their surface texture.Poster Presentation, 9th International Palynological Congress, Houston TX.
+10 - P. Li, J. Flenley, (19, texture. Pollen, using. identification, networks. neural, Grana 38(1),5964
+11 - M. Rodriguez-Damian, E. Cernadas, A. Formella, R. Sa-Otero, 2004Pollen classificationusing brightness-based and shape-based descriptors. Proceedings of the 17thInternational Conference on Pattern Recognition, ICPR 2004, August 23-26, 22326
+12 - Y. Zhang, D. W. Fountain, R. M. Hodgson, J. R. Flenley, S. Gunetileke, 2004Image Processing for Pollen ClassificationJournals of quaternary science, 19763768
+13 - M. Rodriguez-Damian, E. Cernadas, A. Formella, Mand. Fernandez-Delgado, P. De Sa-Otero, 2005Automatic detection and classification of grains of pollen based on shapeand texture. IEEE Trans. on Systems, Man, and Cybernetics, Part C: Applications andReviews 36(4), 531-542.
+14 - Allen GP, Hodgson RM, Marsland SR and Flenley JR2008Machine vision forautomated optical recognition and classification of pollen grains or other singulatedmicroscopic objects. Mechatronics and Machine Vision in Practice, 15th InternationalConference on, 2008, 221226
+15 - A. Boucher, M. Thonnat, 2002Image Processing for Pollen ClassificationthInternational Conference on Pattern Recognition, 1800803
+16 - Burkhardt. O. Ronneberger, H. Schultz, E. General, 2002Purpose object recognition in3D volume data sets using gray-scale invariants-classification of airborne pollen-grainsrecorded with a confocal laser scanning microscope. Proceedings on PatternRecognition, 2002. 16th International Conference, 2290295
+17 - Campbell NA1996Thedecorrelation stretch transformation. INT. J. Remote Sensing,171019391949
+18 - Agoston MK2005Computer graphics and geometric modeling: implementation andalgorithms. Springer Verlag.
+19 - Baxes GA1994Image Processing for Pollen ClassificationJohn Wiley &Sons.
+20 - Matlab documentation at Mathworks. http://www.mathworks.com.Visited last timeon April 2011
+21 - Hopfield JJ1982Neural networks and physical systems with emergent collectivecomputational abilities. Proc. NatL Acad. Sci. USA Biophysics, 7925542558
+22 - I. France, A. Duller, G. Duller, H. Lamb, 2000A new approach to automated pollenanalysis. Quaternary Science Reviews 18, 536537
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+« Previous Chapter RECOMMEND TO YOUR LIBRARIAN Download as PDF Export Citation »    
+
+Open for submissions
+Free Access to Scientific Research
+
+We are studying open access scientific article usage. The study ends on December 20th with the removal of this registration form.
+First Name
+Last Name
+Email
+Country
+I am a Scientist
+I am not a Scientist
+Download
+About Us
+
+    About Us
+    Our Values
+    Our Story
+    Our Team
+    Our Authors and Editors
+    Editorial Advisory Board
+    Our Projects
+
+Open Access
+
+    About Open Access
+    Open Access Statement
+    Article Processing Charge
+    Open Access Mandates
+    Open Access Funding
+    OAI-PMH
+
+Work With Us
+
+    Publish with Us
+    Become a Book Editor
+    Become a Reviewer
+    Order Print Copies
+    For Libraries
+
+Policies
+
+    Editorial Policies
+    Publishing Standards Insurance
+    Privacy Policy
+    Customers Complaints
+
+General
+
+    Contact
+    Jobs
+    News
+    Events
+
+Connect
+
+    rss
+    twitter
+    facebook
+
+© 2004–2017 IN TECH
+TRUSTe
+
+Live Help is Online. 
+Chatting
+0
+×
+–
+undefined
+Chat Input Box
+Click to mute chat sounds
+Chat
+Powered by Chat Logo

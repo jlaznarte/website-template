@@ -1,0 +1,120 @@
+Wiley Online Library
+
+    Skip to main content
+    Log in / Register
+
+Advertisement
+
+    Go to old article view
+
+    PDF
+    PDF
+    Info
+
+Close article support pane
+
+    Text size
+    Share
+
+Advertisement
+Wind Energy
+Explore this journal >
+
+    Wind Energy
+    Explore this journal >
+
+Wind Energy
+
+    Next article in issue: Modelling and measurements of power losses and turbulence intensity in wind turbine wakes at Middelgrunden offshore wind farm
+
+    Next article in issue: Modelling and measurements of power losses and turbulence intensity in wind turbine wakes at Middelgrunden offshore wind farm
+
+View issue TOC
+Volume 10, Issue 6
+November/December 2007
+Pages 497–516
+Research Article
+Non-parametric probabilistic forecasts of wind power: required properties and evaluation
+Authors
+
+    Pierre Pinson ,
+    Close author notes
+    Corresponding author
+        E-mail address: pp@imm.dtu.dk
+        Informatics and Mathematical Modelling, Technical University of Denmark, Lyngby, Denmark
+        Informatics and Mathematical Modelling, Technical University of Denmark, Richard Petersens Plads (bg. 321-020), DK-2900 Kgs. Lyngby, Denmark
+    Search for more papers by this author
+    Henrik Aa. Nielsen,
+    Close author notes
+        Informatics and Mathematical Modelling, Technical University of Denmark, Lyngby, Denmark
+    Search for more papers by this author
+    Jan K. Møller,
+    Close author notes
+        Informatics and Mathematical Modelling, Technical University of Denmark, Lyngby, Denmark
+    Search for more papers by this author
+    Henrik Madsen,
+    Close author notes
+        Informatics and Mathematical Modelling, Technical University of Denmark, Lyngby, Denmark
+    Search for more papers by this author
+    George N. Kariniotakis
+    Close author notes
+        Centre for Energy and Processes, Ecole des Mines de Paris, Sophia Antipolis, France
+    Search for more papers by this author
+
+    First published: 21 May 2007 Full publication history
+    DOI: 10.1002/we.230 View/save citation
+    Cited by: 64 articles Refresh citation count Citing literature
+
+Abstract
+
+Predictions of wind power production for horizons up to 48–72 h ahead comprise a highly valuable input to the methods for the daily management or trading of wind generation. Today, users of wind power predictions are not only provided with point predictions, which are estimates of the conditional expectation of the wind generation for each look-ahead time, but also with uncertainty estimates given by probabilistic forecasts. In order to avoid assumptions on the shape of predictive distributions, these probabilistic predictions are produced from non-parametric methods, and then take the form of a single or a set of quantile forecasts. The required and desirable properties of such probabilistic forecasts are defined and a framework for their evaluation is proposed. This framework is applied for evaluating the quality of two statistical methods producing full predictive distributions from point predictions of wind power. These distributions are defined by a number of quantile forecasts with nominal proportions spanning the unit interval. The relevance and interest of the introduced evaluation framework are discussed. Copyright © 2007 John Wiley & Sons, Ltd.
+Continue reading full article
+
+    Enhanced PDF
+    Standard PDF (340.8 KB)
+
+Ancillary
+Citing Literature
+
+    Number of times cited : 64
+
+    1 Nitin Anand Shrivastava , Kunal Lohia , Bijaya Ketan Panigrahi , A multiobjective framework for wind speed prediction interval forecasts, Renewable Energy , 2016 , 87 , 903 CrossRef
+    2 S. Alessandrini , L. Delle Monache , S. Sperati , J.N. Nissen , A novel application of an analog ensemble for short-term wind power forecasting, Renewable Energy , 2015 , 76 , 768 CrossRef
+    3 Cristobal Gallego-Castillo , Alvaro Cuerva-Tejero , Oscar Lopez-Garcia , A review on the recent history of wind power ramp forecasting, Renewable and Sustainable Energy Reviews , 2015 , 52 , 1148 CrossRef
+    4 Pai Li , Xiaohong Guan , Jiang Wu , Aggregated wind power generation probabilistic forecasting based on particle filter, Energy Conversion and Management , 2015 , 96 , 579 CrossRef
+    5 J. Zapata Riveros , K. Bruninx , K. Poncelet , W. D’haeseleer , Bidding strategies for virtual power plants considering CHPs and intermittent renewables, Energy Conversion and Management , 2015 , 103 , 408 CrossRef
+    6 Gordon Reikard , Bryson Robertson , Jean-Raymond Bidlot , Combining wave energy with wind and solar: Short-term forecasting, Renewable Energy , 2015 , 81 , 442 CrossRef
+    7 James W. Taylor , Jooyoung Jeon , Forecasting wind power quantiles using conditional kernel estimation, Renewable Energy , 2015 , 80 , 370 CrossRef
+    8 Henrik Madsen , Jacopo Parvizi , Rasmus Halvgaard , Leo E. Sokoler , John B. Jørgensen , Lars H. Hansen , Klaus B. Hilger , Handbook of Clean Energy Systems, 2015 , 1 Wiley Online Library
+    9 Pai Li , Xiaohong Guan , Jiang Wu , Xiaoxin Zhou , Modeling Dynamic Spatial Correlations of Geographically Distributed Wind Farms and Constructing Ellipsoidal Uncertainty Sets for Optimization-Based Generation Scheduling, IEEE Transactions on Sustainable Energy , 2015 , 6 , 4, 1594 CrossRef
+    10 Peng Kou , Deliang Liang , Lin Gao , Jianyong Lou , Probabilistic electricity price forecasting with variational heteroscedastic Gaussian process and active learning, Energy Conversion and Management , 2015 , 89 , 298 CrossRef
+    11 Andrea Staid , Pierre Pinson , Seth D. Guikema , Probabilistic maximum-value wind prediction for offshore environments, Wind Energy , 2015 , 18 , 10, 1725 Wiley Online Library
+    12 Kaikai Pan , Zheng Qian , Niya Chen , Probabilistic Short-Term Wind Power Forecasting Using Sparse Bayesian Learning and NWP, Mathematical Problems in Engineering , 2015 , 2015 , 1 CrossRef
+    13 Yao Zhang , Jianxue Wang , Xu Luo , Probabilistic wind power forecasting based on logarithmic transformation and boundary kernel, Energy Conversion and Management , 2015 , 96 , 440 CrossRef
+    14 Yinghao Chu , Mengying Li , Hugo T.C. Pedro , Carlos F.M. Coimbra , Real-time prediction intervals for intra-hour DNI forecasts, Renewable Energy , 2015 , 83 , 234 CrossRef
+    15 Kirsten D. Orwig , Mark L. Ahlstrom , Venkat Banunarayanan , Justin Sharp , James M. Wilczak , Jeffrey Freedman , Sue Ellen Haupt , Joel Cline , Obadiah Bartholomy , Hendrik F. Hamann , Bri-Mathias Hodge , Catherine Finley , Dora Nakafuji , Jack Peterson , David Maggio , Melinda Marquis , Recent Trends in Variable Generation Forecasting and Its Value to the Power System, IEEE Transactions on Sustainable Energy , 2015 , 6 , 3, 924 CrossRef
+    16 Jie Yan , Yongqian Liu , Shuang Han , Yimei Wang , Shuanglei Feng , Reviews on uncertainty analysis of wind power forecasting, Renewable and Sustainable Energy Reviews , 2015 , 52 , 1322 CrossRef
+    17 Emil B. Iversen , Juan M. Morales , Jan K. Møller , Henrik Madsen , Short-term probabilistic forecasting of wind speed using stochastic differential equations, International Journal of Forecasting , 2015 CrossRef
+    18 Cláudio Monteiro , Bruno Santos , Tiago Santos , Carina Soares , Pedro Fonte , Rafael Nebot-Medina , Gianmaria Sannino , Adriana Carillo , Smart and Sustainable Power Systems, 2015 , 35 CrossRef
+    19 Ashraf Ul Haque , M. Hashem Nehrir , Paras Mandal , A Hybrid Intelligent Model for Deterministic and Quantile Regression Approach for Probabilistic Wind Power Forecasting, IEEE Transactions on Power Systems , 2014 , 29 , 4, 1663 CrossRef
+    20 Andrew Mercer , Jamie Dyer , A New Scheme for Daily Peak Wind Gust Prediction Using Machine Learning, Procedia Computer Science , 2014 , 36 , 593 CrossRef
+
+View all 64 citations
+
+    Wiley
+
+    Browse Publications
+    Browse by Subject
+    Resources
+
+    Help & Support
+    Cookies & Privacy
+    Terms & Conditions
+
+    About Us
+    Wiley Job Network
+    Advertisers & Agents
+
+Powered by Wiley Online Library
+
+Copyright © 1999 - 2016 John Wiley & Sons, Inc. All Rights Reserved

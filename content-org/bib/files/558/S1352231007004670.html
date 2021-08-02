@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://www.sciencedirect.com/science/article/pii/S1352231007004670">
+<meta name="wpd_url" content="http://www.sciencedirect.com/science/article/pii/S1352231007004670">
+<meta name="wpd_date" content="2015-08-03T09:57Z">
+<script async="async" type="text/javascript">s_c_il[1].cdw=s_c_il[1].d.write;s_c_il[1].cdwb="";s_c_il[1].d.write=function(m){s_c_il[1].cdwb+=m};
+s.channel="publications";
+s.pageName="article";
+if (typeof (SDM) != 'undefined') {
+  if (typeof(SDM.pageType) != 'undefined' &&
+      typeof(SDM.pm) != 'undefined' &&
+      typeof(SDM.pm.pii) != 'undefined' &&
+      typeof(SDM.pm.issnisbn) != 'undefined' &&
+      typeof(SDM.pm.contentType) != 'undefined') {
+      var ct=SDM.pm.contentType.toLowerCase();
+      if (ct=="jl") {
+        s.prop1="journal";
+      } else if (ct=="bk") {
+         s.prop1="book";
+      } else if (ct=="rw") {
+          s.prop1="refwork";
+      } else if (ct=="bs") {
+          s.prop1="bookseries";
+      } else if (ct=="hb") {
+           s.prop1="handbook";
+      }
+      s.eVar17=SDM.pageType.toLowerCase();
+      s.eVar14=SDM.pm.issnisbn; 
+      s.eVar28=SDM.pm.issnisbn;
+      s.products=";"+SDM.pm.pii;
+    }
+}
+
+var referrerURL=document.referrer;
+if(referrerURL ){
+	referrerURL.toLowerCase();
+	var fromSD=referrerURL.match("sciencedirect.com");
+	if(fromSD == null) {
+		var path=referrerURL.split('/');	
+		if(path[2]){
+			if(path[2].match("linkinghub.elsevier.com")){
+				s.eVar40="Alert"
+			} else {
+				s.eVar40=path[2];
+			}
+		} else {
+			s.eVar40='External';
+		}
+	}
+} else {
+	s.eVar40='Typed/Bookmark';
+}
+
+s.events="prodView,event5";
+
+s.prop2=s.prop1;
+s.prop4="article";
+
+//For TOC search in books
+var scTocPanelWaitCounter=60;
+var scTocPanelWaitTimer=setInterval(scSetupTocSrchEvents, 1000);
+var tocSrchObj=null;
+
+//For Ad Impressions-left pane
+var scAdImpressWaitCounter=10;
+var scAdImpressWaitTimer=setInterval(scCaptureAdImpress, 2000);
+
+//  The following are written in such a way that the events can be handled by links not yet created
+
+// Toggle opening and closing 5 main sections
+$( "#rightPane div#ref_mod_articles" ).on( "click" , "h2 > a.toggle" , { eventName: "RefModArticleToggleClickEvent" , nav: false } , articleLinkEvent );  // RefMod articles
+$( "#rightPane div#recommend_related_articles" ).on( "click" , "h2 > a.toggle" , { eventName: "RecommendedArticleToggleClickEvent" , nav: false } , articleLinkEvent );  // Recommended articles 
+$( "#rightPane div#cited_by_articles" ).on( "click" , "h2 > a.toggle" , { eventName: "CitingArticleToggleClickEvent" , nav: false } , articleLinkEvent );  // Cited By articles
+$( "#rightPane div#related_book_content" ).on( "click" , "h2 > a.toggle" , { eventName: "RelatedBookContentToggleClickEvent" , nav: false } , articleLinkEvent );  // Related Book Content
+
+//  Link to Full text article
+$( "#rightPane div#ref_mod_articles" ).on( "click" , "li.artTitle > a" , { eventName: "RefModArticleFTAClickEvent" , nav: true } , articleLinkEvent );  // RefMod articles
+$( "#rightPane div#recommend_related_articles" ).on( "click" , "li.artTitle > a" , { eventName: "RecommendedArticleFTAClickEvent" , nav: true } , articleLinkEvent );  // Recommended articles 
+$( "#rightPane div#cited_by_articles" ).on( "click" , "li.artTitle > a" , { eventName: "CitingArticleFTAClickEvent" , nav: false } , articleLinkEvent );  // Cited By articles
+$( "#rightPane div#related_book_content" ).on( "click" , "li.artTitle > a" , { eventName: "RelatedBookContentFTAClickEvent" , nav: true } , articleLinkEvent );  // Related Book Content
+
+//  Link to PDF download
+$( "#rightPane div#ref_mod_articles" ).on( "click" , "li.showMore a" , { eventName: "RefModArticlePDFClickEvent" , nav: false } , articleLinkEvent );  // RefMod articles
+$( "#rightPane div#recommend_related_articles" ).on( "click" , "li.showMore a" , { eventName: "RecommendedArticlePDFClickEvent" , nav: false } , articleLinkEvent );  // Recommended articles
+$( "#rightPane div#cited_by_articles" ).on( "click" , "li.showMore a" , { eventName: "CitingArticlePDFClickEvent" , nav: false } , articleLinkEvent );  // Cited By articles
+$( "#rightPane div#related_book_content" ).on( "click" , "li.showMore a" , { eventName: "RelatedBookContentPDFClickEvent" , nav: false } , articleLinkEvent );  // Related Book Content
+ 
+//  Link to more articles
+$( "#rightPane div#ref_mod_articles" ).on( "click" , "a:contains('View more')" , { eventName: "RefModArticleViewMoreClickEvent" , nav: true } , articleLinkEvent );  // RefMod articles
+$( "#rightPane div#recommend_related_articles" ).on( "click" , "a:contains('View more')" , { eventName: "RecommendedArticleViewMoreClickEvent" , nav: true } , articleLinkEvent );  // Recommended articles
+$( "#rightPane div#cited_by_articles" ).on( "click" , "a:contains('View more')" , { eventName: "CitingArticleViewMoreClickEvent" , nav: false } , articleLinkEvent );  // Cited By articles
+$( "#rightPane div#related_book_content" ).on( "click" , "a:contains('View more')" , { eventName: "RelatedBookContentViewMoreClickEvent" , nav: true } , articleLinkEvent );  // Related Book Content
+
+//Capture Links to Bibliography on center pane
+$("#centerPane ul.authorGroup a.authorName").on( "click",{eventName:"AuthorBibClickEvent",nav:false}, articleLinkEvent ) ;//Author link
+$("#centerPane ul.authorGroup a.intra_ref.auth_aff").on( "click",{eventName:"AuthorBibAffiliationClickEvent",nav:false}, articleLinkEvent ) ;//Affiliation link
+$("#centerPane ul.authorGroup a.intra_ref.auth_corr").on( "click",{eventName:"CorrespondingAuthorContactClickEvent",nav:false}, articleLinkEvent ) ;//Corresponding Author link
+$("#centerPane ul.authorGroup a.auth_mail").on( "click",{eventName:"AuthorBibEmailClickEvent",nav:false}, articleLinkEvent ) ;//Author Email link
+
+//  Capture Get rights and content link
+$( "#centerPane dd.rightsLink a.S_C_outLinks" ).on( "click" , { eventName: "RightsAndContentClickEvent" , nav: false } , articleLinkEvent );  // View in Workspace image click
+
+//  Capture How to cite or link using DOI
+$( "#centerPane a.icon_doiLink" ).on( "click" , { eventName: "HowToCiteOrLinkUsingDOIClickEvent" , nav: false } , articleLinkEvent );  // How to cite or link using DOI click
+
+var scFragmentWaitTimer=setInterval(scWaitForFragmentsLoading, 2000);
+
+var scWaitRPaneRecommendTimer;
+var scRecommendArticlesLoaded = false;
+function waitRPaneRecommend() {
+	if($("#rightPane div#recommend_related_articles div.moreInfo a.toggleMoreInfo").length) {
+		$("#rightPane div#recommend_related_articles div.moreInfo a.toggleMoreInfo").on("click", { eventName: "RecommendedArticleMoreInfoClickEvent", nav: false } , articleLinkEvent);
+		clearInterval(scWaitRPaneRecommendTimer);
+		scRecommendArticlesLoaded = true;
+	}
+	else {return;}
+}
+
+var scWaitRPaneRefModTimer;
+function waitRPaneRefMod() {
+	if($("#rightPane div#ref_mod_articles div.moreInfo a.toggleMoreInfo").length) {
+		$("#rightPane div#ref_mod_articles div.moreInfo a.toggleMoreInfo").on("click", { eventName: "RefModArticleMoreInfoClickEvent", nav: false }, articleLinkEvent);  // Special articles
+		clearInterval(scWaitRPaneRefModTimer);
+	}
+	else {return;}
+}
+
+var scWaitRPaneSpecialTimer;
+function waitRPaneSpecial() {
+	if($("#rightPane div#special_articles div.moreInfo a.toggleMoreInfo").length) {
+		$("#rightPane div#special_articles div.moreInfo a.toggleMoreInfo").on("click", { eventName: "SpecialArticleMoreInfoClickEvent", nav: false }, articleLinkEvent);  // Special articles
+		clearInterval(scWaitRPaneSpecialTimer);
+	}
+	else {return;}
+}
+
+var scWaitRPaneCitingTimer;
+var scCitingArticlesAttempts = 0;
+var scCitingArticlesLoaded = false;
+function waitRPaneCiting() {
+	if($("#rightPane div#cited_by_articles div.moreInfo a.toggleMoreInfo").length) {
+		$("#rightPane div#cited_by_articles div.moreInfo a.toggleMoreInfo").on("click", { eventName: "CitingArticleMoreInfoClickEvent", nav: false } , articleLinkEvent);
+		clearInterval(scWaitRPaneCitingTimer);
+		scCitingArticlesLoaded = true;
+	}
+	else if($( scCitingArticlesAttempts > 10 && $("#citedByList > li > p").text().search(/This article has not been cited/) != -1)) {
+		clearInterval(scWaitRPaneCitingTimer);
+		scCitingArticlesLoaded = true;
+	}
+	scCitingArticlesAttempts++;
+}
+
+var scFirstBlkWaitCounter=10;
+var scFirstBlkWaitTimer=setInterval(scFirstBlockWait, 1000);
+
+function scFirstBlockWait() {
+	var firstBlkID = $("#rightPane .firstBlk").attr("id");
+	if(firstBlkID == null) {
+		scFirstBlkWaitCounter--;
+		if(scFirstBlkWaitCounter == 0) {
+			clearInterval(scFirstBlkWaitTimer);
+			return;
+		}
+		else {
+			return;
+		}
+	}
+	clearInterval(scFirstBlkWaitTimer);
+	if( firstBlkID == "recommend_related_articles") {
+		scWaitRPaneRecommendTimer = setInterval(waitRPaneRecommend, 1000);
+	} else if(firstBlkID == "special_articles") {
+		$( "#rightPane div#special_articles" ).on( "click" , "h2 > a.toggle" , { eventName: "SpecialArticleToggleClickEvent" , nav: false } , articleLinkEvent );  // Special articles
+		$( "#rightPane div#special_articles" ).on( "click" , "li.specIssTitle > a" , { eventName: "SpecialArticleFTAClickEvent" , nav: true } , articleLinkEvent );  // Special articles
+		$( "#rightPane div#special_articles" ).on( "click" , "li.artTitle > a" , { eventName: "OtherSpecialArticleFTAClickEvent" , nav: true } , articleLinkEvent );  // Other Special articles
+		$( "#rightPane div#special_articles" ).on( "click" , "li.showMore a" , { eventName: "SpecialArticlePDFClickEvent" , nav: false } , articleLinkEvent );  // Special articles
+		$( "#rightPane div#special_articles" ).on( "click" , "a:contains('View more')" , { eventName: "SpecialArticleViewMoreClickEvent" , nav: true } , articleLinkEvent );  // Special articles
+		scWaitRPaneSpecialTimer = setInterval(waitRPaneSpecial, 1000);	
+	} else if(firstBlkID == "ref_mod_articles") {
+		scWaitRPaneRefModTimer = setInterval(waitRPaneRefMod, 1000);
+	}
+}
+
+var scBookContentWaitTimer;
+var scBookContentAttempts = 0;
+var bookContentHandlersAdded = false;
+
+function addBookContentHandlers() {
+	if($("#rightPane div#related_book_content #relBkList .toggleMoreInfo").length ) {		
+		$("#rightPane div#related_book_content #relBkList .toggleMoreInfo").on("click", { eventName: "RelatedBookContentMoreInfoClickEvent", nav: false }, articleLinkEvent);
+		clearInterval(scBookContentWaitTimer);
+		bookContentHandlersAdded = true;
+	}
+	else if(scBookContentAttempts > 10 && $( $("#relBkList > li > p").text().search(/No articles found/) != -1)) {
+		clearInterval(scBookContentWaitTimer);
+		bookContentHandlersAdded = true;
+	}
+	scBookContentAttempts++;
+}
+
+function articleLinkEvent( event ) {
+	
+	if( event.target != null && event.target.href != null ) {
+		s.eVar52=s_eventHandlers.publicGetZone(event.target.href);
+	}
+	else {
+		s.eVar52="";
+	}
+	var clickSection = s_eventHandlers.publicGetClickSection(event);
+
+	if( !bookContentHandlersAdded && clickSection.search(/article:rightPane:related_book_content/) != -1) {
+		scBookContentWaitTimer = setInterval(addBookContentHandlers, 1000);
+	}
+	if( !scCitingArticlesLoaded && clickSection.search(/article:rightPane:cited_by_articles/) != -1) {
+		scWaitRPaneCitingTimer = setInterval(waitRPaneCiting, 1000);
+	}
+	if( !scRecommendArticlesLoaded && clickSection.search(/article:rightPane:recommend_related_articles/) != -1) {
+		scWaitRPaneRecommendTimer = setTimeout(waitRPaneRecommend, 1000);
+	}
+
+	s.eVar53=clickSection + ":" + event.data.eventName;
+	s.eVar54='+1';
+	s.eVar55='+1';
+	s.eVar56=s.pageName;
+			
+	s.events="event28";
+	s.linkTrackVars="events,eVar52,eVar53,eVar54,eVar55,eVar56";
+	s.linkTrackEvents="event28";
+	s.tl(true,'o',event.data.eventName);
+	
+}
+
+
+/* function to wait and check for toc panel to load */
+function scSetupTocSrchEvents() {
+	scTocPanelWaitCounter--;
+	tocSrchObj=$("div#searchWithin");
+	if(tocSrchObj == []) {
+		if(scTocPanelWaitCounter == 0) {clearInterval(scTocPanelWaitTimer);}
+		return;
+	}
+	else {
+		clearInterval(scTocPanelWaitTimer);
+		tocSrchObj.find("button.submit").on("click",function(e) {s_eventHandlers.clickTarget=this;s_eventHandlers.articleTocSearchSubmit();});
+		tocSrchObj.find("form[name=searchWithinForm]").on("submit",s_eventHandlers.articleTocSearchSubmit);
+	}
+}
+
+function scLeftAdClick( event ) {
+	
+	if( event.target != null && event.target.href != null ) {
+		s.eVar52=s_eventHandlers.publicGetZone(event.target.href);
+	}
+	else {
+		s.eVar52="";
+	}
+
+	s.eVar53='article:leftPane:articleLeftAd:LeftAdClickEvent';
+	s.eVar54='+1';
+	s.eVar55='+1';
+	s.eVar56=s.pageName;
+	s.prop21='LeftAdClickEvent';
+	var sc_saveEvents = s.events;
+	s.events = 'event22';
+	s.linkTrackEvents='event22';
+			
+	s.linkTrackVars="events,eVar52,eVar53,eVar54,eVar55,eVar56,prop21";
+	s.tl(true,'o','LeftAdClickEvent');
+	s.events = sc_saveEvents;
+}
+
+
+function scCaptureAdImpress() {
+	scAdImpressWaitCounter--;
+	if(scAdImpressWaitCounter == 0) {clearInterval(scAdImpressWaitTimer);}
+	var adFrame=document.getElementsByTagName('iframe')[0];
+	if(adFrame) {
+		if(adFrame.src.search('sciencedirect.com/science/advertisement') == -1 ) {
+			if(scAdImpressWaitCounter == 0) {clearInterval(scAdImpressWaitTimer);}
+			return;
+		}
+		var adDoc=adFrame.contentWindow || adFrame.contentDocument;
+	}
+	if( adDoc == null ||
+			adDoc.document == null) { //not yet
+		if(scAdImpressWaitCounter == 0) {clearInterval(scAdImpressWaitTimer);}
+		return;
+	}
+	else { // capture ad impress, setup click
+		clearInterval(scAdImpressWaitTimer);
+		s.prop20='left';
+		var sc_saveEvents = s.events;
+		s.events = 'event21';
+		s.linkTrackEvents='event21';
+		s.linkTrackVars="events,prop20";
+		s.tl(true,'o','LeftAdImpress');
+		s.events = sc_saveEvents;
+		
+		adDoc = adDoc.document;
+		adDoc.body.addEventListener('click', scLeftAdClick);
+	}
+}
+var scFragmentsList = [];
+var paginationOff = s.getQueryParam("np") == "y" ? true : false;
+
+
+/* function to wait for tables & figures to load */
+function scWaitForFragmentsLoading() {
+	if (paginationOff || typeof Fragment === 'undefined') {
+		//no fragments, just install all handlers
+		$("#centerInner [id^=table] .menuButtonLinks .btnHolder .menuTitle").on( "click" , {eventName: "TableOptionsButtonClickEvent", nav: false} , articleLinkEvent);
+		$("#centerInner [id^=table] .menuButtonLinks .menuButton .viewWS.S_C_table_view_WS").on("click", {eventName: "ViewTableInWorkspaceClickEvent", nav: false} , articleLinkEvent);
+		$("#centerInner [id^=table] .menuButtonLinks .menuButton .downloadCsv .S_C_csv_download").on("click", {eventName: "DownloadTableAsCSVClickEvent", nav: false} , articleLinkEvent);
+		$("#centerInner [id^=figure] .menuButtonLinks .btnHolder .menuTitle").on( "click", {eventName: "FigureOptionsButtonClickEvent", nav: false} , articleLinkEvent);
+		$("#centerInner [id^=figure] a.figureLink").on( "click", { eventName: "ViewInWorkspaceImgClickEvent" , nav: false } , articleLinkEvent );
+		$("#centerInner [id^=figure] .menuButtonLinks .menuButton .ppt.S_C_ppt").on( "click", { eventName: "DownloadAsPowerPointClickEvent" , nav: false } , articleLinkEvent );
+		$("#centerInner [id^=figure] .menuButtonLinks .menuButton .S_C_full_size").on("click", { eventName: "DownloadFullSizeImageClickEvent" , nav: false } , articleLinkEvent );
+		$("#centerInner [id^=figure] .menuButtonLinks .menuButton .S_C_high_quality").on("click", { eventName: "ViewHighQualityImageClickEvent" , nav: false } , articleLinkEvent );				
+		clearInterval(scFragmentWaitTimer);
+		return;
+	}
+	if(Fragment.isFragmentMapLoaded() != true) {
+		return;		
+	}
+	if( Fragment.mapTables == [] && Fragment.mapFigures == []) { // no tables or figures
+		clearInterval(scFragmentWaitTimer);
+		return;
+	}
+	if(!scFragmentsList.length) {
+		scFragmentsList = Fragment.fragmentMap.concat();
+	}
+	for (var i=0; i<scFragmentsList.length; i++) {
+		if( scFragmentsList[i] == undefined ) { continue;}
+		var fragID = scFragmentsList[i];
+		if( $("#" + fragID).length) {
+			delete scFragmentsList[i];
+			if( $("#"+ fragID + " [id^=table]").length ) {
+				$("#" + fragID + " [id^=table] .menuButtonLinks .btnHolder .menuTitle").on( "click" , {eventName: "TableOptionsButtonClickEvent", nav: false} , articleLinkEvent);
+				$("#" + fragID + " [id^=table] .menuButtonLinks .menuButton .viewWS.S_C_table_view_WS").on("click", {eventName: "ViewTableInWorkspaceClickEvent", nav: false} , articleLinkEvent);
+				$("#" + fragID + " [id^=table] .menuButtonLinks .menuButton .downloadCsv .S_C_csv_download").on("click", {eventName: "DownloadTableAsCSVClickEvent", nav: false} , articleLinkEvent);
+			}
+			if( $("#"+ fragID + " [id^=figure]").length) {
+				$("#" + fragID + " [id^=figure] .menuButtonLinks .btnHolder .menuTitle").on( "click", {eventName: "FigureOptionsButtonClickEvent", nav: false} , articleLinkEvent);
+				$("#" + fragID + " [id^=figure] a.figureLink").on( "click", { eventName: "ViewInWorkspaceImgClickEvent" , nav: false } , articleLinkEvent );
+				$("#" + fragID + " [id^=figure] .menuButtonLinks .menuButton .ppt.S_C_ppt").on( "click", { eventName: "DownloadAsPowerPointClickEvent" , nav: false } , articleLinkEvent );
+				$("#" + fragID + " [id^=figure] .menuButtonLinks .menuButton .S_C_full_size").on("click", { eventName: "DownloadFullSizeImageClickEvent" , nav: false } , articleLinkEvent );
+				$("#" + fragID + " [id^=figure] .menuButtonLinks .menuButton .S_C_high_quality").on("click", { eventName: "ViewHighQualityImageClickEvent" , nav: false } , articleLinkEvent );				
+			}
+		}
+		else {
+			return;
+		}
+	}
+	if(Fragment.isAllLoaded() == true) {
+		clearInterval(scFragmentWaitTimer);
+	}
+
+
+}
+s_c_il[1].d.write=s_c_il[1].cdw;s_c_il[1].crl(0,1)</script><script src="sciencedirect.js" async="async" type="text/javascript"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="robots" content="NOARCHIVE">
+<meta name="robots" content="noodp">
+<meta name="robots" content="noydir">
+
+<link rel="canonical" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">
+
+
+<link rel="shortcut icon" href="favSD.ico" type="image/x-icon">
+<title>
+
+ Geostatistical characterization of nitrogen dioxide concentration in an urban area: Part II: Time component of the estimation error
+ </title> 
+
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" Title="Default Styles" href="http://cdn.els-cdn.com/sd/css/css_gen_ielt9_1508R2.css" type="text/css">
+<![endif]-->
+
+<script>
+
+var ab=new Object();
+ab.entitled = false;
+</script>
+<script>
+
+(function() {
+var scriptTag = document.createElement('script'); 
+scriptTag.type = 'text/javascript';
+scriptTag.async = true;
+scriptTag.src = '//cdn.optimizely.com/js/204774041.js';
+var head = document.getElementsByTagName('head')[0];
+head.parentNode.insertBefore(scriptTag, head);
+})();
+function optimizelyTimeout() {
+window.optimizely = window.optimizely|| []; 
+if(!window.optimizely.data) {
+ window.optimizely.push("timeout"); 
+} }
+setTimeout(optimizelyTimeout, 1000); 
+</script>
+
+<script>
+
+var prs = new Object();prs.rt=function(label,ts){this[label]=(ts||ts==0?ts:new Date().getTime());};
+</script>
+
+
+
+<!--[if lte IE 7]>
+<script src="http://cdn.els-cdn.com/sd/ut/js/json2_1508R2.js.min"></script>
+<![endif]-->
+<script charset="utf-8" class="lazyload" src="shindig-containerpubsub-2.js"></script><script charset="utf-8" class="lazyload" src="SciverseShindigService,GadgetToolBar,jquery-outside,jquery.ba-bbq.min,SciverseShindigContainer,Sc.js"></script>
+<link rel="stylesheet" type="text/css" href="S1352231007004670.css" media="all">
+</head>
+<body style="max-width: 1043px;"><div id="isIElte8test"><!--[if lte IE 8]><div id="isIElte8"></div><![endif]--></div><div id="lightningjs-usabilla_live" style="display: none;"><div><iframe src="S1352231007004670_1.html" id="lightningjs-frame-usabilla_live" frameborder="0"></iframe></div></div><div id="isIE9test"><!--[if  IE 9]><div id="isIE9"></div><![endif]--></div><div id="isIE8test"><!--[if  IE 8]><div id="isIE8"></div><![endif]--></div><div id="isIE7test"><!--[if  IE 7]><div id="isIE7"></div><![endif]--></div><div id="isIElt7test"><!--[if lt IE 7]><div id="isIElt7"></div><![endif]--></div>
+
+<div class="ua_btn" role="region" aria-label="screen reader compatability"><a role="button" rel="nofollow" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670?np=y">Screen reader users, click here to load entire article</a>This page uses JavaScript to progressively load the article content as a user scrolls.  Screen reader users, click the load entire article button to bypass dynamically loaded article content.</div>
+
+
+
+<script>
+
+var refLinkURL = "http://www.sciencedirect.com/science/relLink/ajaxReq?_eid=1-s2.0-S1352231007004670";
+var updatedCitedBy = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_updateCitedBy=";
+var refResolvePath = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_pii=S1352231007004670&_refCnt=4&_docType=article";
+
+// these variables handle the reference resolution. Please ignore the naming.
+// the first variable myMap will hold an associative array of links by bibID
+// the second variable myXabsCounts holds the scopus counts.
+var myMap = []; // html of links for references.
+var myXabsCounts = []; // scopus counts
+</script>
+<div id="header-area">
+  
+
+
+<!-- ************* For A/B testing FAST and SOLR Proxy ***************** -->
+
+<!-- *************End for A/B testing FAST and SOLR Proxy *****************-->
+
+
+
+<div id="ieWarningMsg">
+    <span class="infoIcon_ie spErrorIcon">
+
+        ScienceDirect is phasing out support for older versions of Internet Explorer on Jan 12, 2016.  For the best product experience, we recommend you upgrade to a  
+<a href="http://www.microsoft.com/download/internet-explorer.aspx"> newer version of IE</a> 
+or use a different browser:<a href="https://www.mozilla.org/firefox/new/"> Firefox </a> or <a href="https://www.google.com/chrome/browser/">Chrome</a>. 
+For additional information please see the <a href="http://blog.sciencedirect.com/"> ScienceDirect Blog </a> page.
+    </span>
+    <a class="closeBt" title="Close Internet Explorer 7 warning">Close</a>
+</div>
+
+
+
+<div id="header">
+<div class="headerBlk">
+    <div class="headerInner" role="navigation" aria-label="ScienceDirect">
+        <div class="home">
+            
+            <!--INSERTS THE TEMPLATE VARIABLES POPULATED FROM DB for SCIVERSE and PRODUCT labels-->
+            
+                <a href="http://www.sciencedirect.com/" title="ScienceDirect -The world's leading full-text scientific database"> <span class="logoScienceDirectImg">&nbsp;</span></a>
+            
+        </div>
+
+        
+            <ul class="publication">
+                <!-- Journals link -->
+                
+                    
+                        <li>
+                            <a href="http://www.sciencedirect.com/science/journals">Journals</a>
+                        </li>
+                     
+                
+
+                <!-- Books link -->
+                
+                    
+                        <li class="sep">
+                            <a href="http://www.sciencedirect.com/science/bookbshsrw">Books</a>
+                        </li>
+                     
+                
+            </ul>
+        
+
+    </div>
+    
+         <!-- if not logged in -->
+         
+            
+            <div id="login" class="clearfix" aria-label="Help and Sign In" role="navigation" style="margin-right: 230px;">
+            <ul class="userlinks">
+                
+                    <li>
+                        <a href="http://www.sciencedirect.com/science?_ob=ShoppingCartURL&amp;_method=display&amp;_zone=TopNavBar&amp;_origin=article&amp;md5=98a3e89aa38c5044516e5e4ca8b64e74" target="_top" name="cart" title="Shopping Cart">Shopping cart</a>
+                    </li>
+                
+                
+                
+            
+                <!--top right widget-->
+                <li id="loginPlus">
+                    <h2><a id="loginPlusScript" href="javascript:LoginBox.flipLogin('loginBox',null);" title="Sign in to ScienceDirect" class="novisit plus nojs S_C_SignIn" aria-haspopup="true" aria-expanded="false" aria-controls="loginBox" role="button">Sign in</a></h2>
+                    <noscript><a href="http://www.sciencedirect.com/science?_ob=HomePageURL&_method=userHomePage&_fl=y&md5=6dada1fb726164470bad9e40bbc4d7fa" title="Open the Sign in Box" class="plus S_C_SignIn" id="loginPlusNoScript" >Sign in</a></noscript>
+					
+                    <div id="loginBox" role="dialog" aria-labelledby="headingSignIn" class="bannerAvail" style="width: 600px; display: none;"> 
+                        
+                        <div style="width: 285px; float: right; border-left: 1px solid rgb(155, 155, 155); padding-left: 10px; min-height: 180px;">
+                            
+                                <div class="openAthens"><a href="https://auth.elsevier.com/ShibAuth/institutionLogin?entityID=https%3A%2F%2Fidp.eduserv.org.uk%2Fopenathens&amp;appReturnURL=http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS1352231007004670" title="Log in using OpenAthens">OpenAthens login</a></div>
+                            
+                            
+                            <div class="sampletext">
+                                <div style="font-weight: bold; padding-bottom: 7px;"><h3><b>Login via your institution</b></h3></div>
+                                
+                                
+                                    <div class="fedLink"><a href="http://www.sciencedirect.com/science/externallogin" title="Other institution login">Other institution login</a></div>
+                                
+                            </div>
+                            
+                            
+                            
+                                
+                            
+                            
+                            
+                        </div>
+                        
+                        <div class="padding" style="width: 285px;">
+                            <form name="sdLogin" method="POST" action="https://www.sciencedirect.com/science/login" id="login-box-form" style="margin: 0px;">
+                            <b><h3 id="headingSignIn">Sign in using your ScienceDirect credentials</h3></b>
+                            <input name="login" value="login" type="hidden">
+                            <div style="margin-top: 20px;">
+                            <label for="username"><span style="text-align: right;">Username:</span>
+                            <input id="username" name="userid" title="Please enter your username here" type="text"></label>
+                            </div>
+                            
+                            <div style="margin-top: 7px;">
+                            <label for="password"><span style="text-align: right;">Password:</span>
+                            <input id="password" name="password" maxlength="20" title="Please enter your password here" onkeypress="if(13==event.keyCode)this.form.submit();if (13==event.keyCode)return false;" type="password"></label>
+                            </div>
+                                   
+                                       
+                            
+                            <div class="remember">
+                            <input checked="" name="rememberid" id="rememberMe" value="Y" class="allCheck top2fix" title="Checking this option will log you in automatically next time you visit ScienceDirect" type="checkbox">
+                            <label for="rememberMe" title="Checking this option will log you in automatically next time you visit ScienceDirect">Remember me</label>
+                            </div>
+                            
+                            <input name="_ob" value="MiamiLogonURL" type="hidden">
+                            <input name="targetURL" value="http://www.sciencedirect.com/science/article/pii/S1352231007004670" type="hidden">
+                            <input name="returnURL" value="http://www.sciencedirect.com/science/article/pii/S1352231007004670" type="hidden">
+                            <div class="submit">
+                            
+                            <div style="float: left; padding-left: 0px;"><input class="button" name="arrow" alt="Sign in to ScienceDirect" title="Sign in to ScienceDirect" value="Sign in" type="Submit"></div>
+                        
+                            
+                            
+                            <div class="notRegistered"><span class="astPad">| </span><span><a href="https://www.sciencedirect.com/science/register-new-user" title="Register a username and password for using alerts and other personal features" target="_top">Not Registered?</a></span></div>
+                            
+                            
+                            <div style="clear: left;"></div>
+                            </div>
+                            
+                            <div class="forgotpass">
+                            <a href="http://www.sciencedirect.com/science?_ob=ReminderURL&amp;_method=display&amp;md5=4a97631c25ac81c09ad2f961106e9da2" target="passwd" onclick="var remindWin;remindWin=window.open('','passwd','scrollbars=yes,resizable=yes,directories=no,toolbar=n,menubar=no,status=no,width=650,height=300');" title="Click here for help in recovering your ScienceDirect access">Forgotten username or password?</a>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="last"><a class="S_C_helpLink" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=browse_open_doc.htm&amp;_btn=Y&amp;_zone=TopNavBar&amp;_origin=article" target="sdhelp" title="Help (Opens new window)">Help</a></li>
+                
+            </ul>
+            </div>
+            
+            
+        <!-- logged in -->
+             
+    
+</div>
+
+
+    
+                        
+        <div class="clearfix" id="bannerTop" role="banner" aria-label="Institutional Access">                        
+            
+                <a href="http://www.elsevier.com/solutions/sciencedirect/who-uses/guest-users" onclick="openNS('http://www.elsevier.com/solutions/sciencedirect/who-uses/guest-users'); return false;">
+                    <img src="dynamic_scidir_home_guest_user.gif" border="0">
+                </a>
+            
+        </div>
+        
+    
+           
+
+
+</div><!--header-->
+
+
+
+
+
+
+
+
+
+</div><!--header-area-->
+<div id="page-area">
+    
+    <div id="articleToolbar" class="clearfix quicksearch prd_sci_dir">
+        <div style="margin-left: 6px;" id="articleNav">
+  <ul aria-label="Article options" role="navigation" class="clearfix">
+    <!-- return to gateway -->
+     
+
+
+
+
+
+
+<li>
+  <div class="icon_pdf toolbar ppv">
+    <div class="largeIcon"></div>
+    <a id="pdfLink" rel="nofollow" href="http://www.sciencedirect.com/science?_ob=ShoppingCartURL&amp;_method=add&amp;_eid=1-s2.0-S1352231007004670&amp;originContentFamily=serial&amp;_origin=article&amp;_ts=1441274110&amp;md5=d0396f30fe937b4cc110144cc49c4f32" querystr="?_origin=article&amp;_zone=toolbar" target="" class="S_C_pdfLink big pdf ext_sdlink cLink" style="cursor: pointer;" title="Purchase PDF">Purchase </a>
+  </div>
+</li>
+ 
+ 
+
+
+
+
+
+
+
+<li class="exportPopupListitem">
+<div class="pulldown">
+    <div class="exportDivision" title="Export citations">
+    <div class="exportIconText">
+    <div class="icon_exportarticlesci_dir initialImage export_icon" tabindex="0"> &nbsp; </div>
+    <input id="icon_exportarticle" value="Export" name="export" class="listAction export export_general" tabindex="-1" type="button">
+     <span class="downSM_sci_dir exportArrow"></span>
+    </div>
+    <input class="zone" name="zone" value="exportDropDown" type="hidden">
+    </div>
+    <div class="menu export_popup hidden" id="export_popup">
+    <div style="display: none;" class="warningIcon" title="Warning Icon" alt="Warning Icon"></div>
+    <form name="exportCite" method="post" action="http://www.sciencedirect.com/science?_ob=DownloadURL&amp;_method=finish&amp;_eidkey=1-s2.0-S1352231007004670&amp;count=1&amp;_docType=FLA&amp;md5=b6d016a203b5835c0819a84e3725a107" target="">
+    <input class="zone" name="zone" value="exportDropDown" type="hidden">
+            <script language="javascript" type="text/javascript">
+
+<!--
+
+function checkExportFormat(limit) {
+
+    var msg = "";
+
+    for (i=0;i<document.exportCite.elements.length;i++) {
+        if (document.exportCite.elements[i].value == "REFWX") {
+            if (document.exportCite.elements[i].checked) {
+                document.exportCite.setAttribute('target',"RefWorksMain");
+                if (checkLimit()) {
+                    if (limit) {
+                        msg = "It is possible that some users may experience problems when downloading large numbers of citations. If this happens please contact RefWorks support at your regionally hosted site or e-mail support@refworks.com to assist you further.\n\n";
+                    }
+                    msg += "Exporting to RefWorks may take some time, please wait....";
+                    alert(msg);
+                }
+            }
+            else {
+                document.exportCite.setAttribute('target',"");
+            }
+            break;
+        }
+    }
+    return true;
+}
+
+function determineCount(numStr) {
+    var count=1;
+
+    if(numStr.indexOf("-")) {
+        var rangeStr = numStr.split("-");
+
+        if(rangeStr.length == 2) {
+            var highNum = parseInt(rangeStr[1]);
+            var lowNum = parseInt(rangeStr[0]);
+
+            if(highNum >= lowNum) { count = (highNum - lowNum) + 1; }
+        }
+    }
+    return count;
+}
+
+function checkLimit(){
+
+    var selectNum = "";
+    var useSelected = false;
+    var allNum = 0;
+    var count = 0;
+    var rdoc = 0;
+
+    for (i=0;i<document.exportCite.elements.length;i++) {
+        if (document.exportCite.elements[i].name == "count") {
+            allNum = document.exportCite.elements[i].value;
+        }
+        if (document.exportCite.elements[i].name == "NUMBER_LIST") {
+            selectNum = document.exportCite.elements[i].value;
+        }
+        if (document.exportCite.elements[i].name == "_rdoc") {
+            rdoc = document.exportCite.elements[i].value;
+        }
+        if (document.exportCite.elements[i].value == "selected") {
+            if (document.exportCite.elements[i].checked) {
+                useSelected = true;
+            }
+        }
+    }
+
+    if (useSelected) {
+        selectNum = selectNum.replace(/ /g,"");
+        if(selectNum.indexOf(",")) {
+            var commaList = selectNum.split(",");
+            for(i=0; i < commaList.length; i++) {
+                count += determineCount(commaList[i]);
+            }
+        }
+        else {
+            count += determineCount(selectNum);
+        }
+    }
+    else { 
+        if (rdoc > 0) {
+            count = 1;
+        }
+        else {
+            count = allNum;
+        }
+    }
+
+    if(count > 50) { return true; }
+  
+    return false;
+}
+
+//-->
+</script>
+
+    <div class="exportInfo">
+        <div class="chkboxCount"></div>
+        <div class="exportHelp">
+            <a target="sdhelp" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=art_export.htm&amp;_btn=Y&amp;_zone=TopNavBar&amp;_origin=article" title="Help (Opens new window)">Help</a>
+        </div>
+    </div>
+
+    <div class="expContainer">
+      <ul class="Export_Popup" width="100%">
+        <li class="subHeading"><h3> Direct export </h3></li>
+        <li class="direct_export">
+         
+            <div>
+              <div class="btn_export directExport">
+                <div class="icon_Mendeley" title="Save to Mendeley">&nbsp;</div>
+                <input id="directExport" value="Save to Mendeley" name="Save to Mendeley" alt="Save to Mendeley" class="mendeleyBT button" type="button">
+              </div>
+            </div>
+        
+        
+            <div class="btnLine">
+              <div class="btn_export refworks">
+                <div class="icon_Refworks" title="Save to RefWorks">&nbsp;</div>
+                <input id="REFWX" value="Save to RefWorks" name="Save to RefWorks" alt="Save to RefWorks" class="button refworks" type="button">
+              </div> 
+            </div>
+            <div class="clear"> </div>
+        
+        </li>
+        <li class="subHeading big"> <h3>Export file</h3></li>
+        <li class="export_radio RIS"><input id="RIS" checked="" name="citation-type" value="RIS" class="artRadio expRadio RIS" type="radio">&nbsp;<label for="RIS">RIS&nbsp;(for EndNote, Reference Manager, ProCite)</label>
+        </li>
+        <li class="export_radio"><input id="BIBTEX" name="citation-type" value="BIBTEX" class="artRadio expRadio BIBTEX" type="radio">&nbsp;<label for="BIBTEX">BibTeX</label>
+        </li>
+        <li class="export_radio"><input id="ASCII" name="citation-type" value="ASCII" class="artRadio expRadio ASCII" type="radio">&nbsp;<label for="ASCII">Text</label>
+        </li>
+        <li class="export_radio hidden"><input id="REFWX" name="citation-type" value="REFWX" class="artRadio expRadio REFWX" type="radio">&nbsp;<label for="REFWX">RefWorks Direct Export</label>
+        </li>
+        <li class="subHeading big"><h3>Content</h3></li>
+        <li class="expCitab export_radio"><input id="cite" class="cite artRadio expRadio" name="format" value="cite" type="radio">&nbsp;<label class="cit" for="cite"> Citation Only </label>
+        </li>
+        <li class="expCitab export_radio citab"><input id="cite-abs" class="cite-abs artRadio expRadio" name="format" value="cite-abs" checked="" type="radio">&nbsp;<label class="cab" for="cite-abs"> Citation and Abstract </label>
+        </li>
+        <li class="export_submit">
+            <div class="downBtn export_downBtn">
+               <input value="Export" name="export" alt="Export" class="button export_button" id="export_button" type="submit">
+            </div> 
+        </li>
+      </ul>
+
+    </div>
+
+
+        
+         
+
+    </form>
+    </div> 
+</div>    
+</li>
+  
+
+
+
+</ul>
+</div>
+
+<div class="sdSearch" aria-label="Quick search" role="search">
+    <fieldset>
+        <div class="left">
+            <form id="quickSearch" name="qkSrch" method="get" target="_top" action="http://www.sciencedirect.com/science">
+            <input name="_ob" value="QuickSearchURL" type="hidden">
+            <input name="_method" value="submitForm" type="hidden">
+            <input name="_acct" value="C000228598" type="hidden">
+            <input name="searchtype" value="a" type="hidden">
+            <input name="_origin" value="article" type="hidden">
+            <input name="_zone" value="qSearch" type="hidden">
+            <input name="md5" value="89d09e911d3872e16ae140ceae8c0b3b" type="hidden">
+            
+            <input id="quickSearch" name="qs_all" placeholder="Search ScienceDirect" value="" size="30" maxlength="450" title="Perform a quick search on ScienceDirect" type="text"><input class="submit" value="" title="Submit quick search" type="submit">
+            
+            <a class="advanced S_C_advanced" href="http://www.sciencedirect.com/science/search">Advanced search</a>
+            </form>
+        </div>
+    </fieldset>
+</div>
+<div class="clear"></div>
+<div id="erToolbar"></div>
+
+
+<div style="color: rgb(255, 0, 0); font-weight: bold; border: 0px solid red;">
+  
+  
+  
+  
+</div>
+
+
+
+
+
+    </div>
+    <div id="articleToolbarDummy"></div>
+  <div style="clear: both;"></div>
+  
+    <!--For now, we will use similar styling as "MigratedStatus" div but will need to tweak later (plus tweak the links too) -->
+     
+     
+  <div style="height: 683px;" id="leftPane" class="column small" aria-label="table of contents" role="navigation">
+    <div style="height: 683px;" id="leftPaneInner">
+        <div>
+        <div class="small" id="leftButton">
+            <ul>
+                <li class="tocbutton">
+                    <a class="outline-toggle" title="Open to view article outline" alt="Open to view article outline" href="#" aria-expanded="false">
+                        <span class="icon outline_big"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="small" id="outlineContainer">
+            <a class="closeBt" title="Close">&nbsp;</a>
+            <div data-st="0" id="outline" class="outline"><div style="width: 233px;" id="olGraphCbBox"><div class="olHead"><h2 id="toc_title">Article outline</h2><label style="display: none;"><input id="outlineGraphicsCheckBox" type="checkBox">Show full outline</label></div><ul id="itemOutline"><li class="li_h2"><div id="ol_author1" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=author1" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">Abstract<br></a></div></li><li class="li_h2"><div id="ol_kwd_1" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=kwd_1" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">Keywords<br></a></div></li><li class="li_h2"><div id="ol_section_lbl1" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=section_lbl1" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">1. Introduction<br></a></div></li><li class="li_h2"><div id="ol_section_lbl2" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=section_lbl2" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">2. Temporary sampling for the estimation of the annual average<br></a></div></li><li class="li_h2"><div id="ol_section_lbl3" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=section_lbl3" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">3. Composition of the spatial and of the temporal errors<br></a></div></li><li class="li_h2"><div id="ol_section_lbl4" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=section_lbl4" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">4. Fixed analyzers and temporary survey<br></a></div></li><li class="li_h2"><div id="ol_section_lbl5" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=section_lbl5" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">5. Experimental calculation of the temporal estimation error<br></a></div></li><li class="li_h2"><div id="ol_section_lbl6" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=section_lbl6" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">6. Time variability of the NO<sub>2</sub> concentrations in Mulhouse<br></a></div></li><li class="li_h2"><div id="ol_section_lbl7" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=section_lbl7" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">7. Validation on the analyzers in Alsace<br></a></div></li><li class="li_h2"><div id="ol_section_lbl8" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=section_lbl8" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">8. Empirical determination of the optimal survey period<br></a></div></li><li class="li_h2"><div id="ol_section_lbl9" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=section_lbl9" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">9. Conclusion<br></a></div></li><li class="li_h2"><div id="ol_ack001" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=ack001" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">Acknowledgement<br></a></div></li><li class="li_h2"><div id="ol_bibl001" class="io item h2sec"><a class="cLink S_C_tocLinkOutline" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533&amp;_hashID=bibl001" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">References<br></a></div></li></ul><script>prs.rt('scr_toc')</script></div>
+              <script style="width: 245px;" type="text/javascript">
+
+              document.write("<div class='outlineMsg'>Article outline is loading...</div>");
+              </script>
+              <noscript style="width: 245px;">
+
+              <div class="infoMsg">
+              <div style="float: left; width: 20px; "><img src="http://cdn.els-cdn.com/sd/alertIcon.gif" border="0" valign="top" alt="Alert message"></div>
+              <div style="padding-left:25px;">JavaScript is disabled on your browser. 
+<div style="padding-top:10px;">
+              Please enable JavaScript to use all the features on this page.</div></div>
+              </div>
+              </noscript>
+            <div style="width: 233px;" id="fig" role="navigation" aria-labelledby="fig_title"><hr><h2 id="fig_title">Figures and tables</h2><ol class="figures " role="tree"><li><div id="ol_fig1" class="io item fig" data-parent="section_lbl5"><a class="olIcon olIconFig  cLink S_C_tocLinkFig" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><img data-loaded="true" src="1-s2.0-S1352231007004670-gr1.sml" class="displayImg" title="Regularized NO2 concentrations over three fortnights, measured at three ..." alt="Regularized NO2 concentrations over three fortnights, measured at three ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231007004670-gr1.sml" data-thumbheight="92"></a></div></li><li><div id="ol_tbl1" class="io item tbl" data-parent="section_lbl5"><a class="olIcon olIconTbl cLink S_C_tocLinkTbl" title="Annual concentration and average value during the period of six fortnights (two ..." alt="Annual concentration and average value during the period of six fortnights (two ..." querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><div class="olIcon olIconTbl"></div>Table 1</a></div></li><li><div id="ol_fig2" class="io item fig" data-parent="section_lbl5"><a class="olIcon olIconFig  cLink S_C_tocLinkFig" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><img data-loaded="true" src="1-s2.0-S1352231007004670-gr2.sml" class="displayImg" title="Estimation of the annual average of the NO2 concentrations in the Mulhouse area ..." alt="Estimation of the annual average of the NO2 concentrations in the Mulhouse area ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231007004670-gr2.sml" data-thumbheight="52"></a></div></li><li><div id="ol_fig3" class="io item fig" data-parent="section_lbl6"><a class="olIcon olIconFig  cLink S_C_tocLinkFig" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><img data-loaded="true" src="1-s2.0-S1352231007004670-gr3.sml" class="displayImg" title="NO2 concentrations measured at the fixed analyzer “Mulhouse Nord”. (a) Chronicle ..." alt="NO2 concentrations measured at the fixed analyzer “Mulhouse Nord”. (a) Chronicle ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231007004670-gr3.sml" data-thumbheight="93"></a></div></li><li><div id="ol_fig4" class="io item fig" data-parent="section_lbl6"><a class="olIcon olIconFig  cLink S_C_tocLinkFig" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><img data-loaded="true" src="1-s2.0-S1352231007004670-gr4.sml" class="displayImg" title="Variogram of the NO2 daily concentrations from 2000 to 2002, for the three fixed ..." alt="Variogram of the NO2 daily concentrations from 2000 to 2002, for the three fixed ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231007004670-gr4.sml" data-thumbheight="50"></a></div></li><li><div id="ol_fig5" class="io item fig" data-parent="section_lbl6"><a class="olIcon olIconFig  cLink S_C_tocLinkFig" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><img data-loaded="true" src="1-s2.0-S1352231007004670-gr5.sml" class="displayImg" title="Fitting of the time variogram. (a) Experimental and fitted variogram of the ..." alt="Fitting of the time variogram. (a) Experimental and fitted variogram of the ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231007004670-gr5.sml" data-thumbheight="40"></a></div></li><li><div id="ol_tbl2" class="io item tbl" data-parent="section_lbl6"><a class="olIcon olIconTbl cLink S_C_tocLinkTbl" title="Statistics of the relative spatial and temporal S.D., expressed in %, relatively ..." alt="Statistics of the relative spatial and temporal S.D., expressed in %, relatively ..." querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><div class="olIcon olIconTbl"></div>Table 2</a></div></li><li><div id="ol_fig6" class="io item fig" data-parent="section_lbl6"><a class="olIcon olIconFig  cLink S_C_tocLinkFig" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><img data-loaded="true" src="1-s2.0-S1352231007004670-gr6.sml" class="displayImg" title="Correction of standard deviation map to take into account the temporal term of ..." alt="Correction of standard deviation map to take into account the temporal term of ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231007004670-gr6.sml" data-thumbheight="56"></a></div></li><li><div id="ol_fig7" class="io item fig" data-parent="section_lbl7"><a class="olIcon olIconFig  cLink S_C_tocLinkFig" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><img data-loaded="true" src="1-s2.0-S1352231007004670-gr7.sml" class="displayImg" title="Measurement network of the atmospheric pollution in Alsace, on 1 January 2004, ..." alt="Measurement network of the atmospheric pollution in Alsace, on 1 January 2004, ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231007004670-gr7.sml" data-thumbheight="93"></a></div></li><li><div id="ol_fig8" class="io item fig" data-parent="section_lbl7"><a class="olIcon olIconFig  cLink S_C_tocLinkFig" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><img src="grey_pxl.gif" class="smlImgLazyJSB greyImg" title="Averages and temporal variability of the daily concentrations at the analyzers ..." alt="Averages and temporal variability of the daily concentrations at the analyzers ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231007004670-gr8.sml" data-thumbheight="67"></a></div></li><li><div id="ol_fig9" class="io item fig" data-parent="section_lbl7"><a class="olIcon olIconFig  cLink S_C_tocLinkFig" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><img src="grey_pxl.gif" class="smlImgLazyJSB greyImg" title="NO2 annual concentrations measured at the analyzers in Alsace, from 1992 to ..." alt="NO2 annual concentrations measured at the analyzers in Alsace, from 1992 to ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231007004670-gr9.sml" data-thumbheight="69"></a></div></li><li><div id="ol_fig10" class="io item fig" data-parent="section_lbl8"><a class="olIcon olIconFig  cLink S_C_tocLinkFig" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><img src="grey_pxl.gif" class="smlImgLazyJSB greyImg" title="Scatter diagram of the deviation (abscissa) and the mean quadratic error ..." alt="Scatter diagram of the deviation (abscissa) and the mean quadratic error ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231007004670-gr10.sml" data-thumbheight="93"></a></div></li><li><div id="ol_fig11" class="io item fig" data-parent="section_lbl8"><a class="olIcon olIconFig  cLink S_C_tocLinkFig" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><img src="grey_pxl.gif" class="smlImgLazyJSB greyImg" title="Empirical optimization of the measurements periods: left, mean deviation between ..." alt="Empirical optimization of the measurements periods: left, mean deviation between ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S1352231007004670-gr11.sml" data-thumbheight="52"></a></div></li><li><div id="ol_tbl3" class="io item tbl" data-parent="section_lbl8"><a class="olIcon olIconTbl cLink S_C_tocLinkTbl" title="Empirical optimization of the measurement period, using the analyzers" alt="Empirical optimization of the measurement period, using the analyzers" querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><div class="olIcon olIconTbl"></div>Table 3</a></div></li><li><div id="ol_tbl4" class="io item tbl" data-parent="section_lbl8"><a class="olIcon olIconTbl cLink S_C_tocLinkTbl" title="Empirical optimization of the duration of the measurement phases on the ..." alt="Empirical optimization of the duration of the measurement phases on the ..." querystr="?_rdoc=1&amp;_fmt=full&amp;_origin=&amp;md5=22543fb95e34d36391c44b9d9cd72533" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670"><div class="olIcon olIconTbl"></div>Table 4</a></div></li></ol></div><div style="width: 245px;" id="articleLeftAd" class="adBlock"><iframe scrolling="no" border="0" cellspacing="0" src="S1352231007004670_2.html" frameborder="0"></iframe></div></div>
+        </div>
+        </div>
+    </div>
+  </div>
+  <div tabindex="-1" id="centerPane" class="column">
+    <div class="topBorder"></div>
+    <div id="centerContent" class="centerContent">
+    <div id="centerInner" class="centerInner svBigBox" aria-label="Article" role="main">
+        
+      
+      <noscript>
+
+      <div class="msgBox" style="margin-top:10px;">
+          <span class="errMsg">
+            <div>JavaScript is disabled on your browser.  Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. <a rel="nofollow" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670?np=y">View full text</a></div>
+         </span>
+      </div><br/>
+      </noscript>
+      <div class="head headTemplate page_fragment_ind">
+
+  
+<div class="publisherLogo">
+  <span class="spElsevierPubIcon"></span>
+</div>
+
+
+  
+    <!--?xml version="1.0" encoding="UTF-8"?--><div xmlns:bk="http://www.elsevier.com/xml/bk/dtd" class="publicationHead"><div class="title"><a title="Go to Atmospheric Environment on ScienceDirect" href="http://www.sciencedirect.com/science/journal/13522310" querystr="?zone=centerPane" class="cLink"><span>Atmospheric Environment</span></a></div><p class="volIssue"><a class="S_C_volIss" title="Go to table of contents for this volume/issue" href="http://www.sciencedirect.com/science/journal/13522310/41/32">Volume 41, Issue 32</a>, October 2007, Pages 6691–6700</p></div>
+  
+    <div class="publicationCover cover2">
+    
+      
+    <a querystr="?zone=publicationLogo" class="cLink" href="http://www.sciencedirect.com/science/journal/13522310/41/32">
+      
+    
+    <img src="1-s2.0-S1352231007X04540-cov150h.gif" alt="Cover image" class="toprightlogo">
+    <noscript><img src="http://ars.els-cdn.com/content/image/1-s2.0-S1352231007X04540-cov150h.gif" alt="Cover image" class="toprightlogo" /></noscript>
+    </a>
+    
+  </div>
+
+
+</div>
+
+      <div id="frag_1" class="page_fragment auth_frag" data-first="true" data-fid="1"><div class="module_topic_paths"></div><h1 class="svTitle" id="">Geostatistical characterization of nitrogen dioxide concentration in an urban area<span class="articleAltTitle" id="">: Part II: Time component of the estimation error</span></h1><ul style="display: block;" class="authorGroup noCollab svAuthor"><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N1fe74d0N44cb97f0" data-t="a" data-fn="Chantal" data-ln="de Fouquet" data-pos="1" data-tb="">Chantal de Fouquet</a><a title="Affiliation: a" href="#aff1" class="intra_ref auth_aff" id="baff1"><sup>a</sup></a><sup>, </sup><a title="Corresponding author contact information" href="#cor1" id="bcor1" class="intra_ref auth_corr"></a><sup>, </sup><a href="mailto:chantal.de_fouquet@ensmp.fr" class="auth_mail" title="E-mail the corresponding author"></a>, </li><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N1fe74d0N44cb9880" data-t="a" data-fn="David" data-ln="Gallois" data-pos="2" data-tb="">David Gallois</a><a title="Affiliation: a" href="#aff1" class="intra_ref auth_aff" id="baff1"><sup>a</sup></a>, </li><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N1fe74d0N44cb9910" data-t="a" data-fn="Gilles" data-ln="Perron" data-pos="3" data-tb="">Gilles Perron</a><a title="Affiliation: b" href="#aff2" class="intra_ref auth_aff" id="baff2"><sup>b</sup></a></li></ul><!--VALIDHTML--><ul style="display: none;" class="affiliation authAffil smh"><li style="display: none;" class="smh5plus" id="aff1"><sup>a</sup> <span id="">Ecole des Mines de Paris, Centre de Géosciences, 35 rue Saint-Honoré, 77305 Fontainebleau Cedex, France</span></li><li style="display: none;" class="smh5plus" id="aff2"><sup>b</sup> <span id="">ASPA Association pour la Surveillance et l’étude de la Pollution Atmosphérique en Alsace, 5 rue de Madrid, 67300 Schiltigheim, France</span></li></ul><!--VALIDHTML--><!--VALIDHTML--><div id="currtAsOf"></div><dl style="display: none;" class="articleDates smh"><dd>Received 19 December 2006, Revised 11 May 2007, Accepted 15 May 2007, Available online 24 May 2007</dd></dl><!--VALIDHTML--><div id="showMoreButtons"><a class="showLess moreLink"><span class="CollapseText">&nbsp;</span><span class="showInfo expand" title="Show more author and article information">Show more</span></a><a class="showLess lessLink"><span style="display: none;" class="ExpandText">&nbsp;</span><span class="showInfo collapse" title="Hide more author and article information">Show less</span></a></div><div id="ppvPlaceHolder" class=""><div class="accessTitle">Choose an option to locate/access this article:</div><div class="accessContent clearfix"><div class="acol1"><div style="margin-bottom: 5px;">Check if you have access through your login credentials or your institution</div><a title="Click to see if you have full text access" class="corpReq cLink blueButton" querystr="?_fmt=full" href="http://www.sciencedirect.com/science/article/pii/S1352231007004670">Check access</a></div><div class="vdivider"></div><div class="acol2"><a class="purchaseSprite cLink" querystr="?_origin=article" href="http://www.sciencedirect.com/science?_ob=ShoppingCartURL&amp;_method=add&amp;_eid=1-s2.0-S1352231007004670&amp;_ts=1441274111&amp;md5=4adeaa8d3560ed8d034bb9e5b36fdb2f"><div class="artPurchase"><div></div><span>Purchase&nbsp;$35.95</span></div></a><div class="ppvmsg"><span id="deepdyve" style="">
+  <a id="dd_href" target="DeepDyve" href="https://www.deepdyve.com/lp/elsevier/geostatistical-characterization-of-nitrogen-dioxide-concentration-in-eTeuMl7rQl?key=elsevier"><img src="DeepDyve_SD.png" id="dd_img"></a>
+</span></div></div><div class="vdivider"></div><div class="acol3"><ul><li class="outLinks"><a class=" cExLink S_C_outLinks" href="http://linkinghub.elsevier.com/retrieve/pii/S1352231007004670?showall=true" data-url="/science/RedirectURL?_method=outwardLink&amp;_partnerName=19979&amp;_eid=1-s2.0-S1352231007004670&amp;_pii=S1352231007004670&amp;_origin=article&amp;_zone=centerPane&amp;_targetURL=http://linkinghub.elsevier.com/retrieve/pii/S1352231007004670?showall%3Dtrue" target="_top" title="Get Full Text Elsewhere"><img src="gw_rtn_ihub.gif" onload="DynamicArtContent.checkOLImage(this)" class="outImg" border="0"></a></li></ul></div></div></div><script>prs.rt('scr_ppv')</script><!--VALIDHTML--><dl class="extLinks nonEmpty"><dd class="doiLink"><dd class="doi"><a id="ddDoi" class="S_C_ddDoi" href="http://dx.doi.org/10.1016/j.atmosenv.2007.05.027" target="doilink" onclick="var doiWin; doiWin=window.open('http://dx.doi.org/10.1016/j.atmosenv.2007.05.027','doilink','scrollbars=yes,resizable=yes,directories=yes,toolbar=yes,menubar=yes,status=yes'); doiWin.focus()">doi:10.1016/j.atmosenv.2007.05.027</a></dd></dd><dd class="rightsLink linkRender"><a class=" cExLink S_C_outLinks" href="https://s100.copyright.com/AppDispatchServlet?publisherName=ELS&amp;contentID=S1352231007004670&amp;orderBeanReset=true" data-url="/science/RedirectURL?_method=outwardLink&amp;_partnerName=936&amp;_eid=1-s2.0-S1352231007004670&amp;_pii=S1352231007004670&amp;_origin=article&amp;_zone=art_page&amp;_targetURL=https://s100.copyright.com/AppDispatchServlet?publisherName%3DELS%26contentID%3DS1352231007004670%26orderBeanReset%3Dtrue" target="_top" title="Get rights and content"><span class="outText">Get rights and content</span></a></dd></dl><div class="moreInformation"><dl class="citation"></dl></div><div class="articleOAlabelForced"></div><div id="refersToAndreferredToBy"><dl id="referredToBy" class="documentThread"><!--Referred To By--></dl></div><!--FRAGMENTEND--><div class="page_fragment_ind auth_frag" data-id="frag_2"></div></div><div id="frag_2" class="page_fragment" data-fid="2"><script>prs.rt("abs_1st_beg");</script><!--VALIDHTML--><hr id="abs_author1" class="artHeader"><div class="abstract svAbstract " data-etype="ab"><h2 class="secHeading" id="author1">Abstract</h2><p id="">The temporal component of the estimation error is usually neglected in calculation of the variance of the error associated with the mapping of annual nitrogen dioxide (NO<sub>2</sub>) concentration. However, under realistic hypotheses, adding a temporal term to the spatial estimation variance is convenient enough. In a survey using passive diffusion samplers, which was carried out in 2001 on the Mulhouse area, the two measurement phases do not allow calculation of variance of the temporal error. But this error is accessible by means of the few fixed analyzers that continuously measure NO<sub>2</sub> concentrations. The statistics of the experimental temporal error are examined and the temporal variogram is calculated. Experimental quadratic error is then compared to the theoretical estimation variance, deduced from the temporal variogram.</p><p id="">The fixed analyzers available in Alsace are then used to “optimize” empirically the duration and the date of the beginning of the temporary measurement phases.</p><p id="">Without increasing the cost of the temporary survey, it is then possible to improve the precision of the maps of annual NO<sub>2</sub> concentration, by combining the spatial optimization presented in Part I of the paper, and the temporal optimization presented here.</p></div><!--VALIDHTML--><div id="embeddedPDF" style="display: none;"></div><script>prs.rt("abs_end");</script><div id="SD_BA1P" class="sgfNoTitleBar sgfNoGadgetBorder svDoNotLink"><div class="containerApplOver invisible" id="SD_BA1P_298231"><div id="remote_iframe_0_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_0" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_0" onload="sgf.killTimer('298231', 'SD_BA1P');" name="remote_iframe_0" src="S1352231007004670_3.html" style="text-align: left; height: 0px;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div></div><!--VALIDHTML--><h2 id="kwd_1" class="svKeywords">Keywords</h2><ul class="keyword" id=""><li id="" class="svKeywords"><span id="">Geostatistics</span>; </li><li id="" class="svKeywords"><span id="">Spatial variability</span>; </li><li id="" class="svKeywords"><span id="">Time variability</span>; </li><li id="" class="svKeywords"><span id="">Estimation variance</span>; </li><li id="" class="svKeywords"><span id="">Cartography</span>; </li><li id="" class="svKeywords"><span id="">Sampling optimization</span>; </li><li id="" class="svKeywords"><span id="">Nitrogen dioxide (NO<sub>2</sub>)</span>; </li><li id="" class="svKeywords"><span id="">Urban air pollution</span></li></ul><!--VALIDHTML--><div class="artEcomponent"></div><div class="artFooterContent"><dl class="correspondence" id="cor1"><dt class="label topPadd"><a href="#bcor1" class="intra_ref auth_corr" title="Corresponding author contact information"><sup></sup></a></dt><dd>Corresponding author. Tel.: +33&nbsp;1&nbsp;64&nbsp;69&nbsp;47&nbsp;61; fax: +33&nbsp;1&nbsp;64&nbsp;69&nbsp;47&nbsp;05.</dd></dl><!--footerNotes--></div><!--VALIDHTML--><p class="copyright">Copyright © 2007 Elsevier Ltd. All rights reserved.</p><!--VALIDHTML--><div class="page_fragment_ind" data-id="frag_3"></div><script>prs.rt("abs_1st_end");</script></div><div data-last="true" class="page_fragment" id="frag_3" data-fid="3"></div>
+
+               
+
+       
+   
+        
+    </div>
+    <div id="footer-area-dummy"></div>
+    <div style="display: block;" id="footer-area" aria-label="product support" role="contentinfo">
+      <div id="sdFoot">
+      <div id="footer" aria-label="Footer" role="navigation">	
+  <div class="bottomArticle"></div>
+  <div class="padding">
+    <div id="linkArea">
+      <div class="padding links">
+        <div style="float: left; width: 0px; height: 1px;"></div>
+        <div id="banner-bottom">
+          <a class="S_C_aboutElsevier" href="http://www.elsevier.com/" target="_top" title="Elsevier homepage (opens in a new window)"></a>
+        </div>
+        <ul class="col5">
+<li><a target="_top" href="http://www.info.sciverse.com/sciencedirect?utm_source=sciencedirect&amp;utm_medium=link&amp;utm_campaign=aboutsd">About ScienceDirect</a></li>
+</ul>
+<ul class="col5">
+<li> <a target="_top" href="http://www.sciencedirect.com/science/contactus">Contact and support</a></li>
+</ul>
+<ul class="col5">
+<li><a target="_top" href="http://www.elsevier.com/locate/termsandconditions?utm_source=sciencedirect&amp;utm_medium=link&amp;utm_campaign=terms">Terms and conditions</a></li>
+</ul>
+<ul class="col5">
+<li><a target="_top" href="http://www.elsevier.com/privacypolicy?utm_source=sciencedirect&amp;utm_medium=link&amp;utm_campaign=privacy">Privacy policy</a></li>
+</ul><script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/11e800d34be0.js");
+/*]]>{/literal}*/</script>
+<script>function loadSCode(){if(typeof SDM!="undefined"){var e=document.getElementsByTagName("body")[0],t=document.createElement("script");var prefix = "";if(document.location.protocol == "https:"){prefix = "origin-";}t.src = "//" + prefix + "cdn.els-cdn.com/sd/js/adobe/s_code_131.js";e.appendChild(t);sendSCStats()}else{setTimeout(loadSCode,100)}}function sendSCStats(){if(typeof s_tc_sciencedirect!="undefined"){s.t()}else{setTimeout(sendSCStats,100)}}if(window.addEventListener){window.addEventListener("load",loadSCode,false)}else if(window.attachEvent){window.attachEvent("onload",loadSCode)}else{window.onload=loadSCode}</script>
+        <div class="clear"></div>
+        <!-- CSAS will be providing the links-->
+      </div>
+      <div class="padding copyright">
+	<hr>
+        Copyright © 2015 Elsevier B.V. or its licensors or contributors. ScienceDirect® is a registered trademark of Elsevier B.V.
+      </div>
+      <div class="padding" style="padding-bottom: 4px; font-size: 11px;">
+
+              Cookies are used by this site. To decline or learn more, visit our <a href="http://www.info.sciverse.com/sciencedirect/cookies" target="_top">Cookies</a> page.
+        </div> 
+      
+        
+          <div class="padding links">
+            <div id="goToggleSite"><a class="mLink" site="Mobile" cknm="Site" lnkorg="article" lnkzn="footer" href="#">Switch to Mobile Site</a></div>
+          </div>
+	  <form id="pgReload" method="get" action="http://www.sciencedirect.com/science/article/pii/S1352231007004670"></form>
+        
+      
+    </div>
+  </div>
+</div> <!--footer-->
+
+      </div><!--sdFooter-->
+    </div><!--footer-area-->
+    </div>
+ </div>
+ <div style="width: 332px;" id="rightPane" class="column" aria-label="Related content" role="complementary">
+  <div style="height: 1434px;" id="rightOuter" class="rightOuter">
+    <div id="rightInner" class="rightInner">
+       <div class="innerPadding">
+
+    <div id="SD_BIB" class="hidden entry separator appBox sgfNoTitleBar sgfNoGadgetBorder"></div>
+ 
+
+    
+    
+        <div id="recommend_related_articles" class="entry separator related rendered firstBlk">
+            
+                <h2><a href="#articles" class="toggle" aria-controls="relArtList" aria-expanded="true"><span class="iconArrow">&nbsp;</span>Recommended articles</a></h2>
+             
+             <ol id="relArtList"><li><ol class="articles"><li class="artTitle"><a style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" title="Geostatistical characterization of the nitrogen dioxide concentration in an urban area: Part I: Spatial variability and cartography of the annual concentration" href="http://www.sciencedirect.com/science/article/pii/S1352231007004682" class="cLink S_C_artTitle" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S1352231007004670&amp;_srcFr=EPFL">Geostatistical characterization of the nitrogen dioxide concentration in an urban area: Part I: Spatial variability and cartography of the annual concentration</a></li><li style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" class="srcTitle">2007, Atmospheric Environment<div class="moreInfo"><a data-url="http://www.sciencedirect.com/science/more/S1352231007004682/2/issn/13522310" class="toggleMoreInfo">more</a></div></li><li class="showMore hidden"><div class="moreInfoContent"><ol class="details"><li>Chantal de Fouquet, David Gallois, Gilles Perron</li><li class="title">Geostatistical characterization of the nitrogen dioxide concentration in an urban area: Part I: Spatial variability and cartography of the annual concentration</li><li class="fullSrcTitle">Atmospheric Environment, Volume 41, Issue 32, October 2007, Pages 6701–6714</li><li class="docSubType">Original Research Article</li><div class="abs"></div><ul class="links"><li class="clearfix pdf"><div class="icon_pdf"><a rel="nofollow" title="Download PDF" target="_top" class="cLink pdfRightPaneLink" href="http://www.sciencedirect.com/science/article/pii/S1352231007004682/pdfft?md5=c12862946609176d75c922b64af35b8d&amp;pid=1-s2.0-S1352231007004682-main.pdf" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S1352231007004670&amp;_srcFr=EPFL"> PDF (608 K)</a><div id="entitlement" class="checkEntitlement" style="display: none;"></div></div></li></ul></ol></div></li></ol></li><li><ol class="articles"><li class="artTitle"><a style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" title="A predictive model for the home outdoor exposure to nitrogen dioxide" href="http://www.sciencedirect.com/science/article/pii/S0048969707006882" class="cLink S_C_artTitle" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S1352231007004670&amp;_srcFr=EPFL">A predictive model for the home outdoor exposure to nitrogen dioxide</a></li><li style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" class="srcTitle">2007, Science of The Total Environment<div class="moreInfo"><a data-url="http://www.sciencedirect.com/science/more/S0048969707006882/2/issn/00489697" class="toggleMoreInfo">more</a></div></li><li class="showMore hidden"><div class="moreInfoContent"><ol class="details"><li>M. Rava, G. Verlato, R. Bono, M. Ponzio, S. Sartori, G. Blengio, N. Kuenzli, J. Heinrich, T. Götschi, R. de Marco</li><li class="title">A predictive model for the home outdoor exposure to nitrogen dioxide</li><li class="fullSrcTitle">Science of The Total Environment, Volume 384, Issues 1–3, 1 October 2007, Pages 163–170</li><li class="docSubType">Original Research Article</li><div class="abs"></div><ul class="links"><li class="clearfix pdf"><div class="icon_pdf"><a rel="nofollow" title="Download PDF" target="_top" class="cLink pdfRightPaneLink" href="http://www.sciencedirect.com/science/article/pii/S0048969707006882/pdfft?md5=93012e3d9c71357f99e55c995a898f93&amp;pid=1-s2.0-S0048969707006882-main.pdf" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S1352231007004670&amp;_srcFr=EPFL"> PDF (209 K)</a><div id="entitlement" class="checkEntitlement" style="display: none;"></div></div></li></ul></ol></div></li></ol></li><li><ol class="articles"><li class="artTitle"><a style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" title="Aerosol scattering properties in northern China" href="http://www.sciencedirect.com/science/article/pii/S1352231007004128" class="cLink S_C_artTitle" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S1352231007004670&amp;_srcFr=EPFL">Aerosol scattering properties in northern China</a></li><li style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" class="srcTitle">2007, Atmospheric Environment<div class="moreInfo"><a data-url="http://www.sciencedirect.com/science/more/S1352231007004128/2/issn/13522310" class="toggleMoreInfo">more</a></div></li><li class="showMore hidden"><div class="moreInfoContent"><ol class="details"><li>Hao Yan</li><li class="title">Aerosol scattering properties in northern China</li><li class="fullSrcTitle">Atmospheric Environment, Volume 41, Issue 32, October 2007, Pages 6916–6922</li><div class="abs"></div><ul class="links"><li class="clearfix pdf"><div class="icon_pdf"><a rel="nofollow" title="Download PDF" target="_top" class="cLink pdfRightPaneLink" href="http://www.sciencedirect.com/science/article/pii/S1352231007004128/pdfft?md5=376ac05af23f72ea4963630892877b7a&amp;pid=1-s2.0-S1352231007004128-main.pdf" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S1352231007004670&amp;_srcFr=EPFL"> PDF (263 K)</a><div id="entitlement" class="checkEntitlement" style="display: none;"></div></div></li></ul></ol></div></li></ol></li><li><a href="http://www.sciencedirect.com/science/recommended-articles/S1352231007004670" class="viewMoreArticles cLink">View more articles »</a></li></ol>
+        </div><script>prs.rt('scr_rec_art')</script>
+    
+    
+    
+        <div id="cited_by_articles" class="entry separator related closed">
+            <h2><a href="#articles" class="toggle" aria-controls="relArtList" aria-expanded="false"><span class="iconArrow">&nbsp;</span>Citing articles (<span id="hitcount">1</span>)</a></h2>
+            <ol id="citedByList"><li class="note"><p>This article has not been cited.</p></li></ol> 
+        </div>
+    
+    
+    
+        <div id="SD_CRA" class="hidden entry separator appBox sgfNoTitleBar sgfNoGadgetBorder"></div>  
+    
+    
+        
+            <div id="related_book_content" class="entry separator related closed">
+                <h2><a href="#articles" class="toggle" aria-controls="relArtList" aria-expanded="false"><span class="iconArrow">&nbsp;</span>Related book content</a></h2>
+                <ol id="relBkList"><li class="note" style="margin-left: 15px;"><p>No articles found.</p></li></ol>
+            </div>
+        
+     
+    
+        <div id="metrics" class="entry separator rendered related">
+            <h2><a id="metrics_info" aria-expanded="true" aria-controls="metrics" class="toggle" href="#articles"><span class="iconArrow">&nbsp;</span>Metrics</a></h2>
+            <div id="metric_details"></div>
+        </div>
+     
+
+
+
+    
+        <div class="appContainerDummy"></div>
+        <div data-scroll="0" class="appContainer js_application_content">
+            <ul class="hidden" id="dataRepHolder"></ul>
+            
+                <div id="SD_AT1P" class="boxLink sgfNoTitleBar sgfNoGadgetBorder"><div class="containerApplOver invisible" id="SD_AT1P_299100"><div id="remote_iframe_1_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_1" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_1" onload="sgf.killTimer('299100', 'SD_AT1P');" name="remote_iframe_1" src="S1352231007004670_5.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div><div class="containerApplOver invisible" id="SD_AT1P_301408"><div id="remote_iframe_2_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_2" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_2" onload="sgf.killTimer('301408', 'SD_AT1P');" name="remote_iframe_2" src="S1352231007004670_7.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div><div class="containerApplOver invisible" id="SD_AT1P_323460"><div id="remote_iframe_3_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_3" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_3" onload="sgf.killTimer('323460', 'SD_AT1P');" name="remote_iframe_3" src="S1352231007004670_8.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div><div class="containerApplOver invisible" id="SD_AT1P_300959"><div id="remote_iframe_4_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_4" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_4" onload="sgf.killTimer('300959', 'SD_AT1P');" name="remote_iframe_4" src="S1352231007004670_9.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div></div>
+            
+
+            
+                <div id="SD_FTA1" class="boxLink sgfHorToolbar sgfShowMyApps sgfShowMoreLessApps"><div id="sciverse_toolbar" class="sgfSciverseHoriToolBar">	<div class="toolbarfoot">		<div class="toolbarBodyHorizontal" id="toolbarBody">			<div id="toolbar_SD_FTA1" class="sgfInnerToolbar" style="width: 97%; min-height: 155px; text-align: center; margin: 5px auto;"></div>			<div id="showMoreApps">				<a onclick="showMore()" class="plusSign">+</a>				<a title="Show more applications" id="showMore" onclick="showMore()" class="showMoreLessApps">Show more applications</a>			</div>			<div id="showLessApps">				<a onclick="showLess()" class="plusSign">-</a>				<a title="Show fewer applications" id="showFew" onclick="showLess()" class="showMoreLessApps">Show fewer applications</a>			</div>		</div>	</div></div><div style="display: none;" class="sgfToolBarToggleImage">	<div id="sgfSlideBar" class="sgfSideCollapse" onmouseout="sgfToggleToolBarOut();" onmouseover="sgfToggleToolBarOver();" title="undefined"></div>	<div class="clear"></div></div></div>
+            
+        </div>
+    
+
+
+</div>
+
+<div class="js_workspace_content popup" aria-live="polite" role="region" aria-label="Overlay" aria-describedby="skuip-3">
+    <a aria-label="close overlay" title="close overlay" alt="close overlay" href="#" id="buttonClose" role="button" class="closeBt">&nbsp;</a>
+    <div class="scrollArea"><div id="workSpaceView"></div></div>
+</div>
+
+    </div><!--rightInner-->
+  </div><!--rightOuter-->
+ </div><!--rightPane-->
+</div><!--page-area-->
+
+
+
+<div style="clear: both;"></div>
+
+<form name="citationInfo" id="citationInfo" method="POST" action="http://www.sciencedirect.com/science/article/pii/S1352231007004670">
+    <input name="art_citation" value="" type="hidden">
+</form>
+<div id="pdfModalWindow" class="pdfModalWindow" style="display: none;" onclick="pdfCite.closePopup();"></div>
+
+
+<!-- PDFKING/PDFCITE -->
+<div id="suggestedPdfList" style="display: none;">
+
+</div>
+
+
+
+<script src="sdX_1508R2.js"></script>
+
+
+
+
+<script src="sd_1508R2.js"></script>
+
+
+
+<script src="pa_1508R2.js"></script>
+
+
+<script>
+
+var sciverse="empty";
+var SDM=new Object;
+SDM.tm=new Object;
+SDM.tm.ahm='h'
+
+
+
+SDM.ep=new Object;
+SDM.ep.downloadCsvURL = "http://services.elsevier.com/SDWebExport/export/table/csv";
+SDM.ep.downloadActionURL = "http://www.sciencedirect.com/science/downloadActions/keyEvent/S1352231007004670/13522310";
+SDM.ep.gigyaLib="//cdn.gigya.com/JS/socialize.js?apiKey=3__Bt7bHrGM8mjKPwBuOVjWyMi678aF6-PewcnoHJJ6UR1fS5t9NG9RBbKHjE0oA6J";
+SDM.ep.imgUrlPrefix = "http://ars.els-cdn.com/content/image/";
+SDM.ep.mendeleyJS = "https://www.mendeley.com/minified/bookmarklet.js";
+SDM.ep.prDevice = "http://pa.elsevier.com";
+SDM.ep.pru = "http://pa.elsevier.com";
+SDM.ep.ref2ref2by = "http://www.sciencedirect.com/science/relLink/ajaxReq?_eid=1-s2.0-S1352231007004670";
+SDM.ep.staticImgUrlPrefix = "http://cdn.els-cdn.com/sd";
+SDM.ep.urlPrefix = "http://www.sciencedirect.com/science";
+SDM.ep.urlQualifier = "science";
+SDM.ep.urlScheme = "http://www.sciencedirect.com";
+SDM.ep.userActionURL = "http://www.sciencedirect.com/science/UserActions";
+ SDM.helpUrlDomain = "#";
+
+
+
+
+SDM.pm=new Object;
+SDM.pm.cid = '271798';
+SDM.pm.contentFamily = "serial";
+SDM.pm.contentType = "JL";
+SDM.pm.coverDate = '31-Oct-2007';
+
+SDM.pm.doi = '10.1016/j.atmosenv.2007.05.027';
+
+SDM.doi = '10.1016/j.atmosenv.2007.05.027';
+SDM.pm.eid = '1-s2.0-S1352231007004670';
+SDM.pm.entitled = false;
+ SDM.pm.hubEid = '1-s2.0-S1352231007X04540'; 
+SDM.pm.indexType = '';
+SDM.pm.issnisbn = "13522310";
+
+SDM.pm.itemWeight = 'FULL-TEXT';
+SDM.pm.mod_cid="";
+SDM.pm.mod_srcTitle="";
+SDM.pm.mod_ISBN = "";
+SDM.pm.pdfEid = '1-s2.0-S1352231007004670-main.pdf';
+SDM.pm.pdfSize = '830289';
+SDM.pm.pii = 'S1352231007004670';
+SDM.pm.prodColor="sci_dir";if(SDM.pm.prodColor=="sci_dir")SDM.pm.prodColor="";
+ SDM.pm.rev = '20150515T053554223993'; 
+ SDM.pm.hrev = 'vH.10'; 
+ SDM.pm.pptURL = 'http://services.elsevier.com/SDWebExport/export/figure/'; 
+
+SDM.pm.altmetric_avail = 'TRUE';
+SDM.pm.altmetric_helpurl = '/science?_ob=HelpURL&_file=metrics.htm';
+
+
+
+
+SDM.pf = new Object;
+SDM.pf.pdfAvail = true;
+SDM.pf.reqAllFrags = true;
+ SDM.pf.maxElemsAllFrags = 12000
+SDM.pf.relatedBkAvail=true;
+SDM.pf.mlktAvail = true;
+SDM.pf.hpccAvail = true;
+SDM.pf.blkSocialLogins=true;
+
+
+SDM.browserUserMsg=true;
+
+
+SDM.pf.citedByScAvail = true;
+SDM.pf.aetEnabled = false;
+
+
+
+SDM.pf.ads = new Object;
+SDM.pf.ads.leftUrl="/science/advertisement/left/num/829119/mainCat/general/cat/general/acct/ddd49027ac058c4db14dac8cc0563abc/isn/13522310/doi/10.1016_j.atmosenv.2007.05.027/page/article/artOAstatus/N";
+
+
+
+
+SDM.pf.dc = new Object;
+SDM.pf.dc.retry = 10;
+SDM.pf.dc.retryDelay = 300;
+SDM.pf.dc.retryFactor = 1.0;
+SDM.pf.dc.respObj = '';
+
+
+SDM.pf.er = new Object();
+
+
+
+
+
+
+SDM.pf.frag = new Object();
+SDM.pf.frag.fat = '29a34633e688cc6908b6b03c6eaff730569f26cd273bf7bd629f4d29a20d1289c08a49c1c83272679ad03eb4feb1ac4aa23db422ac97ecc29cb5d0d1be914bf28dc71e3c56f97f763c1cf93428b56484cfdf9fda6cf193c39d3afa4667265aaa0485ccc48628e989654388bcd773b524ac317ae7092fa460f153e37f55871407532049ea1f838e6509696b2dcf2bbb035db687ba972c91dc';
+SDM.pf.frag.mapRetry = 20;
+SDM.pf.frag.mapRetryDelay = 2000;
+SDM.pf.frag.mapRetryFactor = 1.1;
+SDM.pf.frag.retry = 5;
+SDM.pf.frag.retryDelay = 2000;
+SDM.pf.frag.foldFactor = 1.5;
+SDM.pf.frag.hashWait = 5000;
+
+
+
+
+
+
+SDM.pf.gadget = new Object();
+SDM.pf.gadget.displayGadgets=true;
+SDM.pf.gadget.sciverseUrlPfx="http://www.sciencedirect.com";
+SDM.pf.gadget.sciverseJsonObject='';
+SDM.pf.gadget.sciverseGadgetDetailsID = "";
+SDM.pf.gadget.svShindigLib="http://sciverse-shindig.elsevier.com/gadgets/js/shindig-container:pubsub-2.js?c=1";
+SDM.pf.gadget.svSciverseLib="http://www.sciencedirect.com/gadgetservices/gadgets/v9/js/SciverseShindigService,GadgetToolBar,jquery-outside,jquery.ba-bbq.min,SciverseShindigContainer,ScienceDirectShindigServices.js";
+
+
+
+SDM.pf.mrwmod = new Object();
+SDM.pf.mrwmod.breadCrumbPathURL = "http://www.sciencedirect.com/science/module/breadCrumbPaths/isbn//pii/S1352231007004670";
+
+SDM.pf.mrwmod.ldrAvail = true;
+
+
+ 
+
+
+SDM.pf.oa = new Object();
+
+
+
+
+
+
+
+
+SDM.pf.ref = new Object();
+SDM.pf.ref.bs = 20;
+SDM.pf.ref.citedByURL = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_updateCitedBy=";
+SDM.pf.ref.fd = 300;
+
+SDM.pf.ref.resolveURL = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_pii=S1352231007004670&_refCnt=4&_docType=article";
+
+
+
+
+
+SDM.pf.toc=new Object;
+SDM.pf.toc.retry = 20;
+SDM.pf.toc.retryDelay = 1000;
+SDM.pf.toc.retryFactor = 1.09;
+SDM.pf.toc.outlineGraphics = false;
+SDM.pf.toc.outlineTab = "";
+
+SDM.pf.toc.urlTOCLink="http://www.sciencedirect.com/science/article/pii/S1352231007004670";
+SDM.pf.toc.urlTOCLinkQueryStr="?_rdoc=1&_fmt=full&_origin=&md5=22543fb95e34d36391c44b9d9cd72533";
+
+SDM.pf.ddm = new Object();
+SDM.pf.ddm.endpoint = "http://services.elsevier.com/SDWebExport/export/pdfdownload/pdf";
+
+
+
+
+
+
+SDM.si = new Object();
+SDM.si.webUserId = "12975512";
+SDM.si.sds = "e36fae9c3f619e96283f64bc9cc21f1c85b086da59a423124b48e70638615acf7fffbde2c33bdbd77f55d5e7ce3ff3cd";
+SDM.si.euidCookieObject='72a0224bc6d8cc650d6c509368edfa4811603c4772183b740939ecc7c0e7b3c1aad51742a8809c03';
+
+SDM.pageTransKey = "09/03/2015 05:55:10 EDT#1849_001#104998#83.47.211.57";
+SDM.pageType = "article_abs";
+SDM.tid = "dd0916b2-5221-11e5-866f-00000aab0f6b";
+SDM.ud = "12975512||C000228598|291352|GUEST";
+SDM.ieVersion="8";
+
+SDM.dac = new Object;
+SDM.svapi = SVApi;
+
+</script>
+
+
+<script src="importer-api_1508R2.js.min"></script>
+
+
+<script>
+
+
+initializeArticlePage();
+</script>
+
+
+
+
+<script>
+
+var retryCounter = 0;
+var retryNum = 10;
+if (typeof SDM != 'undefined' && typeof SDM.pageType != 'undefined' && SDM.pageType == 'article_full') {
+  if (SDM.pf.dc.respObj.DynamicComponentsResp == undefined ||
+      SDM.pf.dc.respObj.DynamicComponentsResp == null) {
+    var linkRender = function() {
+      clearInterval(retryIntrvl);
+      if (DynamicArtContent.dynamicComponents == null || DynamicArtContent.dynamicComponents == undefined || retryCounter < retryNum) {
+        retryCounter++;
+        retryIntrvl = setInterval(linkRender, 500);
+      } else {
+        var outLinkHTML='';
+        var oLinks=DynamicArtContent.dynamicComponents.OutwardLinks;
+        if (oLinks!=undefined && oLinks.length>0) {
+          for(i=0;i<oLinks.length;i++) {
+            if(oLinks[i].LinkCat=='PermissionAndReprint') {
+              outLinkHTML = DynamicArtContent.buildOutwardLinks(oLinks[i]);
+            }
+          }
+        }
+        if(outLinkHTML!='') {
+          if($('.rightsLink').length) {
+            $('.rightsLink').html(outLinkHTML);
+            $('.extLinks').addClass('nonEmpty');
+          } else {
+            SDM.dac.rightsLink = outLinkHTML;
+          }
+        } else {
+          $('.innerPaddingFixedBox .permissions').hide();
+          $('.moreInformation .permissions').hide();
+        }
+      } 
+    }
+    var retryIntrvl = setInterval(linkRender, 0);
+  } else {
+    var outLinkHTML='';
+    var oLinks=DynamicArtContent.dynamicComponents.OutwardLinks;
+    if (oLinks!=undefined && oLinks.length>0) {
+      for(i=0;i<oLinks.length;i++) {
+        if(oLinks[i].LinkCat=='PermissionAndReprint') {
+          outLinkHTML = DynamicArtContent.buildOutwardLinks(oLinks[i]);
+        }
+      }
+    }
+    if(outLinkHTML!='') {
+      if($('.rightsLink').length) {
+        $('.rightsLink').html(outLinkHTML);
+        $('.extLinks').addClass('nonEmpty');
+      } else {
+        SDM.dac.rightsLink = outLinkHTML;
+      }
+    } else {
+      $('.innerPaddingFixedBox .permissions').hide();
+      $('.moreInformation .permissions').hide();
+    }
+  }
+}
+</script>
+
+
+<div id="sdpa"></div>
+<script>SDPA.init();</script>
+<div id="appBackground"></div>
+<div style="position: fixed;" id="appDialog" class="files">
+    <div id="header">
+        <h1 class="headline">Download PDFs</h1>
+        <img src="sciencedirect.svg" id="logo" class="sd-bubbles" onerror="this.src='http://cdn.els-cdn.com/sd/sciencedirect.png'">
+        <a class="close" id="closeWindow" href="#"><img src="close-icon.png"></a>
+    </div>
+    <div id="contentBlk" class="view">
+        <div class="help_button" id="ddmMainHelp"><a class="ddmHelp" target="sdhelp" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=DM_main.htm&amp;_btn=Y&amp;_zone=TopNavBar&amp;_origin=article" title="Help (Opens new window)">Help</a></div>
+        <div class="help_button" id="ddmNewformatHelp"><a class="ddmHelp" target="sdhelp" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=DM_newformat.htm&amp;_btn=Y&amp;_zone=TopNavBar&amp;_origin=article" title="Help (Opens new window)">Help</a></div>
+        <div id="filesTemplate"></div>
+        <div id="namingTemplate"></div> 
+    </div>
+    <div class="footer"></div>
+</div>
+
+
+
+
+
+<div id="sgfGhost" style="display: none;"><div class="containerApplOver invisible" id="sgfGhost_299152"><div id="footergadgets-gadget-title-bar-5" class="curveBoxleftNormal ActiveGadget  sgfOpen"><img src="icon.jpg" class="headingGadgetIcon " title="Entitle Gadget" border="none"><h3 style="cursor: default;" title="" id="GadgetName5" class="elsevierTimeLOver truncateTitle">Entitle Gadget</h3><div id="Controls_5" class="Controls menuControlParent" align="right"><ul class="menu"><li class="menuControls"> <a href="javascript:void(0);" onclick="shindig.container.getGadget(5).handleToggle(this);"><div id="toggleBtn_5" class="sprite-close openCloseBtn" title="Close This Application" style="background-image: url('gsframeworksprite.png');"></div></a></li><li class="menuControls"><a href="javascript:void(0);" id="button-remote_iframe_5_userPrefsDialog" onclick="shindig.container.getGadget(5).openMenuOptions();return false;"><div class="sprite-options" title="Open Options" style="background-image: url('gsframeworksprite.png');"></div></a></li><ul class="submenu" id="sb-remote_iframe_5_userPrefsDialog"></ul></ul></div><div id="Close_5" class="Controls_close" style="display: none;"><a href="javascript:shindig.container.getGadget(5).closeGadget();"><div class="sprite-close_hoover" title="Close" style="background-image: url('gsframeworksprite.png');"></div></a></div></div><div id="remote_iframe_5_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_5" style="border-style: solid;" class="containerAppDetails "><iframe id="remote_iframe_5" onload="sgf.killTimer('299152', 'sgfGhost');" name="remote_iframe_5" src="S1352231007004670_10.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div></div><script src="s_code_131.js"></script><img src="idx" style="display: none;" height="0" width="0"><img src="resource" style="display: none;" height="0" width="0"><img src="resource_001.dat" style="display: none;" height="0" width="0"><img src="resource_002.dat" style="display: none;" height="0" width="0"><div style="position: fixed; width: 30px; height: 140px; z-index: 999; right: 0px; top: 50%; margin-top: -70px;" tabindex="0" class="usabilla_live_button_container"><iframe title="Visual Feedback Button" data-tags="right" scrolling="no" marginheight="0" marginwidth="0" style="width: 30px; height: 140px; margin: 0px; padding: 0px; border: 0px none; overflow: hidden; z-index: 9998; position: absolute; left: 0px; top: 0px; box-shadow: 0px 0px 0px; background-color: transparent;" src="S1352231007004670_11.html" frameborder="0"></iframe></div><img src="pageReport" style="display: none;" height="0" width="0"></body>
+</html>

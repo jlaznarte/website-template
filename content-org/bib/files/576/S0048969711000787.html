@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://www.sciencedirect.com/science/article/pii/S0048969711000787">
+<meta name="wpd_url" content="http://www.sciencedirect.com/science/article/pii/S0048969711000787">
+<meta name="wpd_date" content="2015-08-04T10:29Z">
+<script async="async" type="text/javascript">s_c_il[1].cdw=s_c_il[1].d.write;s_c_il[1].cdwb="";s_c_il[1].d.write=function(m){s_c_il[1].cdwb+=m};
+s.channel="publications";
+s.pageName="article";
+if (typeof (SDM) != 'undefined') {
+  if (typeof(SDM.pageType) != 'undefined' &&
+      typeof(SDM.pm) != 'undefined' &&
+      typeof(SDM.pm.pii) != 'undefined' &&
+      typeof(SDM.pm.issnisbn) != 'undefined' &&
+      typeof(SDM.pm.contentType) != 'undefined') {
+      var ct=SDM.pm.contentType.toLowerCase();
+      if (ct=="jl") {
+        s.prop1="journal";
+      } else if (ct=="bk") {
+         s.prop1="book";
+      } else if (ct=="rw") {
+          s.prop1="refwork";
+      } else if (ct=="bs") {
+          s.prop1="bookseries";
+      } else if (ct=="hb") {
+           s.prop1="handbook";
+      }
+      s.eVar17=SDM.pageType.toLowerCase();
+      s.eVar14=SDM.pm.issnisbn; 
+      s.eVar28=SDM.pm.issnisbn;
+      s.products=";"+SDM.pm.pii;
+    }
+}
+
+var referrerURL=document.referrer;
+if(referrerURL ){
+	referrerURL.toLowerCase();
+	var fromSD=referrerURL.match("sciencedirect.com");
+	if(fromSD == null) {
+		var path=referrerURL.split('/');	
+		if(path[2]){
+			if(path[2].match("linkinghub.elsevier.com")){
+				s.eVar40="Alert"
+			} else {
+				s.eVar40=path[2];
+			}
+		} else {
+			s.eVar40='External';
+		}
+	}
+} else {
+	s.eVar40='Typed/Bookmark';
+}
+
+s.events="prodView,event5";
+
+s.prop2=s.prop1;
+s.prop4="article";
+
+//For TOC search in books
+var scTocPanelWaitCounter=60;
+var scTocPanelWaitTimer=setInterval(scSetupTocSrchEvents, 1000);
+var tocSrchObj=null;
+
+//For Ad Impressions-left pane
+var scAdImpressWaitCounter=10;
+var scAdImpressWaitTimer=setInterval(scCaptureAdImpress, 2000);
+
+//  The following are written in such a way that the events can be handled by links not yet created
+
+// Toggle opening and closing 5 main sections
+$( "#rightPane div#ref_mod_articles" ).on( "click" , "h2 > a.toggle" , { eventName: "RefModArticleToggleClickEvent" , nav: false } , articleLinkEvent );  // RefMod articles
+$( "#rightPane div#recommend_related_articles" ).on( "click" , "h2 > a.toggle" , { eventName: "RecommendedArticleToggleClickEvent" , nav: false } , articleLinkEvent );  // Recommended articles 
+$( "#rightPane div#cited_by_articles" ).on( "click" , "h2 > a.toggle" , { eventName: "CitingArticleToggleClickEvent" , nav: false } , articleLinkEvent );  // Cited By articles
+$( "#rightPane div#related_book_content" ).on( "click" , "h2 > a.toggle" , { eventName: "RelatedBookContentToggleClickEvent" , nav: false } , articleLinkEvent );  // Related Book Content
+
+//  Link to Full text article
+$( "#rightPane div#ref_mod_articles" ).on( "click" , "li.artTitle > a" , { eventName: "RefModArticleFTAClickEvent" , nav: true } , articleLinkEvent );  // RefMod articles
+$( "#rightPane div#recommend_related_articles" ).on( "click" , "li.artTitle > a" , { eventName: "RecommendedArticleFTAClickEvent" , nav: true } , articleLinkEvent );  // Recommended articles 
+$( "#rightPane div#cited_by_articles" ).on( "click" , "li.artTitle > a" , { eventName: "CitingArticleFTAClickEvent" , nav: false } , articleLinkEvent );  // Cited By articles
+$( "#rightPane div#related_book_content" ).on( "click" , "li.artTitle > a" , { eventName: "RelatedBookContentFTAClickEvent" , nav: true } , articleLinkEvent );  // Related Book Content
+
+//  Link to PDF download
+$( "#rightPane div#ref_mod_articles" ).on( "click" , "li.showMore a" , { eventName: "RefModArticlePDFClickEvent" , nav: false } , articleLinkEvent );  // RefMod articles
+$( "#rightPane div#recommend_related_articles" ).on( "click" , "li.showMore a" , { eventName: "RecommendedArticlePDFClickEvent" , nav: false } , articleLinkEvent );  // Recommended articles
+$( "#rightPane div#cited_by_articles" ).on( "click" , "li.showMore a" , { eventName: "CitingArticlePDFClickEvent" , nav: false } , articleLinkEvent );  // Cited By articles
+$( "#rightPane div#related_book_content" ).on( "click" , "li.showMore a" , { eventName: "RelatedBookContentPDFClickEvent" , nav: false } , articleLinkEvent );  // Related Book Content
+ 
+//  Link to more articles
+$( "#rightPane div#ref_mod_articles" ).on( "click" , "a:contains('View more')" , { eventName: "RefModArticleViewMoreClickEvent" , nav: true } , articleLinkEvent );  // RefMod articles
+$( "#rightPane div#recommend_related_articles" ).on( "click" , "a:contains('View more')" , { eventName: "RecommendedArticleViewMoreClickEvent" , nav: true } , articleLinkEvent );  // Recommended articles
+$( "#rightPane div#cited_by_articles" ).on( "click" , "a:contains('View more')" , { eventName: "CitingArticleViewMoreClickEvent" , nav: false } , articleLinkEvent );  // Cited By articles
+$( "#rightPane div#related_book_content" ).on( "click" , "a:contains('View more')" , { eventName: "RelatedBookContentViewMoreClickEvent" , nav: true } , articleLinkEvent );  // Related Book Content
+
+//Capture Links to Bibliography on center pane
+$("#centerPane ul.authorGroup a.authorName").on( "click",{eventName:"AuthorBibClickEvent",nav:false}, articleLinkEvent ) ;//Author link
+$("#centerPane ul.authorGroup a.intra_ref.auth_aff").on( "click",{eventName:"AuthorBibAffiliationClickEvent",nav:false}, articleLinkEvent ) ;//Affiliation link
+$("#centerPane ul.authorGroup a.intra_ref.auth_corr").on( "click",{eventName:"CorrespondingAuthorContactClickEvent",nav:false}, articleLinkEvent ) ;//Corresponding Author link
+$("#centerPane ul.authorGroup a.auth_mail").on( "click",{eventName:"AuthorBibEmailClickEvent",nav:false}, articleLinkEvent ) ;//Author Email link
+
+//  Capture Get rights and content link
+$( "#centerPane dd.rightsLink a.S_C_outLinks" ).on( "click" , { eventName: "RightsAndContentClickEvent" , nav: false } , articleLinkEvent );  // View in Workspace image click
+
+//  Capture How to cite or link using DOI
+$( "#centerPane a.icon_doiLink" ).on( "click" , { eventName: "HowToCiteOrLinkUsingDOIClickEvent" , nav: false } , articleLinkEvent );  // How to cite or link using DOI click
+
+var scFragmentWaitTimer=setInterval(scWaitForFragmentsLoading, 2000);
+
+var scWaitRPaneRecommendTimer;
+var scRecommendArticlesLoaded = false;
+function waitRPaneRecommend() {
+	if($("#rightPane div#recommend_related_articles div.moreInfo a.toggleMoreInfo").length) {
+		$("#rightPane div#recommend_related_articles div.moreInfo a.toggleMoreInfo").on("click", { eventName: "RecommendedArticleMoreInfoClickEvent", nav: false } , articleLinkEvent);
+		clearInterval(scWaitRPaneRecommendTimer);
+		scRecommendArticlesLoaded = true;
+	}
+	else {return;}
+}
+
+var scWaitRPaneRefModTimer;
+function waitRPaneRefMod() {
+	if($("#rightPane div#ref_mod_articles div.moreInfo a.toggleMoreInfo").length) {
+		$("#rightPane div#ref_mod_articles div.moreInfo a.toggleMoreInfo").on("click", { eventName: "RefModArticleMoreInfoClickEvent", nav: false }, articleLinkEvent);  // Special articles
+		clearInterval(scWaitRPaneRefModTimer);
+	}
+	else {return;}
+}
+
+var scWaitRPaneSpecialTimer;
+function waitRPaneSpecial() {
+	if($("#rightPane div#special_articles div.moreInfo a.toggleMoreInfo").length) {
+		$("#rightPane div#special_articles div.moreInfo a.toggleMoreInfo").on("click", { eventName: "SpecialArticleMoreInfoClickEvent", nav: false }, articleLinkEvent);  // Special articles
+		clearInterval(scWaitRPaneSpecialTimer);
+	}
+	else {return;}
+}
+
+var scWaitRPaneCitingTimer;
+var scCitingArticlesAttempts = 0;
+var scCitingArticlesLoaded = false;
+function waitRPaneCiting() {
+	if($("#rightPane div#cited_by_articles div.moreInfo a.toggleMoreInfo").length) {
+		$("#rightPane div#cited_by_articles div.moreInfo a.toggleMoreInfo").on("click", { eventName: "CitingArticleMoreInfoClickEvent", nav: false } , articleLinkEvent);
+		clearInterval(scWaitRPaneCitingTimer);
+		scCitingArticlesLoaded = true;
+	}
+	else if($( scCitingArticlesAttempts > 10 && $("#citedByList > li > p").text().search(/This article has not been cited/) != -1)) {
+		clearInterval(scWaitRPaneCitingTimer);
+		scCitingArticlesLoaded = true;
+	}
+	scCitingArticlesAttempts++;
+}
+
+var scFirstBlkWaitCounter=10;
+var scFirstBlkWaitTimer=setInterval(scFirstBlockWait, 1000);
+
+function scFirstBlockWait() {
+	var firstBlkID = $("#rightPane .firstBlk").attr("id");
+	if(firstBlkID == null) {
+		scFirstBlkWaitCounter--;
+		if(scFirstBlkWaitCounter == 0) {
+			clearInterval(scFirstBlkWaitTimer);
+			return;
+		}
+		else {
+			return;
+		}
+	}
+	clearInterval(scFirstBlkWaitTimer);
+	if( firstBlkID == "recommend_related_articles") {
+		scWaitRPaneRecommendTimer = setInterval(waitRPaneRecommend, 1000);
+	} else if(firstBlkID == "special_articles") {
+		$( "#rightPane div#special_articles" ).on( "click" , "h2 > a.toggle" , { eventName: "SpecialArticleToggleClickEvent" , nav: false } , articleLinkEvent );  // Special articles
+		$( "#rightPane div#special_articles" ).on( "click" , "li.specIssTitle > a" , { eventName: "SpecialArticleFTAClickEvent" , nav: true } , articleLinkEvent );  // Special articles
+		$( "#rightPane div#special_articles" ).on( "click" , "li.artTitle > a" , { eventName: "OtherSpecialArticleFTAClickEvent" , nav: true } , articleLinkEvent );  // Other Special articles
+		$( "#rightPane div#special_articles" ).on( "click" , "li.showMore a" , { eventName: "SpecialArticlePDFClickEvent" , nav: false } , articleLinkEvent );  // Special articles
+		$( "#rightPane div#special_articles" ).on( "click" , "a:contains('View more')" , { eventName: "SpecialArticleViewMoreClickEvent" , nav: true } , articleLinkEvent );  // Special articles
+		scWaitRPaneSpecialTimer = setInterval(waitRPaneSpecial, 1000);	
+	} else if(firstBlkID == "ref_mod_articles") {
+		scWaitRPaneRefModTimer = setInterval(waitRPaneRefMod, 1000);
+	}
+}
+
+var scBookContentWaitTimer;
+var scBookContentAttempts = 0;
+var bookContentHandlersAdded = false;
+
+function addBookContentHandlers() {
+	if($("#rightPane div#related_book_content #relBkList .toggleMoreInfo").length ) {		
+		$("#rightPane div#related_book_content #relBkList .toggleMoreInfo").on("click", { eventName: "RelatedBookContentMoreInfoClickEvent", nav: false }, articleLinkEvent);
+		clearInterval(scBookContentWaitTimer);
+		bookContentHandlersAdded = true;
+	}
+	else if(scBookContentAttempts > 10 && $( $("#relBkList > li > p").text().search(/No articles found/) != -1)) {
+		clearInterval(scBookContentWaitTimer);
+		bookContentHandlersAdded = true;
+	}
+	scBookContentAttempts++;
+}
+
+function articleLinkEvent( event ) {
+	
+	if( event.target != null && event.target.href != null ) {
+		s.eVar52=s_eventHandlers.publicGetZone(event.target.href);
+	}
+	else {
+		s.eVar52="";
+	}
+	var clickSection = s_eventHandlers.publicGetClickSection(event);
+
+	if( !bookContentHandlersAdded && clickSection.search(/article:rightPane:related_book_content/) != -1) {
+		scBookContentWaitTimer = setInterval(addBookContentHandlers, 1000);
+	}
+	if( !scCitingArticlesLoaded && clickSection.search(/article:rightPane:cited_by_articles/) != -1) {
+		scWaitRPaneCitingTimer = setInterval(waitRPaneCiting, 1000);
+	}
+	if( !scRecommendArticlesLoaded && clickSection.search(/article:rightPane:recommend_related_articles/) != -1) {
+		scWaitRPaneRecommendTimer = setTimeout(waitRPaneRecommend, 1000);
+	}
+
+	s.eVar53=clickSection + ":" + event.data.eventName;
+	s.eVar54='+1';
+	s.eVar55='+1';
+	s.eVar56=s.pageName;
+			
+	s.events="event28";
+	s.linkTrackVars="events,eVar52,eVar53,eVar54,eVar55,eVar56";
+	s.linkTrackEvents="event28";
+	s.tl(true,'o',event.data.eventName);
+	
+}
+
+
+/* function to wait and check for toc panel to load */
+function scSetupTocSrchEvents() {
+	scTocPanelWaitCounter--;
+	tocSrchObj=$("div#searchWithin");
+	if(tocSrchObj == []) {
+		if(scTocPanelWaitCounter == 0) {clearInterval(scTocPanelWaitTimer);}
+		return;
+	}
+	else {
+		clearInterval(scTocPanelWaitTimer);
+		tocSrchObj.find("button.submit").on("click",function(e) {s_eventHandlers.clickTarget=this;s_eventHandlers.articleTocSearchSubmit();});
+		tocSrchObj.find("form[name=searchWithinForm]").on("submit",s_eventHandlers.articleTocSearchSubmit);
+	}
+}
+
+function scLeftAdClick( event ) {
+	
+	if( event.target != null && event.target.href != null ) {
+		s.eVar52=s_eventHandlers.publicGetZone(event.target.href);
+	}
+	else {
+		s.eVar52="";
+	}
+
+	s.eVar53='article:leftPane:articleLeftAd:LeftAdClickEvent';
+	s.eVar54='+1';
+	s.eVar55='+1';
+	s.eVar56=s.pageName;
+	s.prop21='LeftAdClickEvent';
+	var sc_saveEvents = s.events;
+	s.events = 'event22';
+	s.linkTrackEvents='event22';
+			
+	s.linkTrackVars="events,eVar52,eVar53,eVar54,eVar55,eVar56,prop21";
+	s.tl(true,'o','LeftAdClickEvent');
+	s.events = sc_saveEvents;
+}
+
+
+function scCaptureAdImpress() {
+	scAdImpressWaitCounter--;
+	if(scAdImpressWaitCounter == 0) {clearInterval(scAdImpressWaitTimer);}
+	var adFrame=document.getElementsByTagName('iframe')[0];
+	if(adFrame) {
+		if(adFrame.src.search('sciencedirect.com/science/advertisement') == -1 ) {
+			if(scAdImpressWaitCounter == 0) {clearInterval(scAdImpressWaitTimer);}
+			return;
+		}
+		var adDoc=adFrame.contentWindow || adFrame.contentDocument;
+	}
+	if( adDoc == null ||
+			adDoc.document == null) { //not yet
+		if(scAdImpressWaitCounter == 0) {clearInterval(scAdImpressWaitTimer);}
+		return;
+	}
+	else { // capture ad impress, setup click
+		clearInterval(scAdImpressWaitTimer);
+		s.prop20='left';
+		var sc_saveEvents = s.events;
+		s.events = 'event21';
+		s.linkTrackEvents='event21';
+		s.linkTrackVars="events,prop20";
+		s.tl(true,'o','LeftAdImpress');
+		s.events = sc_saveEvents;
+		
+		adDoc = adDoc.document;
+		adDoc.body.addEventListener('click', scLeftAdClick);
+	}
+}
+var scFragmentsList = [];
+var paginationOff = s.getQueryParam("np") == "y" ? true : false;
+
+
+/* function to wait for tables & figures to load */
+function scWaitForFragmentsLoading() {
+	if (paginationOff || typeof Fragment === 'undefined') {
+		//no fragments, just install all handlers
+		$("#centerInner [id^=table] .menuButtonLinks .btnHolder .menuTitle").on( "click" , {eventName: "TableOptionsButtonClickEvent", nav: false} , articleLinkEvent);
+		$("#centerInner [id^=table] .menuButtonLinks .menuButton .viewWS.S_C_table_view_WS").on("click", {eventName: "ViewTableInWorkspaceClickEvent", nav: false} , articleLinkEvent);
+		$("#centerInner [id^=table] .menuButtonLinks .menuButton .downloadCsv .S_C_csv_download").on("click", {eventName: "DownloadTableAsCSVClickEvent", nav: false} , articleLinkEvent);
+		$("#centerInner [id^=figure] .menuButtonLinks .btnHolder .menuTitle").on( "click", {eventName: "FigureOptionsButtonClickEvent", nav: false} , articleLinkEvent);
+		$("#centerInner [id^=figure] a.figureLink").on( "click", { eventName: "ViewInWorkspaceImgClickEvent" , nav: false } , articleLinkEvent );
+		$("#centerInner [id^=figure] .menuButtonLinks .menuButton .ppt.S_C_ppt").on( "click", { eventName: "DownloadAsPowerPointClickEvent" , nav: false } , articleLinkEvent );
+		$("#centerInner [id^=figure] .menuButtonLinks .menuButton .S_C_full_size").on("click", { eventName: "DownloadFullSizeImageClickEvent" , nav: false } , articleLinkEvent );
+		$("#centerInner [id^=figure] .menuButtonLinks .menuButton .S_C_high_quality").on("click", { eventName: "ViewHighQualityImageClickEvent" , nav: false } , articleLinkEvent );				
+		clearInterval(scFragmentWaitTimer);
+		return;
+	}
+	if(Fragment.isFragmentMapLoaded() != true) {
+		return;		
+	}
+	if( Fragment.mapTables == [] && Fragment.mapFigures == []) { // no tables or figures
+		clearInterval(scFragmentWaitTimer);
+		return;
+	}
+	if(!scFragmentsList.length) {
+		scFragmentsList = Fragment.fragmentMap.concat();
+	}
+	for (var i=0; i<scFragmentsList.length; i++) {
+		if( scFragmentsList[i] == undefined ) { continue;}
+		var fragID = scFragmentsList[i];
+		if( $("#" + fragID).length) {
+			delete scFragmentsList[i];
+			if( $("#"+ fragID + " [id^=table]").length ) {
+				$("#" + fragID + " [id^=table] .menuButtonLinks .btnHolder .menuTitle").on( "click" , {eventName: "TableOptionsButtonClickEvent", nav: false} , articleLinkEvent);
+				$("#" + fragID + " [id^=table] .menuButtonLinks .menuButton .viewWS.S_C_table_view_WS").on("click", {eventName: "ViewTableInWorkspaceClickEvent", nav: false} , articleLinkEvent);
+				$("#" + fragID + " [id^=table] .menuButtonLinks .menuButton .downloadCsv .S_C_csv_download").on("click", {eventName: "DownloadTableAsCSVClickEvent", nav: false} , articleLinkEvent);
+			}
+			if( $("#"+ fragID + " [id^=figure]").length) {
+				$("#" + fragID + " [id^=figure] .menuButtonLinks .btnHolder .menuTitle").on( "click", {eventName: "FigureOptionsButtonClickEvent", nav: false} , articleLinkEvent);
+				$("#" + fragID + " [id^=figure] a.figureLink").on( "click", { eventName: "ViewInWorkspaceImgClickEvent" , nav: false } , articleLinkEvent );
+				$("#" + fragID + " [id^=figure] .menuButtonLinks .menuButton .ppt.S_C_ppt").on( "click", { eventName: "DownloadAsPowerPointClickEvent" , nav: false } , articleLinkEvent );
+				$("#" + fragID + " [id^=figure] .menuButtonLinks .menuButton .S_C_full_size").on("click", { eventName: "DownloadFullSizeImageClickEvent" , nav: false } , articleLinkEvent );
+				$("#" + fragID + " [id^=figure] .menuButtonLinks .menuButton .S_C_high_quality").on("click", { eventName: "ViewHighQualityImageClickEvent" , nav: false } , articleLinkEvent );				
+			}
+		}
+		else {
+			return;
+		}
+	}
+	if(Fragment.isAllLoaded() == true) {
+		clearInterval(scFragmentWaitTimer);
+	}
+
+
+}
+s_c_il[1].d.write=s_c_il[1].cdw;s_c_il[1].crl(0,1)</script><script src="sciencedirect.js" async="async" type="text/javascript"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="robots" content="NOARCHIVE">
+<meta name="robots" content="noodp">
+<meta name="robots" content="noydir">
+
+<link rel="canonical" href="http://www.sciencedirect.com/science/article/pii/S0048969711000787">
+
+
+<link rel="shortcut icon" href="favSD.ico" type="image/x-icon">
+<title>
+
+ An annual assessment of air quality with the CALIOPE modeling system over Spain
+ </title> 
+
+
+
+
+
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" Title="Default Styles" href="http://cdn.els-cdn.com/sd/css/css_gen_ielt9_1509R1.css" type="text/css">
+<![endif]-->
+
+<script>
+
+var ab=new Object();
+ab.entitled = true;
+</script>
+<script>
+
+(function() {
+var scriptTag = document.createElement('script'); 
+scriptTag.type = 'text/javascript';
+scriptTag.async = true;
+scriptTag.src = '//cdn.optimizely.com/js/204774041.js';
+var head = document.getElementsByTagName('head')[0];
+head.parentNode.insertBefore(scriptTag, head);
+})();
+function optimizelyTimeout() {
+window.optimizely = window.optimizely|| []; 
+if(!window.optimizely.data) {
+ window.optimizely.push("timeout"); 
+} }
+setTimeout(optimizelyTimeout, 1000); 
+</script>
+
+<script>
+
+var prs = new Object();prs.rt=function(label,ts){this[label]=(ts||ts==0?ts:new Date().getTime());};
+</script>
+
+
+
+<!--[if lte IE 7]>
+<script src="http://cdn.els-cdn.com/sd/ut/js/json2_1509R1.js.min"></script>
+<![endif]-->
+<script charset="utf-8" class="lazyload" src="shindig-containerpubsub-2.js"></script><script charset="utf-8" class="lazyload" src="SciverseShindigService,GadgetToolBar,jquery-outside,jquery.ba-bbq.min,SciverseShindigContainer,Sc.js"></script>
+<link rel="stylesheet" type="text/css" href="S0048969711000787.css" media="all">
+</head>
+<body><div id="isIElte8test"><!--[if lte IE 8]><div id="isIElte8"></div><![endif]--></div><div id="isIE9test"><!--[if  IE 9]><div id="isIE9"></div><![endif]--></div><div id="isIE8test"><!--[if  IE 8]><div id="isIE8"></div><![endif]--></div><div id="isIE7test"><!--[if  IE 7]><div id="isIE7"></div><![endif]--></div><div id="isIElt7test"><!--[if lt IE 7]><div id="isIElt7"></div><![endif]--></div><div id="lightningjs-usabilla_live" style="display: none;"><div><iframe src="update" id="lightningjs-frame-usabilla_live" frameborder="0"></iframe></div></div>
+
+<div class="ua_btn" role="region" aria-label="screen reader compatability"><a role="button" rel="nofollow" href="http://www.sciencedirect.com/science/article/pii/S0048969711000787?np=y">Screen reader users, click here to load entire article</a>This page uses JavaScript to progressively load the article content as a user scrolls.  Screen reader users, click the load entire article button to bypass dynamically loaded article content.</div>
+
+
+
+<script>
+
+var refLinkURL = "http://www.sciencedirect.com/science/relLink/ajaxReq?_eid=1-s2.0-S0048969711000787";
+var updatedCitedBy = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_updateCitedBy=";
+var refResolvePath = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_pii=S0048969711000787&_refCnt=102&_docType=article";
+
+// these variables handle the reference resolution. Please ignore the naming.
+// the first variable myMap will hold an associative array of links by bibID
+// the second variable myXabsCounts holds the scopus counts.
+var myMap = []; // html of links for references.
+var myXabsCounts = []; // scopus counts
+</script>
+<div id="header-area">
+  
+
+
+<!-- ************* For A/B testing FAST and SOLR Proxy ***************** -->
+
+<!-- *************End for A/B testing FAST and SOLR Proxy *****************-->
+
+
+
+<div id="ieWarningMsg">
+    <span class="infoIcon_ie spErrorIcon">
+
+        ScienceDirect is phasing out support for older versions of Internet Explorer on Jan 12, 2016.  For the best product experience, we recommend you upgrade to a  
+<a href="http://www.microsoft.com/download/internet-explorer.aspx"> newer version of IE</a> 
+or use a different browser:<a href="https://www.mozilla.org/firefox/new/"> Firefox </a> or <a href="https://www.google.com/chrome/browser/">Chrome</a>. 
+For additional information please see the <a href="http://blog.sciencedirect.com/"> ScienceDirect Blog </a> page.
+    </span>
+    <a class="closeBt" title="Close Internet Explorer 7 warning">Close</a>
+</div>
+
+
+
+<div id="header">
+<div class="headerBlk">
+    <div class="headerInner" role="navigation" aria-label="ScienceDirect">
+        <div class="home">
+            <iframe style="display: none;" src="update_001.dat"></iframe><iframe style="display: none;" src="update_002.dat"></iframe><iframe style="display: none;" src="update_003.dat"></iframe><iframe style="display: none;" src="S0048969711000787_5.html"></iframe>
+            <!--INSERTS THE TEMPLATE VARIABLES POPULATED FROM DB for SCIVERSE and PRODUCT labels-->
+            
+                <a href="http://www.sciencedirect.com/" title="ScienceDirect -The world's leading full-text scientific database"> <span class="logoScienceDirectImg">&nbsp;</span></a>
+            
+        </div>
+
+        
+            <ul class="publication">
+                <!-- Journals link -->
+                
+                    
+                        <li>
+                            <a href="http://www.sciencedirect.com/science/journals">Journals</a>
+                        </li>
+                     
+                
+
+                <!-- Books link -->
+                
+                    
+                        <li class="sep">
+                            <a href="http://www.sciencedirect.com/science/bookbshsrw">Books</a>
+                        </li>
+                     
+                
+            </ul>
+        
+
+    </div>
+    
+         <!-- if not logged in -->
+         
+            
+            <div id="login" class="clearfix" aria-label="Help and Sign In" role="navigation" style="margin-right: 230px;">
+            <ul class="userlinks">
+                
+                
+                
+            
+                <!--top right widget-->
+                <li id="loginPlus">
+                    <h2><a id="loginPlusScript" href="javascript:LoginBox.flipLogin('loginBox',null);" title="Sign in to ScienceDirect" class="novisit plus nojs S_C_SignIn" aria-haspopup="true" aria-expanded="false" aria-controls="loginBox" role="button">Sign in</a></h2>
+                    <noscript><a href="http://www.sciencedirect.com/science?_ob=HomePageURL&_method=userHomePage&_fl=y&md5=6dada1fb726164470bad9e40bbc4d7fa" title="Open the Sign in Box" class="plus S_C_SignIn" id="loginPlusNoScript" >Sign in</a></noscript>
+					
+                    <div id="loginBox" role="dialog" aria-labelledby="headingSignIn" class="bannerAvail" style="width: 600px; display: none;"> 
+                        
+                        <div style="width: 285px; float: right; border-left: 1px solid rgb(155, 155, 155); padding-left: 10px; min-height: 180px;">
+                            
+                                <div class="openAthens"><a href="https://auth.elsevier.com/ShibAuth/institutionLogin?entityID=https%3A%2F%2Fidp.eduserv.org.uk%2Fopenathens&amp;appReturnURL=http%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0048969711000787" title="Log in using OpenAthens">OpenAthens login</a></div>
+                            
+                            
+                            <div class="sampletext">
+                                <div style="font-weight: bold; padding-bottom: 7px;"><h3><b>Login via your institution</b></h3></div>
+                                
+                                
+                                    <div class="fedLink"><a href="http://www.sciencedirect.com/science/externallogin" title="Other institution login">Other institution login</a></div>
+                                
+                            </div>
+                            
+                            
+                            
+                                
+                            
+                            
+                            
+                        </div>
+                        
+                        <div class="padding" style="width: 285px;">
+                            <form name="sdLogin" method="POST" action="https://www.sciencedirect.com/science/login" id="login-box-form" style="margin: 0px;">
+                            <b><h3 id="headingSignIn">Sign in using your ScienceDirect credentials</h3></b>
+                            <input name="login" value="login" type="hidden">
+                            <div style="margin-top: 20px;">
+                            <label for="username"><span style="text-align: right;">Username:</span>
+                            <input id="username" name="userid" title="Please enter your username here" type="text"></label>
+                            </div>
+                            
+                            <div style="margin-top: 7px;">
+                            <label for="password"><span style="text-align: right;">Password:</span>
+                            <input id="password" name="password" maxlength="20" title="Please enter your password here" onkeypress="if(13==event.keyCode)this.form.submit();if (13==event.keyCode)return false;" type="password"></label>
+                            </div>
+                                   
+                                       
+                            
+                            <div class="remember">
+                            <input checked="" name="rememberid" id="rememberMe" value="Y" class="allCheck top2fix" title="Checking this option will log you in automatically next time you visit ScienceDirect" type="checkbox">
+                            <label for="rememberMe" title="Checking this option will log you in automatically next time you visit ScienceDirect">Remember me</label>
+                            </div>
+                            
+                            <input name="_ob" value="MiamiLogonURL" type="hidden">
+                            <input name="targetURL" value="http://www.sciencedirect.com/science/article/pii/S0048969711000787" type="hidden">
+                            <input name="returnURL" value="http://www.sciencedirect.com/science/article/pii/S0048969711000787" type="hidden">
+                            <div class="submit">
+                            
+                            <div style="float: left; padding-left: 0px;"><input class="button" name="arrow" alt="Sign in to ScienceDirect" title="Sign in to ScienceDirect" value="Sign in" type="Submit"></div>
+                        
+                            
+                            <div class="notRegistered"><span class="astPad">| </span><span><a href="https://www.sciencedirect.com/science/register-new-user" title="" target="_top">Not Registered?</a></span></div>
+                            
+                            
+                            <div style="clear: left;"></div>
+                            </div>
+                            
+                            <div class="forgotpass">
+                            <a href="http://www.sciencedirect.com/science?_ob=ReminderURL&amp;_method=display&amp;md5=4a97631c25ac81c09ad2f961106e9da2" target="passwd" onclick="var remindWin;remindWin=window.open('','passwd','scrollbars=yes,resizable=yes,directories=no,toolbar=n,menubar=no,status=no,width=650,height=300');" title="Click here for help in recovering your ScienceDirect access">Forgotten username or password?</a>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="last"><a class="S_C_helpLink" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=browse_open_doc.htm&amp;_btn=Y&amp;_zone=TopNavBar&amp;_origin=article" target="sdhelp" title="Help (Opens new window)">Help</a></li>
+                
+            </ul>
+            </div>
+            
+            
+        <!-- logged in -->
+             
+    
+</div>
+
+
+    
+                        
+        <div class="clearfix" id="bannerTop" role="banner" aria-label="Institutional Access">                        
+            
+                <a href="http://147.96.1.110/" onclick="openNS('http://147.96.1.110'); return false;">
+                    <img src="UNED.jpg" border="0">
+                </a>
+            
+        </div>
+        
+    
+           
+
+
+</div><!--header-->
+
+
+
+
+
+
+
+
+
+</div><!--header-area-->
+<div class="pgBorder" id="page-area">
+    
+     
+     
+    <div id="articleToolbar" class="clearfix quicksearch prd_sci_dir">
+        <div style="margin-left: 237px;" id="articleNav">
+  <ul aria-label="Article options" role="navigation" class="clearfix">
+    <!-- return to gateway -->
+     
+
+
+
+
+
+
+<li>
+  <div class="icon_pdf toolbar">
+    <div class="largeIcon"></div>
+    <a id="pdfLink" rel="nofollow" href="http://www.sciencedirect.com/science/article/pii/S0048969711000787/pdfft?md5=fb31e9d331f2bbbbd7fcbdabbcf3c83f&amp;pid=1-s2.0-S0048969711000787-main.pdf" querystr="?_origin=article&amp;_zone=toolbar" target="newPdfWin" pdfurl="http://www.sciencedirect.com/science/article/pii/S0048969711000787/pdfft?md5=fb31e9d331f2bbbbd7fcbdabbcf3c83f&amp;pid=1-s2.0-S0048969711000787-main.pdf" suggestedarturl="http://www.sciencedirect.com/science/suggestedArt/citeList/pii/S0048969711000787/eid/1-s2.0-S0048969711000787/serial" class="S_C_pdfLink big pdf ext_sdlink cLink" style="cursor: pointer;" title="Download PDF">Download PDF
+    <span id="pdfExplanation" class="offscreen">Opens in a new window.  Article suggestions will be shown in a dialog on return to ScienceDirect.</span>
+    </a>
+  </div>
+</li>
+ 
+ 
+
+
+
+
+
+
+
+<li class="exportPopupListitem">
+<div class="pulldown">
+    <div class="exportDivision" title="Export citations">
+    <div class="exportIconText">
+    <div class="icon_exportarticlesci_dir initialImage export_icon" tabindex="0"> &nbsp; </div>
+    <input id="icon_exportarticle" value="Export" name="export" class="listAction export export_general" tabindex="-1" type="button">
+     <span class="downSM_sci_dir exportArrow"></span>
+    </div>
+    <input class="zone" name="zone" value="exportDropDown" type="hidden">
+    </div>
+    <div class="menu export_popup hidden" id="export_popup">
+    <div style="display: none;" class="warningIcon" title="Warning Icon" alt="Warning Icon"></div>
+    <form name="exportCite" method="post" action="http://www.sciencedirect.com/science?_ob=DownloadURL&amp;_method=finish&amp;_eidkey=1-s2.0-S0048969711000787&amp;count=1&amp;_docType=FLA&amp;md5=6471d83dc80159ecc189654bf301f23b" target="">
+    <input class="zone" name="zone" value="exportDropDown" type="hidden">
+            <script language="javascript" type="text/javascript">
+
+<!--
+
+function checkExportFormat(limit) {
+
+    var msg = "";
+
+    for (i=0;i<document.exportCite.elements.length;i++) {
+        if (document.exportCite.elements[i].value == "REFWX") {
+            if (document.exportCite.elements[i].checked) {
+                document.exportCite.setAttribute('target',"RefWorksMain");
+                if (checkLimit()) {
+                    if (limit) {
+                        msg = "It is possible that some users may experience problems when downloading large numbers of citations. If this happens please contact RefWorks support at your regionally hosted site or e-mail support@refworks.com to assist you further.\n\n";
+                    }
+                    msg += "Exporting to RefWorks may take some time, please wait....";
+                    alert(msg);
+                }
+            }
+            else {
+                document.exportCite.setAttribute('target',"");
+            }
+            break;
+        }
+    }
+    return true;
+}
+
+function determineCount(numStr) {
+    var count=1;
+
+    if(numStr.indexOf("-")) {
+        var rangeStr = numStr.split("-");
+
+        if(rangeStr.length == 2) {
+            var highNum = parseInt(rangeStr[1]);
+            var lowNum = parseInt(rangeStr[0]);
+
+            if(highNum >= lowNum) { count = (highNum - lowNum) + 1; }
+        }
+    }
+    return count;
+}
+
+function checkLimit(){
+
+    var selectNum = "";
+    var useSelected = false;
+    var allNum = 0;
+    var count = 0;
+    var rdoc = 0;
+
+    for (i=0;i<document.exportCite.elements.length;i++) {
+        if (document.exportCite.elements[i].name == "count") {
+            allNum = document.exportCite.elements[i].value;
+        }
+        if (document.exportCite.elements[i].name == "NUMBER_LIST") {
+            selectNum = document.exportCite.elements[i].value;
+        }
+        if (document.exportCite.elements[i].name == "_rdoc") {
+            rdoc = document.exportCite.elements[i].value;
+        }
+        if (document.exportCite.elements[i].value == "selected") {
+            if (document.exportCite.elements[i].checked) {
+                useSelected = true;
+            }
+        }
+    }
+
+    if (useSelected) {
+        selectNum = selectNum.replace(/ /g,"");
+        if(selectNum.indexOf(",")) {
+            var commaList = selectNum.split(",");
+            for(i=0; i < commaList.length; i++) {
+                count += determineCount(commaList[i]);
+            }
+        }
+        else {
+            count += determineCount(selectNum);
+        }
+    }
+    else { 
+        if (rdoc > 0) {
+            count = 1;
+        }
+        else {
+            count = allNum;
+        }
+    }
+
+    if(count > 50) { return true; }
+  
+    return false;
+}
+
+//-->
+</script>
+
+    <div class="exportInfo">
+        <div class="chkboxCount"></div>
+        <div class="exportHelp">
+            <a target="sdhelp" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=art_export.htm&amp;_btn=Y&amp;_zone=TopNavBar&amp;_origin=article" title="Help (Opens new window)">Help</a>
+        </div>
+    </div>
+
+    <div class="expContainer">
+      <ul class="Export_Popup" width="100%">
+        <li class="subHeading"><h3> Direct export </h3></li>
+        <li class="direct_export">
+         
+            <div>
+              <div class="btn_export directExport">
+                <div class="icon_Mendeley" title="Save to Mendeley">&nbsp;</div>
+                <input id="directExport" value="Save to Mendeley" name="Save to Mendeley" alt="Save to Mendeley" class="mendeleyBT button" type="button">
+              </div>
+            </div>
+        
+        
+            <div class="btnLine">
+              <div class="btn_export refworks">
+                <div class="icon_Refworks" title="Save to RefWorks">&nbsp;</div>
+                <input id="REFWX" value="Save to RefWorks" name="Save to RefWorks" alt="Save to RefWorks" class="button refworks" type="button">
+              </div> 
+            </div>
+            <div class="clear"> </div>
+        
+        </li>
+        <li class="subHeading big"> <h3>Export file</h3></li>
+        <li class="export_radio RIS"><input id="RIS" checked="" name="citation-type" value="RIS" class="artRadio expRadio RIS" type="radio">&nbsp;<label for="RIS">RIS&nbsp;(for EndNote, Reference Manager, ProCite)</label>
+        </li>
+        <li class="export_radio"><input id="BIBTEX" name="citation-type" value="BIBTEX" class="artRadio expRadio BIBTEX" type="radio">&nbsp;<label for="BIBTEX">BibTeX</label>
+        </li>
+        <li class="export_radio"><input id="ASCII" name="citation-type" value="ASCII" class="artRadio expRadio ASCII" type="radio">&nbsp;<label for="ASCII">Text</label>
+        </li>
+        <li class="export_radio hidden"><input id="REFWX" name="citation-type" value="REFWX" class="artRadio expRadio REFWX" type="radio">&nbsp;<label for="REFWX">RefWorks Direct Export</label>
+        </li>
+        <li class="subHeading big"><h3>Content</h3></li>
+        <li class="expCitab export_radio"><input id="cite" class="cite artRadio expRadio" name="format" value="cite" type="radio">&nbsp;<label class="cit" for="cite"> Citation Only </label>
+        </li>
+        <li class="expCitab export_radio citab"><input id="cite-abs" class="cite-abs artRadio expRadio" name="format" value="cite-abs" checked="" type="radio">&nbsp;<label class="cab" for="cite-abs"> Citation and Abstract </label>
+        </li>
+        <li class="export_submit">
+            <div class="downBtn export_downBtn">
+               <input value="Export" name="export" alt="Export" class="button export_button" id="export_button" type="submit">
+            </div> 
+        </li>
+      </ul>
+
+    </div>
+
+
+        
+        
+            
+         
+
+    </form>
+    </div> 
+</div>    
+</li>
+  
+
+
+
+</ul>
+</div>
+
+<div class="sdSearch" aria-label="Quick search" role="search">
+    <fieldset>
+        <div class="left">
+            <form id="quickSearch" name="qkSrch" method="get" target="_top" action="http://www.sciencedirect.com/science">
+            <input name="_ob" value="QuickSearchURL" type="hidden">
+            <input name="_method" value="submitForm" type="hidden">
+            <input name="_acct" value="C000034358" type="hidden">
+            <input name="searchtype" value="a" type="hidden">
+            <input name="_origin" value="article" type="hidden">
+            <input name="_zone" value="qSearch" type="hidden">
+            <input name="md5" value="93c3db4f6f8b4c269845e3a690e78323" type="hidden">
+            
+            <input id="quickSearch" name="qs_all" placeholder="Search ScienceDirect" value="" size="30" maxlength="450" title="Perform a quick search on ScienceDirect" type="text"><input class="submit" value="" title="Submit quick search" type="submit">
+            
+            <a class="advanced S_C_advanced" href="http://www.sciencedirect.com/science/search">Advanced search</a>
+            </form>
+        </div>
+    </fieldset>
+</div>
+<div class="clear"></div>
+<div id="erToolbar"></div>
+
+
+<div style="color: rgb(255, 0, 0); font-weight: bold; border: 0px solid red;">
+  
+  
+  
+  
+</div>
+
+
+
+
+
+        <!-- PDFKING/PDFCITE -->
+        <div id="pdfModalWindow" class="pdfModalWindow" style="display: none;" onclick="pdfCite.closePopup();"></div>
+        <div id="suggestedPdfList" style="display: none;">
+         
+        <div id="suggestedPdfList" style="display: block;" class="newStyles">
+  <div id="modalBoxDisplay" class="nojs" tabindex="0" role="dialog" aria-labelledby="hdSDSuggestions">
+    <div class="pdfModalWindowMsgBox" id="pdfModalWindowMsgBox">
+	  <div class="modal" style="box-shadow: none; margin-left: 12px; margin-right: 12px;">
+        <div id="displayPdfKing" style="display: block;">
+           <form method="get" name="Tag" action="http://www.sciencedirect.com/science/suggestedArt/export" style="padding: 0px; margin: 0px;" target="">
+            <input name="pdfDownload" value="download" type="hidden">
+            
+                <input name="PDF_DDM_MAX" value="20" type="hidden">
+             
+            <input name="_retainOrder" value="Y" type="hidden">
+            <input class="zone" name="zone" value="DDM" type="hidden">
+            <div class="header" style="height: auto; padding-bottom: 20px; background: none repeat ; 0% rgb(255, 255, 255);">
+            <div class="pdfKingHeading" style="display: block;">Other users also viewed these articles
+            <a class="newCloseBtn" id="pdfKingcloseBtn" href="#" title="Close Article Suggestions" alt="Close Article Suggestions"><img src="closeButton.png"></a></div></div>
+            <div id="SuggestedArtList" style="min-height: 100px;">
+                <div class="toolBar">
+                <ul class="group"> 
+                    
+                    <li class="pdfDownloader" style="display: inline-block; padding: 4px 4px 0px; border: 1px solid rgb(201, 201, 201);">
+                        <input value="Download All PDFs" name="pdfDownloadButton" class="listAction iconBg" id="multiPdfIcon" aria-describedby="downloadAllPdfAx" style="width: auto; font-size: 14px; color: rgb(49, 108, 157); background-image: url('pdf.png');" type="submit">
+                        <span class="arrow"></span>
+                        <span id="downloadAllPdfAx" class="hidden">Opens document download manager</span>
+                    </li>
+                    
+                </ul>
+                </div>
+                
+                <div id="pdfkingContent" style="display: none;">
+                    <div class="popcontent"></div> 
+                    <div id="relatedArtList" data-entitled="Y"></div>
+                </div>
+                
+            </div>
+                
+                <div class="newFooter">
+                <a class="do-not-show" href="http://www.sciencedirect.com/science/suggestedArt/optOut" style="cursor: pointer; float: none; line-height: normal;">Do not show again</a>
+                </div>
+          </form>
+        </div>
+        <div id="pdfKingMessage" style="display: none;">
+          <div class="pdfKingHeading" style="display: block;">
+            <span class="downloadMsg">Downloading zip file containing 3 articles...</span>
+            <a class="newCloseBtn" onclick="pdfCite.closePopup();" href="#" title="Close Article Suggestions" alt="Close Article Suggestions"><img src="closeButton.png"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+        </div>
+        <!-- PDFKING/PDFCITE End -->
+    </div>
+    <div style="display: none; height: 56px;" id="articleToolbarDummy"></div>
+  <div style="clear: both;"></div>
+  
+  <div style="height: 910px;" id="leftPane" class="column" aria-label="table of contents" role="navigation">
+    <div class="" style="height: 910px;" id="leftPaneInner">
+        <div>
+        <div id="leftButton">
+            <ul>
+                <li class="tocbutton">
+                    <a class="outline-toggle" title="Open to view article outline" alt="Open to view article outline" href="#" aria-expanded="false">
+                        <span class="icon outline_big"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div style="top: 0px;" id="outlineContainer">
+            <a class="closeBt" title="Close">&nbsp;</a>
+            <div data-st="0" id="outline" class="outline"><div id="olGraphCbBox"><div class="olHead"><h2 id="toc_title">Article outline</h2><label style="display: block;"><input id="outlineGraphicsCheckBox" type="checkBox">Show full outline</label></div><ul id="itemOutline"><li class="li_h2 outlineFocus outlineFocusFirst outlineFocusLast"><div id="ol_author1" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#author1" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">Abstract<br></a></div></li><li class="li_h3"><div id="ol_secGabs_1" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#secGabs_1" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">Research Highlights<br></a></div></li><li class="li_h2"><div id="ol_kwd_1" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#kwd_1" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">Keywords<br></a></div></li><li class="li_h2"><div id="ol_s0005" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#s0005" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">1. Introduction<br></a></div></li><li class="li_h2"><div id="ol_s0010" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#s0010" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">2. Methods<br></a></div></li><li class="li_h3"><div id="ol_s0015" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#s0015" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">2.1. System Description<br></a></div></li><li class="li_h3"><div id="ol_s0020" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#s0020" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">2.2. Air Quality Network<br></a></div></li><li class="li_h3"><div id="ol_s0025" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#s0025" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">2.3. Statistical Indicators<br></a></div></li><li class="li_h2"><div id="ol_s0030" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#s0030" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">3. Results and Discussions<br></a></div></li><li class="li_h3"><div id="ol_s0035" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#s0035" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">3.1. Nitrogen Dioxide<br></a></div></li><li class="li_h3"><div id="ol_s0040" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#s0040" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">3.2. Ozone<br></a></div></li><li class="li_h3"><div id="ol_s0045" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#s0045" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">3.3. Sulfur Dioxide<br></a></div></li><li class="li_h3"><div id="ol_s0050" class="io item h3sec"><a class="tocLink S_C_tocLinkSec" href="#s0050" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">3.4. Particulate Matter<br></a></div></li><li class="li_h2"><div id="ol_s0055" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#s0055" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">4. Exceedances of Ozone During Summertime<br></a></div></li><li class="li_h2"><div id="ol_s0060" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#s0060" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">5. Summary and Conclusions<br></a></div></li><li class="li_h2"><div id="ol_ack001" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#ack001" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">Acknowledgments<br></a></div></li><li class="li_h2"><div id="ol_appd001" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#appd001" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">Appendix A. Supplementary data<br></a></div></li><li class="li_h2"><div id="ol_bi0005" class="io item h2sec"><a class="tocLink S_C_tocLinkSec" href="#bi0005" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial');">References<br></a></div></li></ul><script>prs.rt('scr_toc')</script></div>
+              <script type="text/javascript">
+
+              document.write("<div class='outlineMsg'>Article outline is loading...</div>");
+              </script>
+              <noscript>
+
+              <div class="infoMsg">
+              <div style="float: left; width: 20px; "><img border="0" src="http://cdn.els-cdn.com/sd/alertIcon.gif" valign="top" alt="Alert message"></div>
+              <div style="padding-left:25px;">JavaScript is disabled on your browser. 
+<div style="padding-top:10px;">
+              Please enable JavaScript to use all the features on this page.</div></div>
+              </div>
+              </noscript>
+            <div id="fig" role="navigation" aria-labelledby="fig_title"><hr><h2 id="fig_title">Figures and tables</h2><ol class="figures " role="tree"><li><div id="ol_f0005" class="io item fig" data-parent="s0005"><a class="tocLink S_C_tocLinkFig" href="#f0005" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S0048969711000787-gr1.sml" class="displayImg" title="Modular structure of the CALIOPE modeling system used to simulate air quality ..." alt="Modular structure of the CALIOPE modeling system used to simulate air quality ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S0048969711000787-gr1.sml" data-thumbheight="128"></a></div></li><li><div id="ol_f0010" class="io item fig" data-parent="s0005"><a class="tocLink S_C_tocLinkFig" href="#f0010" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S0048969711000787-gr2.sml" class="displayImg" title="RedESP stations measuring air pollutants in Spain on an hourly basis in 2004. ..." alt="RedESP stations measuring air pollutants in Spain on an hourly basis in 2004. ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S0048969711000787-gr2.sml" data-thumbheight="164"></a></div></li><li><div id="ol_t0005" class="io item tbl" data-parent="s0020"><a class="tocLink olIcon olIconTbl S_C_tocLinkTbl" title="Location and characteristics of selected RedESP stations (source: CEAM) for 2004 ..." alt="Location and characteristics of selected RedESP stations (source: CEAM) for 2004 ..." href="#t0005" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial'); "><div class="olIcon olIconTbl"></div>Table&nbsp;1</a></div></li><li><div id="ol_f0015" class="io item fig" data-parent="s0035"><a class="tocLink S_C_tocLinkFig" href="#f0015" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S0048969711000787-gr3.sml" class="displayImg" title="Modeled (red lines) and measured (marked black lines) time series of hourly mean ..." alt="Modeled (red lines) and measured (marked black lines) time series of hourly mean ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S0048969711000787-gr3.sml" data-thumbheight="163"></a></div></li><li><div id="ol_t0010" class="io item tbl" data-parent="s0035"><a class="tocLink olIcon olIconTbl S_C_tocLinkTbl" title="Annual statistics obtained with CALIOPE over Spain for 2004 at the RedESP ..." alt="Annual statistics obtained with CALIOPE over Spain for 2004 at the RedESP ..." href="#t0010" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial'); "><div class="olIcon olIconTbl"></div>Table&nbsp;2</a></div></li><li><div id="ol_f0020" class="io item fig" data-parent="s0035"><a class="tocLink S_C_tocLinkFig" href="#f0020" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S0048969711000787-gr4.sml" class="displayImg" title="2004 Annual average concentrations (μgm−3) of (a) NO2, (b) O3, (c) SO2, and (d) ..." alt="2004 Annual average concentrations (μgm−3) of (a) NO2, (b) O3, (c) SO2, and (d) ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S0048969711000787-gr4.sml" data-thumbheight="158"></a></div></li><li><div id="ol_f0025" class="io item fig" data-parent="s0040"><a class="tocLink S_C_tocLinkFig" href="#f0025" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S0048969711000787-gr5.sml" class="displayImg" title="Modeled (black lines) and measured (grey lines) time series of O3 daily peak ..." alt="Modeled (black lines) and measured (grey lines) time series of O3 daily peak ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S0048969711000787-gr5.sml" data-thumbheight="58"></a></div></li><li><div id="ol_t0015" class="io item tbl" data-parent="s0040"><a class="tocLink olIcon olIconTbl S_C_tocLinkTbl" title="Annual statistics for O3 (hourly and daily peaks) obtained with CALIOPE over ..." alt="Annual statistics for O3 (hourly and daily peaks) obtained with CALIOPE over ..." href="#t0015" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial'); "><div class="olIcon olIconTbl"></div>Table&nbsp;3</a></div></li><li><div id="ol_f0030" class="io item fig" data-parent="s0040"><a class="tocLink S_C_tocLinkFig" href="#f0030" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S0048969711000787-gr6.sml" class="displayImg" title="Spatial distribution of the statistics for O3 over 2004 at the RedESP stations: ..." alt="Spatial distribution of the statistics for O3 over 2004 at the RedESP stations: ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S0048969711000787-gr6.sml" data-thumbheight="164"></a></div></li><li><div id="ol_f0035" class="io item fig" data-parent="s0040"><a class="tocLink S_C_tocLinkFig" href="#f0035" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S0048969711000787-gr7.sml" class="displayImg" title="Modeled NO2 levels versus model-observation O3 bias. The 68 stations measuring ..." alt="Modeled NO2 levels versus model-observation O3 bias. The 68 stations measuring ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S0048969711000787-gr7.sml" data-thumbheight="164"></a></div></li><li><div id="ol_f0040" class="io item fig" data-parent="s0040"><a class="tocLink S_C_tocLinkFig" href="#f0040" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S0048969711000787-gr8.sml" class="displayImg" title="Modeled (marked red lines) and measured (marked black lines) time series of ..." alt="Modeled (marked red lines) and measured (marked black lines) time series of ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S0048969711000787-gr8.sml" data-thumbheight="164"></a></div></li><li><div id="ol_f0045" class="io item fig" data-parent="s0055"><a class="tocLink S_C_tocLinkFig" href="#f0045" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection','article','leftPane', 'serial');"><img data-loaded="true" src="1-s2.0-S0048969711000787-gr9.sml" class="displayImg" title="Days exceeding the concentration value of 120μgm−3 for the 8-h maximum O3 ..." alt="Days exceeding the concentration value of 120μgm−3 for the 8-h maximum O3 ..." data-smlsrc="http://ars.els-cdn.com/content/image/1-s2.0-S0048969711000787-gr9.sml" data-thumbheight="95"></a></div></li><li><div id="ol_ec0005" class="tocLink io item mmc" data-parent="appd001"><a class="tocLink olIcon S_C_tocLinkolIconMMCWord" title="Supplementary material." alt="Supplementary material." href="#ec0005" onclick="SD_UTIL.sendUserKeyEvent('displayTOCSection', 'article', 'leftPane', 'serial'); "> <div class="olIcon olIconMMCWord"></div>ec0005</a></div></li></ol></div><div style="height: 671px;" id="articleLeftAd" class="adBlock"><hr style="margin-left: 12px;"><div class="adText">ADVERTISEMENT<div class="closeBt"><a href="#" title="Close Advertisement">&nbsp;</a></div></div><iframe style="height: 606px;" scrolling="no" border="0" cellspacing="0" src="S0048969711000787_6.html" frameborder="0"></iframe></div></div>
+        </div>
+        </div>
+    </div>
+  </div>
+  <div tabindex="-1" id="centerPane" class="column">
+    <div style="top: 56px;" class="topBorder"></div>
+    <div id="centerContent" class="centerContent">
+    <div id="centerInner" class="centerInner svBigBox" aria-label="Article" role="main">
+        
+      
+      <noscript>
+
+      <div class="msgBox" style="margin-top:10px;">
+          <span class="errMsg">
+            <div>JavaScript is disabled on your browser.  Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. <a rel="nofollow" href="http://www.sciencedirect.com/science/article/pii/S0048969711000787?np=y">View full text</a></div>
+         </span>
+      </div><br/>
+      </noscript>
+      <div class="head headTemplate page_fragment_ind">
+
+  
+<div class="publisherLogo">
+  <span class="spElsevierPubIcon"></span>
+</div>
+
+
+  
+    <!--?xml version="1.0" encoding="UTF-8"?--><div xmlns:bk="http://www.elsevier.com/xml/bk/dtd" class="publicationHead"><div class="title"><a title="Go to Science of The Total Environment on ScienceDirect" href="http://www.sciencedirect.com/science/journal/00489697" querystr="?zone=centerPane" class="cLink"><span>Science of The Total Environment</span></a></div><p class="volIssue"><a class="S_C_volIss" title="Go to table of contents for this volume/issue" href="http://www.sciencedirect.com/science/journal/00489697/409/11">Volume 409, Issue 11</a>, 1 May 2011, Pages 2163–2178</p></div>
+  
+    <div class="publicationCover cover2">
+    
+      
+    <a querystr="?zone=publicationLogo" class="cLink" href="http://www.sciencedirect.com/science/journal/00489697/409/11">
+      
+    
+    <img alt="Cover image" src="1-s2.0-S0048969711X00074-cov150h.gif" class="toprightlogo">
+    <noscript><img alt="Cover image" src="http://ars.els-cdn.com/content/image/1-s2.0-S0048969711X00074-cov150h.gif" class="toprightlogo" /></noscript>
+    </a>
+    
+  </div>
+
+
+</div>
+
+      <div id="frag_1" class="page_fragment auth_frag" data-first="true" data-fid="1"><div class="module_topic_paths"></div><h1 class="svTitle" id="">An annual assessment of air quality with the CALIOPE modeling system over Spain</h1><ul style="display: block;" class="authorGroup noCollab svAuthor"><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N716eec60N71684e00" data-t="a" data-fn="J.M." data-ln="Baldasano" data-pos="1" data-tb="">J.M. Baldasano</a><a title="Affiliation: a" href="#af0005" class="intra_ref auth_aff" id="baf0005"><sup>a</sup></a><sup>, </sup><a title="Affiliation: b" href="#af0010" class="intra_ref auth_aff" id="baf0010"><sup>b</sup></a><sup>, </sup><a title="Corresponding author contact information" href="#cr0005" id="bcr0005" class="intra_ref auth_corr"></a><sup>, </sup><a href="mailto:jose.baldasano@bsc.es" class="auth_mail" title="E-mail the corresponding author"></a>, </li><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N716eec60N71684e90" data-t="a" data-fn="M.T." data-ln="Pay" data-pos="2" data-tb="">M.T. Pay</a><a title="Affiliation: a" href="#af0005" class="intra_ref auth_aff" id="baf0005"><sup>a</sup></a>, </li><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N716eec60N71684f20" data-t="a" data-fn="O." data-ln="Jorba" data-pos="3" data-tb="">O. Jorba</a><a title="Affiliation: a" href="#af0005" class="intra_ref auth_aff" id="baf0005"><sup>a</sup></a>, </li><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N716eec60N71684fb0" data-t="a" data-fn="S." data-ln="Gassó" data-pos="4" data-tb="">S. Gassó</a><a title="Affiliation: a" href="#af0005" class="intra_ref auth_aff" id="baf0005"><sup>a</sup></a><sup>, </sup><a title="Affiliation: b" href="#af0010" class="intra_ref auth_aff" id="baf0010"><sup>b</sup></a>, </li><li class="smh5"><a href="#" class="authorName svAuthor" data-orcid="" id="authname_N716eec60N71685040" data-t="a" data-fn="P." data-ln="Jiménez-Guerrero" data-pos="5" data-tb="">P. Jiménez-Guerrero</a><a title="Affiliation: c" href="#af0015" class="intra_ref auth_aff" id="baf0015"><sup>c</sup></a></li></ul><!--VALIDHTML--><ul style="display: none;" class="affiliation authAffil smh"><li id="af0005"><sup>a</sup> <span id="">Earth Sciences Department, Barcelona Supercomputing Center. Barcelona, Spain</span></li><li id="af0010"><sup>b</sup> <span id="">Environmental Modeling Laboratory, Technical University of Catalonia, Barcelona, Spain</span></li><li id="af0015"><sup>c</sup> <span id="">Department of Physics, University of Murcia, Murcia, Spain</span></li></ul><!--VALIDHTML--><!--VALIDHTML--><div id="currtAsOf"></div><dl style="display: none;" class="articleDates smh"><dd>Received 7 September 2010, Revised 20 January 2011, Accepted 21 January 2011, Available online 5 March 2011</dd></dl><!--VALIDHTML--><div class="moreInformation"><dl class="citation"></dl></div><div id="showMoreButtons"><a class="showLess moreLink"><span class="CollapseText">&nbsp;</span><span class="showInfo expand" title="Show more author and article information">Show more</span></a><a class="showLess lessLink"><span style="display: none;" class="ExpandText">&nbsp;</span><span class="showInfo collapse" title="Hide more author and article information">Show less</span></a></div><!--VALIDHTML--><dl class="extLinks nonEmpty"><dd class="doiLink"><dd class="doi"><a id="ddDoi" class="S_C_ddDoi" href="http://dx.doi.org/10.1016/j.scitotenv.2011.01.041" target="doilink" onclick="var doiWin; doiWin=window.open('http://dx.doi.org/10.1016/j.scitotenv.2011.01.041','doilink','scrollbars=yes,resizable=yes,directories=yes,toolbar=yes,menubar=yes,status=yes'); doiWin.focus()">doi:10.1016/j.scitotenv.2011.01.041</a></dd></dd><dd class="rightsLink"><a class=" cExLink S_C_outLinks" href="https://s100.copyright.com/AppDispatchServlet?publisherName=ELS&amp;contentID=S0048969711000787&amp;orderBeanReset=true" data-url="/science/RedirectURL?_method=outwardLink&amp;_partnerName=936&amp;_eid=1-s2.0-S0048969711000787&amp;_pii=S0048969711000787&amp;_origin=article&amp;_zone=art_page&amp;_targetURL=https://s100.copyright.com/AppDispatchServlet?publisherName%3DELS%26contentID%3DS0048969711000787%26orderBeanReset%3Dtrue" target="_top" title="Get rights and content"><span class="outText">Get rights and content</span></a></dd></dl><div class="articleOAlabelForced"></div><div id="refersToAndreferredToBy"><dl id="referredToBy" class="documentThread"><!--Referred To By--></dl></div><!--FRAGMENTEND--><div class="page_fragment_ind auth_frag" data-id="frag_2"></div></div><div id="frag_2" class="page_fragment" data-fid="2"><script>prs.rt("abs_1st_beg");</script><!--VALIDHTML--><hr id="abs_author1" class="artHeader"><div class="abstract svAbstract " data-etype="ab"><h2 class="secHeading" id="author1">Abstract</h2><p id="sp0065">The CALIOPE project, funded by the Spanish Ministry of the Environment, aims at establishing an air quality forecasting system for Spain. With this goal, CALIOPE modeling system was developed and applied with high resolution (4&nbsp;km&nbsp;×&nbsp;4&nbsp;km, 1&nbsp;h) using the HERMES emission model (including emissions of resuspended particles from paved roads) specifically built up for Spain. The present study provides an evaluation and the assessment of the modeling system, coupling WRF-ARW/HERMES/CMAQ/BSC-DREAM8b for a full-year simulation in 2004 over Spain. The evaluation focuses on the capability of the model to reproduce the temporal and spatial distribution of gas phase species (NO<sub>2</sub>, O<sub>3</sub>, and SO<sub>2</sub>) and particulate matter (PM10) against ground-based measurements from the Spanish air quality monitoring network. The evaluation of the modeling results on an hourly basis shows a strong dependency of the performance of the model on the type of environment (urban, suburban and rural) and the dominant emission sources (traffic, industrial, and background). The O<sub>3</sub> chemistry is best represented in summer, when mean hourly variability and high peaks are generally well reproduced. The mean normalized error and bias meet the recommendations proposed by the United States Environmental Protection Agency (US-EPA) and the European regulations. Modeled O<sub>3</sub> shows higher performance for urban than for rural stations, especially at traffic stations in large cities, since stations influenced by traffic emissions (i.e., high-NO<sub><em>x</em></sub> environments) are better characterized with a more pronounced daily variability. NO<sub><em>x</em></sub>/O<sub>3</sub> chemistry is better represented under non-limited-NO<sub>2</sub> regimes. SO<sub>2</sub> is mainly produced from isolated point sources (power generation and transformation industries) which generate large plumes of high SO<sub>2</sub> concentration affecting the air quality on a local to national scale where the meteorological pattern is crucial. The contribution of mineral dust from the Sahara desert through the BSC-DREAM8b model helps to satisfactorily reproduce episodic high PM10 concentration peaks at background stations. The model assessment indicates that one of the main air quality-related problems in Spain is the high level of O<sub>3</sub>. A quarter of the Iberian Peninsula shows more than 30&nbsp;days exceeding the value 120&nbsp;μg&nbsp;m<sup>−3</sup> for the maximum 8-h O<sub>3</sub> concentration as a consequence of the transport of O<sub>3</sub> precursors downwind to/from the Madrid and Barcelona metropolitan areas, and industrial areas and cities in the Mediterranean coast.</p></div><!--VALIDHTML--><hr id="absgraphical1" class="artHeader"><div class="abstract svAbstract" data-etype="ab"><h4 id="secGabs_1">Research Highlights</h4><div id="sp0070"><p>► CALIOPE system advances our understanding of atmospheric dynamics in Spain. ► CALIOPE system uses a high-resolution computational grid. ► CALIOPE system includes the influence of Saharan dust on a non-climatic basis. ► CALIOPE system includes an emission model specifically for Spain. ► CALIOPE system includes resuspension emission from paved roads.</p></div></div><!--VALIDHTML--><div id="embeddedPDF" style="display: none;"></div><script>prs.rt("abs_end");</script><div id="SD_BA1P" class="sgfNoTitleBar sgfNoGadgetBorder svDoNotLink"><div class="containerApplOver invisible" id="SD_BA1P_298231"><div id="remote_iframe_0_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-right: 1px solid rgb(205, 240, 164); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_0" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_0" onload="sgf.killTimer('298231', 'SD_BA1P');" name="remote_iframe_0" src="S0048969711000787_7.html" style="text-align: left; height: 0px;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div></div><!--VALIDHTML--><h2 id="kwd_1" class="svKeywords">Keywords</h2><ul class="keyword" id=""><li id="" class="svKeywords"><span id="">Model evaluation</span>; </li><li id="" class="svKeywords"><span id="">Air quality</span>; </li><li id="" class="svKeywords"><span id="">Spain</span>; </li><li id="" class="svKeywords"><span id="">High resolution</span>; </li><li id="" class="svKeywords"><span id="">O<sub>3</sub> exceedances</span></li></ul><!--VALIDHTML--><hr class="artHeader"><h2 class="svArticle" id="s0005">1. Introduction</h2><p class="svArticle section" id="p0005">In Europe, human health issues caused by degraded air quality have been extensively studied (<a href="#bb0075" id="bbb0075" class="intra_ref">Brunekreef and Holgate, 2002</a>, <a href="#bb0215" id="bbb0215" class="intra_ref">Gryparis et al., 2004</a>&nbsp;and&nbsp;<a href="#bb0365" id="bbb0365" class="intra_ref">Pénard-Morand et al., 2005</a>) and have motivated the increase of monitoring infrastructures and modeling capabilities. In this sense, the European Commission (EC) and the U.S. Environmental Protection Agency (US-EPA), among others, have shown a great interest in air pollution transport and dynamics. Both entities have set ambient air quality standards for acceptable levels of O<sub>3</sub> (<a href="#bb0470" id="bbb0470" class="intra_ref">US-EPA, 1991</a>&nbsp;and&nbsp;<a href="#bb0170" id="bbb0170" class="intra_ref">European Commission, 2008</a>), NO<sub>2</sub>, SO<sub>2</sub>, PM2.5 and PM10 in ambient air. According to the European regulations (<span id="bbb0170"><a href="#bb0170" id="ancbbb0170" class="intra_ref">European Commission, 2008</a></span>), local to regional air quality models are useful tools to assess and understand the dynamics of air pollutants, to forecast the air quality, and to develop emission abatement plans and alert the population when health-related issues occur.</p><!--VALIDHTML--><p class="svArticle section" id="p0010">Air pollution limit values and allowed numbers of exceedances established by the <span id="bbb0170"><a href="#bb0170" id="ancbbb0170" class="intra_ref">European Commission (2008)</a></span> are still exceeded in the atmospheric boundary layer in Europe and, particularly, in Spain (<span id="bbb0130"><a href="#bb0130" id="ancbbb0130" class="intra_ref">de Leeuw and Vixseboxse, 2010</a></span>). Despite improvements due to European legislations, particulate matter and ground-level ozone remain important pollutants affecting human health (<a href="#bb0150" id="bbb0150" class="intra_ref">EEA, 2009a</a>, <a href="#bb0155" id="bbb0155" class="intra_ref">EEA, 2009b</a>&nbsp;and&nbsp;<a href="#bb0160" id="bbb0160" class="intra_ref">EEA, 2010</a>). The impact of these European policies on the pollutant levels was assessed by the Clean Air for Europe (CAFE) program (<a href="#bb0005" id="bbb0005" class="intra_ref">Amann et al., 2004</a>&nbsp;and&nbsp;<a href="#bb0125" id="bbb0125" class="intra_ref">Cuvelier et al., 2007</a>).</p><!--VALIDHTML--><p class="svArticle section" id="p0015">The CALIOPE project, funded by the Spanish Ministry of the Environment (Ministerio de Medio Ambiente y Medio Rural y Marino), aims at establishing an air quality forecasting system for Spain (<span id="bbb0045"><a href="#bb0045" id="ancbbb0045" class="intra_ref">Baldasano et al., 2008a</a></span>). CALIOPE (<span id="bf0005"><a href="#f0005" id="ancbf0005" class="intra_ref">Fig.&nbsp;1</a></span>) encompasses a high-resolution air quality forecasting system, namely WRF-ARW/HERMES-EMEP/CMAQ/BSC-DREAM8b, being applied to Europe as a mother domain: 12&nbsp;km&nbsp;×&nbsp;12&nbsp;km, 1&nbsp;h (<span id="bbb0355"><a href="#bb0355" id="ancbbb0355" class="intra_ref">Pay et al., 2010a</a></span>) as well as to Spain as the nested domain: 4&nbsp;km&nbsp;×&nbsp;4&nbsp;km,1&nbsp;h. Such high resolution of the modeling system is made possible by its implementation on the MareNostrum supercomputer hosted by the Barcelona Supercomputing Center-Centro Nacional de Supercomputación (BSC-CNS). Four Spanish research institutes compose the CALIOPE project: the BSC-CNS, the “Centro de Investigaciones Energéticas, Medioambientales y Tecnológicas” (CIEMAT), the Institute of Earth Sciences Jaume Almera of the “Centro Superior de Investigaciones Científicas ”(IJA-CSIC) and the “Centro de Estudios Ambientales del Mediterráneo” (CEAM). In this project both experimental and operational modeling aspects are conducted by the BSC-CNS and CIEMAT while IJA-CSIC and CEAM lead the data monitoring part for the evaluation processes. Current forecasts are available through <span id="" class="interref" data-locatortype="url" data-locatorkey="http://www.bsc.es/caliope"><a data-itrprs="Y" href="http://www.bsc.es/caliope" data-url="/science/RedirectURL?_method=externObjLink&amp;_locator=url&amp;_cdi=271800&amp;_issn=00489697&amp;_origin=article&amp;_zone=art_page&amp;_targetURL=http%253A%252F%252Fwww.bsc.es%252Fcaliope" class="cExLink" target="externObjLink" onclick="var newWidth=((window.screen.availWidth*90)/100);var newHeight=((window.screen.availHeight*90)/100);var parms = 'status=yes,location=yes,' + 'scrollbars=yes,resizable=yes,directories=yes,' + 'toolbar=yes,menubar=yes,' + 'width=' + newWidth + ',height=' + newHeight + ',screenX=10,screenY=10';var externalWin; externalWin=window.open('','externObjLink',parms); externalWin.focus()">http://www.bsc.es/caliope</a></span>.</p><!--VALIDHTML--><div class="figTblUpiOuter svArticle" id="figure_f0005"><div><dl class="figure" id="f0005" data-t="f"><dt class="autoScroll" data-style="height:339px;width:579px;"><a class="figureLink" href="#gr1" title="Modular structure of the CALIOPE modeling system used to simulate air quality ..."><img data-loaded="true" style="display: inline; height: 339px; width: 579px;" class="imgLazyJSB figure large nrmImg" alt="Modular structure of the CALIOPE modeling system used to simulate air quality ..." src="1-s2.0-S0048969711000787-gr1.jpg" data-thumbeid="1-s2.0-S0048969711000787-gr1.sml" data-fulleid="1-s2.0-S0048969711000787-gr1.jpg" data-imgeids="1-s2.0-S0048969711000787-gr1.jpg" data-thumbheight="128" data-thumbwidth="219" data-fullheight="339" data-fullwidth="579" border="0" height="339" width="579"><noscript class="figure large" border="0" alt="Full-size image" data-thumbeid="1-s2.0-S0048969711000787-gr1.sml" data-fulleid="1-s2.0-S0048969711000787-gr1.jpg"><img class="figure large" border="0" alt="Modular structure of the CALIOPE modeling system used to simulate air quality ..." src="http://origin-ars.els-cdn.com/content/image/1-s2.0-S0048969711000787-gr1.jpg" data-thumbEID="1-s2.0-S0048969711000787-gr1.sml" data-imgEIDs="1-s2.0-S0048969711000787-gr1.jpg" data-fullEID="1-s2.0-S0048969711000787-gr1.jpg"></noscript></a></dt><dd id="labelCaptionf0005"><div class="caption">Fig.&nbsp;1.&nbsp;<p id="sp0005">Modular structure of the CALIOPE modeling system used to simulate air quality dynamics in Spain. Squared boxes with solid lines represent the main models of the framework. Boxes with dashed lines represent input/output dataset. Lines connecting boxes represent the information flow.</p><!--caption--></div></dd><dd class="menuButtonLinks"><div class="btnHolder"><a class="menuTitle" href="#">Figure options</a><div class="down_Btn"></div></div><ul class="menuButton"><li><a class="S_C_full_size" data-src="/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_eid=1-s2.0-S0048969711000787&amp;_image=1-s2.0-S0048969711000787-gr1.jpg&amp;_cid=271800&amp;_explode=defaultEXP_LIST&amp;_idxType=defaultREF_WORK_INDEX_TYPE&amp;_alpha=defaultALPHA&amp;_ba=&amp;_rdoc=1&amp;_fmt=FULL&amp;_issn=00489697&amp;_pii=S0048969711000787&amp;md5=8f433e60ec69ef2ae4b40d311de6f3e5" data-label="labelCaptionf0005" data-ref="" data-format="S0048969711000787" href="#gr1" title="View full-size image - Opens in new window">Download full-size image</a></li><li><a class="ppt S_C_ppt" title="Download as PowerPoint slide" href="http://services.elsevier.com/SDWebExport/export/figure/S0048969711000787/1-s2.0-S0048969711000787-gr1.jpg/ppt">Download as PowerPoint slide</a></li></ul></dd></dl></div></div><!--VALIDHTML--><p class="svArticle section" id="p0020">To date, a total of 23 model systems routinely simulate the air quality over Europe, with seven systems also operated in the forecasting mode (<span id="bbb0300"><a href="#bb0300" id="ancbbb0300" class="intra_ref">Menut and Bessagnet, 2010</a></span>). Due to the episodic nature of dust outbreaks, the representation of these events cannot be well simulated with solely the information of aerosol boundary conditions (<a href="#bb0260" id="bbb0260" class="intra_ref">Jiménez-Guerrero et al., 2008a</a>&nbsp;and&nbsp;<a href="#bb0300" id="bbb0300" class="intra_ref">Menut and Bessagnet, 2010</a>). <span id="bbb0480"><a href="#bb0480" id="ancbbb0480" class="intra_ref">Vautard et al. (2005a)</a></span> showed that simulated aerosol loadings, using the current knowledge on aerosol mechanisms, may be underestimated by up to 30–50% if only anthropogenic sources are taken into account. Among the seven operational systems CALIOPE is the unique system including the contribution of Saharan dust on an hourly basis. In addition, CALIOPE includes the High-elective Resolution Modelling Emission System (HERMES, see <span id="bbb0050"><a href="#bb0050" id="ancbbb0050" class="intra_ref">Baldasano et al., 2008b</a></span>) specifically applied with high resolution over Spain.</p><!--VALIDHTML--><div class="page_fragment_ind" data-id="frag_3"></div><script>prs.rt("abs_1st_end");</script></div><div id="frag_3" class="page_fragment" data-fid="3"><p class="svArticle section" id="p0025">Several studies investigated air quality concerns over selected areas in Spain (<a href="#bb0415" id="bbb0415" class="intra_ref">San José et al., 1999</a>, <a href="#bb0265" id="bbb0265" class="intra_ref">Jiménez-Guerrero et al., 2008b</a>&nbsp;and&nbsp;<a href="#bb0500" id="bbb0500" class="intra_ref">Vivanco et al., 2008</a>) or over the entire Peninsula (<a href="#bb0045" id="bbb0045" class="intra_ref">Baldasano et al., 2008a</a>, <a href="#bb0260" id="bbb0260" class="intra_ref">Jiménez-Guerrero et al., 2008a</a>&nbsp;and&nbsp;<a href="#bb0505" id="bbb0505" class="intra_ref">Vivanco et al., 2009</a>). Most models ran with horizontal cell resolution of 18&nbsp;km&nbsp;×&nbsp;18&nbsp;km or coarser for domains covering the Spanish territory. CALIOPE now uses a 4&nbsp;km&nbsp;×&nbsp;4&nbsp;km cell resolution to simulate the Iberian Peninsula domain. Such high resolution is a key factor to accurately simulate air pollution issues, especially over complex topography (<span id="bbb0255"><a href="#bb0255" id="ancbbb0255" class="intra_ref">Jiménez et al., 2006</a></span>) and meteorology patterns (<a href="#bb0040" id="bbb0040" class="intra_ref">Baldasano et al., 1994</a>&nbsp;and&nbsp;<a href="#bb0320" id="bbb0320" class="intra_ref">Millán et al., 2002</a>) in southern Europe.</p><!--VALIDHTML--><p class="svArticle section" id="p0030">The present paper provides a quantitative performance assessment of the CALIOPE modeling system to simulate the air quality in Spain (gas phase and particulate matter). As the HERMES emission database was compiled for the year 2004 the evaluation was carried out over this year. The performance of the modeling system is evaluated by means of comparisons with ground-based observations from the Spanish network hereinafter referred to as “RedESP” (source: CEAM, see <span id="bf0010"><a href="#f0010" id="ancbf0010" class="intra_ref">Fig.&nbsp;2</a></span>). The model dynamics are evaluated together with the corresponding statistics. The results are then compared to model performance goals and criteria. This study intends to warrant the suitability of CALIOPE over Spain for air quality concerns and forecast.</p><!--VALIDHTML--><div class="figTblUpiOuter svArticle" id="figure_f0010"><div><dl class="figure" id="f0010" data-t="f"><dt class="autoScroll" data-style="height:534px;width:655px;"><a class="figureLink" href="#gr2" title="RedESP stations measuring air pollutants in Spain on an hourly basis in 2004. ..."><img style="display: inline;" class="imgLazyJSB figure large smallImg" alt="RedESP stations measuring air pollutants in Spain on an hourly basis in 2004. ..." src="grey_pxl.gif" data-thumbeid="1-s2.0-S0048969711000787-gr2.sml" data-fulleid="1-s2.0-S0048969711000787-gr2.jpg" data-imgeids="1-s2.0-S0048969711000787-gr2.jpg" data-thumbheight="164" data-thumbwidth="201" data-fullheight="534" data-fullwidth="655" border="0"><noscript class="figure large" border="0" alt="Full-size image" data-thumbeid="1-s2.0-S0048969711000787-gr2.sml" data-fulleid="1-s2.0-S0048969711000787-gr2.jpg"><img class="figure large" border="0" alt="RedESP stations measuring air pollutants in Spain on an hourly basis in 2004. ..." src="http://origin-ars.els-cdn.com/content/image/1-s2.0-S0048969711000787-gr2.jpg" data-thumbEID="1-s2.0-S0048969711000787-gr2.sml" data-imgEIDs="1-s2.0-S0048969711000787-gr2.jpg" data-fullEID="1-s2.0-S0048969711000787-gr2.jpg"></noscript></a></dt><dd id="labelCaptionf0010"><div class="caption">Fig.&nbsp;2.&nbsp;<p id="sp0010">RedESP stations measuring air pollutants in Spain on an hourly basis in 2004. Different types of stations (U: Urban; S: Suburban; R: Rural; B: Background; I: Industrial; and T: Traffic) according to <span id="f0010bbb0190"><a href="#bb0190" id="ancf0010bbb0190" class="intra_ref">Garber et al. (2002)</a></span> are represented by symbols and color codes. The various symbols represent the major emission types affecting each station (Traffic: triangle; Industrial: square; and Background: circle) while the colors reflect the environment of each station (Urban: red; Suburban: green; and Rural: orange). Characteristics and number of each station are listed in <span id="f0010bt0005"><a href="#t0005" id="ancf0010bt0005" class="intra_ref">Table&nbsp;1</a></span>.</p><!--caption--></div></dd><dd class="menuButtonLinks"><div class="btnHolder"><a class="menuTitle" href="#">Figure options</a><div class="down_Btn"></div></div><ul class="menuButton"><li><a class="S_C_full_size" data-src="/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_eid=1-s2.0-S0048969711000787&amp;_image=1-s2.0-S0048969711000787-gr2.jpg&amp;_cid=271800&amp;_explode=defaultEXP_LIST&amp;_idxType=defaultREF_WORK_INDEX_TYPE&amp;_alpha=defaultALPHA&amp;_ba=&amp;_rdoc=1&amp;_fmt=FULL&amp;_issn=00489697&amp;_pii=S0048969711000787&amp;md5=9d2e8776a93dd8788aba6eab1e1356d7" data-label="labelCaptionf0010" data-ref="bb0190" data-format="S0048969711000787" href="#gr2" title="View full-size image - Opens in new window">Download full-size image</a></li><li><a class="ppt S_C_ppt" title="Download as PowerPoint slide" href="http://services.elsevier.com/SDWebExport/export/figure/S0048969711000787/1-s2.0-S0048969711000787-gr2.jpg/ppt">Download as PowerPoint slide</a></li></ul></dd></dl></div></div><!--VALIDHTML--><p class="svArticle section" id="p0035"><span id="bs0010"><a href="#s0010" id="ancbs0010" class="intra_ref">Section&nbsp;2</a></span> describes the different models used in the CALIOPE system, the observational dataset and the statistical parameters calculated. <span id="bs0030"><a href="#s0030" id="ancbs0030" class="intra_ref">Section&nbsp;3</a></span> analyzes the results against available observations for the year 2004 and the modeled annual distribution of NO<sub>2</sub>, O<sub>3</sub>, SO<sub>2</sub> and PM10. A discussion about the exceedances of O<sub>3</sub> during summertime is shown in <span id="bs0055"><a href="#s0055" id="ancbs0055" class="intra_ref">Section&nbsp;4</a></span>. The conclusions are drawn in <span id="bs0060"><a href="#s0060" id="ancbs0060" class="intra_ref">Section&nbsp;5</a></span>.</p><!--VALIDHTML--><h2 class="svArticle" id="s0010">2. Methods</h2><h3 class="svArticle" id="s0015">2.1. System Description</h3><p class="svArticle section" id="p0040">The CALIOPE air quality system is a state-of-the-art modeling framework. As shown in <span id="bf0005"><a href="#f0005" id="ancbf0005" class="intra_ref">Fig.&nbsp;1</a></span>, CALIOPE is a complex system that integrates the meteorological model: WRF-ARW, the emission model: HERMES, the chemical transport model: CMAQ, and the mineral dust atmospheric model: BSC-DREAM8b offline coupled in an air quality forecasting system (<span id="bbb0045"><a href="#bb0045" id="ancbbb0045" class="intra_ref">Baldasano et al., 2008a</a></span>).</p><!--VALIDHTML--><p class="svArticle section" id="p0045">The Advanced Research Weather Research and Forecasting (WRF-ARW) model v3.0.1.1 (<a href="#bb0305" id="bbb0305" class="intra_ref">Michalakes et al., 2004</a>&nbsp;and&nbsp;<a href="#bb0430" id="bbb0430" class="intra_ref">Skamarock and Klemp, 2008</a>) provides the meteorology fields required by the chemical transport model. For the Spanish domain WRF-ARW is configured with a grid of 397&nbsp;×&nbsp;397 points corresponding to a 4&nbsp;km&nbsp;×&nbsp;4&nbsp;km horizontal resolution and 38 <em>σ</em> vertical levels with 11 characterizing the planetary boundary layer (PBL). The model top is defined at 50&nbsp;hPa to resolve the troposphere–stratosphere exchanges properly. Details about the performance of WRF-ARW over the Spanish domain are provided as  <span id="bec0005"><a href="#ec0005" id="ancbec0005" class="intra_ref">supplementary material</a></span>.</p><!--VALIDHTML--><p class="svArticle section" id="p0050">The Models-3 Community Multiscale Air Quality Modeling System (Models-3/CMAQ, <a href="#bb0080" id="bbb0080" class="intra_ref">Byun and Ching, 1999</a>, <a href="#bb0055" id="bbb0055" class="intra_ref">Binkowski, 1999</a>&nbsp;and&nbsp;<a href="#bb0085" id="bbb0085" class="intra_ref">Byun and Schere, 2006</a>), v4.5 is used to study the behavior of air pollutants from regional to local scales, due to its generalized coordinate system and its advanced nesting grid capability. It includes gas, aerosol and heterogeneous chemistry. According to the work by <span id="bbb0250"><a href="#bb0250" id="ancbbb0250" class="intra_ref">Jiménez et al. (2003)</a></span> the gas-phase chemistry mechanism used in this study is the Carbon Bond IV (CBM-IV, <span id="bbb0200"><a href="#bb0200" id="ancbbb0200" class="intra_ref">Gery et al., 1989</a></span>). The version of CBM-IV mechanism is that presented in CMAQv4.5 original code (<a href="#bb0025" id="bbb0025" class="intra_ref">Appel et al., 2007</a>&nbsp;and&nbsp;<a href="#bb0030" id="bbb0030" class="intra_ref">Appel et al., 2008</a>) which introduces some changes and updates in the original CBM-IV mechanism such as an update isoprene chemistry to Carter's one product form (<span id="bbb0090"><a href="#bb0090" id="ancbbb0090" class="intra_ref">Carter, 2000</a></span>) and an inclusion of gaseous species that are necessary to link gas-phase chemistry to aerosol formation.</p><!--VALIDHTML--><p class="svArticle section" id="p0055">The aerosols are modeled using the AERO4 module (<span id="bbb0060"><a href="#bb0060" id="ancbbb0060" class="intra_ref">Binkowski and Roselle, 2003</a></span>). This module comprises the following aerosol components: nitrate, sulfate, ammonium, elemental and organic carbon (with three subcomponents: primary, secondary anthropogenic and secondary biogenic), soil, sodium, and chlorine. Unspecified anthropogenic aerosols and aerosol water are additionally kept as separate components. Aerosols are represented by a three size modes (Aitken, accumulation and coarse mode) each of them assumed to have a lognormal distribution. The coarse particles mode is treated as dry and chemically inert with a fixed geometric standard deviation of 2.2 (<span id="bbb0270"><a href="#bb0270" id="ancbbb0270" class="intra_ref">Kelly et al., 2010</a></span>), thus there is no dynamic interaction between the fine and coarse mode. The production of sea salt aerosol (SSA) is implemented as a function of wind speed and relative humidity (<a href="#bb0210" id="bbb0210" class="intra_ref">Gong, 2003</a>&nbsp;and&nbsp;<a href="#bb0515" id="bbb0515" class="intra_ref">Zhang et al., 2005</a>) through the AERO4 aerosol module.</p><!--VALIDHTML--><p class="svArticle section" id="p0060">Secondary inorganic aerosols (SIA) are generated by nucleation processes from their precursors to form nitrate ammonium and sulfate aerosols. The thermodynamic equilibrium between gas and inorganic fine aerosols is determined by the ISORROPIA model (<span id="bbb0325"><a href="#bb0325" id="ancbbb0325" class="intra_ref">Nenes et al., 1998</a></span>). Secondary Organic Aerosols (SOA) are simulated following a traditional 2-product SOA model (<span id="bbb0060"><a href="#bb0060" id="ancbbb0060" class="intra_ref">Binkowski and Roselle, 2003</a></span>) where SOA concentrations are yield from the oxidation of six primary organic gases: alkanes, alkenes, cresol, high-yield aromatics, low yield aromatics, and monoterpenes. Ten semi-volatile organic compounds are produced via these reactions—two each for olefins, monoterpenes, and aromatics, and one each for alkanes and cresol. The oxidants include the hydroxyl radical, the nitrate radicals, and ozone. The saturation vapor pressures and mass-based stoichiometric yield coefficients of semi-volatile organic compounds are obtained from either smog chamber experiments or from published estimates in cases where smog chamber data are unavailable. The SOA is calculated using the method developed by <span id="bbb0420"><a href="#bb0420" id="ancbbb0420" class="intra_ref">Schell et al. (2001)</a></span> and gas and aerosol-phase concentrations of each semi-volatile organic compounds are calculated iteratively using a globally convergent variation of Newton's method. The formation rates of aerosol mass (in terms of the reaction rates of the precursors) are taken from <span id="bbb0520"><a href="#bb0520" id="ancbbb0520" class="intra_ref">Pandis et al. (1992)</a></span>.</p><!--VALIDHTML--><p class="svArticle section" id="p0065">Aerosol deposition is treated by a second-generation deposition velocity scheme (<a href="#bb0065" id="bbb0065" class="intra_ref">Binkowski and Shankar, 1995</a>&nbsp;and&nbsp;<a href="#bb0490" id="bbb0490" class="intra_ref">Venkatram and Pleim, 1999</a>). For a more complete description of the processes implemented in CMAQ see <span id="bbb0085"><a href="#bb0085" id="ancbbb0085" class="intra_ref">Byun and Schere (2006)</a></span>.</p><!--VALIDHTML--><p class="svArticle section" id="p0070">The CMAQ horizontal grid resolution corresponds to that of WRF. Its vertical structure was obtained by a collapse from the 38 WRF layers to a total of 15 layers steadily increasing from the surface up to 50&nbsp;hPa with a stronger density within the PBL.</p><!--VALIDHTML--><p class="svArticle section" id="p0075">In order to provide adequate boundary and initial conditions to the IP domain the CALIOPE modeling system was initially run on a regional scale (12&nbsp;km&nbsp;×&nbsp;12&nbsp;km in space and 1 h in time) to model the European domain (mother domain). Chemical boundary conditions for this domain were provided by the global climate chemistry model LMDz-INCA2 (<a href="#bb0225" id="bbb0225" class="intra_ref">Hauglustaine et al., 2004</a>&nbsp;and&nbsp;<a href="#bb0180" id="bbb0180" class="intra_ref">Folberth et al., 2006</a>). A detailed evaluation of the European simulation was recently presented in the companion paper by <span id="bbb0355"><a href="#bb0355" id="ancbbb0355" class="intra_ref">Pay et al. (2010a)</a></span>. A one-way nesting was then performed to retrieve the meteorological and chemical conditions for the IP domain (see <span id="bf0005"><a href="#f0005" id="ancbf0005" class="intra_ref">Fig.&nbsp;1</a></span>).</p><!--VALIDHTML--><p class="svArticle section" id="p0080">As highlighted by <span id="bbb0275"><a href="#bb0275" id="ancbbb0275" class="intra_ref">Lam and Fu (2009)</a></span> stratospheric amounts of O<sub>3</sub> interpolated from global chemical models and provided to the chemical lateral profiles may cause problems since CMAQ does not include a cross-tropopause exchange mechanism. Following their suggestion the stratospheric contribution of O<sub>3</sub> from the mother domain was suppressed from the chemical boundary conditions to avoid inconsistent intrusions of stratospheric O<sub>3</sub> down to the surface.</p><!--VALIDHTML--><p class="svArticle section" id="p0085">The HERMES model (<span id="bbb0050"><a href="#bb0050" id="ancbbb0050" class="intra_ref">Baldasano et al., 2008b</a></span>) uses information and state-of-the-art methodologies for emission estimations. It calculates emissions by sector-specific sources or by individual installations and stacks. Emissions used for Spain are derived from the aggregation in space from 1&nbsp;km&nbsp;×&nbsp;1&nbsp;km dataset to 4&nbsp;km&nbsp;×&nbsp;4&nbsp;km. Raw emission data are processed by HERMES in order to provide a comprehensive description of the emissions to the air quality model. In this study estimated emissions are expressed in CBM-IV speciation.</p><!--VALIDHTML--><div class="page_fragment_ind" data-id="frag_4"></div></div>
+
+               
+
+       
+   
+        
+    </div>
+    <div id="footer-area-dummy"></div>
+    <div id="footer-area" aria-label="product support" role="contentinfo">
+      <div id="sdFoot">
+      <div id="footer" aria-label="Footer" role="navigation">	
+  <div class="bottomArticle"></div>
+  <div class="padding">
+    <div id="linkArea">
+      <div class="padding links">
+        <div style="float: left; width: 0px; height: 1px;"></div>
+        <div id="banner-bottom">
+          <a class="S_C_aboutElsevier" href="http://www.elsevier.com/" target="_top" title="Elsevier homepage (opens in a new window)"></a>
+        </div>
+        <ul class="col5">
+<li><a target="_top" href="http://www.info.sciverse.com/sciencedirect?utm_source=sciencedirect&amp;utm_medium=link&amp;utm_campaign=aboutsd">About ScienceDirect</a></li>
+</ul>
+<ul class="col5">
+<li> <a target="_top" href="http://www.sciencedirect.com/science/contactus">Contact and support</a></li>
+</ul>
+<ul class="col5">
+<li><a target="_top" href="http://www.elsevier.com/locate/termsandconditions?utm_source=sciencedirect&amp;utm_medium=link&amp;utm_campaign=terms">Terms and conditions</a></li>
+</ul>
+<ul class="col5">
+<li><a target="_top" href="http://www.elsevier.com/privacypolicy?utm_source=sciencedirect&amp;utm_medium=link&amp;utm_campaign=privacy">Privacy policy</a></li>
+</ul>
+<script>function loadSCode(){if(typeof SDM!="undefined"){var e=document.getElementsByTagName("body")[0],t=document.createElement("script");var prefix = "";if(document.location.protocol == "https:"){prefix = "origin-";}t.src = "//" + prefix + "cdn.els-cdn.com/sd/js/adobe/s_code_131.js";e.appendChild(t);sendSCStats()}else{setTimeout(loadSCode,100)}}function sendSCStats(){if(typeof s_tc_sciencedirect!="undefined"){s.t()}else{setTimeout(sendSCStats,100)}}if(window.addEventListener){window.addEventListener("load",loadSCode,false)}else if(window.attachEvent){window.attachEvent("onload",loadSCode)}else{window.onload=loadSCode}</script>
+<script type="text/javascript">/*{literal}<![CDATA[*/window.lightningjs||function(c){function g(b,d){d&&(d+=(/\?/.test(d)?"&":"?")+"lv=1");c[b]||function(){var i=window,h=document,j=b,g=h.location.protocol,l="load",k=0;(function(){function b(){a.P(l);a.w=1;c[j]("_load")}c[j]=function(){function m(){m.id=e;return c[j].apply(m,arguments)}var b,e=++k;b=this&&this!=i?this.id||0:0;(a.s=a.s||[]).push([e,b,arguments]);m.then=function(b,c,h){var d=a.fh[e]=a.fh[e]||[],j=a.eh[e]=a.eh[e]||[],f=a.ph[e]=a.ph[e]||[];b&&d.push(b);c&&j.push(c);h&&f.push(h);return m};return m};var a=c[j]._={};a.fh={};a.eh={};a.ph={};a.l=d?d.replace(/^\/\//,(g=="https:"?g:"http:")+"//"):d;a.p={0:+new Date};a.P=function(b){a.p[b]=new Date-a.p[0]};a.w&&b();i.addEventListener?i.addEventListener(l,b,!1):i.attachEvent("on"+l,b);var q=function(){function b(){return["<head></head><",c,' onload="var d=',n,";d.getElementsByTagName('head')[0].",d,"(d.",g,"('script')).",i,"='",a.l,"'\"></",c,">"].join("")}var c="body",e=h[c];if(!e)return setTimeout(q,100);a.P(1);var d="appendChild",g="createElement",i="src",k=h[g]("div"),l=k[d](h[g]("div")),f=h[g]("iframe"),n="document",p;k.style.display="none";e.insertBefore(k,e.firstChild).id=o+"-"+j;f.frameBorder="0";f.id=o+"-frame-"+j;/MSIE[ ]+6/.test(navigator.userAgent)&&(f[i]="javascript:false");f.allowTransparency="true";l[d](f);try{f.contentWindow[n].open()}catch(s){a.domain=h.domain,p="javascript:var d="+n+".open();d.domain='"+h.domain+"';",f[i]=p+"void(0);"}try{var r=f.contentWindow[n];r.write(b());r.close()}catch(t){f[i]=p+'d.write("'+b().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};a.l&&setTimeout(q,0)})()}();c[b].lv="1";return c[b]}var o="lightningjs",k=window[o]=g(o);k.require=g;k.modules=c}({});
+window.usabilla_live = lightningjs.require("usabilla_live", "//w.usabilla.com/11e800d34be0.js");
+/*]]>{/literal}*/</script>
+        <div class="clear"></div>
+        <!-- CSAS will be providing the links-->
+      </div>
+      <div class="padding copyright">
+	<hr>
+        Copyright © 2015 Elsevier B.V. or its licensors or contributors. ScienceDirect® is a registered trademark of Elsevier B.V.
+      </div>
+      <div class="padding" style="padding-bottom: 4px; font-size: 11px;">
+
+              Cookies are used by this site. To decline or learn more, visit our <a href="http://www.info.sciverse.com/sciencedirect/cookies" target="_top">Cookies</a> page.
+        </div> 
+      
+        
+          <div class="padding links">
+            <div id="goToggleSite"><a class="mLink" site="Mobile" cknm="Site" lnkorg="article" lnkzn="footer" href="#">Switch to Mobile Site</a></div>
+          </div>
+	  <form id="pgReload" method="get" action="http://www.sciencedirect.com/science/article/pii/S0048969711000787"></form>
+        
+      
+    </div>
+  </div>
+</div> <!--footer-->
+
+      </div><!--sdFooter-->
+    </div><!--footer-area-->
+    </div>
+ </div>
+ <div style="width: 363px;" id="rightPane" class="column" aria-label="Related content" role="complementary">
+  <div style="height: 6496px;" id="rightOuter" class="rightOuter">
+    <div id="rightInner" class="rightInner">
+       <div class="innerPadding">
+
+    <div id="SD_BIB" class="hidden entry separator appBox sgfNoTitleBar sgfNoGadgetBorder"></div>
+ 
+
+    
+    
+        <div id="recommend_related_articles" class="entry separator related rendered firstBlk">
+            
+                <h2><a href="#articles" class="toggle" aria-controls="relArtList" aria-expanded="true"><span class="iconArrow">&nbsp;</span>Recommended articles</a></h2>
+             
+             <ol id="relArtList"><li><ol class="articles"><li class="artTitle"><a style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" title="A full year evaluation of the CALIOPE-EU air quality modeling system over Europe for 2004" href="http://www.sciencedirect.com/science/article/pii/S1352231010004231" class="cLink S_C_artTitle" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S0048969711000787&amp;_srcFr=EPFL">A full year evaluation of the CALIOPE-EU air quality modeling system over Europe for 2004</a></li><li style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" class="srcTitle">2010, Atmospheric Environment<div class="moreInfo"><a data-url="http://www.sciencedirect.com/science/more/S1352231010004231/2/issn/13522310" class="toggleMoreInfo">more</a></div></li><li class="showMore hidden"><div class="moreInfoContent"><ol class="details"><li>M.T. Pay, M. Piot, O. Jorba, S. Gassó, M. Gonçalves, S. Basart, D. Dabdub, P. Jiménez-Guerrero, J.M. Baldasano</li><li class="title">A full year evaluation of the CALIOPE-EU air quality modeling system over Europe for 2004</li><li class="fullSrcTitle">Atmospheric Environment, Volume 44, Issue 27, September 2010, Pages 3322–3342</li><li class="docSubType">Original Research Article</li><div class="abs"></div><ul class="links"><li class="clearfix pdf"><div class="icon_pdf"><a rel="nofollow" title="Download PDF" target="_top" class="cLink pdfRightPaneLink" href="http://www.sciencedirect.com/science/article/pii/S1352231010004231/pdfft?md5=963665ee1e2225f2f43692a5097febf9&amp;pid=1-s2.0-S1352231010004231-main.pdf" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S0048969711000787&amp;_srcFr=EPFL"> PDF (3028 K)</a><div id="entitlement" class="checkEntitlement" style="display: none;"></div></div></li></ul></ol></div></li></ol></li><li><ol class="articles"><li class="artTitle"><a style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" title="High resolution modeling of the effects of alternative fuels use on urban air quality: Introduction of natural gas vehicles in Barcelona and Madrid Greater Areas (Spain)" href="http://www.sciencedirect.com/science/article/pii/S0048969708010346" class="cLink S_C_artTitle" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S0048969711000787&amp;_srcFr=EPFL">High resolution modeling of the effects of alternative fuels use on urban air quality: Introduction of natural gas vehicles in Barcelona and Madrid Greater Areas (Spain)</a></li><li style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" class="srcTitle">2009, Science of The Total Environment<div class="moreInfo"><a data-url="http://www.sciencedirect.com/science/more/S0048969708010346/2/issn/00489697" class="toggleMoreInfo">more</a></div></li><li class="showMore hidden"><div class="moreInfoContent"><ol class="details"><li>María Gonçalves, Pedro Jiménez-Guerrero, José M. Baldasano</li><li class="title">High resolution modeling of the effects of alternative fuels use on urban air quality: Introduction of natural gas vehicles in Barcelona and Madrid Greater Areas (Spain)</li><li class="fullSrcTitle">Science of The Total Environment, Volume 407, Issue 2, 1 January 2009, Pages 776–790</li><li class="docSubType">Original Research Article</li><div class="abs"></div><ul class="links"><li class="clearfix pdf"><div class="icon_pdf"><a rel="nofollow" title="Download PDF" target="_top" class="cLink pdfRightPaneLink" href="http://www.sciencedirect.com/science/article/pii/S0048969708010346/pdfft?md5=828dc082b18270d26797cd7d839220da&amp;pid=1-s2.0-S0048969708010346-main.pdf" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S0048969711000787&amp;_srcFr=EPFL"> PDF (5753 K)</a><div id="entitlement" class="checkEntitlement" style="display: none;"></div></div></li></ul></ol></div></li></ol></li><li><ol class="articles"><li class="artTitle"><a style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" title="Implementation of resuspension from paved roads for the improvement of&nbsp;CALIOPE air quality system in Spain" href="http://www.sciencedirect.com/science/article/pii/S1352231010009076" class="cLink S_C_artTitle" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S0048969711000787&amp;_srcFr=EPFL">Implementation of resuspension from paved roads for the improvement of&nbsp;CALIOPE air quality system in Spain</a></li><li style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;" class="srcTitle">2011, Atmospheric Environment<div class="moreInfo"><a data-url="http://www.sciencedirect.com/science/more/S1352231010009076/2/issn/13522310" class="toggleMoreInfo">more</a></div></li><li class="showMore hidden"><div class="moreInfoContent"><ol class="details"><li>María T. Pay, Pedro Jiménez-Guerrero, José M. Baldasano</li><li class="title">Implementation of resuspension from paved roads for the improvement of&nbsp;CALIOPE air quality system in Spain</li><li class="fullSrcTitle">Atmospheric Environment, Volume 45, Issue 3, January 2011, Pages 802–807</li><div class="abs"></div><ul class="links"><li class="clearfix pdf"><div class="icon_pdf"><a rel="nofollow" title="Download PDF" target="_top" class="cLink pdfRightPaneLink" href="http://www.sciencedirect.com/science/article/pii/S1352231010009076/pdfft?md5=6c1abbf3e566df4cb4a7aa6d12e322a2&amp;pid=1-s2.0-S1352231010009076-main.pdf" querystr="?_origin=article&amp;_zone=citeRelatedArt&amp;panel=citeRelatedArt&amp;_piiSuggestedFrom=S0048969711000787&amp;_srcFr=EPFL"> PDF (1231 K)</a><div id="entitlement" class="checkEntitlement" style="display: none;"></div></div></li></ul></ol></div></li></ol></li><li><a href="http://www.sciencedirect.com/science/recommended-articles/S0048969711000787" class="viewMoreArticles cLink">View more articles »</a></li></ol>
+        </div><script>prs.rt('scr_rec_art')</script>
+    
+    
+    
+        <div id="cited_by_articles" class="entry separator related closed">
+            <h2><a href="#articles" class="toggle" aria-controls="relArtList" aria-expanded="false"><span class="iconArrow">&nbsp;</span>Citing articles (<span id="hitcount">37</span>)</a></h2>
+            <ol id="citedByList"><li class="note"><p>This article has not been cited.</p></li></ol> 
+        </div>
+    
+    
+    
+        <div id="SD_CRA" class="hidden entry separator appBox sgfNoTitleBar sgfNoGadgetBorder"></div>  
+    
+    
+        
+            <div id="related_book_content" class="entry separator related closed">
+                <h2><a href="#articles" class="toggle" aria-controls="relArtList" aria-expanded="false"><span class="iconArrow">&nbsp;</span>Related book content</a></h2>
+                <ol id="relBkList"><li class="note" style="margin-left: 15px;"><p>No articles found.</p></li></ol>
+            </div>
+        
+     
+    
+        <div style="display: block;" id="metrics" class="entry separator rendered related">
+            <h2><a id="metrics_info" aria-expanded="true" aria-controls="metrics" class="toggle" href="#articles"><span class="iconArrow">&nbsp;</span>Metrics</a></h2>
+            <div id="metric_details"><a class="badge" target="_top" href="http://www.altmetric.com/details.php?template=sciencedirect&amp;doi=10.1016/j.scitotenv.2011.01.041" title="Altmetric score of 0. Open Altmetric details page"><img style="border: 0px none; margin: 0px;" src="untitled" alt="Altmetric score of 0. Open Altmetric details page" height="18px" width="120px"></a><div class="metrichelp"><a class="badge" target="_top" href="http://www.altmetric.com/details.php?template=sciencedirect&amp;doi=10.1016/j.scitotenv.2011.01.041" title="Altmetric score of 0. Open Altmetric details page"></a><a aria-describedby="metrics_info" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=metrics.htm" target="sdhelp" title="Help (Opens new window)" class="noul icon_qmarkHelpsci_dir">Help</a></div><ul class="metric_list"></ul><div class="metric_references"> <div><h3>Saved to reference managers</h3></div><ul class="metric_refence_list"><li class="details" style="border-left: 9px solid rgb(166, 0, 0);">2 Mendeley readers</li></ul></div><div class="moreMetricDetails"> <a aria-describedby="metrics_info" aria-haspopup="true" href="http://www.altmetric.com/details.php?template=sciencedirect&amp;doi=10.1016/j.scitotenv.2011.01.041">View more details »</a></div></div>
+        </div>
+     
+
+
+
+    
+        <div class="appContainerDummy"></div>
+        <div data-scroll="0" class="appContainer js_application_content">
+            <ul class="hidden" id="dataRepHolder"></ul>
+            
+                <div id="SD_AT1P" class="boxLink sgfNoTitleBar sgfNoGadgetBorder"><div class="containerApplOver invisible" id="SD_AT1P_299100"><div id="remote_iframe_1_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-right: 1px solid rgb(205, 240, 164); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_1" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_1" onload="sgf.killTimer('299100', 'SD_AT1P');" name="remote_iframe_1" src="S0048969711000787_8.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div><div class="containerApplOver invisible" id="SD_AT1P_301408"><div id="remote_iframe_2_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-right: 1px solid rgb(205, 240, 164); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_2" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_2" onload="sgf.killTimer('301408', 'SD_AT1P');" name="remote_iframe_2" src="S0048969711000787_10.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div><div class="containerApplOver invisible" id="SD_AT1P_323460"><div id="remote_iframe_3_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-right: 1px solid rgb(205, 240, 164); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_3" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_3" onload="sgf.killTimer('323460', 'SD_AT1P');" name="remote_iframe_3" src="S0048969711000787_12.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div><div class="containerApplOver invisible" id="SD_AT1P_300959"><div id="remote_iframe_4_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-right: 1px solid rgb(205, 240, 164); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_4" style="border-style: none;" class="containerAppDetails "><iframe id="remote_iframe_4" onload="sgf.killTimer('300959', 'SD_AT1P');" name="remote_iframe_4" src="S0048969711000787_13.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div></div>
+            
+
+            
+                <div id="SD_FTA1" class="boxLink sgfHorToolbar sgfShowMyApps sgfShowMoreLessApps"><div id="sciverse_toolbar" class="sgfSciverseHoriToolBar">	<div class="toolbarfoot">		<div class="toolbarBodyHorizontal" id="toolbarBody">			<div id="toolbar_SD_FTA1" class="sgfInnerToolbar" style="width: 97%; min-height: 155px; text-align: center; margin: 5px auto;"></div>			<div id="showMoreApps">				<a onclick="showMore()" class="plusSign">+</a>				<a title="Show more applications" id="showMore" onclick="showMore()" class="showMoreLessApps">Show more applications</a>			</div>			<div id="showLessApps">				<a onclick="showLess()" class="plusSign">-</a>				<a title="Show fewer applications" id="showFew" onclick="showLess()" class="showMoreLessApps">Show fewer applications</a>			</div>		</div>	</div></div><div style="display: none;" class="sgfToolBarToggleImage">	<div id="sgfSlideBar" class="sgfSideCollapse" onmouseout="sgfToggleToolBarOut();" onmouseover="sgfToggleToolBarOver();" title="undefined"></div>	<div class="clear"></div></div></div>
+            
+        </div>
+    
+
+
+</div>
+
+<div class="js_workspace_content popup" aria-live="polite" role="region" aria-label="Overlay" aria-describedby="skuip-3">
+    <a aria-label="close overlay" title="close overlay" alt="close overlay" href="#" id="buttonClose" role="button" class="closeBt">&nbsp;</a>
+    <div class="scrollArea"><div id="workSpaceView"></div></div>
+</div>
+
+    </div><!--rightInner-->
+  </div><!--rightOuter-->
+ </div><!--rightPane-->
+</div><!--page-area-->
+
+
+
+<div style="clear: both;"></div>
+
+<form name="citationInfo" id="citationInfo" method="POST" action="http://www.sciencedirect.com/science/article/pii/S0048969711000787">
+    <input name="art_citation" value="" type="hidden">
+</form>
+
+
+<script src="sdX_1509R1.js"></script>
+
+
+
+
+<script src="sd_1509R1.js"></script>
+
+
+
+<script src="pa_1509R1.js"></script>
+
+
+<script>
+
+var sciverse="empty";
+var SDM=new Object;
+SDM.tm=new Object;
+SDM.tm.ahm='h'
+
+
+
+SDM.ep=new Object;
+SDM.ep.downloadCsvURL = "http://services.elsevier.com/SDWebExport/export/table/csv";
+SDM.ep.downloadActionURL = "http://www.sciencedirect.com/science/downloadActions/keyEvent/S0048969711000787/00489697";
+SDM.ep.gigyaLib="//cdn.gigya.com/JS/socialize.js?apiKey=3__Bt7bHrGM8mjKPwBuOVjWyMi678aF6-PewcnoHJJ6UR1fS5t9NG9RBbKHjE0oA6J";
+SDM.ep.imgUrlPrefix = "http://ars.els-cdn.com/content/image/";
+SDM.ep.mendeleyJS = "https://www.mendeley.com/minified/bookmarklet.js";
+SDM.ep.prDevice = "http://pa.elsevier.com";
+SDM.ep.pru = "http://pa.elsevier.com";
+SDM.ep.ref2ref2by = "http://www.sciencedirect.com/science/relLink/ajaxReq?_eid=1-s2.0-S0048969711000787";
+SDM.ep.staticImgUrlPrefix = "http://cdn.els-cdn.com/sd";
+SDM.ep.urlPrefix = "http://www.sciencedirect.com/science";
+SDM.ep.urlQualifier = "science";
+SDM.ep.urlScheme = "http://www.sciencedirect.com";
+SDM.ep.userActionURL = "http://www.sciencedirect.com/science/UserActions";
+ SDM.helpUrlDomain="http://help.sciencedirect.com/flare"; 
+
+
+
+
+SDM.pm=new Object;
+SDM.pm.cid = '271800';
+SDM.pm.contentFamily = "serial";
+SDM.pm.contentType = "JL";
+SDM.pm.coverDate = '01-May-2011';
+
+SDM.pm.doi = '10.1016/j.scitotenv.2011.01.041';
+
+SDM.doi = '10.1016/j.scitotenv.2011.01.041';
+SDM.pm.eid = '1-s2.0-S0048969711000787';
+SDM.pm.entitled = true;
+ SDM.pm.hubEid = '1-s2.0-S0048969711X00074'; 
+SDM.pm.indexType = '';
+SDM.pm.issnisbn = "00489697";
+
+SDM.pm.itemWeight = 'FULL-TEXT';
+SDM.pm.mod_cid="";
+SDM.pm.mod_srcTitle="";
+SDM.pm.mod_ISBN = "";
+SDM.pm.pdfEid = '1-s2.0-S0048969711000787-main.pdf';
+SDM.pm.pdfSize = '4331309';
+SDM.pm.pii = 'S0048969711000787';
+SDM.pm.prodColor="sci_dir";if(SDM.pm.prodColor=="sci_dir")SDM.pm.prodColor="";
+ SDM.pm.rev = '20150514T030556275864'; 
+ SDM.pm.hrev = 'vH.10'; 
+ SDM.pm.pptURL = 'http://services.elsevier.com/SDWebExport/export/figure/'; 
+ SDM.pm.ecomponent_avail = true; 
+SDM.pm.altmetric_avail = 'TRUE';
+SDM.pm.altmetric_helpurl = '/science?_ob=HelpURL&_file=metrics.htm';
+
+
+
+
+SDM.pf = new Object;
+SDM.pf.pdfAvail = true;
+SDM.pf.reqAllFrags = true;
+ SDM.pf.maxElemsAllFrags = 12000
+SDM.pf.relatedBkAvail=true;
+SDM.pf.mlktAvail = true;
+SDM.pf.hpccAvail = true;
+SDM.pf.blkSocialLogins=true;
+
+
+SDM.browserUserMsg=true;
+
+
+SDM.pf.citedByScAvail = true;
+SDM.pf.aetEnabled = false;
+ SDM.pf.suggestedArtPDFMaxWait="2000";
+
+
+SDM.pf.ads = new Object;
+SDM.pf.ads.leftUrl="/science/advertisement/left/num/686042/mainCat/general/cat/general/acct/0663a9eb5160246f83055c65cf6aa49c/isn/00489697/doi/10.1016_j.scitotenv.2011.01.041/page/article/artOAstatus/N";
+
+
+
+
+SDM.pf.dc = new Object;
+SDM.pf.dc.retry = 10;
+SDM.pf.dc.retryDelay = 300;
+SDM.pf.dc.retryFactor = 1.0;
+SDM.pf.dc.respObj = '';
+
+
+SDM.pf.er = new Object();
+
+
+
+
+
+
+SDM.pf.frag = new Object();
+SDM.pf.frag.fat = '4c1e97dfafb2aad7f5b04b09cbd4feb9d7144e76676d38c85e597643dc84852cfb660675984ec288e8e5a9a6abc28eaec532b1069d1dd13d1a81ca3207c212e4929584cb25acd23b7055577a6e28ceaac466f1484abb69cfabe025d80446d59db27a825f3ce6e774ee683599424eb7100e6838a14def9b0277857e70b23e9bd24214985dd171218356f9496a1a2046e21be982a6ee1fbe39';
+SDM.pf.frag.mapRetry = 20;
+SDM.pf.frag.mapRetryDelay = 2000;
+SDM.pf.frag.mapRetryFactor = 1.1;
+SDM.pf.frag.retry = 5;
+SDM.pf.frag.retryDelay = 2000;
+SDM.pf.frag.foldFactor = 1.5;
+SDM.pf.frag.hashWait = 5000;
+
+
+
+
+
+
+SDM.pf.gadget = new Object();
+SDM.pf.gadget.displayGadgets=true;
+SDM.pf.gadget.sciverseUrlPfx="http://www.sciencedirect.com";
+SDM.pf.gadget.sciverseJsonObject='';
+SDM.pf.gadget.sciverseGadgetDetailsID = "";
+SDM.pf.gadget.svShindigLib="http://sciverse-shindig.elsevier.com/gadgets/js/shindig-container:pubsub-2.js?c=1";
+SDM.pf.gadget.svSciverseLib="http://www.sciencedirect.com/gadgetservices/gadgets/v9/js/SciverseShindigService,GadgetToolBar,jquery-outside,jquery.ba-bbq.min,SciverseShindigContainer,ScienceDirectShindigServices.js";
+
+
+
+SDM.pf.mrwmod = new Object();
+SDM.pf.mrwmod.breadCrumbPathURL = "http://www.sciencedirect.com/science/module/breadCrumbPaths/isbn//pii/S0048969711000787";
+
+SDM.pf.mrwmod.ldrAvail = true;
+
+
+ 
+
+
+SDM.pf.oa = new Object();
+
+
+
+
+
+
+
+
+SDM.pf.ref = new Object();
+SDM.pf.ref.bs = 20;
+SDM.pf.ref.citedByURL = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_updateCitedBy=";
+SDM.pf.ref.fd = 300;
+
+SDM.pf.ref.resolveURL = "http://www.sciencedirect.com/science/referenceResolution/ajaxRefResol?_pii=S0048969711000787&_refCnt=102&_docType=article";
+
+
+
+
+
+SDM.pf.toc=new Object;
+SDM.pf.toc.retry = 20;
+SDM.pf.toc.retryDelay = 1000;
+SDM.pf.toc.retryFactor = 1.09;
+SDM.pf.toc.outlineGraphics = false;
+SDM.pf.toc.outlineTab = "";
+
+SDM.pf.toc.urlTOCLink="http://www.sciencedirect.com/science/article/pii/S0048969711000787";
+SDM.pf.toc.urlTOCLinkQueryStr="?_rdoc=1&_fmt=full&_origin=&md5=22543fb95e34d36391c44b9d9cd72533";
+
+SDM.pf.ddm = new Object();
+SDM.pf.ddm.endpoint = "http://services.elsevier.com/SDWebExport/export/pdfdownload/pdf";
+
+
+
+
+
+
+SDM.si = new Object();
+SDM.si.webUserId = "641661";
+SDM.si.sds = "548f592f47ab722c988000011968aa80b664b3c21ffa1e2ea3fdb59405d1202fc7d2583436bf142a";
+SDM.si.euidCookieObject='a5ea17e70c82c5476a9112a1ed7e642d78ad518a597248d5a88316d942da8ffe31a7bc7629b51aac';
+
+SDM.pageTransKey = "09/04/2015 06:28:46 EDT#2849_002#90672#62.204.199.202";
+SDM.pageType = "article_full";
+SDM.tid = "b92ed6ae-52ef-11e5-8dd8-00000aacb361";
+SDM.ud = "641661|<SAInfo><SAId>202</SAId><SAName>MADRID CONSORTIUM</SAName><SANum>S000000202</SANum></SAInfo>|C000034358|51368|IPRANGE";
+SDM.ieVersion="8";
+
+SDM.dac = new Object;
+SDM.svapi = SVApi;
+
+</script>
+
+
+<script src="importer-api_1509R1.js.min"></script>
+
+
+<script>
+
+
+initializeArticlePage();
+</script>
+
+
+
+
+<script>if("undefined"==typeof window.ab){var cI="SDES",esLink="http://survey.confirmit.com/wix/p3073184390.aspx",esChance=0.2;window.ES={surveyInvite:function(){if(void 0==ES.getCookie(cI)&&Math.random()<=esChance && document.referrer.indexOf("/science/article/pii") != -1){ES.setCookie(cI,"true"),$("#sdHeader").append('<div id="surveyDialog"></div>');var e='<div id="header"><h1 class="headline">ScienceDirect</h1></div>';e+='<div class="sContent">',e+='<div class="sHeading">Your opinion matters!</div>',e+='<div class="sInvite">Would you provide feedback on your experience with ScienceDirect today? <br> Your feedback will be used to enhance our product in the future. Thanks! <br><br>  Your survey will begin after completing your visit. ',e+='<div class="links"><a class="yL" href="#"> Yes, I\'ll take the survey </a>&nbsp;|&nbsp;<a href="#" class="nL"> No, thank you </a></div></div>',e+="</div>",$("#surveyDialog").html(e).css("right",$(window).width()-($("#sdHeader").position().left+$("#sdHeader").width())).show(),$("#surveyDialog").html(e).css("display","block"),$("#surveyDialog").delay(2e3).animate({bottom:"+=250px"},1e3,"swing",function(){}),$(".yL").click(ES.surveyAccept),$("#surveyDialog .nL, #surveyDialog #closeWindow").click(ES.surveyClose)}},surveyAccept:function(){var e="http://"+window.location.hostname,i="width=900,height=600,location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes",o=window.open(e,"",i);try{var t=o.window.open("","_blank","");t&&t.close(),o.blur(),window.focus(),o&&(exitSurveyHTML=ES.gHTML(),o.document.write(exitSurveyHTML),o.document.close()),ES.surveyClose()}catch(n){ES.surveyClose()}},surveyClose:function(e){e&&e.preventDefault(),$("#surveyDialog").css("display","none")},gHTML:function(){var e="";return e+='<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">',e+="<html>",e+="<head>",e+="<title>Feedback</title>",e+='<style type="text/css">',e+="body {    color: #5c5c5c;    font-family: Arial Unicode MS; margin: 0;} .sBody {    padding: 20px 40px;}.sSubHeading {    font-size: 16px;}.sHeading {   font-size: 20px;}.sButton input {    height: 30px;    margin: 0; color: #5c5c5c; background: #eee; border: 1px solid #c9c9c9;}.sButton {    font-size: 13px;    font-weight: bold;    margin: 20px 0;}.sText {   font-size: 13px;} .header {    background-color: #6d9d30;    color: #fff;    font-size: 25px;    height: 40px;    text-align: left;} .header span {margin-left: 10px}",e+="</style>",e+="</head>",e+="<body>",e+='<div class="header"><span>ScienceDirect</span></div>',e+='<div class="sBody">',e+='<div class="sHeading">Thank you for agreeing to help us!</div>',e+='<div class="sSubHeading">Please minimize window to continue using ScienceDirect. Your survey will begin after completing your visit.</div>',e+="</div>",e+='<script type="text/javascript">',e+="var intl;",e+="function loadSurvey() {",e+="clearInterval(intl);",e+="window.resizeTo(900,600);",e+='this.location="'+esLink+'";',e+="}",e+="var lastseen = window.opener.location.hostname;",e+="function CheckParent() {",e+="try {",e+="var host = window.opener.location.hostname;",e+="if (host != lastseen){",e+="lastseen = host;",e+="}",e+="return;",e+="} catch(error){",e+="clearInterval(intl);",e+="moveTo(screen.width/2-450,screen.height/2-300);",e+="this.focus();",e+='if (navigator.appName != "Microsoft Internet Explorer") {',e+='alert("Click ok to begin your survey");',e+="}",e+='this.location="'+esLink+'";',e+="}",e+="}",e+='intl = setInterval("CheckParent()", 500);',e+="<\/script>",e+="</body>",e+="</html>"},setCookie:function(e,i){var o=new Date;o.setDate(o.getDate()+180);var t=escape(i)+("; expires="+o.toUTCString());document.cookie=e+"="+t+";path=/"},getCookie:function(e){var i=document.cookie.match(e+"=([^;]*)");return i?i[1]:void 0}},$(document).ready(function(){ES.surveyInvite()})}</script>
+
+
+<div id="sdpa"></div>
+<script>SDPA.init();</script>
+<div id="appBackground"></div>
+<div style="position: fixed;" id="appDialog" class="files">
+    <div id="header">
+        <h1 class="headline">Download PDFs</h1>
+        <img id="logo" class="sd-bubbles" src="sciencedirect.svg" onerror="this.src='http://cdn.els-cdn.com/sd/sciencedirect.png'">
+        <a class="close" id="closeWindow" href="#"><img src="close-icon.png"></a>
+    </div>
+    <div id="contentBlk" class="view">
+        <div class="help_button" id="ddmMainHelp"><a class="ddmHelp" target="sdhelp" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=DM_main.htm&amp;_btn=Y&amp;_zone=TopNavBar&amp;_origin=article" title="Help (Opens new window)">Help</a></div>
+        <div class="help_button" id="ddmNewformatHelp"><a class="ddmHelp" target="sdhelp" href="http://www.sciencedirect.com/science?_ob=HelpURL&amp;_file=DM_newformat.htm&amp;_btn=Y&amp;_zone=TopNavBar&amp;_origin=article" title="Help (Opens new window)">Help</a></div>
+        <div id="filesTemplate"></div>
+        <div id="namingTemplate"></div> 
+    </div>
+    <div class="footer"></div>
+</div>
+
+
+
+
+
+<script src="s_code_131.js"></script><div style="position: fixed; width: 30px; height: 140px; z-index: 999; right: 0px; top: 50%; margin-top: -70px;" tabindex="0" class="usabilla_live_button_container"><iframe title="Visual Feedback Button" data-tags="right" scrolling="no" marginheight="0" marginwidth="0" style="width: 30px; height: 140px; margin: 0px; padding: 0px; border: 0px none; overflow: hidden; z-index: 9998; position: absolute; left: 0px; top: 0px; background-color: transparent;" src="S0048969711000787_14.html" frameborder="0"></iframe></div><img src="pageReport" style="display: none;" height="0" width="0"><img src="idx" style="display: none;" height="0" width="0"><div id="sgfGhost" style="display: none;"><div class="containerApplOver invisible" id="sgfGhost_299152"><div id="footergadgets-gadget-title-bar-5" class="curveBoxleftNormal ActiveGadget  sgfOpen"><img src="icon.jpg" class="headingGadgetIcon " title="Entitle Gadget" border="none"><h3 style="cursor: default;" title="" id="GadgetName5" class="elsevierTimeLOver truncateTitle">Entitle Gadget</h3><div id="Controls_5" class="Controls menuControlParent" align="right"><ul class="menu"><li class="menuControls"> <a href="javascript:void(0);" onclick="shindig.container.getGadget(5).handleToggle(this);"><div id="toggleBtn_5" class="sprite-close openCloseBtn" title="Close This Application" style="background-image: url('gsframeworksprite.png');"></div></a></li><li class="menuControls"><a href="javascript:void(0);" id="button-remote_iframe_5_userPrefsDialog" onclick="shindig.container.getGadget(5).openMenuOptions();return false;"><div class="sprite-options" title="Open Options" style="background-image: url('gsframeworksprite.png');"></div></a></li><ul class="submenu" id="sb-remote_iframe_5_userPrefsDialog"></ul></ul></div><div id="Close_5" class="Controls_close" style="display: none;"><a href="javascript:shindig.container.getGadget(5).closeGadget();"><div class="sprite-close_hoover" title="Close" style="background-image: url('gsframeworksprite.png');"></div></a></div></div><div id="remote_iframe_5_userPrefsDialog" style="display: none; z-index: 10; left: 0px; top: 0px; border-right: 1px solid rgb(205, 240, 164); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(205, 240, 164) rgb(205, 240, 164); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(238, 247, 227); width: 99%; font-weight: bold;" class=""></div><div id="maincontremote_iframe_5" style="border-style: solid;" class="containerAppDetails "><iframe id="remote_iframe_5" onload="sgf.killTimer('299152', 'sgfGhost');" name="remote_iframe_5" src="S0048969711000787_15.html" style="text-align: left;" "="" scrolling="auto" frameborder="no" height="" width="100%"></iframe></div></div></div></body>
+</html>

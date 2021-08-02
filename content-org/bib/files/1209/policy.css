@@ -1,0 +1,602 @@
+/*
+-------------------------------------------
+    Layout
+-------------------------------------------
+*/
+
+/* all added */
+
+.student-policies .ou-content * {box-sizing: border-box;}
+
+.student-policies-home div.ou-content {padding: 0;} /* remove padding for home creative */
+
+/* fix widgets on homep now they have no padding around them */
+.student-policies-home #ou-content .content-bottom {
+    margin: 0 auto;
+    max-width: 95%;
+}
+
+.ou-wrap:before, 
+.ou-wrap:after {
+    content: "";
+    display: table;
+}
+
+.ou-wrap:after {clear:both;}
+
+.ou-wrap {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ou-wrap--small {max-width: 800px;}
+
+.ou-wrap--padded {padding: 0 20px;}
+
+.ou-wrap--centered {margin: 0 auto;}
+
+/**/
+
+
+
+
+/*
+-------------------------------------------
+    Search
+-------------------------------------------
+*/
+
+/* all added */
+
+.ou-search {
+    position: relative;
+}
+
+.ou-search__input {
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    width: 100%;
+    padding: 10px 25px 10px 15px;
+    font-size: 1em;
+}
+
+.ou-search__input--large {
+    padding:15px 35px 15px 20px;
+    font-size: 1.1em;
+}
+
+.ou-search__input--simple {border: none;}
+
+.ou-search__input:focus {
+    background-color: #eee;
+    outline: none;
+}
+
+.ou-search__button {
+    position: absolute;
+    z-index: 9999;
+    top:10px;
+    right: 10px;
+    width: 18px;
+    height: 18px;
+    background: url(icons/icon-search.png);
+    background: url(icons/icon-search.svg), linear-gradient(transparent, transparent);
+    background-position:0 0;
+    background-repeat:no-repeat;
+    background-size: 18px 18px;
+    -webkit-appearance:none;
+    border: none;
+    cursor: pointer;
+}
+
+.ou-search__button--large {
+    position: absolute;
+    top:14px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+}
+
+.ou-search__helper {
+    color: #000;
+    background-color: transparent;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+}
+
+/* Algolia auto-complete styles */
+
+.ou-search span.algolia-autocomplete {
+    width: 100%;
+}
+
+.ou-search .aa-dropdown-menu {
+    width: 100%;
+    display: inline-block;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-top: none;
+    z-index: 1000;
+}
+
+.ou-search .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: .6em;
+}
+
+.ou-search .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: #eee;
+}
+
+
+/*
+-------------------------------------------
+    Articles
+-------------------------------------------
+*/
+
+
+.ou-articles {margin-bottom:20px;}
+
+.ou-articles__article {
+    border-bottom:1px solid #ddd;
+    padding-bottom:20px;
+    margin-bottom:20px;
+    width:100%;
+    display:table;
+    table-layout: auto;
+}
+
+.ou-articles__article:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+.ou-articles__text {
+    display: table-cell;
+    vertical-align: top;
+    width:auto;
+}
+
+.ou-articles__text h2,
+.ou-articles__text h3 {
+    font-size:1.3em;
+    margin:0 0 5px 0;
+    line-height:150%;
+}
+
+.ou-articles__text h2 a,
+.ou-articles__text h3 a {text-decoration:none;}
+
+.ou-articles__text p {margin-bottom: 15px;}
+
+.ou-articles__text p:last-child {margin-bottom:0;}
+
+/* striped */
+
+.ou-articles--striped .ou-articles__article {
+    border-bottom:none;
+    padding:20px;
+    margin:0;
+    width:100%;
+}
+
+.ou-articles--striped .ou-articles__article:nth-child(odd) {background: #e7eff7;}
+
+
+
+/*
+-------------------------------------------
+    Typography
+-------------------------------------------
+*/
+
+
+/* edited name to not conflict (ou-small-print) */
+.ou-smallprint {
+    color: #666;
+    background-color: transparent;
+}
+
+.ou-smallprint--tiny {font-size: .9em;}
+
+.ou-heading {}
+
+/* make any heading the smallest ICE allows */
+.ou-heading--smallest {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 130%; /* added */
+}
+
+
+
+/*
+-------------------------------------------
+    Lists
+-------------------------------------------
+*/
+
+/* reset */
+
+.ou-list {
+    margin:0 0 20px 0; 
+    padding:0;
+    list-style:none;
+    list-style-type:none;
+}
+
+.ou-list ul {
+    margin:10px 0;
+    padding:0 0 0 30px;
+}
+
+.ou-list li {
+    list-style:none;
+    list-style-type:none;
+    display:block;
+    margin:0;
+    line-height:150%;
+}
+
+
+/* docs */
+
+.ou-list--docs li {
+    padding:0 0 0 22px;
+    margin:0 0 8px 0;
+    background-position:0 2px;
+    background-repeat:no-repeat;
+    background-color:transparent;
+}
+
+.ou-list--docs a {
+    color: #039;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.ou-list--docs--pdf li,
+.ou-list__pdf {
+    background: url(icons/icon-pdf.png);
+    background: url(icons/icon-pdf.svg), linear-gradient(transparent, transparent);
+}
+
+.ou-list--docs--pdf li {
+    background-position:0 2px;
+    background-repeat:no-repeat;
+}
+
+.ou-list--docs--spotlight-pdf li {
+    padding-left:55px;
+    background: url(icons/icon-pdf-large.png);
+    background: url(icons/icon-pdf-large.svg), linear-gradient(transparent, transparent);
+    background-position:0 0;
+    background-repeat:no-repeat;
+    min-height: 48px;
+}
+
+.ou-list--docs a:hover {
+    text-decoration:none;
+    color: #cc3300; /* edited */
+}
+
+/* links */
+
+.ou-list--links a {text-decoration:none;}
+.ou-list--links a:hover {text-decoration:underline;}
+
+/* added - tags */
+
+.ou-list--tags li {
+    display:inline-block;
+    margin:0 5px 5px 0;
+    padding:0;
+    line-height:100%;
+}
+
+.ou-list--tags a {
+    font-size: .85em;
+    text-decoration:none;
+    display: inline-block;
+    padding: 3px 5px;
+    color: #eee;
+    background-color: #045B67;
+    border-radius: 3px;
+}
+
+.ou-list--tags a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* horizontal (inline) */
+
+.ou-list--horizontal li {
+    display:inline-block;
+    margin:0 5px 0 0;
+    padding:0;
+    line-height:100%;
+}
+
+.ou-list--horizontal a {
+    text-decoration:none;
+    color:#039;
+    background-color:transparent;
+}
+
+.ou-list--horizontal a:hover {
+    text-decoration:underline;
+    color:#000; 
+    background-color:transparent;
+}
+
+
+
+/*
+-------------------------------------------
+    Creative
+-------------------------------------------
+*/
+
+
+.ou-creative {
+    background-color: #f5f5f5;
+    color: #222;
+    position:relative;
+}
+
+.ou-creative__wrap {
+    position:relative;
+    max-width:1500px;
+    margin:0 auto;
+}
+
+.ou-creative img {
+    margin:0 auto;
+    display:block;
+    border-radius: .5em .5em 0 0; /* added */
+}
+
+/* added */
+
+.ou-creative__content {
+    box-sizing: border-box;
+    background: #00B7B2;
+    color: #fff;
+    padding: 30px 30px 25px 30px;
+    width: 100%;
+}
+
+/**/
+
+
+/*
+-------------------------------------------
+    Timeline
+-------------------------------------------
+*/
+
+
+.ou-timeline {
+    position: relative;
+    padding-left: 0; /* edited */
+    margin: 30px 0; /* added */
+}
+
+.ou-timeline:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    top: 10px;
+    left: 4px; /* edited */
+    margin-left: 0;
+    border-left: 2px solid #CCE2F1;
+}
+
+.ou-timeline__group {
+    padding-left: 30px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.ou-timeline__group:before {
+    content: "";
+    width:10px;
+    height:10px;
+    border-radius:10px;
+    background:#87BADE;
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+
+.ou-timeline__heading {
+    font-size:1.1em;
+    font-weight: bold;
+    margin-bottom: 15px; /* edited */
+    line-height: 130%; /* added */
+}
+
+
+/*
+-------------------------------------------
+    Toggle
+-------------------------------------------
+*/
+
+#ou-site-body .ou-toggle {
+    text-decoration: none;
+    line-height: 100%; /* added */
+    display: none; /* added */
+    padding-left: 20px;
+}
+
+#ou-site-body .ou-toggle:hover {
+    text-decoration: none;
+    color: #cc3300; /* edited */
+    background-color: transparent;
+}
+
+#ou-site-body .ou-toggle--closed {
+    display: inline-block; /* added */
+    background: url(icons/icon-plus.png);
+    background: url(icons/icon-plus.svg), linear-gradient(transparent, transparent);
+    background-position:0 2px;
+    background-repeat:no-repeat;
+}
+
+#ou-site-body .ou-toggle--open {
+    display: inline-block; /* added */
+    background: url(icons/icon-minus.png);
+    background: url(icons/icon-minus.svg), linear-gradient(transparent, transparent);
+    background-position:0 6px;
+    background-repeat:no-repeat;
+}
+
+
+/*
+-------------------------------------------
+    Utilities
+-------------------------------------------
+*/
+
+
+/* margins */
+
+.m-0 {margin:0;}
+
+.mt-0 {margin-top: 0px;}
+.mt-5 {margin-top: 5px;}
+.mt-10 {margin-top: 10px;}
+.mt-20 {margin-top: 20px;}
+.mt-30 {margin-top: 30px;}
+.mt-40 {margin-top: 40px;}
+.mt-50 {margin-top: 50px;}
+
+.mb-0 {margin-bottom: 0;}
+.mb-5 {margin-bottom: 5px;}
+.mb-10 {margin-bottom: 10px;}
+.mb-15 {margin-bottom: 15px;}
+.mb-20 {margin-bottom: 20px;}
+.mb-30 {margin-bottom: 30px;}
+.mb-40 {margin-bottom: 40px;}
+.mb-50 {margin-bottom: 50px;}
+
+.ml-0 {margin-left: 0;}
+.ml-5 {margin-left: 5px;}
+.ml-10 {margin-left: 10px;}
+.ml-15 {margin-left: 15px;}
+.ml-20 {margin-left: 20px;}
+.ml-30 {margin-left: 30px;}
+.ml-40 {margin-left: 40px;}
+.ml-50 {margin-left: 50px;}
+
+.mr-0 {margin-right: 0;}
+.mr-5 {margin-right: 5px;}
+.mr-10 {margin-right: 10px;}
+.mr-15 {margin-right: 15px;}
+.mr-20 {margin-right: 20px;}
+.mr-30 {margin-right: 30px;}
+.mr-40 {margin-right: 40px;}
+.mr-50 {margin-right: 50px;}
+
+
+
+
+/*
+-------------------------------------------
+    Drizzle theme
+-------------------------------------------
+
+grey interim modifier theme - to be removed when site becomes a 
+fully mstandalone OUICE site. removal of the body class and any
+'x' at the beginning of classes in the markup will reinstate the
+original design
+
+*/
+
+.student-policies--drizzle .ou-search__input:focus {
+    background-color: #fff;
+    border-color: #777;
+}
+
+.student-policies--drizzle .ou-search__helper {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.student-policies--drizzle .ou-list--tags a {
+    color: #326fb4;
+    background-color: #fff;
+    border: 1px solid #326fb4;
+    font-weight: bold;
+    padding: 6px 8px;
+}
+
+.student-policies--drizzle .ou-list--tags a:hover {
+    background-color: #326fb4;
+    color: #fff;
+}
+
+.student-policies--drizzle .ou-creative {border-radius: .5em .5em 0 0;}
+
+.student-policies--drizzle .ou-creative img {display: none;}
+
+.student-policies--drizzle .ou-creative__content {
+    background-color: transparent;
+    padding: 40px 30px 30px 40px;
+}
+
+/**/
+
+
+
+
+
+@media (min-width: 600px) {
+
+    .student-policies-home p.staff,
+    .student-policies-home div.box-staff {
+        margin: 0 40px;
+    }
+
+
+    .ou-timeline {padding-left: 16px;}
+    .ou-timeline:before {left: 20px;}
+
+    .ou-wrap--padded {padding: 0 40px;}
+
+
+} /* end media query */
+
+
+@media (min-width: 700px) {
+
+    .ou-creative__content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 6px 6px 0 0;
+    }
+
+    /* drizzle */
+    .student-policies--drizzle .ou-creative__content {
+        margin:0;
+        position: static;
+    }
+
+}
+
+
+

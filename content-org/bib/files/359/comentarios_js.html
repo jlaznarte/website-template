@@ -1,0 +1,241 @@
+if (typeof ESKUP == "undefined" || !ESKUP) {
+    var ESKUP = {};
+}
+
+
+ESKUP.isOpera = null;ESKUP.isSafari = null;ESKUP.isGecko= null;ESKUP.isIE = null;ESKUP.userAgent = null;ESKUP.ua= null;
+ESKUP.userAgent = navigator.userAgent.toLowerCase();
+ESKUP.ua        = navigator.userAgent;
+ESKUP.userAgentMatches = null;
+
+if ((/KHTML/).test(ESKUP.ua)) {
+    ESKUP.isSafari=1;
+}
+ESKUP.userAgentMatches=ESKUP.ua.match(/AppleWebKit\/([^\s]*)/);
+if (ESKUP.userAgentMatches&&ESKUP.userAgentMatches[1]) {
+    ESKUP.isSafari=parseFloat(ESKUP.userAgentMatches[1]);
+}
+if (!ESKUP.isSafari) {
+    ESKUP.userAgentMatches=ESKUP.ua.match(/Opera[\s\/]([^\s]*)/);
+    if (ESKUP.userAgentMatches&&ESKUP.userAgentMatches[1]) {
+        ESKUP.isOpera=parseFloat(ESKUP.userAgentMatches[1]);
+    } else {
+        ESKUP.userAgentMatches=ESKUP.ua.match(/MSIE\s([^;]*)/);
+        if (ESKUP.userAgentMatches&&ESKUP.userAgentMatches[1]) {
+            ESKUP.isIE=parseFloat(ESKUP.userAgentMatches[1]);
+        } else {
+            ESKUP.userAgentMatches=ESKUP.ua.match(/Gecko\/([^\s]*)/);
+            if (ESKUP.userAgentMatches) {
+                ESKUP.isGecko=1;
+            }
+        }
+    }
+}
+
+ESKUP.resizeIframeESKUP = function(frameId, newHeight){
+    if (document.getElementById(frameId)) {
+        document.getElementById(frameId).height = parseInt(newHeight) + "px";
+    }
+}
+
+ESKUP.setScrollToWidgetESKUP = function(frameId) {
+    if (typeof EPETUtils_posicionarScrollEnPagina == 'function' &&
+        typeof EPETUtils_calcAbsPositionV2        == 'function') {
+        EPETUtils_posicionarScrollEnPagina(EPETUtils_calcAbsPositionV2(document.getElementById(frameId))[1])
+    } else {
+        location.href = "#a_" + frameId;
+    }
+}
+
+ESKUP.setNombreUsuario = function(frameId, nombre){
+    if (document.getElementById('nickname_'+frameId)) {
+        document.getElementById('nickname_'+frameId).innerHTML = decodeURIComponent(nombre);
+    }
+}
+
+
+var dispositivoMovil =( (ESKUP.userAgent.indexOf("iphone") > -1) || (ESKUP.userAgent.indexOf("ipad") > -1)) || ESKUP.userAgent.indexOf("android") > -1 || ESKUP.userAgent.indexOf("mobile") > -1;
+
+ESKUP.receiveMessageESKUP = function(event) {
+    var urlsReceiveMessage = "|" + ESKUP.urlsReceiveMessage.join("|") + "|";
+    var domainAllowed      = false;
+
+    // Verificamos si nos fiamos del dominio emisor del mensaje
+    if (urlsReceiveMessage.indexOf(event.origin) != -1) {
+        domainAllowed = true;
+    } else if (ESKUP.expUrlReceiveMessage) {
+        var urlRegExp = new RegExp(ESKUP.expUrlReceiveMessage, "i");
+        if (event.origin.match(urlRegExp)) {
+            domainAllowed = true;
+        }
+    }
+
+    if (!domainAllowed) {
+        return;
+    } else {
+        var _cmdHashWidgetEskup = null;
+        try {
+            eval ("_cmdHashWidgetEskup = " + event.data);
+        } catch (e) {
+            return;
+        }
+
+        if (_cmdHashWidgetEskup.command == "ampliaFotoEskup") {
+            // Cargamos, si no lo estan, el JS y el CSS
+            ESKUP.files.add("http://skp00.epimg.net/Estilos/v1.x/v1.0/eskup_ampliar_foto.css","css");
+            ESKUP.files.add("http://skp00.epimg.net/JS/eskup_ampliarfoto-20150804-01.js","js", function() {
+                ESKUPcrearTelonMultimedia();
+                eval('('+decodeURI(_cmdHashWidgetEskup.funcionAmpliar)+')(null,_cmdHashWidgetEskup.params[0],_cmdHashWidgetEskup.params[1],_cmdHashWidgetEskup.params[2],_cmdHashWidgetEskup.params[3]);');
+            });
+        }
+        if (_cmdHashWidgetEskup.command == "resizeIframe") {
+            ESKUP.resizeIframeESKUP(_cmdHashWidgetEskup.id, _cmdHashWidgetEskup.params[0]);
+        } else if (_cmdHashWidgetEskup.command == "setScrollToWidget") {
+            ESKUP.setScrollToWidgetESKUP(_cmdHashWidgetEskup.id);
+        } else if (_cmdHashWidgetEskup.command == "setNumMensajes") {
+            if (ESKUP.onReceiveNumMensajes[_cmdHashWidgetEskup.id]) {
+                var callbackNumMensajes = ESKUP.onReceiveNumMensajes[_cmdHashWidgetEskup.id];
+                callbackNumMensajes(_cmdHashWidgetEskup.params[0]);
+            }
+        } else if (_cmdHashWidgetEskup.command == "setNombreUsuario") {
+            ESKUP.setNombreUsuario(_cmdHashWidgetEskup.id, _cmdHashWidgetEskup.params[0]);
+        } else if (_cmdHashWidgetEskup.command == "trackWidgetNewInfo") {
+            if (ESKUP.onTrackWidgetNewInfo[_cmdHashWidgetEskup.id]) {
+                var callbackNewInfo = ESKUP.onTrackWidgetNewInfo[_cmdHashWidgetEskup.id];
+                callbackNewInfo();
+            }
+        } else if (_cmdHashWidgetEskup.command == "trackWidgetNewComment") {
+            if (ESKUP.onTrackWidgetNewComment[_cmdHashWidgetEskup.id]) {
+                var callbackNewComment = ESKUP.onTrackWidgetNewComment[_cmdHashWidgetEskup.id];
+                callbackNewComment();
+            }
+        }
+    }
+}
+
+ESKUP.files = {
+    pending   : Array(),
+    loaded    : {},
+    isLoading : null,
+    current   : null,
+
+    loader    : function() {
+        if (!ESKUP.files.current) {
+            if (ESKUP.files.pending.length) {
+                var obj = ESKUP.files.pending.shift();
+                if (typeof ESKUP.files.loaded[obj.src] == 'undefined') {
+                    if (obj.type == "js" || obj.type == "css") {
+                        ESKUP.files.current = obj.src;
+                        var tag = null;
+                        if (obj.type == "js") {
+                            tag = document.createElement("script");
+                            tag.setAttribute("type", "text/javascript");
+                            tag.setAttribute("src", obj.src);
+                        }
+                        if (obj.type == "css") {
+                            tag = document.createElement("link")
+                            tag.setAttribute("rel", "stylesheet")
+                            tag.setAttribute("type", "text/css")
+                            tag.setAttribute("href", obj.src)
+                        }
+                        tag.loaded = 0;
+                        tag.onload = tag.onerror = tag.onreadystatechange = function() {
+                            if ((tag.readyState && !(/^c|loade/.test(tag.readyState))) || tag.loaded) return;
+                            tag.onload = tag.onreadystatechange = null
+                            tag.loaded = 1
+                            ESKUP.files.loaded[ESKUP.files.current] = 1;
+                            ESKUP.files.current = null;
+                            if (typeof obj.callback == 'function') {
+                                obj.callback();
+                            }
+                        }
+                        var _head  = document.head || document.getElementsByTagName('head')[0];
+                        _head.appendChild(tag);
+                    }
+                } else {
+                    // ya tenemos obj.src, si hay callback lo ejecutamos
+                    if (typeof obj.callback == 'function') {
+                        obj.callback();
+                    }
+                }
+            } else {
+                clearInterval(ESKUP.files.isLoading);
+                ESKUP.files.isLoading = null;
+            }
+        }
+    },
+    start   : function() {
+        if (!ESKUP.files.isLoading) {
+            ESKUP.files.isLoading = setInterval(ESKUP.files.loader, 100);
+        }
+    },
+
+    add     : function(src, type, callback) {
+        var obj = { src: src, type: type, callback: callback };
+        ESKUP.files.pending.push(obj);
+        ESKUP.files.start();
+    }
+}
+
+ESKUP.initGhvWidgetESKUP = function(frameId) {
+
+    // Asociamos los eventos "message" a la ventana para el paso de mensaje entre iframes
+    if(window.addEventListener){
+        window.addEventListener("message", ESKUP.receiveMessageESKUP, false);
+    } else { // IE
+        window.attachEvent('onmessage', ESKUP.receiveMessageESKUP);
+    }
+
+    if (document.getElementById(frameId)) {
+        var iFrameObj = document.getElementById(frameId);
+        if (iFrameObj.scrolling == 'no') {
+            var regExpLocationHost = new RegExp(location.host, "i");
+            // Si es un navegador moderno (o un IE antiguo pero el iframe esta en el mismo dominio)
+            if (regExpLocationHost.test(iFrameObj.src) || !ESKUP.isIE || (ESKUP.isIE && ESKUP.isIE >= 8)) {
+                iFrameObj.scrolling = "no";
+                iFrameObj.style.overflow = "hidden";
+            }
+        }
+    }
+
+}
+
+ESKUP.setOnReceiveNumMensajes = function(frameId, callback) {
+    ESKUP.onReceiveNumMensajes[frameId] = callback;
+}
+
+ESKUP.setOnTrackWidgetNewInfo = function(frameId, callback) {
+    ESKUP.onTrackWidgetNewInfo[frameId] = callback;
+}
+
+ESKUP.setOnTrackWidgetNewComment = function(frameId, callback) {
+    ESKUP.onTrackWidgetNewComment[frameId] = callback;
+}
+
+
+if (typeof ESKUP.urlsReceiveMessage == "undefined") {
+    ESKUP.urlsReceiveMessage = [];
+}
+if (typeof ESKUP.expUrlReceiveMessage == "undefined") {
+    ESKUP.expUrlReceiveMessage = "";
+}
+
+if (typeof ESKUP.onReceiveNumMensajes == "undefined") {
+    ESKUP.onReceiveNumMensajes = {};
+}
+if (typeof ESKUP.onTrackWidgetNewInfo == "undefined") {
+    ESKUP.onTrackWidgetNewInfo = {};
+}
+if (typeof ESKUP.onTrackWidgetNewComment == "undefined") {
+    ESKUP.onTrackWidgetNewComment = {};
+}
+
+ESKUP.urlsReceiveMessage.push("http://eskup.elpais.com/");
+ESKUP.expUrlReceiveMessage = "elpais.com";
+
+
+document.write("<a name=\"a_comentarios_noticia_1330414416-c37d437104d2e6a5f178cb840101ee7b\" id=\"a_comentarios_noticia_1330414416-c37d437104d2e6a5f178cb840101ee7b\"></a>");
+document.write("<iframe id=\"comentarios_noticia_1330414416-c37d437104d2e6a5f178cb840101ee7b\" src=\"/t.gif\" data-src=\"http://elpais.com/Comentarios/comentarios.html?ghi=1330414416-c37d437104d2e6a5f178cb840101ee7b&gww=460&gcss=/estilos/v1.x/v1.4/eskup_widget_comentarios_noticia.css&gjs=1&ghw=1&gll=1\" width=\"100%\" height=\"1\" frameborder=\"0\" scrolling=\"no\" marginwidth=\"0\" marginheight=\"0\"></iframe>");
+document.write("<scr"+"ipt type=\"text/javascript\">");
+document.write("ESKUP.initGhvWidgetESKUP(\"comentarios_noticia_1330414416-c37d437104d2e6a5f178cb840101ee7b\");");
+document.write("</scr"+"ipt>");

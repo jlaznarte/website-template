@@ -1,0 +1,19 @@
+
+/* ::::: null ::::: */
+
+#container { width: 265px; overflow: hidden; font-family: Arial,Verdana,sans-serif; font-size: 10pt; padding: 10px; }
+DIV#heading-bar-left { float: left; white-space: nowrap; font-family: Arial,Verdana,sans-serif; font-size: 13px; font-weight: bold; color: rgb(92, 92, 92); }
+DIV#heading-bar { height: 30px; width: auto; white-space: nowrap; }
+img { border: medium none; font-size: 100%; margin: 0px; padding-top: 3px; vertical-align: baseline; list-style: outside none none; font-family: "Arial Unicode MS","Arial Unicode",Arial,"URW Gothic L",Helvetica,Tahoma,sans-serif ! important; }
+a { color: rgb(92, 92, 92); }
+.moreInfo { font: 11px Arial; margin: 6px 9px 12px; }
+.summary { font: 12px Arial; margin: 12px 9px; color: rgb(46, 46, 46); }
+.captiontext { font-size: 1em; font-weight: bold; color: rgb(84, 84, 84); margin-left: -0.35px; }
+.totaltext { margin-left: 72px; }
+.desctext { font-size: 0.9em; color: rgb(49, 108, 157); }
+hr { background-color: rgb(215, 215, 215); border: 0px none; color: rgb(215, 215, 215); height: 1px; }
+* { margin: 0px; padding: 0px; }
+
+/* ::::: null ::::: */
+
+.mboxDefault { visibility: hidden; }

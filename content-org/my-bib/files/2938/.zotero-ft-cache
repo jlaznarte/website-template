@@ -1,0 +1,115 @@
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. Skip to main content Skip to article
+Elsevier logo ScienceDirect
+
+    Journals & Books 
+
+Register Sign in
+View PDF
+
+    Seamless access
+
+    Access through your institution
+    Purchase PDF 
+
+Outline
+
+    Abstract
+    Keywords
+    1. Introduction and problem description
+    2. Objectives
+    3. Data and methodology
+    4. Considered models
+    5. Results and discussion
+    6. Conclusions and further work
+    References 
+
+Show full outline
+Figures (4)
+
+    Fig. 1. Sampled 2003 data, linear log-like transformation applied to it and resulting…
+    Fig. 2. Autocorrelation (a) and partial autocorrelation (b) diagrams of the transformed…
+    Fig. 3. Decomposition of the series into seasonal and trend components
+    Fig. 4. Values for 2003: expected and forecasted by ANFIS and NEFPROX
+
+Tables (2)
+
+    Table 1
+    Table 2 
+
+Elsevier
+Expert Systems with Applications
+Volume 32, Issue 4 , May 2007, Pages 1218-1225
+Expert Systems with Applications
+Forecasting airborne pollen concentration time series with neural and neuro-fuzzy models
+Author links open overlay panel José Luis Aznarte M. a José Manuel Benítez Sánchez a Diego Nieto Lugilde b Concepción de Linares Fernández b Consuelo Díaz de la Guardia b Francisca Alba Sánchez b
+Show more
+Add to Mendeley
+Share
+Cite
+https://doi.org/10.1016/j.eswa.2006.02.011 Get rights and content
+Abstract
+
+Forecasting airborne pollen concentrations is one of the most studied topics in aerobiology, due to its crucial application to allergology. The most used tools for this problem are single lineal regressions and autoregressive models (ARIMA). Notwithstanding, few works have used more sophisticated tools based in Artificial Intelligence, as are neural or neuro-fuzzy models. In this work, we applied some of these models to forecast olive pollen concentrations in the atmosphere of Granada (Spain). We first studied the overall performance of the selected models, then considering the data segmented into intervals (low, medium and high concentration), to test how they behave on each interval. Experimental results show an advantage of the neuro-fuzzy models against classical statistical methods, although there is still room for improvement. 1
+
+    Previous article in issue
+    Next article in issue 
+
+Keywords
+Aerobiology
+Airborne pollen
+Neuro-fuzzy
+Time series
+Forecasting
+
+1
+
+    This research has been partially supported by Ministerio de Ciencia y Tecnología under project TIC2003-04650.
+
+View full text
+Copyright © 2006 Elsevier Ltd. All rights reserved.
+Recommended articles
+
+    A new semantic-based feature selection method for spam filtering
+    Applied Soft Computing, Volume 76, 2019, pp. 89-104
+    Purchase PDF
+    View details
+    SimilCatch: Enhanced social spammers detection on Twitter using Markov Random Fields
+    Information Processing & Management, Volume 57, Issue 6, 2020, Article 102317
+    Purchase PDF
+    View details
+    SDRS: A new lossless dimensionality reduction for text corpora
+    Information Processing & Management, Volume 57, Issue 4, 2020, Article 102249
+    Purchase PDF
+    View details
+
+1 2 Next
+Citing articles (81)
+Article Metrics
+Citations
+
+    Citation Indexes: 81 
+
+Captures
+
+    Exports-Saves: 4
+    Readers: 49 
+
+plumX logo
+View details
+Elsevier logo
+
+    About ScienceDirect
+    Remote access
+    Shopping cart
+    Advertise
+    Contact and support
+    Terms and conditions
+    Privacy policy 
+
+We use cookies to help provide and enhance our service and tailor content and ads. By continuing you agree to the use of cookies .
+
+Copyright © 2021 Elsevier B.V. or its licensors or contributors. ScienceDirect ® is a registered trademark of Elsevier B.V.
+
+ScienceDirect ® is a registered trademark of Elsevier B.V.
+RELX group home page

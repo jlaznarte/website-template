@@ -1,0 +1,344 @@
+
+Show all
+
+    Show all
+    Announcements
+    Journal
+    Books
+    e-flux Architecture
+    Program
+    Projects
+
+Search for
+
+ 
+
+Search
+
+    Clients
+    About
+    Subscribe
+    Contact
+
+    Announcements
+    Journal
+    Video & Film
+    Podcasts
+    Conversations
+    art-agenda reviews
+    Art & Education
+    e-flux Architecture
+    Books
+    Program
+    Projects
+
+    Facebook
+    Twitter
+    Instagram
+
+    Privacy policy
+
+311 East Broadway
+New York, NY 10002, USA
+Journal #87 - Jackie Wang - “This Is a Story About Nerds and Cops”: PredPol and Algorithmic Policing
+
+Journal #87
+December 2017
+Journal #87 - December 2017
+Jackie Wang
+“This Is a Story About Nerds and Cops”: PredPol and Algorithmic Policing
+
+PredPol co-developer P Jeffrey Brantingham at the Unified Command Post in Los Angeles. 'This is not Minority Report,' he said. Photo: Damian Dovarganes/AP
+
+In 2011, Harvard’s John F. Kennedy School of Government and the National Institute of Justice published a paper titled “Police Science: Toward a New Paradigm,” the ideas of which were developed at the Executive Session on Policing and Public Safety hosted at Harvard University. The paper calls for a “radical reformation of the role of science in policing” that prioritizes evidence-based policies and emphasizes the need for closer collaboration between universities and police departments. 1 In the opening paragraph, the authors, David Weisburd and Peter Neyroud, assert that “the advancement of science in policing is essential if police are to retain public support and legitimacy.” 2 Given that critics of the police associate law enforcement with the arbitrary use of force, racial domination, and the discretionary power to make decisions about who will live and who will die, the rebranding of policing in a way that foregrounds statistical impersonality and symbolically removes the agency of individual officers is a clever way to cast police activity as neutral, unbiased, and rational. This glosses over the fact that using crime data gathered by the police to determine where officers should go simply sends police to patrol the poor neighborhoods they have historically patrolled when they were guided by their intuitions and biases.
+
+This “new paradigm” is not merely a reworking of the models and practices used by law enforcement, but a revision of the police’s public image through the deployment of science’s claims to objectivity. As Zach Friend, the man behind the media strategy of the start-up company PredPol (short for “predictive policing”), noted in an interview, “it kind of sounds like fiction, but it’s more like science fact.” 3 By appealing to “fact” and recasting policing as a neutral science, algorithmic policing attempts to solve the police’s crisis of legitimacy.
+
+Coder Joy Buolamwini demonstrates how a white mask is recognized by facial recognition software while her face is not.
+
+ 
+The Crisis of Uncertainty
+
+    Whereas repression has, within cybernetic capitalism, the role of warding off events, prediction is its corollary, insofar as it aims to eliminate all uncertainty connected to all possible futures. That’s the gamble of statistics technologies. Whereas the technologies of the Providential State were focused on the forecasting of risks, whether probabilized or not, the technologies of cybernetic capitalism aim to multiply the domains of responsibility/authority.
+    —Tiqqun, The Cybernetic Hypothesis [footnote Tiqqun, “The Cybernetic Hypothesis ( L’Hypothèse cybernétique ),” Tiqqun 2 (2001): 21.]
+
+Uncertainty is at once a problem of information and an existential problem that shapes how we inhabit the world. If we concede that we exist in a world that is fundamentally inscrutable for individual humans, then we also admit to being vulnerable to any number of risks that are outside our control. The less “in control” we feel, the more we may desire order. This desire for law and order—which is heightened when we are made aware of our corporeal vulnerability to potential threats that are unknowable to us—can be strategically manipulated by companies that use algorithmic policing practices to prevent crime and terrorism at home and abroad. Catastrophes, war, and crime epidemics may further deepen our collective desire for security.
+
+In the age of “big data,” uncertainty is presented as an information problem that can be overcome with comprehensive data collection, statistical analysis that can identify patterns and relationships, and algorithms that can determine future outcomes by analyzing past outcomes. Predictive policing promises to remove the existential terror of not knowing what is going to happen by using data to deliver accurate knowledge about where and when crime will occur. Data installs itself as a solution to the problem of uncertainty by claiming to achieve total awareness and overcome human analytical limitations. As Mark Andrejevic writes in Infoglut , “The promise of automated data processing is to unearth the patterns that are far too complex for any human analyst to detect and to run the simulations that generate emergent patterns that would otherwise defy our predictive power.” 4
+
+The anonymous French ultraleftist collective Tiqqun links the rise of the crisis of uncertainty to the rise of cybernetics. Tiqqun describes cybernetics—a discipline founded by Norbert Wiener and others in the 1940s—as an ideology of management, self-organization, rationalization, control, automation, and technical certitude. According to Tiqqun, this ideology took root following World War II. It seeks to resolve “the metaphysical problem of creating order out of disorder” to overcome crisis, instability, and disequilibrium, which Tiqqun asserts is an inherent by-product of capitalist growth. 5 However, the “metaphysical” problem of uncertainty that is created by crisis enables cybernetic ideology to take root. Drawing on Giorgio Agamben’s State of Exception , Tiqqun writes, “The state of emergency, which is proper to all crises, is what allows self-regulation to be relaunched.” 6 Even though, by nearly every metric, “Americans now live in one of the least violent times in the nation’s history,” Americans believe that crime rates are going up. 7 Empirically, there is no basis for the belief that there is an unprecedented crime boom that threatens to unravel society, but affective investments in this worldview expand the domain of surveillance and policing and authorizes what Manuel Abreu calls “algorithmic necropower.” 8 The security state’s calculation of risk through data-mining techniques sanctions the targeting of “threats” for death or disappearance. Though the goal of algorithmic policing is, ostensibly, to reduce crime, if there were no social threats to manage, these companies would be out of business.
+
+Whether or not we accept Tiqqun’s account of how capitalist growth generates a metaphysical crisis that enables the installation of cybernetic governance, it is clear that PredPol appeals to our desire for certitude and knowledge about the future. UCLA anthropology professor Jeffrey Brantingham emphasizes, in his promotion of PredPol, that “humans are not nearly as random as we think.” 9 Drawing on evolutionary notions of human behavior, Brantingham describes criminals as modern-day urban foragers whose desires and behavioral patterns can be predicted. By reducing human actors to their innate instincts and applying complex mathematical models to track the behavior of these urban “hunter-gathers,” Brantingham’s predictive policing model attempts to create “order” out of the seeming disorder of human behavior.
+Paranoia
+
+But what does PredPol actually do? How does it actually work? PredPol is a software program that uses proprietary algorithms (modeled after equations used to determine earthquake aftershocks) to determine where and when crimes will occur based on data sets of past crimes. In Santa Cruz, California, one of the pilot cities to first use PredPol, the company used eleven years of local crime data to make predictions. In police departments that use PredPol, officers are given printouts of jurisdiction maps that are covered with red square boxes that indicate where crime is supposed to occur throughout the day. Officers are supposed to periodically patrol the boxes marked on the map in the hopes of either catching criminals or deterring potential criminals from committing crimes. The box is a kind of temporary crime zone : a geospatial area generated by mathematical models that are unknown to average police officers who are not privy to the algorithms, though they may have access to the data that is used to make the predictions.
+
+What is the attitude or mentality of the officers who are patrolling one of the boxes? When they enter one of the boxes, do they expect to stumble upon a crime taking place? How might the expectation of finding crime influence what the officers actually find? Will people who pass through these temporary crime zones while they are being patrolled by officers automatically be perceived as suspicious? Could merely passing through one of the red boxes constitute probable cause? Some of these questions have already been asked by critics of PredPol. As Nick O’Malley notes in an article on PredPol, “Civil rights groups are taking [this] concern seriously because designating an area a crime hot spot can be used as a factor in formulating ‘reasonable suspicion’ for stopping a suspect.” 10
+
+When the Cleveland police officer Timothy Loehmann arrived on the scene on November 22, 2014, it took him less than two seconds to fatally shoot Tamir Rice, a twelve-year-old black boy who was playing with a toy gun. This raises the question—if law enforcement officers are already too trigger-happy, will the little red boxes that mark temporary crime zones reduce the reaction time of officers while they’re in the designated boxes? How does labeling a space as an area where crime will occur affect how police interact with those spaces? Although PredPol conceptualizes the terrain that is being policed as a field where natural events occur, the way that data is interpreted and visualized is not a neat reflection of empirical reality; rather, data visualization actively constructs our reality.
+
+Furthermore, how might civilians experience passing through one of the boxes? If I were to one day find myself in an invisible red box with an officer, I might have an extra cause for fear, or at least I would be conscious of the fact that I might be perceived as suspicious. But given that I am excluded from knowledge of where and when the red boxes will emerge, I cannot know when I might find myself in one of these temporary crime zones. Using methods that are inscrutable to citizens who do not have access to law enforcement knowledge and infrastructure, PredPol is remaking and rearranging the space through which we move. That is the nature of algorithmic policing; the phenomenological experience of policing is qualitatively different from “repressive” policing, which takes place on a terrain that is visible and uses methods that can be scrutinized and contested. Predictive policing may induce a sense of being watched at all times by an eye we cannot see. If Jeremy Bentham’s eighteenth-century design of the “panopticon” is the architectural embodiment of Michel Foucault’s conception of disciplinary power, then algorithmic policing represents the inscription of disciplinary power across the entire terrain that is being policed.
+
+NIST computer scientist Ross Micheals demonstrates a NIST-developed system for studying the performance of facial recognition software programs.
+False Positives
+
+Given the difficulty of measuring the efficacy of predictive policing methods, there is a risk of falsely associating “positive” law enforcement outcomes with the use of predictive policing software such as PredPol. The literature on PredPol is also fuzzy on the question of how to measure its success. When police officers are dispatched to the five-hundred-by-five-hundred feet square boxes marked in red on city maps, are they expected to catch criminals in the act of committing crimes, or are they supposed to deter crime with their presence? The former implies that an increase in arrests in designated areas would be a benchmark of success, while the latter implies that a decrease in crime is proof of the software’s efficacy. However, both outcomes have been used to validate the success of PredPol. A news clip from its official YouTube account narrates the story of how the Norcross Police Department (Georgia) caught two burglars in the act of breaking into a house. Similarly, an article about PredPol published on Officer.com opens with the following anecdote: “Recently a Santa Cruz, Calif. police officer noticed a suspicious subject lurking around parked cars. When the officer attempted to make contact, the subject ran. The officer gave chase; when he caught the subject he learned he was a wanted parolee. Because there was an outstanding warrant for his arrest, the subject was taken to jail.” 11
+
+Much of the literature PredPol uses for marketing offers similarly mystical accounts of the software’s clairvoyant capacity to predict crime, and these are substantiated by anecdotes about officers stumbling upon criminals in the act of committing these crimes. However, PredPol consistently claims that its efficacy can be measured by a decrease in crime. Yet across the country, crime rates have been plummeting since the mid-1990s. In some cases, the company tries to take credit for crime reduction by implying there is a causal relationship between the use of PredPol and a decrease in crime rates, sometimes without explicitly making the claim. In an article linked on PredPol’s website, the author notes, “When Santa Cruz implemented the predictive policing software in 2011, the city of nearly 60,000 was on pace to hit a record number of burglaries. But by July burglaries were down 27 percent when compared with July 2010.” 12 Yet crime rates fluctuate from year to year, and it is impossible to parse which factors can be credited with reducing crime. Though the article does not explicitly attribute the crime reduction to PredPol, it implicitly links the use of PredPol to the 27 percent burglary reduction by juxtaposing the two separate occurrences—the adoption of PredPol and the decrease in burglaries—so as to construct a presumed causal relation. The article goes on to use explanations made by Zach Friend (about why and how PredPol works) to validate its efficacy. Friend is described as “a crime analyst with the Santa Cruz PD”; however, Friend actually left the Santa Cruz Police Department to become one of the main lobbyists for PredPol soon after the company was founded.
+
+By scrutinizing the PR circuits that link researchers like UCLA’s Brantingham to the police, and link Silicon Valley investors to the media, one realizes that essentially all claims about the efficacy of PredPol loop back to the company itself. Though PredPol’s website advertises “scientifically proven field results,” no disinterested third party has ever substantiated the company’s claims. What’s even more troubling is that PredPol offered 50 percent discounts on the software to police departments that agreed to participate as “showcase cities” in PredPol’s pilot program. The program required collaboration with the company for three years and required police departments to provide testimonials that could be used to market the software. For instance, SF Weekly notes that
+
+    the city of Alhambra, just northeast of Los Angeles, purchased PredPol’s software in 2012 for $27,500. The contract between Alhambra and PredPol includes numerous obligations requiring Alhambra to carry out marketing and promotion on PredPol’s behalf. Alhambra’s police and public officials must “provide testimonials, as requested by PredPol,” and “provide referrals and facilitate introductions to other agencies who can utilize the PredPol tool.” 13
+
+In “The Difference Prevention Makes: Regulating Preventive Justice,” David Cole describes five major risks that come with the adoption of the “paradigm of prevention” in law enforcement. He notes that “it is not just that we cannot know the efficacy of prevention; our assessments are likely to be systematically skewed.” 14 Others have raised similar concerns with PredPol. According to O’Malley, “The American Criminal Law Review has raised concerns the program could warp crime statistics, either by increasing the arrest rate in the boxes through extra policing or falsely reducing it through diffusion.” 15
+
+“A Series of Statistical Charts,” from W. E. B. Du Bois’s The Georgia Negro: A Study (1900). Photo:  Library of Congress
+The Politics of Crime Data
+
+Crime has never been a neutral category. What counts as crime, who gets labeled criminal, and which areas are policed have historically been racialized. Brantingham, the anthropologist who helped create PredPol, noted, “The focus on time and location data—rather than the personal demographics of criminals—potentially reduces any biases officers might have with regard to suspects’ race or socioeconomic status.” Though it is true that PredPol is a spatialized form of predictive policing that does not target individuals or generate heat lists, spatial algorithmic policing, even when it does not use race to make predictions, can facilitate racial profiling by calculating proxies for race, such as neighborhood and location. Furthermore, predictive models are only as good as the data sets they use to make predictions, so it is important to interrogate who collects data and how it is collected. Although data has been conceptualized as neutral bits of information about our world and our behaviors, in the domain of criminal justice, it is a reflection of who has been targeted for surveillance and policing. If someone commits a crime in an area that is not heavily policed—such as on Wall Street or in the white suburbs—it will fail to generate any data. PredPol’s reliance on the dirty data collected by the police may create a feedback loop that leads to the ossification of racialized police practices. Furthermore, when applied to predictive policing, the idea that “more data is better,” in that it would improve accuracy and efficiency, justifies dragnet surveillance and the expansion of policing and carceral operations that generate data.
+
+Though PredPol presents itself as race-neutral, its treatment of crime as an objective force that operates according to laws that govern natural phenomena, such as earthquake aftershocks—and not as a socially constructed category that has meaning only in a specific social context—ignores the a priori racialization of crime, and specifically the association of crime with blackness. Historian Khalil Gibran Muhammad’s The Condemnation of Blackness: Race, Crime and the Making of Modern America traces how “at the dawn of the twentieth century, in a rapidly industrializing, urbanizing, and demographically shifting America, blackness was refashioned through crime statistics. It became a more stabilizing racial category in opposition to whiteness through racial criminalization.” 16 Muhammad describes how data was used primarily by social scientists in the North to make the conflation of blackness and criminality appear objective and empirically sound, thus justifying a number of antiblack social practices such as segregation, racial violence, and penal confinement. The consolidation of this “scientific” notion of black criminality also enabled formerly criminalized immigrant populations—such as the Polish, Irish, and Italians—to be assimilated into the category of whiteness. As black Americans were pathologized by statistical discourse, the public became increasingly sympathetic to the problems of European ethnic groups, and white ethnic participation in criminal activities was attributed to structural inequalities and poverty, as opposed to personal shortcomings or innate inferiority. According to Mohammad, the 1890 census laid much of the groundwork for this ideology. He describes how statistics about higher rates of imprisonment among black Americans, particularly in northern penitentiaries, were “analyzed and interpreted as definitive proof of blacks’ true criminal nature.” 17 Thus, biological and cultural racism was eventually supplanted by statistical racism.
+
+While the methods developed by PredPol themselves are not explicitly racialized, they are implicitly racialized insofar as geography is a proxy for race. Furthermore, given that crime has historically been racialized, taking crime for granted as a neutral—or rather, natural —category around which to organize predictive policing practices is likely to reproduce racist patterns of policing. As PredPol relies on data about where previous crimes have occurred, and as police are more likely to police neighborhoods that are primarily populated by people of color (as well as target people of color for searches and arrests), then the data itself that PredPol relies on is systematically skewed. By presenting its methods as objective and racially neutral, PredPol veils how the data and the categories it relies on are already shaped by structural racism.
+Conclusion
+
+The story of policing in the twenty-first century cannot be reduced to the stereotypical image of bellicose, meathead officers looking for opportunities to catch bad guys and to flaunt their institutional power. As Donnie Fowler, the PredPol director of business development, was quoted saying in the Silicon Valley Business Journal , twenty-first-century policing could more accurately be described as “a story about nerds and cops.” 18 However, more than a story of an unlikely marriage between data-crunching professors and crime-fighting officers, the story of algorithmic policing, and PredPol in particular, is also a story of intimate collaboration between domestic law enforcement, the university, Silicon Valley, and the media. It is a story of a form of techno-governance that operates at the intersection between knowledge and power. Yet the numerical and data-driven approach embodied by PredPol has been taken up in a number of domains. In both finance and policing, there has been a turn toward technical solutions to the problem of uncertainty, solutions that attempt to manage risk using complex and opaque mathematical models. Yet, although the language of risk has replaced the language of race, both algorithmic policing and risk-adjusted finance merely code racial inequality as risk. It is important that we pay attention to this paradigm shift, as once the “digital carceral infrastructure” is built up, it will be nearly impossible to undo, and the automated carceral surveillance state will spread out across the terrain, making greater and greater intrusions into our everyday lives. 19 Not only will the “smart” state have more granular knowledge of our movements and activities, but as the carceral state becomes more automated, it will increase its capacity to process ever-greater numbers of people, even when budgets remain stagnant or are cut.
+
+Though it is necessary to acknowledge the invisible, algorithmic (or “cybernetic”) underside of policing, it is important to recognize that algorithmic policing has not supplanted repressive policing, but is its corollary. “Soft control” has not replaced hard forms of control. Police have become more militarized than ever as a result of the $34 billion in federal grants that have been given to domestic police departments by the Department of Homeland Security in the wake of 9/11. While repressive policing attempts to respond to events that have already occurred, algorithmic policing attempts to maintain law and order by actively preventing crime. Yet is it possible that the latter actually creates a situation that leads to the multiplication of threats rather than the achievement of safety? As predictive policing practices are taken up by local police departments across the country, perhaps we might consider the extent to which, as Tiqqun writes, “the control society is a paranoid society.” 20
+
+×
+
+This text is an excerpt from Carceral Capitalism by Jackie Wang, forthcoming from Semiotext(e) in February 2018.
+
+Jackie Wang is a student of the dream state, black studies scholar, prison abolitionist, poet, performer, library rat, trauma monster, and PhD candidate at Harvard University. She is the author of a number of punk zines including On Being Hard Femme , as well as a collection of dream poems titled Tiny Spelunker of the Oneiro-Womb (Capricious). She tweets at @loneberrywang and blogs at loneberry.tumblr.com.
+© 2017 e-flux and the author
+Journal # 87
+Related
+Conversations
+Notes
+Share
+Download PDF
+More
+Editors
+Editorial
+Revolutionaries are people who need to run around in circles. Revolution is a cycle of toppling and replacing, of killing God and building a Church, as Camus says. It is nothing if not intense. In “The Intense Life,” Tristan Garcia presents intensity as an ethical ideal peculiar to modernity. The pursuit of intensity moves through stages, from variation, to acceleration, to what Garcia calls “primaverism,” or the obsession with first experiences. In “Notes on Blacceleration,” Aria...
+Tristan Garcia
+The Intense Life: An Ethical Ideal
+
+Infused with an adverbial ideal of acting, feeling, and thinking modeled on the experience of an electric shock, the modern individual who struggles to escape gentrification is indeed no longer moved by what remains the same. They have lost their interest in fixed identities; what does not vary receives scant notice: an indefinitely repeated act, typical of the standardized world of work, seems intolerable to them. The very idea of eternity makes them yawn; marble leaves them cold. Everything that denies life and the musical variations that compose it breeds impatience: perfection and the absolute appear to them like an ontological flaw, an inability to become something else, the result of a serious intensity deficiency. The supreme objects of religious contemplation and wisdom strike them as extraordinarily flimsy. They love music for the changes, with repetition a taste of hell to come. Like Kierkegaard’s hero, they demand the possible or else they suffocate, and not only then; as soon as they are forced to recognize what they know, they gasp for air. What stays the same makes no difference to them. They need either less or more. They would rather change their mind even if the outcome is uncertain than stick to established certainties. Endlessly curious, they are ready to taste pain just as much as pleasure, as long as there is some change and movement, and the sound of being alive—melodious or dissonant—can be heard.
+Jackie Wang
+“This Is a Story About Nerds and Cops”: PredPol and Algorithmic Policing
+
+When the Cleveland police officer Timothy Loehmann arrived on the scene on November 22, 2014, it took him less than two seconds to fatally shoot Tamir Rice, a twelve-year-old black boy who was playing with a toy gun. This raises the question—if law enforcement officers are already too trigger-happy, will the little red boxes that mark temporary crime zones reduce the reaction time of officers while they’re in the designated boxes? How does labeling a space as an area where crime will occur affect how police interact with those spaces? Although PredPol conceptualizes the terrain that is being policed as a field where natural events occur, the way that data is interpreted and visualized is not a neat reflection of empirical reality; rather, data visualization actively constructs our reality.
+Aria Dean
+Notes on Blacceleration
+
+Blaccelerationism posits that there is no need for reclamation. A specific tradition of black radical thought has long claimed the inhumanity—or we could say anti-humanism—of blackness as a fundamental and decisive feature, and philosophically part of blackness’ gift to the world. Blaccelerationism also draws little distinction between a black acceleration and an afrofuturism. Instead it sees them as siblings and coconspirators. Masterworks of black art and culture that have been labeled examples of afrofuturism often participate equally in a blacceleration toward the end of the world. To give just one example: Busta Rhymes’s suite of apocalyptic albums (The Coming, When Disaster Strikes, E.L.E (Extinction Level Event): The Final World Front, and Anarchy) are often called afrofuturist for their exploration of a near-future techno-apocalypse and their warped, cyborgian accompanying visuals. However, by putting the black man at the center of the apocalypse—as both the agent of the world’s demise and its inheritor—these works resonate more specifically with the child of these strange bedfellows, black radical thought and accelerationism, that I call blaccelerationism.
+Antonio Negri
+The Common Before Power: An Example
+
+The political line dictated by Lenin can in fact be summarized by the following formula: strategy to the class movement; tactics, and only tactics, to the institution, or rather, to the party, to representation and the vanguard. The independence of the proletariat constitutes strategic hegemony, where insurrectional power and the revolutionary project are formed. This is the reality on which the vanguard must focus its attention if it wants to establish a tactical proposal. The radical transformation of revolutionary tactics, dictated by Lenin beginning in April 1917, is not, therefore, some artist’s gesture, but the political recognition of hegemonic maturity, of the strategic capacity of the proletarian masses (the peasants, workers, and soldiers organized into soviets) to seize power.
+Kuba Szreder
+Productive Withdrawals: Art Strikes, Art Worlds, and Art as a Practice of Freedom
+
+Agents of artistic circulation mistake the decision to withdraw one’s labor or participation for idle disengagement. The illusion of political agency granted by global artistic circulation underpins this ideology. In contrast to these false accusations, striking art workers engage in artistic self-organization, the highest form of social creativity, which produces new social assemblages that sustain artistic creativity beyond its ossified forms. Only when reinvigorated by strikes, boycotts, and occupations do institutions of the commons emerge and provide ground for art as a practice of freedom. Far from destroying circulation, the refusal of art workers in moments of productive withdrawal allows for its resumption at some point in the future and under better terms. Without moments of collective refusal, there would be nothing to circulate under the name of art but luxurious objects, emptied of sense and value.
+Irmgard Emmelhainz
+Self-Destruction as Insurrection, or, How to Lift the Earth Above All That Has Died?
+
+My taxonomy of images of alterity from the twentieth century—ethnographic, militant, and witness—is not opposed but rather transversal to Rancière’s. What I am interested in, firstly, is tracking the kinds of discourses underlying images of Western alterity in the aftermath of the postcolonial critique of the ethnographic image, the demise of the third-worldist militant image, and the exposure of the limitations of the witness image, which often serves to perpetuate the figure of the “victim.” These visibilities have perhaps become the “visual” in Daney’s sense. Second, I wish to consider the possibility of an image of soulèvement—in the sense of an image of an other that could threaten Western imperialism and capitalist absolutism, a system this is consensually driven by the desire and need for visibility, and that legitimates social Darwinism with racism and misogynist speech in the public sphere.
+Karen Sherman
+The Glory Hole
+
+At first, I thought “performative” was coined by dance people in order to sound like museum people. But then I realized that the art world’s misuse of this term predates the dance world’s. Which made way more sense but also bummed me out even further. Why would dancemakers do this to ourselves? Why would we let museums rename what it is we already do? And why would we ourselves then use that language to describe what we have already been doing all these years? I long to see the dance world assert its language as part of its commodity. If you want to present dance, you need to know how to talk in dance’s existing language. It serves the form just fine because it is of the form. Dance doesn’t want to talk about itself from the remove of class or body. Dance wants to be hot in the center of its own glory hole—though it will happily pee on the museum steps for the right price.
+Theodor W. Adorno
+On the Concept of Beauty
+
+Plato seeks to explain beauty only in terms of its effect, but beauty is supposed to be nothing but the imitation of the idea of beauty—this seemingly merely exegetic remark on the Plato passage is, if I am not mistaken, of the most central imaginable significance for the establishment of an aesthetics. For it means that neither can we explain the idea of beauty or the idea of art as such in directly objectivist terms—that is to say, without reflection on the spirit, without reflection on humans and their attitude towards objectivity—nor, on the other hand, is this idea of art or this idea of beauty limited to the context of effects that it imposes on us; rather, it is essentially objective and has an objective aspect. In other words: if I could already formulate here the polarity which one encounters in Plato, if one does not wish crudely to impose an inconsistent theory on him, one must say that the underlying conception of beauty itself here is a dialectical conception of beauty. This means that beauty itself, by its own nature, presents itself as mediated, inherently as something like a tension between subjective and objective aspects. And when I told you that all the motifs of aesthetics that ever unfolded in later times are already present here, as if in a kind of sacred foundational text, then this is primarily what I had in mind. For even at its highest peak, at the Hegelian peak, aesthetic speculation did not get any further than that definition of beauty which termed beauty itself—instead of calling it being in a static, object-like sense—just such a state of tension between subjective and objective aspects.
+Wayne Koestenbaum
+Lounge Act at Thek Lounge
+
+Some scenes you never return from the morbid imagining of, like the love song of Martin Heidegger and Hannah Arendt, even if you know that neither the task of universal good nor the project of demolishing evil (including current evil) will be moved ahead a millimeter by morbid fantasies. I need to figure out what to do with my treasured, honed perversity and the tradition (from the Marquis de Sade through Genet, Hervé Guibert, and Foucault) that celebrates perversity and finds revolutionary seeds in it. What will you do with those seeds right now? Are they stale in the hand? Will perversity help us now?
+Jackie Wang
+There is nothing related.
+Conversations - “This Is a Story About Nerds and Cops”: PredPol and Algorithmic Policing
+Conversations
+Join the Conversation
+
+e-flux conversations is a discussion platform for e-flux readers. Click to start a discussion of the article above.
+Start the Conversation
+Notes - “This Is a Story About Nerds and Cops”: PredPol and Algorithmic Policing
+1
+
+David Weisburd and Peter Neyroud, “Police Science: Toward a New Paradigm,” New Perspectives in Policing , January 2011, 1.
+Go to Text
+2
+
+Ibid.
+Go to Text
+3
+
+“PredPol on Current TV with Santa Cruz Crime Analyst Zach Friend,” March 4, 2013 → .
+Go to Text
+4
+
+Mark Andrejevic, Infoglut: How Too Much Information Is Changing the Way We Think and Know (New York: Routledge, 2013), 21.
+Go to Text
+5
+
+Tiqqun, “The Cybernetic Hypothesis,” 9.
+Go to Text
+6
+
+Ibid., 17.
+Go to Text
+7
+
+Matt Ford, “What Caused the Great Crime Decline in the U.S.?” The Atlantic , April 15, 2016 → .
+Go to Text
+8
+
+Manuel Abreu, “Incalculable Loss,” The New Inquiry , August, 19, 2014 → .
+Go to Text
+9
+
+Ronnie Garrett, “Predict and Serve,” Officer.com, January 10, 2013 → .
+Go to Text
+10
+
+Nick O’Malley, “To Predict and to Serve: The Future of Law Enforcement,” Sydney Morning Herald , March 31, 2013 → .
+Go to Text
+11
+
+Garrett, “Predict and Serve.”
+Go to Text
+12
+
+Ibid.
+Go to Text
+13
+
+Darwin Bond-Graham and Ali Winston, “All Tomorrow’s Crimes: The Future of Policing Looks a Lot Like Good Branding,” SF Weekly , October 30, 2013 → .
+Go to Text
+14
+
+David Cole, “The Difference Prevention Makes: Regulating Preventive Justice,” Criminal Law and Philosophy , 2014, 5.
+Go to Text
+15
+
+O’Malley, “To Predict and to Serve.”
+Go to Text
+16
+
+Khalil Gibran Muhammad, The Condemnation of Blackness: Race, Crime and the Making of Modern America (Cambridge, MA: Harvard University Press, 2010), 5.
+Go to Text
+17
+
+Ibid., 37.
+Go to Text
+18
+
+Lauren Helper, “Coders vs. Criminals: PredPol Seeks to Scale Its Crime-Prediction System,” Silicon Valley Business Journal , December 6, 2013.
+Go to Text
+19
+
+R. Joshua Scannell, “Broken Windows, Broken Code,” Real Life , August 29, 2016 → .
+Go to Text
+20
+
+Tiqqun, “The Cybernetic Hypothesis,” 22.
+Go to Text
+
+David Weisburd and Peter Neyroud, “Police Science: Toward a New Paradigm,” New Perspectives in Policing , January 2011, 1.
+
+Ibid.
+
+“PredPol on Current TV with Santa Cruz Crime Analyst Zach Friend,” March 4, 2013 → .
+
+Mark Andrejevic, Infoglut: How Too Much Information Is Changing the Way We Think and Know (New York: Routledge, 2013), 21.
+
+Tiqqun, “The Cybernetic Hypothesis,” 9.
+
+Ibid., 17.
+
+Matt Ford, “What Caused the Great Crime Decline in the U.S.?” The Atlantic , April 15, 2016 → .
+
+Manuel Abreu, “Incalculable Loss,” The New Inquiry , August, 19, 2014 → .
+
+Ronnie Garrett, “Predict and Serve,” Officer.com, January 10, 2013 → .
+
+Nick O’Malley, “To Predict and to Serve: The Future of Law Enforcement,” Sydney Morning Herald , March 31, 2013 → .
+
+Garrett, “Predict and Serve.”
+
+Ibid.
+
+Darwin Bond-Graham and Ali Winston, “All Tomorrow’s Crimes: The Future of Policing Looks a Lot Like Good Branding,” SF Weekly , October 30, 2013 → .
+
+David Cole, “The Difference Prevention Makes: Regulating Preventive Justice,” Criminal Law and Philosophy , 2014, 5.
+
+O’Malley, “To Predict and to Serve.”
+
+Khalil Gibran Muhammad, The Condemnation of Blackness: Race, Crime and the Making of Modern America (Cambridge, MA: Harvard University Press, 2010), 5.
+
+Ibid., 37.
+
+Lauren Helper, “Coders vs. Criminals: PredPol Seeks to Scale Its Crime-Prediction System,” Silicon Valley Business Journal , December 6, 2013.
+
+R. Joshua Scannell, “Broken Windows, Broken Code,” Real Life , August 29, 2016 → .
+
+Tiqqun, “The Cybernetic Hypothesis,” 22.
+Go to Text
+
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    12
+    13
+    14
+    15
+    16
+    17
+    18
+    19
+    20
+
+See All
+Share - “This Is a Story About Nerds and Cops”: PredPol and Algorithmic Policing
+
+    Email
+    Facebook
+    Twitter
+    Copy Link to Clipboard success
+
+    Conversations
+    Notes
+    Share
+    Download PDF
+
+Close
+I have read e-flux’s privacy policy and agree that e-flux may send me announcements to the email address entered above and that my data will be processed for this purpose in accordance with e-flux’s privacy policy*
+Next
+e-flux
+e-flux Architecture
+art-agenda
+Exhibitions at commercial galleries
+Art & Education
+Exhibitions, symposia and teaching positions at art schools world wide
+Subscribe
+Thank You!
+
+Subscription pending. Your email subscription is almost complete. An email has been sent to the email address you entered. In this email is a confirmation link. Please click on this link to confirm your subscription.
+Close
+
+* This consent can be revoked at any time with effect for the future. For more information, please see our privacy policy
+If you have any questions regarding data protection, please contact dataprivacy [​at​] e-flux.com
+
+The information you supply will only be used by e-flux.

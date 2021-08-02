@@ -1,0 +1,170 @@
+
+By using this website, you agree that EDP Sciences may store web audience measurement cookies and, on some pages, cookies from social networks. More information and setup
+Menu
+
+    Browse
+    About the journal
+    For conference organizers
+    For authors
+    News
+    All open access proceedings journals
+    Client testimonials
+    Contact
+    Request a quote
+
+Browse
+
+    All issues
+    Forthcoming
+    Series
+
+About the journal
+
+    Aims and scope
+    Indexed in
+    Publishing Policies & Ethics
+    Published by
+
+All open access proceedings journals
+
+    BIO Web of Conferences
+    ITM Web of Conferences
+    MATEC Web of Conferences
+    E3S Web of Conferences
+    SHS Web of Conferences
+    EPJ Web of Conferences
+
+EDP Sciences logo
+
+    Journals
+    Books
+    Conferences
+
+Web of Conferences logo
+ITM Web of Conferences
+
+    All issues
+    Series
+    Forthcoming
+    About
+
+Search
+Menu
+Advanced Search
+All issues Volume 12 (2017) ITM Web Conf., 12 (2017) 04029 Abstract
+
+    Browse
+        All issues
+        Forthcoming
+        Series
+    About the journal
+        Aims and scope
+        Indexed in
+        Publishing Policies & Ethics
+        Published by
+    For conference organizers
+    For authors
+    News
+    All open access proceedings journals
+        BIO Web of Conferences
+        ITM Web of Conferences
+        MATEC Web of Conferences
+        E3S Web of Conferences
+        SHS Web of Conferences
+        EPJ Web of Conferences
+    Client testimonials
+    Contact
+    Request a quote
+
+Open Access
+Issue 		
+ITM Web Conf.
+Volume 12, 2017
+The 4 th Annual International Conference on Information Technology and Applications (ITA 2017)
+Article Number 		04029
+Number of page(s) 		6
+Section 		Session 4: Information Theory and Information Systems
+DOI 		https://doi.org/10.1051/itmconf/20171204029
+Published online 		05 September 2017
+ITM Web of Conferences 12 , 04029 (2017)
+Analysis and Forecast of Traffic Accident Big Data
+
+Chen Chen
+
+Tunnel Traffic Engineering Design Office, Yunnan Province Transportation Planning and Design Institute, Kunming, China
+
+522253113@qq.com
+
+Abstract
+
+Nowadays, as traffic accidents keep happening, traffic safety has become a major focus of contemporary social issues. Many factors account for traffic accidents, such as accident location, time period, driver’s feelings, weather and other uncertain complex factors. As a result, the occurrence of traffic accidents is nonlinear, so it is necessary to explore the correlation between the data from many different aspects so as to avoid risks. By analyzing traffic data and graphics, R language shows how the data is related. After data preprocess, data selection by using R language Remap package remapB and remapH function, we get the locations of the accidents and the accident thermal chart, where you can find high- frequency accident locations. Besides, we employ decision tree, linear regression, random forest algorithm to model the data. According to the actual results, we can verify the correctness of the model and get the most accurate model and it can help us to predict this model with similar data in the future. The ultimate goal of data analysis is to choose the most accurate model after validating the model, analyzing the characteristics of the data and the relationship between the model and the data.
+
+© The Authors, published by EDP Sciences, 2017
+
+Licence Creative Commons
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License 4.0 , which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.
+Current usage metrics About article metrics Return to article
+
+Current usage metrics show cumulative count of Article Views (full-text article views including HTML views, PDF and ePub downloads, according to the available data) and Abstracts Views on Vision4Press platform.
+
+Data correspond to usage on the plateform after 2015. The current usage metrics is available 48-96 hours after online publication and is updated daily on week days.
+
+Initial download of the metrics may take a while.
+Homepage
+Table of Contents
+Previous article Next article
+Article
+
+    Abstract
+    PDF (1.681 MB)
+    References
+
+Metrics
+
+    Show article metrics
+
+Services
+
+    Same authors
+    - Google Scholar
+    - EDP Sciences database
+    Recommend this article
+    Download citation
+
+Related Articles
+The Analysis of Serious Fatal Road Traffic Accidents in China
+MATEC Web of Conferences 81, 02013 (2016)
+Road Fatality Model Based on Over-Dispersion Data Along Federal Route F0050
+MATEC Web of Conferences 103, 08012 (2017)
+Analysis of Pedestrian Gap Acceptance and Crossing Decision in Kuala Lumpur
+MATEC Web of Conferences 103, 08014 (2017)
+Evaluating the Road Safety Design through High Resolution Satellite Image: A Case Study of Karachi Metropolitan
+MATEC Web of Conferences 81, 02022 (2016)
+A Partial Proportional Odds Model for Pedestrian Crashes at Mid-Blocks in Melbourne Metropolitan Area
+MATEC Web of Conferences 81, 02020 (2016)
+More
+Bookmarking
+
+    Facebook
+    Twitter
+    LinkedIn
+    Sina Weibo
+    Mendeley Mendeley
+    CiteUlike
+    BibSonomy
+
+    Reader's services
+    Email-alert
+
+ITM Web of Conferences
+
+eISSN: 2271-2097
+Copyright / Published by: EDP Sciences
+
+EDP Sciences
+
+    Mentions légales
+    Contacts
+
+Click anywhere to hide the fullscreen overlay
+

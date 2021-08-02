@@ -1,0 +1,883 @@
+﻿@charset "UTF-8";
+@namespace "http://www.w3.org/1999/xhtml";
+@namespace epub "http://www.idpf.org/2007/ops";
+
+/** BASE **/
+
+/* Compatibilidad CSS OJS */
+#content {
+	font-size: 1em !important;
+}
+#article-body {
+	background-color: #ffffff;
+	width: 100%;
+}
+
+/* Márgenes */
+@page {
+	margin: 0;
+}
+body {
+	font-family: Myriad, Helvetica, Tahoma, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+section {
+	display: block;
+}
+
+/* Sin fuentes integradas */
+
+/* Reseñas */
+div.review-cover {
+	float: left;
+	margin-right: .6em;
+	width: 10em;
+}
+div.review-cover p.image {
+	border: 0;
+}
+
+/* Sobre el autor del libro reseñado */
+
+#about-review-author {
+	border-top: 2px solid #00558e;
+	border-bottom: 2px solid #00558e;
+	margin-top: 1.5em;
+	padding: .5em 0;
+}
+#about-review-author {
+	page-break-before: always;
+}
+#about-review-author div.author + div.author,
+#about-review-author div.author + div.address {
+	border-top: 1px solid #00558e;
+	margin-top: 1em;
+}
+#about-review-author p {
+	text-indent: 0;
+}
+#about-review-author h2 {
+	color: #00558e;
+	font-size: 1em; 
+	font-style: normal;
+	font-weight: bold;
+	margin: .2em 0;
+	page-break-after: avoid;
+}
+#about-review-author p.name {
+	font-style: italic;
+	font-weight: normal;
+	margin-top: 1em;
+}
+#about-review-author div.bio {
+	margin-top: 1em;
+}
+#about-review-author div.bio p + p {
+	text-indent: 1em;
+}
+#about-review-author div.address {
+	margin-top: 1em;
+}
+
+/* Control partición silábica */
+h1,
+h2,
+h3,
+p.bridgehead,
+p.author,
+p.title {
+	page-break-after: avoid;
+	hyphens: none;
+	adobe-hyphenate: none;
+	-moz-hyphens: none;
+	-webkit-hyphens: none;
+}
+p {
+	hyphenate-before: 3;
+	-webkit-hyphenate-before: 3;
+	hyphenate-after: 3;
+	-webkit-hyphenate-after: 3;
+	hyphenate-lines: 2;
+	-webkit-hyphenate-lines: 2;
+	orphans: 2;
+	widows: 2;
+}
+
+/** FRONTMATTER **/
+
+/* Cubierta */
+body.cover {
+	margin: 0;
+	text-align: center;
+}
+body[epub|type="cover"],
+.cover {
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+img.cover {
+	max-height: 100%;
+	max-width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+/** BODYMATTER **/
+
+/* Front */
+#article-front {
+	border-bottom: 3px solid #00558e;
+}
+
+/* TOC */
+nav ol {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+nav ol ol {
+	margin-left: 1.5em;
+}
+nav li {
+	margin-left: 1.5em;
+	text-indent: -1.5em;
+}
+
+/* Metadata - Main */
+#metadata-main {
+	
+}
+#article-meta {
+	margin-top: 1em;
+}
+#article-meta * {
+	color: #00558e;
+	text-indent: 0;
+}
+#article-meta p.title {
+	border-bottom: 1px solid #00558e;
+	font-size: .7em;
+	font-weight: bold;
+	padding: .5em 0;
+}
+#article-meta p.id {
+	float: left;
+	max-width: 45%;
+}
+#article-meta p.doi {
+	text-align: right;
+}
+#article-meta img {
+	display: block;
+	float: left;
+	height: 3em;
+	margin-top: -.2em;
+	/* max-width: 6em; */
+}
+
+/* Metadata - Main - Paper */
+#paper p {
+
+}
+p.mono {
+	color: #00558e;
+	font-family: inherit;
+	font-size: 1em;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1.5;
+	margin: .7em 0 1.5em 0;
+	padding: 0 0 0 0;
+	text-align: left;
+	text-indent: 0;
+}
+
+/* Metadata - Main - Title */
+h1 {
+	color: #00558e;
+	font-family: inherit;
+	font-size: 1.3em;
+	font-style: normal;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 1.5em 0;
+	padding: 0 0 0 0;
+	text-align: left;
+	text-indent: 0;
+}
+
+/* Metadata - Main - Author */
+div.authorship {
+	clear: both;
+	margin: 1.2em 0 0 0;
+	max-width: 45%;
+}
+div.authorship p {
+	text-align: left;
+	text-indent: 0;
+}
+div.authorship div.author p.name {
+	color: #00558e;
+	font-size: .9em;
+	font-weight: bold;
+	margin-top: .75em;
+}
+div.authorship div.author p.aff {
+	font-size: .8em;
+}
+div.authorship div.author p.email {
+	font-size: .8em;
+}
+
+/* Metadata - History */
+#history {
+	float: right;
+	margin: -2.5em 0 0 0;
+	max-width: 45%;
+}
+#history p {
+	font-family: inherit;
+	font-size: .8em;
+	text-align: right;
+	text-indent: 0;
+}
+
+/* Metadata - Recommended citation */
+#citation {
+	border-top: 1px solid #00558e;
+	border-bottom: 1px solid #00558e;
+	clear: both;
+	margin: 2em 0 0 0;
+	padding: 1em 0;
+}
+#citation p {
+	font-size: .8em;
+	text-indent: 0;
+}
+#citation p.bridgehead {
+	color: #00558e;
+	font-style: normal;
+	font-weight: bold;
+	margin: 0;
+	page-break-after: avoid;
+}
+
+/* Metadata - Acknowledgments */
+#article-front #ack {
+	border-bottom: 1px solid #00558e;
+	margin: 0 0 2em 0;
+	padding: 1em 0;
+}
+#article-front #ack p {
+	font-size: .8em;
+	text-indent: 0;
+}
+#article-front #ack p.bridgehead {
+	color: #00558e;
+	font-style: normal;
+	font-weight: bold;
+	margin: 0;
+	page-break-after: avoid;
+}
+
+/* Metadata - Abstract + Keywords */
+#abstract,
+#kwd {
+	margin: 1.5em 0 0 0;
+}
+#abstract p.bridgehead,
+#kwd p.bridgehead {
+	color: #00558e;
+	font-style: normal;
+	font-weight: bold;
+	margin: .5em 0 .2em 0;
+	page-break-after: avoid;
+}
+#abstract p,
+#kwd p {
+	font-family: inherit;
+	font-size: .9em;
+}
+
+/* Metadata - Abstract + Keywords [trl] */
+#abstract-trl,
+#kwd-trl {
+	margin: 2em 0;
+}
+#abstract-trl p,
+#kwd-trl p {
+	font-style: italic;
+}
+#abstract-trl i,
+#abstract-trl em,
+#abstract-trl cite,
+#abstract-trl q,
+#kwd-trl i ,
+#kwd-trl em,
+#kwd-trl cite,
+#kwd-trl q {
+	font-style: normal;
+}
+#abstract-trl p.title {
+	color: #00558e;
+	font-weight: bold;
+	margin-bottom: 1em;
+	text-align: left;
+	text-indent: 0;
+}
+#abstract-trl p.bridgehead,
+#kwd-trl p.bridgehead {
+	color: #00558e;
+	font-weight: bold;
+	margin: .5em 0 .2em 0;
+	page-break-after: avoid;
+}
+
+/* Content */
+#article-body {
+	display: block;
+	margin: .5em 0;
+	padding-top: .5em;
+	page-break-before: always;
+}
+#article-body section {
+	margin: 1em 0;
+}
+h2 {
+	color: #00558e;
+	font-size: 1.2em;
+	margin: 1.5em 0 1.2em 0;
+	text-indent: 0; /* -1.2em */
+}
+h3 {
+	color: #00558e;
+	font-size: 1.1em;
+	font-weight: normal;
+	margin: 1em 0 1em 0;
+	text-indent: 0; /* -1.4em */
+}
+h4,
+h5 {
+	color: #00558e;
+	font-size: .9em;
+	font-family: inherit;
+	font-weight: normal;
+	margin: 1em 0 1em 2.75em !important;
+	text-indent: -2.75em !important;
+}
+p.bridgehead {
+	font-style: normal;
+	margin: 1.2em 0 0 0;
+	text-indent: 0;
+}
+p.phase {
+	font-style: normal;
+	font-weight: bold;
+	margin-top: 1em;
+	text-indent: 0;
+}
+p.subphase {
+	font-style: italic;
+	margin-top: 1em;
+	text-indent: 0;
+}
+p.subphase i {
+	font-style: normal;
+}
+p {
+	font-family: inherit;
+	font-size: .9em;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-align: left; /*html*/
+	text-indent: 0; /*html*/
+}
+
+#article-body p { /*html*/
+	margin: 1em 0 0 0; 
+}
+
+a {
+	color: #00558e;
+	font-weight: thiner;
+	text-decoration: none;
+}
+abbr { border: 0; }
+
+blockquote {
+	margin: 1em 1em 1em 1em;
+}
+blockquote p {
+	font-size: .8em;
+	font-style: normal;
+	text-indent: 0;
+}
+blockquote p + p {
+	text-indent: 1em;
+}
+blockquote.testimonies p + p {
+	text-indent: 0;
+}
+
+hr {
+	border: none;
+	margin: 1em 0;
+}
+p.hr {
+	margin: 1em 0;
+ text-align: center;
+}
+img {
+	margin: 0;
+	max-width: 100%;
+	padding: 0;
+}
+q {
+	font-style: italic;
+}
+q:before {
+	content: "";
+}
+q:after {
+	content: "";
+}
+q i {
+	font-style: normal;
+}
+sub,
+sup {
+	font-size: .7em;
+}
+
+/* Listas */
+ol,
+ul {
+	margin: 1em 0;
+	padding: 0 0 0 2em;
+}
+
+li {
+	font-family: inherit;
+	font-size: .9em;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-align: justify;
+}
+
+li p {
+	font-family: inherit;
+	font-size: 1em;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-align: justify;
+	text-indent: 1em;
+}
+li.condensed p {
+	text-indent: 0;
+}
+li.condensed p + p {
+	margin: 0 !important;
+}
+li blockquote p {
+	font-size: .8em;
+}
+
+.none { list-style-type: none; }
+.upper-alpha { list-style-type: upper-alpha; }
+.lower-alpha { list-style: lower-alpha inside; padding-left: 0; }
+.lower-alpha li { margin-top: 1em; text-indent: 0; }
+.lower-alpha li p { text-indent: 0; display: inline; }
+.lower-alpha li p + p { text-indent: 1em; display: block; }
+.lower-latin { list-style-type: lower-latin; }
+.lower-roman { list-style-type: lower-roman; }
+
+dt {
+	font-size: .9em;
+	font-weight: bold;
+	margin: 1em 0 0 0;
+	text-indent: 0;
+}
+dd {
+	font-size: .9em;
+	font-weight: normal;
+	margin: 0 0 0 0;
+	text-indent: 0;
+}
+dl.inline dt {
+	float: left;
+	margin-top: 0;
+	padding-right: .25em;
+}
+dl.inline dd + dt {
+	clear: left;
+}
+
+/* Tablas */
+caption {
+	font-size: .85em;
+	margin: 0 0 .5em 0;
+	page-break-after: avoid;
+	text-align: left;
+	text-indent: 0;
+}
+table {
+	border-collapse: collapse;
+	font-size: 1em;
+	margin: 1em 0;
+	max-width: 100%;
+	width: 100%;
+}
+table p {
+	font-size: .75em;
+}
+table p {
+	text-indent: 0 !important;
+}
+table + p {
+	text-indent: 0;
+}
+th {
+	background-color: #006697;
+	border: 1px solid #00558e;
+	border-collapse: collapse;
+	color: white;
+	padding: .25em;
+}
+td {
+	border: 1px solid #00558e;
+	border-collapse: collapse;
+	padding: .25em;
+	vertical-align: top;
+}
+th p {
+	font-style: italic;
+	font-weight: bold;
+	text-align: center;
+}
+th i {
+	font-style: normal;
+}
+td p {
+	padding: 0 .3em;
+	text-align: center;
+	text-indent: 0 !important;
+}
+td ul, td ol {
+	margin: 0;
+}
+
+/* Alineación celdas | General */
+td + td {
+	vertical-align: middle;
+}
+td + td p {
+	text-align: center;
+}
+
+/* Alineación celdas | Tabla descriptiva */
+table.long-desc td + td {
+	vertical-align: top;
+}
+table.long-desc td p {
+	text-align: left;
+}
+table.long-desc td + td p {
+	text-align: left;
+}
+
+/* Alineación celdas | Numeral tras 2 */
+table.numeral-after-2 td + td {
+	vertical-align: top;
+}
+table.numeral-after-2 td p {
+	text-align: left;
+}
+table.numeral-after-2 td + td p,
+table.numeral-after-2 td[rowspan] + td + td p {
+	text-align: center;
+}
+table.numeral-after-2 td[rowspan] + td p {
+	text-align: left;
+}
+
+/* Alineación celdas | Tabla de relación */
+table.relationship td p {
+	text-align: left;
+}
+table.relationship td + td p {
+	text-align: center;
+}
+
+/* Scopes */
+.scope,
+.even {
+	background-color: #e5eef4;
+	vertical-align: middle;
+}
+.scope p {
+	font-style: italic;
+	font-weight: bold;
+}
+/* td.scope + td.scope p {
+	font-style: normal;
+	font-weight: normal;
+} */
+th.scope {
+	border: 1px solid #00558e;
+}
+th.scope p {
+	color: #000;
+}
+td p.title {
+	font-weight: bold;
+	text-align: center !important;
+}
+td.punctuation p {
+	text-align: center !important;
+}
+td.punctuation-checked {
+	background-color: #e5eef4;
+}
+td.punctuation-checked p {
+	text-align: center !important;
+}
+.empty {
+	border: none !important;
+	background: none !important;
+}
+p.subtype {
+	margin-left: 1em !important;
+}
+
+/* Figuras */
+div.figure,
+figure {
+	margin: 1em 0;
+	page-break-inside: avoid;
+	text-align: center;
+	width: 100%;
+}
+p.image {
+	border: 1px solid #00558e;
+	text-align: center;
+	text-indent: 0;
+	width: 99%;
+}
+p.image img {
+	max-width: 100%;
+	text-align: center;
+}
+figure.screenshot p.image {
+	border: 0;
+	text-align: center;
+	text-indent: 0;
+	width: 99%;
+}
+figure.screenshot p.image img {
+	border: 1px solid #00558e;
+	max-width: 100%;
+	text-align: center;
+}
+figcaption {
+	margin: 0 0 .5em 0;
+	page-break-after: avoid;
+	text-align: left;
+	text-indent: 0;
+}
+p.figcaption,
+figcaption p {
+	font-size: .85em;
+	margin: 0 0 .5em 0;
+	text-align: left;
+	text-indent: 0;
+}
+p.source,
+p.legend,
+div.legend p {
+	font-size: .7em;
+	margin-top: 0;
+	page-break-before: avoid;
+	text-align: left;
+	text-indent: 0;
+}
+p.figcaption span.label,
+figcaption span.label,
+caption span.label {
+	color: #00558e;
+	font-weight: bold;
+}
+div.figure p.bridgehead,
+figcaption p.bridgehead {
+	font-size: 80%;
+	font-weight: bold;
+	page-break-after: avoid;
+}
+
+/* Estilos consecuentes */
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+hr + p,
+blockquote + p,
+.bridgehead + p {
+	text-indent: 0;
+}
+
+/* Seudoversalitas con función decorativa */
+span.sc {
+	font-size: 80%;
+}
+
+/* Bibliografía */
+#bibliography ul {
+	margin: 0;
+	padding: 0;
+}
+#bibliography li {
+	list-style-type: none;
+	margin-left: 1.2em;
+	text-align: left;
+	text-indent: -1.2em;
+}
+li.biblioentry a {
+	overflow: hidden;
+}
+span.online {
+	display: block;
+	margin-left: 0;
+	overflow: hidden;
+	text-align: left;
+	text-indent: 0;
+}
+
+/* Notas | Llamadas */
+a.noteref {
+	font-size: .7em;
+	line-height: 1;
+	vertical-align: top;
+}
+
+/* Notas | Notas al final */
+#footnotes {
+	border-top: 2px solid #00558e;
+	border-bottom: 2px solid #00558e;
+	margin-top: 1.5em;
+	padding: .5em 0;
+}
+#footnotes h2 {
+	margin: .2em 0;
+	page-break-after: avoid;
+}
+.footnote {
+	margin: .6em 0 0 0;
+}
+.footnote p {
+	font-size: .9em;
+	margin: 0 0 0 1.75em;
+	text-indent: 0;
+}
+.footnote a.noteback {
+	display: inline;
+	float: left;
+	clear: left;
+	font-size: .9em;
+	font-style: normal;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0 .25em 0 0;
+	page-break-after: avoid;
+	text-align: right;
+	vertical-align: inherit;
+	width: 1.5em;
+}
+.footnote a.noteback + p {
+	page-break-before: avoid;
+}
+
+/* BACKMATTER */
+
+/* Sobre el autor */
+
+#about-author {
+	border-top: 2px solid #00558e;
+	border-bottom: 2px solid #00558e;
+	margin-top: 1.5em;
+	padding: .5em 0;
+}
+#about-author {
+	page-break-before: always;
+}
+#about-author div.author + div.author,
+#about-author div.author + div.address {
+	border-top: 1px solid #00558e;
+	margin-top: 1em;
+}
+#about-author p {
+	text-indent: 0;
+}
+#about-author h2 {
+	color: #00558e;
+	font-size: 1em; 
+	font-style: normal;
+	font-weight: bold;
+	margin: .2em 0;
+	page-break-after: avoid;
+}
+#about-author p.name {
+	font-style: italic;
+	font-weight: normal;
+	margin-top: 1em;
+}
+#about-author div.bio {
+	margin-top: 1em;
+}
+#about-author div.bio p + p {
+	text-indent: 1em;
+}
+#about-author div.address {
+	margin-top: 1em;
+}
+
+/* Título original */
+#original-title {
+	border-top: 1px solid #00558e;
+	border-bottom: 1px solid #00558e;
+	margin: 1.5em 0;
+	padding: .5em;
+}
+#original-title p {
+	font-size: .75em;
+	text-indent: 0;
+}
+#original-title cite {
+	color: #00558e;
+	font-style: normal;
+}
+
+/* Aviso legal */
+#permissions {
+	margin-top: 2.5em;
+	padding: 1em;
+}
+#permissions p {
+	text-indent: 0;
+}
+#permissions span.creative-commons {
+	float: left;
+	max-width: 20%;
+	padding-top: .2em;
+	padding-right: .8em;
+	width: 7em;
+}
+
+/* Editorial */
+#publisher { text-align: center; margin: 4em 0 1em 0; page-break-inside: avoid; }
+#publisher p.logo { text-align: center; display: inline-block; width: 7em; }
+#publisher p.logo + p.logo { padding-left: 1em; }
+#publisher p.logo img { text-align: center; }

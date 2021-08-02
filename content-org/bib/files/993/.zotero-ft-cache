@@ -1,0 +1,145 @@
+
+Wiley Online Library
+
+    Skip to main content
+    Log in / Register
+
+Advertisement
+
+    Go to old article view
+
+    Text size
+    Share
+
+Advertisement
+Journal of Quaternary Science
+Explore this journal >
+
+    Journal of Quaternary Science
+    Explore this journal >
+
+Journal of Quaternary Science
+
+    Next article in issue: Towards automation of palynology 2: the use of texture measures and neural network analysis for automated identification of optical images of pollen grains
+
+    Next article in issue: Towards automation of palynology 2: the use of texture measures and neural network analysis for automated identification of optical images of pollen grains
+
+View  issue TOC
+Volume 19, Issue 8
+December 2004
+Pages 745–754
+Research Article
+Towards automation of palynology 1: analysis of pollen shape and ornamentation using simple geometric measures, derived from scanning electron microscope images
+Authors
+
+    W. J. Treloar,
+    Close author notes
+        Geography Programme School of People, Environment and Planning, Massey University, Palmerston North, New Zealand
+    Search for more papers by this author
+    G. E. Taylor,
+    Close author notes
+        Leeds Metropolitan University, Leeds, England
+    Search for more papers by this author
+    J. R. Flenley
+    Close author notes
+    Corresponding author
+        E-mail address: john_flenley@hotmail.com
+        E-mail address: j.flenley@massey.ac.nz
+        Geography Programme School of People, Environment and Planning, Massey University, Palmerston North, New Zealand
+        Geography Programme, School of People, Environment and Planning, Massey University, Private Bag 11 222, Palmerston North, New Zealand.
+    Search for more papers by this author
+
+    First published: 13 October 2004 Full publication history
+    DOI: 10.1002/jqs.871   View/save citation
+    Cited by (CrossRef): 9 articles Check for updates
+    Citation tools
+        Set citation alert
+        Citing literature
+
+Abstract
+
+This is the first of a series of papers on the theme of automated pollen analysis. The automation of pollen analysis could result in numerous advantages for the reconstruction of past environments, with larger data sets made practical, objectivity and fine resolution sampling. There are also applications in apiculture and medicine. Previous work on the classification of pollen using texture measures has been successful with small numbers of pollen taxa. However, as the number of pollen taxa to be identified increases, more features may be required to achieve a successful classification. This paper describes the use of simple geometric measures to augment the texture measures. The feasibility of this new approach is tested using scanning electron microscope (SEM) images of 12 taxa of fresh pollen taken from reference material collected on Henderson Island, Polynesia. Pollen images were captured directly from a SEM connected to a PC. A threshold grey-level was set and binary images were then generated. Pollen edges were then located and the boundaries were traced using a chain coding system. A number of simple geometric variables were calculated directly from the chain code of the pollen and a variable selection procedure was used to choose the optimal subset to be used for classification. The efficiency of these variables was tested using a leave-one-out classification procedure. The system successfully split the original 12 taxa sample into five sub-samples containing no more than six pollen taxa each. The further subdivision of echinate pollen types was then attempted with a subset of four pollen taxa. A set of difference codes was constructed for a range of displacements along the chain code. From these difference codes probability variables were calculated. A variable selection procedure was again used to choose the optimal subset of probabilities that may be used for classification. The efficiency of these variables was again tested using a leave-one-out classification procedure. The proportion of correctly classified pollen ranged from 81% to 100% depending on the subset of variables used. The best set of variables had an overall classification rate averaging at about 95%. This is comparable with the classification rates from the earlier texture analysis work for other types of pollen. Copyright © 2004 John Wiley & Sons, Ltd.
+Continue reading full article
+
+    Enhanced PDF
+    Standard PDF (366.2 KB)
+
+Ancillary
+Related content
+Articles related to the one you are viewing
+
+Please enable Javascript to view the related content of this article.
+
+The articles below have been selected for you based on the article you are currently viewing.
+Towards automation of palynology 2: the use of texture measures and neural network analysis for automated identification of optical images of pollen grains
+
+Authors
+    P. LI, W. J. Treloar, J. R. Flenley, L. Empson 
+Published Date
+    23 November 2004 
+
+On the mechanism of the “Noisar” phenomenon in magnetic close binary systems
+
+Authors
+    I. L. Andronov 
+Published Date
+    1987 
+
+Kukarkin-Parenago relationship, period gap, and cause of dwarf nova outbursts
+
+Authors
+    G.A. Richter, H.-J. Bräuer 
+Published Date
+    1989 
+
+Analysis of light curves produced by surface inhomogeneities on magnetic CP stars
+
+Authors
+    A. Hempelmann, W. Schöneich 
+Published Date
+    1987 
+
+AM Cas — Spectral variations during the eruption cycles Es wurden spektroskopische Untersuchungen dieser Zwergnova vom Untertyp Z Camelopardalis im Ruhezustand und während des Ausbruchs durchgeführt. Obwohl zur Zeit der Beobachtungen die Zyklenlänge zum Teil nur 8 d .2 betrug, sind spektroskopisch keine systematischen Unterschiede zu Objekten grö$sZerer Zyklenlänge festzustellen.
+
+Authors
+    Richter G. A., Notni P., Tiersch H. 
+Published Date
+    1988 
+
+Citing Literature
+
+    Number of times cited : 9
+
+    1 B. Zimmerman , V. Tafintseva , M. Bağcıoğlu , M. Høegh Berdahl , A. Kohler , Analysis of Allergenic Pollen by FTIR Microspectroscopy, Analytical Chemistry , 2016 , 88 , 1, 803 CrossRef
+    2 J. Víctor Marcos , Rodrigo Nava , Gabriel Cristóbal , Rafael Redondo , Boris Escalante-Ramírez , Gloria Bueno , Óscar Déniz , Amelia González-Porto , Cristina Pardo , François Chung , Tomás Rodríguez , Automated pollen identification using microscopic imaging and texture analysis, Micron , 2015 , 68 , 36 CrossRef
+    3 Marcos del Pozo-Baños , Jaime R. Ticay-Rivas , Jesús B. Alonso , Carlos M. Travieso , Features extraction techniques for pollen grain classification, Neurocomputing , 2015 , 150 , 377 CrossRef
+    4 K. A. Holt , K. D. Bennett , Principles and methods for automated palynology, New Phytologist , 2014 , 203 , 3, 735 Wiley Online Library
+    5 Manuel Chica , Authentication of bee pollen grains in bright-field microscopy by combining one-class classification techniques and image processing, Microscopy Research and Technique , 2012 , 75 , 11, 1475 Wiley Online Library
+    6 Surangi W. Punyasena , David K. Tcheng , Cassandra Wesseln , Pietra G. Mueller , Classifying black and white spruce pollen using layered machine learning, New Phytologist , 2012 , 196 , 3, 937 Wiley Online Library
+    7 K. Holt , G. Allen , R. Hodgson , S. Marsland , J. Flenley , Progress towards an automated trainable pollen location and classifier system for use in the palynology laboratory, Review of Palaeobotany and Palynology , 2011 , 167 , 3-4, 175 CrossRef
+    8 Kevan A.J. Walsh , Mark Horrocks , Palynology: Its Position in the Field of Forensic Science, Journal of Forensic Sciences , 2008 , 53 , 5, 1053 Wiley Online Library
+    9 P. LI , W. J. Treloar , J. R. Flenley , L. Empson , Towards automation of palynology 2: the use of texture measures and neural network analysis for automated identification of optical images of pollen grains, Journal of Quaternary Science , 2004 , 19 , 8, 755 Wiley Online Library
+
+    PDF
+    PDF
+    Info
+
+Close article support pane
+
+    Wiley
+
+    Browse Publications
+    Browse by Subject
+    Resources
+
+    Help & Support
+    Cookies & Privacy
+    Terms of Service
+
+    About Us
+    Wiley Job Network
+    Advertisers & Agents
+
+Powered by Wiley Online Library
+
+Copyright © 1999 - 2018 John Wiley & Sons, Inc. All Rights Reserved

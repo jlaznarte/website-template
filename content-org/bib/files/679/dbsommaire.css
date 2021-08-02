@@ -1,0 +1,49 @@
+
+/* ::::: http://www.efita.net/stylesheet/Style.css ::::: */
+
+a:link { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9pt; color: rgb(0, 102, 0); text-decoration: none; font-weight: bold; }
+a:hover { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9pt; color: rgb(0, 153, 102); text-decoration: underline; font-weight: bold; }
+a:active { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9pt; color: rgb(0, 204, 0); text-decoration: none; font-weight: bold; }
+a:visited { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9pt; font-weight: bold; color: rgb(0, 102, 0); text-decoration: none; }
+body { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9pt; background-color: rgb(255, 255, 255); background-attachment: fixed; visibility: visible; }
+address { font-family: Verdana,Arial,Helvetica,sans-serif; color: rgb(102, 255, 0); }
+.pageactive { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9pt; font-style: normal; font-weight: bolder; }
+.LienDocument { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9pt; font-weight: bold; }
+.TexteDate { font-family: Arial,Helvetica,sans-serif; font-size: 7pt; font-style: normal; line-height: normal; font-weight: normal; color: rgb(0, 0, 0); }
+.DocIntitule { font-family: Arial,Helvetica,sans-serif; font-size: 13px; font-weight: bold; color: rgb(0, 102, 0); }
+.DocDescription { font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-style: normal; line-height: normal; font-weight: normal; color: rgb(0, 0, 0); }
+.DocSavoirplus {  }
+.TitrePage { font-family: Arial,Helvetica,sans-serif; font-size: 16px; font-style: normal; line-height: normal; font-weight: bold; color: rgb(0, 102, 0); }
+.LegendePhotoAccueil { font-family: Century Gothic,Arial,Helvetica,sans-serif; font-size: 13px; font-weight: bold; color: rgb(0, 168, 84); background-color: rgb(255, 255, 204); }
+.TitreListe { font-family: Arial,Helvetica,sans-serif; font-size: 15px; font-weight: bold; color: rgb(0, 153, 0); font-style: italic; line-height: normal; }
+.TitreTableau { font-family: Arial,Helvetica,sans-serif; font-size: 13px; font-weight: bold; color: rgb(0, 168, 84); }
+.CTNlistboxauto { border: medium none black; color: rgb(0, 102, 204); height: auto; width: 250pt; font-family: Arial,Helvetica,sans-serif; background-color: rgb(255, 255, 153); font-size: 12px; }
+.CTNInputauto { border: medium none black; color: rgb(0, 102, 204); height: auto; width: 250pt; font-family: Arial,Helvetica,sans-serif; background-color: rgb(255, 204, 51); font-size: 12px; }
+.BoutonALERTE { border-style: ridge; border-color: rgb(255, 102, 0) rgb(255, 153, 0) rgb(255, 153, 0) rgb(255, 102, 0); border-width: thin; font-family: Arial,Helvetica,sans-serif; font-size: 10px; font-style: normal; line-height: normal; font-weight: bold; color: rgb(255, 0, 0); background-color: rgb(255, 153, 0); }
+.BoutonNAV { border-style: ridge; border-color: rgb(255, 102, 0) rgb(255, 153, 0) rgb(255, 153, 0) rgb(255, 102, 0); border-width: thin; font-family: Arial,Helvetica,sans-serif; font-size: 10px; font-style: normal; line-height: normal; font-weight: bold; color: rgb(51, 102, 0); background-color: rgb(255, 223, 176); }
+.BoutonOK { border-style: ridge; border-color: rgb(0, 204, 0) rgb(0, 153, 0) rgb(0, 153, 0) rgb(0, 204, 0); border-width: thin; font-family: Arial,Helvetica,sans-serif; font-size: 10px; font-weight: bold; color: rgb(0, 102, 0); background-color: rgb(225, 249, 189); }
+.MoyenTexteVert { font-family: Arial,Helvetica,sans-serif; font-size: 13px; font-weight: normal; color: rgb(0, 102, 0); }
+.MoyenTexteVertIt { font-family: Arial,Helvetica,sans-serif; font-size: 13px; font-weight: normal; font-style: italic; color: rgb(0, 102, 0); }
+.PetitTexteVert { font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-style: normal; line-height: normal; font-weight: bold; color: rgb(0, 102, 0); }
+.MoyenTexteVertClIt { font-family: Arial,Helvetica,sans-serif; font-size: 13px; font-weight: bold; font-style: italic; color: rgb(51, 153, 0); }
+.DBDocSomActifFond { font-family: Arial,Helvetica,sans-serif; font-size: 16px; font-weight: bold; color: rgb(0, 102, 0); font-style: italic; background-color: rgb(245, 249, 200); }
+.DBDocSomActifTexte { font-family: Arial,Helvetica,sans-serif; font-size: 16px; font-weight: normal; color: rgb(0, 102, 0); font-style: italic; }
+.DBDOCTitrePage { font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-style: italic; line-height: normal; font-weight: bold; color: rgb(0, 0, 0); }
+.MargeDoc { overflow: scroll; position: relative; visibility: visible; z-index: auto; clip: rect(auto, auto, auto, auto); float: none; }
+.TexteInactiveBarreMenu { font-size: 11px; font-style: normal; }
+.TexteActiveBarreMenu { font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: normal; color: rgb(0, 102, 0); font-style: italic; }
+.PetitTexteRouge { font-family: Arial,Helvetica,sans-serif; font-size: 10px; font-style: normal; line-height: normal; font-weight: bold; color: rgb(206, 0, 0); }
+.TexteDocument { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9pt; background-attachment: fixed; background-image: url('bkg1.jpg'); visibility: visible; }
+.DBSommaireDossierDisponible { font-family: Century Gothic,Arial,Helvetica,sans-serif; font-size: 11pt; font-weight: bold; color: rgb(0, 102, 0); font-style: italic; }
+.DBSommaireTexteDossier { font-family: Arial,Helvetica,sans-serif; font-size: 10pt; font-weight: bold; color: rgb(0, 102, 0); font-style: normal; }
+.DBSommaireEnSavoirPlus { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 7pt; font-weight: bold; font-style: italic; color: rgb(0, 102, 0); }
+.DBSommaireTexteAbstract { font-family: Arial,Helvetica,sans-serif; font-size: 9pt; font-weight: normal; color: rgb(0, 0, 0); font-style: normal; }
+.DBSommaireTexteSource { font-family: Arial,Helvetica,sans-serif; font-size: 7pt; font-weight: normal; color: rgb(0, 0, 0); font-style: normal; }
+.DBSommaireTitre { font-family: Century Gothic,Arial,Helvetica,sans-serif; font-size: 11pt; font-weight: bold; color: rgb(0, 0, 0); font-style: italic; }
+.DBSommaireTexte { font-family: Arial,Helvetica,sans-serif; font-size: 10pt; font-weight: normal; color: rgb(0, 102, 0); font-style: normal; }
+.DBSommaireTelecharger { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9pt; font-weight: bold; font-style: normal; color: rgb(0, 102, 0); line-height: 110%; }
+.DBSommaireSautParagraphe { font-size: 5pt; line-height: normal; }
+.styleTreeLink { font-family: Arial,Helvetica,sans-serif; font-size: 12pt; font-weight: bold; color: rgb(0, 102, 0); font-style: normal; }
+.BakgroundPhoto { background-image: url('bkg1.jpg'); }
+.BakgroundLegendePhoto { background-image: url('bkgvert.jpg'); }
+.LegendePhoto { font-family: Arial,Helvetica,sans-serif; font-size: 13px; font-weight: bold; color: rgb(0, 102, 0); }

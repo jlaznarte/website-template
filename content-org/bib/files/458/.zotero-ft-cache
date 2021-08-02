@@ -1,0 +1,222 @@
+Screen reader users, click here to load entire article This page uses JavaScript to progressively load the article content as a user scrolls. Screen reader users, click the load entire article button to bypass dynamically loaded article content.
+Please note that Internet Explorer version 8.x will not be supported as of January 1, 2016. Please refer to this blog post for more information. Close
+ 
+
+    Journals
+    Books
+
+    Shopping cart
+    Sign in
+    Sign in
+    OpenAthens login
+    Login via your institution
+    Other institution login
+    Sign in using your ScienceDirect credentials
+    Username:
+    Password:
+    Remember me
+    | Not Registered?
+    Forgotten username or password?
+    Help
+
+    Purchase
+     
+    Help
+        Direct export
+         
+         
+        Export file
+          RIS (for EndNote, Reference Manager, ProCite)
+          BibTeX
+          Text
+          RefWorks Direct Export
+        Content
+          Citation Only
+          Citation and Abstract
+
+Advanced search
+
+ 
+Article outline
+Show full outline
+
+    Abstract
+    Abbreviations
+    Keywords
+    1. Introduction
+    2. Wind power forecasts: uncertainty and definition
+    2.1. Uncertainty analysis
+    2.2. Definitions
+    3. Wind power forecasts and decision-making applications
+    3.1. Impact of wind power forecasts on electricity prices
+    3.2. Optimal bidding strategy of wind power producers
+    4. Uncertainty representation of wind power forecasting
+    4.1. Probabilistic forecasting
+    4.2. Risk index
+    4.3. Scenario
+    5. Wind power probabilistic forecasting
+    5.1. Parametric approach
+    5.1.1. Shapes of wind power predictive density
+    5.1.2. Estimators of local parameter
+    5.1.3. Estimators of scale parameter
+    5.1.4. Parameter evaluation theory
+    5.2. Non-parametric approach
+    5.2.1. Quantile regression method
+    5.2.2. Kernel density estimation method
+    5.2.3. Probabilistic forecasting based on ensemble
+    5.2.4. Artificial intelligence approach
+    6. Risk index forecasting of wind power generation
+    7. Wind power space-time scenario forecasting
+    8. Evaluation of wind power uncertainty forecasting
+    8.1. Required property
+    8.1.1. Reliability
+    8.1.2. Sharpness
+    8.1.3. Skill score
+    8.2. Evaluation framework
+    9. Discussion
+    9.1. Development of new wind power uncertainty forecasts
+    9.2. Accommodating more wind power through electricity market
+    9.3. Wind power forecasts in smart grid context
+    10. Conclusion
+    Acknowledgments
+    Reference
+
+Alert message
+JavaScript is disabled on your browser.
+Please enable JavaScript to use all the features on this page.
+Figures and tables
+
+    Table 1
+    Theoretical wind power curve of the VENSYS 77 (1.5MW) wind turbine installed at ...
+    Actual wind power curve for Beidaqiao II wind farm in Gansu province, China from ...
+    Supply and demand of electricity market when great changes take place in wind ...
+    Table 2
+    Table 3
+    Table 4
+    Example of predictive distribution with the highest reliability. The solid line ...
+    Example of predictive distribution with high or low sharpness. The solid line ...
+    Table 5
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. View full text
+
+Renewable and Sustainable Energy Reviews
+
+Volume 32 , April 2014, Pages 255–270
+Cover image Cover image
+Review on probabilistic forecasting of wind power generation
+
+    Yao Zhang ,
+    Jianxue Wang , ,
+    Xifan Wang
+
+    School of Electrical Engineering, Xi’an Jiaotong University, Xi’an 710049, PR China
+
+    Received 9 April 2013, Revised 25 November 2013, Accepted 4 January 2014, Available online 31 January 2014
+
+  Show more   Show less
+Choose an option to locate/access this article:
+Check if you have access through your login credentials or your institution
+Check access
+Purchase $37.95
+
+    doi:10.1016/j.rser.2014.01.033 
+    Get rights and content 
+
+Abstract
+
+The randomness and intermittence of wind resources is the biggest challenge in the integration of wind power into the power system. Accurate forecasting of wind power generation is an efficient tool to deal with such problem. Conventional wind power forecasting produces a value, or the conditional expectation of wind power output at a time point in the future. However, any prediction involves inherent uncertainty. In recent years, several probabilistic forecasting approaches have been reported in wind power forecasting studies. Compared to currently wide-used point forecasts, probabilistic forecasts could provide additional quantitative information on the uncertainty associated with wind power generation. For decision-makings in the uncertainty environment, probabilistic forecasts are optimal inputs. A review of state-of-the-art methods and new developments in wind power probabilistic forecasting is presented in this paper. Firstly, three different representations of wind power uncertainty are briefly introduced. Then, different forecasting methods are discussed. These methods are classified into three categories in terms of uncertainty representation, i.e. probabilistic forecasts (parametric and non-parametric), risk index forecasts and space-time scenario forecasts. Finally, requirements and the overall framework of the uncertainty forecasting evaluation are summarized. In addition, this article also describes current challenges and future developments associated with wind power probabilistic prediction.
+Abbreviations
+
+    WPF , Wind Power Forecasting ;
+    PDF , Probability Density Function ;
+    CDF , Cumulative Distribution Function ;
+    QR , Quantile Regression ;
+    KDE , Kernel Density Estimation ;
+    ISO , Independent System Operator ;
+    RS-AR , Regime-Switching Autoregression ;
+    MS-AR , Markov-Chain Regime-Switching Autoregression ;
+    AR-GARCH , Autoregression-Generalized Autoregressive with Conditional Heteroscedasticity ;
+    CPAR , Conditional Parametric Autoregression ;
+    LQR , Local Quantile Regression ;
+    SQR , Spline Quantile Regression ;
+    QRF , Quantile Regression Forest ;
+    BMA , Bayesian Model Averaging ;
+    MRI , Meteo-Risk Index ;
+    NPRI , Normalized Prediction Risk Index ;
+    AI , Artificial Intelligence ;
+    NWP , Numerical Weather Prediction ;
+    CRPS , Continuous Ranked Probability Score
+
+Keywords
+
+    Probabilistic forecasting ;
+    Uncertainty forecasting ;
+    Decision-making ;
+    Stochastic optimization ;
+    Uncertainty representation ;
+    Parametric and non-parametric density ;
+    Forecasting evaluation
+
+    Corresponding author. Tel.: +86 29 82668842; fax: +86 29 82665489.
+
+Copyright © 2014 Elsevier Ltd. All rights reserved.
+
+    About ScienceDirect
+
+    Contact and support
+
+    Terms and conditions
+
+    Privacy policy
+
+Copyright © 2016 Elsevier B.V. or its licensors or contributors. ScienceDirect® is a registered trademark of Elsevier B.V.
+Cookies are used by this site. To decline or learn more, visit our Cookies page.
+Switch to Mobile Site
+  Recommended articles
+
+        Current status and future advances for wind speed and power forecasting
+        2014, Renewable and Sustainable Energy Reviews
+        more
+            Jaesung Jung, Robert P. Broadwater
+            Current status and future advances for wind speed and power forecasting
+            Renewable and Sustainable Energy Reviews, Volume 31, March 2014, Pages 762–777
+            Review Article
+                PDF (926 K)
+        Current methods and advances in forecasting of wind power generation
+        2012, Renewable Energy
+        more
+            Aoife M. Foley, Paul G. Leahy, Antonino Marvuglia, Eamon J. McKeogh
+            Current methods and advances in forecasting of wind power generation
+            Renewable Energy, Volume 37, Issue 1, January 2012, Pages 1–8
+            Review Article
+                PDF (347 K)
+        Online short-term solar power forecasting
+        2009, Solar Energy
+        more
+            Peder Bacher, Henrik Madsen, Henrik Aalborg Nielsen
+            Online short-term solar power forecasting
+            Solar Energy, Volume 83, Issue 10, October 2009, Pages 1772–1783
+            Original Research Article
+                PDF (1033 K)
+    View more articles »
+
+  Citing articles ( 29 )
+
+    This article has not been cited.
+
+  Related book content
+
+    No articles found.
+
++ Show more applications
+- Show fewer applications
+ 
+Download PDFs
+Help
+Help
+  close
+
+Click to get updates and verify authenticity.
+[Entitle Gadget]
+Entitle Gadget
+

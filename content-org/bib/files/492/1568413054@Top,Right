@@ -1,0 +1,8 @@
+function OAS_RICH(position) {
+if (position == 'Right') {
+document.write ('<A HREF="http://oasc18036.247realmedia.com/RealMedia/ads/click_lx.ads/ajrccm/article/abstract/10.1164/ajrccm.155.3.9117021/L6/1414225090/Right/Thoracic/ATShouse/ResearchProgram-120x600.png/57415a6c7131625966414d4141646e51?x" target=" "><IMG SRC="http://cdn.oas-c18.adnxs.com/RealMedia/ads/Creatives/Thoracic/ATShouse/ResearchProgram-120x600.png"  ALT="ATS Foundation Research Program"  BORDER="0"></A>');
+}
+if (position == 'Top') {
+document.write ('<A HREF="http://oasc18036.247realmedia.com/RealMedia/ads/click_lx.ads/ajrccm/article/abstract/10.1164/ajrccm.155.3.9117021/L6/1690130121/Top/Thoracic/ATShouseLeader/FullRegistration16-728x90.jpg/57415a6c7131625966414d4141646e51?x" target=" "><IMG SRC="http://cdn.oas-c18.adnxs.com/RealMedia/ads/Creatives/Thoracic/ATShouseLeader/FullRegistration16-728x90.jpg"  ALT="ATS 2016 Full Registration"  BORDER="0"></A>');
+}
+}

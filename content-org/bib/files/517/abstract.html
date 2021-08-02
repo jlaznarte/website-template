@@ -1,0 +1,2562 @@
+<!DOCTYPE html>
+<html lang="en" class="pb-page<">
+<head data-pb-dropzone="head">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://www.annemergmed.com/article/S0196-0644(12)00262-4/abstract">
+<meta name="wpd_url" content="http://www.annemergmed.com/article/S0196-0644(12)00262-4/abstract">
+<meta name="wpd_date" content="2016-01-16T09:56Z">
+<script type="text/javascript" async="" src="1063.js"></script><script src="conversion_async.js" async="" type="text/javascript"></script><script src="id" async="async" type="text/javascript"></script><script src="id_001.dat" async="async" type="text/javascript"></script><script src="id_002.dat" async="async" type="text/javascript"></script><meta name="pbContext" content=";wgroup:string:Migrated Websites;issue:issue:pii:S0196064411X00227;product:product:elsevier:product:ha;pageGroup:string:Article View;page:string:Show Abstract;journal:journal:yjacep;website:website:ymem-site;article:article:pii:S0196064412002624">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <meta name="robots" content="noodp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <meta name="apple-itunes-app" content="app-id=534298766">
+
+
+    <meta name="google-play-app" content="app-id=com.elsevier.stmj.jat.newsstand.YMEM">
+
+
+
+
+
+<script src="analytics.js" async="" type="text/javascript"></script><script src="gtm.js" async=""></script><script src="537390469.js" async="" type="text/javascript"></script><script type="text/javascript">
+
+    function optimizelyTimeout() {
+        window.optimizely = window.optimizely || [];
+        if (!window.optimizely.data) {
+            window.optimizely.push("timeout")
+        }
+    }
+    (function () {
+        var e = "https:" == document.location.protocol ? "https://" : "http://";
+        var t = document.createElement("script");
+        t.type = "text/javascript";
+        t.async = true;
+        t.src = e + "cdn.optimizely.com/js/537390469.js";
+        var n = document.getElementsByTagName("script")[0];
+        n.parentNode.insertBefore(t, n)
+    })();
+    setTimeout(optimizelyTimeout, 1e3)
+</script>
+
+
+
+
+
+<script type="text/javascript">var NTPT_PGEXTRA='title=Real-Time%20Prediction%20of%20Waiting%20Time%20in%20the%20Emergency%20Department%2C%20Using%20Quantile%20Regression&artstage=S300&free=no&coverdate=201209&volume=60&issuenum=3&pub=Elsevier&specialty=Public%20Health%7CEmergency%20Medicine&issn=0196-0644&jname=Annals%20of%20Emergency%20Medicine&specialty=Public%20Health%7CEmergency%20Medicine&lc=http%3A%2F%2Fwww.annemergmed.com%2Farticle%2FS0196-0644%2812%2900262-4%2Fabstract%3Fissn%3D0196-0644%26coverdate%3D201209%26volume%3D60%26issuenum%3D3&';
+var NTPT_GLBLEXTRA="site=healthadvance.com";
+var NTPT_IDCOOKIE_DOMAIN=".healthadvance.com";
+var NTPT_SET_SESSION_COOKIE=false;</script>
+<script type="text/javascript" src="ntpagetag.js" async="" defer=""></script>
+
+
+
+<title>Real-Time Prediction of Waiting Time in the Emergency Department, Using Quantile Regression - Annals of Emergency Medicine</title><meta name="citation_journal_title" content="Annals of Emergency Medicine"> <meta name="citation_journal_abbrev" content="Annals of Emergency Medicine"> <meta name="citation_publisher" content="Elsevier"> <meta name="citation_title" content="Real-Time Prediction of Waiting Time in the Emergency Department, Using Quantile Regression"> <meta name="citation_date" content="2012/09/01"> <meta name="citation_online_date" content="2012/05/14"> <meta name="citation_volume" content="60"> <meta name="citation_issue" content="3"> <meta name="citation_firstpage" content="299"> <meta name="citation_lastpage" content="308"> <meta name="citation_abstract_html_url" content="http://www.annemergmed.com/article/S0196064412002624/abstract"> <meta name="citation_fulltext_html_url" content="http://www.annemergmed.com/article/S0196064412002624/fulltext"> <meta name="citation_pdf_url" content="http://www.annemergmed.com/article/S0196064412002624/pdf"> <meta name="citation_issn" content="0196-0644"> <meta name="citation_language" content="English"> <meta name="citation_doi" content="10.1016/j.annemergmed.2012.03.011"> <meta name="citation_author" content="Yan Sun"> <meta name="citation_author_email" content="yan_sun@nhg.com.sg"> <meta name="citation_author_institution" content="Department of Health Services and Outcomes Research, National Healthcare Group, Singapore"> <meta name="citation_author" content="Kiok Liang Teow"> <meta name="citation_author_institution" content="Department of Health Services and Outcomes Research, National Healthcare Group, Singapore"> <meta name="citation_author" content="Bee Hoon Heng"> <meta name="citation_author_institution" content="Department of Health Services and Outcomes Research, National Healthcare Group, Singapore"> <meta name="citation_author" content="Chee Kheong Ooi"> <meta name="citation_author_institution" content="Department of Emergency Medicine, Tan Tock Seng Hospital, Singapore"> <meta name="citation_author" content="Seow Yian Tay"> <meta name="citation_author_institution" content="Department of Emergency Medicine, Tan Tock Seng Hospital, Singapore"> <meta name="citation_reference" content="citation_title=MOH Information Paper: Waiting Times at Public Sector Emergency Departments; citation_author=H.P. Phua; citation_publication_date=2005; citation_publisher=Health Information Management Branch, Ministry of Health, Singapore; "> <meta name="citation_reference" content="citation_title=MOH Statistics Bulletin 2009; citation_publication_date=2010; citation_publisher=Ministry of Health, Singapore; "> <meta name="citation_reference" content="citation_title=Australian Hospital Statistics 2003.04. Canberra, Australia; citation_author=Australian Institute of Health and Welfare (AIHW); citation_publication_date=2005; "> <meta name="citation_reference" content="citation_title=Improving Emergency Care in England (Report by the Comptroller and Auditor General HC 1075); citation_author=Department of Health; citation_publication_date=2004; citation_publisher=Department of Health and National Audit Office, London, England; "> <meta name="citation_reference" content="citation_title=National Ambulatory Medical Care Survey: 2002 emergency department summary; citation_author=L.F. McCaig; citation_author=C.W. Burt; "> <meta name="citation_reference" content="citation_title=Analysis of factors influencing length of stay in the emergency department; citation_author=P. Yoon; citation_author=I. Steiner; citation_author=G. Reinhardt; citation_journal_title=CJEM; citation_volume=5; citation_firstpage=155; citation_lastpage=161; citation_publication_date=2003; "> <meta name="citation_reference" content="citation_title=Emergency department crowding, part 1: concept, causes, and moral consequences; citation_author=J.C. Moskop; citation_author=D.P. Sklar; citation_author=J.M. Geiderman; citation_author=et al.; citation_journal_title=Ann Emerg Med; citation_volume=53; citation_firstpage=605; citation_lastpage=611; citation_publication_date=2009; "> <meta name="citation_reference" content="citation_title=The epidemiology of emergency department attendances in Christchurch; citation_author=P. Hider; citation_author=P. Helliwell; citation_author=M. Ardagh; citation_journal_title=N Z Med J; citation_volume=114; citation_firstpage=157; citation_lastpage=159; citation_publication_date=2001; "> <meta name="citation_reference" content="citation_title=Overcrowding in the nation's emergency departments: complex causes and disturbing effects; citation_author=R.W. Derlet; citation_author=J.R. Richards; citation_journal_title=Ann Emerg Med; citation_volume=35; citation_firstpage=63; citation_lastpage=68; citation_publication_date=2000; "> <meta name="citation_reference" content="citation_title=Factors associated with longer ED lengths of stay; citation_author=R.L. Gardner; citation_author=U. Sarkar; citation_author=J.H. Maselli; citation_author=et al.; citation_journal_title=Am J Emerg Med; citation_volume=25; citation_firstpage=643; citation_lastpage=650; citation_publication_date=2007; "> <meta name="citation_reference" content="citation_title=Numbers or apologies?; citation_author=N. Munichor; citation_author=A. Rafaeli; citation_journal_title=J Appl Psychol; citation_volume=92; citation_firstpage=511; citation_lastpage=518; citation_publication_date=2007; "> <meta name="citation_reference" content="citation_title=Waiting for service: the relationship between delays and evaluations of service; citation_author=S. Taylor; citation_journal_title=J Marketing; citation_volume=58; citation_firstpage=56; citation_lastpage=69; citation_publication_date=1994; "> <meta name="citation_reference" content="citation_title=What to tell customers in waits of different lengths: an integrative model of service evaluation; citation_author=M.K. Hui; citation_author=D.K. Tse; citation_journal_title=J Marketing; citation_volume=60; citation_firstpage=81; citation_lastpage=90; citation_publication_date=1996; "> <meta name="citation_reference" content="citation_title=A psychological perspective on service segmentation models: the significance of accounting for customers' perceptions of waiting and service; citation_author=Z. Carmon; citation_author=J.G. Shanthikumar; citation_author=T. Carmon; citation_journal_title=Manage Sci; citation_volume=41; citation_firstpage=1806; citation_lastpage=1815; citation_publication_date=1995; "> <meta name="citation_reference" content="citation_title=Waiting for service: ten years of empirical research; citation_author=A. Durrande-Moreau; citation_journal_title=Int J Serv Ind Manag; citation_volume=10; citation_firstpage=171; citation_lastpage=189; citation_publication_date=1999; "> <meta name="citation_reference" content="citation_title=Perspectives on queues: social justice and the psychology of queueing; citation_author=R.C. Larson; citation_journal_title=Oper Res; citation_volume=35; citation_firstpage=895; citation_lastpage=905; citation_publication_date=1987; "> <meta name="citation_reference" content="citation_title=Improving service by informing customers about anticipated delays; citation_author=W. Whitt; citation_journal_title=Manage Sci; citation_volume=45; citation_firstpage=192; citation_lastpage=207; citation_publication_date=1999; "> <meta name="citation_reference" content="citation_title=Patient satisfaction in emergency medicine; citation_author=C. Taylor; citation_author=I.R. Benger; citation_journal_title=Emerg Med J; citation_volume=21; citation_firstpage=528; citation_lastpage=532; citation_publication_date=2004; "> <meta name="citation_reference" content="citation_title=Patient satisfaction in the emergency department: a review of the literature and implications for practice; citation_author=E.D. Boudreaux; citation_author=E.L. O'Hea; citation_journal_title=J Emerg Med; citation_volume=26; citation_firstpage=13; citation_lastpage=26; citation_publication_date=2004; "> <meta name="citation_reference" content="citation_title=Patient satisfaction investigations and the emergency department: what does the literature say?; citation_author=A. Trout; citation_author=A.R. Magnusson; citation_author=J.R. Hedges; citation_journal_title=Acad Emerg Med; citation_volume=7; citation_firstpage=695; citation_lastpage=709; citation_publication_date=2000; "> <meta name="citation_reference" content="citation_title=Determinants of patient satisfaction and willingness to return with emergency care; citation_author=B.C. Sun; citation_author=J. Adams; citation_author=E.J. Orav; citation_author=et al.; citation_journal_title=Ann Emerg Med; citation_volume=35; citation_firstpage=426; citation_lastpage=434; citation_publication_date=2000; "> <meta name="citation_reference" content="citation_title=Emergency department satisfaction: what matters most?; citation_author=B. Bursch; citation_author=J. Beezy; citation_author=R. Shaw; citation_journal_title=Ann Emerg Med; citation_volume=22; citation_firstpage=586; citation_lastpage=591; citation_publication_date=1993; "> <meta name="citation_reference" content="citation_title=A multifaceted intervention improves patient satisfaction and perceptions of emergency care; citation_author=D. Taylor; citation_author=M.P. Kennedy; citation_author=E. Virtue; citation_author=et al.; citation_journal_title=Int J Qual Health Care; citation_volume=18; citation_firstpage=238; citation_lastpage=245; citation_publication_date=2006; "> <meta name="citation_reference" content="citation_title=Waiting in the emergency room: how to improve patient satisfaction; citation_author=J.C. Mowen; citation_author=J.W. Licata; citation_author=J. McPhail; citation_journal_title=J Health Care Mark; citation_volume=13; citation_firstpage=26; citation_lastpage=33; citation_publication_date=1993; "> <meta name="citation_reference" content="citation_title=Effect of emergency department information on patient satisfaction; citation_author=S. Krishel; citation_author=L.J. Baraff; citation_journal_title=Ann Emerg Med; citation_volume=22; citation_firstpage=568; citation_lastpage=572; citation_publication_date=1993; "> <meta name="citation_reference" content="citation_title=Analysis of Emergency Room Waiting Time in SAS; citation_author=B. Wenerstrom; citation_publication_date=2009; "> <meta name="citation_reference" content="citation_title=Development of a waiting time prediction system for hospitals; citation_author=A. Ogawa; citation_author=K. Maki; citation_author=N. Esumi; citation_author=et al.; citation_journal_title=IEEJ Trans Electronics Information Syst; citation_volume=129; citation_firstpage=1264; citation_lastpage=1268; citation_publication_date=2009; "> <meta name="citation_reference" content="citation_title=A Queueing Theoretic Approach to Gridlock Prediction in Emergency Departments; citation_author=T. Caglar; citation_publication_date=2005; citation_publisher=Virginia Polytechnic Institute and State University, Blacksburg, VA; "> <meta name="citation_reference" content="citation_title=An emergency department simulation and a neural network metamodel; citation_author=R.A. Kilmer; citation_author=A.E. Smith; citation_author=L.J. Shuman; citation_journal_title=J Soc Health Syst; citation_volume=5; citation_firstpage=63; citation_lastpage=79; citation_publication_date=1997; "> <meta name="citation_reference" content="citation_title=Regression quantiles; citation_author=R. Koenker; citation_author=G. Bassett; citation_journal_title=Econometrica; citation_volume=46; citation_firstpage=33; citation_lastpage=50; citation_publication_date=1978; "> <meta name="citation_reference" content="citation_title=Quantile Regression; citation_author=L. Hao; citation_author=D.Q. Naiman; citation_publication_date=2007; citation_publisher=Sage Publications, Thousand Oaks, CA; "> <meta name="citation_reference" content="citation_title=Quantile regression with bootstrapped standard errors; citation_author=W. Gould; citation_journal_title=Stata Tech Bull; citation_volume=9; citation_firstpage=19; citation_lastpage=21; citation_publication_date=1992; "> <meta name="citation_reference" content="citation_title=Singapore emergency medicine services patient acuity category (PAC) scale; citation_author=Ministry of Health; "> <meta name="citation_reference" content="citation_title=Operations Research Applications and Algorithms; citation_author=W. Winston; citation_publication_date=2004; citation_publisher=Brooks/Cole–Thomson Learning, Toronto, Canada; "> <meta name="citation_reference" content="citation_title=The impact of delay announcements in many-server queues with abandonment: supplementary material; citation_author=M. Armony; citation_author=N. Shimkin; citation_author=W. Whitt; citation_publication_date=2007; "> <meta name="citation_reference" content="citation_title=Characterizing waiting room time, treatment time, and boarding time in the emergency department using quantile regression; citation_author=D. Ru; citation_author=M.L. McCarthy; citation_author=J.S. Desmond; citation_author=et al.; citation_journal_title=Acad Emerg Med; citation_volume=17; citation_firstpage=813; citation_lastpage=823; citation_publication_date=2010; "> <meta name="citation_reference" content="citation_author=M.L. McCarthy; citation_author=R. Ding; citation_author=S.L. Zeger; citation_author=et al.; citation_journal_title=A randomized controlled trial of the effect of service delivery information on patient satisfaction in an emergency department fast track; citation_volume=18; citation_firstpage=674; citation_lastpage=685; citation_publication_date=2011; ">
+<meta charset="UTF-8"><!--
+
+    Pagebuild admin UI
+-->
+<noscript><style>.requiresJS{display:none}.dartAd{display:block !important}</style></noscript><script async="" defer="" src="embed.js"></script><script type="text/javascript" src="product.js"></script><script src="altmetric_badges-0c332c5f0c2e9bd3c6d95a5f83ceb518.js" id="altmetric-embed-js"></script><!--[if IE 6]><link rel="stylesheet" type="text/css" href="/wro/9er9/ie6.css"/><script type="text/javascript" src="/wro/9er9/ie6.js"></script><![endif]-->
+
+
+<script type="application/ld+json">
+
+    {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url":"http://www.annemergmed.com",
+    "potentialAction": {
+    "@type": "SearchAction",
+    "target": "http://www.annemergmed.com/action/doSearch?AllField={search-term}&amp;searchLoggingType=google",
+    "query-input": "required name=search-term"
+    }
+    }
+</script>
+<script src="s-code-contents-87ff59abfc9acf73289bd658598e0b01359c7df7.js"></script><script src="menu.c20a7f164de4760a4fae.js" async="" charset="utf-8" type="text/javascript"></script><script src="412.2dd7df130e34f2b3b756.js" async="" charset="utf-8" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="abstract.css" media="all">
+</head>
+<body><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WRH4ZN');</script>
+
+<script type="text/javascript">
+
+
+        if(false) {
+            document.getElementById("skipNavigationLink").onclick =function skipElement () {
+                document.getElementById('').setAttribute('tabindex','0');
+                document.getElementById('').focus();
+            }
+
+        }
+
+</script>
+
+
+<noscript><img src="//pt000123.unica.com/ntpagetag.gif?js=0&amp;site=healthadvance.com" height=1 width=1 border=0 hspace=0 vspace=0 alt=""/></noscript>    <div id="pb-page-content">
+        <div data-pb-dropzone="main" data-pb-dropzone-name="Main">
+
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget literatumAd alignCenter dartAd widget-horizontalAd  widget-compact-all" id="2f222acd-24dc-45d8-8c5d-dfffc9e26cfa">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-horizontalAd  body-compact-all"><div class="horizontalAdContainer">
+    <div class="horizontalAdLabelContainer">
+        <div class="horizontalAdLabel">
+                <img src="bg_adHoriz.gif" alt="Advertisement">
+        </div>
+    </div>
+    <div class="horizontalAd">
+        
+
+
+
+
+        <div class="pb-ad">
+            <script src="article.abstract;tile=1;sz=468x60,728x90;loggedin=no;ord=1455616473870" type="text/javascript"></script>
+
+<noscript>
+
+<a href="/action/clickThrough?id=1010&url=http%3A%2F%2Fad.doubleclick.net%2FN6053%2Fjump%2Fels.ymem%2Fperiodical.home%3Btile%3D1%3Bsz%3D468x60%2C728x90%3Bord%3D1455616473870%3F&loc=%2Farticle%2FS0196-0644%2812%2900262-4%2Fabstract&pubId=47320753">
+<img src="http://ad.doubleclick.net/N6053/ad/els.ymem/article.abstract;tile=1;sz=468x60,728x90;ord=1455616473870?" width="728" height="90"/>
+</a>
+</noscript>
+        </div>
+    
+
+    </div>
+</div></div>
+        </div>
+    </div>
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget literatumAd none  widget-no" id="35d85679-dffd-4782-bf7e-8455fa84ceba">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-no "><div class="pb-ad">
+                      <!-- Google Tag Manager GTM-HA-->
+			<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WRH4ZN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+			<script>
+
+
+			(function (){
+			 var script = document.createElement("script");
+			 script.appendChild(document.createTextNode(
+			"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WRH4ZN');"
+
+			 ));
+
+			document.body.insertBefore(script, document.body.firstChild);
+			}
+			());
+
+			</script>
+			<!-- End Google Tag Manager -->
+        </div></div>
+        </div>
+    </div>
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget page-main-content none  widget-none  widget-compact-all" id="pageMainContent">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none  body-compact-all"><div data-pb-dropzone="contents">
+    
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget pageHeader none  widget-none  widget-compact-all" id="pageHeader">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none  body-compact-all"><div class="page-header">
+    <div data-pb-dropzone="main">
+    
+
+
+    
+    
+    
+    
+    
+    
+        
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget layout-two-columns none  widget-none  widget-compact-all" id="5080e8fd-c282-4873-915d-c2606e619823">
+        
+        
+            
+        
+
+        <div class="wrapped " id="periodical.header.xhtml-49c9">
+            
+            <div class="widget-body body body-none  body-compact-all"><div class="pb-columns row-fluid gutterless">
+    <div class="width_9_16">
+        <div data-pb-dropzone="left" class="pb-autoheight">
+
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget general-html none  widget-none  widget-compact-all" id="a0e68edf-4f0f-4919-b647-b76cd847fa6c">
+        
+        
+            
+        
+
+        <div class="wrapped " id="periodical.header.xhtml-49c9">
+            
+            <div class="widget-body body body-none  body-compact-all"><div class="logo-container"><a class="logo" href="http://www.annemergmed.com/home"><img alt="Annals of Emergency Medicine - Official Journal of the American College of Emergency Physicians" src="logoColor.jpg" height="100" width="500"></a></div></div>
+        </div>
+    </div>
+        </div>
+    </div>
+    <div class="width_7_16">
+        <div data-pb-dropzone="right" class="pb-autoheight">
+
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget mobileUiLink none  widget-none  widget-compact-all" id="b67e1699-b68e-43b2-bc1e-be5ab71161fc">
+        
+        
+            
+        
+
+        <div class="wrapped " id="periodical.header.xhtml-49c9">
+            
+            <div class="widget-body body body-none  body-compact-all"><a href="http://www.annemergmed.com/content/mobileInfo" class="mobileInfo">Mobile</a></div>
+        </div>
+    </div>
+
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget general-html alignRight  widget-none  widget-compact-all" id="cd67b962-ea36-49b3-974a-274c2b1c6d51">
+        
+        
+            
+        
+
+        <div class="wrapped " id="periodical.loginHeader.xhtml-49ca">
+            
+            <div class="widget-body body body-none  body-compact-all"><ul id="util">
+
+<li class="first">
+		<a href="https://twitter.com/#!/@AnnalsofEM" shape="rect" target="_new"><img src="twitter.gif" alt="Twitter" height="16" width="16"></a>
+	</li>
+
+ <li>
+   <a href="http://www.facebook.com/pages/Annals-of-Emergency-Medicine/108117005909415" target="_new"><img alt="Facebook" src="facebook.gif" height="16" width="16"></a>
+ </li>
+
+ <li class="last">
+  <a href="http://www.annemergmed.com/rss">RSS Feeds
+   <img src="feed-icon-14x14.png">
+  </a>
+ </li>
+</ul></div>
+        </div>
+    </div>
+
+
+
+    
+    
+    
+    
+    
+    
+        
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget ssoProfileLinks none  widget-none  widget-compact-all" id="8171065d-99e9-4901-829a-1d1f03945a2c">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none  body-compact-all"><div>
+    
+            
+
+
+
+
+
+
+<ul class="profileLinkList">
+    <li class="acepLink"><a href="http://www.annemergmed.com/action/marlinSso?redirectUri=http%3A%2F%2Fwww.annemergmed.com%2Farticle%2FS0196-0644%2812%2900262-4%2Fabstract" class="acep-login">ACEP Member Login</a></li>
+    <a href="https://secure.jbs.elsevierhealth.com/action/showLogin?redirectUri=http%3A%2F%2Fwww.annemergmed.com%2Farticle%2FS0196-0644%2812%2900262-4%2Fabstract&amp;code=ymem-site" class="toggle dialogPosition">Non-Member Login</a>
+    
+
+    <li id="profileregisterLink" class="profileLink">
+        <a href="https://secure.jbs.elsevierhealth.com/action/registration?redirectUri=http%3A%2F%2Fwww.annemergmed.com%2Farticle%2FS0196-0644%2812%2900262-4%2Fabstract&amp;journal=ymem&amp;code=ymem-site">Register</a>
+        <div id="profileregisterTip">
+            <div><a href="https://secure.jbs.elsevierhealth.com/action/registration?redirectUri=http%3A%2F%2Fwww.annemergmed.com%2Farticle%2FS0196-0644%2812%2900262-4%2Fabstract&amp;journal=ymem&amp;code=ymem-site">Register as a Guest</a></div>
+            <div><a href="https://secure.jbs.elsevierhealth.com/action/activateClaim?journalCode=ymem&amp;code=ymem-site">Register and Claim Your Subscription</a></div>
+        </div>
+    </li>
+    
+        <li class="profileLink">
+            <span><a href="https://secure.jbs.elsevierhealth.com/action/ecommerce?journal=ymem&amp;code=ymem-site">Subscribe</a></span>
+        </li>
+    
+
+    
+
+
+    
+
+</ul>
+
+        
+</div></div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div></div>
+        </div>
+    </div>
+
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget menuXml none  widget-none  widget-compact-all" id="c60c4cb6-7197-4fb9-a0d5-9910c0bc9432">
+        
+        
+            
+        
+
+        <div class="wrapped " id="periodical.header.xhtml-49ca">
+            
+            <div class="widget-body body body-none  body-compact-all"><ul id="primaryNav" class="primaryNav shadow">
+   <li><a href="http://www.annemergmed.com/home">Home</a></li>
+   <li><a class="expander" href="#">Articles &amp; Issues</a><ul>
+         <li><a href="http://www.annemergmed.com/current">Current issue</a></li>
+         <li><a href="http://www.annemergmed.com/inpress">Articles in Press</a></li>
+         <li><a href="http://www.annemergmed.com/issues">List of Issues</a></li>
+         <li><a href="http://www.annemergmed.com/supplements">Supplements</a></li>
+      </ul>
+   </li>
+   <li><a class="expander" href="#">Collections</a><ul>
+         <li><a href="http://www.annemergmed.com/content/editorstop2">Editors Free Top Selections</a></li>
+         <li><a href="http://www.annemergmed.com/content/CMEcollection2">Annals CME Articles</a></li>
+         <li><a href="http://www.annemergmed.com/content/newsandperspective2">News and Perspective</a></li>
+         <li><a href="http://www.annemergmed.com/content/podcast">Podcasts</a></li>
+         <li><a href="http://www.annemergmed.com/content/journalclub">Journal Club</a></li>
+         <li><a href="http://www.annemergmed.com/content/residents">Residents' Perspective</a></li>
+         <li><a href="http://www.annemergmed.com/content/patientsafety">Safety/Operations</a></li>
+         <li><a href="http://www.annemergmed.com/content/ebemresources">EBEM Resources</a></li>
+         <li><a href="http://www.annemergmed.com/content/snapshots">EBEM Review Snapshots</a></li>
+         <li><a href="http://www.annemergmed.com/content/dismedicine">Disaster Medicine</a></li>
+         <li><a href="http://www.annemergmed.com/content/changeshift">Change of Shift</a></li>
+         <li><a href="http://www.annemergmed.com/content/casereports">Case Reports</a></li>
+         <li><a href="http://www.annemergmed.com/content/sciencepeer2">Peer Review Science</a></li>
+         <li><a href="http://www.annemergmed.com/content/clinicalpolicies">ACEP Clinical Policies</a></li>
+         <li><a href="http://www.annemergmed.com/content/abemreading">ABEM LLSA Reading</a></li>
+      </ul>
+   </li>
+   <li><a href="http://www.annemergmed.com/content/imgemergmed">Images</a></li>
+   <li><a class="expander" href="#">For Authors</a><ul>
+         <li><a href="http://www.annemergmed.com/content/instauth">Instructions for Authors</a></li>
+         <li><a href="http://www.editorialmanager.com/annemergmed" target="yes">Submit to Annals</a></li>
+      </ul>
+   </li>
+   <li><a class="expander" href="#">Journal Info</a><ul>
+         <li><a href="http://www.annemergmed.com/aims">Aims and Scope</a></li>
+         <li><a href="http://www.annemergmed.com/content/peerreviewprocess">The Peer Review Process at Annals</a></li>
+         <li><a href="http://www.annemergmed.com/content/editorialboard">Editorial Board</a></li>
+         <li><a href="http://www.annemergmed.com/pb/assets/raw/Health%20Advance/journals/ymem/YMEMSpecialEDB41415.pdf" target="yes">Editorial Board Declarations of Competing Interests</a></li>
+         <li><a href="http://www.annemergmed.com/content/whatscoming">What's Coming in Annals</a></li>
+         <li><a href="http://www.annemergmed.com/content/peerreviewers">Peer Reviewers</a></li>
+         <li><a href="http://www.annemergmed.com/content/permission">Permission to Reuse</a></li>
+         <li><a href="http://www.elsmediakits.com/journal_home/details/YMEM" target="yes">Info for Advertisers</a></li>
+         <li><a href="http://www.annemergmed.com/contact">Contact Information</a></li>
+         <li><a href="http://www.annemergmed.com/pricing">Pricing Information</a></li>
+         <li><a href="http://ehealthcareers.com/" target="yes">Careers</a></li>
+      </ul>
+   </li>
+   <li><a class="expander" href="#">Journal Access</a><ul>
+         <li><a href="http://www.annemergmed.com/content/acepsempalogin">ACEP/SEMPA Login</a></li>
+         <li><a href="http://www.annemergmed.com/user/createaccount">Register</a></li>
+         <li><a href="http://www.annemergmed.com/content/institutionalinformation">Institutions</a></li>
+         <li><a href="http://www.annemergmed.com/user/alerts/savetocalert" target="yes">E-mail Alert</a></li>
+         <li><a href="http://www.annemergmed.com/issue/S0196-0644(05)X7031-7">Free Trial Issue</a></li>
+         <li><a href="http://www.annemergmed.com/content/mobileaccessinstructions">Mobile Access Instructions</a></li>
+      </ul>
+   </li>
+   <li><a href="http://www.annemergmed.com/pricing">Subscribe</a></li>
+   <li><a class="expander" href="#">Resources</a><ul>
+         <li><a href="http://www.aapcc.org/DNN/" target="yes">American Association of Poison Control Centers</a></li>
+         <li><a href="http://www.annemergmed.com/pb/assets/raw/Health%20Advance/journals/ymem/index.html" target="yes">Peer Review Training Module</a></li>
+         <li><a href="http://www.supplements.annemergmed.com/" target="yes">Toxicology Resource Center</a></li>
+         <li><a href="http://www.journals.elsevierhealth.com/periodicals/home" target="yes">Find a Periodical</a></li>
+         <li><a href="http://www.us.elsevierhealth.com/index.jsp?sgCountry=US" target="yes">Go to Product Catalog</a></li>
+      </ul>
+   </li>
+   <li><a class="expander" href="#">ACEP</a><ul>
+         <li><a href="http://www.acep.org/" target="yes">ACEP</a></li>
+         <li><a href="http://www.acepnow.com/" target="yes">ACEP Now</a></li>
+         <li><a href="http://assoc.healthecareers.com/acep/association-home" target="yes">EM Career Central</a></li>
+         <li><a href="http://thecentralline.org/" target="yes">The Central Line</a></li>
+         <li><a href="http://www.acep.org/practres.aspx?id=30232" target="yes">ACEP Practice Resources</a></li>
+      </ul>
+   </li>
+</ul></div>
+        </div>
+    </div>
+    </div>
+</div></div>
+        </div>
+    </div>
+
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget quickSearch none  widget-none  widget-compact-all" id="efbc6808-5276-476a-89c1-bafb1c16b5a4">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none  body-compact-all"><input class="autoCompleteServerURL" value="http://JUMP-AUTOCOMPLETE-PROD-R1-345482992.us-west-2.elb.amazonaws.com:8080/autocomplete/jsonp" type="hidden">
+
+        <div class="quickSearch">
+           <form action="http://www.annemergmed.com/action/doSearch?journalCode=ymem" name="quickSearchBar" class="form-inline" method="get" onsubmit="return validateQuickSearchForm();"><input name="searchType" value="quick" type="hidden">
+                <div class="quickSearchOption">
+                    
+                    <label class="off-screen" for="searchText">Search Terms</label>
+                    <input autocomplete="off" id="searchText" class="autoComplete ui-autocomplete-input" name="searchText" value="" size="15" type="text"><span class="ui-helper-hidden-accessible" aria-live="polite" role="status"></span>
+                    
+                            
+<label for="quickSearchOccurrences" class="off-screen"> Search within</label>
+<select id="quickSearchOccurrences" name="occurrences">
+
+    <option value="all" selected="selected">All Content</option>
+    <option value="articleTitleAbstractKeywords">Article Title, Abstract, Keywords</option>
+    <option value="author">Authors</option>
+    <option value="articleTitle">Article Title</option>
+    <option value="abstract">Abstract</option>
+</select>
+
+
+                            <button type="submit">Search</button>
+                            <a href="http://www.annemergmed.com/search/advanced?seriesIssn=0196-0644&amp;searchType=advanced&amp;journalCode=ymem">
+
+                                
+                                Advanced Search
+                            </a>
+                        
+                    <input name="journalCode" value="ymem" type="hidden">
+                </div>
+                
+                        <input name="searchScope" value="fullSite" type="hidden"></form>
+        </div></div>
+        </div>
+    </div>
+
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget pageBody none  widget-none  widget-compact-all" id="pageBody">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none  body-compact-all"><!--begin pagefulltext-->
+<div class="page-body pagefulltext">
+    <div data-pb-dropzone="main">
+    
+
+
+
+
+    
+    
+    
+    
+    
+    
+        
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget layout-two-columns none  widget-none  widget-compact-all" id="631daa38-eac6-4cc4-9725-27c22b1cf639">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none  body-compact-all"><div class="pb-columns row-fluid ">
+    <div class="width_11_16">
+        <div data-pb-dropzone="left" class="pb-autoheight">
+
+
+
+    
+    
+    
+    
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+            
+                
+                
+                
+            
+        
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget articleNavigation none  widget-regular  widget-rounded" id="1f1e95fb-79f2-4f8a-8749-352aee8f9c66">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-regular  body-rounded"><div class="articleNav">
+            
+                <div class="artNav prevArt">
+                    <a href="http://www.annemergmed.com/article/S0196-0644(12)00114-X/abstract">&lt; Previous Article</a>
+                </div>
+            
+                <div class="artNav nextArt">
+                    <a href="http://www.annemergmed.com/article/S0196-0644(12)00291-0/abstract">Next Article &gt;</a>
+                </div>
+            
+            <div class="artBib"> <a href="http://www.annemergmed.com/issue/S0196-0644(11)X0022-7">September 2012</a>Volume 60, Issue 
+        3,  Pages&nbsp;299–308 </div>
+            
+        </div></div>
+        </div>
+    </div>
+
+
+
+    
+    
+    
+    
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget articleContent none  widget-none" id="d726e907-7f47-4d60-b14b-a74ab575c493">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none "><div id="article" class="article showAbstract doctopic-1- label-">
+                <div class="artInfoWrapper"><div class="articleInfo"><div class="switchViewMode"><a href="#" class="toStandard">Switch to Standard View</a><a href="#" class="toEnhanced">Switch to Enhanced View</a></div><h1 class="articleTitle"></h1><h1 class="articleTitle">Real-Time Prediction of Waiting Time in the Emergency Department, Using Quantile Regression<a href="#article-footnote-" id="back-article-footnote-"></a><a href="#article-footnote-" id="back-article-footnote-"></a><a href="#article-footnote-" id="back-article-footnote-"></a><a href="#article-footnote-" id="back-article-footnote-"></a><a href="#article-footnote-" id="back-article-footnote-"></a><a href="#article-footnote-" id="back-article-footnote-"></a></h1><div class="authorGroup"><div class="author"> <a class="openAuthorLayer layerTrigger" id="openAuthor_" href="javascript:void(0);">Yan Sun</a><div style="display: none;" class="authorLayer hoverLayer notCollab" role="alertdialog" aria-describedby="_compliance" tabindex="-1" data-target=""><span class="closeBtn" role="button" tabindex="0" aria-label="close window">x</span><div class="header" id="_compliance">Yan Sun</div><div><a href="http://www.annemergmed.com/action/doSearch?searchType=authorLookUp&amp;author=Sun,%20Yan&amp;prod=HA">Search for articles by this author</a><h4>Affiliations</h4><ul class="affiliations"><li>Department of Health Services and Outcomes Research, National Healthcare Group, Singapore</li></ul><h4>Correspondence</h4><ul class="correspondence"><li><em>Address for correspondence:</em> Yan Sun, PhD</li></ul></div></div>, PhD<a class="openAuthorLayer layerTrigger" id="openAuthor_" href="javascript:void(0);"><img src="article_notepad.gif" alt="correspondence"></a><div style="display: none;" class="authorLayer hoverLayer notCollab" role="alertdialog" aria-describedby="_compliance" tabindex="-1" data-target=""><span class="closeBtn" role="button" tabindex="0" aria-label="close window">x</span><div class="header" id="_compliance">Yan Sun</div><div><a href="http://www.annemergmed.com/action/doSearch?searchType=authorLookUp&amp;author=Sun,%20Yan&amp;prod=HA">Search for articles by this author</a><h4>Affiliations</h4><ul class="affiliations"><li>Department of Health Services and Outcomes Research, National Healthcare Group, Singapore</li></ul><h4>Correspondence</h4><ul class="correspondence"><li><em>Address for correspondence:</em> Yan Sun, PhD</li></ul></div></div><a class="email" href="mailto:yan_sun@nhg.com.sg" title="Email the author"><img src="icon_email.png" alt="email"></a></div>,<div class="author"> <a class="openAuthorLayer layerTrigger" id="openAuthor_" href="javascript:void(0);">Kiok Liang Teow</a><div style="display: none;" class="authorLayer hoverLayer notCollab" role="alertdialog" aria-describedby="_compliance" tabindex="-1" data-target=""><span class="closeBtn" role="button" tabindex="0" aria-label="close window">x</span><div class="header" id="_compliance">Kiok Liang Teow</div><div><a href="http://www.annemergmed.com/action/doSearch?searchType=authorLookUp&amp;author=Teow,%20Kiok%20Liang&amp;prod=HA">Search for articles by this author</a><h4>Affiliations</h4><ul class="affiliations"><li>Department of Health Services and Outcomes Research, National Healthcare Group, Singapore</li></ul></div></div>, MSc</div>,<div class="author"> <a class="openAuthorLayer layerTrigger" id="openAuthor_" href="javascript:void(0);">Bee Hoon Heng</a><div style="display: none;" class="authorLayer hoverLayer notCollab" role="alertdialog" aria-describedby="_compliance" tabindex="-1" data-target=""><span class="closeBtn" role="button" tabindex="0" aria-label="close window">x</span><div class="header" id="_compliance">Bee Hoon Heng</div><div><a href="http://www.annemergmed.com/action/doSearch?searchType=authorLookUp&amp;author=Heng,%20Bee%20Hoon&amp;prod=HA">Search for articles by this author</a><h4>Affiliations</h4><ul class="affiliations"><li>Department of Health Services and Outcomes Research, National Healthcare Group, Singapore</li></ul></div></div>, MBBS, MSc</div>,<div class="author"> <a class="openAuthorLayer layerTrigger" id="openAuthor_" href="javascript:void(0);">Chee Kheong Ooi</a><div style="display: none;" class="authorLayer hoverLayer notCollab" role="alertdialog" aria-describedby="_compliance" tabindex="-1" data-target=""><span class="closeBtn" role="button" tabindex="0" aria-label="close window">x</span><div class="header" id="_compliance">Chee Kheong Ooi</div><div><a href="http://www.annemergmed.com/action/doSearch?searchType=authorLookUp&amp;author=Ooi,%20Chee%20Kheong&amp;prod=HA">Search for articles by this author</a><h4>Affiliations</h4><ul class="affiliations"><li>Department of Emergency Medicine, Tan Tock Seng Hospital, Singapore</li></ul></div></div>, MBBS, MSc</div>,<div class="author"> <a class="openAuthorLayer layerTrigger" id="openAuthor_" href="javascript:void(0);">Seow Yian Tay</a><div style="display: none;" class="authorLayer hoverLayer notCollab" role="alertdialog" aria-describedby="_compliance" tabindex="-1" data-target=""><span class="closeBtn" role="button" tabindex="0" aria-label="close window">x</span><div class="header" id="_compliance">Seow Yian Tay</div><div><a href="http://www.annemergmed.com/action/doSearch?searchType=authorLookUp&amp;author=Tay,%20Seow%20Yian&amp;prod=HA">Search for articles by this author</a><h4>Affiliations</h4><ul class="affiliations"><li>Department of Emergency Medicine, Tan Tock Seng Hospital, Singapore</li></ul></div></div>, MBBS, MSc</div></div><div class="oaAltContainer"><span data-uuid="8c1fc106-be41-6b03-eb5c-7d6221ffc4e5" class="altmetric-embed" data-doi="10.1016/j.annemergmed.2012.03.011" data-link-target="_blank"><a target="_top" href="http://www.altmetric.com/details.php?domain=www.annemergmed.com&amp;citation_id=974231" style="display: inline-block;">
+        <img alt="Article has an altmetric score of 1" src="1.png" style="border: 0px none; margin: 0px; max-width: none;" height="18px" width="88px">
+</a></span></div><div class="doi">DOI:
+            <a href="http://dx.doi.org/10.1016/j.annemergmed.2012.03.011">http://dx.doi.org/10.1016/j.annemergmed.2012.03.011</a></div><div class="articleSharebookmark"><div addthis:url="http://www.annemergmed.com/article/S0196-0644%2812%2900262-4/abstract" class="addthis_toolbox addthis_default_style addthis_16x16_style"><a href="#" title="Mendeley" target="_top" class="addthis_button_mendeley at300b"><span style="background-color: rgb(175, 18, 43); line-height: 16px; height: 16px; width: 16px;" class="at-icon-wrapper"><svg alt="Mendeley" title="Mendeley" style="width: 16px; height: 16px;" class="at-icon at-icon-mendeley" viewBox="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><path d="M26.24 18.08c-1.42-.08-1.95-.81-1.86-2.09.07-1.08.27-2.15.4-3.22-.02-1.68-.91-3.02-2.4-3.47-1.53-.45-2.87-.14-3.96 1.11-2.24 2.56-2.53 2.55-4.85-.04-1.11-1.24-2.76-1.6-4.24-.95-1.45.64-2.29 2.16-2.08 3.82.08.6.27 1.19.36 1.8.33 2.05-.1 2.61-2.15 3.04-1.03.22-1.85.76-1.98 1.92-.13 1.18.16 2.31 1.36 2.66.74.22 1.79.08 2.47-.31.93-.53 1.03-1.58.71-2.65-.6-1.98-.03-2.94 2.04-3.23.81-.11 1.7-.02 2.48.23 1.26.4 1.63 1.33 1.13 2.56-.43 1.07-.43 2.02.38 2.89.81.87 2.33 1.05 3.4.42 1.08-.64 1.44-1.75 1.01-3.06-.59-1.75-.08-2.69 1.75-3.02.68-.12 1.41-.11 2.09.02 1.77.35 2.3 1.33 1.78 3.08-.49 1.64.19 2.98 1.66 3.31 1.29.29 2.53-.59 2.79-1.95.27-1.56-.6-2.77-2.29-2.87zM15.89 18a2.463 2.463 0 0 1-2.36-2.48c.01-1.41 1.11-2.48 2.52-2.45 1.41.02 2.48 1.14 2.43 2.54-.04 1.37-1.21 2.44-2.59 2.39z"></path></g></svg></span></a><a href="#" title="Facebook" class="addthis_button_facebook at300b"><span style="background-color: rgb(59, 89, 152); line-height: 16px; height: 16px; width: 16px;" class="at-icon-wrapper"><svg alt="Facebook" title="Facebook" style="width: 16px; height: 16px;" class="at-icon at-icon-facebook" viewBox="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><path fill-rule="evenodd" d="M21 6.144C20.656 6.096 19.472 6 18.097 6c-2.877 0-4.85 1.66-4.85 4.7v2.62H10v3.557h3.247V26h3.895v-9.123h3.234l.497-3.557h-3.73v-2.272c0-1.022.292-1.73 1.858-1.73h2V6.143z"></path></g></svg></span></a><a href="#" title="Tweet" class="addthis_button_twitter at300b"><span style="background-color: rgb(85, 172, 238); line-height: 16px; height: 16px; width: 16px;" class="at-icon-wrapper"><svg alt="Twitter" title="Twitter" style="width: 16px; height: 16px;" class="at-icon at-icon-twitter" viewBox="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><path d="M26.67 9.38c-.78.35-1.63.58-2.51.69.9-.54 1.6-1.4 1.92-2.42-.85.5-1.78.87-2.78 1.06a4.38 4.38 0 0 0-7.57 3c0 .34.04.68.11 1-3.64-.18-6.86-1.93-9.02-4.57-.38.65-.59 1.4-.59 2.2 0 1.52.77 2.86 1.95 3.64-.72-.02-1.39-.22-1.98-.55v.06c0 2.12 1.51 3.89 3.51 4.29a4.37 4.37 0 0 1-1.97.07c.56 1.74 2.17 3 4.09 3.04a8.82 8.82 0 0 1-5.44 1.87c-.35 0-.7-.02-1.04-.06a12.43 12.43 0 0 0 6.71 1.97c8.05 0 12.45-6.67 12.45-12.45 0-.19-.01-.38-.01-.57.84-.62 1.58-1.39 2.17-2.27z"></path></g></svg></span></a><a href="#" title="Email" target="_top" class="addthis_button_email at300b"><span style="background-color: rgb(115, 138, 141); line-height: 16px; height: 16px; width: 16px;" class="at-icon-wrapper"><svg alt="Email" title="Email" style="width: 16px; height: 16px;" class="at-icon at-icon-email" viewBox="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><path d="M26.19 9.55H6.04l10.02 7.57 10.13-7.57zM16.06 19.67l-10.28-8.8v11.58h20.57V10.96l-10.29 8.71z"></path></g></svg></span></a><a href="#" class="addthis_button_compact at300m"><span style="background-color: rgb(252, 109, 76); line-height: 16px; height: 16px; width: 16px;" class="at-icon-wrapper"><svg alt="Compact" title="Compact" style="width: 16px; height: 16px;" class="at-icon at-icon-addthis" viewBox="0 0 32 32" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><path d="M25.07 13.74h-6.71V7.03h-4.47v6.71H7.18v4.47h6.71v6.71h4.47v-6.71h6.71z"></path></g></svg></span></a><div class="atclear"></div></div></div><div class="sperator"></div><div class="articleInfoToggle" id="container"><h2 class="articleinfoToggel"><a aria-controls="articleinfo" aria-expanded="false" class="expander collapsed" href="#" aria-describedby="articleInfoIcon"><img id="imgShowHide" src="expand.gif" alt="show">Article Info</a></h2><div id="articleinfo" role="contentinfo" class="content expandedDiv"><div class="publicationHistory"><span class="pubHistoryLbl"><strong>Publication History</strong></span><div class="articleDates"><span class="pubDatesRow"><span class="pubDatesLbls">Published Online: </span>May 14, 2012</span><span class="pubDatesRow"><span class="pubDatesLbls">Accepted: </span>March 9, 2012<span class="semiColon">; </span></span><span class="pubDatesRow"><span class="pubDatesLbls">Received in revised form: </span>November 16, 2011<span class="semiColon">; </span></span><span class="pubDatesRow"><span class="pubDatesLbls">Received in revised form: </span>December 21, 2011<span class="semiColon">; </span></span><span class="pubDatesRow"><span class="pubDatesLbls">Received in revised form: </span>February 7, 2012<span class="semiColon">; </span></span><span class="pubDatesRow"><span class="pubDatesLbls">Received: </span>July 27, 2011<span class="semiColon">; </span></span></div></div></div></div><div class="upsellsubscribe up-sell-row">
+    
+        <div class="highlight-box highlight-box-left">
+            <span class="headingText">
+
+                Purchase this article
+            </span>
+            <span class="hintText">
+
+                (PDF Included)
+            </span>
+            <div>
+                <a href="https://secure.jbs.elsevierhealth.com/action/ecommerce?addToCart=true&amp;offerId=12%2C10.1016%2Fj.annemergmed.2012.03.011&amp;backUri=%2Farticle%2FS0196-0644%2812%2900262-4%2Fabstract&amp;code=ymem-site" class="upsellLink">
+                    <input class="purches-button-box shared-button-box" value="Buy Now" type="button">
+                </a>
+                <span class="hintText">$31.50 USD (24 hour access)</span>
+            </div>
+        </div>
+    
+    
+        <div class=" highlight-box highlight-box-right">
+            <span class="headingText">
+
+                Subscribe to this title
+            </span>
+            <div>
+                <a href="https://secure.jbs.elsevierhealth.com/action/ecommerce?code=ymem-site" class="upsellLink">
+                    <input class="subscribe-button-box shared-button-box" value="Subscribe Now" type="button">
+                </a>
+            </div>
+        </div>
+    
+</div></div></div><div class="hide enhancedMetaDataDropZone" data-pb-dropzone="enhancedMetaDataDropZone">
+                    
+                </div><div class="tabs tabs-widget" role="tabpanel"><ul class="tab-nav mainTabs" role="tablist"><li aria-selected="true" role="tab" class="showAbstract
+                    active"><a href="http://www.annemergmed.com/article/S0196-0644(12)00262-4/abstract">Abstract</a></li><li aria-selected="false" role="tab" class="showFullText
+                        "><a href="http://www.annemergmed.com/article/S0196-0644(12)00262-4/fulltext">Full Text</a></li><li aria-selected="false" role="tab" class="showFullTextImages
+                        "><a href="http://www.annemergmed.com/action/showFullTextImages?pii=S0196-0644%2812%2900262-4">Images</a></li><li aria-selected="false" role="tab" class="showImagesData
+                        "><a href="http://www.annemergmed.com/action/showImagesData?pii=S0196-0644%2812%2900262-4">Images/Data</a></li><li aria-selected="false" role="tab" class="showReferences
+                        "><a href="http://www.annemergmed.com/article/S0196-0644(12)00262-4/references" class="showReferences">References</a></li><li aria-selected="false" role="tab" class="showRelatedArticles
+                    "><a href="http://www.annemergmed.com/action/showRelatedArticles?pii=S0196-0644%2812%2900262-4">Related Articles</a></li></ul><div class="tab-content sn_showAbstract" id="artTabContent"><div class="accessMessage">
+                        <p>To view the full text, please login as a subscribed user or <a href="http://www.annemergmed.com/subscribe">purchase a subscription</a>.
+                            Click <a href="http://www.sciencedirect.com/science?_ob=GatewayURL&amp;_origin=HEALADV&amp;_urlversion=4&amp;_method=citationSearch&amp;_piikey=S0196064412002624&amp;_version=1&amp;md5=c4feb30c1e94d674263179c138db129a" target="_top">here</a> to view the full text on ScienceDirect.</p>
+                    </div><section class="widget widget-regular abstractImages"><header class="widget-header header-regular">Figures</header><div class="widget-body body body-regular"><div class="image"><div><img src="gr1.sml"></div><div class="caption"><p class="caption-title"><span class="label">Figure 1</span></p><p>The distribution of the actual waiting times by day of week and time of day. PAC 3 actual waiting time (top) and PAC 2 actual waiting time (bottom).</p></div></div><div class="image"><div><img src="gr2.sml"></div><div class="caption"><p class="caption-title"><span class="label">Figure 2</span></p><p>The correlation between the actual waiting time and the flow rate and queue size. The PAC 2 waiting time and the PAC 2 queue size (top left); the PAC 2 waiting time and the PAC 2 flow rate (top right); the PAC 3 waiting time and the PAC 3 queue size (bottom left); the PAC 2 waiting time; and the PAC 2 flow rate (bottom right).</p></div></div><div class="image"><div><img src="gr3.sml"></div><div class="caption"><p class="caption-title"><span class="label">Figure 3</span></p><p>Scatterplots of the predicted median waiting times against actual waiting times (unit=minutes). The PAC 2 waiting time in derivation data (top left); the PAC 3 waiting time in derivation data (top right); the PAC 2 waiting time in retrospective validation data (middle left); the PAC 3 waiting time in retrospective validation data (middle right); the PAC 2 waiting time in prospective validation data (bottom left); and the PAC 3 waiting time in prospective validation data (bottom right).</p></div></div></div></section><div class="abstract"><h3 class="sectionTitle">Study objective</h3><p>Emergency department (ED) waiting times can affect patient satisfaction and quality of care. We develop and validate a model that predicts an individual patient's median and 95th percentile waiting time by using only data available at triage.</p><h3 class="sectionTitle">Methods</h3><p>From the existing ED information system, we extracted date and time of triage completion, start time of emergency physician consultation, and patient acuity category (1=most urgent, 3=least urgent). Quantile regression was applied for model development and parameter estimation by using visits from January 2011. We assessed absolute prediction error, defined as the median difference between the 50th percentile (median) predicted waiting time and actual waiting time, and the proportion of underestimated prediction, defined as the percentage of patients whose actual waiting time exceeded the 95th percentile prediction. The model was validated retrospectively with June 2010 data and prospectively with data from April to June 2011 after integration with the existing ED information system.</p><h3 class="sectionTitle">Results</h3><p>The derivation set included 13,200 ED visits; 903 (6.8%) were patient acuity category 1, 5,530 (41.9%) were patient acuity category 2, and 6,767 (51.3%) were patient acuity category 3. The median and 95th percentile waiting times were 17 and 57 minutes for patient acuity category 2 and 21 and 89 minutes for patient acuity category 3, respectively. The final model used predictors of patient acuity category, patient queue sizes, and flow rates only. In the retrospective validation, 5.9% of patient acuity category 2 and 5.4% of category 3 waiting times were underestimated. The median absolute prediction error was 11.9 minutes (interquantile range [IQR] 5.9 to 22.1 minutes) for patient acuity category 2 and 15.7 minutes (IQR 7.5 to 30.1 minutes) for category 3. In prospective validation, 4.3% of patient acuity category 2 and 5.8% of category 3 waiting times were underestimated. The median absolute prediction error was 9.2 minutes (IQR 4.4 to 15.1 minutes) for patient acuity category 2 and 12.9 minutes (IQR 6.5 to 22.5 minutes) for category 3.</p><h3 class="sectionTitle">Conclusion</h3><p>Using only a few data elements available at triage, the model predicts individual patients' waiting time with good accuracy.</p></div><div class="content"></div><div class="denialInfo">
+    <div class="accessDenialDropZone" data-pb-dropzone="accessDenialTopDropZone">
+        
+    </div>
+
+    <h2>To access this article, please choose from the options below</h2>
+    <div class="leftCol accessDenial">
+        
+
+
+
+
+
+
+
+
+
+
+
+    <h3>ACEP Member Login</h3><br>
+    <p>ACEP Members, full access to the journal is a member benefit. Use your ACEP credentials to access all Annals content and features</p>
+    <div class="CTALink">
+        <a href="http://www.annemergmed.com/action/marlinSso?redirectUri=%2Farticle%2FS0196-0644%2812%2900262-4%2Fabstract" class="CTABtn">ACEP Member Login</a>
+    </div>
+    <div class="decorated-separator">
+        <div class="line">
+            <span>OR</span>
+        </div>
+    </div>
+
+
+
+
+        <h2>Non-Member Login</h2>
+    
+<form action="https://secure.jbs.elsevierhealth.com/action/doLogin?code=ymem-site" name="loginForm" class="loginForm doLogin" method="post"><div class="row-fluid">
+        <div class="pull-right">
+            <label for="formLoginEmail"><span>Email/Username:</span></label>
+            <input id="formLoginEmail" class="loginInput" name="login" value="" size="15" type="text">
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row-fluid">
+        <div class="pull-right">
+            <label for="passwordNormalUser"><span>Password:</span></label>
+            <input id="passwordNormalUser" class="loginInput" name="password" value="" autocomplete="off" type="password">
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+
+    <div class="loginControls">
+    
+        <label for="formLoginSavePass"><input id="formLoginSavePass" name="savePassword" value="1" type="checkbox"> Remember me</label>
+    <input class="CTABtn" value="Log In" type="submit"><br>
+    <a href="http://www.annemergmed.com/action/requestResetPassword" class="forgotPassword">Forgot password?</a><br>
+    </div>
+    <input name="redirectUri" value="http://www.annemergmed.com/article/S0196-0644(12)00262-4/abstract" type="hidden"><input name="referer" value="/article/S0196-0644(12)00262-4/abstract" type="hidden"><input name="ecommRedirect" value="" type="hidden"><input name="pii" value="S0196-0644(12)00262-4" type="hidden"><input name="code" value="ymem-site" type="hidden"></form>
+                            <h3>Register</h3>
+                            <a href="https://secure.jbs.elsevierhealth.com/action/registration?redirectUri=http%3A%2F%2Fwww.annemergmed.com%2Farticle%2FS0196-0644%2812%2900262-4%2Fabstract&amp;code=ymem-site">Create a new account</a>
+    </div>
+
+    <div class="rightCol accessDenial">
+    <h3>Purchase access to this article</h3>
+    <ul class="ppvOffers">
+                <li>
+            <a href="http://www.annemergmed.com/action/ecommerce?backUri=/article/S0196-0644(12)00262-4/abstract&amp;offerId=12,10.1016/j.annemergmed.2012.03.011&amp;addToCart=true">
+
+                Online access for 24 hours
+            </a>
+        </li>
+            </ul>
+    <h3>Claim Access</h3>
+    <p>If you are a current subscriber with Society Membership or an Account Number, <a href="http://www.annemergmed.com/action/activateClaim?journalCode=Annals%20of%20Emergency%20Medicine">claim your access now</a>.</p>
+    <h3>Subscribe to this title</h3>
+    <p><a href="http://www.annemergmed.com/action/ecommerce?journalCode=Annals%20of%20Emergency%20Medicine">Purchase a subscription</a> to gain access to this and all other articles in this journal.</p>
+    <h3>Institutional Access</h3>
+    <p><a href="http://www.sciencedirect.com/science?_ob=GatewayURL&amp;_origin=HEALADV&amp;_urlversion=4&amp;_method=citationSearch&amp;_piikey=S0196064412002624&amp;_version=1&amp;md5=c4feb30c1e94d674263179c138db129a" class="scienceDirectLink">Visit ScienceDirect</a> to see if you have access via your institution.</p>
+</div>
+
+
+
+    <div class="accessDenialDropZone" data-pb-dropzone="accessDenialBottomDropZone">
+        
+    </div>
+
+</div></div></div><div class="footnotes"><p><em>Funding and support:</em> By <em>Annals</em> policy, all authors are required to disclose any and all commercial, financial, and other relationships in any way related to the subject of this article as per ICMJE conflict of interest guidelines (see <a href="http://www.icmje.org/" target="_top">www.icmje.org</a>). The authors have stated that no such relationships exist.</p><p><em>Supervising editor:</em> Ellen J. Weber, MD</p><p><em>Author contributions:</em> TSY and OCK conceived the study and assisted with data extraction. All authors contributed to the study design and writing the “Results” section and have read and approved of the content of the final submitted article. SY conducted the modeling and data analysis and drafted the article. TKL was responsible for data analysis. HBH made substantial contributions to its revision. SY takes responsibility for the paper as a whole.</p><p><em>Publication date:</em> Available online May 10, 2012.</p><p>Please see page 300 for the Editor's Capsule Summary of this article.</p><p>A <a href="http://annemergmed.com/content/podcast" target="_top"><strong>podcast</strong></a> for this article is available at <a href="http://www.annemergmed.com/" target="_top">www.annemergmed.com</a>.</p></div><div class="copyright">© 2012 Published by Elsevier Inc. </div><div class="enhancedViewContent"></div><input class="extraCssClass" value="doctopic-1- label-" type="hidden">
+        </div>
+        
+        <script type="text/javascript" src="addthis_widget.js" async="" defer=""></script></div>
+        </div>
+    </div>
+        </div>
+    </div>
+    <div class="width_5_16">
+        <div data-pb-dropzone="right" class="pb-autoheight">
+
+
+
+    
+    
+    
+    
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget theIHubLink none  widget-none" id="05b82dc4-59c3-469f-b896-fc09b0a9d4dd">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none "><div class="iHubLinkContainerX">
+    <div class="title">Access this article on</div>
+    <div class="link">
+        <a class="layerTrigger sd_link" href="http://www.sciencedirect.com/science?_ob=GatewayURL&amp;_origin=HEALADV&amp;_urlversion=4&amp;_method=citationSearch&amp;_piikey=S0196064412002624&amp;_version=1&amp;md5=c4feb30c1e94d674263179c138db129a" onclick="return ntptLinkTag(this,'lk=1');">ScienceDirect</a>
+    </div>
+    <div class="hoverLayer">Visit ScienceDirect to see if you have access via your institution.</div>
+</div></div>
+        </div>
+    </div>
+
+
+
+    
+    
+    
+    
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <section class="widget articleTools  none  widget-regular" id="182180fa-4292-463f-924d-7866c6c8ce91">
+        
+        
+
+        <div class="wrapped ">
+            <h1 class="widget-header header-regular ">Article Tools</h1>
+            <div class="widget-body body body-regular "><div class="articleToolsContainer">
+    <ul class="first">
+        
+        
+            <li class="toolPdf" data-pii="S0196-0644(12)00262-4"><a href="http://www.annemergmed.com/article/S0196-0644(12)00262-4/pdf" onclick="return doUnica( this );" class="pdfLink" target="_top">PDF (1 MB)</a></li>
+        
+        
+        
+        
+            <li class="toolPpt">
+                
+                <a href="http://www.annemergmed.com/article/S0196-0644(12)00262-4/ppt" onclick="return doUnica( this );" data-unica="fig=all">Download Images(.ppt)</a>
+                
+                    <a class="tip" href="javascript:openAboutImagesAndUsagePupUp();">About Images &amp; Usage</a>
+                
+            </li>
+        
+    </ul>
+    <ul>
+         
+        <li class="toolEmail">
+            <a href="https://secure.jbs.elsevierhealth.com/action/showMailPage?pii=S0196-0644%2812%2900262-4&amp;href=%2Farticle%2FS0196-0644%2812%2900262-4%2Fabstract&amp;title=Real-Time+Prediction+of+Waiting+Time+in+the+Emergency+Department%2C+Using+Quantile+Regression&amp;code=ymem-site">
+
+                
+                
+                
+                Email Article
+            </a>
+        </li>
+        <li class="toolReadingList"><a href="http://www.annemergmed.com/personalize/addFavoritePublication?doi=10.1016%2Fj.annemergmed.2012.03.011" target="_top">Add to My Reading List</a></li>
+        <li class="toolExportCitation"><a href="https://secure.jbs.elsevierhealth.com/action/showCitFormats?pii=S0196-0644%2812%2900262-4&amp;doi=10.1016%2Fj.annemergmed.2012.03.011&amp;code=ymem-site">Export Citation</a></li>
+        <li class="toolAddCitation"><a href="http://www.annemergmed.com/action/addCitationAlert?doi=10.1016%2Fj.annemergmed.2012.03.011">Create Citation Alert</a></li>
+        
+            <li class="toolScopus" id="articleToolsScopus" data-outdated="true" data-pii="S0196-0644(12)00262-4">
+    <a href="http://www.scopus.com/scopus/inward/citedby.url?eid=2-s2.0-84865499516&amp;partnerID=OhJbSInD" target="_top">Cited by in Scopus (10)</a>
+</li>
+        
+    </ul>
+    
+        <ul>
+            
+                <li class="toolPermissions"><a href="https://s100.copyright.com/AppDispatchServlet?publisherName=ELS&amp;contentID=S0196064412002624&amp;orderBeanReset=true&amp;orderSource=Phoenix">Request Permissions</a></li>
+            
+            
+                <li class="toolOrderReprint"><a class="reprints" href="http://reprints.elsevier.com/index.php?option=com_oscommerce&amp;osMod=raq&amp;Itemid=7&amp;publicationName=Annals+of+Emergency+Medicine&amp;title=Real-Time+Prediction+of+Waiting+Time+in+the+Emergency+Department%2C+Using+Quantile+Regression&amp;creator=Yan+Sun+and+colleagues&amp;volume=60&amp;number=3&amp;startingPage=299&amp;endingPage=308">Order Reprints</a> (100 minimum order)</li>
+            
+        </ul>
+    
+</div></div>
+        </div>
+    </section>
+
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget ContentInnovation none  widget-none  widget-compact-all" id="e6b498c7-9cc1-4cc9-b3f6-4607aaecd99d">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none  body-compact-all"><div class="contentInnContainer">
+    
+    <input id="articleDoi" value="10.1016/j.annemergmed.2012.03.011" type="hidden">
+    <input id="articlePii" value="S0196064412002624" type="hidden">
+</div></div>
+        </div>
+    </div>
+
+
+
+    
+    
+    
+    
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <section class="widget relatedArticleListWidget none  widget-regular" id="c2ffda61-8426-42f7-926b-03d7330eede2">
+        
+        
+
+        <div class="wrapped ">
+            <h1 class="widget-header header-regular ">Related Articles</h1>
+            <div class="widget-body body body-regular "><div data-ajax-content="/pb/widgets/relatedArticles/S0196-0644(12)00262-4">
+                <span class="displayOption"></span>
+                    <form name="frmSearch" id="frmSearch" action="http://www.annemergmed.com/article/S0196-0644(12)00262-4/abstract">
+                        <ol class="articleCitations">
+                        <!--S0196-0644(15)00572-7--><div class="articleCitation"><div class="detail"><div class="article-details"><div class="title" id="S0196-0644(15)00572-7-title"><a href="http://www.annemergmed.com/article/S0196-0644(15)00572-7/abstract">The Effect of Pay for Performance in the Emergency Department on Patient Waiting Times and Quality of Care in Ontario, Canada: A Difference-in-Differences Analysis</a></div><div class="rightTitleInfo"><div class="icons atype-fla"><!--${freeContentIcon: 10.1016/j.annemergmed.2015.06.028}--></div></div><div class="doi">DOI: http://dx.doi.org/10.1016/j.annemergmed.2015.06.028</div><div class="publicationStage">Publication stage: In Press Corrected Proof</div><div class="citation"><span class="journalTitleSp">Annals of Emergency Medicine</span></div><span class="OALabel">Open Access</span></div></div></div><!--S0196-0644(15)00299-1--><div class="articleCitation"><div class="detail"><div class="article-details"><div class="title" id="S0196-0644(15)00299-1-title"><a href="http://www.annemergmed.com/article/S0196-0644(15)00299-1/abstract">Emergency Department Crowding and Outcomes After Emergency&nbsp;Department Discharge</a></div><div class="rightTitleInfo"><div class="icons atype-fla"><img src="eextra.gif" alt="Online Extra" title="Online Extra"><img src="podcst_s.png" alt="Podcast" title="Podcast"><!--${freeContentIcon: 10.1016/j.annemergmed.2015.04.009}--></div></div><div class="doi">DOI: http://dx.doi.org/10.1016/j.annemergmed.2015.04.009</div><div class="citation"><span class="journalTitleSp">Annals of Emergency Medicine</span>, <span class="issueVolSp">Vol. 66</span>, <span class="issueNumSp">Issue 5</span></div></div></div></div><!--S0196-0644(15)01377-3--><div class="articleCitation"><div class="detail"><div class="article-details"><div class="title" id="S0196-0644(15)01377-3-title"><a href="http://www.annemergmed.com/article/S0196-0644(15)01377-3/abstract">Is It Still an Emergency Department if It Can’t Treat Children?</a></div><div class="rightTitleInfo"><div class="icons atype-edi"><!--${freeContentIcon: 10.1016/j.annemergmed.2015.10.015}--></div></div><div class="doi">DOI: http://dx.doi.org/10.1016/j.annemergmed.2015.10.015</div><div class="publicationStage">Publication stage: In Press Corrected Proof</div><div class="citation"><span class="journalTitleSp">Annals of Emergency Medicine</span></div></div></div></div><!--S0196-0644(13)01552-7--><div class="articleCitation"><div class="detail"><div class="article-details"><div class="title" id="S0196-0644(13)01552-7-title"><a href="http://www.annemergmed.com/article/S0196-0644(13)01552-7/abstract">Impact of a New Senior Emergency Department on&nbsp;Emergency&nbsp;Department&nbsp;Recidivism, Rate of Hospital Admission, and Hospital&nbsp;Length of Stay</a></div><div class="rightTitleInfo"><div class="icons atype-fla"><img src="cme_s.png" alt="Continuing Medical Education Exam" title="Continuing Medical Education Exam"><img src="podcst_s.png" alt="Podcast" title="Podcast"><!--${freeContentIcon: 10.1016/j.annemergmed.2013.10.033}--></div></div><div class="doi">DOI: http://dx.doi.org/10.1016/j.annemergmed.2013.10.033</div><div class="citation"><span class="journalTitleSp">Annals of Emergency Medicine</span>, <span class="issueVolSp">Vol. 63</span>, <span class="issueNumSp">Issue 5</span></div></div></div></div><!--S0196-0644(15)00659-9--><div class="articleCitation"><div class="detail"><div class="article-details"><div class="title" id="S0196-0644(15)00659-9-title"><a href="http://www.annemergmed.com/article/S0196-0644(15)00659-9/abstract">40 An Emergency Department-Based Community Health Worker and Care Coordination Intervention for Frequent Emergency Department Users</a></div><div class="rightTitleInfo"><div class="icons atype-abs"><!--${freeContentIcon: 10.1016/j.annemergmed.2015.07.069}--></div></div><div class="doi">DOI: http://dx.doi.org/10.1016/j.annemergmed.2015.07.069</div><div class="citation"><span class="journalTitleSp">Annals of Emergency Medicine</span>, <span class="issueVolSp">Vol. 66</span>, <span class="issueNumSp">Issue 4</span></div></div></div></div>
+
+                        </ol>
+                    </form>
+            <a href="http://www.annemergmed.com/action/ckRelatedArticles?pii=S0196064412002624" class="moreLink">View All</a></div></div>
+        </div>
+    </section>
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget literatumAd alignCenter dartAd widget-verticalAd" id="f80e5b0a-2666-479d-9c56-9d4760b3da09">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-verticalAd "><div class="verticalAdContainer">
+    <div class="verticalAdLabelContainer">
+        <div class="verticalAdLabel">
+                <img src="bg_adVert.gif" alt="Advertisement">
+        </div>
+    </div>
+    <div class="verticalAd">
+        
+
+
+
+
+        <div class="pb-ad">
+            <script src="article.abstract;tile=2;sz=160x600,120x600;ord=1455616473870" type="text/javascript"></script>
+
+<noscript>
+
+<a href="/action/clickThrough?id=1024&url=http%3A%2F%2Fad.doubleclick.net%2FN6053%2Fjump%2Fels.ymem%2Fperiodical.home%3Btile%3D2%3Bsz%3D160x600%2C120x600%3Bord%3D1455616473870%3F&loc=%2Farticle%2FS0196-0644%2812%2900262-4%2Fabstract&pubId=47320753">
+<img src="http://ad.doubleclick.net/N6053/ad/els.ymem/article.abstract;tile=2;sz=160x600,120x600;loggedin=no;ord=1455616473870?" width="160" height="600"/>
+</a>
+</noscript>
+        </div>
+    
+
+    </div>
+</div></div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div></div>
+        </div>
+    </div>
+
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget layout-one-column none  widget-none  widget-compact-all" id="29c48ece-4155-4bb7-9203-36948b23f8ca">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none  body-compact-all"><div class="pb-columns row-fluid">
+    <div class="width_3_4">
+        <div data-pb-dropzone="center">
+
+
+
+    
+    
+    
+    
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+            
+                
+                
+                
+            
+        
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget articleNavigation none  widget-regular  widget-rounded" id="bd652b26-6502-4c11-b37a-4c7014b3f98d">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-regular  body-rounded"><div class="articleNav">
+            
+                <div class="artNav prevArt">
+                    <a href="http://www.annemergmed.com/article/S0196-0644(12)00114-X/abstract">&lt; Previous Article</a>
+                </div>
+            
+                <div class="artNav nextArt">
+                    <a href="http://www.annemergmed.com/article/S0196-0644(12)00291-0/abstract">Next Article &gt;</a>
+                </div>
+            
+            <div class="artBib"> <a href="http://www.annemergmed.com/issue/S0196-0644(11)X0022-7">September 2012</a>Volume 60, Issue 
+        3,  Pages&nbsp;299–308 </div>
+            
+        </div></div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div></div>
+        </div>
+    </div>
+    </div>
+</div><!--end pagefulltext--></div>
+        </div>
+    </div>
+
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget pageFooter none  widget-none  widget-compact-all" id="pageFooter">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none  body-compact-all"><div class="page-footer">
+    <div data-pb-dropzone="main">
+    
+
+
+    
+    
+    
+    
+    
+    
+        
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+                
+            
+            
+                
+                
+                
+            
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget general-html none  widget-none  widget-compact-all" id="a13a4775-7eca-4e3b-853e-5a2be9001c39">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none  body-compact-all"><div id="footer">   <div>    Copyright © 2015 <a href="http://www.elsevier.com/">Elsevier</a> Inc. All rights reserved.    |    <a href="http://www.elsevier.com/privacypolicy" target="new">Privacy Policy</a>    |    <a href="http://www.elsevier.com/termsandconditions" target="new">Terms &amp; Conditions</a>    |    <a href="http://www.elsevier.com/about/at-a-glance" target="new">About Us</a>    |   <a href="http://help.elsevier.com/app/answers/list/p/8050/c/8729">Help &amp; Contact</a>    </div>     <div>The content on this site is intended for health professionals.</div>     <p class="note meta">Advertisements on this site do not constitute a guarantee or endorsement by the journal, Association, or publisher of the quality or value of such product or of the claims made for it by its manufacturer.</p>  </div>    <!-- DO NOT DELETE. Alex: adding this empty script to prevent the AddThis script from breaking DART ad show/hide function -->  <script type="text/javascript"></script></div>
+        </div>
+    </div>
+    </div>
+</div></div>
+        </div>
+    </div>
+</div></div>
+        </div>
+    </div>
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    
+        
+    
+        
+    
+        
+    
+        
+            
+            
+            
+        
+    
+        
+    
+        
+    
+        
+    
+    
+    
+    <div class="widget general-html none  widget-none" id="c23e34b4-67e4-4c1a-94de-9490e99b245c">
+        
+        
+
+        <div class="wrapped ">
+            
+            <div class="widget-body body body-none "><script>
+
+//Automatic FPI expansion for Google referrer
+jQuery(function($){
+if (document.referrer && document.referrer.indexOf('google') !== -1) {
+$(".FPImg").click();
+} 
+});
+</script></div>
+        </div>
+    </div>
+        </div>
+    </div><script id="" type="text/javascript">if(0<window.optimizely.data.state.activeExperiments.length){var index,exp_name,exp_variation,exp_id,var_id;for(index=0;index<window.optimizely.data.state.activeExperiments.length;++index)exp_id=window.optimizely.data.state.activeExperiments[index],exp_name=window.optimizely.data.experiments[exp_id].name,exp_variation=window.optimizely.data.state.variationNamesMap[exp_id],var_id=window.optimizely.data.state.variationIdsMap[exp_id],dataLayer.push({event:"set-optimizely","experiment-name":exp_name,"experiment-id":exp_id,
+"variation-name":exp_variation,"variation-id":var_id})};</script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;"><iframe src="abstract_1.html" style="height: 1px; width: 1px; position: absolute; top: 0px; z-index: 100000; border: 0px none; left: 0px;" title="AddThis utility frame" id="_atssh113"></iframe></div>
+
+
+
+
+
+
+    
+
+
+
+
+<script src="satelliteLib-8e350dc4ceceb17a5d77c03f66d95608807a5585.js"></script><script src="satellite-5628673864746d59120020a6.js"></script>
+
+
+
+<script type="text/javascript">
+
+    var pageData =  {"content":[{"id":"pii:S0196064412002624","issueNumber":"3","title":"RealTime Prediction of Waiting Time in the Emergency Department Using Quantile Regression","status":"S300","volumeNumber":"60","format":"MIME-HTML","type":"XOCS:SCOPE-ABSTRACT","accessType":"article:paid:standard","coverDate":"201209"}],"journal":{"issn":"0196-0644","specialty":"Public Health,Emergency Medicine","name":"Annals of Emergency Medicine"},"page":{"businessUnit":"ELS:RAP:JBS","environment":"prod","noTracking":"","name":"abstract","server":"healthadvance.com","language":"en","type":"CP-CA","productName":"JB","section":"Annals of Emergency Medicine","loadTimestamp":"1455616474955"},"visitor":{}};
+</script>
+
+
+<script type="text/javascript">pageDataTracker.trackPageLoad();</script>
+
+
+
+<script src="j.annemergmed.2012.03.011" type="text/javascript"></script><div aria-labelledby="ui-id-2" aria-describedby="ui-id-1" role="dialog" tabindex="-1" style="display: none; position: absolute;" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-resizable ui-state-hover"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-id-2">Non-Member Login</span><button title="close" aria-disabled="false" role="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">close</span></button></div><div style="display: block;" id="ui-id-1" class="dialog loginDialog hidden ui-dialog-content ui-widget-content" draggable="false" removeerrors="true">
+        <div class="sso-login-popup">
+            <form action="https://secure.jbs.elsevierhealth.com/action/doLogin?code=ymem-site" name="loginForm" class="loginForm doLogin" method="post"><div class="row-fluid">
+        <div class="pull-right">
+            <label for="formLoginEmail"><span>Email/Username:</span></label>
+            <input id="formLoginEmail" class="loginInput" name="login" value="" size="15" type="text">
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="row-fluid">
+        <div class="pull-right">
+            <label for="passwordNormalUser"><span>Password:</span></label>
+            <input id="passwordNormalUser" class="loginInput" name="password" value="" autocomplete="off" type="password">
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+
+    <div class="loginControls">
+    
+        <label for="formLoginSavePass"><input id="formLoginSavePass" name="savePassword" value="1" type="checkbox"> Remember me</label>
+    <input class="CTABtn" value="Log In" type="submit"><br>
+    <a href="http://www.annemergmed.com/action/requestResetPassword" class="forgotPassword">Forgot password?</a><br>
+    </div>
+    <input name="redirectUri" value="http://www.annemergmed.com/article/S0196-0644(12)00262-4/abstract?dialogRequest=" type="hidden"><input name="referer" value="/article/S0196-0644(12)00262-4/abstract" type="hidden"><input name="ecommRedirect" value="" type="hidden"><input name="code" value="ymem-site" type="hidden"></form>
+        </div>
+    </div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-n"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-e"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-s"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-w"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-sw"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-ne"></div><div style="z-index: 90;" class="ui-resizable-handle ui-resizable-nw"></div></div><ul style="display: none;" tabindex="0" id="ui-id-3" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all"></ul><div id="crossmark-tooltip-130" class="crossmark-tooltip" style="display: none;"><div class="cmtttop"></div><div class="cmttmid"><p>Click to get updates and verify authenticity.</p></div><div class="cmttbot"></div></div><script id="" type="text/javascript">setTimeout(function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0020/1063.js?"+Math.floor((new Date).getTime()/36E5);a.async=!0;a.type="text/javascript";b.parentNode.insertBefore(a,b)},1);</script></body>
+</html>

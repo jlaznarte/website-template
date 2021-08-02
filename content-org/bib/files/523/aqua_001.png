@@ -1,0 +1,14 @@
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+<h1>404 Not Found</h1>
+<ul>
+<li>Code: NoSuchKey</li>
+<li>Message: The specified key does not exist.</li>
+<li>Key: view/css/project/widget/button/aqua.png</li>
+<li>RequestId: DD514E91C4C07921</li>
+<li>HostId: WxDeJUKlczCDxhuVpwmTf6uNKYqllDIVSAhDhhcunjjRG6RuF5rnlNgNVIHy3TVD5+rBTiNiau8=</li>
+</ul>
+<hr/>
+</body>
+</html>

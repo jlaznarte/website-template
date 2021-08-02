@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style="">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://repository.ipb.ac.id/handle/123456789/61568">
+<meta name="wpd_url" content="http://repository.ipb.ac.id/handle/123456789/61568">
+<meta name="wpd_date" content="2016-01-17T10:59Z">
+
+
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<link rel="shortcut icon" href="ico.ico">
+<link rel="apple-touch-icon" href="http://repository.ipb.ac.id/themes/Mirage2/images/apple-touch-icon.png">
+<meta name="Generator" content="DSpace 5.3">
+
+<link type="application/opensearchdescription+xml" rel="search" href="http://repository.ipb.ac.id/description.xml" title="IPBRepos">
+<script src="analytics.js" async=""></script><script>
+
+                //Clear default text of emty text areas on focus
+                function tFocus(element)
+                {
+                if (element.value == ' '){element.value='';}
+                }
+                //Clear default text of emty text areas on submit
+                function tSubmit(form)
+                {
+                var defaultedElements = document.getElementsByTagName("textarea");
+                for (var i=0; i != defaultedElements.length; i++){
+                if (defaultedElements[i].value == ' '){
+                defaultedElements[i].value='';}}
+                }
+                //Disable pressing 'enter' key to submit a form (otherwise pressing 'enter' causes a submission to start over)
+                function disableEnterKey(e)
+                {
+                var key;
+
+                if(window.event)
+                key = window.event.keyCode;     //Internet Explorer
+                else
+                key = e.which;     //Firefox and Netscape
+
+                if(key == 13)  //if "Enter" pressed, then disable!
+                return false;
+                else
+                return true;
+                }
+            </script><!--[if lt IE 9]>
+                <script src="/themes/Mirage2/vendor/html5shiv/dist/html5shiv.js"> </script>
+                <script src="/themes/Mirage2/vendor/respond/respond.min.js"> </script>
+                <![endif]--><script src="modernizr.js"> </script>
+<title>Statictical Downscaling Modeling with Quantile Regression to Estimate Extreme Precipitation (A Case Study in Bangkir Station, Indramayu).</title>
+<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.contributor" content="Wigena, Aji Hamim">
+<meta name="DC.contributor" content="Djuraidah, Anik">
+<meta name="DC.creator" content="Mondiana, Yani Quarta">
+<meta name="DCTERMS.dateAccepted" content="2013-03-21T07:49:21Z" scheme="DCTERMS.W3CDTF">
+<meta name="DCTERMS.available" content="2013-03-21T07:49:21Z" scheme="DCTERMS.W3CDTF">
+<meta name="DCTERMS.issued" content="2012" scheme="DCTERMS.W3CDTF">
+<meta name="DC.identifier" content="http://repository.ipb.ac.id/handle/123456789/61568" scheme="DCTERMS.URI">
+<meta name="DCTERMS.abstract" content="Statistical downscaling (SD) is a technique used to model the relationship between global-scale data and local-scale data with statistics model. The global-scale outcomes of Global Circulation Model (GCM) are used as independent variables in SD. Various methods of SD include multiple regression analysis, principal component regression analysis and artificial neural networks. However, these methods can not accurately predict extreme events. Quantile regression can be used to detect extreme conditions, both extreme dry and extreme wet. The aim of this study was to predict the extreme event and its probabability. The data of independent variables used were monthly rainfall of the district Indramayu Bangkir station. Quantile regression method was used to predict extreme rainfall and logistic regression to estimate the chances of extreme events. Quantile regression models formed had correct prediction rate in the 90th quantile in February. The probability of extreme rainfall events in quantile 75 was high in November, December, January, February and March. However, the occurrence probability in quantile 90 and 95, was only high in February. The prediction and probability of extreme rainfall based on quantile regression models and logistic regression showed similar trend with the data pattern observed in extreme conditions." xml:lang="en">
+<meta name="DC.subject" content="Extreme Precipitation" xml:lang="en">
+<meta name="DC.subject" content="Statistical Downscaling" xml:lang="en">
+<meta name="DC.subject" content="Quantile regression" xml:lang="en">
+<meta name="DC.title" content="Statictical Downscaling Modeling with Quantile Regression to Estimate Extreme Precipitation (A Case Study in Bangkir Station, Indramayu)." xml:lang="en">
+<meta name="DC.title" content="Pemodelan Statistical Downscaling dengan Regresi Kuantil untuk Pendugaan Curah Hujan Ekstrim (Studi Kasus Stasiun Bangkir Kabupaten Indramayu)">
+<meta content="http://repository.ipb.ac.id/bitstream/123456789/61568/1/2012yqm.pdf" name="citation_pdf_url">
+<meta content="Statictical Downscaling Modeling with Quantile Regression to Estimate Extreme Precipitation (A Case Study in Bangkir Station, Indramayu)." name="citation_title">
+<meta content="Extreme Precipitation; Statistical Downscaling; Quantile regression" name="citation_keywords">
+<meta content="Mondiana, Yani Quarta" name="citation_author">
+<meta content="http://repository.ipb.ac.id/handle/123456789/61568" name="citation_abstract_html_url">
+<meta content="2012" name="citation_date">
+<script type="text/x-mathjax-config;executed=true">
+
+                    MathJax.Hub.Config({
+                      tex2jax: {
+                        inlineMath: [['$','$'], ['\\(','\\)']],
+                        ignoreClass: "detail-field-data|detailtable|exception"
+                      },
+                      TeX: {
+                        Macros: {
+                          AA: '{\\mathring A}'
+                        }
+                      }
+                    });
+                </script><script src="MathJax.js" type="text/javascript"> </script>
+
+<link rel="stylesheet" type="text/css" href="61568.css" media="all">
+</head>
+<body><div style="display: none;" id="MathJax_Message"></div>
+<header>
+<div role="navigation" class="navbar navbar-default navbar-static-top">
+<center>
+<div class="container">
+<div style="width: auto; margin-top: 20px; margin-bottom: 20px;" class="">
+<button data-toggle="offcanvas" class="navbar-toggle" type="button"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="" href="http://repository.ipb.ac.id/"><img class="img-responsive" src="banner-repository.png"></a>
+<div class="navbar-header pull-right visible-xs hidden-sm hidden-md hidden-lg">
+<ul class="nav nav-pills pull-left "></ul>
+</div>
+</div>
+<ul class="nav navbar-nav pull-left"></ul>
+<button type="button" class="navbar-toggle visible-sm" data-toggle="offcanvas"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+<div id="header-form">
+<form style="margin-bottom: 20px;" method="post" id="ds-search-form" action="http://repository.ipb.ac.id/discover">
+<fieldset>
+<div class="input-group">
+<input placeholder="Search" class="ds-text-field form-control" name="query" type="text"><span class="input-group-btn"><button title="Go" class="ds-button-field btn btn-primary"><span aria-hidden="true" class="glyphicon glyphicon-search"></span></button></span>
+</div>
+<div style="text-align: left;" class="radio">
+<label><input checked="" value="" name="scope" id="ds-search-form-scope-all" type="radio">Search</label>
+                                        &nbsp;
+                                        <label><input name="scope" id="ds-search-form-scope-container" value="123456789/77" type="radio">This Collection</label>
+</div>
+</fieldset>
+</form>
+</div>
+</div>
+</center>
+</div>
+</header>
+<div class="trail-wrapper hidden-print">
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<div class="breadcrumb dropdown visible-xs">
+<a data-toggle="dropdown" class="dropdown-toggle" role="button" href="#" id="trail-dropdown-toggle">View Item&nbsp;<b class="caret"></b></a>
+<ul aria-labelledby="trail-dropdown-toggle" role="menu" class="dropdown-menu">
+<li role="presentation">
+<a role="menuitem" href="http://repository.ipb.ac.id/"><i aria-hidden="true" class="glyphicon glyphicon-home"></i>&nbsp;
+                        IPB Repository</a>
+</li>
+<li role="presentation">
+<a role="menuitem" href="http://repository.ipb.ac.id/handle/123456789/9">Dissertations and Theses</a>
+</li>
+<li role="presentation">
+<a role="menuitem" href="http://repository.ipb.ac.id/handle/123456789/26">Master Theses</a>
+</li>
+<li role="presentation">
+<a role="menuitem" href="http://repository.ipb.ac.id/handle/123456789/77">MT - Mathematics and Natural Science</a>
+</li>
+<li role="presentation" class="disabled">
+<a href="#" role="menuitem">View Item</a>
+</li>
+</ul>
+</div>
+<ul class="breadcrumb hidden-xs">
+<li>
+<i aria-hidden="true" class="glyphicon glyphicon-home"></i>&nbsp;
+            <a href="http://repository.ipb.ac.id/">IPB Repository</a>
+</li>
+<li>
+<a href="http://repository.ipb.ac.id/handle/123456789/9">Dissertations and Theses</a>
+</li>
+<li>
+<a href="http://repository.ipb.ac.id/handle/123456789/26">Master Theses</a>
+</li>
+<li>
+<a href="http://repository.ipb.ac.id/handle/123456789/77">MT - Mathematics and Natural Science</a>
+</li>
+<li class="active">View Item</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden" id="no-js-warning-wrapper">
+<div id="no-js-warning">
+<div class="notice failure">JavaScript is disabled for your browser. Some features of this site may not work without it.</div>
+</div>
+</div>
+<div class="container" id="main-container">
+<div class="row row-offcanvas row-offcanvas-right">
+<div class="horizontal-slider clearfix">
+<div class="col-xs-12 col-sm-12 col-md-9 main-content">
+<div>
+<div id="aspect_artifactbrowser_ItemViewer_div_item-view" class="ds-static-div primary">
+<!-- External Metadata URL: cocoon://metadata/handle/123456789/61568/mets.xml?rightsMDTypes=METSRIGHTS-->
+<div class="item-summary-view-metadata">
+<h2 class="page-header first-page-header">Statictical Downscaling Modeling with Quantile Regression to Estimate Extreme Precipitation (A Case Study in Bangkir Station, Indramayu).</h2>
+<div class="simple-item-view-other">
+<p class="lead">Pemodelan Statistical Downscaling dengan Regresi Kuantil untuk Pendugaan Curah Hujan Ekstrim (Studi Kasus Stasiun Bangkir Kabupaten Indramayu)</p>
+</div>
+<div class="row">
+<div class="col-sm-4">
+<div class="row">
+<div class="col-xs-6 col-sm-12"></div>
+<div class="col-xs-6 col-sm-12">
+<div class="item-page-field-wrapper table word-break">
+<h5>View/<wbr>Open</h5>
+<div>
+<a href="http://repository.ipb.ac.id/bitstream/handle/123456789/61568/2012yqm.pdf?sequence=1&amp;isAllowed=y"><i aria-hidden="true" class="glyphicon  glyphicon-file"></i> Fulltext (1.231Mb)</a>
+</div>
+</div>
+</div>
+</div>
+<div class="simple-item-view-date word-break item-page-field-wrapper table">
+<h5>Date</h5>2012</div>
+<div class="simple-item-view-authors item-page-field-wrapper table">
+<h5>Author</h5>
+<div>Mondiana, Yani Quarta</div>
+</div>
+<div class="simple-item-view-show-full item-page-field-wrapper table">
+<h5>Metadata</h5>
+<a href="http://repository.ipb.ac.id/handle/123456789/61568?show=full">Show full item record</a>
+</div>
+</div>
+<div class="col-sm-8">
+<div class="simple-item-view-description item-page-field-wrapper table">
+<h5 class="visible-xs">Abstract</h5>
+<div>Statistical downscaling (SD) is a technique used to model the relationship between global-scale data and local-scale data with statistics model. The global-scale outcomes of Global Circulation Model (GCM) are used as independent variables in SD. Various methods of SD include multiple regression analysis, principal component regression analysis and artificial neural networks. However, these methods can not accurately predict extreme events. Quantile regression can be used to detect extreme conditions, both extreme dry and extreme wet. The aim of this study was to predict the extreme event and its probabability. The data of independent variables used were monthly rainfall of the district Indramayu Bangkir station. Quantile regression method was used to predict extreme rainfall and logistic regression to estimate the chances of extreme events. Quantile regression models formed had correct prediction rate in the 90th quantile in February. The probability of extreme rainfall events in quantile 75 was high in November, December, January, February and March. However, the occurrence probability in quantile 90 and 95, was only high in February. The prediction and probability of extreme rainfall based on quantile regression models and logistic regression showed similar trend with the data pattern observed in extreme conditions.</div>
+</div>
+<div class="simple-item-view-uri item-page-field-wrapper table">
+<h5>URI</h5>
+<span><a href="http://repository.ipb.ac.id/handle/123456789/61568">http://repository.ipb.ac.id/handle/123456789/61568</a></span>
+</div>
+<div class="simple-item-view-collections item-page-field-wrapper table">
+<h5>Collections</h5>
+<ul class="ds-referenceSet-list">
+<!-- External Metadata URL: cocoon://metadata/handle/123456789/77/mets.xml-->
+<li>
+<a href="http://repository.ipb.ac.id/handle/123456789/77">MT - Mathematics and Natural Science</a> [1578]</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="visible-xs visible-sm">
+<footer>
+<div class="row">
+<hr>
+<div class="col-xs-7 col-sm-8">
+<div>
+
+                           
+			
+				Copyright&nbsp;©&nbsp; <a href="http://perpustakaan.ipb.ac.id/">Central Library</a> of <a href="http://ipb.ac.id/">Bogor Agricultural University</a>. <br> Jl. Raya Darmaga Kampus IPB Darmaga Bogor 16680 West Java Indonesia <br>All rights reserved. 2015
+
+                        </div>
+</div>
+<div class="col-xs-5 col-sm-4 hidden-print">
+<div class="pull-right">
+<span class="theme-by">Theme by&nbsp;</span><a href="http://atmire.com/">Atmire</a>
+<br>
+</div>
+</div>
+</div>
+<a class="hidden" href="http://repository.ipb.ac.id/htmlmap">&nbsp;</a>
+<p>&nbsp;</p>
+</footer>
+</div>
+</div>
+<div role="navigation" id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas">
+<div class="word-break hidden-print" id="ds-options">
+<h2 class="ds-option-set-head  h6">Browse</h2>
+<div id="aspect_viewArtifacts_Navigation_list_browse" class="list-group">
+<a class="list-group-item active"><span class="h5 list-group-item-heading  h5">All of IPB Repository</span></a><a href="http://repository.ipb.ac.id/community-list" class="list-group-item ds-option">Collections</a><a href="http://repository.ipb.ac.id/browse?type=dateissued" class="list-group-item ds-option">By Issue Date</a><a href="http://repository.ipb.ac.id/browse?type=author" class="list-group-item ds-option">Authors</a><a href="http://repository.ipb.ac.id/browse?type=title" class="list-group-item ds-option">Titles</a><a href="http://repository.ipb.ac.id/browse?type=subject" class="list-group-item ds-option">Subjects</a><a class="list-group-item active"><span class="h5 list-group-item-heading  h5">This Collection</span></a><a href="http://repository.ipb.ac.id/handle/123456789/77/browse?type=dateissued" class="list-group-item ds-option">By Issue Date</a><a href="http://repository.ipb.ac.id/handle/123456789/77/browse?type=author" class="list-group-item ds-option">Authors</a><a href="http://repository.ipb.ac.id/handle/123456789/77/browse?type=title" class="list-group-item ds-option">Titles</a><a href="http://repository.ipb.ac.id/handle/123456789/77/browse?type=subject" class="list-group-item ds-option">Subjects</a>
+</div>
+<h2 class="ds-option-set-head  h6">My Account</h2>
+<div id="aspect_viewArtifacts_Navigation_list_account" class="list-group">
+<a href="http://repository.ipb.ac.id/login" class="list-group-item ds-option">Login</a>
+</div>
+<div id="aspect_viewArtifacts_Navigation_list_context" class="list-group"></div>
+<div id="aspect_viewArtifacts_Navigation_list_administrative" class="list-group"></div>
+<div id="aspect_discovery_Navigation_list_discovery" class="list-group"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden-xs hidden-sm">
+<footer>
+<div class="row">
+<hr>
+<div class="col-xs-7 col-sm-8">
+<div>
+
+                           
+			
+				Copyright&nbsp;©&nbsp; <a href="http://perpustakaan.ipb.ac.id/">Central Library</a> of <a href="http://ipb.ac.id/">Bogor Agricultural University</a>. <br> Jl. Raya Darmaga Kampus IPB Darmaga Bogor 16680 West Java Indonesia <br>All rights reserved. 2015
+
+                        </div>
+</div>
+<div class="col-xs-5 col-sm-4 hidden-print">
+<div class="pull-right">
+<span class="theme-by">Theme by&nbsp;</span><a href="http://atmire.com/">Atmire</a>
+<br>
+</div>
+</div>
+</div>
+<a class="hidden" href="http://repository.ipb.ac.id/htmlmap">&nbsp;</a>
+<p>&nbsp;</p>
+</footer>
+</div>
+</div>
+<script>if(!window.DSpace){window.DSpace={};}window.DSpace.context_path='';window.DSpace.theme_path='/themes/Mirage2/';</script><script src="theme.js"> </script><script>
+
+                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                  ga('create', 'UA-27834788-1', 'repository.ipb.ac.id');
+                  ga('send', 'pageview');
+           </script>
+
+</body>
+</html>

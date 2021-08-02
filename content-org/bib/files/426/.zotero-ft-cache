@@ -1,0 +1,495 @@
+Blog de mifirma.com
+Blog y FAQ de mifirma.com
+Menu
+Skip to content
+
+    Propuestas
+    Ayuda
+    Sobre Nosotros
+    Blog
+
+Soporte a usuarios
+
+
+
+Acerca de MiFirma.com
+¿Para qué utiliza Mifirma.com el dinero de los donativos recibidos?
+
+Mifirma.com es una asociación sin ánimo de lucro y recoger firmas con Mifirma.com es gratuito : económicamente, la plataforma se mantiene con las aportaciones de sus socios , que además ofrecen su trabajo voluntariamente.
+
+Por esta razón, agradecemos la colaboración de todo el mundo para que el proyecto pueda salir adelante: necesitamos sufragar los gastos de servidores, infraestructura de seguridad y mejoras en la plataforma entre otros.
+
+Puedes hacer tu donativo vía Paypal aquí . Tu ayuda significa mucho para nosotros.
+¿Es Mifirma.com la panacea?
+
+De momento,  no .
+
+Por ahora, no ha habído  ninguna comisión promotora  que haya podido poner toda esperanza de éxito en tan solo el canal que nosotros ofrecemos. La recogida de firmas electrónicas debe  complementarse  con las firmas tradicionales. Además, el grueso del trabajo de sensibilización ciudadana corre a cargo de la comisión promotora. Vuestro esfuerzo para difundir vuestra iniciativa, con nuestro enlace, es imprescindble.
+
+Una vez sabes cómo hacerlo, es muy fácil: se tarda  un minuto . Aún así, la primera vez es algo antipático (actualizar Java, conseguir un lector). Para dispositivos móviles, funciona con dificultad. Mucha gente intenta firmar  como si recogiéramos peticiones . Es un poco más laborioso.
+
+Nuestro  objetivo  es que en poco tiempo la firma electrónica basada en certificados sea conocida y empieze a ser utilizada masivamente. Que en el futuro se admitan otros sistemas de firma electrónica más sencillos al ciudadano. Y estamos trabajando en ello. Hasta entonces, es un “problema” para un usuario sin experiencia.
+¿Qué es MiFirma.com?
+
+Mifirma.com es una plataforma para recoger firmas con certificado digital. Somos un canal mediante el cual  Iniciativas Legislativas Populares  (ILP) pueden recoger sus apoyos cumpliendo todos los requisitos especificados en la vigente normativa de aplicación, para poder llevarlas de manera efectiva al Parlamento y poder crear las leyes que los ciudadanos creemos justas y necesarias.
+
+Mifirma.com no tiene igual: a diferencia de otras plataformas de recogida de firmas, nuestro valor añadido es la validez legal, hacemos que las firmas sean realmente válidas.
+¿Para qué se puede utilizar MiFirma?
+
+Actualmente recogemos firmas para:
+
+    Iniciativas Legislativas Populares nacionales y autonómicas
+    Iniciativas Legistivas Locales
+    Iniciativas Ciudadanas Europeas
+    Recogida de avales para elecciones
+    Otras campañas impulsadas por entidades (no particulares)
+
+¿Qué necesito para realizar una “firma con certificado electrónico”?
+
+Para poder firmar de forma efectiva, necesitas:
+
+    Un certificado electrónico, como el de la FNMT o el DNIe (para este caso, mira más abajo). La plataforma Mifirma.com  acepta los siguientes  certificados de la JEC . No tienes certificado electrónico? Aquí encontrarás cómo conseguir uno.
+    Tener  Java instalado  en el ordenador (puedes  instalar Java fácilmente ), siempre con la última versión. (Nota: instalar el conector de Java desde un explorador inhabilita los otros: es decir, debes firmar desde el explorador que has usado para bajarlo! También puede ser que Mifirma.com te pida actualizar Java aunque ya lo tengas actualizado)
+
+En el caso de utilizar el DNIe:
+
+1.  DNIe con validez vigente y su Código PIN ( qué es el código PIN? )
+
+2. Lector DNIe . No tienes?  Soluciones:
+
+    comprar  online (esta es una de las múltiples webs )
+    comprar en cualquier tienda de informática. Suelen costar unos diez euros
+    acercarte a un equipamiento municipal -sobretodo bibliotecas- donde suelen tener teclados con lector incorporado
+
+3. Tener instalados:
+
+    los módulos criptográficos de la policía. Si tienes Windows 7 o Windows 8 y lo mantienes actualizado estos módulos ya estarán instalados por defecto
+    recomendamos la instalación del  asistente del DNI Electrónico
+
+En este vídeo de muestra os enseñamos como se firma en menos de dos minutos.
+¿Cuánto cuesta recoger firmas con Mifirma.com?
+
+Recoger firmas con  Mifirma.com  es  gratuito . Somos un equipo de  voluntarios!
+
+Aún así , la ley establece que, en caso de éxito (es decir, en caso que se llegue al objetivo de firmas: en el caso de una ILP nacional, 500.000), se retribuye a la Comisión Promotora los gastos que puedan justificar que han incurrido para recoger las firmas hasta un límite algo superior a 300.000€ (¡ojo!). Para el caso de ILP Autonómicas, depende de cada caso.
+
+Así pues,  en caso de éxito (y sólo entonces) , pediríamos a la comisión promotora una retribución que oscilaría entre los 0,20€ y los 0,025€ por firma según el número de firmas electrónicas recogidas.  La comisión promotora podría justificar, entonces, que la administración le pague tal cantidad en concepto de costes de recogida de firmas electrónicas  (es decir, lo estaría pagando la administración).
+
+En resumen: sólo en caso que vosotros cobréis (que esperemos que sí, porque querrá decir que habéis tenido éxito!), nosotros os pedimos participar del premio en una cuantía simbólica que pueda servir para aligerar unos costes que, en caso contrario, sufragamos los socios… Sabemos que no nos vamos a hacer ricos
+¿Por qué podemos hacer realidad nuestras propuestas?
+
+Hay numerosos proyectos (no vamos a decir nombres) que no siguen el procedimiento legal para recoger firmas, que sirven para hacer ruido en los medios, pero que no son vinculantes, no llegan a tener un verdadero efecto a nivel político y parlamentario.
+
+Queremos cambiar eso. Queremos una democracia más directa, y que la sociedad civil pueda intervenir en el desarrollo de su propio destino. Queremos crear las leyes que nos merecemos.
+
+Por eso, en  MiFirma.com  nuestras propuestas siguen el procedimiento derivado de la legislación en vigor para conseguir firmas electrónicas válidas, usando el componente de firma de la administración Valide.redsara.es .  Así conseguimos que las firmas para las Iniciativas Legislativas Populares y los avales que sean aptas para llegar de manera efectiva al Parlamento.
+¿Acaso debe Mifirma dar el visto bueno a la campaña propuesta?
+
+No! Nosotros no vamos a imponer nuestro criterio para filtrar unas u otras propuestas. Además, si se trata de una ILP, es la JEC  quién determina si esta es legal en fondo y  forma .
+¿Qué hacemos con vuestros datos personales?
+
+Al utilizar Mifirma nos proporcionas una serie de información personal, como tu nombre, NIF, fecha de nacimiento y dirección de correo electrónico, que vinculamos a las propuestas e iniciativas que firmes por medio de nuestra plataforma. Estos datos personales forman parte de nuestros ficheros, debidamente inscritos en la Agencia Española de Protección de Datos, a los que aplicamos las medidas establecidas en la legislación española y europea para salvaguardar su confidencialidad, evitar accesos no autorizados, su modificación o eliminación indebidas. Tal como indicamos en nuestra Política de Privacidad, en todo caso podrás ejercer tus derechos de acceso, oposición, rectificación y cancelación en los términos establecidos en la legislación española.
+
+La recogida de firmas en relación con una ILP concreta obliga posteriormente a ceder o a comunicar esos datos a la correspondiente Comisión Promotora, para que puedan contabilizarlas, que posteriormente éstas remiten a la Junta Electoral Central. En todo caso, dichas cesiones son necesarias para cumplir con los intereses del usuario, que no es otro que apoyar con su firma una iniciativa, y llegado el caso poder acreditarlo. Simplemente por estos motivos comunicaremos tus datos a la Comisión Promotora, o en general a cualquier otro organismo que promueva una recogida de firmas y tú participes en la misma. En cualquier otro caso te pediremos el consentimiento previamente y por escrito, tal como establecemos en los Términos de Uso.
+
+En cuanto al tratamiento de datos estadísticos de la web, utilizamos los sistemas de medición proporcionados por Google Analytics. En este caso, los datos de las visitas y accesos a la web son recogidos y procesados directamente por Google, a través de su sistema de cookies entre otros recursos, y son tratados de acuerdo con la política de privacidad y condiciones de servicio de dicha empresa. Los datos personales vinculados a este tratamiento estadístico no son proporcionados a Mifirma en tanto Google los disocia y presenta resultados agrupados en un análisis que no permite conocer información concreta sobre el usuario, sino como decimos datos de tráfico, búsquedas y visitas que no están viculadas con personas concretas.
+¿Cómo puedo dar de baja mis datos?
+
+En Mifirma tratamos y almacenamos sus datos de conformidad con la legislación española y europea aplicable, y en especial para las finalidades indicadas en los  Términos de Uso  y  Política de Privacidad .
+
+En virtud de lo anterior, el usuario tiene derecho a que sus datos personales sean cancelados de nuestros ficheros, lo que implicará el bloqueo de los mismos y la imposibilidad de acceso a los mismos por parte de terceros salvo en caso de requerimiento por parte de una autoridad competente.
+
+En todo caso, si quiere darse de baja de Mifirma, por favor remítanos un mensaje a la dirección  baja@mifirma.com , indicándonos su nombre completo y dirección de correo electrónico que nos proporcionó en su momento para que podamos realizar dicho trámite.
+
+Si quieres darte de baja del boletín, al final del texto hay un link donde tramitar la baja automáticamente.
+
+Iniciativas Legislativas Populares Nacionales y Autonómicas
+¿Qué iniciativas ha albergado Mifirma.com?
+
+A continuación, un histórico de iniciativas con las que hemos colaborado:
+
+    ILP para la selección del sexo de los hijos
+    ILP derechos laborales de la guardia civil
+    ILP por la conservación del litoral andaluz
+    ILP sobre la reversión de la congelación de las pensiones en 2011
+    ILP regulación de la dación en pago, de paralización de los deshaucios y de alquiler social
+    ILP por la Conmemoración del V Centenario de la Primera Vuelta al Mundo, Sanlúcar  2019-2022
+    ILP por la Auditoria de la Tarifa Eléctrica
+
+¿Cuáles son las materias reservadas a las Iniciativas Legislativas Populares?
+
+Las ILP tienen una serie de limitaciones:
+
+    No pueden reformar  ley Orgánica  alguna, ni regular materia propia de ley Orgánica, lo que excluye el  Código Penal , los  Estatutos de Autonomía , la  Ley Electoral , la del  Defensor del Pueblo , la del  Tribunal Constitucional , la de Educación, la del  Derecho de Reunión , la de  Libertad Sindical , la de  Libertad Religiosa , la de  Partidos Políticos …
+    No pueden reformar ley tributaria alguna, lo que excluye la Ley General Tributaria, la Ley Reguladora de las Haciendas Locales, la Ley sobre el  IRPF , la Ley del  IVA …
+    No pueden reformar ley alguna de carácter internacional.
+    No puede elaborarse ley alguna referente a la  prerrogativa de gracia , el  indulto , que según el artículo 62.i de la Constitución corresponde al Rey, con arreglo a la Ley.
+    No pueden reformar ni el  Consejo Económico y Social , ni los parámetros de redistribución de la riqueza, ni la armonización entre regiones, ni la planificación de la actividad económica; tampoco pueden proponerse los  Presupuestos Generales del Estado  ni enmiendas a éstos.
+    Además, según el artículo 166 de la Constitución, sólo puede reformarse la Constitución por los apartados 1 y 2 del artículo 87, por lo que la ILP queda excluida como vehículo para la reforma constitucional.
+
+Se debe ser realista, pues la discordia de cualquiera de estas leyes conlleva el veto de la Junta Electoral Central para poner en marcha la ILP.
+
+Aún así, desde Mifirma.com entendemos que son un instrumento valioso y desaprovechado. La extensión del uso de las ILP puede ampliar nuestros horizontes democráticos más allá de lo que somos capaces de imaginar.
+¿Cómo es una ILP?
+
+A continuación adjuntamos referentes de ILP a nivel nacional
+
+    “Por el Empleo Estable y con Derechos”
+    “Prou!” 
+    “Televisió sense fronteres” 
+
+¿Cuántas firmas necesito para impulsar una ILP en mi Comunidad Autónoma?
+
+Número necesario de firmas a nivel autonómico:
+
+    Andalucía. 40.000
+    Aragón. 15.000
+    Asturias. 10.000
+    Baleares. 10.000
+    Canarias. 15.000
+    Cantabria. 10.000
+    Castilla-La Mancha. 20.000
+    Castilla y León. 25.000
+    Cataluña. 50.000
+    Comunidad Valenciana. 50.000
+    Extremadura. El 5% del censo
+    Galicia. 15.000
+    La Rioja. 6.000
+    Madrid. 50.000
+    Murcia. 10.000
+    Navarra. 7.000
+    País Vasco. 30.000
+
+¿Cómo pongo en marcha una ILP?
+
+El primer paso a seguir para promover una ley es constituir una Comisión Promotora, que será el grupo de personas que se involucrará en este proceso. Los requisitos para formar parte de esta comisión son dos: ser mayor de edad y estar inscrito en un censo electoral.
+
+Esta delegación deberá presentar ante la Mesa del Congreso de los Diputados un texto articulado de la proposición de Ley precedido de una exposición de motivos, que lo estudiará y se pronunciará al respecto en un plazo máximo de 15 días. Si da el visto bueno, el siguiente paso será el de dotar a la propuesta de Ley de respaldo popular, es decir, iniciar la recogida de firmas.
+
+Debemos tener siempre en cuenta el hecho que  ciertas materias quedan excluidas de la Iniciativa Legislativa Popular  (la Mesa de la Cámara podrá negar la propuesta) y que otras causas también pueden suponer la inadmisión de la proposición:
+
+-Que la propuesta que se presenta ante la Mesa de la Cámara no cumpla todos los requisitos, en cuyo caso la Comisión Promotora podrá corregir el error, en caso de que proceda, en el plazo máximo de un mes.
+
+-Que el texto que incluye la proposición de Ley sea contradictorio.
+
+-Que exista una proposición de Ley que verse sobre lo mismo en proceso de trámite.
+
+-Que ya sea se haya presentado otra iniciativa popular de mismo contenido en el mismo periodo legislativo.
+¿Cómo empiezo a recoger firmas para mi ILP mediante Mifirma?
+
+La ILP ya cumple con  todos los requisitos ? Entonces  regístrate *  y luego envíanos   un email a  info@mifirma.com  indicando vuestras intenciones de recoger firmas junto con  la información necesaria para la campaña :
+
+    Denominación oficial de la ILP
+    Logo de vuestra ILP o de la comisión promotora: en formato .png con dimensiones 200x135px.
+    Fecha de inicio de recogida de las firmas (cuándo queréis que la ILP aparezca en la página?)
+    Fecha de fin de recogida de firmas (cuándo queréis que la ILP deje de aparecer en la página?)
+    Código de la ILP para firma electrónica  (tipo ILP/Año/XXX ). En caso de duda, podéis enviar un fax a la JEC.
+    Breve descripción (max. 50 palabras) de tu ILP. Dicha descripción aparecerá en tu página principal donde aparecen las iniciativas de MiFirma.
+    Descripción extensa de tu ILP: con algo más de información, un enlace al texto completo…
+    E-mail con el que te has registrado* (no hace falta que sea el mismo desde el que nos escribes).
+    E-mail institucional - que, a partir de entonces, utilizaremos para contactaros . El teléfono es opcional.
+    Web, twitter, facebook… para que podamos estar más conectados.
+
+Es  conveniente  que contactéis con nosotros  antes  de pedir la aprobación de la Junta Electoral Central para que se pueda  notificar con antelación la intención de recoger firmas  electrónicamente. Es mucho más fácil desde el principio y ¡queremos daros soporte en este trámite! Sabemos bien cómo funciona. Os tienen que dar el  código , imprescindible para que las firmas sean válidas.
+
+Una vez nos hayas contactado,  nuestro equipo legal redacta la petición a la JEC   y un contrato  (estándar) entre la comisión promotora y la asociación.
+
+En resumen, desde que nos contactáis por primera vez, en aproximadamente tres semanas (dependiendo de la velocidad de respuesta de la JEC) podéis estar  online .
+¿Cómo se inicia la tramitación parlamentaria?
+
+Una vez presentadas las firmas ante la Mesa del Congreso de los Diputados (Parlamento, en el caso de las autonómicas), ésta deberá incluir la propuesta de Ley dentro del orden del día para que sea tomada en consideración en un plazo máximo de 6 meses. Es entonces cuando se somete a debate, presentando las distintas formaciones políticas sus respectivas enmiendas, hasta llegar a la formulación final de la ley.
+¿Cómo voy a recoger las firmas?
+
+Una vez aprobada la propuesta presentada por la Comisión Promotora ante la Mesa de la Cámara, el siguiente paso es la recogida de firmas. Hacen falta un mínimo de 500.000 firmas para que la propuesta de Ley pueda ser tramitada a nivel nacional (menos si la propuesta se establece a  nivel autonómico ) y siempre de acuerdo a lo que establezca  la ley :
+
+La recogida se puede hacer de dos maneras:
+
+- La primera de ellas es mediante pliegos: folios de papel que deberán recoger el texto íntegro de la proposición de Ley e incorporar espacios para la firma e identificación de los ciudadanos. Estos pliegos deberán haber sido aprobados previamente por la Junta Electoral Central y deberán estar escritos en castellano, pudiendo estar redactados en los distintos idiomas oficiales de España dependiendo de la Comunidad Autónoma en la que se vayan a distribuir.
+
+- La segunda manera de desarrollar la recogida de firmas es a través de Internet. En ambos casos los ciudadanos deberán identificarse facilitando su DNI y deberán estar inscritos en su respectivo censo electoral.
+
+Las firmas deberán ser recogidas en un plazo de nueve meses desde el día en el que la proposición ha sido aceptada, pudiendo prorrogarse este plazo tres meses más si la Mesa de la Cámara lo considerase oportuno.
+¿Qué es una Iniciativa Legislativa a nivel estatal o autonómico?
+
+La  ley  expone que los ciudadanos pueden hacer propuestas denominadas por ley, a nivel estatal, respaldadas por un mínimo de 500.000 firmas: ILPs (Iniciativas Legislativas Populares Estatales).
+
+El procedimiento que sigue la Iniciativa Legislativa Popular Autonómica  se mantiene igual en lo fundamental pero la cantidad de firmas que tienen que respaldar la propuesta son  proporcionales al volumen de habitantes de cada autonomía : mientras que el procedimiento que hay que seguir suele ser el mismo, sólo que se articula a través de los órganos de gobierno autonómicos.
+
+Iniciativas Legistivas Locales
+¿Qué es una Iniciativa Legislativa Local?
+
+Menos conocidas que las ILPs, creemos que las Iniciativas Legislativas locales podrían tener mucho más impacto real  a nivel de cada comunidad. El abogado Julián Valero ha escrito al respecto en nuestro blog .
+
+    ¿Donde se regulan las Iniciativas Legislativas locales?
+
+El  artículo 70 bis 2. de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local , dice: “Los vecinos que gocen del derecho de sufragio activo en las elecciones municipales podrán ejercer la iniciativa popular, presentando propuestas de acuerdos o actuaciones o proyectos de reglamentos en materias de la competencia municipal. Dichas iniciativas deberán ir suscritas al menos por el siguiente porcentaje de vecinos del municipio:
+
+    a) Hasta 5.000 habitantes, el 20 %.
+    b) De 5.001 a 20.000 habitantes, el 15 %.
+    c) A partir de 20.001 habitantes, el 10 %.
+
+Tales iniciativas deberán ser sometidas a debate y votación en el Pleno, sin perjuicio de que sean resueltas por el órgano competente por razón de la materia. En todo caso, se requerirá el previo informe de legalidad del secretario del ayuntamiento, así como el informe del interventor cuando la iniciativa afecte a derechos y obligaciones de contenido económico del ayuntamiento. En los municipios a que se refiere el artículo 121 de esta Ley, el informe de legalidad será emitido por el secretario general del Pleno y cuando la iniciativa afecte a derechos y obligaciones de contenido económico, el informe será emitido por el Interventor general municipal.”
+
+Iniciativas Ciudadanas Europeas
+¿Qué son las Iniciativas Ciudadanas Europeas?
+
+El  Tratado de Lisboa  introduce una nueva forma de participación pública en la elaboración de políticas de la Unión Europea: la  Iniciativa Ciudadana Europea . Tal como exige el Tratado, el Parlamento Europeo y el Consejo, a propuesta de la Comisión Europea, han adoptado un Reglamento que determina las normas y el procedimiento que regulan este nuevo instrumento ( Reglamento (UE) nº 211/2011 del Parlamento Europeo y del Consejo, de 16 de febrero de 2011, sobre la Iniciativa Ciudadana Europea ).
+
+La Iniciativa permitirá que un mínimo de un millón de ciudadanos de por lo menos la cuarta parte de los Estados miembros de la UE se dirijan a la Comisión Europea para que presente propuestas de actos legislativos en ámbitos de su competencia. Los organizadores de una iniciativa ciudadana, un comité de ciudadanos compuesto como mínimo por siete ciudadanos de la UE que residan en siete Estados miembros diferentes, tendrán un año para recoger el apoyo necesario. El número de declaraciones de apoyo deberá ser certificado por las autoridades competentes de los Estados miembros. A partir de ese momento, la Comisión dispondrá de tres meses para examinar la iniciativa y tomar una decisión sobre cómo actuar.
+
+De acuerdo con el Reglamento, se podrá comenzar a proponer iniciativas ciudadanas a partir del  1 de abril de 2012 .
+
+Recogida de avales para elecciones
+¿Para qué sirve recoger avales para las elecciones?
+
+El  art. 169.3 de la Ley Orgánica 5/1985, de 19 de junio, del Régimen Electoral General , dice: “Para presentar candidaturas, las agrupaciones de electores necesitarán, al menos, la firma del 1 % de los inscritos en el censo electoral de la circunscripción. Los partidos, federaciones o coaliciones que no hubieran obtenido representación en ninguna de las Cámaras en la anterior convocatoria de elecciones necesitarán la firma, al menos, del 0,1 % de los electores inscritos en el censo electoral de la circunscripción por la que pretendan su elección. Ningún elector podrá prestar su firma a más de una candidatura.”.
+¿Qué debo hacer para recoger avales con firma electrónica y MiFirma?
+
+Envia la siguiente información a   info@mifirma.com :
+
+    Denominación oficial del partido político con el que concurres a las elecciones.
+    Logo de tu partido en formato .png con dimensiones 200x135px.
+    Especificación de si tu partido concurre por el Congreso, el Senado o por ambos.
+    Lista de todas las circunscripciones a las que deseáis presentaros.
+    Breve descripción (max. 50 palabras) de tu partido. Dicha descripción aparecerá en tu página de recogida de avales en MiFirma.
+
+Cualquier pregunta o comentario, no dudes en ponerte en contacto con nosotros en  info@mifirma.com .
+¿Cómo se va a realizar la entrega de las firmas?
+
+La comisión promotora podrá acceder, de manera privada, a la consola de administración donde podrá descargar las firmas y realizar la entrega a la JEC.
+
+Estas firmas cumplen los estándares aprobador por la Ley Española y pueden ser validados por los propios sistemas del gobierno como  Valide .
+29 thoughts on “ Soporte a usuarios ”
+
+    antonio ballester gregorio 09/12/2013 at 22:17
+
+    como puedo utilizar mi firma certificada de moneda y timbre??
+    Reply ↓
+        Francesc 17/01/2014 at 17:55
+
+        Hola antonio! El applet de Java detectará el certificado electrónico si está dentro de tu ordenador. Escríbeme si tienes problemas!!
+        Reply ↓
+    Manuel 13/02/2014 at 11:29
+
+    Hola,
+
+    Uso habitualmente el certificado digital para trámites online, pero en este caso recibo el mensaje de que no tengo instalado java cuando tengo la versión 7.51 según la web de java. Ocurre con cualquier navegador (Opera, Chrome y Explorer) ¿Alguna idea?
+
+    Gracias
+    Reply ↓
+    CARLOS 13/02/2014 at 18:04
+
+    Tengo un imac con la versión 10.6.8 y me resulta imposible firmar. Dice que tengo que actualizar la versión de java y me remite a la página para hacerlo y allí se me indica que las versiones del sistema operativo anterioes a la mía el java ya viene instalado con el sistema operativo y se actualiza a través de la aplicación acutalización de software y ésta me dice que está actualizado. Total que no puedo firmar, una lástima.
+    Reply ↓
+    Santiago 18/02/2014 at 12:32
+
+    Buen día:
+    No puedo firmar porque a pesar de haber desinstalado e instalado todo, java incluido, llego a: “Error en el proceso de firma. Comprobar que tiene certificado instalado o que el DNIe funcione correctamente”.
+    Tengo el certificado instalado en el buscador y parece que el lector acepta el DNIe pero no consigo firmar porque me da el mensaje mencionado más arriba y no se que hacer.
+    Como dice Carlos, una lastima.
+    Reply ↓
+        Javier Peña Post author 18/02/2014 at 14:46
+
+        Ahora hemos puesto una nueva versión en la que aparecerá un nuevo mensaje de error con más información para nosotros. Por favor, enviarlo.
+
+        Gracias por vuestra paciencia
+        Reply ↓
+    Joel 20/02/2014 at 12:41
+
+    Hola,
+
+    me pasa lo mismo que a Santiago. Trabajo con Mozilla 27.0.1 y en opciones avanzadas veo que el navegador me detecta el DNIe. Una vez estoy en mifirma introduzco los datos personales y voy a la siguiente página, donde aparecen mis datos personales y el botón para avanzar en la firma, cuando le doy al botón aparece: “Error: No se ha encontrado ningún certificado de firma válido”. Instalé la última versión de Java que pone como requisito y tampoco.. sigue el mismo problema: “Error: No se ha encontrado ningún certificado de firma válido”. Qué hago? Hay puntos de recogida de firma presencial? Saludos
+    Reply ↓
+    Arancha 20/02/2014 at 20:23
+
+    No consigo firmar con mi DNIe en una de las ILP de vuestra página. Me da el siguiente error: es.gob.afirma.core.AOException
+
+    Podríais ayudarme? Tengo java instalado y actualizado y los certificados de mi DNIe están vigentes, cuando salen y selecciono uno, en lugar de pedirme el pin me sale el mensaje de error. antes de todo, al introducir el DNIe en el lector sale la ventana de applet para ejecutarse y le doy a ejecutar. Que estoy haciendo mal?
+    Reply ↓
+    Arancha 21/02/2014 at 14:03
+
+    Hola, tengo problemas para la firma
+    error: es.gob.afirma.core.AOException
+    ni siquiera llega a pedirme el pin al introducir el DNIe y seleccionar el certificado
+    Reply ↓
+        Javier Peña Post author 24/02/2014 at 12:31
+
+        Hola Arancha
+
+        Hemos hecho una pequeña corrección con que si lo intentas ahora te dará un detalle un poco mayor de la excepción. Si nos lo puedes enviar (soporte@mifirma.com) te lo agradeceríamos.
+
+        Un saludo
+        Reply ↓
+    ANGEL REPISO 02/03/2014 at 21:20
+
+    Hola, mi pregunta es, si hay algun metodo, para firmar y que esta sea valida, sin tener lector de tarjetas.
+    muchas gracias.
+    Reply ↓
+        Francesc 03/03/2014 at 19:57
+
+        Hola Angel!
+        Justamente ibamos a publicar una FAQ al respecto. Aquí la respuesta!
+        http://firmaelectronica.gob.es/Home/Ciudadanos/Certificados-Electronicos.html#obtencion_certificado
+        Un saludo,
+        Francesc
+        Reply ↓
+    Manuel 14/03/2014 at 01:06
+
+    LLego hasta el final y me sale el siguiente error:
+
+    “java.security.SignatureExeption: El conjunto de claves no existe”
+
+    ¿Que debo hacer?.
+    Gracias
+    Reply ↓
+        Francesc 17/03/2014 at 18:24
+
+        Hola Manuel! Nos puedes escribir a soporte@mifirma.com con una caputra de pantalla y nos dices con qué explorador y certificado estás intentando firmar? Un saludo, Francesc
+        Reply ↓
+    Andrés Hamerlinck 02/04/2014 at 00:15
+
+    Hola. A mi también me sale el problema de es.gob.afirma.keystores.main.common.AOKeystoremanager exception.
+
+    He tanto en mi máquina como la del trabajo con DNIe, certificado de la FNMT y mi tarjeta de funcionario con certiificado de la ACCV.
+
+    da lo mismo que utilice Firefox, Mozilla SeaMonkey, portable firefox o Internet explorer ( simpre en WinXP)
+
+    No tengo problemas con las páginas de ls Seguridad Social o el catastro.
+
+    La versión de java es la última, y cuando consulto an cacerca de los complementos en firefox, aparecen las últimas versiones.
+
+    Da lo mismo que rebaje la seguridad de java o incluya los cetificados de la FNMT en la base propia de java.
+    Reply ↓
+    olga Porqueras 02/04/2014 at 18:00
+
+    Hola !
+    EStoy intentando firmar desde un Mac y no me lo permite, mi java esta actualizado así que no se que mas hacer
+    Gracias
+    Reply ↓
+        Francesc 05/04/2014 at 13:49
+
+        Hola Olga! Los Mac nos han dado bastantes problemas (suelen funcionar con Safari, pero no Firefox…). Nos mandas una captura de pantalla con tu problema a info@mifirma.com ? Gracias!
+        Reply ↓
+    Andrés Hamerlinck 02/04/2014 at 20:50
+
+    finalmente lo he consguido en el trabajo utilizando mi certificado yde la FNMT y Firefox .
+
+    En casa seguiré probando con portable firefox. ¿ Alguien lo ha probado ?
+    Reply ↓
+    Sebastián Arroyo Sánchez 03/04/2014 at 11:05
+
+    No me reconoce mi certificado digital de ID CAT.
+    Reply ↓
+        Javier Peña Post author 03/04/2014 at 12:08
+
+        Hola Sebastián
+
+        Debería de reconocer el certificado sin ningún problema. ¿Qué error te da?
+
+        Un saludo
+        Reply ↓
+    MARIA DE LOS ANGELES DE LEERA MUÑOZ 03/04/2014 at 12:03
+
+    Hola a mi también me ha costado mucho firmar con mi certificado digital de la FNMT, recién renovado y con el que no he tenido ningún problema para solicitar el borrador de la Renta 2013 del Mozilla Firefox, pero esta firma la llevo intentando desde ayer, y quería que me informarais como puede daros su aval una amiga mía que carece de Certificado o DNI digital.
+    También, quería hacer una pequeña donación , pero ahora no encuentro la pagina en la que me confirmaban mi aval y aparecía la palabra “donación”, no puedo gran cosa, pero …. granito a granito
+
+    Un saludo
+    Mª Angeles
+    Reply ↓
+        Javier Peña Post author 03/04/2014 at 12:06
+
+        Tienes un icono para realizar donaciones en la página principal de http://www.mifirma.com abajo a la derecha
+
+        Muchas gracias por vuestra colaboración
+        Reply ↓
+    marcos pérez angulo 03/04/2014 at 15:21
+
+    No he podido firmar a pesar de bajarme la nueva actualización de firefox pero Java me fue imposible.
+
+    Saludos cordiales.
+    Reply ↓
+        Francesc 05/04/2014 at 13:48
+
+        Hola Marcos! La web pide por defecto que bajes java aunque ya lo tengas actualizado. Si tienes más problemas, nos escribes a info@mifirma.com y nos dices el sistema operativo y certificado que utilizas, y si te sale algun error, pues una captura de pantalla… Un saludo,
+        Reply ↓
+    Iñaki 06/04/2014 at 13:09
+
+    Hola, por si puede servirle a alguien, a mí también me daba un mensaje de error cuando quería darle al botón de firmar, pero me ha funcionado de la siguiente manera con internet explorer:
+
+    -En cuanto me ha salido el cuadro de mensaje de si quiero ejecutar el miniApplet@firma, he metido el DNIe en el tarjetero, y le he dado al botón ejecutar.
+
+    -Luego le he dado al botón firmar, y esta vez sí que me ha salido otro cuadro para instalar los certificados del DNIe, e instalado los dos que salían, luego le di a aceptar y por último introduje el pin del documento nacional de identidad.
+
+    Un saludo.
+    Reply ↓
+    Juan Carlos Rey Treglia 07/04/2014 at 15:09
+
+    NOTA DEL ERROR NO PUEDES AVALAR DIGITALMENTE: El error parece ser este, en una de las Pagina de registro de DNIe http://www.cert.fnmt.es/
+    https://www.sede.fnmt.gob.es/avisos
+    Aviso Mantenimiento (Publicado 20/03/2014)
+    El Martes día 8 de Abril, entre las 15:00h y las 22:00h, se va a realizar una intervención en la infraestructura de la AC Administración Pública/ AC APE, que tendrá el siguiente impacto:
+    - No estará disponible el Servicio de Registro para Generación y revocación de AC AP, en el intervalo de la intervención.
+    - No estará disponible el Servicio de Revocación de AC APE (sí se podrán insertar peticiones de revocación, pero no se procesarán hasta finalizar la intervención).
+    El resto de servicios de CERES no se verá afectado por la intervención.
+    El Miércoles 9 de Abril, entre las 15:00h y las 17:30h, se continuará con la intervención, teniendo el mismo impacto que el anteriormente descrito.
+    Los siguientes servicios no se verán afectados:
+    - Los servicios OCSP AP, TSA AP, LDAP AP, estarán disponibles durante todo el intervalo de la intervención.
+    - Los servicios asociados a otras CAS también estarán disponibles.
+    Rogamos disculpen las molestias.
+    Reply ↓
+        Francesc 08/04/2014 at 09:41
+
+        Hola Juan Carlos! Gracias por la info pero no nos afecta. Un saludo, Francesc
+        Reply ↓
+    Ictineu 08/04/2014 at 00:08
+
+    Lo he intentado con el navegador Chromium 33.0.1750.152 Ubuntu 13.10 (256984) y con el Firefox 28.0 para Kubuntu, y en ambos me pide instalar un software de la empresa Oracle, cuyos términos y condiciones de uso, no estoy dispuesto a aceptar, por lo que no lo voy usar.
+    En mi ordenador ya uso Java y me funciona en el 99% de sitios. ¿Os habéis planteado aceptar el uso de OpenJRE o PGP? Las administraciones estan obligadas, por directivas europeas, a aceptar los formatos que respetan los estándares ISO.
+    Bueno, en orden de ayudar efectivamente con la causa, me podríais indicar la ruta, para sacar un modelo imprimible que os pueda enviar por correo, si es que os vale para algo.
+    Ánimo con la iniciativa.
+    Reply ↓
+    Ictineu 08/04/2014 at 00:19
+
+    Perdón, no había leido que también se puede firmar con el DNIe.
+    Ahora, a ver si aprendo a usarlo antes de que se acabe el plazo de inscripción de los partidos :-)
+    Reply ↓
+
+Leave a Reply Cancel reply
+
+Your email address will not be published. Required fields are marked *
+
+Name *
+
+Email *
+
+Website
+
+Comment
+
+You may use these HTML tags and attributes: <a href="" title=""> <abbr title=""> <acronym title=""> <b> <blockquote cite=""> <cite> <code> <del datetime=""> <em> <i> <q cite=""> <strike> <strong>
+
+Search for:
+Recent Posts
+
+    Novedades Marzo 2014
+    Iniciativas Populares en el ámbito municipal
+    A propósito de la Proposición no de Ley de UPyD para la mejora de las ILP
+    Novedades de Noviembre 2013
+    Novedades Septiembre 2013
+
+Archives
+
+    March 2014
+    February 2014
+    January 2014
+    November 2013
+    September 2013
+    November 2012
+    May 2012
+    October 2011
+    September 2011
+    August 2011
+    July 2011
+    May 2011
+
+Proudly powered by WordPress

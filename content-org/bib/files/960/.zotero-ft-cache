@@ -1,0 +1,269 @@
+
+Downscaling
+From Wikipedia, the free encyclopedia
+Jump to: navigation , search
+	
+[ hide ] This article has multiple issues. Please help improve it or discuss these issues on the talk page . ( Learn how and when to remove these template messages )
+	
+This article includes a list of references , but its sources remain unclear because it has insufficient inline citations . Please help to improve this article by introducing more precise citations. (September 2010) ( Learn how and when to remove this template message )
+Ambox current red.svg
+	
+This article needs to be updated . Please update this article to reflect recent events or newly available information. (July 2014)
+( Learn how and when to remove this template message )
+
+Downscaling is any procedure to infer high-resolution information from low-resolution variables. This technique is based on dynamical or statistical approaches commonly used in several disciplines, especially meteorology , climatology and remote sensing . [1] [2] The term downscaling usually refers to an increase in spatial resolution , but it is often also used for temporal resolution . [3] [4]
+
+Contents
+ [ hide ] 
+
+    1 Meteorology and climatology
+        1.1 Examples
+    2 Computers
+    3 References
+
+Meteorology and climatology [ edit ]
+
+Global Climate Models (GCMs) used for climate studies and climate projections are run at coarse spatial resolution (in 2012, typically of the order 50 kilometres (31 mi)) [1] and are unable to resolve important sub-grid scale features such as clouds and topography . As a result, GCM output can not be used for local impact studies.
+
+To overcome this problem, downscaling methods are developed to obtain local-scale weather and climate , particularly at the surface level, from regional-scale atmospheric variables that are provided by GCMs. Two main forms of downscaling technique exist. One form is dynamical downscaling , where output from the GCM is used to drive a regional, numerical model in higher spatial resolution, which therefore is able to simulate local conditions in greater detail. The other form is statistical downscaling , where a statistical relationship is established from observations between large scale variables, like atmospheric surface pressure, and a local variable, like the wind speed at a particular site. The relationship is then subsequently used on the GCM data to obtain the local variables from the GCM output.
+
+Wilby and Wigley divided downscaling into four categories: [5] regression methods, weather pattern-based approaches, stochastic weather generators, which are all statistical downscaling methods, and limited-area modeling (which corresponds to dynamical downscaling methods ). Among these approaches regression methods are preferred because of its ease of implementation and low computation requirements.
+Examples [ edit ]
+
+In 2007 the U.S. Bureau of Reclamation collaborated with U.S. Department of Energy’s National Energy Technology Laboratory (DOE NETL), Santa Clara University (SCU), Lawrence Livermore National Laboratory (LLNL), and University of California’s Institute for Research on Climate Change and Its Societal Impacts (IRCCSI) to apply a proven technique called “Bias Correction Spatial Disaggregation” BCSD; [6] see also “About on the Web site” to 112 contemporary global climate projections made available through the World Climate Research Program Couple Model Intercomparison Project, Phase 3 (WCRP CMIP3). These projections represent 16 GCMs simulating climate responses to three GHG scenarios from multiple initial climate system conditions.
+
+The effort resulted in development of 112 monthly temperature and precipitation projections over the continental U.S. at 1/8° (12 kilometres (7.5 mi)) spatial resolution during a 1950–2099 climate simulation period.
+Computers [ edit ]
+
+In technology terms, downscaling means to bring down something, usually referring to the resolution .
+References [ edit ]
+
+    Hessami, M., Quarda, T.B.M.J., Gachon, P., St-Hailaire, A., Selva, F. and Bobee, B., “Evaluation of statistical downscaling method over several regions of eastern Canada”, 57th Canadian water resources association annual congress, 2004.
+    Kim, J.W., Chang, J.T., Baker, N.L., Wilks, D.S., Gates, W.L., 1984. The statistical problem of climate inversion: determination of the relationship between local and large-scale climate. Monthly Weather Review 112, 2069–2077.
+    Maraun, D., Wetterhall, F., Ireson, A.M., Chandler, R.E., Kendon, E.J., Widmann, M., Brienen, S., Rust, H.W., Sauter, T., Themessl, M., Venema V.K.C., Chun, K.P., Goodess, C.M., Jones, R.G., Onof C., Vrac M. and Thiele-Eich, I., "Precipitation Downscaling under climate change. Recent developments to bridge the gap between dynamical models and the end user", Rev. Geophys. 48, RG3003, 2010.
+    von Storch, H., Zorita, E., Cubasch, U., 1993. Downscaling of global climate change estimates to regional scales: an application to Iberian rainfall in wintertime. Journal of Climate 6, 1161–1171.
+    Wilby, R.L. and Wigley, T.M.L., (1997) Downscaling general circulation model output: a review of methods and limitations, Progress in Physical Geography, 21, 530–548.
+    Wilby, R.L., Dawson, C.W. and Barrow E.M., (2002) SDSM - a decision support tool for the assessment of regional climate change impacts, Environmental Modelling & Software, 17, 147– 159.
+    Wood, A. W., Leung, L. 5 R., Sridhar, V., and Lettenmaier, D. P.: Hydrologic implications of dynamical and statistical approaches to downscaling climate model outputs, Climatic Change, 62, 189–216, 2004.
+    Reclamation et al. “Bias Correction and Downscaled WCRP CMIP3 Climate and Hydrology Projections” < http://gdo-dcp.ucllnl.org/ downscaled_cmip3_projections/>
+    Xu, Z. and Z.-L. Yang, (2012) An Improved Dynamical Downscaling Method with GCM Bias Corrections and Its Validation with 30 Years of Climate Simulations. J. Climate, 25, 6271–6286.
+    Xu, Z. and Z.-L. Yang, (2015) A new dynamical downscaling approach with GCM bias corrections and spectral nudging. J. Geophys. Res. Atmospheres, doi:10.1002/2014JD022958
+
+Notes
+
+    ^ Jump up to: a b Ribalaygua, J.; Torres, L.; Pórtoles, J.; Monjo, R.; Gaitan, E.; Pino, M.R. (2013). "Description and validation of a two-step analogue/regression downscaling method". Theoretical and Applied Climatology . 114 : 253–269. doi : 10.1007/s00704-013-0836-x .  
+    Jump up ^ Peng, J.; Loew, A.; Merlin, O.; Verhoest, N.E.C. (2017). "A review of spatial downscaling of satellite remotely sensed soil moisture". Reviews of Geophysics . doi : 10.1002/2016RG000543 .  
+    Jump up ^ Lee, T.; Jeong, C. (2014). "Nonparametric statistical temporal downscaling of daily precipitation to hourly precipitation and implications for climate change scenarios". Journal of Hydrology . 510 : 182–196. doi : 10.1016/j.jhydrol.2013.12.027 .  
+    Jump up ^ Monjo, R. (2016). "Measure of rainfall time structure using the dimensionless n-index". Climate Research . 67 : 71–86. doi : 10.3354/cr01359 .   (pdf)
+    Jump up ^ Wilby, R.L.; Wigley, T.M.L. (1997). "Downscaling general circulation model output: a review of methods and limitations". Progress in Physical Geography . 21 : 530–548. doi : 10.1002/2016RG000543 .  
+    Jump up ^ Wood, A. W.; Leung, L. R.; Sridhar, V.; Lettenmaier, D. P. (2004-01-01). "Hydrologic Implications of Dynamical and Statistical Approaches to Downscaling Climate Model Outputs" . Climatic Change . 62 (1-3): 189–216. doi : 10.1023/B:CLIM.0000013685.99609.9e . ISSN   0165-0009 .  
+
+[ show ] [ show ]
+
+    v
+    t
+    e
+
+Atmospheric, oceanographic and climate models
+[ hide ] [ hide ]
+Model types
+
+    Atmospheric model
+    Climate model
+    Numerical weather prediction
+    Tropical cyclone forecast model
+    Atmospheric dispersion modeling
+    Chemical transport model
+    Upper-atmospheric models
+    Ensemble forecasting
+    Model output statistics
+    Meteorological reanalysis
+    Parametrization
+
+[ hide ] [ hide ]
+Specific models
+Climate 	
+
+    IGCM
+    HadCM3
+    HadGEM1
+    GFDL CM2.X
+    CGCM
+    CCSM
+    CESM
+    CFSv2
+    ECHAM
+    MPAS
+
+Global weather 	
+
+    IFS (ECMWF)
+    FIM
+    GEM / GDPS
+    GFS
+    NAEFS
+    NAVGEM
+    UM
+    JMA-GSM
+    GME / ICON
+    ARPEGE
+
+Regional and mesoscale atmospheric 	
+
+    NAM
+    RR / RAP
+    RAMS
+    WRF
+    RAQMS
+    HIRLAM
+    LAPS
+    RPM
+
+Regional and mesoscale oceanographic 	
+
+    HyCOM
+    ROMS
+    POM
+    MOM
+    FVCOM
+    MITgcm
+    FESOM
+
+Atmospheric dispersion 	
+
+    ADMS
+    AERMOD
+    ATSTEP
+    AUSTAL2000
+    CALPUFF
+    DISPERSION21
+    ISC3
+    MEMO
+    MERCURE
+    NAME
+    OSPM
+    PUFF-PLUME
+    RIMPUFF
+    SAFE AIR
+
+Chemical transport 	
+
+    CLaMS
+    MOZART
+    GEOS-Chem
+
+Land surface parametrization 	
+
+    JULES
+    CLASS
+    ISBA
+
+Discontinued 	
+
+    AVN / MRF / GSM
+    Eta
+    LFM
+    MM5
+    NGM
+    NOGAPS
+    RUC
+
+    Mathematical model
+    Statistical model
+    Scientific modelling
+    Computer simulation
+
+Retrieved from " https://en.wikipedia.org/w/index.php?title=Downscaling&oldid=813426289 "
+Categories :
+
+    Numerical climate and weather models
+
+Hidden categories:
+
+    Articles lacking in-text citations from September 2010
+    All articles lacking in-text citations
+    Wikipedia articles in need of updating from July 2014
+    All Wikipedia articles in need of updating
+
+Navigation menu
+Personal tools
+
+    Not logged in
+    Talk
+    Contributions
+    Create account
+    Log in
+
+Namespaces
+
+    Article
+    Talk
+
+Variants
+
+Views
+
+    Read
+    Edit
+    View history
+
+More
+
+Search
+Navigation
+
+    Main page
+    Contents
+    Featured content
+    Current events
+    Random article
+    Donate to Wikipedia
+    Wikipedia store
+
+Interaction
+
+    Help
+    About Wikipedia
+    Community portal
+    Recent changes
+    Contact page
+
+Tools
+
+    What links here
+    Related changes
+    Upload file
+    Special pages
+    Permanent link
+    Page information
+    Wikidata item
+    Cite this page
+
+Print/export
+
+    Create a book
+    Download as PDF
+    Printable version
+
+Languages
+
+    العربية
+    فارسی
+
+Edit links
+
+    This page was last edited on 3 December 2017, at 17:26.
+    Text is available under the Creative Commons Attribution-ShareAlike License ; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy . Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc. , a non-profit organization.
+
+    Privacy policy
+    About Wikipedia
+    Disclaimers
+    Contact Wikipedia
+    Developers
+    Cookie statement
+    Mobile view
+    Enable previews
+
+    Wikimedia Foundation
+    Powered by MediaWiki
+

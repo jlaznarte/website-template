@@ -1,0 +1,1113 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]><html xmlns="http://www.w3.org/1999/xhtml" tal:attributes="lang language;" class="no-js ie6 oldie"><![endif]-->
+<!--[if IE 7]><html xmlns="http://www.w3.org/1999/xhtml" tal:attributes="lang language;" class="no-js ie7 oldie"><![endif]-->
+<!--[if IE 8]><html xmlns="http://www.w3.org/1999/xhtml" tal:attributes="lang language;" class="no-js ie8 oldie"><![endif]-->
+<!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="en"><!--<![endif]-->
+
+    
+    
+    
+    
+    
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- viewport meta needed for proper view on an ipad -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://plus.google.com/104345627234408209119" rel="publisher" />
+    <!--link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>-->
+    <!--link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+
+    
+    
+    
+
+    
+        <!-- traceview starttag -->
+<meta name="DC.format" content="text/plain" />
+<meta name="DC.type" content="Folder" />
+<meta name="DC.date.valid_range" content="2006/08/30 - " />
+<meta name="DC.date.modified" content="2015-09-03T14:50:22+02:00" />
+<meta name="DC.date.created" content="2006-07-26T11:32:18+02:00" />
+<meta name="DC.language" content="en" />
+
+  
+    <link rel="stylesheet" type="text/css" href="http://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1441295864781008959.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1441295864784928083.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="http://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1441295864785201073.css" />
+        <!--[if lt IE 9]>    
+    
+    <link rel="stylesheet" type="text/css" href="http://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1441295864785546064.css" media="screen" />
+        <![endif]-->
+    
+        <!--[if IE 7]>    
+    
+    <link rel="stylesheet" type="text/css" href="http://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1441295864785609007.css" media="screen" />
+        <![endif]-->
+    
+        <!--[if IE 8]>    
+    
+    <link rel="stylesheet" type="text/css" href="http://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1441295864785672903.css" media="screen" />
+        <![endif]-->
+    
+        <!--[if IE 9]>    
+    
+    <link rel="stylesheet" type="text/css" href="http://www.eea.europa.eu/portal_css/EEADesign2006/ploneStyles1441295864785734892.css" media="screen" />
+        <![endif]-->
+    
+
+  
+  
+    <script type="text/javascript" src="http://www.eea.europa.eu/portal_javascripts/EEADesign2006/ploneScripts1441295924886288881.js"></script>
+    <script type="text/javascript" src="http://www.eea.europa.eu/portal_javascripts/EEADesign2006/ploneScripts1441295924891133070.js"></script>
+    <script type="text/javascript" src="http://www.eea.europa.eu/portal_javascripts/EEADesign2006/ploneScripts1441295924891469955.js"></script>
+    <script type="text/javascript" src="http://www.eea.europa.eu/portal_javascripts/EEADesign2006/ploneScripts1441295924891505003.js"></script>
+    <script type="text/javascript" src="http://www.eea.europa.eu/portal_javascripts/EEADesign2006/ploneScripts1441295924891886950.js"></script>
+    <script type="text/javascript" src="http://www.eea.europa.eu/portal_javascripts/EEADesign2006/ploneScripts1441295924892205954.js"></script>
+
+
+<title>
+  European Environment Agency's home page
+  &mdash;
+
+  
+</title>
+
+            <link rel="canonical" href="http://www.eea.europa.eu" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.eea.europa.eu/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://www.eea.europa.eu/touch_icon.png" />
+
+
+<script type="text/javascript">
+        jQuery(function($){
+            if (typeof($.datepicker) != "undefined"){
+              $.datepicker.setDefaults(
+                jQuery.extend($.datepicker.regional[''],
+                {dateFormat: 'dd/mm/yy'}));
+            }
+        });
+        </script>
+
+
+
+    <link rel="alternate" href="http://www.eea.europa.eu/RSS2" title="European Environment Agency's home page - RSS 2.0 EEA" type="application/rss+xml" />
+
+    <link rel="alternate" href="http://www.eea.europa.eu/RSS" title="European Environment Agency's home page - RSS 1.0" type="application/rss+xml" />
+
+
+    <link rel="search" href="http://www.eea.europa.eu/search_form" title="Search this site" />
+
+
+
+  <link rel="alternate" hreflang="el" href="http://www.eea.europa.eu/el" />
+
+  <link rel="alternate" hreflang="is" href="http://www.eea.europa.eu/is" />
+
+  <link rel="alternate" hreflang="it" href="http://www.eea.europa.eu/it" />
+
+  <link rel="alternate" hreflang="ar" href="http://www.eea.europa.eu/ar" />
+
+  <link rel="alternate" hreflang="ga" href="http://www.eea.europa.eu/ga" />
+
+  <link rel="alternate" hreflang="cs" href="http://www.eea.europa.eu/cs" />
+
+  <link rel="alternate" hreflang="et" href="http://www.eea.europa.eu/et" />
+
+  <link rel="alternate" hreflang="es" href="http://www.eea.europa.eu/es" />
+
+  <link rel="alternate" hreflang="ru" href="http://www.eea.europa.eu/ru" />
+
+  <link rel="alternate" hreflang="nl" href="http://www.eea.europa.eu/nl" />
+
+  <link rel="alternate" hreflang="pt" href="http://www.eea.europa.eu/pt" />
+
+  <link rel="alternate" hreflang="no" href="http://www.eea.europa.eu/no" />
+
+  <link rel="alternate" hreflang="tr" href="http://www.eea.europa.eu/tr" />
+
+  <link rel="alternate" hreflang="lv" href="http://www.eea.europa.eu/lv" />
+
+  <link rel="alternate" hreflang="lt" href="http://www.eea.europa.eu/lt" />
+
+  <link rel="alternate" hreflang="ro" href="http://www.eea.europa.eu/ro" />
+
+  <link rel="alternate" hreflang="pl" href="http://www.eea.europa.eu/pl" />
+
+  <link rel="alternate" hreflang="fr" href="http://www.eea.europa.eu/fr" />
+
+  <link rel="alternate" hreflang="bg" href="http://www.eea.europa.eu/bg" />
+
+  <link rel="alternate" hreflang="hr" href="http://www.eea.europa.eu/hr" />
+
+  <link rel="alternate" hreflang="de" href="http://www.eea.europa.eu/de" />
+
+  <link rel="alternate" hreflang="da" href="http://www.eea.europa.eu/da" />
+
+  <link rel="alternate" hreflang="fi" href="http://www.eea.europa.eu/fi" />
+
+  <link rel="alternate" hreflang="hu" href="http://www.eea.europa.eu/hu" />
+
+  <link rel="alternate" hreflang="sr" href="http://www.eea.europa.eu/sr" />
+
+  <link rel="alternate" hreflang="sv" href="http://www.eea.europa.eu/sv" />
+
+  <link rel="alternate" hreflang="sk" href="http://www.eea.europa.eu/sk" />
+
+  <link rel="alternate" hreflang="mt" href="http://www.eea.europa.eu/mt" />
+
+  <link rel="alternate" hreflang="sl" href="http://www.eea.europa.eu/sl" />
+
+
+        
+
+        
+
+        
+            
+                
+            
+            
+                <base href="http://www.eea.europa.eu/" /><!--[if lt IE 7]></base><![endif]-->
+            
+        
+
+        
+
+        
+    <!-- dummy used until eea.pagedesign is installed, this file can be removed later -->
+
+
+        
+        
+
+        
+
+        <meta name="generator" content="Plone - http://plone.org" />
+    
+
+    <script type="text/javascript"> context_url='http://www.eea.europa.eu';</script>
+
+</head>
+
+<body class="template-default_error_message portaltype-folder site-SITE icons-on userrole-anonymous en" dir="ltr">
+
+<div id="print-warning">
+    <p>Do something for our planet, print this page only if needed. Even a small action can make an enormous difference when millions of people do it!</p>
+</div>
+
+<a class="eea-template back-to-toc-button link-without-style" href="#document-toc" title="Back to table of contents"></a>
+
+<div id="header-holder">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div id="portal-top">
+                        
+                            <!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div id="portal-personaltools-wrapper">
+
+<p class="hiddenStructure">Personal tools</p>
+
+
+
+
+
+</div>
+
+<div id="cross-site-top">
+   
+    <ul id="portal-externalsites">
+        <li id="externalsites-networks">
+            <a href="#">Networks</a>
+        </li>
+    </ul>
+    <div class="panel" id="tip-externalsites-networks" style="width:450px; margin-left: 10em;">
+        <div class="panel-top" style="left: -195px;"><!-- --></div>
+        <div class="panel-content shadow">
+            <dl class="portlet networkSites">
+                <dt>Networks</dt>
+                <dd>
+                    <ul>
+                        <li id="externalsites-eionet">
+                            <a title="Eionet" accesskey="" href="http://www.eionet.europa.eu/">Eionet</a>
+                        </li>
+                        <li id="externalsites-epanet">
+                            <a title="EPA network" accesskey="" href="http://epanet.ew.eea.europa.eu/">Network of the Heads of Environment Protection Agencies (EPA network)</a>
+                        </li>
+                        <li id="externalsites-envirowindows">
+                            <a title="Partnerships beyond Eionet (PBE)" accesskey="" href="http://ew.eea.europa.eu/">Partnerships beyond Eionet (PBE)</a>
+                        </li>
+                        <li id="seis-network">
+                            <a title="SEIS network" accesskey="" href="http://www.eea.europa.eu/about-us/what/shared-environmental-information-system">Shared Environmental Information System (SEIS)</a>
+                        </li>
+                    </ul>
+                </dd>
+                <dt>
+                    European Topic Centres (ETCs)
+                </dt>
+                <dd>
+                    <ul>
+                        <li>
+                            <a href="http://acm.eionet.europa.eu">Air pollution and Climate Change mitigation (ACM)</a>
+                        </li>
+                        <li>
+                            <a href="http://bd.eionet.europa.eu">Biological Diversity (BD)</a>
+                        </li>
+                        <li>
+                            <a href="http://cca.eionet.europa.eu">Climate Change Impacts, Vulnerability and Adaptation (CCA)</a>
+                        </li>
+                        <li>
+                            <a href="http://icm.eionet.europa.eu">Inland, Coastal and Marine waters (ICM)</a>
+                        </li>
+                        <li>
+                            <a href="http://sia.eionet.europa.eu">Urban, Land and Soil systems (ULS)</a>
+                        </li>
+                        <li>
+                            <a href="http://etc-wmge.vito.be">Waste and Materials in a Green Economy (WMGE)</a>
+                        </li>
+                    </ul>
+                </dd>
+                <dt class="hiddenStructure">
+                    More networks
+                </dt>
+                <dd style="padding-bottom: 0.5em" class="portletFooter">
+                    <a class="moreLink" href="http://www.eea.europa.eu/about-us/key-partners">EU partners</a>&nbsp;&nbsp;
+                    <a class="moreLink" href="http://www.eea.europa.eu/about-us/international-cooperation">International cooperation</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+
+
+<ul id="portal-siteactions">
+
+    <li id="siteaction-subscriptions"><a href="http://www.eea.europa.eu/subscription" title="Subscriptions" accesskey="">
+                           <span class="eea-icon eea-icon-lg"><!-- --></span>
+                           
+       Subscriptions</a></li>
+    <li id="siteaction-formobile"><a href="http://www.eea.europa.eu/mobile" title="Mobile" accesskey="">
+                           <span class="eea-icon eea-icon-lg"><!-- --></span>
+                           
+       Mobile</a></li>
+    <li id="siteaction-contactus"><a href="http://www.eea.europa.eu/address.html" title="Contact us" accesskey="">
+                           <span class="eea-icon eea-icon-lg"><!-- --></span>
+                           
+       Contact us</a></li>
+    <li id="siteaction-chooselang"><a href="http://www.eea.europa.eu/chooselang" title="EEA homepage in your language" accesskey="">
+                           <span class="eea-icon eea-icon-lg"><!-- --></span>
+                           
+       EEA homepage in your language</a></li>
+    <li id="siteaction-login"><a href="http://www.eea.europa.eu/login" title="Log in" accesskey="">
+                           <span class="eea-icon eea-icon-lg"><!-- --></span>
+                           
+       Log in</a></li>
+</ul>
+
+   
+
+        <div id="js-siteaction-panels">
+            <div class="panel" id="tip-siteaction-subscriptions" style="width: 240px">
+                <div class="panel-top">
+                    <!-- -->
+                </div>
+                <div class="panel-content shadow">
+                    
+                      <div>
+
+<dl class="portlet portlet-subscribtion">
+
+      <dt>Subscriptions</dt>
+      <dd class="portletItem">
+        <span><span><a href="http://www.eea.europa.eu/subscription/targeted-subscription">Sign up</a></span> to receive our reports (print and/or electronic) and quarterly e-newsletter.</span>
+      </dd>
+
+        <dt>Follow us</dt>
+        <dd>
+            <img alt="Twitter icon" src="http://www.eea.europa.eu/twitter16x16.png"/> <a href="http://twitter.com/euenvironment">Twitter</a>
+        </dd>
+        <dd>
+            <img alt="Facebook icon" src="http://www.eea.europa.eu/facebook-icon.png"/> <a href="http://www.facebook.com/pages/European-Environment-Agency/113006845445297">Facebook</a>
+        </dd>
+        <dd>
+            <img alt="YouTube icon" src="http://www.eea.europa.eu/youtube16x16.png"/> <a href="http://www.youtube.com/user/EEAvideos">YouTube channel</a>
+        </dd>
+        <dd>
+            <img alt="RSS logo" src="http://www.eea.europa.eu/rss.gif"/> <a href="http://www.eea.europa.eu/subscription/news-feeds">
+            <span>RSS Feeds</span></a>
+        </dd>
+
+        <dd class="portletFooter" style="padding-bottom: 0.5em">
+            <a href="http://www.eea.europa.eu/subscription" class="moreLink">
+               <span>More</span></a>
+        </dd>
+
+</dl>
+
+</div>
+                    
+                </div>
+            </div>
+          <div id="tip-siteaction-formobile" class="panel">
+              <div class="panel-top">
+                  <!-- -->
+              </div>
+              <div class="panel-content shadow">
+                  <a href="/www/mobile" title="Mobile apps">Mobile apps</a>
+              </div>
+            </div>
+
+            <div class="panel" id="tip-siteaction-contactus" style="width: 420px">
+                <div class="panel-top">
+                    <!-- -->
+                </div>
+                <div class="panel-content shadow">
+                    <table>
+                        <tr>
+                            <td style="width: 45%;">
+                                <h2>
+                                    <span class="eea-icon eea-icon-lg eea-icon-envelope"></span>
+                                    Write to us
+                                </h2>
+                                <p>
+                                    <strong>For the public:</strong>
+                                </p>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <a target="_self" href="http://www.eea.europa.eu/help/infocentre/enquiries/">Ask your question <br/></a>
+                                        </p>
+                                    </li>
+                                </ul>
+                                <br/>
+                                <strong style="white-space: nowrap">For media and journalists:</strong>
+                                <br/>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <a target="_self" href="http://www.eea.europa.eu/pressroom">Press room <br/></a>
+                                        </p>
+                                    </li>
+                                </ul>
+                                <br/>
+                                <a class="internal-link" title="Staff list" href="http://www.eea.europa.eu/about-us/who/staff-list">
+                                    <strong>Contact EEA staff</strong>
+                                </a>
+                                <br/>
+                                <a class="internal-link" href="http://www.eea.europa.eu/help/contact-info">
+                                    <strong>Contact the web team</strong>
+                                </a>
+                                <br/>
+                                <a class="internal-link" href="http://www.eea.europa.eu/help/eea-help-centre/faqs">
+                                    <strong>FAQ</strong>
+                                </a>
+                                <br/>
+                            </td>
+                            <td style="vertical-align: top;">
+                                <br/>
+                            </td>
+                            <td style="vertical-align: top;">
+                                <h2>
+                                    <span class="eea-icon eea-icon-lg eea-icon-phone"></span>
+                                    Call us
+                                </h2>
+                                <strong>Reception:</strong>
+                                    <br/>
+                                    <br/>
+                                <strong>Phone:</strong>
+                                (+45) 33 36 71 00
+                                <br/>
+                                <strong>Fax:</strong>
+                                (+45) 33 36 71 99
+                                <br/>
+                                <br/>
+                                <strong>
+                                    <a target="_self" href="http://www.eea.europa.eu/help/infocentre/index_html">
+                                        <br/>
+                                    </a>
+                                </strong>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="portletFooter">
+                        <a class="moreLink" href="http://www.eea.europa.eu/address.html">
+                            <span>More</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel" id="tip-siteaction-chooselang" style="width: 125px">
+                <div class="panel-top">
+                    <!-- -->
+                </div>
+                <div class="panel-content shadow">
+                    
+                    <ul id="chooselang">
+                        
+                        <li><a href="http://www.eea.europa.eu/bg" title="Bulgarian">Български (bg)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/cs" title="Czech">čeština (cs)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/hr" title="Croatian">Hrvatski (hr)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/da" title="Danish">dansk (da)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/nl" title="Dutch">Nederlands (nl)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/el" title="Greek">ελληνικά (el)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu" title="English">English (en)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/et" title="Estonian">eesti (et)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/fi" title="Finnish">Suomi (fi)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/fr" title="French">Français (fr)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/de" title="German">Deutsch (de)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/hu" title="Hungarian">magyar (hu)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/is" title="Icelandic">Íslenska (is)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/it" title="Italian">italiano (it)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/lv" title="Latvian">Latviešu (lv)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/lt" title="Lithuanian">lietuvių (lt)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/mt" title="Maltese">Malti (mt)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/no" title="Norwegian">Norsk (no)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/pl" title="Polish">polski (pl)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/pt" title="Portuguese">Português (pt)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/ro" title="Romanian">Română (ro)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/sk" title="Slovak">slovenčina (sk)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/sl" title="Slovenian">Slovenščina (sl)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/es" title="Spanish">Español (es)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/sv" title="Swedish">Svenska (sv)</a></li>
+                        
+                        <li><a href="http://www.eea.europa.eu/tr" title="Turkish">Türkçe (tr)</a></li>
+                        
+                    </ul>
+                    
+                </div>
+            </div>
+
+        </div>
+        
+
+   <div class="visualClear"><!-- &nbsp; --></div>
+</div>
+
+
+
+  <div id="popup_login_form" style="display:none;">
+    
+
+        <dl class="portalMessage error" id="enable_cookies_message" style="display:none">
+            <dt>Error</dt>
+            <dd>Cookies are not enabled. You must enable cookies before you can log in.</dd>
+        </dl>
+
+        
+
+        <div class="portalMessage informationMessage">
+            
+                <p>The EEA Web CMS works best with following browsers:</p>
+                <div id="cms-browsers-links">
+                    <ul>
+                        <li id="cms-chrome">
+                            Google Chrome (recommended)
+                        </li>
+                        <li id="cms-firefox">
+                            Firefox
+                        </li>
+                    </ul>
+                    <p class="discreet">Internet Explorer is not recommended for the CMS area.</p>
+                </div>
+            
+        </div>
+
+            <form class="enableAutoFocus" method="post" id="login_form" action="https://www.eea.europa.eu/login_form">
+
+                <div id="login-form">
+
+                    <input type="hidden" name="came_from" value="http://www.eea.europa.eu" />
+
+                    <input type="hidden" name="next" />
+
+                    <input type="hidden" name="ajax_load" />
+
+                    <input type="hidden" name="ajax_include_head" />
+
+                    <input type="hidden" name="target" />
+
+                    <input type="hidden" name="mail_password_url" />
+
+                    <input type="hidden" name="join_url" />
+                    <input type="hidden" name="form.submitted" value="1" />
+                    <input type="hidden" name="js_enabled" id="js_enabled" value="0" />
+                    <input type="hidden" name="cookies_enabled" id="cookies_enabled" value="" />
+                    <input type="hidden" name="login_name" id="login_name" value="" />
+                    <input type="hidden" name="pwd_empty" id="pwd_empty" value="0" />
+
+                    <div class="field">
+
+                        <label for="__ac_name">Login Name</label>
+
+                        
+
+                        
+
+                        <input type="text" size="15" name="__ac_name" id="__ac_name" />
+
+                </div>
+
+                <div class="field">
+
+                        <label for="__ac_password">Password</label>
+
+                        
+
+                        <input type="password" size="15" name="__ac_password" id="__ac_password" />
+                </div>
+
+                    
+
+                    <div class="formControls">
+
+                        <input class="context" type="submit" name="submit" value="Log in" />
+
+                    </div>
+
+                </div>
+
+            </form>
+
+            
+
+            
+
+            <div id="login-forgotten-password">
+                <strong>Forgot your password?</strong>
+                <p class="discreet">If you have forgotten your password, <span>
+                        <a href="http://www.eea.europa.eu/mail_password_form?userid=None">we can send you a new one</a></span>.</p>
+            </div>
+
+            
+
+        
+  </div>
+
+
+<div class="eea-i18n-js hiddenElem">
+    <div id="eeaPaginationNext">next</div>
+    <div id="eeaPaginationPrev">previous</div>
+    <div id="eeaPaginationItems">items</div>
+</div>
+
+<div id="portal-header">
+    <p class="hiddenStructure">
+  <a accesskey="2" href="#content">Skip to content.</a> |
+
+  <a accesskey="6" href="http://www.eea.europa.eu/green-right.gif#eea-portlet-navigation-tree">Skip to navigation</a>
+</p>
+
+<h2 id="logo-en" class="portal-logo">
+
+    <a href="http://www.eea.europa.eu" accesskey="1" id="portal-logo-link" title="">
+        <img src="http://www.eea.europa.eu/++resource++eea.translations.images/pdflogo-en.png" alt="" id="printLogo" />
+    </a>
+</h2>
+
+<h3 class="site-description">Sound and independent information<br /> on the environment</h3>
+
+<!-- THE SEARCHBOX DEFINITION -->
+<div id="portal-searchbox">
+    <form action="http://glossary.en.eea.europa.eu/terminology/sitesearch" id="searchbox_terminology" class="searchforms">
+            <span class="eea-icon eea-icon-search">&nbsp;</span>
+            <input type="text" name="term" size="35" title="Search Europe's environment" class="searchField"  />
+            <input class="searchButton" type="submit" value="Search" />
+    </form>
+      <a id="search_advanced_link" href="http://www.eea.europa.eu/help/advanced-search"                >Advanced search</a>
+      <a id="search_glossary_link" href="http://glossary.en.eea.europa.eu" >A-Z Glossary</a>
+</div>
+
+<script type="text/javascript">var object_archived = false;;</script>
+
+</div>
+
+
+     <div id="globalnav-holder">
+        <h5 class="hiddenStructure">Sections</h5>
+        <ul id="portal-globalnav">
+
+            
+                
+                    <li id="portaltab-themes" class="plain">
+                     <a href="/themes" title="Explore by environmental topics">Topics</a>
+                    </li>
+                
+
+                             
+                
+            
+                
+                    <li id="portaltab-data-and-maps" class="plain">
+                     <a href="/data-and-maps" title="Environmental data, charts, maps, indicators and interactive data applications">Data and maps</a>
+                    </li>
+                
+
+                             
+                
+            
+                
+                    <li id="portaltab-indicators" class="plain">
+                     <a href="/data-and-maps/indicators/" title="">Indicators</a>
+                    </li>
+                
+
+                             
+                
+            
+                
+                    <li id="portaltab-reports" class="plain">
+                     <a href="/publications" title="">Publications</a>
+                    </li>
+                
+
+                             
+                
+            
+                
+                    <li id="portaltab-media" class="plain">
+                     <a href="/media" title="">Media</a>
+                    </li>
+                
+
+                             
+                
+            
+                
+                    <li id="portaltab-abouteea" class="plain">
+                     <a href="/about-us" title="">About EEA</a>
+                    </li>
+                
+
+                             
+                
+            
+                
+                    <li id="portaltab-europe" class="plain">
+                     <a href="http://europa.eu/about-eu/agencies" title="">The EEA is an agency of the European Union</a>
+                    </li>
+                
+
+                             
+                
+            
+        </ul>
+    </div>
+
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="visual-portal-wrapper">
+
+        <div id="portal-columns" class="row">
+
+        <!-- start of the main and left columns -->
+        <div id="visual-column-wrapper">
+
+        <div id="portal-column-content" class="cell width-full position-0">
+
+            
+                
+                    <div id="viewlet-above-content">
+
+
+
+<div id="eea-alchemy-modalEnabled"></div>
+
+
+</div>
+                
+            
+
+            
+                <div id="region-content" class="">
+
+                    
+                        
+                    
+
+                    
+
+    <dl class="portalMessage info" id="kssPortalMessage" style="display:none">
+        <dt>Info</dt>
+        <dd></dd>
+    </dl>
+
+    
+
+
+                    
+                        <div id="content"  class="documentContent panels wf-state-published">
+
+                            
+
+                            
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+    
+
+        
+
+        
+            
+
+                
+
+                <h1 class="documentFirstHeading">This page does not seem to exist&hellip;</h1>
+
+                <div id="content-core">
+                    <p>We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the links below to help you find what you are looking for.</p>
+
+
+                    <p>If you are certain you have the correct web address but are encountering an error, please contact the <span>
+                        <a href="http://www.eea.europa.eu/contact-info">Site Administration</a></span>.</p>
+
+                    <p>Thank you.</p>
+
+                    <!-- Offer search results for suggestions -->
+                    
+
+                        <h3>You might have been looking for&hellip;</h3>
+
+                        <dl>
+
+                        
+                            
+                                <dt class="contenttype-folder">
+                                  <img width="16" height="16" src="http://www.eea.europa.eu/folder_icon.gif" alt="Folder" />
+                                   <a href="http://www.eea.europa.eu" class="state-published">European Environment Agency's home page</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+
+                        
+                            
+                                <dt class="contenttype-document">
+                                  
+                                   <a href="http://www.eea.europa.eu/publications/GH-07-97-595-EN-C2/iss6c3h.html" class="state-published">Information sources</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+                            
+                                <dt class="contenttype-datatable">
+                                  <img width="16" height="16" src="http://www.eea.europa.eu/datatable-icon.png" alt="Data Table" />
+                                   <a href="http://www.eea.europa.eu/data-and-maps/data/nationally-designated-areas-national-cdda-1/site-habitats-table" class="state-published">Site habitats table</a>
+
+                                    
+
+                                </dt>
+
+                                <dd>Table contains data on habitats and habitat cover within the site boundary of each individual designated site.</dd>
+
+                            
+                        
+                            
+                                <dt class="contenttype-datatable">
+                                  <img width="16" height="16" src="http://www.eea.europa.eu/datatable-icon.png" alt="Data Table" />
+                                   <a href="http://www.eea.europa.eu/data-and-maps/data/nationally-designated-areas-national-cdda-3/site-habitats-table" class="state-published">Site habitats table:</a>
+
+                                    
+
+                                </dt>
+
+                                <dd>Table contains data on habitats and habitat cover within the site boundary of each individual designated site.</dd>
+
+                            
+                        
+                            
+                                <dt class="contenttype-datatable">
+                                  <img width="16" height="16" src="http://www.eea.europa.eu/datatable-icon.png" alt="Data Table" />
+                                   <a href="http://www.eea.europa.eu/data-and-maps/data/nationally-designated-areas-national-cdda-2/site-habitats-table" class="state-published">Site habitats table</a>
+
+                                    
+
+                                </dt>
+
+                                <dd>Table contains data on habitats and habitat cover within the site boundary of each individual designated site.</dd>
+
+                            
+                        
+                            
+                                <dt class="contenttype-datatable">
+                                  <img width="16" height="16" src="http://www.eea.europa.eu/datatable-icon.png" alt="Data Table" />
+                                   <a href="http://www.eea.europa.eu/data-and-maps/data/nationally-designated-areas-national-cdda/site-habitats-table" class="state-published">Site habitats table</a>
+
+                                    
+
+                                </dt>
+
+                                <dd>Table contains data on habitats and habitat cover within the site boundary of each individual designated site.</dd>
+
+                            
+                        
+                            
+                                <dt class="contenttype-highlight">
+                                  <img width="16" height="16" src="http://www.eea.europa.eu/highlight_icon.gif" alt="Highlight" />
+                                   <a href="http://www.eea.europa.eu/highlights/Ann1021987665" class="state-published">EEA continues shift from "report producer" to "information provider" </a>
+
+                                    
+
+                                </dt>
+
+                                <dd>EEA today launched a completely revamped Web site, the second major revision since the Agency created its site in 1995. The new-look site was opened by the ...</dd>
+
+                            
+                        
+                            
+                                <dt class="contenttype-document">
+                                  
+                                   <a href="http://www.eea.europa.eu/publications/GH-07-97-595-EN-C2/iss1c4h.html" class="state-published">Information sources</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+                            
+                                <dt class="contenttype-document">
+                                  
+                                   <a href="http://www.eea.europa.eu/publications/GH-07-97-595-EN-C2/iss6c1h.html" class="state-published">Information sources</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+                            
+                                <dt class="contenttype-document">
+                                  
+                                   <a href="http://www.eea.europa.eu/publications/GH-07-97-595-EN-C2/iss6c2h.html" class="state-published">Information sources</a>
+
+                                    
+
+                                </dt>
+
+                                <dd></dd>
+
+                            
+                        
+                            
+                                <dt class="contenttype-datatable">
+                                  <img width="16" height="16" src="http://www.eea.europa.eu/datatable-icon.png" alt="Data Table" />
+                                   <a href="http://www.eea.europa.eu/data-and-maps/data/nationally-designated-areas-cdda-1/site-habitats-table" class="state-published">Site habitats table</a>
+
+                                    
+
+                                </dt>
+
+                                <dd>The table contains data on habitats and habitat cover within the site boundary.</dd>
+
+                            
+                        
+
+                        </dl>
+
+                    
+                </div>
+            
+
+        
+
+        
+        
+        
+        
+
+                        </div>
+                    
+
+                    
+                </div>
+
+            
+
+            
+                
+                    <div id="viewlet-below-content">
+</div>
+                
+            
+        </div>
+
+        
+
+        <div id="portal-column-one">
+        </div>
+
+        
+        
+    </div>
+    <div class="visualClear"><!-- --></div>
+ </div>
+    <!-- end column wrapper -->
+
+</div>
+
+
+    
+        <div class="row">
+    <div id="footer-wrapper">
+        <div id="bg-wrapper">
+
+                <div id="portal-footer">
+                    
+
+
+
+                    
+                 </div>
+        </div>
+    </div>
+</div>
+
+<div id="portal-colophon">
+    
+    <div class="colophonWrapper">
+        <div class="colophon-left">
+            
+                <a href="http://www.eea.europa.eu">European Environment Agency (EEA)</a>
+                <br/>
+                
+                    Kongens Nytorv 6<br/> 1050 Copenhagen K<br/> Denmark
+                    <br/> 
+                    Phone: +45 3336 7100
+                
+            
+        </div>
+
+        
+        <div class="colophon-right colophon-links">
+            <span>
+                The European Environment Agency (EEA) is an agency of the European Union.
+                <br/>
+                <a href="http://www.eea.europa.eu/legal/">Legal notice</a>
+            </span>
+             <img width="50" height="37" alt="EU flag" title="European Union Flag" src="http://www.eea.europa.eu/eu-flag.gif" />
+            <br />  
+        </div>
+
+        <div class="footer-clear">&nbsp;</div>
+
+        
+        
+    </div>
+    <div  class="colophon-middle">
+       <p class="discreet colophon-links">
+            engineered by<br />
+            <a href="http://www.eea.europa.eu/help/contact-info">EEA Web Team</a>
+       </p>
+
+        <p class="discreet colophon-links">
+                    <a rel="license" href="http://creativecommons.org/licenses/by/2.5/dk/deed.en_GB" title="Creative Commons Attribution License">
+                    <img alt="Creative Commons Attribution License" style="border-width: 0pt;" width="80" height="15" src="http://www.eea.europa.eu/creativecommons-by-2.5-dk-80x15.png"/>
+                    </a>
+
+                    <a href="http://www.eea.europa.eu/login_form"                         title="CMS login"><strong>CMS login</strong></a>
+                    <a href="https://svn.eionet.europa.eu/repositories/Zope/trunk/www.eea.europa.eu/trunk/docs/"                         title="Software updates history">Software updates history</a>
+                    <a href="http://www.eea.europa.eu/code"                         title="Software updates history">Code for developers</a>
+                    <a href="@@invalidate_cache" rel="nofollow" title="Refresh this page">Refresh this page</a>
+        </p>
+    </div>
+    
+</div>
+
+
+<!-- traceview endtag -->
+<div id="viewlet-cookiepolicy" class="portalMessage" style="display:none">
+    <h1 id="tlspu_cookiepolicy_title">This site uses cookies</h1>
+    <p id="tlspu_cookiepolicy_message">We use cookies to record some preference settings and to analyse how visitors use our web site. Cookies do not contain any personal information about you. If you wish, see <a href="http://www.aboutcookies.org/default.aspx?page=2" title="how to delete or disable cookies">how to delete/disable cookies in your web browser</a> but then our site may not work correctly. See also <a href="http://www.eea.europa.eu/legal/privacy" title="our privacy policy">our privacy policy</a>.</p>
+    <form id="tlspu_cookiepolicy_form">
+    <button id="tlspu_cookiepolicy_button" value="hide">I am fine with this</button>
+    </form>
+</div>
+
+
+    
+
+</body>
+</html>
+
+

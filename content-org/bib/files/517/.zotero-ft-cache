@@ -1,0 +1,282 @@
+Advertisement
+Annals of Emergency Medicine - Official Journal of the American College of Emergency Physicians
+Mobile
+
+    Twitter
+    Facebook
+    RSS Feeds
+
+    ACEP Member Login
+    Non-Member Login
+    Register
+    Register as a Guest
+    Register and Claim Your Subscription
+    Subscribe
+
+    Home
+    Articles & Issues
+        Current issue
+        Articles in Press
+        List of Issues
+        Supplements
+    Collections
+        Editors Free Top Selections
+        Annals CME Articles
+        News and Perspective
+        Podcasts
+        Journal Club
+        Residents' Perspective
+        Safety/Operations
+        EBEM Resources
+        EBEM Review Snapshots
+        Disaster Medicine
+        Change of Shift
+        Case Reports
+        Peer Review Science
+        ACEP Clinical Policies
+        ABEM LLSA Reading
+    Images
+    For Authors
+        Instructions for Authors
+        Submit to Annals
+    Journal Info
+        Aims and Scope
+        The Peer Review Process at Annals
+        Editorial Board
+        Editorial Board Declarations of Competing Interests
+        What's Coming in Annals
+        Peer Reviewers
+        Permission to Reuse
+        Info for Advertisers
+        Contact Information
+        Pricing Information
+        Careers
+    Journal Access
+        ACEP/SEMPA Login
+        Register
+        Institutions
+        E-mail Alert
+        Free Trial Issue
+        Mobile Access Instructions
+    Subscribe
+    Resources
+        American Association of Poison Control Centers
+        Peer Review Training Module
+        Toxicology Resource Center
+        Find a Periodical
+        Go to Product Catalog
+    ACEP
+        ACEP
+        ACEP Now
+        EM Career Central
+        The Central Line
+        ACEP Practice Resources
+
+Search Terms Search within Search Advanced Search
+< Previous Article
+Next Article >
+September 2012 Volume 60, Issue 3, Pages 299–308
+Switch to Standard View Switch to Enhanced View
+Real-Time Prediction of Waiting Time in the Emergency Department, Using Quantile Regression
+Yan Sun
+x
+Yan Sun
+Search for articles by this author
+Affiliations
+
+    Department of Health Services and Outcomes Research, National Healthcare Group, Singapore
+
+Correspondence
+
+    Address for correspondence: Yan Sun, PhD
+
+, PhD correspondence
+x
+Yan Sun
+Search for articles by this author
+Affiliations
+
+    Department of Health Services and Outcomes Research, National Healthcare Group, Singapore
+
+Correspondence
+
+    Address for correspondence: Yan Sun, PhD
+
+email
+,
+Kiok Liang Teow
+x
+Kiok Liang Teow
+Search for articles by this author
+Affiliations
+
+    Department of Health Services and Outcomes Research, National Healthcare Group, Singapore
+
+, MSc
+,
+Bee Hoon Heng
+x
+Bee Hoon Heng
+Search for articles by this author
+Affiliations
+
+    Department of Health Services and Outcomes Research, National Healthcare Group, Singapore
+
+, MBBS, MSc
+,
+Chee Kheong Ooi
+x
+Chee Kheong Ooi
+Search for articles by this author
+Affiliations
+
+    Department of Emergency Medicine, Tan Tock Seng Hospital, Singapore
+
+, MBBS, MSc
+,
+Seow Yian Tay
+x
+Seow Yian Tay
+Search for articles by this author
+Affiliations
+
+    Department of Emergency Medicine, Tan Tock Seng Hospital, Singapore
+
+, MBBS, MSc
+Article has an altmetric score of 1
+DOI: http://dx.doi.org/10.1016/j.annemergmed.2012.03.011
+show Article Info
+Publication History
+Published Online: May 14, 2012 Accepted: March 9, 2012 ; Received in revised form: November 16, 2011 ; Received in revised form: December 21, 2011 ; Received in revised form: February 7, 2012 ; Received: July 27, 2011 ;
+Purchase this article (PDF Included)
+$31.50 USD (24 hour access)
+Subscribe to this title
+
+    Abstract
+    Full Text
+    Images
+    Images/Data
+    References
+    Related Articles
+
+To view the full text, please login as a subscribed user or purchase a subscription . Click here to view the full text on ScienceDirect.
+Figures
+
+Figure 1
+
+The distribution of the actual waiting times by day of week and time of day. PAC 3 actual waiting time (top) and PAC 2 actual waiting time (bottom).
+
+Figure 2
+
+The correlation between the actual waiting time and the flow rate and queue size. The PAC 2 waiting time and the PAC 2 queue size (top left); the PAC 2 waiting time and the PAC 2 flow rate (top right); the PAC 3 waiting time and the PAC 3 queue size (bottom left); the PAC 2 waiting time; and the PAC 2 flow rate (bottom right).
+
+Figure 3
+
+Scatterplots of the predicted median waiting times against actual waiting times (unit=minutes). The PAC 2 waiting time in derivation data (top left); the PAC 3 waiting time in derivation data (top right); the PAC 2 waiting time in retrospective validation data (middle left); the PAC 3 waiting time in retrospective validation data (middle right); the PAC 2 waiting time in prospective validation data (bottom left); and the PAC 3 waiting time in prospective validation data (bottom right).
+Study objective
+
+Emergency department (ED) waiting times can affect patient satisfaction and quality of care. We develop and validate a model that predicts an individual patient's median and 95th percentile waiting time by using only data available at triage.
+Methods
+
+From the existing ED information system, we extracted date and time of triage completion, start time of emergency physician consultation, and patient acuity category (1=most urgent, 3=least urgent). Quantile regression was applied for model development and parameter estimation by using visits from January 2011. We assessed absolute prediction error, defined as the median difference between the 50th percentile (median) predicted waiting time and actual waiting time, and the proportion of underestimated prediction, defined as the percentage of patients whose actual waiting time exceeded the 95th percentile prediction. The model was validated retrospectively with June 2010 data and prospectively with data from April to June 2011 after integration with the existing ED information system.
+Results
+
+The derivation set included 13,200 ED visits; 903 (6.8%) were patient acuity category 1, 5,530 (41.9%) were patient acuity category 2, and 6,767 (51.3%) were patient acuity category 3. The median and 95th percentile waiting times were 17 and 57 minutes for patient acuity category 2 and 21 and 89 minutes for patient acuity category 3, respectively. The final model used predictors of patient acuity category, patient queue sizes, and flow rates only. In the retrospective validation, 5.9% of patient acuity category 2 and 5.4% of category 3 waiting times were underestimated. The median absolute prediction error was 11.9 minutes (interquantile range [IQR] 5.9 to 22.1 minutes) for patient acuity category 2 and 15.7 minutes (IQR 7.5 to 30.1 minutes) for category 3. In prospective validation, 4.3% of patient acuity category 2 and 5.8% of category 3 waiting times were underestimated. The median absolute prediction error was 9.2 minutes (IQR 4.4 to 15.1 minutes) for patient acuity category 2 and 12.9 minutes (IQR 6.5 to 22.5 minutes) for category 3.
+Conclusion
+
+Using only a few data elements available at triage, the model predicts individual patients' waiting time with good accuracy.
+To access this article, please choose from the options below
+ACEP Member Login
+
+ACEP Members, full access to the journal is a member benefit. Use your ACEP credentials to access all Annals content and features
+ACEP Member Login
+OR
+Non-Member Login
+Email/Username:
+Password:
+Remember me
+Forgot password?
+Register
+Create a new account
+Purchase access to this article
+
+    Online access for 24 hours
+
+Claim Access
+
+If you are a current subscriber with Society Membership or an Account Number, claim your access now .
+Subscribe to this title
+
+Purchase a subscription to gain access to this and all other articles in this journal.
+Institutional Access
+
+Visit ScienceDirect to see if you have access via your institution.
+
+Funding and support: By Annals policy, all authors are required to disclose any and all commercial, financial, and other relationships in any way related to the subject of this article as per ICMJE conflict of interest guidelines (see www.icmje.org ). The authors have stated that no such relationships exist.
+
+Supervising editor: Ellen J. Weber, MD
+
+Author contributions: TSY and OCK conceived the study and assisted with data extraction. All authors contributed to the study design and writing the “Results” section and have read and approved of the content of the final submitted article. SY conducted the modeling and data analysis and drafted the article. TKL was responsible for data analysis. HBH made substantial contributions to its revision. SY takes responsibility for the paper as a whole.
+
+Publication date: Available online May 10, 2012.
+
+Please see page 300 for the Editor's Capsule Summary of this article.
+
+A podcast for this article is available at www.annemergmed.com .
+© 2012 Published by Elsevier Inc.
+Access this article on
+ScienceDirect
+Visit ScienceDirect to see if you have access via your institution.
+Article Tools
+
+    PDF (1 MB)
+    Download Images(.ppt) About Images & Usage
+
+    Email Article
+    Add to My Reading List
+    Export Citation
+    Create Citation Alert
+    Cited by in Scopus (10)
+
+    Request Permissions
+    Order Reprints (100 minimum order)
+
+Related Articles
+
+    The Effect of Pay for Performance in the Emergency Department on Patient Waiting Times and Quality of Care in Ontario, Canada: A Difference-in-Differences Analysis
+    DOI: http://dx.doi.org/10.1016/j.annemergmed.2015.06.028
+    Publication stage: In Press Corrected Proof
+    Annals of Emergency Medicine
+    Open Access
+    Emergency Department Crowding and Outcomes After Emergency Department Discharge
+    Online Extra Podcast
+    DOI: http://dx.doi.org/10.1016/j.annemergmed.2015.04.009
+    Annals of Emergency Medicine , Vol. 66 , Issue 5
+    Is It Still an Emergency Department if It Can’t Treat Children?
+    DOI: http://dx.doi.org/10.1016/j.annemergmed.2015.10.015
+    Publication stage: In Press Corrected Proof
+    Annals of Emergency Medicine
+    Impact of a New Senior Emergency Department on Emergency Department Recidivism, Rate of Hospital Admission, and Hospital Length of Stay
+    Continuing Medical Education Exam Podcast
+    DOI: http://dx.doi.org/10.1016/j.annemergmed.2013.10.033
+    Annals of Emergency Medicine , Vol. 63 , Issue 5
+    40 An Emergency Department-Based Community Health Worker and Care Coordination Intervention for Frequent Emergency Department Users
+    DOI: http://dx.doi.org/10.1016/j.annemergmed.2015.07.069
+    Annals of Emergency Medicine , Vol. 66 , Issue 4
+
+View All
+Advertisement
+< Previous Article
+Next Article >
+September 2012 Volume 60, Issue 3, Pages 299–308
+Copyright © 2015 Elsevier Inc. All rights reserved. | Privacy Policy | Terms & Conditions | About Us | Help & Contact
+The content on this site is intended for health professionals.
+
+Advertisements on this site do not constitute a guarantee or endorsement by the journal, Association, or publisher of the quality or value of such product or of the claims made for it by its manufacturer.
+Non-Member Login close
+Email/Username:
+Password:
+Remember me
+Forgot password?
+
+Click to get updates and verify authenticity.

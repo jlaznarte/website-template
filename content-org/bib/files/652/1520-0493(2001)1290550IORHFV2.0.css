@@ -1,0 +1,436 @@
+
+/* ::::: http://journals.ametsoc.org/templates/jsp/style.css ::::: */
+
+.xslDebugTemplate { color: rgb(153, 153, 153); font-size: 10px; font-family: sans-serif; padding-left: 2px; }
+.xslDebugNodePath { color: rgb(255, 0, 0); font-size: 10px; font-family: sans-serif; padding-left: 2px; }
+.xslDebugImport { color: rgb(0, 127, 0); font-size: 10px; font-family: sans-serif; padding-left: 2px; }
+.wbr { font-family: "Lucida Sans Unicode","Arial Unicode MS",sans-serif; font-size: 2pt; color: rgb(255, 255, 255); white-space: normal; letter-spacing: 0pt; word-spacing: 0pt; word-wrap: break-word; }
+.noWrap, .nobrWithWbr { white-space: nowrap; }
+.ff2 .nobrWithWbr { white-space: normal; }
+.tocHeading .subj-group { display: block; font-size: 90%; }
+div.boxed-text-, div.boxed-text-anchor, div.boxed-text-float { margin-left: 3em; }
+div.boxed-text-margin {  }
+.refnumber { text-align: left; vertical-align: top; }
+.references .note p { padding: 0em; margin: 0em; }
+.articleEntry { margin-bottom: 1em; }
+.NLM_table-wrap td, .NLM_table-wrap td, .NLM_table-wrap th, .NLM_table-wrap th { border-right: 1px solid black; border-bottom: 1px solid black; }
+.NLM_table-wrap-foot p { margin: 0pt; }
+.NLM_table-wrap table { border: 1px solid black; border-spacing: 0px; border-collapse: collapse; width: 95%; }
+.NLM_table-wrap table.frame_none { border: medium none; }
+.NLM_table-wrap table.frame_left { border-width: medium medium medium 1px; border-style: none none none solid; border-color: -moz-use-text-color -moz-use-text-color -moz-use-text-color black; }
+.NLM_table-wrap table.frame_right { border-width: medium 1px medium medium; border-style: none solid none none; border-color: -moz-use-text-color black -moz-use-text-color -moz-use-text-color; }
+.NLM_table-wrap table.frame_top { border-right: medium none; border-width: 1px medium medium; border-style: solid none none; border-color: black -moz-use-text-color -moz-use-text-color; }
+.NLM_table-wrap table.frame_bottom { border-width: medium medium 1px; border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color black; }
+.NLM_table-wrap table.frame_sides { border-width: medium 1px; border-style: none solid; border-color: -moz-use-text-color black; }
+.NLM_table-wrap table.frame_topbot { border-right: medium none; border-left: medium none; border-width: 1px medium; border-style: solid none; border-color: black -moz-use-text-color; }
+table.rowsep0 td, table.rowsep0 th { border-bottom: medium none; }
+table.rowsep1 td, table.rowsep1 th { border-bottom: 1px solid black; }
+table.rowsep2 td, table.rowsep2 th { border-bottom: 3px double black; }
+col.rowsep0, tr.rowsep0 td, tr.rowsep0 th { border-bottom: medium none; }
+col.rowsep1, tr.rowsep1 td, tr.rowsep1 th { border-bottom: 1px solid black; }
+col.rowsep2, tr.rowsep2 td, tr.rowsep2 th { border-bottom: 3px double black; }
+tr th.rowsep0, tr td.rowsep0 { border-bottom: medium none; }
+tr th.rowsep1, tr td.rowsep1 { border-bottom: 1px solid black; }
+tr th.rowsep2, tr td.rowsep2 { border-bottom: 3px double black; }
+table.colsep0 td, table.colsep0 th { border-right: medium none; }
+table.colsep1 td, table.colsep1 th { border-right: 1px solid black; }
+table.colsep2 td, table.colsep2 th { border-right: 3px double black; }
+col.colsep0, tr.colsep0 td, tr.colsep0 th { border-right: medium none; }
+col.colsep1, tr.colsep1 td, tr.colsep1 th { border-right: 1px solid black; }
+col.colsep2, tr.colsep2 td, tr.colsep2 th { border-right: 3px double black; }
+tr th.colsep0, tr td.colsep0 { border-right: medium none; }
+tr th.colsep1, tr td.colsep1 { border-right: 1px solid black; }
+tr th.colsep2, tr td.colsep2 { border-right: 3px double black; }
+.NLM_table-wrap table tr.last td { border-bottom: medium none; }
+.NLM_table-wrap table tr td.last, .NLM_table-wrap table tr th.last { border-right: medium none; }
+.NLM_table-wrap .align_right { text-align: right; }
+.NLM_table-wrap .align_left { text-align: left; }
+.NLM_def-list { margin: 1em 0pt; }
+.NLM_def-list .NLM_title, .NLM_def-list .NLM_term-head, .NLM_def-list .NLM_def-head, .NLM_def-list .NLM_term { font-weight: bold; vertical-align: top; }
+.NLM_def-list .NLM_def { vertical-align: top; }
+.NLM_table-wrap table tr td table.listgroup, .NLM_table-wrap table tr td table.listgroup td { border: medium none; width: auto; text-align: left; }
+.title1, .title2, .title3, .title4, .title5, .inlinehead1, .inlinehead2, .inlinehead3, .inlinehead4, .inlinehead5 { font-weight: bold; }
+.searchNone0, .searchNone1, .searchNone2, .searchNone3, .searchNone4, .searchNone5, .searchNone6, .searchNone7, .searchNone8, .searchNone9 { color: inherit; background-color: inherit; font-weight: inherit; }
+.searchTerm0 { color: black; background-color: rgb(255, 255, 102); font-weight: bold; }
+.searchTerm1 { color: black; background-color: rgb(160, 255, 255); font-weight: bold; }
+.searchTerm2 { color: black; background-color: rgb(153, 255, 153); font-weight: bold; }
+.searchTerm3 { color: black; background-color: rgb(255, 153, 153); font-weight: bold; }
+.searchTerm4 { color: black; background-color: rgb(255, 102, 255); font-weight: bold; }
+.searchTerm5 { color: white; background-color: rgb(136, 0, 0); font-weight: bold; }
+.searchTerm6 { color: white; background-color: rgb(0, 170, 0); font-weight: bold; }
+.searchTerm7 { color: white; background-color: rgb(136, 104, 0); font-weight: bold; }
+.searchTerm8 { color: white; background-color: rgb(0, 70, 153); font-weight: bold; }
+.searchTerm9 { color: white; background-color: rgb(153, 0, 153); font-weight: bold; }
+.citation_source-book, .citation_source-journal { font-style: italic; }
+.dash { font-size: 13px; }
+.quote { margin: 1em 0em 1em 5em; display: block; }
+.index {  }
+.entityA {  }
+.entityB { border: 0px none; vertical-align: baseline; }
+.entityC { border: 0px none; vertical-align: bottom; }
+.entityD { border: 0px none; vertical-align: text-bottom; }
+.toc_subarticle_style { font-size: 11px; font-family: Arial,Helvetica,sans-serif; }
+.toc_subarticle_authors_style { font-size: 10px; font-family: Arial,Helvetica,sans-serif; }
+.toc_subarticle_title_style { font-size: 11px; font-family: Arial,Helvetica,sans-serif; font-weight: bold; }
+.fromGoogle { border-style: solid; border-color: red; border-width: 2px 0pt; margin: 12px 0pt; padding: 2px 0pt; line-height: 20px; font-size: 12px; }
+.lilabel {  }
+ol.simple { list-style: none outside none; }
+ol.alphaLower { list-style: lower-alpha outside none; }
+ol.alphaUpper { list-style: upper-alpha outside none; }
+ol.romanLower { list-style: lower-roman outside none; }
+ol.romanUpper { list-style: upper-roman outside none; }
+.smallcaps { font-variant: small-caps; }
+.strike { text-decoration: line-through; }
+.NLM_disp-formula { display: block; }
+a.roDisabled { color: graytext; }
+.articleEntry .firstCell { text-align: right; vertical-align: top; width: 18px; padding-top: 0pt; }
+div.appendix span.title5 { display: block; }
+.sectionHeading { background-color: rgb(225, 225, 225); }
+.sectionHeading th { font-size: larger; }
+.artAuthors .NLM_bio { font-weight: normal; }
+.multiIssueToc .issueTitle { font-weight: bold; }
+.monospace { font-family: monospace; }
+table.formula { margin: 1em 0pt; clear: both; }
+.NLM_list-list_type-simple { list-style: none outside none; display: block; }
+.IN_LIST-freeText, .IN_LIST-label, .IN_LIST-title { list-style: none outside none; display: inline; margin: 0pt; padding: 0pt; }
+.fullSideBullet { width: 15px; vertical-align: top; }
+.accessIcon { border: medium none; }
+.quickLinks_head, .quickSearch_head, .quickSearch_content, .quickLinks_content { border: 1px solid black; }
+.quickSearch_content, .quickLinks_content { border-top: medium none; }
+.fontSize1 { font-size: xx-small; }
+.fontSize2 { font-size: small; }
+.fontSize3 { font-size: medium; }
+.fontSize4 { font-size: large; }
+.fontSize5 { font-size: x-large; }
+.fontSize6 { font-size: xx-large; }
+.fontSize7 { font-size: xx-large; }
+.panelHeading, .panelFooter { position: relative; padding: 3px 10px; }
+.panelHeading .left, .panelHeading .right, .panelFooter .left, .panelFooter .right { position: absolute; width: 6px; height: 6px; background-repeat: no-repeat; }
+.panelHeading .left, .panelHeading .right { top: 0pt; }
+.panelFooter .left, .panelFooter .right { bottom: 0pt; }
+.panelHeading .left, .panelFooter .left { left: 0pt; }
+.panelHeading .right, .panelFooter .right { right: 0pt; }
+.panelHeading .left { background-image: url('curve_left_top.png@22'); }
+.panelHeading .right { background-image: url('curve_right_top.png@22'); }
+.panelFooter .left { background-image: url('curve_left_top.png@22'); }
+.panelFooter .right { background-image: url('curve_right_bottom.png@22'); }
+.panelHeading .content h3 { margin: 0pt; font-size: 1em; }
+.panelBody { width: auto; padding: 0.5em; }
+.panelBody .spacer { clear: both; height: 1px; width: 100%; }
+#mobileDevicePairingCode .char { padding: 0.5em; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); margin-right: 0.5em; }
+ul.offers li { list-style: none outside none; }
+.reprAndPerms { margin: 10px; }
+.reprAndPerms .coverImage { float: left; min-height: 115px; margin-right: 20px; }
+.reprAndPerms .article_meta div { margin-bottom: 5px; }
+.reprAndPerms .article_meta label { color: rgb(0, 102, 255); font-weight: bold; width: 20%; }
+.reprAndPerms .topContent { margin-bottom: 20px; }
+.reprintsForm label { float: left; width: 20%; }
+.reprintsForm .labelGroup { margin: 10px 5px; height: 20px; }
+.reprintsForm .labelGroup input { float: right; width: 20%; }
+.reprintsForm .dropDownHeader { color: rgb(0, 102, 255); font-size: 10pt; font-weight: bold; margin-bottom: 5px; }
+.reprintsForm .subText { margin-bottom: 10px; }
+.reprintsForm label { font-weight: bold; }
+
+/* ::::: http://journals.ametsoc.org/templates/jsp/_style2/style.css ::::: */
+
+body, .bodyLayout { margin: 0px; padding: 0px; border: 0px none; border-spacing: 0px; font-family: Arial,Helvetica,sans-serif; font-size: 11pt; }
+td { font-family: Arial,Helvetica,sans-serif; font-size: 11pt; }
+.leftRegion, .centerRegion, .rightRegion { margin: 0px; padding: 0px; border: 0px none; }
+.logo { padding: 14px 0px; text-align: center; }
+.logo_bottom { padding-top: 20px; padding-bottom: 20px; text-align: center; }
+.welcome_user_text { font-size: x-small; font-weight: bold; padding: 1em; border-bottom: 1px solid rgb(68, 68, 68); color: rgb(68, 68, 68); }
+.pub_search_box { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: x-small; font-weight: bold; padding: 1em; margin-bottom: 1em; border-bottom: 1px solid rgb(68, 68, 68); color: rgb(68, 68, 68); }
+.pub_search_link { font-size: 10pt; font-weight: bold; margin-bottom: 5px; margin-top: 5px; }
+.menuXsubMenuDivider { text-align: center; }
+#hide { display: none; }
+.art_title, .arttitle, .searchResultTitle { font-weight: bold; }
+.art_author { color: gray; }
+.art_meta { color: gray; }
+.error { color: red; }
+.citedByEntry { margin-bottom: 0.5em; }
+.citedBySection { margin-bottom: 2em; }
+.bullet { vertical-align: top; }
+.tocHeading .subj-group { display: block; font-size: 90%; }
+tr.resultItemNav {  }
+a img { border-width: 0pt; }
+td.savedSearch {  }
+.currencySymbol { font-weight: bold; }
+#showMailPage label { font-weight: bold; }
+#showMailPage label.checkBox { font-weight: normal; }
+div.p { margin: 1em 0pt; }
+#CreditCardDialog .required { color: rgb(255, 0, 0); }
+#CreditCardDialog label { margin: 1em 0pt; text-align: left; }
+.formHeading { font-weight: bold; }
+div.federation { margin-top: 15px; font-size: 1.1em; font-weight: bold; }
+.logoImg { width: 165px; height: 108px; border: 0pt none; }
+table.offersOption { width: 100%; padding: 0pt 2em; }
+.offersOption td { padding-bottom: 1em; }
+.offersOption li { list-style: none outside none; }
+.offersOption tr.buttons { text-align: right; }
+.deliveryFormat li { list-style: none outside none; display: inline; }
+.ecommOffers { font-weight: bold; }
+.addressLink { cursor: pointer; color: blue; }
+.ecommRecommendArticles p { margin-left: 10px; }
+
+/* ::::: http://journals.ametsoc.org/templates/jsp/_style2/_AP/style.css ::::: */
+
+.named-content_genus-species { font-style: italic; }
+#navBar .highRes { white-space: nowrap; }
+div.articleLinks { text-align: center; }
+.alert { background-color: rgb(255, 255, 204); color: rgb(0, 0, 0); font-family: Arial,Helvetica,sans-serif; font-weight: bold; }
+#navBar .highRes { white-space: nowrap; }
+.resizeNote { width: 700px; margin-top: 0.5em; float: left; text-align: center; font-style: italic; }
+#journalList .divider { width: 90%; }
+span.captionLabel { font-weight: bold; }
+.abstractSection { margin: 1.5em 0pt; }
+
+/* ::::: http://journals.ametsoc.org/templates/jsp/_style2/_AP/css/global.css ::::: */
+
+body { margin: 0pt; padding: 0pt; height: 100%; font-size: 9pt; background-color: rgb(199, 198, 204); font-family: "Helvetica Neu","Helvetica","Lucida Grande","Lucida Sans","Trebuchet MS",Arial,Helvetica,sans-serif; line-height: normal; }
+a:link, a:active, a:visited { color: rgb(0, 0, 153); }
+a:hover { color: rgb(92, 150, 57); }
+div.clearfix { clear: both; }
+div#container { width: 980px; margin: 0pt auto; height: 100%; min-height: 100%; background: none repeat scroll 0% 0% white; }
+div#content { min-height: 450px; }
+div.panelContent { margin: 3em 0pt 0pt 1em; padding: 0.5em 0em 5em; }
+div#leftColumn { float: left; }
+div#rightColumn { float: left; width: 730px; }
+div#leftCol, div#middleCol, div#rightCol { float: left; clear: right; }
+div#middleCol { margin: 0pt 0.5em; }
+div.ad_180x150, div.ad_60x468, div.ad_600x160, div.ad_150x180, div.ad_60x238, div.ad_600x210 { float: left; clear: left; margin-bottom: 1em; }
+div.ad_180x150 { height: 180px; width: 150px; }
+div.ad_150x180 { height: 150px; width: 180px; }
+div.ad_60x468 { height: 60px; width: 468px; }
+div.ad_600x160 { height: 600px; width: 160px; }
+div.ad_60x238 { height: 60px; width: 238px; }
+div.ad_600x210 { height: 600px; width: 210px; }
+#tokenRegistration { margin-bottom: 2em; }
+#tokenRegistration th { text-align: left; }
+#tokenRegistration #tokenAccess, #tokenRegistration #tokenKey { width: 150px; }
+#registrationLogin { font-size: 11pt; margin-bottom: 1em; }
+#migrationToken { margin: 2em 0pt; }
+.overline { text-decoration: overline; }
+div.NLM_sec_level_3 { margin-bottom: 1em; }
+.NLM_disp-formula td, .NLM_disp-formula { font-size: 9pt; font-family: "Helvetica Neu","Helvetica","Lucida Grande","Lucida Sans","Trebuchet MS",Arial,Helvetica,sans-serif; }
+table.NLM_disp-formula { margin-bottom: 1em; }
+.subArticlesList { list-style-type: none; }
+.subArticlesList li { margin-bottom: 1em; }
+
+/* ::::: http://journals.ametsoc.org/templates/jsp/_style2/_AP/_ams/css/global.product.css ::::: */
+
+body, #container h3, #container td, #container li { font-family: 'Times New Roman','Times',serif; }
+a { color: blue; }
+a:visited { color: gray; }
+.toc_page_numbers { float: right; }
+div.noAmsMember { width: 750px; color: red; }
+div.ad_600x210 { height: 100%; width: 210px; }
+p.loginMsg { margin: 5px; }
+.NLM_disp-formula td, .NLM_disp-formula { font-family: 'Times New Roman','Times',serif; }
+
+/* ::::: http://journals.ametsoc.org/templates/jsp/_style2/_AP/css/widgets.css ::::: */
+
+div.panelBottomLeft { float: left; background-image: url('btmleftpanelcorner.gif@22'); width: 6px; height: 6px; line-height: 0px; position: relative; overflow: hidden; }
+div.panelBottomMiddle { float: left; height: 5px; border-bottom: 1px solid rgb(91, 91, 91); background-color: rgb(255, 255, 255); line-height: 0px; position: relative; overflow: hidden; }
+div.panelBottomRight { float: left; background-image: url('btmrightpanelcorner.gif@22'); width: 6px; height: 6px; overflow: hidden; }
+div.panelTopLeft { width: 6px; height: 20px; float: left; background-image: url('topleftpanelcorner.gif@22'); line-height: 1px; }
+div.panelTopMiddle { float: left; height: 20px; background-image: url('paneltitlebg.gif@22'); background-repeat: repeat-x; line-height: 1px; }
+div.panelTopMiddle h3 { line-height: 1; margin: 5px 0pt 0pt 8px; padding: 0pt; font-size: 1em; color: rgb(0, 51, 102); font-weight: bold; }
+div.panelTopRight { width: 6px; height: 20px; float: left; background-image: url('toprightpanelcorner.gif@22'); line-height: 1px; }
+div.panelBody { clear: left; background-color: rgb(255, 255, 255); }
+div.panel_210, div.panel_228, div.panel_100p, div.panel_476 { float: left; clear: left; margin-bottom: 0.5em; }
+div.panel_210 { width: 210px; }
+div.panel_228 { width: 228px; }
+div.panel_228_pad, div.panel_210_pad { width: 89%; padding: 0.52em; }
+div.panel_228_width, div.panel_210_width { width: 90%; }
+div.panel_100p { width: 100%; }
+div.panel_100p_pad { width: 96%; padding: 0.72em; }
+div.panel_100p_width, div.panel_476_width { width: 97%; }
+div.panel_476 { width: 476px; }
+div.panel_476_pad { padding: 0.61em; width: 96.1%; }
+tr#covers td, tr#titles td, tr#journalLinks td { width: 130px; }
+tr#titles td, tr#journalLinks td { font-size: 9pt; text-align: center; vertical-align: top; padding-top: 1em; }
+tr#covers { text-align: center; }
+span#nextIssue { float: right; }
+span#prevIssue { float: left; }
+#journalNavPanel { text-align: center; }
+#nextprev { margin: 0pt 0.3em; }
+div#smallIssueCover { margin-top: 1em; font-size: 10px; }
+div#toolsPanel { text-align: left; }
+ul.linkSet { line-height: 1.3em; margin-bottom: 0.8em; margin-left: 0pt; margin-top: 2px; padding-left: 15px; }
+#mostread { list-style-type: none; }
+#mostread li { padding-bottom: 1em; }
+#issueHeading { font-weight: bold; margin: 1em 0pt; }
+li.loiListHeading { background-repeat: no-repeat; background-position: 0pt 0.1em; margin-top: 1em; line-height: 1; font-weight: bold; text-decoration: none; color: rgb(0, 51, 102); }
+.collapsed { background-image: url('collapsed.gif@22'); }
+.expanded { background-image: url('expanded.gif@22'); }
+ul.loiList { list-style-type: none; padding: 0pt 0pt 1em; margin: 0pt 0pt 0pt 1em; }
+ul.loiList li { padding-left: 1.2em; clear: left; }
+li.hidden { display: none; }
+div.loiTocUrl { float: left; width: 250px; }
+ul#toolsList { clear: both; list-style-type: none; padding: 0pt; margin: 0pt 0pt 0pt 1em; }
+ul#toolsList li { background-repeat: no-repeat; background-position: 0pt 0.1em; padding-left: 1.5em; margin-top: 0.5em; display: inline; }
+ul#toolsList li a { white-space: nowrap; }
+li#showAbs { background-image: url('icon_viewabstract.gif@22'); }
+li#addToFavs { background-image: url('icon_addtofavorite.gif@22'); }
+li#emailArt { background-image: url('icon_email.gif@22'); }
+li#downloadCit { background-image: url('icon_download.gif@22'); }
+li#trackCit { background-image: url('icon_track.gif@22'); }
+li#rights { background-image: url('icon_track.gif@22'); border-right: medium none; }
+div#articleToolsPrev { float: left; }
+div#articleToolsNext { float: right; }
+a.articleToolsNav { font-weight: bold; text-decoration: none; }
+a.articleToolsNav:hover { text-decoration: underline; }
+div#articleToolsHeading { width: 100%; text-align: center; font-weight: bold; margin-bottom: 1em; }
+li.divider { padding-left: 0pt; margin-right: 0.5em; color: rgb(204, 204, 204); }
+hr#articleToolsHr { color: rgb(160, 173, 164); width: 95%; margin-top: 1em; }
+ul#articleToolsFormats { text-align: center; list-style-type: none; margin: 0pt; }
+ul#articleToolsFormats li { display: inline; padding: 0pt 4em 0pt 1em; font-weight: bold; }
+div#articleToolsPanel { margin-bottom: 1em; }
+div.relatedHeading { margin-top: 1em; margin-bottom: 0.5em; font-weight: bold; }
+span.relatedDBname { line-height: 3px; }
+input#quickSearchSubmit { margin: 2em 5em 0pt; }
+span.cbylink { padding-left: 1em; }
+div.loiIssuePages { float: left; }
+div.iconImage { padding-left: 330px; }
+
+/* ::::: http://journals.ametsoc.org/templates/jsp/_style2/_AP/_ams/css/widgets.product.css ::::: */
+
+div.panelBottomLeft, div.panelBottomRight { height: 5px; width: 5px; background: none repeat scroll 0% 0% white; }
+div.panelBottomMiddle { border-bottom: 0pt none; }
+div.panelTopMiddle { font-size: 11pt; padding-bottom: 0.5em; border-bottom: 1px solid black; height: 100%; }
+div.panelTopMiddle h3 { margin-left: -0.1em; }
+div.panelTopLeft, div.panelTopMiddle, div.panelTopRight, div.panelTopMiddle h3 { background-image: none; }
+div.panel_100p_pad { padding: 0.8em; }
+div#leftCol div.panel, div#leftColumn div.panel { border-right: 1px solid black; }
+div#leftCol div.panel:last-child, div#leftColumn div.panel:last-child { border-bottom: 1px solid black; }
+div#leftCol div.panelBody { margin-bottom: 0.5em; }
+div.panel_210, div.panel_228, div.panel_100p, div.panel_476 { margin-bottom: 0pt; padding-bottom: 1em; }
+div#middleCol div.panelTopMiddle, div#rightCol div.panelTopMiddle {  }
+div#journalNavPanel div.panelTopMiddle { text-align: left; }
+
+/* ::::: http://journals.ametsoc.org/templates/jsp/_style2/_AP/_ams/css/style.product.css ::::: */
+
+.arttitle { font-size: 12pt; }
+body, .bodyLayout { font-family: "Times New Roman",Times,serif; }
+.title2 { font-weight: normal; font-style: italic; }
+.sectionHeading {  }
+.ack .sectionHeading th { font-weight: normal; font-style: italic; font-size: 14pt; background-color: rgb(255, 255, 255); }
+.alert { font-family: "Times New Roman",Times,serif; }
+.NLM_sec_level_1 .sectionHeading th { background-color: rgb(255, 255, 255); }
+td { font-family: "Times New Roman",Times,serif; }
+.pub_search_box { font-family: "Times New Roman",Times,serif; }
+.toc_subarticle_style { font-family: "Times New Roman",Times,serif; }
+.toc_subarticle_authors_style { font-family: "Times New Roman",Times,serif; }
+.toc_subarticle_title_style { font-family: "Times New Roman",Times,serif; }
+
+/* ::::: http://journals.ametsoc.org/templates/jsp/_style2/_AP/css/headfoot.css ::::: */
+
+div#identity-bar { background-color: rgb(238, 238, 238); padding: 0.5em; height: 1em; }
+div#identity-bar a { color: black; text-decoration: none; }
+div#identity-bar a:hover { text-decoration: underline; }
+span#institution-banner-text { float: left; }
+span#individual-menu { float: right; }
+div#identity-bar a#indivLogin { text-decoration: underline; }
+div.headerContainer { height: 24px; text-align: center; }
+div#headerTopContainer { background-color: rgb(229, 239, 209); }
+div#headerBottomContainer { border-top: 1px solid rgb(184, 217, 231); border-bottom: 1px solid rgb(184, 217, 231); }
+div.headerSubContainer { margin: 0pt auto; text-align: left; }
+div#headerTopSubContainer { width: 550px; }
+div#headerBottomSubContainer { width: 425px; }
+ul#headerTopNavBar { background-color: rgb(229, 239, 209); }
+ul#headerTopNavBar li { border-left: 1px solid white; }
+ul#headerTopNavBar a { color: rgb(0, 0, 153); }
+li#lastInList { border-right: 1px solid white; }
+ul#headerBottomNavBar li { border-left: 1px solid rgb(184, 217, 231); }
+ul#headerBottomNavBar a { color: rgb(92, 150, 57); }
+li#lastInSecondList { border-right: 1px solid rgb(184, 217, 231); }
+ul.headerNavBar li:hover { background-color: rgb(184, 217, 231); }
+ul.headerNavBar { margin: 0pt; padding: 0pt; list-style: none outside none; }
+ul.headerNavBar li { float: left; }
+ul.headerNavBar a { padding: 0pt 0.87em; text-decoration: none; font-size: 10px; line-height: 2.4em; }
+input#searchQuery { text-align: center; font-size: 11px; font-family: 'Helvetica Neu','Helvetica','Lucida Grande','Lucida Sans','Trebuchet MS','Arial','Helvetica','sans-serif'; color: rgb(64, 126, 193); padding: 1px; margin-top: 2px; border: 1px solid rgb(153, 153, 153); }
+input#gosearch { vertical-align: middle; margin-top: 0pt; }
+div#quickSearchBox { float: right; padding-top: 2px; width: 155px; }
+div#breadcrumbs { margin: 1em 1em 0pt; }
+span#allJournals { float: left; }
+span#advancedSearch { float: right; }
+#footer { clear: both; border-top: 1px solid rgb(184, 217, 231); }
+div#footer p { font-size: 10px; margin: 4px 0pt; padding: 0pt; text-align: center; line-height: 2em; background-color: rgb(251, 251, 251); }
+div#footer a:link, div#footer a:active, div#footer a:visited { color: rgb(92, 150, 57); }
+div#footer a:hover { color: rgb(0, 0, 153); }
+div#footer span { color: buttonshadow; }
+
+/* ::::: http://journals.ametsoc.org/templates/jsp/_style2/_AP/_ams/css/headfoot.product.css ::::: */
+
+div#identity-bar { background-color: rgb(238, 238, 238); padding: 0.5em; height: 1em; border-top: 1px solid black; border-bottom: 1px solid black; }
+div#identity-bar a { color: black; text-decoration: none; }
+div#identity-bar a:hover { text-decoration: underline; }
+span#institution-banner-text { float: left; }
+span#individual-menu { float: right; }
+div#identity-bar a#indivLogin { text-decoration: underline; }
+div.headerContainer { height: 24px; text-align: center; }
+div#headerBottomContainer { border-top: 1px solid rgb(184, 217, 231); border-bottom: 1px solid rgb(184, 217, 231); background-color: rgb(153, 51, 0); }
+div#headerBottomSubContainer { width: auto; }
+ul#headerBottomNavBar a { color: white; }
+ul#headerBottomNavBar li { border: medium none; }
+ul.headerNavBar { margin: 0pt; padding: 0pt; list-style: none outside none; }
+ul.headerNavBar li { padding: 0pt 1em; }
+ul.headerNavBar a { padding: 0pt 0.87em; text-decoration: none; line-height: 2em; font-size: 12px; }
+input#searchQuery { text-align: center; font-size: 11px; font-family: "Times New Roman",Times,serif; color: rgb(64, 126, 193); padding: 1px; margin-top: 2px; border: 1px solid rgb(153, 153, 153); }
+input#gosearch { vertical-align: middle; margin-top: 0pt; }
+div#quickSearchBox { float: right; padding-top: 2px; width: 250px; margin-top: -0.25em; }
+div#breadcrumbs { margin: 1em 1em 0pt; }
+span#allJournals { float: left; }
+span#advancedSearch { float: right; }
+div#footer { border-top: 3px solid rgb(153, 51, 0); clear: both; }
+div#footer a:link, div#footer a:active, div#footer a:visited { color: blue; }
+div#footer a:hover { color: black; }
+div#footer span { color: buttonshadow; }
+div#footer ul li { padding: 0pt 1em; float: left; }
+div#footer ul { width: 65%; list-style-type: none; margin: 1em auto; }
+div#atypon { width: 284px; clear: both; margin: 0pt auto; }
+div#atypon img { margin: 1em 0pt; }
+
+/* ::::: http://journals.ametsoc.org/templates/jsp/_style2/_AP/css/journal.css ::::: */
+
+div#rightColumn { width: 720px; word-wrap: break-word; }
+div.panelContent { margin: 3em 0pt 0pt 0.5em; }
+div#content { width: 100%; }
+div.figure_graphic { text-align: center; margin-bottom: 2em; }
+div.short-legend, a.ref strong, ul { font-size: 9pt; }
+table.references td { font-size: 9pt; padding-bottom: 1em; }
+span.NLM_disp-formula { text-align: center; margin: 1em 0pt; }
+span.NLM_disp-formula .NLM_label { float: right; padding: 0pt 0.5em; }
+ol.romanLower { list-style-type: lower-roman; }
+ol.romanUpper { list-style-type: upper-roman; }
+ol.alphaUpper { list-style-type: upper-alpha; }
+ol.alphaLower { list-style-type: lower-alpha; }
+ol.simple { list-style-type: none; }
+div.boxed-text-float { margin: 10px 15px; background-color: rgb(238, 233, 219); border: 1px solid rgb(153, 153, 153); padding: 15px 20px; font-family: "Helvetica Neu","Helvetica","Lucida Grande","Lucida Sans","Trebuchet MS",Arial,Helvetica,sans-serif; text-align: left; vertical-align: top; color: rgb(0, 0, 0); }
+div.boxed-text-float th { background-color: rgb(238, 233, 219); }
+.graphicWrap { text-align: center; margin-left: auto; margin-right: auto; }
+div.suppl_list { text-align: left; margin-left: auto; margin-right: auto; }
+p.firstPar { display: inline; }
+div.citedBySection h2 { color: rgb(0, 51, 102); font-size: 15px; }
+div#navBar ul { list-style-type: disc; list-style-position: inside; width: 140px; }
+div#navBar li { padding: 0px; margin: 0px; }
+div.NLM_sec_level_2 { margin: 1em 0pt; }
+.subarticle-title { font-size: 1.3em; }
+h1.popupTitle { font-size: 9pt; }
+
+/* ::::: http://journals.ametsoc.org/templates/jsp/_style2/_AP/_ams/css/journal.product.css ::::: */
+
+div.artAuthors { text-align: center; }
+div.artAuthors p { font-style: italic; }
+div#rightColumn { margin-left: 1em; }
+hr#articleToolsHr { width: 100%; }
+li#glossary { background-image: url('icon_track_002.gif@22'); }
+ul#toolsList li { padding-right: 1em; }
+div#articleToolsPanel div.panelTopMiddle { border-bottom: medium none; }
+div#articleToolsHeading { padding-bottom: 1em; border-bottom: 1px solid black; }
+div#articleContent div.arttitle { text-align: center; }
+div#articleContent { font-size: 11pt; }
+div.boxed-text-float { font-family: "Times New Roman",Times,serif; }
+.NLM_sec p { text-indent: 1em; }
+.NLM_sec ul p, .NLM_sec ol p { text-indent: 0pt; }
+div.short-legend, a.ref strong, ul { font-size: 11pt; }

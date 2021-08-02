@@ -1,0 +1,1752 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" style="height: 100%;" lang="en-US"><head><script type="text/javascript" src="300lo.js"></script><script type="text/javascript" src="_ate.js"></script>
+    <title>
+        
+                 Separating Morphologically Similar Pollen Types Using 
+Basic Shape Features from Digital Images: A Preliminary Study | 
+Applications in Plant Sciences
+            
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<meta name="robots" content="noarchive">
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+        
+        
+        
+            
+        
+        
+                
+            
+
+        
+            
+        
+        
+            
+        
+
+        <meta property="og:type" content="article">
+        
+            <meta property="og:url" content="http://www.bioone.org/doi/abs/10.3732/apps.1400032">
+        
+        
+            <meta property="og:title" content="Separating Morphologically Similar Pollen Types Using Basic Shape Features from Digital Images: A Preliminary Study">
+        
+        
+           <meta property="og:image" content="http://www.bioone.org/na101/home/literatum/publisher/bioone/journals/content/apps/2014/092.020.0800/092.020.0800/20140818-01/092.020.0800.cover.jpg">
+
+
+        
+        
+            <meta property="og:description" content="Katherine A. Holt and Mark S. Bebbington (2014) Separating Morphologically Similar Pollen Types Using Basic Shape Features from Digital Images: A Preliminary Study. Applications in Plant Sciences: Vol. 2, Issue 8 - Special Issue: Bioinformatic and Biometric Methods in Plant Morphology, pp. null. https://doi.org/10.3732/apps.1400032">
+        
+        <meta property="og:site_name" content="BioOne">
+    
+<link rel="schema.DC" href="http://purl.org/DC/elements/1.0/"><meta name="dc.Title" content="Separating Morphologically Similar Pollen Types Using Basic Shape Features from Digital Images: A Preliminary Study"><meta name="dc.Creator" content="Katherine A. Holt"><meta name="dc.Creator" content="Mark S. Bebbington"><meta name="dc.Subject" content="automated palynology; Classifynder; geometric features; Kunzea ericoides; Leptospermum scoparium; Myrtaceae; pollen morphology"><meta name="dc.Description" content="Premise of the study: One of the many advantages offered by automated palynology systems is the ability to vastly increase the number of observations made on a particular sample or samples. This is of particular benefit when attempting to fully quantify the degree of variation within or between closely related pollen types. Methods: An automated palynology system (Classifynder) has been used to further investigate the variation in pollen morphology between two New Zealand species of Myrtaceae (Leptospermum scoparium and Kunzea ericoides) that are of significance in the New Zealand honey industry. Seven geometric features extracted from automatically gathered digital images were used to characterize the range of shape and size of the two taxa, and to examine the extent of previously reported overlap in these variables. Results: Our results indicate a degree of overlap in all cases. The narrowest overlap was in measurements of maximum Feret diameter (MFD) in grains oriented in polar view. Multivariate stati..."><meta name="dc.Publisher" content=" Botanical Society of America "><meta name="dc.Date" scheme="WTN8601" content="2014-08-18"><meta name="dc.Type" content="research-article"><meta name="dc.Format" content="text/HTML"><meta name="dc.Identifier" scheme="doi" content="10.3732/apps.1400032"><meta name="dc.Source" content="http://dx.doi.org/10.3732/apps.1400032"><meta name="dc.Language" content="EN"><meta name="dc.Coverage" content="world"><meta name="keywords" content="automated palynology, Classifynder, geometric features, Kunzea ericoides, Leptospermum scoparium, Myrtaceae, pollen morphology"><meta name="citation_fulltext_world_readable" content="">
+        
+        
+
+        
+            <link rel="meta" type="application/atom+xml" href="https://doi.org/10.3732%2Fapps.1400032">
+            <link rel="meta" type="application/rdf+json" href="https://doi.org/10.3732%2Fapps.1400032">
+            <link rel="meta" type="application/unixref+xml" href="https://doi.org/10.3732%2Fapps.1400032">
+        
+    
+<meta name="MSSmartTagsPreventParsing" content="true">
+
+<link rel="meta" type="application/atom+xml" href="https://doi.org/10.3732%2Fapps.1400032">
+<link rel="meta" type="application/rdf+json" href="https://doi.org/10.3732%2Fapps.1400032">
+<link rel="meta" type="application/unixref+xml" href="https://doi.org/10.3732%2Fapps.1400032">
+
+
+
+
+    
+    
+    <script async="" src="analytics"></script><script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-11995603-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    <link href="style_004.css" rel="stylesheet" type="text/css">
+<link href="style_003.css" rel="stylesheet" type="text/css">
+<link href="style_002.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="global.css" rel="stylesheet" type="text/css">
+<link href="widgets.css" rel="stylesheet" type="text/css">
+<link href="headfoot.css" rel="stylesheet" type="text/css">
+<link href="guide.css" rel="stylesheet" type="text/css">
+<link href="journal.css" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 8]>
+        <link href="/templates/jsp/_style2/_AP/css/ie.css" rel="stylesheet" type="text/css"/>
+        <link href="/templates/jsp/_style2/_AP/_bioone/css/ie.product.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+    <!--[if IE 6]><link href="/templates/jsp/_style2/_AP/css/ie6.css" rel="stylesheet" type="text/css"/><![endif]-->
+    <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="script_002.js"></script>
+<script type="text/javascript" src="script_003.js"></script>
+<script type="text/javascript" src="main_002.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript" src="toggle.js"></script>
+
+    <link rel="SHORTCUT ICON" href="http://www.bioone.org/templates/jsp/_style2/_AP/_bioone/favicon.ico">
+    <link rel="apple-touch-icon" href="http://www.bioone.org/templates/jsp/_style2/_AP/_bioone/apple-touch-icon.png">
+    
+
+
+
+
+
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="translateelement.css"><script type="text/javascript" charset="UTF-8" src="main.js"></script><style type="text/css">.at-icon{fill:#fff;border:0}.at-icon-wrapper{display:inline-block;overflow:hidden}a .at-icon-wrapper{cursor:pointer}.at-rounded,.at-rounded-element .at-icon-wrapper{border-radius:12%}.at-circular,.at-circular-element .at-icon-wrapper{border-radius:50%}.addthis_32x32_style .at-icon{width:2pc;height:2pc}.addthis_24x24_style .at-icon{width:24px;height:24px}.addthis_20x20_style .at-icon{width:20px;height:20px}.addthis_16x16_style .at-icon{width:1pc;height:1pc}#at16lb{display:none;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1001;background-color:#000;opacity:.001}#at_complete,#at_error,#at_share,#at_success{position:static!important}.at15dn{display:none}#at15s,#at16p,#at16p form input,#at16p label,#at16p textarea,#at_share .at_item{font-family:arial,helvetica,tahoma,verdana,sans-serif!important;font-size:9pt!important;outline-style:none;outline-width:0;line-height:1em}* html #at15s.mmborder{position:absolute!important}#at15s.mmborder{position:fixed!important;width:250px!important}#at15s{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);float:none;line-height:1em;margin:0;overflow:visible;padding:5px;text-align:left;position:absolute}#at15s a,#at15s span{outline:0;direction:ltr;text-transform:none}#at15s .at-label{margin-left:5px}#at15s .at-icon-wrapper{width:1pc;height:1pc;vertical-align:middle}#at15s .at-icon{width:1pc;height:1pc}.at4-icon{display:inline-block;background-repeat:no-repeat;background-position:top left;margin:0;overflow:hidden;cursor:pointer}.addthis_16x16_style .at4-icon,.addthis_default_style .at4-icon,.at4-icon,.at-16x16{width:1pc;height:1pc;line-height:1pc;background-size:1pc!important}.addthis_32x32_style .at4-icon,.at-32x32{width:2pc;height:2pc;line-height:2pc;background-size:2pc!important}.addthis_24x24_style .at4-icon,.at-24x24{width:24px;height:24px;line-height:24px;background-size:24px!important}.addthis_20x20_style .at4-icon,.at-20x20{width:20px;height:20px;line-height:20px;background-size:20px!important}.at4-icon.circular,.circular .at4-icon,.circular.aticon{border-radius:50%}.at4-icon.rounded,.rounded .at4-icon{border-radius:4px}.at4-icon-left{float:left}#at15s .at4-icon{text-indent:20px;padding:0;overflow:visible;white-space:nowrap;background-size:1pc;width:1pc;height:1pc;background-position:top left;display:inline-block;line-height:1pc}.addthis_vertical_style .at4-icon,.at4-follow-container .at4-icon{margin-right:5px}html>body #at15s{width:250px!important}#at15s.atm{background:none!important;padding:0!important;width:10pc!important}#at15s_inner{background:#fff;border:1px solid #fff;margin:0}#at15s_head{position:relative;background:#f2f2f2;padding:4px;cursor:default;border-bottom:1px solid #e5e5e5}.at15s_head_success{background:#cafd99!important;border-bottom:1px solid #a9d582!important}.at15s_head_success a,.at15s_head_success span{color:#000!important;text-decoration:none}#at15s_brand,#at15sptx,#at16_brand{position:absolute}#at15s_brand{top:4px;right:4px}.at15s_brandx{right:20px!important}a#at15sptx{top:4px;right:4px;text-decoration:none;color:#4c4c4c;font-weight:700}#at15sptx:hover{text-decoration:underline}#at16_brand{top:5px;right:30px;cursor:default}#at_hover{padding:4px}#at_hover .at_item,#at_share .at_item{background:#fff!important;float:left!important;color:#4c4c4c!important}#at_share .at_item .at-icon-wrapper{margin-right:5px}#at_hover .at_bold{font-weight:700;color:#000!important}#at_hover .at_item{width:7pc!important;padding:2px 3px!important;margin:1px;text-decoration:none!important}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover{margin:0!important}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover,#at_share .at_item.athov,#at_share .at_item:hover{background:#f2f2f2!important;border:1px solid #e5e5e5;color:#000!important;text-decoration:none}.ipad #at_hover .at_item:focus{background:#fff!important;border:1px solid #fff}.at15t{display:block!important;height:1pc!important;line-height:1pc!important;padding-left:20px!important;background-position:0 0;text-align:left}.addthis_button,.at15t{cursor:pointer}.addthis_toolbox a.at300b,.addthis_toolbox a.at300m{width:auto}.addthis_toolbox a{margin-bottom:5px;line-height:initial}.addthis_toolbox.addthis_vertical_style{width:200px}.addthis_button_facebook_like .fb_iframe_widget{line-height:100%}.addthis_button_facebook_like iframe.fb_iframe_widget_lift{max-width:none}.addthis_toolbox a.addthis_button_counter,.addthis_toolbox a.addthis_button_facebook_like,.addthis_toolbox a.addthis_button_facebook_send,.addthis_toolbox a.addthis_button_facebook_share,.addthis_toolbox a.addthis_button_foursquare,.addthis_toolbox a.addthis_button_google_plusone,.addthis_toolbox a.addthis_button_linkedin_counter,.addthis_toolbox a.addthis_button_pinterest_pinit,.addthis_toolbox a.addthis_button_stumbleupon_badge,.addthis_toolbox a.addthis_button_tweet{display:inline-block}.at-share-tbx-element .google_plusone_iframe_widget>span>div{vertical-align:top!important}.addthis_toolbox span.addthis_follow_label{display:none}.addthis_toolbox.addthis_vertical_style span.addthis_follow_label{display:block;white-space:nowrap}.addthis_toolbox.addthis_vertical_style a{display:block}.addthis_toolbox.addthis_vertical_style.addthis_32x32_style a{line-height:2pc;height:2pc}.addthis_toolbox.addthis_vertical_style .at300bs{margin-right:4px;float:left}.addthis_toolbox.addthis_20x20_style span{line-height:20px}.addthis_toolbox.addthis_32x32_style span{line-height:2pc}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact,.addthis_toolbox.addthis_pill_combo_style a{float:left}.addthis_toolbox.addthis_pill_combo_style a.addthis_button_tweet{margin-top:-2px}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact{margin-right:4px}.addthis_default_style .addthis_separator{margin:0 5px;display:inline}div.atclear{clear:both}.addthis_default_style .addthis_separator,.addthis_default_style .at4-icon,.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300bs,.addthis_default_style .at300m{float:left}.at300b img,.at300bo img{border:0}a.at300b .at4-icon,a.at300m .at4-icon{display:block}.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300m{padding:0 2px}.at300b,.at300bo,.at300bs,.at300m{cursor:pointer}.addthis_button_facebook_like.at300b:hover,.addthis_button_facebook_like.at300bs:hover,.addthis_button_facebook_send.at300b:hover,.addthis_button_facebook_send.at300bs:hover{opacity:1}.addthis_20x20_style .at15t,.addthis_20x20_style .at300bs{overflow:hidden;display:block;height:20px!important;width:20px!important;line-height:20px!important}.addthis_32x32_style .at15t,.addthis_32x32_style .at300bs{overflow:hidden;display:block;height:2pc!important;width:2pc!important;line-height:2pc!important}.at300bs{overflow:hidden;display:block;background-position:0 0;height:1pc;width:1pc;line-height:1pc!important}.addthis_default_style .at15t_compact,.addthis_default_style .at15t_expanded{margin-right:4px}#at_share .at_item{width:123px!important;padding:4px;margin-right:2px;border:1px solid #fff}#at16p{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);z-index:10000001;position:absolute;top:50%;left:50%;width:300px;padding:10px;margin:0 auto;margin-top:-185px;margin-left:-155px;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#5e5e5e}#at_share{margin:0;padding:0}#at16pt{position:relative;background:#f2f2f2;height:13px;padding:5px 10px}#at16pt a,#at16pt h4{font-weight:700}#at16pt h4{display:inline;margin:0;padding:0;font-size:9pt;color:#4c4c4c;cursor:default}#at16pt a{position:absolute;top:5px;right:10px;color:#4c4c4c;text-decoration:none;padding:2px}#at15sptx:focus,#at16pt a:focus{outline:thin dotted}#at15s #at16pf a{top:1px}#_atssh{width:1px!important;height:1px!important;border:0!important}.atm{width:10pc!important;padding:0;margin:0;line-height:9pt;letter-spacing:normal;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#444;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);padding:4px}.atm-f{text-align:right;border-top:1px solid #ddd;padding:5px 8px}.atm-i{background:#fff;border:1px solid #d5d6d6;padding:0;margin:0;box-shadow:1px 1px 5px rgba(0,0,0,.15)}.atm-s{margin:0!important;padding:0!important}.atm-s a:focus{border:transparent;outline:0;transition:none}#at_hover.atm-s a,.atm-s a{display:block;text-decoration:none;padding:4px 10px;color:#235dab!important;font-weight:400;font-style:normal;transition:none}#at_hover.atm-s .at_bold{color:#235dab!important}#at_hover.atm-s a:hover,.atm-s a:hover{background:#2095f0;text-decoration:none;color:#fff!important}#at_hover.atm-s .at_bold{font-weight:700}#at_hover.atm-s a:hover .at_bold{color:#fff!important}.atm-s a .at-label{vertical-align:middle;margin-left:5px;direction:ltr}.at_PinItButton{display:block;width:40px;height:20px;padding:0;margin:0;background-image:url(//s7.addthis.com/static/t00/pinit00.png);background-repeat:no-repeat}.at_PinItButton:hover{background-position:0 -20px}.addthis_toolbox .addthis_button_pinterest_pinit{position:relative}.at-share-tbx-element .fb_iframe_widget span{vertical-align:baseline!important}#at16pf{height:auto;text-align:right;padding:4px 8px}.at-privacy-info{position:absolute;left:7px;bottom:7px;cursor:pointer;text-decoration:none;font-family:helvetica,arial,sans-serif;font-size:10px;line-height:9pt;letter-spacing:.2px;color:#666}.at-privacy-info:hover{color:#000}.body .wsb-social-share .wsb-social-share-button-vert{padding-top:0;padding-bottom:0}.body .wsb-social-share.addthis_counter_style .addthis_button_tweet.wsb-social-share-button{padding-top:40px}.body .wsb-social-share.addthis_counter_style .addthis_button_google_plusone.wsb-social-share-button{padding-top:0}.body .wsb-social-share.addthis_counter_style .addthis_button_facebook_like.wsb-social-share-button{padding-top:21px}@media print{#at4-follow,#at4-share,#at4-thankyou,#at4-whatsnext,#at4m-mobile,#at15s,.at4,.at4-recommended{display:none!important}}@media screen and (max-width:400px){.at4win{width:100%}}@media screen and (max-height:700px) and (max-width:400px){.at4-thankyou-inner .at4-recommended-container{height:122px;overflow:hidden}.at4-thankyou-inner .at4-recommended .at4-recommended-item:first-child{border-bottom:1px solid #c5c5c5}}</style><style type="text/css">.at-branding-logo{font-family:helvetica,arial,sans-serif;text-decoration:none;font-size:10px;display:inline-block;margin:2px 0;letter-spacing:.2px}.at-branding-logo .at-branding-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////+GlNUkcc1QAAAB1JREFUeNpiYIQDBjQmAwMmkwEM0JnY1WIxFyDAABGeAFEudiZsAAAAAElFTkSuQmCC")}.at-branding-logo .at-branding-icon,.at-branding-logo .at-privacy-icon{display:inline-block;height:10px;width:10px;margin-left:4px;margin-right:3px;margin-bottom:-1px;background-repeat:no-repeat}.at-branding-logo .at-privacy-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAMAAABR24SMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhQTFRF8fr9ot/xXcfn2/P5AKva////////AKTWodjhjAAAAAd0Uk5T////////ABpLA0YAAAA6SURBVHjaJMzBDQAwCAJAQaj7b9xifV0kUKJ9ciWxlzWEWI5gMF65KUTv0VKkjVeTerqE/x7+9BVgAEXbAWI8QDcfAAAAAElFTkSuQmCC")}.at-branding-logo span{text-decoration:none}.at-branding-logo .at-branding-addthis,.at-branding-logo .at-branding-powered-by{color:#666}.at-branding-logo .at-branding-addthis:hover{color:#333}.at-cv-with-image .at-branding-addthis,.at-cv-with-image .at-branding-addthis:hover{color:#fff}a.at-branding-logo:visited{color:initial}.at-branding-info{display:inline-block;padding:0 5px;color:#666;border:1px solid #666;border-radius:50%;font-size:10px;line-height:9pt;opacity:.7;transition:all .3s ease;text-decoration:none}.at-branding-info span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.at-branding-info:before{content:'i';font-family:Times New Roman}.at-branding-info:hover{color:#0780df;border-color:#0780df}</style><script id="altmetric-embed-js" src="altmetric_badges-eb187a407f01c9f3bbcda1dddf27884f.js"></script><script type="text/javascript" src="printfriendly.js"></script><script type="text/javascript" charset="UTF-8" src="element_main.js"></script><script src="https://ds-4047.kxcdn.com/api/v3/domain_settings/a?callback=pfMod.saveAdSettings&amp;hostname=www.bioone.org&amp;client_version=2018-01-15-064654076"></script><link id="altmetric-embed-css" rel="stylesheet" type="text/css" href="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed-2c47105b6381604898bbf8ae8a680350.css"><script type="text/javascript" charset="utf-8" async="" src="//s7.addthis.com/static/38.6b7f4f8f2464e4c17093.js"></script><script type="text/javascript" charset="utf-8" async="" src="//s7.addthis.com/static/117.e5678227fd14b81038ec.js"></script></head>
+<body class="clearFix" style="position: relative; min-height: 100%; top: 0px;"><div id="WzTtDiV" style="visibility: hidden; position: absolute; overflow: hidden; padding: 0px; width: 0px; left: 0px; top: 0px;"></div>
+<script type="text/javascript" src="wz_tooltip.js"></script>
+    <div id="container">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="header">
+            
+                    
+
+
+
+
+
+<div id="bannerLayout">
+
+    <div id="search">
+        
+
+
+
+
+<form action="/action/doSearch" name="simpleQuickSearchForm1" method="get"><span class="qSearchLabel">search</span>
+    
+    <input id="searchQuery" name="AllField" size="18" onfocus="this.value='';" placeholder="Quick Search" type="text">
+    
+    
+    <input onclick="javascript:checkQuickSearchInput(document.simpleQuickSearchForm1,'Quick Search');return false;" id="gosearch" value="" alt="Search" type="submit"></form>
+      <span class="searchLink"><a href="http://www.bioone.org/search/advanced">Advanced Search</a></span>
+
+      </div>
+    <!-- placeholder id=null, description=Header-Mobile Button -->
+    
+        <div id="bannerLogo"><a href="http://www.bioone.org/"><img src="bioOne_logo.gif" alt="BioOne" width="165" height="54"></a></div>
+        <div id="bannerAd"><!-- placeholder id=null, description=Header Banner --></div>
+     
+    <div class="clearFloats">&nbsp;</div>
+  </div>
+
+
+    <div id="pageHeaderLayout">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="headerLogo" class="swirlHeader"></div>
+    
+
+        <div>
+        <div id="headerNav">
+          <div id="utilityLinks">
+              
+
+
+
+<span id="quickLinks">
+    <a href="http://www.bioone.org/page/about">About</a>
+    <a href="http://www.bioone.org/page/resources/institutions/training">Resources</a>
+    <a href="http://www.bioone.org/page/contact">Contact Us</a>
+</span>
+
+           
+
+
+
+
+
+
+ <span id="loginLinks">
+
+               My Account :
+               
+                <a href="https://www.bioone.org/action/showLogin?uri=%2Fdoi%2F10.3732%2Fapps.1400032">
+                   Log in
+               </a>
+            
+     | <a href="http://www.bioone.org/action/showPreferences?menuTab=Journals&amp;type=favorite&amp;type=subscribed">
+            Admin
+        </a>
+      | <a href="http://www.bioone.org/help">
+            Help
+        </a>
+ </span>
+          </div>
+          <div id="mainLinks">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+<a href="http://www.bioone.org/action/showPublications?type=byAlphabet" onmouseover="javascript:showMenu(1); hideMenu(2); hideMenu(3); clearTimeout(t);" onmouseout="javascript: t = setTimeout('hideMenu(1)',1000);">Browse</a> |
+<a onmouseout="javascript: t = setTimeout('hideMenu(2)',1000);" onmouseover="javascript:showMenu(2); hideMenu(1); hideMenu(3); clearTimeout(t);" href="http://www.bioone.org/page/subscribe/subscriptions">Subscribe</a> |
+<a onmouseout="javascript: t = setTimeout('hideMenu(3)',1000);" onmouseover="javascript:showMenu(3); hideMenu(1); hideMenu(2); clearTimeout(t);" href="http://www.bioone.org/page/publish/benefits">Publish</a>
+<div onmouseover="javascript: clearTimeout(t);" onmouseout="javascript: t = setTimeout('hideMenu(1)',1000);" class="dropMenuHidden" id="dropMenu1">
+    <div class="dropMenuHeader"><span></span></div>
+    <a href="http://www.bioone.org/action/showPublications?type=byAlphabet">Titles</a>
+    <a href="http://www.bioone.org/action/showPublications?type=byPublisher">Publishers</a>
+    <a href="http://www.bioone.org/action/showDois">Featured Articles</a>
+</div>
+<div onmouseover="javascript: clearTimeout(t);" onmouseout="javascript: t = setTimeout('hideMenu(2)',1000);" class="dropMenuHidden" id="dropMenu2">
+    <div class="dropMenuHeader"><span></span></div>
+    <a href="http://www.bioone.org/page/subscribe/subscriptions">How to Subscribe</a><a href="http://www.bioone.org/page/subscribe/participating_institutions">List of Subscribers</a><a href="http://www.bioone.org/page/subscribe/developing_world_programs">Developing World Programs</a>
+</div>
+<div onmouseover="javascript: clearTimeout(t);" onmouseout="javascript: t = setTimeout('hideMenu(3)',1000);" class="dropMenuHidden" id="dropMenu3">
+    <div class="dropMenuHeader"><span></span></div>
+    <a href="http://www.bioone.org/page/publish/selection_guidelines">Joining BioOne Complete</a><a href="http://www.bioone.org/page/publish/benefits">Benefits of Participation</a><a href="http://www.bioone.org/page/publish/open_access">Publishing Open Access</a>
+</div>
+          </div>
+
+        </div>
+        </div>
+        <div class="clearFloats">&nbsp;</div>
+
+      </div>
+
+
+
+                
+        </div>
+        
+                <div id="content" class="flat">
+            
+
+            <div class="panelContent">
+                
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+<!-- // hide it from old browsers
+
+var anyDbId = -1;
+var sideParts = {
+    citation: "<tr><td class=\"black9pt\" width=\"15\" 
+valign=\"top\">&nbsp;&bull;&nbsp;<\/td><td class=\"black9pt\" 
+valign=\"top\"><a 
+href=\"javascript:newWindow('{$linkoutUrl}')\">{$display}<\/a><\/td><\/tr>",
+
+    citingIsi: "<tr><td class=\"black9pt\" width=\"15\" 
+valign=\"top\">&nbsp;&bull;&nbsp;<\/td><td class=\"black9pt\" 
+valign=\"top\">Search for citing articles in:<br/>&nbsp;<a 
+href=\"javascript:newWindow('/servlet/linkout?suffix=s0&dbid=128&doi={$doi}&url={$urlEnc}')\">ISI
+ Web of Science<\/a> ({$citNum} or more)<\/a><\/td><\/tr>",
+    citingCrossref: "<span class=\"cbylink\"><a 
+href=\"{$url}\">Crossref<\/a><\/span><br/>",
+    quicksearch: "<input type=\"radio\" name=\"dbname\" 
+value=\"{$value}\">{$display}<\/input><br/>",
+    related: ", <a 
+href=\"javascript:newWindow('{$linkoutUrl}')\">{$display}<\/a>"
+};
+
+function genSide(part, dbid, linkoutUrl, display, doi, url, citNum, 
+value) {
+    if (dbid != anyDbId && (140737488355327 & dbid) == 0) return;
+    var content = sideParts[part];
+    if (linkoutUrl) { content = content.replace(/{\$linkoutUrl}/g, 
+linkoutUrl); }
+    if (display) { content = content.replace(/{\$display}/g, display); }
+    if (doi) { content = content.replace(/{\$doi}/g, doi); }
+    if (url) {
+        content = content.replace(/{\$url}/g, url);
+        content = content.replace(/{\$urlEnc}/g, 
+encodeURIComponent(encodeURIComponent(url)));
+    }
+    if (citNum) { content = content.replace(/{\$citNum}/g, citNum); }
+    if (value) { content = content.replace(/{\$value}/g, value); }
+    document.write(content);
+}
+
+function hasSfxLinks() {
+	return false;
+}
+
+
+function genSfxLinks(id, url, doi) { }
+
+var sfxRefDisplay = {
+64:"ADS",
+32:"CAS",
+8192:"CIS",
+256:"CSA",
+16:"Crossref",
+128:"ISI",
+4096:"JSTOR",
+8:"PubMed",
+1099511627776: "Ichushi",
+17592186044416: "Medical Online",
+8796093022208: "J-Stage",
+2199023255552: "Medical Finder",
+4398046511104: "Pier Online"
+};
+
+window.onload=disableRefLinkWrite ;
+
+function genRefLink(dbid, id, key, textOfLink) {
+    if (140737488355327 & dbid != 0) {
+        if (typeof textOfLink === "undefined") {
+            if (sfxRefDisplay[dbid].substring(0,1) == "[") {
+                textOfLink = sfxRefDisplay[dbid];
+            } else {
+                textOfLink = "["+sfxRefDisplay[dbid]+"]";
+            }
+            // ToDo: move '[' and ']' to sfxRefDisplay (UPDATE: finish 
+changing sfxRefDisplays and remove this branch)
+        }
+        else{ textOfLink = unescape(textOfLink)};
+
+        if(document.disableRefLinkWrite == null){
+            document.write("<a class='ref' 
+href=\"javascript:popRefLink("+dbid+",'"+id+"','"+key+"')\">"+textOfLink+"<\/a>");
+
+        }
+    }
+}
+
+function disableRefLinkWrite () {
+    document.disableRefLinkWrite = true;
+}
+
+function popRefLink(dbid, id, key) {
+    var redirect = "/servlet/linkout?suffix=" + id + "&dbid=" + dbid + 
+"&doi=10.3732%2Fapps.1400032&key=" + key;
+    return newWindow(redirect);
+}
+function popRefFull(rid, citart, ptype, area) {
+    return popRefImplFull(rid, citart, ptype, area, 600, 500);
+}
+function popRefImplFull(rid, citart, ptype, area, width, height) {
+    var doi = "10.3732%2Fapps.1400032";
+    if (! ptype) { ptype = ""; }
+    var pt = rid.charAt(0) + "apps1400032" + ptype;
+    return popupFull(rid, doi, pt, area, width, height);
+}
+function popRef(rid, citart, ptype, area) {
+    return popRefImpl(rid, citart, ptype, area, 600, 500);
+}
+function popRef2(rid, citart, ptype, area) {
+    return popRefImpl(rid, citart, ptype, area, 400, 100);
+}
+function popRefImpl(rid, citart, ptype, area, width, height) {
+    var doi = "10.3732%2Fapps.1400032";
+    if (! citart) { citart = "citart1"; }
+    if (! ptype) { ptype = ""; }
+    var pt = rid.charAt(0) + "apps1400032" + ptype;
+    return popupRef(citart, rid, doi, pt, area, width, height);
+}
+
+
+
+function genCitingCrossref() {
+}
+
+var tollFreeLinking = new Object();
+
+var citLinkDisplay = {
+    
+    0:"SYSTEM",
+4:"SYSTEM",
+20:"SYSTEM",
+64:"ADS",
+32:"CAS",
+8192:"CIS",
+256:"CSA",
+16:"Crossref",
+128:"ISI",
+4096:"JSTOR",
+8:"MEDLINE"
+};
+var feeBasedMask = 4480;
+
+function genCitLink(dbid, suffix, key) {
+    if (dbid != anyDbId && (feeBasedMask & dbid) != 0 && 
+(140737488355327 & dbid) == 0) return;
+
+    var param = "/servlet/linkout?suffix=" + suffix + "&dbid=" + dbid + 
+"&doi=10.3732%2Fapps.1400032&key=" + key;
+    var display = citLinkDisplay[dbid];
+    var img = "/templates/jsp/_style2/_AP/_bioone/images/" + display + 
+"_btn.gif";
+
+
+    if((typeof tollFreeLinking) != "undefined" && tollFreeLinking[key])
+    {
+        param = param + "&tollfreelink=" + tollFreeLinking[key];
+    }
+
+
+    document.write("<a class='ref' href='javascript:newWindow(\"" + 
+param + "\")'>");
+    document.write("<" + "img src='"+img+"' width='85' height='20' 
+align='BOTTOM' alt='"+display+" Abstract' border='0'/>");
+    document.write("<\/a>");
+}
+// stop hiding -->
+</script>
+
+        <div id="contentLayout">
+            <div id="articleRhsWrapper">
+                <div id="allRightWrapper">
+                    <div id="articleRhs">
+                        <div id="articlePageHeaderWrapper">
+                            <div class="articlePageHeader">
+                                
+                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="breadcrumbs">
+
+
+    <a href="http://www.bioone.org/">Home</a>
+    / 
+    <a href="http://www.bioone.org/action/showPublications?type=byAlphabet">All Titles</a>
+    
+        / <span class="title">
+        
+                <a href="http://www.bioone.org/loi/apps">
+                    Applications in Plant Sciences
+                </a>
+            
+            </span>
+    
+        / <span class="title">
+        
+                <a href="http://www.bioone.org/toc/apps/2/8">
+                    Aug 2014
+                </a>
+            
+            </span>
+    
+        / <span class="title">
+        
+                1400032
+            
+            </span>
+    
+
+</div>
+
+
+
+<h1 class="pageTitleNoRule">Applications in Plant Sciences</h1>
+
+
+<h2 class="publishedBy">Published by: <a href="http://www.bioone.org/action/showPublisher?code=bots">Botanical Society of America</a></h2>
+
+
+
+
+
+
+
+
+
+                                    
+                            </div>
+                        </div>
+
+                        <div id="contentMainWrapper">
+                            <div id="contentMain">
+                                <div class="articleNav">
+                                    
+
+
+
+
+
+
+        
+            
+            
+                    <a href="http://www.bioone.org/doi/full/10.3732/apps.1400031" class="articleToolsNav">« previous article</a>
+                
+            <span class="navSearchColon"> : </span>
+            
+            
+            
+                    <a href="http://www.bioone.org/doi/full/10.3732/apps.1400030" class="articleToolsNav">next article »</a>
+                
+
+    
+
+                                </div>
+                                
+                                    
+
+
+<div class="gWidgetContainer"><div style="float:none"><div style="float:right"><div class="gWidget"><!-- placeholder id=null, description=Google Translator Widget --><div style="margin-left:10px;"><div id="google_translate_element"><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage" style="white-space: nowrap;" class="goog-te-gadget-simple"><img src="https://www.google.com/images/cleardot.gif" class="goog-te-gadget-icon" alt="" style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span style="vertical-align: middle;"><a aria-haspopup="true" class="goog-te-menu-value" href="javascript:void(0)"><span>Select Language</span><img src="https://www.google.com/images/cleardot.gif" alt="" width="1" height="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="https://www.google.com/images/cleardot.gif" alt="" width="1" height="1"><span style="color: rgb(118, 118, 118);" aria-hidden="true">▼</span></a></span></div></div></div><script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    multilanguagePage: true,
+    gaTrack: true,
+    gaId: 'UA-11995603-1',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script><script src="element.js"></script>
+<a style="color:grey; font-size:.75em;" href="http://www.bioone.org/action/clickThrough?id=1441&amp;url=%2Fpage%2FTranslation_Disclaimer&amp;loc=%2Fdoi%2F10.3732%2Fapps.1400032&amp;pubId=40499396&amp;placeholderId=1051&amp;productId=1198">translator disclaimer</a></div>
+</div></div></div></div>
+
+                                
+
+
+                                <!--TODO make the icon appear conditionally-->
+                                
+                                
+                                <div class="accessKey"> </div>
+                                <br>
+                                <br>
+                                
+                                        
+
+
+
+
+
+
+
+
+
+
+ 
+
+     
+    
+    
+    
+
+
+<p class="articleRef">
+Applications in Plant Sciences 2(8):1400032. 2014
+<br>
+
+	<a href="https://doi.org/10.3732/apps.1400032">https://doi.org/10.3732/apps.1400032</a>
+
+</p>
+
+
+                                    
+                                    <p class="fulltext"></p><!-- abstract content --><div class="hlFld-Title"><h5>Separating Morphologically Similar Pollen Types Using Basic Shape Features from Digital Images: A Preliminary Study</h5><div class="accessIcon1"><img src="access_free.gif" alt="open access" title="open access" class="accessIcon freeAccess"></div></div><div class="artAuthors"><div class="hlFld-ContribAuthor"><div id="authors"><div class="articleCitation"><div class="pop-over-container" id="pop-over-container-author1"><div role="dialog" aria-label="Author Details" class="pop-over" id="pop-over-author1"><label class="close">CLOSE</label><h3>Katherine A. Holt</h3><label> Institute of Agriculture and Environment, Massey University, Private Bag 11222, Palmerston North 4442, New Zealand</label><br><label>Correspondence: </label><a class="email" href="mailto:k.holt@massey.ac.nz"><span class="nobrWithWbr">k.<wbr xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">holt@massey.<wbr xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ac.<wbr xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">nz</span></a><br></div><a href="#" id="author1">Katherine A. Holt</a></div><label class="articleCitation"> and </label><div class="pop-over-container" id="pop-over-container-author2"><div role="dialog" aria-label="Author Details" class="pop-over" id="pop-over-author2"><label class="close">CLOSE</label><h3>Mark S. Bebbington</h3><label> Institute of Agriculture and Environment, Massey University, Private Bag 11222, Palmerston North 4442, New Zealand</label><br></div><a href="#" id="author2">Mark S. Bebbington</a></div><label class="articleCitation"></label></div></div><div id="artPermissions"><p class="articleCitation epubDate"><strong>Received: </strong>March 30, 2014; <strong>Accepted: </strong>July 22, 2014</p>; <p class="articleCitation epubDate"><strong>Published: </strong>August 18, 2014</p></div><div id="artToggle" class="articleInfoComponent"><a id="aTag" aria-expanded="false" aria-controls="artToggle">[+] Author &amp; Article Info</a></div><div id="articleInfo"><div id="authorAffliations" role="region"><div class="sectionRule"></div><h3 class="abstractTitle"><strong>Author Affiliation</strong></h3><div name="authorAffiliation"><p class="articleCitation" name="authorName">Katherine A. Holt</p><p class="articleCitationIndent1" name="orcid"></p><p class="articleCitationIndent1" name="affiliation"> Institute of Agriculture and Environment, Massey University, Private Bag 11222, Palmerston North 4442, New Zealand</p><p class="articleCitationIndent1" name="corresp">
+                            Author for correspondence:
+                            <a class="email" href="mailto:k.holt@massey.ac.nz"><span class="nobrWithWbr">k.<wbr xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">holt@massey.<wbr xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ac.<wbr xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">nz</span></a></p></div><div name="authorAffiliation"><p class="articleCitation" name="authorName">Mark S. Bebbington</p><p class="articleCitationIndent1" name="orcid"></p><p class="articleCitationIndent1" name="affiliation"> Institute of Agriculture and Environment, Massey University, Private Bag 11222, Palmerston North 4442, New Zealand</p></div><p class="articleCitation lastElement"></p><p class="articleCitationIndent1"><a name="fn02"></a>
+ © 2014 Holt and Bebbington. Published by the Botanical Society of 
+America. This work is licensed under a Creative Commons Attribution 
+License (CC-BY-NC-SA). </p><p></p></div></div></div></div><div class="articleContent"><div class="hlFld-Abstract"><div class="articleAbstractBox"><div class="abstractSection abstractInFull"> <h3 class="abstractTitle"></h3> <ul><li> <p class="inline"> <i>Premise of the study:</i>
+ One of the many advantages offered by automated palynology systems is 
+the ability to vastly increase the number of observations made on a 
+particular sample or samples. This is of particular benefit when 
+attempting to fully quantify the degree of variation within or between 
+closely related pollen types.</p> </li><li> <p class="inline"> <i>Methods:</i>
+ An automated palynology system (Classifynder) has been used to further 
+investigate the variation in pollen morphology between two New Zealand 
+species of Myrtaceae (<i>Leptospermum scoparium</i> and <i>Kunzea ericoides</i>)
+ that are of significance in the New Zealand honey industry. Seven 
+geometric features extracted from automatically gathered digital images 
+were used to characterize the range of shape and size of the two taxa, 
+and to examine the extent of previously reported overlap in these 
+variables.</p> </li><li> <p class="inline"> <i>Results:</i> Our results 
+indicate a degree of overlap in all cases. The narrowest overlap was in 
+measurements of maximum Feret diameter (MFD) in grains oriented in polar
+ view. Multivariate statistical analysis using all seven factors 
+provided the most robust discrimination between the two types.</p> </li><li> <p class="inline"> <i>Discussion:</i>
+ Further work is required before this approach could be routinely 
+applied to separating the two pollen types used in this study, most 
+notably the development of comprehensive reference distributions for the
+ types in question.</p> </li></ul> </div></div><div class="articleKeywords"><div class="hlFld-KeywordText"><p class="articleCitation"><span class="keywordsLabel">Keywords: </span><a href="http://www.bioone.org/keyword/Automated%20Palynology">automated palynology</a>, <a href="http://www.bioone.org/keyword/Classifynder">Classifynder</a>, <a href="http://www.bioone.org/keyword/Geometric%20Features">geometric features</a>, <a href="http://www.bioone.org/keyword/Kunzea%20Ericoides"><i>Kunzea ericoides</i></a>, <a href="http://www.bioone.org/keyword/Leptospermum%20Scoparium"><i>Leptospermum scoparium</i></a>, <a href="http://www.bioone.org/keyword/Myrtaceae">Myrtaceae</a>, <a href="http://www.bioone.org/keyword/Pollen%20Morphology">pollen morphology</a></p></div></div></div><!-- /abstract content --><div class="hlFld-Fulltext"><!-- fulltext content --><div class="articleDivider"></div><div id="sec1" class="NLM_sec NLM_sec_level_1"> <a name="_i4"><!-- title --></a><br clear="right"><h6></h6> <p>Interpretation
+ of palynological data is often limited by taxonomic resolution. 
+Numerous examples exist of genera or even whole families where minimal 
+morphological variation precludes distinguishing pollen of individual 
+taxa from one another, resulting in all types being lumped together into
+ one class. This confounds accurate interpretation of pollen spectra (<a onclick="popRef2('bibr04','','','' ); return false;" href="javascript:void(0);" class="ref">Birks and Birks, 2000</a>; <a onclick="popRef2('bibr27','','','' ); return false;" href="javascript:void(0);" class="ref">Punyasena et al., 2012</a>).
+ Recent advances in imaging technology and analysis have led to some 
+progress in differentiating between notorious problem types (e.g., <a onclick="popRef2('bibr30','','','' ); return false;" href="javascript:void(0);" class="ref">Sivaguru et al., 2012</a>; <a onclick="popRef2('bibr16','','','' ); return false;" href="javascript:void(0);" class="ref">Mander et al., 2013</a>).
+ However, it is likely that in many cases, even if differences between 
+two (or more) closely related taxa can be identified, there remains a 
+degree of overlap that prevents firm classification of every grain. 
+Furthermore, in the majority of pollen morphology studies that have been
+ undertaken both recently and throughout the history of the discipline, 
+keys and criteria for differentiation are typically based on a 
+relatively limited number of observations on pollen grains from a 
+similarly limited number of individuals. This is an extremely small 
+sample of a population that is typically in the order of thousands of 
+pollen grains per flower, thousands of flowers per individual, and 
+thousands to millions of individuals per species. This of course results
+ from the practical limitations associated with manually measuring 
+individual grains on a microscope and/or microscope imagery. In cases 
+where differentiation is particularly important, attempts have been made
+ to more comprehensively investigate the range in overlap (in features 
+such as size, surface texture, and pore number), followed by application
+ of various statistical techniques to fit distributions of these 
+parameters of a sample of unknown composition to determine the 
+contribution from each of the closely related taxa (e.g., <a onclick="popRef2('bibr11','','','' ); return false;" href="javascript:void(0);" class="ref">Hansen and Cushing, 1973</a>; <a onclick="popRef2('bibr09','','','' ); return false;" href="javascript:void(0);" class="ref">Gordon and Prentice, 1977</a>).
+ However, the requirement for large numbers of measurements on many 
+pollen grains makes these studies extremely time consuming, and 
+therefore seldom performed (<a onclick="popRef2('bibr03','','','' ); return false;" href="javascript:void(0);" class="ref">Birks and Birks, 1980</a>).</p> <p>Advances
+ in digital imaging technology, image processing, and computer power are
+ increasingly being harnessed for palynological research (<a onclick="popRef2('bibr15','','','' ); return false;" href="javascript:void(0);" class="ref">Holt and Bennett, 2014</a>).
+ Their potential for application in the types of studies described above
+ is obvious. At the most basic level, they can be employed to generate 
+the large data sets of observations and measurements needed for accurate
+ assessment of the existence and scope of overlap between taxa. Ideally,
+ they can provide automated identification of individual pollen grains 
+(with associated probabilities). This paper presents a pilot study 
+example illustrating the former application, using an existing automated
+ palynology system on a pollen differentiation problem relevant to the 
+New Zealand honey industry.</p> <p>The pollen of the Myrtaceae family are generally regarded as challenging to distinguish on the basis of morphology (<a onclick="popRef2('bibr05','','','' ); return false;" href="javascript:void(0);" class="ref">Erdtman, 1952</a>; <a onclick="popRef2('bibr25','','','' ); return false;" href="javascript:void(0);" class="ref">Pike, 1956</a>; <a onclick="popRef2('bibr17','','','' ); return false;" href="javascript:void(0);" class="ref">McIntyre, 1963</a>). Among the members of this family present in New Zealand are <i>Leptospermum scoparium</i> J. R. Forst. &amp; G. Forst, and <i>Kunzea ericoides</i> (A. Rich.) Joy Thomps. (formerly <i>L. ericoides</i>
+ A. Rich.). These two taxa are of particular significance because of 
+their nectar contribution to honey. Honey derived from the nectar of <i>L. scoparium</i> (manuka) attracts a premium price because of its purported health benefits (<a onclick="popRef2('bibr29','','','' ); return false;" href="javascript:void(0);" class="ref">Russell et al., 1990</a>; <a onclick="popRef2('bibr01','','','' ); return false;" href="javascript:void(0);" class="ref">Allen et al., 1991</a>), while honey derived from <i>Kunzea</i> (kanuka) is generally regarded as less beneficial (but see recent work by <a onclick="popRef2('bibr08','','','' ); return false;" href="javascript:void(0);" class="ref">Gannabathula et al., 2012</a>). Melissopalynological analysis is routinely applied in determining the floral origins of honey (<a onclick="popRef2('bibr24','','','' ); return false;" href="javascript:void(0);" class="ref">Petersen and Bryant, 2011</a>);
+ however, its application to manuka honey is somewhat limited because of
+ the similarity in these two key pollen types. At present, pollen 
+analyses can only give the proportion of grains that are the 
+“manuka/kanuka type,” and this value must be above a certain percentage 
+to be accepted for the honey to be considered manuka (<a onclick="popRef2('bibr20','','','' ); return false;" href="javascript:void(0);" class="ref">Moar, 1985</a>; <a onclick="popRef2('bibr18','','','' ); return false;" href="javascript:void(0);" class="ref">Mildenhall and Tremain, 2005</a>). In many cases, however, much of these grains may, in fact, be of <i>Kunzea</i>
+ (kanuka). Chemical tests are often employed for validating claims of 
+manuka honey authenticity, but these also have demonstrated limitations (<a onclick="popRef2('bibr19','','','' ); return false;" href="javascript:void(0);" class="ref">Ministry for Primary Industries, 2013</a>). Therefore, the ability to better separate these two pollen types is highly desirable.</p> <p>Previous studies on pollen of New Zealand <i>L. scoparium</i> and <i>K. ericoides</i> (<a onclick="popRef2('bibr17','','','' ); return false;" href="javascript:void(0);" class="ref">McIntyre, 1963</a>; <a onclick="popRef2('bibr12','','','' ); return false;" href="javascript:void(0);" class="ref">Harris et al., 1992</a>; <a onclick="popRef2('bibr21','','','' ); return false;" href="javascript:void(0);" class="ref">Moar, 1993</a>)
+ report very little morphological variation between the two taxa. Both 
+are monad, isopolar, angulaperturate, syncolpate, tectate with tectum 
+smooth or faintly regulate, triangular in shape in polar view, and amb 
+concave to convex (<a onclick="popRef2('bibr21','','','' ); return false;" href="javascript:void(0);" class="ref">Moar, 1993</a>). A slight difference in overall size has been observed, with grains of <i>L. scoparium</i> generally being larger than <i>K. ericoides</i>, but with some degree of overlap in the size ranges. Also, shape in equatorial view varies slightly, with <i>L. scoparium</i> oblate and <i>K. ericoides</i> oblate to peroblate (for definitions of pollen morphology terminology, see <a onclick="popRef2('bibr26','','','' ); return false;" href="javascript:void(0);" class="ref">Punt et al., 2007</a>). Overall, they are regarded as indistinguishable (<a onclick="popRef2('bibr22','','','' ); return false;" href="javascript:void(0);" class="ref">Moar et al., 2011</a>).</p> <p>Following
+ the point made earlier, these studies are based on a relatively limited
+ number of observations. For example, McIntyre (<a onclick="popRef2('bibr17','','','' ); return false;" href="javascript:void(0);" class="ref">1963</a>) used between 10 and 50 observations, and Moar (<a onclick="popRef2('bibr21','','','' ); return false;" href="javascript:void(0);" class="ref">1993</a>)
+ even fewer. Therefore, we lack an appreciation of the true range of 
+this size difference. More comprehensive characterization of shape and 
+size parameters through examining a much larger sample size of both 
+individual plants and pollen grains is required if maximum potential for
+ differentiating between the two types is to be realized. To demonstrate
+ the latter aspect (large volume of grains), a Classifynder automated 
+palynology system (see <a class="ext-link" href="http://www.classifynder.com/" target="_blank">www.classifynder.com</a>, and <a onclick="popRef2('bibr14','','','' ); return false;" href="javascript:void(0);" class="ref">Holt et al., 2011</a>) was used to collect a large number of images of pollen grains from two individuals each of <i>L. scoparium</i> and <i>K. ericoides.</i>
+ From these images, values of several geometrical parameters were 
+automatically extracted and used as measurements of shape and size. 
+These parameters are common to image processing, but not to traditional 
+pollen morphology. They may therefore offer new opportunities for 
+classification, where other standard palynological features (such as 
+aperture number, surface texture, and polar axis length) have proved 
+redundant for these types. The equivalent data were also collected from 
+one sample of manuka honey and compared with the data from the plant 
+pollen in an effort to illustrate what proportion of the pollen likely 
+came from either species.</p> <p>It should be acknowledged that size is 
+regarded by many as the least reliable morphological parameter of pollen
+ grains, due to the demonstrated potential for variation with age and 
+laboratory treatment methods (<a onclick="popRef2('bibr28','','','' ); return false;" href="javascript:void(0);" class="ref">Reitsma, 1969</a>; <a onclick="popRef2('bibr06','','','' ); return false;" href="javascript:void(0);" class="ref">Faegri et al., 1989</a>; <a onclick="popRef2('bibr07','','','' ); return false;" href="javascript:void(0);" class="ref">Flenley, 2003</a>).
+ However, it is apparently the only parameter with any potential for 
+variation available to test in this case. All attempts have been made to
+ minimize any change in size resulting from laboratory treatments, and 
+where relevant, other causes of size change have been addressed.</p> <p>At
+ this point, it is necessary to address the rather obvious question: why
+ not simply use the Classifynder's classifier to distinguish the two 
+types? The answer to this is that a key aim of the paper is to 
+illustrate an alternate application of the Classifynder, i.e., as a tool
+ for investigating pollen morphology, as opposed to just counting and 
+classifying. This work is essentially only harnessing the automated 
+pollen detection and imaging capability of the Classifynder for 
+automatic generation of large data sets.</p> <p class="last">In cases 
+such as this (i.e., manuka vs. kanuka), such studies into basic 
+morphology will likely prove to be crucial to accurate automatic 
+classification. The training files that are the basis for artificial 
+classifiers must be truly representative of the taxa they are trying to 
+classify if there is to be any hope for accuracy. In many cases, pollen 
+morphology is known to vary within a species, and therefore the range of
+ this variation must be understood to ensure that it is adequately 
+captured in the training set. This may require examining pollen from 
+many individuals across the full geographical and ecological range of a 
+taxon (<a onclick="popRef2('bibr09','','','' ); return false;" href="javascript:void(0);" class="ref">Gordon and Prentice, 1977</a>).
+ Application of automated technology for image capture and making 
+measurements will make such a large task much more achievable than with 
+manual methods.</p> </div><div id="sec2" class="NLM_sec NLM_sec_level_1"> <a name="_i5"><!-- title --></a><br clear="right"><h6>MATERIALS AND METHODS</h6> <p> <b><i>Pollen collection and preparation</i></b>—Pollen was collected from mature anthers of two individuals of <i>L. scoparium</i> and <i>K. ericoides</i>
+ (from here on referred to by their common names, manuka and kanuka, 
+respectively), and from one sample of monofloral manuka honey. The honey
+ sample contains &gt;70% manuka/kanuka-type pollen, as determined by 
+conventional honey pollen analysis, qualifying it as monofloral, based 
+on the guidelines of Moar (<a onclick="popRef2('bibr20','','','' ); return false;" href="javascript:void(0);" class="ref">1985</a>).
+ It was also regarded as manuka based on organoleptic properties and on 
+apiarist knowledge of location and timing of nectar collection. The 
+pollen was acetolyzed, suspended in silicone oil, and mounted on glass 
+slides. Acetolysis and silicone oil were used because this combination 
+produces optimum images on the Classifynder. The process of acetolysis 
+is known to alter the size of pollen grains (<a onclick="popRef2('bibr28','','','' ); return false;" href="javascript:void(0);" class="ref">Reitsma, 1969</a>; <a onclick="popRef2('bibr06','','','' ); return false;" href="javascript:void(0);" class="ref">Faegri et al., 1989</a>),
+ but it is assumed that the degree of such alteration will be consistent
+ across all samples. In addition, with respect to size, pollen grains 
+mounted in silicone oil are more stable through time than glycerine 
+jelly mounts (<a onclick="popRef2('bibr02','','','' ); return false;" href="javascript:void(0);" class="ref">Andersen, 1960</a>). The slides were placed on a Classifynder, which automatically locates and images all pollen grains present on the slide (see <a onclick="popRef2('bibr14','','','' ); return false;" href="javascript:void(0);" class="ref">Holt et al., 2011</a>
+ for further explanation of Classifynder operation). Images of pollen 
+grains oriented in polar and equatorial views were manually extracted 
+from the image set produced by the Classifynder (<a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f01" target="articlePopup">Fig. 1</a>).
+ Five hundred images of each view per individual were obtained for 
+analysis. Effort was made to ensure that minimal time elapsed between 
+sample preparation and scanning/image gathering to minimize changes in 
+pollen size, which may have occurred with time (<a onclick="popRef2('bibr09','','','' ); return false;" href="javascript:void(0);" class="ref">Gordon and Prentice, 1977</a>).</p> <p> <b><i>Size and shape measurements</i></b>—Pollen
+ size is captured through two different measurements: the area of the 
+pollen grain, and maximum Feret diameter (MFD). The value for area is 
+determined from the number of pixels in the pollen image, converted to 
+µm<sup>2</sup>. MFD is defined as the length of the line segment joining
+ the two points on the perimeter of the particle (pollen) that are 
+farthest away from each other.</p> <p>Measurements of shape used include (all definitions follow those given by <a onclick="popRef2('bibr23','','','' ); return false;" href="javascript:void(0);" class="ref">National Instruments, 2000</a>):</p> <ul class="NLM_list-list_type-simple"> <li class="IN_LIST-title"><a name="_i6"><!-- title --></a><br clear="right"><h6></h6></li> <li> <p class="inline">Elongation
+ factor = the maximum Feret diameter divided by the length of the 
+shortest side of a rectangle surrounding the particle.</p> </li> <li> <p class="inline">Compactness
+ factor = the area of the particle divided by the product of the width 
+and the height of a rectangle surrounding the particle.</p> </li> <li> <p class="inline">Convex
+ hull = the area of the smallest convex polygon containing all points in
+ the particle, divided by the area of the particle.</p> </li> <li> <p class="inline">Heywood
+ circularity factor = the length of the perimeter of the particle 
+divided by the circumference of a circle with the same area as the 
+particle.</p> </li> <li> <p class="inline">Hydraulic radius = the particle area divided by the particle perimeter.</p> </li> </ul> <div class="articleDivider"></div><div class="articleAbstractBox"><a name="f01"><!-- FIG --></a><div class="articleImage"><div><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f01" target="articlePopup"><img src="f01_01.gif" alt="Table thumbnail" style="background-color: rgb(102, 102, 102);" align="bottom" border="1"><div class="imageCaption">enlarge figure</div></a></div></div> <p class="first last"><span class="captionLabel">Fig. 1. </span> Examples of the Classifynder-generated images used in the study. (A–C) <i>Leptospermum scoparium</i>, equatorially oriented images; (D–F) <i>L. scoparium,</i> polar-oriented images; (G–I) <i>Kunzea ericoides,</i> equatorially oriented images; (J–L) <i>K. ericoides</i>, polar-oriented images.</p> </div><div class="articleDivider"></div> <p>Values
+ for all seven features are automatically calculated by the Classifynder
+ software during image capture and tagged to each image as metadata. The
+ metadata are then exported to a spreadsheet file. The data for the five
+ samples (four plants, one honey) are compared through descriptive 
+statistics and frequency distributions (<a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=t01" target="articlePopup">Table 1</a>, <a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f02" target="articlePopup">Fig. 2</a>).
+ Bivariate plots for all possible combinations of the seven features 
+were also created for both views to identify any combinations that may 
+prove definitive (<a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f03" target="articlePopup">Fig. 3</a>).</p> <div class="articleDivider"></div><div class="articleAbstractBox"><a name="t01"><!-- FIG --></a><div class="articleImage"><div><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=t01"><img src="dummy_table_thumb.gif" alt="table"></a></div></div><div class="caption"><span class="short-legend"> <p class="first last"><span class="captionLabel"> <span class="smallcaps smallerCapital">Table</span> 1. </span> Minimum, maximum, mean, and standard deviation (SD) values for each of the seven parameters measured.</p> </span></div></div><div class="articleDivider"></div> <p>These
+ basic, relatively qualitative analyses are followed with a formal 
+analysis of the data using suitable statistical machine-learning 
+methods, specifically multivariate versions of linear discriminant 
+analysis, logistic regression classification, and a nonparametric 
+(kernel-density estimate) naive Bayes classifier. These were performed 
+as follows.</p> <div class="articleDivider"></div><div class="articleAbstractBox"><a name="f02"><!-- FIG --></a><div class="articleImage"><div><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f02" target="articlePopup"><img src="f02_01.gif" alt="Table thumbnail" style="background-color: rgb(102, 102, 102);" align="bottom" border="1"><div class="imageCaption">enlarge figure</div></a></div></div> <p class="first last"><span class="captionLabel">Fig. 2. </span>
+ Relative frequency distribution data for area and maximum Feret 
+diameter (MFD) for the four plant samples. (A) Area, equatorial view; 
+(B) MFD, equatorial view; (C) area, polar view; (D) MFD, polar view.</p> </div><div class="articleDivider"></div> <p>The seven characteristics of the <i>i</i>th grain are denoted as the vector <i>x<sup>i</sup></i>, and the class (kanuka = 0, manuka = 1) as the scalar <i>y<sup>i</sup></i>. Linear discriminant analysis fits two multivariate Gaussian distributions to the <i>x<sup>i</sup></i>, one, with density <i>ƒ</i><sub>1</sub>(<i>x</i>), to the points with <i>y<sup>i</sup></i> = 1, and the other, <i>ƒ</i><sub>0</sub>(<i>x</i>) to the points with <i>y<sup>i</sup></i> = 0. A point x<sup>0</sup> of unknown class is then classified as class 1 if <i>ƒ</i><sub>1</sub>(<i>x<sup>0</sup></i>) &gt; <i>ƒ</i><sub>0</sub>(<i>x<sup>0</sup></i>), as class 0 otherwise. Logistic regression fits the linear regression model</p> <table class="formula" style="width:100%;vertical-align:middle" id="e01" cellspacing="0" cellpadding="0" align="center" border="0"><tbody><tr><td align="center" width="90%"><img src="e01_01.gif" alt="" id="_i10"></td></tr></tbody></table> <p>where <i>p</i> is the probability that the point <i>x</i>
+ belongs to class 1. Finally, the naive Bayes classifier assumes that 
+the characteristics are independent, and thus that the multivariate 
+density is the product of the univariate densities. The latter can then 
+be estimated nonparametrically using kernel-density estimation. See 
+Hastie et al. (<a onclick="popRef2('bibr13','','','' ); return false;" href="javascript:void(0);" class="ref">2009</a>) for more details on the three methods.</p> <p class="last">As
+ the samples K1 and K2 were indistinguishable (see Results), they were 
+pooled to give a single sample for kanuka pollen, henceforth referred to
+ as sample K. However, the manuka samples M1 and M2 differed 
+significantly, and hence the analysis was performed three times—once 
+with each sample, and once with the pooled sample. In each case or 
+method, an error rate for classifying the two (kanuka/manuka) samples 
+was calculated, and the fitted classifier was then applied to the honey 
+data to estimate the proportion of manuka. The analyses were performed 
+separately for polar- and equatorial-oriented images.</p> </div><div id="sec3" class="NLM_sec NLM_sec_level_1"> <a name="_i11"><!-- title --></a><br clear="right"><h6>RESULTS</h6> <p>Frequency
+ distributions of area and MFD for both polar and equatorial views show 
+close similarity in distribution for the two samples of kanuka, but 
+significant differences exist between the two samples of manuka (<a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f02" target="articlePopup">Fig. 2</a>).
+ Grains of sample M1 are similar in size and overlap significantly with 
+K1 and K2, while grains of sample M2 are larger, with much less overlap 
+with K1 and K2. Distributions for MFD of polar-oriented images show the 
+narrowest range of overlap between the two taxa (<a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f02" target="articlePopup">Fig. 2D</a>). Here, the frequency distributions for samples K1 and K2 are virtually identical.</p> <p>Frequency
+ distributions of the other shape parameters (not shown graphically) 
+presented considerable overlap between both taxa in all cases. However, 
+combining pairs of parameters in bivariate plots has shown some 
+potential for differentiation (<a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f03" target="articlePopup">Fig. 3</a>).
+ Again, the greatest degree of separation was achieved on the 
+polar-oriented images. Effective combinations were between Heywood 
+circularity factor, hydraulic radius, and MFD. No combination proved 
+useful for equatorially oriented images.</p> <p><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f04" target="articlePopup">Figure 4</a>
+ shows the frequency distribution of the manuka/kanuka-type grains from 
+the honey sample against the frequency distribution for the kanuka and 
+manuka plant pollen samples, which have now been combined. If it is 
+assumed that these frequency distributions are representative of the 
+full range of the taxa (which is unlikely, see later discussion), then 
+these data can be taken as an indication of what proportion of the 
+manuka/kanuka-type grains from the honey sample are actually manuka 
+grains, which are kanuka, and which could be from either type. 
+Similarly, plotting the honey grain values over the bivariate plots (<a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f05" target="articlePopup">Fig. 5</a>)
+ also provides a visual indication of what proportion of the grains are 
+likely to actually be manuka. Such a graphical illustration is not 
+easily achieved with the multivariate analyses.</p> <div class="articleDivider"></div><div class="articleAbstractBox"><a name="f03"><!-- FIG --></a><div class="articleImage"><div><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f03" target="articlePopup"><img src="f03_01.gif" alt="Table thumbnail" style="background-color: rgb(102, 102, 102);" align="bottom" border="1"><div class="imageCaption">enlarge figure</div></a></div></div> <p class="first last"><span class="captionLabel">Fig. 3. </span>
+ Biplots of Heywood circularity factor (HCF), maximum Feret diameter 
+(MFD), and hydraulic radius (HR) for polar-oriented images. (A) HCF vs. 
+MFD, (B) HR vs. MFD, (C) HCF vs. HR.</p> </div><div class="articleDivider"></div> <p>Results of the multivariate statistical analyses are presented in <a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=t02" target="articlePopup">Table 2</a>.
+ As was the case for the frequency distributions and biplots, the 
+polar-oriented images provide far better discrimination. The 
+equatorial-oriented images appear to be particularly sensitive to the 
+difference in the manuka samples; the error rates appear to be a 
+reflection of the overlap in the size distributions between sample M1 
+and samples K1 and K2, and the difference between M2 and the kanuka 
+samples. Hence, the classifier appears to be working mainly on size, 
+which is undesirable.</p> <p>In contrast, when using the polar-oriented 
+images, there is less discrepancy between the error rates for the 
+different manuka samples. In fact, the size-concordant samples are 
+better classified than the size-discordant ones, but all of the error 
+rates are better.</p> <p class="last">The error rates, and indeed the 
+estimated proportion of the honey pollen that is manuka, differ little 
+from classifier to classifier. In combining the manuka samples, the 
+linear discriminant analysis fits a single Gaussian distribution to the 
+combined sample, in effect treating the two samples as taken from a 
+Gaussian superpopulation. In contrast, the naive Bayes classifier uses a
+ kernel-density estimate, thus preserving the multimodal nature of the 
+data. However, both linear discriminant analysis and the naive Bayes 
+classifier estimate the honey pollen to be 96% manuka, which we can thus
+ consider to be a robust result. Logistic regression produces an 
+estimate between the two, but with a slightly lower error rate, and may 
+thus be the best classifier.</p> </div><div id="sec4" class="NLM_sec NLM_sec_level_1"> <a name="_i13"><!-- title --></a><br clear="right"><h6>DISCUSSION</h6> <p>This
+ preliminary study has demonstrated potential for using some basic size 
+and shape features extracted from automatically collected digital images
+ to build a model to aid in classification of <i>L. scoparium</i> (manuka) and <i>K. ericoides</i>
+ (kanuka) pollen, which differ only in shape and/or size. The single 
+factor that gave the apparent best discrimination between the two taxa 
+was from MFD measured in polar-oriented images. Combinations of MFD, 
+Heywood circularity factor, and hydraulic radius were also useful, but 
+again only in polar-oriented images. Likewise, multivariate 
+classifications based on polar-oriented images delivered the lowest 
+error rates. Measurements made in polar orientation may be more 
+discriminative because Heywood circularity factor and hydraulic radius 
+are both essentially measures of circularity. Therefore, variation in 
+these is likely to indicate variation in amb shape between the pollen 
+types, which can only be effectively captured in polar-oriented images. 
+MFD is also likely to be affected by amb shape. In grains with a concave
+ amb, MFD will most likely lie between two pores/corners of the grain, 
+while in grains with a straight to convex amb, MFD would potentially lie
+ between a pore and the crest of the limb opposite. Previous research 
+has reported variation in shape in equatorial view, with <i>L. scoparium</i> oblate, and <i>K. ericoides</i> oblate to peroblate (<a onclick="popRef2('bibr21','','','' ); return false;" href="javascript:void(0);" class="ref">Moar, 1993</a>). This variation has not been clearly captured in the data for equatorial images, suggesting it is not significant.</p> <div class="articleDivider"></div><div class="articleAbstractBox"><a name="f04"><!-- FIG --></a><div class="articleImage"><div><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f04" target="articlePopup"><img src="f04_01.gif" alt="Table thumbnail" style="background-color: rgb(102, 102, 102);" align="bottom" border="1"><div class="imageCaption">enlarge figure</div></a></div></div> <p class="first last"><span class="captionLabel">Fig. 4. </span>
+ Relative frequency distribution data for area and maximum Feret 
+diameter (MFD). Distributions for the two individuals of each taxa have 
+been combined to produce a single distribution, and data for the honey 
+sample have been added. (A) Area, equatorial view; (B) MFD, equatorial 
+view; (C) area, polar view; (D) MFD, polar view.</p> </div><div class="articleDivider"></div> <p>With
+ respect to the honey sample, the frequency distributions for area and 
+MFD values of the manuka/kanuka-type grains overlapped with the 
+distribution of the two <i>L. scoparium</i> samples, in particular that of sample M2 (<a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f04" target="articlePopup">Fig. 4</a>). Without any further statistical considerations, these results indicate that 40–80% of the pollen grains are from <i>L. scoparium</i>, and the bulk of the remainder from either <i>K. ericoides</i> or <i>L. scoparium.</i>
+ These values have been obtained by taking the proportions of grains 
+that occur within the portion of the distribution exclusive to <i>L. scoparium.</i>
+ If it is assumed that MFD of polar-oriented images is the most 
+discriminate feature, then around 80% of the grains appear to be of <i>L. scoparium.</i> When the manuka/kanuka-type grains are added to the biplot combinations (<a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f05" target="articlePopup">Fig. 5</a>), a similar pattern emerges, in that the bulk of the grains plot in the general field defined by the two <i>L. scoparium</i>
+ samples. However, rather than being spread evenly over this field, the 
+data points fall in the region between the M1 and M2 samples.</p> <p>Comparing
+ the frequency distribution of the manuka/kanuka-type pollen grains 
+against that of the plant pollen samples is an extremely simplistic 
+approach. However, it does provide a graphical indication of which taxon
+ the bulk of the grains are most likely derived from. Such an approach 
+is obviously not new (e.g., <a onclick="popRef2('bibr10','','','' ); return false;" href="javascript:void(0);" class="ref">Hansen, 1947</a>), and also involves some significant assumptions about the distributions and limits of the data (<a onclick="popRef2('bibr09','','','' ); return false;" href="javascript:void(0);" class="ref">Gordon and Prentice, 1977</a>).
+ However, the ability to obtain and compare quantitative data from such a
+ large number of observations is virtually impossible in routine honey 
+pollen analysis, and therefore still offers some advantages to the 
+status quo.</p> <p>Subjecting the data to the statistical analyses 
+yields a numerical value for the manuka/kanuka composition of the sample
+ of ∼96% for all three classifiers, with error rates comparable (3–4%) 
+across the three classifiers. Agreement between the three classifiers 
+lends confidence to the accuracy of this value. This in turn implies 
+that the values obtained from the single parameter and bivariate 
+analyses are underestimating the proportion of <i>L. scoparium</i> 
+grains in the sample. As mentioned earlier, this is a pilot study into 
+further clarifying the size and shape variation between two 
+morphologically similar taxa using automatically generated imagery, and 
+testing the usefulness of selected geometric parameters in 
+distinguishing the pollen types. Obviously, this has involved a number 
+of assumptions, the most significant being:</p> <ul class="NLM_list-list_type-simple"> <li class="IN_LIST-title"><a name="_i15"><!-- title --></a><br clear="right"><h6></h6></li> <li> <p class="inline">The four plant samples are representative.</p> </li> <li> <p class="inline">The
+ subset of images used (i.e., only polar and equatorial views) are 
+representative of the range of shape and size of the pollen in the 
+samples.</p> </li> <li> <p class="inline">Results are not biased by 
+changes in pollen shape or size during and after laboratory processing, 
+or by different origins (plant vs. honey).</p> </li> </ul> <div class="articleDivider"></div><div class="articleAbstractBox"><a name="f05"><!-- FIG --></a><div class="articleImage"><div><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f05" target="articlePopup"><img src="f05_01.gif" alt="Table thumbnail" style="background-color: rgb(102, 102, 102);" align="bottom" border="1"><div class="imageCaption">enlarge figure</div></a></div></div> <p class="first last"><span class="captionLabel">Fig. 5. </span>
+ Biplots of Heywood circularity factor (HCF), maximum Feret diameter 
+(MFD), and hydraulic radius (HR) for polar-oriented images. Data for the
+ two individuals of each taxa have been combined to produce a single 
+distribution, and data for the honey sample have been added. (A) HCF vs.
+ MFD, (B) HR vs. MFD, (C) HCF vs. HR.</p> </div><div class="articleDivider"></div> <p>With
+ respect to the first assumption, it is highly unlikely that this is the
+ case. The four individuals used here are far from satisfactory; they 
+were simply what was on hand at the time the pilot was conceived (which 
+fell outside of the flowering period of the two taxa). The fact that up 
+to ∼2% of the manuka/kanuka-type grains from the honey sample fall 
+outside the size range (i.e., area and MFD) of the four plant samples (<a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f04" target="articlePopup">Fig. 4</a>) is evidence that the existing data set does not fully capture the range of the two taxa. The difference between the two <i>L. scoparium</i>
+ samples in nearly all parameters measured is further indication that 
+there may be considerable variability in this taxon. Before this 
+technique can be applied to more conclusively assess the composition of 
+manuka/kanuka-type pollen in honey samples (or other types of samples, 
+for that matter), comprehensive reference distributions must be defined.</p> <p>Obtaining
+ the material to build these distributions will require repeating the 
+analyses described above on a collection of individuals that represent 
+the full geographical and ecological range of the taxon (<a onclick="popRef2('bibr09','','','' ); return false;" href="javascript:void(0);" class="ref">Gordon and Prentice, 1977</a>). Building representative distributions will be further complicated by the fact that <i>Leptospermum</i> and <i>Kunzea</i> are capable of hybridizing (<a onclick="popRef2('bibr12','','','' ); return false;" href="javascript:void(0);" class="ref">Harris et al., 1992</a>), and that there are numerous undescribed species in the <i>Kunzea</i>
+ genus in New Zealand. Repeat sampling of the same individuals in 
+different years may also be needed to capture year-to-year variation in 
+pollen shape and size resulting from different growing conditions (e.g.,
+ effects of drought). This is a challenging task, but again is made more
+ achievable through the application of automated systems to gather the 
+data needed.</p> <p>The second assumption is important because, in this 
+case, the subset of 1000 grains of the correct orientations represents 
+only 5–10% of the total number of grains imaged in each sample. The 
+techniques applied in this paper cannot be applied to images of 
+manuka/kanuka-type grains in any orientation, as this just produces a 
+continuum of values. To apply the results to the whole sample requires 
+that this subset is representative of the full sample. Bias could be 
+expected if pollen size or shape influenced the final orientation of the
+ grain on the slide. This is likely to occur in very large or 
+irregularly shaped pollen grains (e.g., saccate grains such as <i>Pinus, Abies</i>, etc.) but not in smaller grains like those of <i>K. ericoides</i> and <i>L. scoparium.</i>
+ Nevertheless, there remains a degree of uncertainty around this issue, 
+and it is a difficult issue to test. However, further developments in 
+imaging and image processing (using either the Classifynder or other 
+system) might overcome the need for the oriented images. For example, 
+the Classifynder approach of capturing several images through the range 
+of focus offers the opportunity to calculate three-dimensional 
+parameters of shape and size. At present, the system takes the in-focus 
+portion of each image and stiches them together to produce a single 
+two-dimensional image from which the 43 features are extracted. However,
+ the potential exists to extract more information on the 
+three-dimensional shape of the pollen. This could then open the door to 
+making measurements on all grains imaged, not just those in the correct 
+orientations. The key issue is whether there is a difference in the 
+first place, which was one of the aims of this pilot study.</p> <div class="articleDivider"></div><div class="articleAbstractBox"><a name="t02"><!-- FIG --></a><div class="articleImage"><div><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=t02"><img src="dummy_table_thumb.gif" alt="table"></a></div></div><div class="caption"><span class="short-legend"> <p class="first last"><span class="captionLabel"> <span class="smallcaps smallerCapital">Table</span> 2. </span> Error rates and proportion of honey pollen identified as manuka, as determined by the three different classification methods.</p> </span></div></div><div class="articleDivider"></div> <p class="last">With
+ respect to the third assumption, as mentioned in the Methods section, 
+pollen size and shape are known to change in response to laboratory 
+treatments. By treating all samples equally, it is hoped that any 
+changes in shape that do occur are consistent in magnitude and nature 
+across the five samples. However, it is difficult to account for changes
+ in pollen size and shape in the honey pollen grains, which may have 
+resulted from processing through the bee and time spent suspended in 
+honey. Exposure to moisture during this time would have likely caused 
+some expansion in the pollen grain. The dehydration associated with the 
+acetolysis procedure should have reversed this expansion. Nevertheless, 
+the results for area and MFD show that the honey grains are on average 
+larger than those of the plant samples. This could either result from 
+inadequate reference distributions (discussed above) or could represent 
+expansion from time spent in honey, or a combination of the two. Again, 
+further research into this area is required. This could best be achieved
+ through collecting pollen directly from manuka and kanuka plants and 
+comparing it with pollen extracted from honey gathered from the same 
+plants or from plants in the same region (this requires that pollen 
+morphology of the two taxa does not vary significantly within a local 
+population). Restricting processing to the minimum steps (i.e., ethanol 
+extraction from honey) followed by mounting, in glycerine jelly or a 
+similar medium that requires minimal preparation, would limit the 
+opportunity for processing-related shape and size changes to occur. 
+Therefore, any significant differences in shape and size between the 
+plant and honey pollen samples could reasonably be attributed to the 
+effects of “bee processing.”</p> </div><div id="sec5" class="NLM_sec NLM_sec_level_1"> <a name="_i18"><!-- title --></a><br clear="right"><h6>CONCLUSIONS</h6> <p class="last">Overall,
+ this investigation reinforces earlier work showing that an overlap 
+exists between the two taxa. The use of automatically generated large 
+data sets has produced a more comprehensive picture of the size 
+differences between the individuals surveyed than previously existed. 
+Applying geometrical measures of shape and size, which are not standard 
+in traditional pollen morphology studies, has also shown potential in 
+differentiating pollen types that vary only in size and/or subtly in 
+shape. For the purposes of demonstration, the assumption has been made 
+that these individuals are representative of their taxon. However, this 
+is obviously unlikely, and much more work is required to produce the 
+comprehensive reference distributions needed. This would also be the 
+case if this methodology were to be applied to other morphologically 
+similar pollen types where subtle shape and size variations were the 
+only difference.</p> </div><div class="articleReferences"><a name="_i19"><!-- title --></a><br clear="right"><h3>LITERATURE CITED</h3><div class="references" id="references"><div valign="top" class="refnumber" id="bibr01"> Allen, K. L., P. C. Molan, and G. M. Reid. <span class="NLM_year">1991</span>. <span class="NLM_article-title">A survey of the antibacterial activity of some New Zealand honeys.</span> <span class="citation_source-journal"><i>Journal of Pharmacy and Pharmacology</i></span> 43: <span class="NLM_fpage">817</span>–<span class="NLM_lpage">822</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr01&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1111%2Fj.2042-7158.1991.tb03186.x" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1991&amp;pages=817-822&amp;author=K.+L.+Allen&amp;author=P.+C.+Molan&amp;author=G.+M.+Reid&amp;title=A+survey+of+the+antibacterial+activity+of+some+New+Zealand+honeys.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr02"> Andersen, S. T. <span class="NLM_year">1960</span>. <span class="citation_source-book">Silicone oil as a mounting medium for pollen grains.</span> <span class="NLM_publisher-name">Geological Survey of Denmark, ser. IV, vol. 4</span>. <span class="NLM_publisher-loc">Reitzels, Copenhagen, Denmark</span>. <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1960&amp;author=S.+T.+Andersen&amp;title=Silicone+oil+as+a+mounting+medium+for+pollen+grains.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr03"> Birks, H. J. B., and H. H. Birks. <span class="NLM_year">1980</span>. <span class="citation_source-book">Quaternary palaeoecology.</span> <span class="NLM_publisher-name">Blackburn Press</span>, <span class="NLM_publisher-loc">Caldwell, New Jersey, USA</span>. <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1980&amp;author=H.+J.+B.+Birks&amp;author=H.+H.+Birks&amp;title=Quaternary+palaeoecology.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr04"> Birks, H. H., and H. J. B. Birks. <span class="NLM_year">2000</span>. <span class="NLM_article-title">Future uses of pollen analysis must include plant macro fossils.</span> <span class="citation_source-journal"><i>Journal of Biogeography</i></span> 27: <span class="NLM_fpage">31</span>–<span class="NLM_lpage">35</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr04&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1046%2Fj.1365-2699.2000.00375.x" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2000&amp;pages=31-35&amp;author=H.+H.+Birks&amp;author=H.+J.+B.+Birks&amp;title=Future+uses+of+pollen+analysis+must+include+plant+macro+fossils.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr05"> Erdtman, G. <span class="NLM_year">1952</span>. <span class="citation_source-book">Pollen morphology and plant taxonomy—Angiosperms.</span> <span class="NLM_publisher-name">Chronica Botanica</span>, <span class="NLM_publisher-loc">Waltham, Massachussets, USA</span>. <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1952&amp;author=G.+Erdtman&amp;title=Pollen+morphology+and+plant+taxonomy%E2%80%94Angiosperms.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr06"> Faegri, K., J. Iversen, P. E. Kaland, and K. Krzywinski. <span class="NLM_year">1989</span>. <span class="citation_source-book">Textbook of pollen analysis</span>, <span class="NLM_edition">4th ed</span> .<span class="NLM_publisher-name">Wiley</span>, <span class="NLM_publisher-loc">London, United Kingdom</span>. <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1989&amp;author=K.+Faegri&amp;author=J.+Iversen&amp;author=P.+E.+Kaland&amp;author=K.+Krzywinski&amp;title=Textbook+of+pollen+analysis&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr07"> Flenley, J. R. <span class="NLM_year">2003</span>. <span class="NLM_article-title">Some prospects for lake sediment analysis in the 21 st century.</span> <span class="citation_source-journal"><i>Quaternary International</i></span> 105: <span class="NLM_fpage">77</span>–<span class="NLM_lpage">80</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr07&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1016%2FS1040-6182%2802%2900153-2" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2003&amp;pages=77-80&amp;author=J.+R.+Flenley&amp;title=Some+prospects+for+lake+sediment+analysis+in+the+21+st+century.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr08"> Gannabathula, S., M. A. Skinner, D. Rosendale, J. M. Greenwood, A. N. Mutukumira, G. Steinhorn, J. Stephens, et al. <span class="NLM_year">2012</span>. <span class="NLM_article-title">Arabinogalactan proteins contribute to the immunostimulatory properties of New Zealand honeys.</span> <span class="citation_source-journal"><i>Immunopharmacology and Immunotoxicology</i></span> 34: <span class="NLM_fpage">598</span>–<span class="NLM_lpage">607</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr08&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.3109%2F08923973.2011.641974" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2012&amp;pages=598-607&amp;author=S.+Gannabathula&amp;author=M.+A.+Skinner&amp;author=D.+Rosendale&amp;author=J.+M.+Greenwood&amp;author=A.+N.+Mutukumira&amp;author=G.+Steinhorn&amp;author=J.+Stephens&amp;title=Arabinogalactan+proteins+contribute+to+the+immunostimulatory+properties+of+New+Zealand+honeys.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr09"> Gordon, A. D., and I. D. Prentice. <span class="NLM_year">1977</span>. <span class="NLM_article-title">Numerical methods in Quaternary palaeoecology IV. Separating mixtures of morphologically similar pollen taxa.</span> <span class="citation_source-journal"><i>Review of Paleobotany and Palynology</i></span> 23: <span class="NLM_fpage">359</span>–<span class="NLM_lpage">372</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr09&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1016%2F0034-6667%2877%2990026-4" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1977&amp;pages=359-372&amp;author=A.+D.+Gordon&amp;author=I.+D.+Prentice&amp;title=Numerical+methods+in+Quaternary+palaeoecology+IV.+Separating+mixtures+of+morphologically+similar+pollen+taxa.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr10"> Hansen, B. S. <span class="NLM_year">1947</span>. <span class="NLM_article-title">Postglacial forest succession, climate, and chronology in the Pacific Northwest.</span> <span class="citation_source-journal"><i>Transactions of the American Philosophical Society</i></span> 37: <span class="NLM_fpage">1</span>–<span class="NLM_lpage">130</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr10&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.2307%2F1005563" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1947&amp;pages=1-130&amp;author=B.+S.+Hansen&amp;title=Postglacial+forest+succession%2C+climate%2C+and+chronology+in+the+Pacific+Northwest.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr11"> Hansen, B. S., and E. J. Cushing. <span class="NLM_year">1973</span>. <span class="NLM_article-title">Identification of pine pollen of Late Quaternary age from the Chuska mountains, New Mexico.</span> <span class="citation_source-journal"><i>Geological Society of America Bulletin</i></span> 84: <span class="NLM_fpage">1181</span>–<span class="NLM_lpage">1200</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr11&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1130%2F0016-7606%281973%2984%3C1181%3AIOPPOL%3E2.0.CO%3B2" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1973&amp;pages=1181-1200&amp;author=B.+S.+Hansen&amp;author=E.+J.+Cushing&amp;title=Identification+of+pine+pollen+of+Late+Quaternary+age+from+the+Chuska+mountains%2C+New+Mexico.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr12"> Harris, W., N. G. Porter, and M. I. Dawson. <span class="NLM_year">1992</span>. <span class="NLM_article-title">Observations on biosystematics relationships of <i>Kunzea sinclairii</i> and on the intergeneric hybrid <i>Kunzea sinclairii</i> × <i>Leptospermum scoparium</i>.</span> <span class="citation_source-journal"><i>New Zealand Journal of Botany</i></span> 30: <span class="NLM_fpage">213</span>–<span class="NLM_lpage">230</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr12&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1080%2F0028825X.1992.10412903" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1992&amp;pages=213-230&amp;author=W.+Harris&amp;author=N.+G.+Porter&amp;author=M.+I.+Dawson&amp;title=Observations+on+biosystematics+relationships+of+Kunzea+sinclairii+and+on+the+intergeneric+hybrid+Kunzea+sinclairii+%C3%97+Leptospermum+scoparium.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr13"> Hastie, T., R. Tibshirani, and J. Friedman. <span class="NLM_year">2009</span>. <span class="citation_source-book">The elements of statistical learning</span>, <span class="NLM_edition">2nd ed</span>. <span class="NLM_publisher-loc">Springer, New York, New York, USA</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr13&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1007%2F978-0-387-84858-7" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2009&amp;author=T.+Hastie&amp;author=R.+Tibshirani&amp;author=J.+Friedman&amp;title=The+elements+of+statistical+learning&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr14"> Holt, K., G. Allen, R. Hodgson, S. Marsland, and J. Flenley. <span class="NLM_year">2011</span>. <span class="NLM_article-title">Progress towards an automated trainable pollen location and classifier system for use in the palynology laboratory.</span> <span class="citation_source-journal"><i>Review of Paleobotany and Palynology</i></span> 167: <span class="NLM_fpage">175</span>–<span class="NLM_lpage">183</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr14&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1016%2Fj.revpalbo.2011.08.006" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2011&amp;pages=175-183&amp;author=K.+Holt&amp;author=G.+Allen&amp;author=R.+Hodgson&amp;author=S.+Marsland&amp;author=J.+Flenley&amp;title=Progress+towards+an+automated+trainable+pollen+location+and+classifier+system+for+use+in+the+palynology+laboratory.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr15"> Holt, K. A., and K. D. Bennett. <span class="NLM_year">2014</span>. <span class="NLM_article-title">Progress and direction in automated palynology.</span> <span class="citation_source-journal"><i>New Phytologist</i></span> 203: <span class="NLM_fpage">735</span>–<span class="NLM_lpage">742</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr15&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1111%2Fnph.12848" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2014&amp;pages=735-742&amp;author=K.+A.+Holt&amp;author=K.+D.+Bennett&amp;title=Progress+and+direction+in+automated+palynology.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr16"> Mander, L., L. Mao, W. Mio, C. C. Fowlkes, and S. Punyasena. <span class="NLM_year">2013</span>. <span class="NLM_article-title">Classification of grass pollen through the quantitative analysis of surface ornamentation and texture. <i>Proceedings of the Royal Society B</i>.</span> <span class="citation_source-journal"><i>Biological Sciences</i></span> 280: <span class="NLM_fpage">20131905</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr16&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1098%2Frspb.2013.1905" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2013&amp;pages=20131905&amp;author=L.+Mander&amp;author=L.+Mao&amp;author=W.+Mio&amp;author=C.+C.+Fowlkes&amp;author=S.+Punyasena&amp;title=Classification+of+grass+pollen+through+the+quantitative+analysis+of+surface+ornamentation+and+texture.+Proceedings+of+the+Royal+Society+B.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr17"> McIntyre, D. J. <span class="NLM_year">1963</span>. <span class="NLM_article-title">Pollen morphology of New Zealand species of Myrtaceae.</span> <span class="citation_source-journal"><i>Transactions of the Royal Society of New Zealand</i></span> 7: <span class="NLM_fpage">83</span>–<span class="NLM_lpage">107</span>. <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1963&amp;pages=83-107&amp;author=D.+J.+McIntyre&amp;title=Pollen+morphology+of+New+Zealand+species+of+Myrtaceae.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr18"> Mildenhall, D. C., and R. Tremain. <span class="NLM_year">2005</span>. <span class="citation_source-book">Pollen analysis of New Zealand honey. Institute of Geological and Nuclear Sciences Science Report 2005/06.</span> <span class="NLM_publisher-name">Institute of Geological and Nuclear Sciences</span>, <span class="NLM_publisher-loc">Lower Hutt, New Zealand</span>. <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2005&amp;author=D.+C.+Mildenhall&amp;author=R.+Tremain&amp;title=Pollen+analysis+of+New+Zealand+honey.+Institute+of+Geological+and+Nuclear+Sciences+Science+Report+2005%2F06.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr19"> Ministry for Primary Industries. <span class="NLM_year">2013</span>. <span class="citation_source-book">Options for defining monofloral manuka honey. MPI Discussion Paper No. 2013/38.</span> <span class="NLM_publisher-name">Ministry for Primary Industries</span>, <span class="NLM_publisher-loc">Wellington, New Zealand</span>. <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2013&amp;author=Ministry+for+Primary+Industries&amp;title=Options+for+defining+monofloral+manuka+honey.+MPI+Discussion+Paper+No.+2013%2F38.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr20"> Moar, N. T. <span class="NLM_year">1985</span>. <span class="NLM_article-title">Pollen analysis of New Zealand honeys.</span> <span class="citation_source-journal"><i>New Zealand Journal of Agricultural Research</i></span> 28: <span class="NLM_fpage">39</span>–<span class="NLM_lpage">70</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr20&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1080%2F00288233.1985.10426997" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1985&amp;pages=39-70&amp;author=N.+T.+Moar&amp;title=Pollen+analysis+of+New+Zealand+honeys.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr21"> Moar, N. T. <span class="NLM_year">1993</span>. <span class="citation_source-book">Pollen grains of New Zealand dicotyledonous plants.</span> <span class="NLM_publisher-name">Manaaki Whenua Press</span>, <span class="NLM_publisher-loc">Lincoln, New Zealand</span>. <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1993&amp;author=N.+T.+Moar&amp;title=Pollen+grains+of+New+Zealand+dicotyledonous+plants.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr22"> Moar, N. T., J. M. Wilmshurst, and M. S. McGlone. <span class="NLM_year">2011</span>. <span class="NLM_article-title">Standardizing names applied to pollen and spores in New Zealand Quaternary palynology.</span> <span class="citation_source-journal"><i>New Zealand Journal of Botany</i></span> 49: <span class="NLM_fpage">201</span>–<span class="NLM_lpage">229</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr22&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1080%2F0028825X.2010.526617" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2011&amp;pages=201-229&amp;author=N.+T.+Moar&amp;author=J.+M.+Wilmshurst&amp;author=M.+S.+McGlone&amp;title=Standardizing+names+applied+to+pollen+and+spores+in+New+Zealand+Quaternary+palynology.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr23"> National Instruments. <span class="NLM_year">2000</span>. <span class="citation_source-book">IMAQ vision concepts manual.</span> <span class="NLM_publisher-name">National Instruments Corporation</span>, <span class="NLM_publisher-loc">Austin, Texas, USA</span>. <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2000&amp;author=National+Instruments&amp;title=IMAQ+vision+concepts+manual.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr24"> Petersen, S., and V. M. Bryant. <span class="NLM_year">2011</span>. <span class="NLM_article-title">The study of pollen and its role in the honey market.</span> <i>American Bee Journal</i> June: <span class="NLM_fpage">591</span>–<span class="NLM_lpage">594</span>. <a class="google-scholar" href="http://scholar.google.com/scholar?hl=en&amp;q=Petersen%2C+S.%2C+and+V.+M.+Bryant.+2011.+The+study+of+pollen+and+its+role+in+the+honey+market.+American+Bee+Journal+June%3A+591%E2%80%93594.">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr25"> Pike, K. M. <span class="NLM_year">1956</span>. <span class="NLM_article-title">Pollen morphology of Myrtaceae from the South-West Pacific area.</span> <span class="citation_source-journal"><i>Australian Journal of Botany</i></span> 4: <span class="NLM_fpage">13</span>–<span class="NLM_lpage">53</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr25&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1071%2FBT9560013" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1956&amp;pages=13-53&amp;author=K.+M.+Pike&amp;title=Pollen+morphology+of+Myrtaceae+from+the+South-West+Pacific+area.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr26"> Punt, W., P. P. Hoen, S. Blackmore, S. Nilsson, and A. Le Thomas. <span class="NLM_year">2007</span>. <span class="NLM_article-title">Glossary of pollen and spore terminology.</span> <span class="citation_source-journal"><i>Review of Paleobotany and Palynology</i></span> 143: <span class="NLM_fpage">1</span>–<span class="NLM_lpage">81</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr26&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1016%2Fj.revpalbo.2006.06.008" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2007&amp;pages=1-81&amp;author=W.+Punt&amp;author=P.+P.+Hoen&amp;author=S.+Blackmore&amp;author=S.+Nilsson&amp;author=A.+Le+Thomas&amp;title=Glossary+of+pollen+and+spore+terminology.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr27"> Punyasena, S. W., D. K. Tcheng, C. Wesseln, and P. G. Mueller. <span class="NLM_year">2012</span>. <span class="NLM_article-title">Classifying black and white spruce pollen using layered machine learning.</span> <span class="citation_source-journal"><i>New Phytologist</i></span> 196: <span class="NLM_fpage">937</span>–<span class="NLM_lpage">944</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr27&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1111%2Fj.1469-8137.2012.04291.x" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2012&amp;pages=937-944&amp;author=S.+W.+Punyasena&amp;author=D.+K.+Tcheng&amp;author=C.+Wesseln&amp;author=P.+G.+Mueller&amp;title=Classifying+black+and+white+spruce+pollen+using+layered+machine+learning.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr28"> Reitsma, T. <span class="NLM_year">1969</span>. <span class="NLM_article-title">Size modification of recent pollen grains under different treatments.</span> <span class="citation_source-journal"><i>Review of Paleobotany and Palynology</i></span> 9: <span class="NLM_fpage">175</span>–<span class="NLM_lpage">202</span>.  <a href="http://www.bioone.org/servlet/linkout?suffix=bibr28&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1016%2F0034-6667%2869%2990003-7" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1969&amp;pages=175-202&amp;author=T.+Reitsma&amp;title=Size+modification+of+recent+pollen+grains+under+different+treatments.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr29"> Russell, K. M., P. C. Molan, A. L. Wilkins, and P. T. Holland. <span class="NLM_year">1990</span>. <span class="NLM_article-title">Identification of some antibacterial constituents of New Zealand manuka honey.</span> <span class="citation_source-journal"><i>Journal of Agricultural and Food Chemistry</i></span> 38: <span class="NLM_fpage">10</span>–<span class="NLM_lpage">13</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr29&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1021%2Fjf00091a002" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=1990&amp;pages=10-13&amp;author=K.+M.+Russell&amp;author=P.+C.+Molan&amp;author=A.+L.+Wilkins&amp;author=P.+T.+Holland&amp;title=Identification+of+some+antibacterial+constituents+of+New+Zealand+manuka+honey.&amp;">Google Scholar</a></div><div valign="top" class="refnumber" id="bibr30"> Sivaguru, M., L. Mander, G. Fried, and S. W. Punyasena. <span class="NLM_year">2012</span>. <span class="NLM_article-title">Capturing the surface texture and shape of pollen: A comparison of microscopy techniques.</span> <span class="citation_source-journal"><i>PLoS ONE</i></span> 7: <span class="NLM_fpage">e39129</span>. <a href="http://www.bioone.org/servlet/linkout?suffix=bibr30&amp;dbid=16&amp;doi=10.3732%2Fapps.1400032&amp;key=10.1371%2Fjournal.pone.0039129" target="new">Crossref</a>, <a class="google-scholar" href="http://scholar.google.com/scholar_lookup?hl=en&amp;publication_year=2012&amp;pages=e39129&amp;author=M.+Sivaguru&amp;author=L.+Mander&amp;author=G.+Fried&amp;author=S.+W.+Punyasena&amp;title=Capturing+the+surface+texture+and+shape+of+pollen%3A+A+comparison+of+microscopy+techniques.&amp;">Google Scholar</a></div></div></div><div class="citedBySectione" id="citart1"><a name="citedBySection"></a><h2>Cited by</h2><div class="citedByEntry">Miguel
+ Guzmán-Altamirano, Braulio Gutiérrez-Medina.  (2015) Removing lateral 
+chromatic aberration in bright field optical microscopy. <i><span class="NLM_source">Optics Express</span></i> <b>23</b>:11, 14380. <br>Online publication date: <span class="NLM_day">22</span>-<span class="NLM_month">May</span>-<span class="NLM_year">2015</span>.<br><span class="CbLinks"><!--noindex--><a class="ref" href="https://doi.org/10.1364/OE.23.014380" target="_blank" title="Opens new window"> Crossref </a><!--/noindex--></span></div><div class="citedByEntry"><contrib-group xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Surangi W. Punyasena<a class="ref" href="#corr1"></a> and Selena Y. Smith<a class="ref" href="#corr1"></a></contrib-group>.  (2014) Bioinformatic and Biometric Methods in Plant Morphology. <i><span class="NLM_source">Applications in Plant Sciences</span></i> <b>2</b>:8. <br>Online publication date: <span class="NLM_day">18</span>-<span class="NLM_month">Aug</span>-<span class="NLM_year">2014</span>.<br><span class="CbLinks"><p class="searchEntryTools"><a class="ref nowrap useQueryHash" href="http://www.bioone.org/doi/abs/10.3732/apps.1400071">Abstract &amp; References</a>
+                : <a class="ref nowrap useQueryHash" href="http://www.bioone.org/doi/full/10.3732/apps.1400071">Full Text</a>
+			: <a class="ref nowrap" target="_blank" title="Opens new window" href="http://www.bioone.org/doi/pdf/10.3732/apps.1400071">PDF</a> (468 KB)&nbsp;<!-- ${cadmus-articleworks: 10.3732%2Fapps.1400071 class='ref' } --><!-- ${xml_link: 10.3732%2Fapps.1400071} --></p></span></div><div class="citedByEntry"><contrib-group xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Jing Ginger Han, Hongfei Cao<a class="ref" href="#aff2"></a>, Adrian Barb, Surangi W. Punyasena, Carlos Jaramillo, and Chi-Ren Shyu<a class="ref" href="#corr1"></a>: ; ; ; and </contrib-group>.  (2014) A Neotropical Miocene Pollen Database Employing Image-Based Search and Semantic Modeling. <i><span class="NLM_source">Applications in Plant Sciences</span></i> <b>2</b>:8. <br>Online publication date: <span class="NLM_day">18</span>-<span class="NLM_month">Aug</span>-<span class="NLM_year">2014</span>.<br><span class="CbLinks"><p class="searchEntryTools"><a class="ref nowrap useQueryHash" href="http://www.bioone.org/doi/abs/10.3732/apps.1400030">Abstract &amp; References</a>
+                : <a class="ref nowrap useQueryHash" href="http://www.bioone.org/doi/full/10.3732/apps.1400030">Full Text</a>
+			: <a class="ref nowrap" target="_blank" title="Opens new window" href="http://www.bioone.org/doi/pdf/10.3732/apps.1400030">PDF</a> (2959 KB)&nbsp;<!-- ${cadmus-articleworks: 10.3732%2Fapps.1400030 class='ref' } --><!-- ${xml_link: 10.3732%2Fapps.1400030} --></p></span></div></div><!-- /fulltext content --></div></div>
+                            </div>
+                        </div>
+
+                        <div id="contentSidebarWrapper">
+                            <div id="contentSidebar">
+                                
+                                        
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="relatedContent">
+        <div class="columnBlock">
+
+          <div class="columnBlock">
+            <div class="btnToggle"><a href="javascript:toggleLayer('articleViews','articleViewsImg');" title="Toggle Article Views"><img id="articleViewsImg" src="button_minus.gif" alt="click this button to close" width="14" height="13"></a></div>
+            <h2>Article Views
+            </h2>
+            <div class="itemContent" id="articleViews">
+              
+                
+              
+
+                
+                        <p><a href="http://www.bioone.org/doi/abs/10.3732/apps.1400032">Abstract &amp; References</a></p>
+                    
+                
+               
+                
+                
+                        <p class="browseCurrent">» <a href="http://www.bioone.org/doi/full/10.3732/apps.1400032">Full Text</a></p>
+                    
+                 
+                
+
+                
+              <p><a href="http://www.bioone.org/doi/pdf/10.3732/apps.1400032">PDF</a>
+                  
+                  (1793 KB)
+              </p>
+                
+            </div>
+          </div>
+           
+                <div class="columnBlock"><div class="btnToggle"><a title="Toggle Article Compontents" href="javascript:toggleLayer('articleCompontents','articleCompontentsImg');"><img alt="click this button to close" src="button_minus.gif" id="articleCompontentsImg" width="14" height="13"></a></div><h2>Article Components</h2><div id="articleCompontents" class="itemContent"><div class="articleComponent"></div><div class="articleComponent"><div class="btnToggleMini"><h3><a title="Toggle" href="javascript:toggleLayer('compTables','compTablesImg');"><img alt="click this button to open" src="button_plus_green.gif" id="compTablesImg" width="8" height="8"> Tables</a></h3></div><div id="compTables" class="itemClosed" style="display: none;"><ul class="linkList"><li><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=t01" target="articlePopup" title=" Table 1. "><span class="captionLabel"> <span class="smallcaps smallerCapital">Table</span> 1<span class="lastPunctuation">. </span></span> </a></li><li><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=t02" target="articlePopup" title=" Table 2. "><span class="captionLabel"> <span class="smallcaps smallerCapital">Table</span> 2<span class="lastPunctuation">. </span></span> </a></li></ul></div></div><div class="articleComponent"><div class="btnToggleMini"><h3><a title="Toggle" href="javascript:toggleLayer('compFigures','compFiguresImg');"><img alt="click this button to open" src="button_plus_green.gif" id="compFiguresImg" width="8" height="8"> Figures</a></h3></div><div id="compFigures" class="itemClosed" style="display: none;"><ul class="linkList"><li><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f01" target="articlePopup" title="Fig. 1.  "><span class="captionLabel">Fig. 1<span class="lastPunctuation">. </span></span> </a></li><li><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f02" target="articlePopup" title="Fig. 2.  "><span class="captionLabel">Fig. 2<span class="lastPunctuation">. </span></span> </a></li><li><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f03" target="articlePopup" title="Fig. 3.  "><span class="captionLabel">Fig. 3<span class="lastPunctuation">. </span></span> </a></li><li><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f04" target="articlePopup" title="Fig. 4.  "><span class="captionLabel">Fig. 4<span class="lastPunctuation">. </span></span> </a></li><li><a class="popupLink" href="http://www.bioone.org/action/showFullPopup?doi=10.3732%2Fapps.1400032&amp;id=f05" target="articlePopup" title="Fig. 5.  "><span class="captionLabel">Fig. 5<span class="lastPunctuation">. </span></span> </a></li></ul></div></div><div class="moduleBottomLeft"></div><div id="moduleBottom_articleContents" class="moduleBottomMiddle"></div><div class="moduleBottomRight"></div></div></div><form method="get" action="/action/searchDispatcher" name="frmQuickSearch" id="frmQuickSearch" target="_self"><input name="type" value="simple" type="hidden"><input name="action" value="search" type="hidden"><input name="nh" value="10" type="hidden"><input name="displaySummary" value="false" type="hidden"><input name="result" value="true" type="hidden"><div class="columnBlock"><div class="btnToggle"><a href="javascript:toggleLayer('relatedArticleSearch','relatedArticleSearchImg');" title="Toggle Related Article Search"><img id="relatedArticleSearchImg" src="button_minus.gif" alt="click this button to close" width="14" height="13"></a></div><h2>Related Article Search</h2><div class="itemContent" id="relatedArticleSearch"><div class="articleComponent"><div class="btnToggleMini"><h3><a href="javascript:toggleLayer('relatedKeywords','relatedKeywordsImg');" title="Toggle"><img id="relatedKeywordsImg" src="button_minus_green.gif" alt="click this button to close" width="8" height="8"> By Keywords
+                                  </a></h3></div><div id="relatedKeywords"><ul><li><input class="input_boxes" value="Automated Palynology" name="keyword" type="checkbox">automated palynology</li><li><input class="input_boxes" value="Classifynder" name="keyword" type="checkbox">Classifynder</li><li><input class="input_boxes" value="Geometric Features" name="keyword" type="checkbox">geometric features</li><li><input class="input_boxes" value="Kunzea Ericoides" name="keyword" type="checkbox"><i>Kunzea ericoides</i></li><li><input class="input_boxes" value="Leptospermum Scoparium" name="keyword" type="checkbox"><i>Leptospermum scoparium</i></li><li><input class="input_boxes" value="Myrtaceae" name="keyword" type="checkbox">Myrtaceae</li><li><input class="input_boxes" value="Pollen Morphology" name="keyword" type="checkbox">pollen morphology</li></ul></div></div><div class="articleComponent"><div class="btnToggleMini"><h3><a href="javascript:toggleLayer('relatedAuthor','relatedAuthorImg');" title="Toggle"><img id="relatedAuthorImg" src="button_minus_green.gif" alt="click this button to close" width="8" height="8"> By Author
+                                  </a></h3></div><div id="relatedAuthor"><ul><li><input class="input_boxes" value="Holt, Katherine A" name="author" type="checkbox"> Katherine A.  Holt </li><li><input class="input_boxes" value="Bebbington, Mark S" name="author" type="checkbox"> Mark S.  Bebbington </li></ul></div></div><div class="articleComponent"><div class="btnToggleMini"><h3><a href="javascript:toggleLayer('relatedFind','relatedFindImg');" title="Toggle"><img id="relatedFindImg" src="button_minus_green.gif" alt="click this button to close" width="8" height="8"> Find In
+                              </a></h3></div><div id="relatedFind"><ul><li><input name="searchService" value="bioone" id="searchService1" checked="checked" onclick="radioTarget(this)" type="radio"><label for="searchService1">BioOne</label></li><li><input name="searchService" id="searchService2" value="medline" class="checkbox" onclick="radioTarget(this)" type="radio"><label for="searchService2">PubMed</label></li><li><input name="searchService" id="searchService3" value="scholar" class="checkbox" onclick="radioTarget(this)" type="radio"><label for="searchService3">Google Scholar</label></li></ul><div class="relatedSearchSubmit"><input value="Search" type="submit"></div></div></div></div></div></form>
+           
+
+
+            <div class="columnBlock">
+                <!-- placeholder id=null, description=Above-Article-Tools-right-column --><!--Sections ordered as JAVASCRIPT, STYLES, then CSS: each Section ordered as AddThis, AltMetric, then Print Friendly-->
+<!--============================================== JAVASCRIPT =======================================================-->
+<!--load jQuery-->
+<script src="jquery-latest.js"></script>
+
+<!-- Add GA tracking for addthis START -->
+<script type="text/javascript"> var addthis_config = { data_ga_property: 'UA-11995603-1' }; </script>
+
+<!--addthis-->
+<script type="text/javascript" src="addthis_widget.js"></script>
+
+<!--altmetric-->
+<script type="text/javascript" src="embed.js"></script>
+
+<!--custom altmetric functions-->
+<script type="text/javascript">
+    setTimeout(function(){
+        //if there are no metrics, hide the wrapper
+        if( $('.altmetric-embed img').length ){
+            
+        }
+        else{
+            $('#altmetricBadge').remove();
+        }
+    }, 1000);
+</script>
+
+<!--print friendly-->
+<script type="text/javascript">
+    //remove Print from extended menu START
+    if (typeof addthis_config !== "undefined") {
+        addthis_config.services_exclude = 'print'
+    }
+    else {
+        var addthis_config = {
+            services_exclude: 'print'
+        };
+    }
+    
+    var pfHeaderImgUrl = '';
+    var pfHeaderTagline = '';
+    var pfdisableClickToDel = 0;
+    var pfHideImages = 0;
+    var pfImageDisplayStyle = 'right';
+    var pfDisablePDF = 0;
+    var pfDisableEmail = 0;
+    var pfDisablePrint = 0;
+    var pfCustomCSS = '';
+    var pfBtVersion='1';
+    (function(){
+        var js, pf;
+        pf = document.createElement('script');
+        pf.type = 'text/javascript';
+        if('https:' == document.location.protocol){
+            js='https://pf-cdn.printfriendly.com/ssl/main.js'
+        }
+        else{
+            js='http://cdn.printfriendly.com/printfriendly.js'
+        }
+        pf.src=js;
+        document.getElementsByTagName('head')[0].appendChild(pf)
+    })();
+</script>
+<!--============================================= STYLES ======================================================-->
+<style type="text/css">
+    #oneStopWrapper{
+        width: 100%;
+    }
+    #shareThis{
+        margin: 10px 0;
+    }
+    #shareThis a{
+        margin-right: 7px;
+		margin-bottom: 7px;
+        padding: 0;
+    }
+    #printFriendly{
+        border-bottom: 1px solid #B9A95F;
+        margin-bottom: 15px;
+		padding-bottom: 7px;
+    }
+    #altMetricWrapper{
+        margin: 10px 0;
+    }
+    .btnToggleMini img{
+        opacity: 1;
+    }
+    .altMetricLink{
+        text-align: center;
+		font-size: .8em;
+    }
+    .altMetricLink a:visited{
+		color:	#000099;
+	}
+</style>
+<!--============================================= HTML ========================================================-->
+<div id="oneStopWrapper">
+    <div class="btnToggle"><a onclick="toggleLayer('articleShare','articleShareImg');" title="Toggle Citing Articles"><img id="articleShareImg" src="button_minus.gif" alt="click this button to open" width="13" height="13"></a></div>
+    <h2>Social Tools</h2>
+    
+    <div id="articleShare" class="itemContent">
+    
+        <!-- AddThis Button BEGIN -->
+        <div id="shareThis" class="addthis_toolbox addthis_default_style oneStop">
+            <a class="addthis_button_citeulike at300b" target="_blank" title="CiteULike" href="#"><span class="at-icon-wrapper" style="background-color: rgb(8, 136, 200); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-citeulike-1" class="at-icon at-icon-citeulike" style="width: 16px; height: 16px;" title="CiteULike" alt="CiteULike"><title id="at-svg-citeulike-1">CiteULike</title><g><path d="M26.41 8.25H4.82a1.25 1.25 0 0 1 0-2.5h21.59a1.25 1.25 0 0 1 0 2.5zM26.41 14.25H4.82a1.25 1.25 0 0 1 0-2.5h21.59a1.25 1.25 0 0 1 0 2.5zM26.41 20.25H4.82a1.25 1.25 0 0 1 0-2.5h21.59a1.25 1.25 0 0 1 0 2.5zM26.41 26.25H4.82a1.25 1.25 0 0 1 0-2.5h21.59a1.25 1.25 0 0 1 0 2.5z"></path></g></svg></span></a>
+            <a class="addthis_button_twitter at300b" title="Twitter" href="#"><span class="at-icon-wrapper" style="background-color: rgb(29, 161, 242); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-twitter-2" class="at-icon at-icon-twitter" style="width: 16px; height: 16px;" title="Twitter" alt="Twitter"><title id="at-svg-twitter-2">Twitter</title><g><path d="M27.996 10.116c-.81.36-1.68.602-2.592.71a4.526 4.526 0 0 0 1.984-2.496 9.037 9.037 0 0 1-2.866 1.095 4.513 4.513 0 0 0-7.69 4.116 12.81 12.81 0 0 1-9.3-4.715 4.49 4.49 0 0 0-.612 2.27 4.51 4.51 0 0 0 2.008 3.755 4.495 4.495 0 0 1-2.044-.564v.057a4.515 4.515 0 0 0 3.62 4.425 4.52 4.52 0 0 1-2.04.077 4.517 4.517 0 0 0 4.217 3.134 9.055 9.055 0 0 1-5.604 1.93A9.18 9.18 0 0 1 6 23.85a12.773 12.773 0 0 0 6.918 2.027c8.3 0 12.84-6.876 12.84-12.84 0-.195-.005-.39-.014-.583a9.172 9.172 0 0 0 2.252-2.336" fill-rule="evenodd"></path></g></svg></span></a>
+            <a class="addthis_button_facebook at300b" title="Facebook" href="#"><span class="at-icon-wrapper" style="background-color: rgb(59, 89, 152); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-facebook-3" class="at-icon at-icon-facebook" style="width: 16px; height: 16px;" title="Facebook" alt="Facebook"><title id="at-svg-facebook-3">Facebook</title><g><path d="M22 5.16c-.406-.054-1.806-.16-3.43-.16-3.4 0-5.733 1.825-5.733 5.17v2.882H9v3.913h3.837V27h4.604V16.965h3.823l.587-3.913h-4.41v-2.5c0-1.123.347-1.903 2.198-1.903H22V5.16z" fill-rule="evenodd"></path></g></svg></span></a>
+            <a class="addthis_button_delicious"></a>
+            <a class="addthis_button_linkedin at300b" target="_blank" title="LinkedIn" href="#"><span class="at-icon-wrapper" style="background-color: rgb(0, 119, 181); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-linkedin-4" class="at-icon at-icon-linkedin" style="width: 16px; height: 16px;" title="LinkedIn" alt="LinkedIn"><title id="at-svg-linkedin-4">LinkedIn</title><g><path d="M26 25.963h-4.185v-6.55c0-1.56-.027-3.57-2.175-3.57-2.18 0-2.51 1.7-2.51 3.46v6.66h-4.182V12.495h4.012v1.84h.058c.558-1.058 1.924-2.174 3.96-2.174 4.24 0 5.022 2.79 5.022 6.417v7.386zM8.23 10.655a2.426 2.426 0 0 1 0-4.855 2.427 2.427 0 0 1 0 4.855zm-2.098 1.84h4.19v13.468h-4.19V12.495z" fill-rule="evenodd"></path></g></svg></span></a>
+            <a class="addthis_button_researchgate at300b" target="_blank" title="ResearchGate" href="#"><span class="at-icon-wrapper" style="background-color: rgb(0, 204, 187); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-researchgate-5" class="at-icon at-icon-researchgate" style="width: 16px; height: 16px;" title="ResearchGate" alt="ResearchGate"><title id="at-svg-researchgate-5">ResearchGate</title><g><path d="M10.417 7.786c1.36 0 2.42.344 3.176 1.033.757.687 1.135 1.733 1.135 3.14 0 1.09-.22 1.98-.658 2.668-.44.688-1.12 1.13-2.042 1.326V16c.817.12 1.415.386 1.793.796.378.406.613 1.065.705 1.972.03.304.052.634.067.988.014.354.03.75.045 1.19.03.862.076 1.52.137 1.975.09.456.288.766.59.932v.135h-3.54a1.757 1.757 0 0 1-.318-.782 8.882 8.882 0 0 1-.09-.92l-.09-3.107c-.03-.635-.19-1.135-.478-1.498s-.77-.544-1.452-.544H7.65v6.852H4.38v-16.2h6.037zm-1.407 7.08c.787 0 1.39-.187 1.815-.557.424-.372.636-.995.636-1.872 0-1.498-.756-2.248-2.268-2.248H7.65v4.675h1.36zM24.204 11.665a3.078 3.078 0 0 0-.328-.873 2.113 2.113 0 0 0-.58-.657 1.397 1.397 0 0 0-.85-.26c-.787 0-1.354.437-1.702 1.314-.35.877-.52 2.328-.52 4.355 0 .968.028 1.846.09 2.633.06.785.17 1.456.328 2.008.16.553.385.976.682 1.27.294.294.677.444 1.145.444.196 0 .41-.055.645-.16a2.15 2.15 0 0 0 .66-.476c.203-.212.373-.48.51-.807.136-.325.203-.706.203-1.146v-1.655h-2.154V15.25h5.287v8.734h-2.405v-1.497h-.045c-.394.636-.867 1.086-1.418 1.35-.553.266-1.215.398-1.985.398-1 0-1.812-.175-2.44-.523-.627-.348-1.12-.883-1.475-1.61s-.594-1.622-.715-2.688-.182-2.303-.182-3.71c0-1.362.088-2.556.262-3.586.173-1.028.473-1.887.896-2.575a4.092 4.092 0 0 1 1.68-1.555c.694-.348 1.564-.52 2.61-.52 1.783 0 3.07.44 3.855 1.326s1.18 2.152 1.18 3.8h-3.132c0-.3-.034-.61-.102-.93z"></path></g></svg></span></a>
+            <a class="addthis_button_compact at300m" href="#"><span class="at-icon-wrapper" style="background-color: rgb(255, 101, 80); line-height: 16px; height: 16px; width: 16px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-addthis-6" class="at-icon at-icon-addthis" style="width: 16px; height: 16px;" title="More" alt="More"><title id="at-svg-addthis-6">Addthis</title><g><path d="M18 14V8h-4v6H8v4h6v6h4v-6h6v-4h-6z" fill-rule="evenodd"></path></g></svg></span></a>
+            <div style="clear:both;"></div>
+        <div class="atclear"></div></div>
+        <!-- AddThis Button END -->
+        <!-- PrintFriendly START -->    
+        <div id="printFriendly" class="oneStop articleComponent">
+            <p><a href="http://www.bioone.org/action/clickThrough?id=1454&amp;url=http%3A%2F%2Fwww.printfriendly.com&amp;loc=%2Fdoi%2F10.3732%2Fapps.1400032&amp;pubId=40499396&amp;placeholderId=1052&amp;productId=1214" class="printfriendly" onclick="window.print();return false;" title="Printer Friendly and PDF"><img src="PrintFriendly_icon.gif" style="vertical-align: text-bottom;" alt="Print Friendly and PDF">&nbsp;Print&nbsp;Friendly</a></p>
+        </div>
+        <!--PrintFriendly END-->
+        <!-- Altmetric BEGIN -->
+        <div id="altmetricBadge" class="oneStop btnToggleMini articleComponent">
+            <h3><a title="Toggle" onclick="toggleLayer('altMetricWrapper','altMetricWrapperImg');"><img alt="click this button to open" src="button_minus_green.gif" id="altMetricWrapperImg" width="8" height="8">&nbsp;Article Impact</a></h3>
+            <div id="altMetricWrapper">
+                <div style="text-align: center;" class="altmetric-embed altmetric-badge-type-donut altmetric-badge-popover-left altmetric-hide-no-mentions-true altmetric-doi-10.3732/apps.1400032" data-uuid="1334da75-acb1-28c5-e3c1-09a41e89bfcb"><a target="_self" href="https://www.altmetric.com/details.php?domain=www.bioone.org&amp;citation_id=2628849" rel="popover" data-content="&lt;div&gt;    &lt;div style='padding-left: 10px; line-height:18px; border-left: 16px solid #FF0000;'&gt;
+      &lt;a class='link-to-altmetric-details-tab' target='_self' href='https://www.altmetric.com/details.php?domain=www.bioone.org&amp;citation_id=2628849&amp;tab=news'&gt;
+          Picked up by &lt;b&gt;1&lt;/b&gt; news outlets
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div style='padding-left: 10px; line-height:18px; border-left: 16px solid #74CFED;'&gt;
+      &lt;a class='link-to-altmetric-details-tab' target='_self' href='https://www.altmetric.com/details.php?domain=www.bioone.org&amp;citation_id=2628849&amp;tab=twitter'&gt;
+          Tweeted by &lt;b&gt;2&lt;/b&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class='altmetric-embed readers' style='margin-top: 10px;'&gt;
+          &lt;div class='altmetric-embed tip_mendeley'
+               style='padding-left: 10px; line-height:18px; border-left: 16px solid #A60000;'&gt;
+              &lt;b&gt;10&lt;/b&gt; readers on Mendeley            
+          &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style='margin-top: 10px; text-align: center;'&gt;
+        &lt;a class='altmetric_details' target='_self' href='https://www.altmetric.com/details.php?domain=www.bioone.org&amp;citation_id=2628849'&gt;
+            See more details
+        &lt;/a&gt;
+        |
+        &lt;a href='javascript:void(0)' class='close-popover'&gt;
+            Close this
+        &lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;a class='altmetric_embed close-popover'
+       style='display: block; position: absolute; top: 10px; right: 15px; font-size: 1.2em; font-weight: bold; text-decoration: none; color: black; padding-bottom: 2em; padding-left: 2em;'
+       href='javascript:void(0)'&gt;
+        ×
+    &lt;/a&gt;
+&lt;/div&gt;" style="display:inline-block;" data-badge-popover="left">
+        <img alt="Article has an altmetric score of 14" src="https://badges.altmetric.com/?size=128&amp;score=14&amp;types=mmmttttt" style="border:0; margin:0; max-width: none;" width="64px" height="64px">
+</a></div>
+            </div>
+            <p class="altMetricLink"><a title="about the Altmetric score" href="http://www.bioone.org/action/clickThrough?id=1454&amp;url=http%3A%2F%2Faltmetric.uservoice.com%2Fknowledgebase%2Farticles%2F83337-how-is-the-altmetric-score-calculated-&amp;loc=%2Fdoi%2F10.3732%2Fapps.1400032&amp;pubId=40499396&amp;placeholderId=1052&amp;productId=1214" target="_blank">via Altmetric.com</a></p>
+        </div>
+        <!-- Altmetric END -->
+    </div>
+</div>
+            </div>
+
+            <div class="columnBlock">
+            
+            <h2>Article Tools</h2>
+             
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+        <div class="itemContent" id="articleTools">
+            <p><a href="http://www.bioone.org/action/showMailPage?doi=10.3732%2Fapps.1400032&amp;href=%2Fdoi%2F10.3732%2Fapps.1400032&amp;title=Separating+Morphologically+Similar+Pollen+Types+Using+Basic+Shape+Features+from+Digital+Images%3A+A+Preliminary+Study">Email</a></p>
+            <p><a href="http://www.bioone.org/doi/10.3732/apps.1400032">Disable search highlighting</a></p>
+            <p><a href="http://www.bioone.org/personalize/addFavoritePublication?doi=10.3732%2Fapps.1400032">Add to Favorites</a></p>
+            <p><a href="http://www.bioone.org/action/doUpdateAlertSettings?action=addJournal&amp;journalCode=apps&amp;referrer=%2Fdoi%2F10.3732%2Fapps.1400032">Sign Up for E-alerts</a></p>
+            <p><a href="http://www.bioone.org/action/showCitFormats?doi=10.3732%2Fapps.1400032">Download to Citation Manager</a></p>
+            <p>Alert me when this article is cited: <a href="http://www.bioone.org/action/addCitationAlert?doi=10.3732%2Fapps.1400032&amp;referrer=%2Fdoi%2F10.3732%2Fapps.1400032">Email</a> | <a href="http://www.bioone.org/action/addCitationRss?doi=10.3732%2Fapps.1400032">RSS</a></p>
+            
+                    
+                
+
+        </div>
+    
+          </div>
+
+          <div class="columnBlock">
+
+            <div class="btnToggle"><a href="javascript:toggleLayer('citingArticles','citingArticlesImg');" title="Toggle Citing Articles"><img id="citingArticlesImg" src="button_plus.gif" alt="click this button to open" width="13" height="13"></a></div>
+            <h2>Citing Articles</h2>
+            <div class="itemContent itemClosed" id="citingArticles">
+                 <p> 
+
+                <a href="http://www.bioone.org/doi/citedby/10.3732/apps.1400032">Crossref</a>
+                </p>
+                
+                <p><a href="http://www.bioone.org/servlet/linkout?type=google-cite&amp;doi=10.3732%2Fapps.1400032">Google Scholar</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+                                    
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="contentNavWrapper">
+                <div id="contentNav">
+                    
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       <div id="articleInfoBox">
+        <div class="articleInfoCover">
+
+            
+                <img src="092.jpg">
+            
+            </div>
+            <div class="articleInfoNav">
+                <ul>
+                    
+                    
+                            <li><a href="http://www.bioone.org/loi/apps">List of Issues</a></li>
+                        
+                    
+                        
+                        
+                    
+                    
+                        
+                         
+                        
+                                    <li><a href="http://www.bioone.org/toc/apps/5/12">
+                                   Current Issue
+                               </a></li>
+                                
+                     
+                    
+                        
+                    
+
+                    
+                                        <li><a href="http://www.bioone.org/action/showPublications?type=byCategory#Open%20Access">Category: Open Access</a></li>
+                                    
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <li><a href="http://www.bioone.org/page/apps/aims">
+       Aims &amp; Scope
+   </a></li>
+    
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <li><a href="http://www.bioone.org/page/apps/editor">
+       Editorial Office
+   </a></li>
+    
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <li><a href="http://www.bioone.org/page/apps/board">
+       Editorial Board
+   </a></li>
+    
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <li><a href="http://www.bioone.org/page/apps/authors">
+       Author Guidelines
+   </a></li>
+    
+                 </ul>
+        </div>
+           <br><br>
+        <div class="clearFloats">&nbsp;</div>
+         
+        
+        <p><strong>Online ISSN: </strong>2168-0450</p>
+        
+        <p><strong>Current: </strong>Dec 2017 : Volume 5 Issue 12 </p>
+
+        <!-- placeholder id=null, description=Journal Sidebar Top --><p><strong>BioOne Member Since:</strong> 2013 <i>(Active through 2017)</i></p>
+        <p><strong>Frequency:</strong> Monthly</p>
+        <p><strong>Impact Factor:</strong> 1.492</p>
+        <p><strong>Journal Citation Reports® Ranking:</strong> </p><p>93/211 - Plant Sciences</p>
+      </div>
+
+
+        <div class="relatedContent">
+            <div class="topArticles">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btnToggle">
+    <a title="Toggle Title Tools" href="javascript:toggleLayer('titleTools','titleToolsImg');">
+        <img id="titleToolsImg" src="button_minus.gif" alt="click this button to close" width="14" height="13">
+    </a>
+</div>
+
+<h2>Title Tools</h2>
+<div id="titleTools" class="itemContent">
+    
+    <div class="articleComponent titleTools">
+        <div class="btnToggleMini">
+            <h3>
+                
+                <a title="Most Read Articles displays the top five articles of this publication that were most accessed by users during the previous month. The displayed results are updated on the 1st day of each month." href="javascript:toggleLayer('compMostRead','compMostReadImg');">
+                    <img id="compMostReadImg" src="button_minus_green.gif" alt="click this button to close" width="8" height="8"> Most Read Articles <img src="question_mark.gif" width="10" height="10">
+                </a>
+            </h3>
+        </div>
+        <div id="compMostRead">
+            
+            <p>
+                <a href="http://www.bioone.org/doi/abs/10.3732/apps.1700079">Using Herbarium-Derived DNAs to Assemble a Large-Scale DNA Barcode Library for the Vascular Plants of Canada</a>
+            <img title="open access" src="access_free.gif" alt="open access">
+            </p>
+
+            
+            <p>
+                <a href="http://www.bioone.org/doi/abs/10.3732/apps.1700053">An Efficient Pipeline to Generate Data for Studies in Plastid Population Genomics and Phylogeography</a>
+            <img title="open access" src="access_free.gif" alt="open access">
+            </p>
+
+            
+            <p>
+                <a href="http://www.bioone.org/doi/abs/10.3732/apps.1400033">Easy Leaf Area: Automated Digital Image Analysis for Rapid and Accurate Measurement of Leaf Area</a>
+            <img title="open access" src="access_free.gif" alt="open access">
+            </p>
+
+            
+            <p>
+                <a href="http://www.bioone.org/doi/abs/10.3732/apps.1400042">Hyb-Seq: Combining Target Enrichment and Genome Skimming for Plant Phylogenomics</a>
+            <img title="open access" src="access_free.gif" alt="open access">
+            </p>
+
+            
+            <p>
+                <a href="http://www.bioone.org/doi/abs/10.3732/apps.1700056">A Three-Dimensional Spatial Mapping Approach to Quantify Fine-Scale Heterogeneity Among Leaves within Canopies</a>
+            <img title="open access" src="access_free.gif" alt="open access">
+            </p>
+
+            
+        </div>
+    </div>
+    <p class="titleTools">
+        <a href="http://www.bioone.org/action/showMostReadArticles?journalCode=apps" class="moreCited">More</a>
+    </p>
+    
+    <div class="articleComponent titleTools">
+        <div class="btnToggleMini">
+            <h3>
+                
+                <a title="Most Cited Articles displays the top five articles of this publication most referenced by other scholarly papers over a three year period. Citation data is harvested from Crossref's Cited-by Linking service. The displayed results are updated on the 1st day of each month." href="javascript:toggleLayer('compMostCited','compMostCitedImg');">
+                    <img id="compMostCitedImg" src="button_minus_green.gif" alt="click this button to open" width="8" height="8"> Most Cited Articles <img src="question_mark.gif" width="10" height="10">
+                </a>
+            </h3>
+        </div>
+        <div id="compMostCited">
+            
+            <p>
+                <a href="http://www.bioone.org/doi/abs/10.3732/apps.1400042">Hyb-Seq: Combining Target Enrichment and Genome Skimming for Plant Phylogenomics</a>
+            <img title="open access" src="access_free.gif" alt="open access">
+            </p>
+            
+            <p>
+                <a href="http://www.bioone.org/doi/abs/10.3732/apps.1400066">Application of ITS2 Metabarcoding to Determine the Provenance of Pollen Collected by Honey Bees in an Agroecosystem</a>
+            <img title="open access" src="access_free.gif" alt="open access">
+            </p>
+            
+            <p>
+                <a href="http://www.bioone.org/doi/abs/10.3732/apps.1500026">Plann: A Command-Line Application for Annotating Plastome Sequences</a>
+            <img title="open access" src="access_free.gif" alt="open access">
+            </p>
+            
+            <p>
+                <a href="http://www.bioone.org/doi/abs/10.3732/apps.1200497">A Targeted Enrichment Strategy for Massively Parallel Sequencing of Angiosperm Plastid Genomes</a>
+            <img title="open access" src="access_free.gif" alt="open access">
+            </p>
+            
+            <p>
+                <a href="http://www.bioone.org/doi/abs/10.3732/apps.1300085">A Target Enrichment Method for Gathering Phylogenetic Information from Hundreds of Loci: An Example from the Compositae</a>
+            <img title="open access" src="access_free.gif" alt="open access">
+            </p>
+            
+        </div>
+    </div>
+    
+    <p class="titleTools">
+        <a href="http://www.bioone.org/action/showMostCitedArticles?journalCode=apps" class="moreCited">More</a>
+    </p>
+
+    <p class="titleTools">
+        <strong>
+            
+                    
+                    <a href="http://www.bioone.org/action/doUpdateAlertSettings?action=addJournal&amp;referrer=%2Fdoi%2F10.3732%2Fapps.1400032&amp;journalCode=apps">
+                        Sign up for e-alerts
+                    </a>
+                    
+                
+        </strong>
+    </p>
+
+    <p class="titleTools">
+        <strong>
+            <a href="http://www.bioone.org/action/showFeed?type=etoc&amp;feed=rss&amp;jc=apps">
+                <img src="rss14x14pad.gif" alt="RSS" align="top" width="14" height="14">
+                RSS Feeds
+            </a>
+        </strong>
+    </p>
+</div>
+
+
+            </div>
+            <div class="topArticles"><!-- placeholder id=null, description=Journal Sidebar Bottom --><style>
+    #adbox {
+        width: 240px;
+        background: #7A9A01;
+        border-width:5px;
+        padding-bottom: 20px;
+    }
+    </style>
+<div id="adbox"> <a href="http://www.bioone.org/action/clickThrough?id=1522&amp;url=http%3A%2F%2Fwww.bioonecareercenter.org&amp;loc=%2Fdoi%2F10.3732%2Fapps.1400032&amp;pubId=40499396&amp;placeholderId=1013&amp;productId=1004"><img src="B1_CCSidebarAd.png" class="img" style="margin: 10px 0 0 10px;
+        border: none;
+        text-decoration: none;"></a>
+    <hr style=" width: 80%;
+    color: #FFFFFF;
+    margin:15px 10%; ">
+	<p style="font-family: Arial, sans-serif;
+        font-size: 21px;
+        font-weight: bold;
+        color: #FFFFFF;
+        margin: 0 0 10px 24px; ">Looking for a job?</p>
+        <p style="font-family: Arial, sans-serif;
+        font-size:17px;
+        color: #FFFFFF;
+        text-align: left;
+        margin: 0 0 0 24px;">Visit the BioOne Career Center and apply to open positions across the sciences.</p>
+  <hr style=" width: 80%;
+    color: #FFFFFF;
+    margin:15px 10%; ">
+    <p style="font-family: Arial, sans-serif;
+        font-size:17px;
+        color: #FFFFFF;
+        text-align: left;
+			  margin: 0 0 0 24px;">careercenter.BioOne.org</p>
+</div></div>
+        </div>
+    
+
+                </div>
+            </div>
+            <div class="clearFloats">&nbsp;</div>
+        </div>
+            </div>
+
+        </div>
+        <div id="mainFooter">
+        
+
+
+
+
+
+    <div id="articleFooter">BioOne is the product of innovative collaboration between scientific societies, libraries, academe and the private sector.</div>
+    <div class="clearFloats">&nbsp;</div>
+
+
+        <div id="footerLayout">
+            <div id="footerAddress">
+                    21 Dupont Circle NW, Suite 800, Washington, DC 20036 • Phone 202.296.1605 • Fax 202.872.0884
+                    </div>
+            <div id="footerLinks">
+
+<a target="_self" mce_href="/page/terms_of_use" href="http://www.bioone.org/page/terms_of_use">Terms of Use</a> | <a target="_self" mce_href="/page/privacy_policy" href="http://www.bioone.org/page/privacy_policy">Privacy Policy</a>
+
+                    </div>
+             <div class="clearFloats">&nbsp;</div>
+        </div>
+        <div id="footerCopyright">
+            Copyright © 2018 BioOne All rights reserved
+        </div>
+
+
+
+
+    
+
+    </div>
+    </div><div style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;" id="_atssh"><iframe id="_atssh282" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; top: 0px; z-index: 100000; border: 0px none; left: 0px;" src="http://s7.addthis.com/static/sh.d663e43787b663d5491cf753.html#rand=0.4544362502492917&amp;iit=1516006282840&amp;tmr=load%3D1516006282725%26core%3D1516006282746%26main%3D1516006282836%26ifr%3D1516006282844&amp;cb=0&amp;cdn=0&amp;md=0&amp;kw=automated%20palynology%2CClassifynder%2Cgeometric%20features%2CKunzea%20ericoides%2CLeptospermum%20scoparium%2CMyrtaceae%2Cpollen%20morphology&amp;ab=-&amp;dh=www.bioone.org&amp;dr=&amp;du=http%3A%2F%2Fwww.bioone.org%2Fdoi%2F10.3732%2Fapps.1400032&amp;href=http%3A%2F%2Fwww.bioone.org%2Fdoi%2F10.3732%2Fapps.1400032&amp;dt=Separating%20Morphologically%20Similar%20Pollen%20Types%20Using%20Basic%20Shape%20Features%20from%20Digital%20Images%3A%20A%20Preliminary%20Study&amp;dbg=0&amp;cap=tc%3D0%26ab%3D0&amp;inst=1&amp;jsl=1&amp;prod=undefined&amp;lng=en&amp;ogt=site_name%2Cdescription%2Cimage%2Ctitle%2Curl%2Ctype%3Darticle&amp;pc=men&amp;pub=xa-4c58776810b36f94&amp;ssl=0&amp;sid=5a5c6b8a340a1f1f&amp;srf=0.01&amp;ver=300&amp;xck=0&amp;xtr=0&amp;og=type%3Darticle%26url%3Dhttp%253A%252F%252Fwww.bioone.org%252Fdoi%252Fabs%252F10.3732%252Fapps.1400032%26title%3DSeparating%2520Morphologically%2520Similar%2520Pollen%2520Types%2520Using%2520Basic%2520Shape%2520Features%2520from%2520Digital%2520Images%253A%2520A%2520Preliminary%2520Study%26image%3Dhttp%253A%252F%252Fwww.bioone.org%252Fna101%252Fhome%252Fliteratum%252Fpublisher%252Fbioone%252Fjournals%252Fcontent%252Fapps%252F2014%252F092.020.0800%252F092.020.0800%252F20140818-01%252F092.020.0800.cover.jpg%26description%3DKatherine%2520A.%2520Holt%2520and%2520Mark%2520S.%2520Bebbington%2520%282014%29%2520Separating%2520Morphologically%2520Similar%2520Pollen%2520Types%2520Using%2520Basic%2520Shape%2520Features%2520from%2520Digital%2520Images%253A%2520A%2520Preliminary%2520Study.%2520Applications%2520in%2520Plant%2520Sciences%253A%2520Vol.%25202%252C%2520Issue%25208%2520-%2520Special%2520Issue%253A%2520Bioinformatic%2520and%2520Biometric%2520Methods%2520in%2520Plant%2520Morphology%252C%2520pp.%2520null.%2520https%253A%252F%252Fdoi.org%252F10.3732%252Fapps.1400032%26site_name%3DBioOne&amp;csi=undefined&amp;rev=v8.1.5-wp&amp;ct=1&amp;xld=1&amp;xd=1"></iframe></div><style id="service-icons-0"></style>
+
+
+
+
+<script type="text/javascript" src="apps.json"></script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" alt="Google Translate" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><div class="altmetric-embed altmetric-popover altmetric-left" data-uuid="1334da75-acb1-28c5-e3c1-09a41e89bfcb" id="_altmetric_popover_el" style="margin: 0px; display: none;"><div class="altmetric_container" id="_altmetric_container"><div class="altmetric_arrow altmetric-left"></div><div id="_altmetric_popover_inner" class="altmetric-embed altmetric-popover-inner altmetric-floating altmetric-left" data-uuid="1334da75-acb1-28c5-e3c1-09a41e89bfcb"><div class="altmetric-embed altmetric-popover-content altmetric-floating"><div>    <div style="padding-left: 10px; line-height:18px; border-left: 16px solid #FF0000;">
+      <a class="link-to-altmetric-details-tab" target="_self" href="https://www.altmetric.com/details.php?domain=www.bioone.org&amp;citation_id=2628849&amp;tab=news">
+          Picked up by <b>1</b> news outlets
+      </a>
+    </div>
+    <div style="padding-left: 10px; line-height:18px; border-left: 16px solid #74CFED;">
+      <a class="link-to-altmetric-details-tab" target="_self" href="https://www.altmetric.com/details.php?domain=www.bioone.org&amp;citation_id=2628849&amp;tab=twitter">
+          Tweeted by <b>2</b>
+      </a>
+    </div>
+
+    <div class="altmetric-embed readers" style="margin-top: 10px;">
+          <div class="altmetric-embed tip_mendeley" style="padding-left: 10px; line-height:18px; border-left: 16px solid #A60000;">
+              <b>10</b> readers on Mendeley            
+          </div>
+    </div>
+    <div style="margin-top: 10px; text-align: center;">
+        <a class="altmetric_details" target="_self" href="https://www.altmetric.com/details.php?domain=www.bioone.org&amp;citation_id=2628849">
+            See more details
+        </a>
+        |
+        <a href="javascript:void(0)" class="close-popover">
+            Close this
+        </a>
+    </div>
+
+    <a class="altmetric_embed close-popover" style="display: block; position: absolute; top: 10px; right: 15px; font-size: 1.2em; font-weight: bold; text-decoration: none; color: black; padding-bottom: 2em; padding-left: 2em;" href="javascript:void(0)">
+        ×
+    </a>
+</div></div></div></div></div><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe class="goog-te-menu-frame skiptranslate" title="Language Translate Widget" style="visibility: visible; box-sizing: content-box; width: 1022px; height: 263px; display: none;" frameborder="0"></iframe></body></html>

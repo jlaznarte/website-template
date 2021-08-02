@@ -1,0 +1,1 @@
+_ate.track.config_resp({"pc":"tbx","subscription":{"active":true,"edition":"BASIC","tier":"basic","reducedBranding":false},"customMessageTemplates":[],"pro-config":{"_default":{"widgets":{"tbx":{"numPreferredServices":5,"hideEmailSharingConfirmation":false,"size":"small","counts":false,"shareCountThreshold":10,"elements":".addthis_sharing_toolbox","services":"addthis"}}}}});

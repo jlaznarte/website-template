@@ -1,0 +1,181 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<title>Daood</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Sequential Recognition of Pollen Grain Z-Stacks by Combining CNN and RNN">
+			<meta name="keywords" content="Pollen classification; CNN; RNN; Neural Networks">
+	
+	
+	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+
+	<meta name="DC.Contributor.Sponsor" xml:lang="en" content="">
+	<meta name="DC.Creator.PersonalName" content="Amar Daood">
+	<meta name="DC.Creator.PersonalName" content="Eraldo Ribeiro">
+	<meta name="DC.Creator.PersonalName" content="Mark Bush">
+	<meta name="DC.Date.available" scheme="ISO8601" content="2018-05-17">
+	<meta name="DC.Date.created" scheme="ISO8601" content="2018-05-10">
+	<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2018-02-23">
+	<meta name="DC.Date.modified" scheme="ISO8601" content="2018-05-04">
+	<meta name="DC.Description" xml:lang="en" content="Pollen recognition has a wide range of industrial and scientific applications. It guides the energy industry to potential oil and gas deposits, it is proxy data for climate-change scien- tists, and it increases agricultural production. However, pollen recognition is time consuming because it is usually done by visual inspection. Current automated solutions rely on pre-designed measurements of texture and contours, which require tuning for optimal features of a dataset. Also, most methods classify pollen using single-focus images, which require pollen grains to be captured at specific focal planes. We take a difference approach. Instead of using single-focus images, we use stacks of multifocal images (i.e., z-stack) to account for both visual characteristics and 3-D information. We automatically learn from the data the best visual characteristics for classifying pollen using deep-learning methods. Here, we train convolutional and recurrent neural networks (CNN and RNN) to learn the optimal features and recognize a pollen grain as a sequence of multifocal images acquired by an optical microscope. Additionally, we transfer the knowledge pre-trained network to ours to improve its classification and convergence speed. We evaluated our method using 392 stack sequences of 10 types of pollen grains with 10 images for each sequence. Our method achieved a remarkable classi- fication rate of 100%.">
+	<meta name="DC.Format" scheme="IMT" content="application/pdf">		
+	<meta name="DC.Identifier" content="17642">
+	<meta name="DC.Identifier.URI" content="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/paper/view/17642">
+	<meta name="DC.Language" scheme="ISO639-1" content="en">
+	<meta name="DC.Rights" content="Authors who publish a paper in this conference agree to the following terms:  1. Author(s) agree to transfer their copyrights in their article/paper to the Association for the Advancement of Artificial Intelligence (AAAI), in order to deal with future requests for reprints, translations, anthologies, reproductions, excerpts, and other publications. This grant will include, without limitation, the entire copyright in the article/paper in all countries of the world, including all renewals, extensions, and reversions thereof, whether such rights current exist or hereafter come into effect, and also the exclusive right to create electronic versions of the article/paper, to the extent that such right is not subsumed under copyright.  2. The author(s) warrants that they are the sole author and owner of the copyright in the above article/paper, except for those portions shown to be in quotations; that the article/paper is original throughout; and that the undersigned right to make the grants set forth above is complete and unencumbered.  3. The author(s) agree that if anyone brings any claim or action alleging facts that, if true, constitute a breach of any of the foregoing warranties, the author(s) will hold harmless and indemnify AAAI, their grantees, their licensees, and their distributors against any liability, whether under judgment, decree, or compromise, and any legal fees and expenses arising out of that claim or actions, and the undersigned will cooperate fully in any defense AAAI may make to such claim or action. Moreover, the undersigned agrees to cooperate in any claim or other action seeking to protect or enforce any right the undersigned has granted to AAAI in the article/paper. If any such claim or action fails because of facts that constitute a breach of any of the foregoing warranties, the undersigned agrees to reimburse whomever brings such claim or action for expenses and attorneys&amp;rsquo; fees incurred therein.  4. Author(s) retain all proprietary rights other than copyright (such as patent rights).  5. Author(s) may make personal reuse of all or portions of the above article/paper in other works of their own authorship.  6. Author(s) may reproduce, or have reproduced, their article/paper for the author&amp;rsquo;s personal use, or for company use provided that AAAI copyright and the source are indicated, and that the copies are not used in a way that implies AAAI endorsement of a product or service of an employer, and that the copies per se are not offered for sale. The foregoing right shall not permit the posting of the article/paper in electronic or digital form on any computer network, except by the author or the author&amp;rsquo;s employer, and then only on the author&amp;rsquo;s or the employer&amp;rsquo;s own web page or ftp site. Such web page or ftp site, in addition to the aforementioned requirements of this Paragraph, must provide an electronic reference or link back to the AAAI electronic server, and shall not post other AAAI copyrighted materials not of the author&amp;rsquo;s or the employer&amp;rsquo;s creation (including tables of contents with links to other papers) without AAAI&amp;rsquo;s written permission.  7. Author(s) may make limited distribution of all or portions of their article/paper prior to publication.  8. In the case of work performed under U.S. Government contract, AAAI grants the U.S. Government royalty-free permission to reproduce all or portions of the above article/paper, and to authorize others to do so, for U.S. Government purposes.  9. In the event the above article/paper is not accepted and published by AAAI, or is withdrawn by the author(s) before acceptance by AAAI, this agreement becomes null and void.">
+	<meta name="DC.Source" content="The Thirty-First International Flairs Conference">
+	<meta name="DC.Source.URI" content="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/index">
+						<meta name="DC.Subject" xml:lang="en" content="Pollen classification">
+								<meta name="DC.Subject" xml:lang="en" content="CNN">
+								<meta name="DC.Subject" xml:lang="en" content="RNN">
+								<meta name="DC.Subject" xml:lang="en" content="Neural Networks">
+				<meta name="DC.Title" content="Sequential Recognition of Pollen Grain Z-Stacks by Combining CNN and RNN">
+		<meta name="DC.Type" content="Text.Proceedings">
+	<meta name="DC.Type.paperType" content="Main Track">			<meta name="gs_meta_revision" content="1.1">
+	<meta name="citation_conference_title" content="The Thirty-First International Flairs Conference">
+	<meta name="citation_author" content="Amar Daood">
+	<meta name="citation_author_institution" content="Florida Institute of Technology">
+	<meta name="citation_author" content="Eraldo Ribeiro">
+	<meta name="citation_author_institution" content="Florida Institute of Technology">
+	<meta name="citation_author" content="Mark Bush">
+	<meta name="citation_author_institution" content="Florida Institute of Technology">
+	<meta name="citation_title" content="Sequential Recognition of Pollen Grain Z-Stacks by Combining CNN and RNN">
+	<meta name="citation_date" content="2018/05/10">
+	<meta name="citation_abstract_html_url" content="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/paper/view/17642">
+	<meta name="citation_pdf_url" content="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/paper/download/17642/16848">
+
+	<link rel="stylesheet" href="common.css" type="text/css">
+	<link rel="stylesheet" href="common_002.css" type="text/css">
+	<link rel="stylesheet" href="paperView.css" type="text/css">
+
+	<!-- Base Jquery -->
+	<script src="jsapi"></script>
+	<script>
+		google.load("jquery", "1");
+		google.load("jqueryui", "1");
+	</script><script src="jquery.js" type="text/javascript"></script><script src="jquery-ui.js" type="text/javascript"></script>
+		<!-- Add javascript required for font sizer -->
+	<script type="text/javascript" src="jquery_002.js"></script>
+	<script type="text/javascript" src="fontController.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			fontSize("#sizer", "body", 9, 16, 32, "https://www.aaai.org/ocs"); // Initialize the font sizer
+		});
+	</script>
+
+			<link rel="stylesheet" href="desert.css" type="text/css">
+			<link rel="stylesheet" href="jqueryUi.css" type="text/css">
+			<link rel="stylesheet" href="jquery.css" type="text/css">
+			<link rel="stylesheet" href="pnotify.css" type="text/css">
+	
+	<script type="text/javascript" src="general.js"></script>
+	
+	<!-- Add javascript required for font sizer -->
+	<script type="text/javascript" src="jquery_002.js"></script>	
+	<script type="text/javascript" src="fontController.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			fontSize("#sizer", "body", 9, 16, 32, "https://www.aaai.org/ocs"); // Initialize the font sizer
+		});
+	</script>
+</head>
+<body>
+
+<div id="container">
+
+<div id="body">
+
+<div id="main">
+
+<h2>AAAI Publications,&nbsp;The Thirty-First International Flairs Conference</h2>
+
+<div id="navbar">
+	<ul class="menu">
+		<li><a href="https://www.aaai.org/ocs/index.php/index/index/index/index" target="_parent">Home</a></li>
+		<li><a href="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/about" target="_parent">About</a></li>
+
+					<li><a href="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/login" target="_parent">Log In</a></li>
+			<li><a href="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/user/account" target="_parent">Account</a></li>
+				<li><a href="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/search" target="_parent">Search</a></li>
+
+								<li><a href="https://www.aaai.org/ocs/index.php/FLAIRS/index/schedConfs/archive" target="_parent">Archive</a></li>
+							<li><a href="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/announcement" target="_parent">Announcements</a></li>
+						
+										</ul>
+</div>
+
+<div id="breadcrumb">
+	<a href="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/index" target="_parent">Home</a> &gt;
+	<a href="https://www.aaai.org/ocs/index.php/FLAIRS/" target="_parent">Florida Artificial Intelligence Research Society Conference</a> &gt;
+	<a href="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/index" target="_parent">The Thirty-First International Flairs Conference</a> &gt;
+	<a href="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/schedConf/presentations" target="_parent">Main Track</a> &gt;
+	<a href="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/paper/view/17642/0" class="current" target="_parent">Daood</a>
+</div>
+
+<div id="content">
+	<div id="topBar">
+		<div id="paperFontSize">
+			Font Size:&nbsp;
+			<div id="sizer"><a href="javascript:void(0);" class="smallFont" title="Make font size smaller">Make font size smaller</a> <a href="javascript:void(0);" class="defaultFont" title="Make font size default">Make font size default</a> <a href="javascript:void(0);" class="largeFont" title="Make font size larger">Make font size larger</a> </div>
+		</div>
+	</div>
+
+	<div id="title">Sequential Recognition of Pollen Grain Z-Stacks by Combining CNN and RNN</div>
+	<div id="author"><em>Amar Daood, Eraldo Ribeiro, Mark Bush</em></div>
+	<br>
+
+	<blockquote>
+		Last modified:&nbsp;2018-05-10<br>
+	</blockquote>
+
+		<div id="abstract">
+	<h4>Abstract</h4>
+	<br>
+	<div>Pollen recognition has a wide range of industrial and scientific 
+applications. It guides the energy industry to potential oil and gas 
+deposits, it is proxy data for climate-change scien- tists, and it 
+increases agricultural production. However, pollen recognition is time 
+consuming because it is usually done by visual inspection. Current 
+automated solutions rely on pre-designed measurements of texture and 
+contours, which require tuning for optimal features of a dataset. Also, 
+most methods classify pollen using single-focus images, which require 
+pollen grains to be captured at specific focal planes. We take a 
+difference approach. Instead of using single-focus images, we use stacks
+ of multifocal images (i.e., z-stack) to account for both visual 
+characteristics and 3-D information. We automatically learn from the 
+data the best visual characteristics for classifying pollen using 
+deep-learning methods. Here, we train convolutional and recurrent neural
+ networks (CNN and RNN) to learn the optimal features and recognize a 
+pollen grain as a sequence of multifocal images acquired by an optical 
+microscope. Additionally, we transfer the knowledge pre-trained network 
+to ours to improve its classification and convergence speed. We 
+evaluated our method using 392 stack sequences of 10 types of pollen 
+grains with 10 images for each sequence. Our method achieved a 
+remarkable classi- fication rate of 100%.</div>
+	<br>
+	</div>
+	
+			<div id="paperSubject">
+		<h4>Keywords</h4>
+		<br>
+		<div>Pollen classification; CNN; RNN; Neural Networks</div>
+		<br>
+		</div>
+	
+		
+	<div id="paper">
+								Full Text:
+														<a href="https://www.aaai.org/ocs/index.php/FLAIRS/FLAIRS18/paper/view/17642/16848" class="action" target="_parent">PDF</a>
+											</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+</body></html>

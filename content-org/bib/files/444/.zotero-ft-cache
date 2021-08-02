@@ -1,0 +1,190 @@
+Screen reader users, click here to load entire article This page uses JavaScript to progressively load the article content as a user scrolls. Screen reader users, click the load entire article button to bypass dynamically loaded article content.
+Please note that Internet Explorer version 8.x will not be supported as of January 1, 2016. Please refer to this blog post for more information. Close
+ScienceDirect
+
+    Sign in
+    Sign in using your ScienceDirect credentials
+    Username
+    Password
+    Remember me
+    Register now
+    Forgotten username or password?
+    Sign in via your institution
+        OpenAthens login
+        Other institution login
+    Help
+
+    Journals
+    Books
+
+    Journals
+    Books
+
+Sign in
+Help
+close
+Sign in using your ScienceDirect credentials
+Username
+Password
+Remember me
+Register now
+Forgotten username or password?
+Sign in via your institution
+
+    OpenAthens login
+    Other institution login
+
+    Purchase
+     
+    Help
+        Direct export
+         
+         
+        Export file
+          RIS (for EndNote, Reference Manager, ProCite)
+          BibTeX
+          Text
+          RefWorks Direct Export
+        Content
+          Citation Only
+          Citation and Abstract
+
+Advanced search
+
+ 
+Article outline
+Show full outline
+
+    Abstract
+    Keywords
+    1. Introduction
+    2. Methodology
+    2.1. Database
+    2.2. Neural network models
+    2.3. Measures of agreement
+    2.4. Building the models
+    2.4.1. Genetic algorithms
+    2.4.2. Candidate models
+    2.5. Models' performance
+    3. Results
+    3.1. Spatial variability
+    3.2. Selected models and inputs
+    4. Conclusions
+    Acknowledgements
+    References
+    Further readings
+
+Alert message
+JavaScript is disabled on your browser.
+Please enable JavaScript to use all the features on this page.
+Figures and tables
+
+    Bilbao central area and location of sensors. The 181 traffic sensors spread ...
+    Table 1
+    Table 2
+    Table 3
+    Two-factor plane representation of the spatial variability of inmission levels ...
+    Table 4
+    Table 5
+    Average traffic autocorrelation function.
+    Table 6
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. View full text
+
+Environmental Modelling & Software
+
+Volume 23, Issue 5 , May 2008, Pages 622–637
+Cover image Cover image
+From diagnosis to prognosis for forecasting air pollution using neural networks: Air pollution monitoring in Bilbao
+
+    Gabriel Ibarra-Berastegi a , b , , ,
+    Ana Elias a , c ,
+    Astrid Barona a , c ,
+    Jon Saenz a , d ,
+    Agustin Ezcurra a , d ,
+    Javier Diaz de Argandoña a , e
+
+    a University of the Basque Country, Bilbao, Spain
+    b Fluid Mechanics & N.I. Department, Universidad del Pais Vasco, Escuela Superior de Ingenieŕa, Alda. Urkijo, s/n 48013 Bilbao, Bizkaia, Spain
+    c University of the Basque Country, Chemical and Environmental Engineering Department, Bilbao, Spain
+    d University of the Basque Country, Applied Physics II Department, Bilbao, Spain
+    e University of the Basque Country, Applied Physics I Department, Bilbao, Spain
+
+    Received 3 May 2006, Revised 4 September 2007, Accepted 5 September 2007, Available online 30 October 2007
+
+  Show more   Show less
+Choose an option to locate/access this article:
+Check if you have access through your login credentials or your institution
+Check access
+Purchase $19.95
+
+    doi:10.1016/j.envsoft.2007.09.003 
+    Get rights and content 
+
+Abstract
+
+This work focuses on the prediction of hourly levels up to 8 h ahead for five pollutants (SO 2 , CO, NO 2 , NO and O 3 ) and six locations in the area of Bilbao (Spain). To that end, 216 models based on neural networks (NNs) were built. The database used to fit the NNs were historical records of the traffic, meteorological and air pollution networks existing in the area corresponding to year 2000. Then, the models were tested on data from the same networks but corresponding to year 2001. At a first stage, for each of the 216 cases, 100 models based on different types of neural networks were built using data corresponding to year 2000. The final identification of the best model was made under the criteria of simultaneously having at a 95% confidence level the best values of R 2 , d 1 , FA2 and RMSE when applied to data of year 2001. The number of hourly cases in which due to gaps in data predictions were possible range from 11% to 38% depending on the sensor. Depending on the pollutant, location and number of hours ahead the prediction is made, different types of models were selected. The use of these models based on NNs can provide Bilbao's air pollution network originally designed for diagnosis purposes, with short-term, real time forecasting capabilities. The performance of these models at the different sensors in the area range from a maximum value of R 2  = 0.88 for the prediction of NO 2 1 h ahead, to a minimum value of R 2  = 0.15 for the prediction of ozone 8 h ahead. These boundaries and the limitation in the number of cases that predictions are possible represent the maximum forecasting capability that Bilbao's network can provide in real-life operating conditions.
+Keywords
+
+    Neural networks ;
+    Fluid mechanics ;
+    Air pollution forecasting ;
+    Air quality network ;
+    Traffic network ;
+    Bilbao ;
+    Photochemistry
+
+    Corresponding author. Fluid Mechanics & N.I. Department, Universidad del Pais Vasco, Escuela Superior de Ingenieŕa, Alda. Urkijo, s/n 48013, Bilbao, Bizkaia, Spain. Tel.: +34 946014274; fax: +34 946014159.
+
+Copyright © 2007 Elsevier Ltd. All rights reserved.
+Elsevier
+About ScienceDirect Remote access Shopping cart Contact and support Terms and conditions Privacy policy
+Cookies are used by this site. For more information, visit the cookies page .
+Copyright © 2016 Elsevier B.V. or its licensors or contributors. ScienceDirect ® is a registered trademark of Elsevier B.V.
+RELX Group
+  Recommended articles
+
+        An online air pollution forecasting system using neural networks
+        2008, Environment International
+        more
+            Atakan Kurt, , Betul Gulbagci, , Ferhat Karaca, , Omar Alagha,
+            An online air pollution forecasting system using neural networks
+            Environment International, Volume 34, Issue 5, July 2008, Pages 592–598
+            Original Research Article
+                PDF (692 K)
+        Combining principal component regression and artificial neural networks for more accurate predictions of ground-level ozone
+        2008, Environmental Modelling & Software
+        more
+            Saleh M. Al-Alawi, , Sabah A. Abdul-Wahab, , Charles S. Bakheit,
+            Combining principal component regression and artificial neural networks for more accurate predictions of ground-level ozone
+            Environmental Modelling & Software, Volume 23, Issue 4, April 2008, Pages 396–403
+            Original Research Article
+                PDF (704 K)
+        Forecasting air pollutant indicator levels with geographic models 3days in advance using neural networks
+        2010, Expert Systems with Applications
+        more
+            Atakan Kurt, , Ayşe Betül Oktay,
+            Forecasting air pollutant indicator levels with geographic models 3days in advance using neural networks
+            Expert Systems with Applications, Volume 37, Issue 12, December 2010, Pages 7986–7992
+            Original Research Article
+                PDF (577 K)
+    View more articles »
+
+  Citing articles ( 58 )
+
+    This article has not been cited.
+
+  Related book content
+
+    No articles found.
+
++ Show more applications
+- Show fewer applications
+ 
+Download PDFs
+Help
+Help
+ 
+[Entitle Gadget]
+Entitle Gadget
+

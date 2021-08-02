@@ -1,0 +1,192 @@
+
+Loading [Contrib]/a11y/accessibility-menu.js
+MENU
+SIGN IN
+Sign in/Register
+Enter words / phrases / DOI / ISBN / authors / keywords / etc. SEARCH CITATION SEARCH
+
+    SEARCH
+    CITATION SEARCH
+    ADVANCED SEARCH
+
+Search in: This Publication
+This Publication
+
+    This Publication
+    Anywhere
+    This Publisher/Society
+
+search
+Advanced
+This option allows users to search by Publication, Volume and Page Selecting this option will search the current publication in context. Selecting this option will search all publications across the Scitation platform Selecting this option will search all publications for the Publisher/Society in context
+
+    Publishers
+    Scilight
+    Conference Proceedings
+    Author Resources
+    Librarian Resources
+    Advertiser
+    Contact Us
+    FAQ
+    Help
+
+    Scitation Home
+
+    Publications View All Publications
+        Applied Physics Reviews
+        Applied Physics Letters
+        Journal of Applied Physics
+        The Journal of Chemical Physics
+        Physics Today
+        The Journal of the Acoustical Society of America
+        Review of Scientific Instruments
+        American Journal of Physics
+        Physics of Fluids
+        AIP Advances
+        View All Publications
+
+    Topics View All Topics
+        Acoustics
+        Biological Physics
+        Condensed Matter Physics
+        Energy
+        Materials Science
+        Mathematical Physics
+        Optics and Optical Physics
+        Physical Chemistry
+        Plasma Physics
+        Rheology and Fluid Dynamics
+        View All Topics
+
+Publisher Logo
+Conference Proceedings
+like and follow us
+Facebook
+
+    Most recent (RSS)
+    Most cited (RSS)
+
+BUY PRINT BOOKS
+
+    HOME
+    BROWSE
+    MORE
+        INFO
+            Overview
+            Forthcoming Proceedings
+        FOR AUTHORS
+            Preparing Your Manuscript
+            AIP Author Services
+            Publication Charges
+        FOR ORGANIZERS
+    BROWSE
+    INFO
+        Overview
+        Forthcoming Proceedings
+    FOR AUTHORS
+        Preparing Your Manuscript
+        AIP Author Services
+        Publication Changes
+    FOR ORGANIZERS
+
+SIGN UP FOR ALERTS
+Thank you
+For your interest in the AIP Conference Proceedings (APC)
+
+To sign up for alerts, please log in first. If you need an account; please  register here
+Email
+Password
+Forgot password?
+Keep me logged in
+
+    ABSTRACT
+
+    Home >
+    AIP Conference Proceedings >
+    Volume 1559, Issue 1 >
+    10.1063/1.4825017
+
+Check for updates on crossmark
+Prev Next
+Published Online: 09 October 2013
+A comparison of classification algorithms within the Classifynder pollen imaging system
+AIP Conference Proceedings 1559 , 250 (2013); https://doi.org/10.1063/1.4825017
+Ryan Lagerstrom , Yulia Arzhaeva , and Leanne Bischof
+CSIRO Computational Informatics. Locked Bag 17, North Ryde, NSW 1670, Australia
+Simon Haberle and Felicitas Hopf
+School of Culture, History and Language, H C Coombs Blg 9, The Australian National University, Canberra, ACT 0200, Australia
+David Lovell
+CSIRO Computational Informatics. GPO Box 664, ACT 2601, Australia
+more...
+
+    PDF
+    CHORUS
+
+    Abstract
+    Cited by
+    Tools
+        Download Citation
+        Add to Favorites
+        Reprints and Permissions
+    E-mail
+    Facebook
+    Linkedin
+    Twitter
+    Reddit
+    Mendeley
+    Recommended To Librarians
+
+Share
+E-mail
+Facebook
+Linkedin
+Twitter
+Reddit
+Mendeley
+Recommend to Librarian
+metrics
+8
+Views
+
+    Topics
+        Topics
+            Theoretical computer science
+            Artificial neural networks
+            Microscopy
+            Decision theory
+            Ecology
+            Image processing
+
+Abstract
+We describe an investigation into how Massey University’s Pollen Classifynder can accelerate the understanding of pollen and its role in nature. The Classifynder is an imaging microscopy system that can locate, image and classify slide based pollen samples. Given the laboriousness of purely manual image acquisition and identification it is vital to exploit assistive technologies like the Classifynder to enable acquisition and analysis of pollen samples. It is also vital that we understand the strengths and limitations of automated systems so that they can be used (and improved) to compliment the strengths and weaknesses of human analysts to the greatest extent possible. This article reviews some of our experiences with the Classifynder system and our exploration of alternative classifier models to enhance both accuracy and interpretability. Our experiments in the pollen analysis problem domain have been based on samples from the Australian National University’s pollen reference collection (2890 grains, 15 species) and images bundled with the Classifynder system (400 grains, 4 species). These samples have been represented using the Classifynder image feature set. In addition to the Classifynder’s native neural network classifier, we have evaluated linear discriminant, support vector machine, decision tree and random forest classifiers on these data with encouraging results. Our hope is that our findings will help enhance the performance of future releases of the Classifynder and other systems for accelerating the acquisition and analysis of pollen samples.
+false
+Article Metrics
+Views
+8
+Citations
+Crossref 3
+Web of Science
+ISI 0
+Altmetric
+Please Note: The number of views represents the full text views from December 2016 to date. Article views prior to December 2016 are not included.
+Resources
+
+    AUTHOR
+    LIBRARIAN
+    ADVERTISER
+
+General Information
+
+    ABOUT
+    CONTACT
+    HELP
+
+ 
+
+    PRIVACY POLICY
+    TERMS OF USE
+    FOLLOW AIP PUBLISHING:
+
+Website © 2019 AIP Publishing LLC. Article copyright remains as specified within the article.
+Scitation logo
+

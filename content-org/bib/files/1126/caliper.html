@@ -1,0 +1,776 @@
+<html><head>
+<!--[if IE]><![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="17d998b9ce"></script><script src="nr-1118.js"></script><script async="" src="analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="Generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="https://www.imsglobal.org/activity/caliper">
+<link rel="shortlink" href="https://www.imsglobal.org/node/651">
+<link rel="shortcut icon" href="https://www.imsglobal.org/sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon">
+<title>Caliper Analytics  | IMS Global Learning Consortium</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css" media="all">
+@import url("/modules/system/system.base.css?plskg2");
+@import url("/modules/system/system.menus.css?plskg2");
+@import url("/modules/system/system.messages.css?plskg2");
+@import url("/modules/system/system.theme.css?plskg2");
+</style>
+<style type="text/css" media="all">
+@import url("/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.core.min.css?plskg2");
+@import url("/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.theme.min.css?plskg2");
+</style>
+<style type="text/css" media="all">
+@import url("/modules/book/book.css?plskg2");
+@import url("/sites/all/modules/calendar/css/calendar_multiday.css?plskg2");
+@import url("/modules/comment/comment.css?plskg2");
+@import url("/sites/all/modules/contrib/date/date_api/date.css?plskg2");
+@import url("/sites/all/modules/contrib/date/date_popup/themes/datepicker.1.7.css?plskg2");
+@import url("/sites/all/modules/contrib/date/date_repeat_field/date_repeat_field.css?plskg2");
+@import url("/modules/field/theme/field.css?plskg2");
+@import url("/modules/node/node.css?plskg2");
+@import url("/sites/all/modules/pd_reports_module/css/global.css?plskg2");
+@import url("/sites/all/modules/pd_reports_module/css/plugins/datepicker/daterangepicker.css?plskg2");
+@import url("/modules/poll/poll.css?plskg2");
+@import url("/modules/search/search.css?plskg2");
+@import url("/sites/all/modules/toc_node/css/toc_node.css?plskg2");
+@import url("/sites/all/modules/ubercart/uc_order/uc_order.css?plskg2");
+@import url("/sites/all/modules/ubercart/uc_product/uc_product.css?plskg2");
+@import url("/sites/all/modules/uc_simple_discount/uc_simple_discount.css?plskg2");
+@import url("/sites/all/modules/ubercart/uc_store/uc_store.css?plskg2");
+@import url("/modules/user/user.css?plskg2");
+@import url("/modules/forum/forum.css?plskg2");
+@import url("/sites/all/modules/views/css/views.css?plskg2");
+@import url("/sites/all/modules/contrib/media/modules/media_wysiwyg/css/media_wysiwyg.base.css?plskg2");
+</style>
+<style type="text/css" media="all">
+@import url("/sites/all/modules/colorbox/styles/default/colorbox_style.css?plskg2");
+@import url("/sites/all/modules/contrib/ctools/css/ctools.css?plskg2");
+@import url("/sites/all/modules/contrib/ctools/css/modal.css?plskg2");
+@import url("/sites/all/modules/tagclouds/tagclouds.css?plskg2");
+@import url("/sites/all/modules/user_dashboard/user_dashboard.css?plskg2");
+@import url("/sites/all/modules/taxonomy_access/taxonomy_access.css?plskg2");
+</style>
+<style type="text/css" media="all">
+/* <![CDATA[ */
+.header_icon,.block.orange-header h3.block-headline,.block.styled-header h3.block-headline{background-color:#1c6b7c !important;}
+
+/* ]]> */
+</style>
+<style type="text/css" media="all">
+@import url("/sites/all/modules/productdirectory/css/tooltip.css?plskg2");
+</style>
+<link type="text/css" rel="stylesheet" href="all.css" media="all">
+<style type="text/css" media="all">
+@import url("/sites/all/libraries/superfish/css/superfish.css?plskg2");
+</style>
+<style type="text/css" media="all">
+@import url("/sites/all/themes/ims/assets/css/megamenu-demo.css?plskg2");
+@import url("/sites/all/themes/ims/assets/css/bootstrap-theme.css?plskg2");
+@import url("/sites/all/themes/ims/assets/css/bootstrap.css?plskg2");
+@import url("/sites/all/themes/ims/assets/css/imsglobal.css?plskg2");
+@import url("/sites/all/themes/ims/assets/css/style.css?plskg2");
+</style>
+<style type="text/css" media="print">
+@import url("/sites/all/themes/ims/assets/css/imsglobal.print.css?plskg2");
+</style>
+<link type="text/css" rel="stylesheet" href="views-tech_activity_feeds-block_1.css" media="all">
+<link type="text/css" rel="stylesheet" href="views-tech_activity_feeds-block_4.css" media="all">
+<link type="text/css" rel="stylesheet" href="views-tech_activity_feeds-block.css" media="all">
+<link type="text/css" rel="stylesheet" href="views-tech_activity_feeds-block_3.css" media="all">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.8/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="js__H5AFmq1RrXKsrazzPq_xPQPy4K0wUKqecPjczzRiTgQ__JIy-3lUpq3qC.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery.ui || document.write("<script src='/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery-ui.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="js__UW4URQsON5h-xjwepC-HoW32RCC10thhh4f0DQ1P8z4__hNpiQ4nPo69u.js"></script>
+<script type="text/javascript" src="js__P3ER6aBJWRT0gwCuCwxJJBGcRpyoPxvBTwmExELajfg__6lirxbTdH7lo.js"></script>
+<script type="text/javascript" src="js__yCILyqpsnwiNeQ7OtO0Lsg6n-PbABqY_-RV2fQb-PeQ__0bTIOuFp6VV7.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.imsglobal.org/sites/default/files/googleanalytics/analytics.js?plskg2","ga");ga("create", "UA-25297781-1", {"cookieDomain":".imsglobal.org"});ga("set", "anonymizeIp", true);ga("set", "page", location.pathname + location.search + location.hash);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="js__1ff96vilpzVWT7frCY67NLaABpospaRpvDbwqZcsud4__GK-dbBYyV2Sf.js"></script>
+<script type="text/javascript" src="js__SrC_tV7lU_YCKXmoewCAG0Tp-FftQ2IlUe9eDvYNZYk__WU_FLwvXHq9S.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"ims","theme_token":"lFRh14w4UzelulO_CoKBHLTqVgRcyduljE1Hf2DlQHo","jquery_version":"1.8","css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/book\/book.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/contrib\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/pd_reports_module\/css\/global.css":1,"sites\/all\/modules\/pd_reports_module\/css\/plugins\/datepicker\/daterangepicker.css":1,"modules\/poll\/poll.css":1,"modules\/search\/search.css":1,"sites\/all\/modules\/toc_node\/css\/toc_node.css":1,"sites\/all\/modules\/ubercart\/uc_order\/uc_order.css":1,"sites\/all\/modules\/ubercart\/uc_product\/uc_product.css":1,"sites\/all\/modules\/uc_simple_discount\/uc_simple_discount.css":1,"sites\/all\/modules\/ubercart\/uc_store\/uc_store.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/media\/modules\/media_wysiwyg\/css\/media_wysiwyg.base.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/modal.css":1,"sites\/all\/modules\/tagclouds\/tagclouds.css":1,"sites\/all\/modules\/user_dashboard\/user_dashboard.css":1,"sites\/all\/modules\/taxonomy_access\/taxonomy_access.css":1,"0":1,"sites\/all\/modules\/productdirectory\/css\/tooltip.css":1,"\/\/use.fontawesome.com\/releases\/v5.5.0\/css\/all.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/themes\/ims\/assets\/css\/megamenu-demo.css":1,"sites\/all\/themes\/ims\/assets\/css\/bootstrap-theme.css":1,"sites\/all\/themes\/ims\/assets\/css\/bootstrap.css":1,"sites\/all\/themes\/ims\/assets\/css\/imsglobal.css":1,"sites\/all\/themes\/ims\/assets\/css\/style.css":1,"sites\/all\/themes\/ims\/assets\/css\/imsglobal.print.css":1,"public:\/\/cpn\/views-tech_activity_feeds-block_1.css":1,"public:\/\/cpn\/views-tech_activity_feeds-block_4.css":1,"public:\/\/cpn\/views-tech_activity_feeds-block.css":1,"public:\/\/cpn\/views-tech_activity_feeds-block_3.css":1},"js":{"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.8.3\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jqueryui\/1.10.2\/jquery-ui.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/contrib\/admin_menu\/admin_devel\/admin_devel.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/modal.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/sftouchscreen.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/modules\/superfish\/superfish.js":1,"sites\/all\/themes\/ims\/assets\/js\/script.js":1,"sites\/all\/themes\/ims\/assets\/js\/bootstrap.min.js":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022https:\/\/www.imsglobal.org\/sites\/all\/modules\/contrib\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E","throbber":"\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022https:\/\/www.imsglobal.org\/sites\/all\/modules\/contrib\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"},"variable_compare_against_baseline":"IMS has defined an ideal minimum conformance certification that different types of tools should meet. This filter will allow you to view whether a specific tool meets that baseline.","Affiliate":"Affiliate Member","CCLTI":"Learning Tools and Content Alliance Member","CM":"Contributing Member","IWB":"IWB Member","LIS":"EduERP Alliance Member","Assessment":"eAssessment Alliance Member","Prospect":"Prospect Member","better_exposed_filters":{"views":{"news":{"displays":{"block_4":{"filters":[]}}},"tech_activity_feeds":{"displays":{"block_1":{"filters":[]},"block_4":{"filters":[]},"block_11":{"filters":[]},"block":{"filters":[]},"block_2":{"filters":[]},"block_3":{"filters":[]},"block_6":{"filters":[]},"block_10":{"filters":[]}}},"alerts":{"displays":{"block_3":{"filters":[]}}},"sidebar_content":{"displays":{"block_1":{"filters":[]},"block":{"filters":[]}}},"poll":{"displays":{"block_1":{"filters":[]}}},"events":{"displays":{"block_2":{"filters":[]}}},"forum_list":{"displays":{"block_1":{"filters":[]}}},"initiative_feeds":{"displays":{"block_4":{"filters":[]}}}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1,"trackDomainMode":1,"trackUrlFragments":1},"superfish":[{"id":"2","sf":{"animation":{"opacity":"show","height":"show"},"speed":"\u0027fast\u0027","autoArrows":true,"dropShadows":true,"disableHI":false},"plugins":{"touchscreen":{"mode":"window_width"},"supposition":true,"bgiframe":false}},{"id":"1","sf":{"animation":{"opacity":"show","height":"show"},"speed":"\u0027fast\u0027","autoArrows":true,"dropShadows":true,"disableHI":false},"plugins":{"touchscreen":{"mode":"window_width"},"supposition":true,"bgiframe":false}}]});
+//--><!]]>
+</script>
+<link href="css.css" rel="stylesheet" type="text/css">
+<link href="css_002.css" rel="stylesheet" type="text/css">
+<meta name="google-site-verification" content="h393ALXEzZ95pCyEoEpklerEQiORSJjS1v7qMyCVTBo">
+</head>
+
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-651 node-type-technical-activity">
+
+<!--/ You can use the head in here if you want to, but we will use the html.tpl.php for it when we get there -->
+
+<style type="text/css">
+	input[type="text"], input[type="password"], input[type="email"], textarea, select,
+	.accent { 
+		border: 1px solid #1c6b7c;
+	}
+</style>
+<!--/Begin - Contact Info / Social Icons -->
+<div class="sharebar-holder">
+          <div class="region region-sharebar">
+    <div id="block-block-81" class="block block-block ">
+        <div class="block-content-container"><div class="block-content"> <div style="display: none;">Sharebar?</div> </div></div>
+</div>
+
+  </div>
+    </div>
+<div class="header-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="welcome-msg"></div>
+      </div>
+      <div class="col-md-8">
+        <div class="top-right-menu">
+                              <div class="region region-top-nav">
+    <div id="block-superfish-2" class="block block-superfish ">
+        <div class="block-content-container"><div class="block-content"><span class="toggler">☰ User Menu</span> <ul id="superfish-2" class="menu sf-menu sf-user-menu sf-horizontal sf-style-none sf-total-items-6 sf-parent-items-0 sf-single-items-6 superfish-processed sf-js-enabled sf-shadow"><li id="menu-4386-2" class="first odd sf-item-1 sf-depth-1 sf-no-children"><a href="https://www.imsglobal.org/imsmembership.html" class="sf-depth-1">Membership</a></li><li id="menu-4871-2" class="middle even sf-item-2 sf-depth-1 sf-no-children"><a href="https://www.imsglobal.org/events" class="sf-depth-1">Events</a></li><li id="menu-35991-2" class="middle odd sf-item-3 sf-depth-1 sf-no-children"><a href="https://www.imsglobal.org/news.html" title="" class="sf-depth-1">News</a></li><li id="menu-4956-2" class="middle even sf-item-4 sf-depth-1 sf-no-children"><a href="https://www.imsglobal.org/ims-global" class="sf-depth-1">Global</a></li><li id="menu-21226-2" class="middle odd sf-item-5 sf-depth-1 sf-no-children"><a href="https://www.imsglobal.org/specifications.html" title="" class="sf-depth-1">Specifications</a></li><li id="menu-8461-2" class="last even sf-item-6 sf-depth-1 sf-no-children"><a href="https://www.imsglobal.org/user/login?current=node/651" title="" class="sf-depth-1">Login</a></li></ul> </div></div>
+</div>
+
+  </div>
+                      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/End - Contact Info / Social Icons --> 
+
+<!--/Begin LOGO AND SUCH -->
+<div class="logo-menu-bar">
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+            <a href="https://www.imsglobal.org/" title="Home" rel="home" id="logo"> <img src="logo-revised.png" alt="Home"> </a>
+                            </div>
+    <div class="col-md-8">
+              <div class="region region-menu-nav">
+    <div id="block-superfish-1" class="block block-superfish ">
+        <div class="block-content-container"><div class="block-content"><span class="toggler">☰ Menu</span> <ul id="superfish-1" class="menu sf-menu sf-main-menu sf-horizontal sf-style-none sf-total-items-6 sf-parent-items-5 sf-single-items-1 superfish-processed sf-js-enabled sf-shadow"><li id="menu-4321-1" class="first odd sf-item-1 sf-depth-1 sf-total-children-7 sf-parent-children-0 sf-single-children-7 menuparent"><a href="https://www.imsglobal.org/institutions.html" class="sf-depth-1 menuparent sf-with-ul">Initiatives<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden"><li id="menu-6836-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/initiative/advancing-digital-credentials-and-competency-based-learning" title="" class="sf-depth-2">Digital Credentials &amp; Pathways</a></li><li id="menu-6781-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/initiative/real-time-cross-application-educational-data-and-analytics" title="" class="sf-depth-2">Learning Data &amp; Analytics</a></li><li id="menu-6831-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/initiative/actionable-e-assessment" title="" class="sf-depth-2">Integrated Assessment</a></li><li id="menu-6841-1" class="middle even sf-item-4 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/initiative/ecosystem-learning-platforms-apps-and-tools" title="" class="sf-depth-2">Learning Platforms, Apps &amp; Tools</a></li><li id="menu-6846-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/initiative/digital-curriculum" title="" class="sf-depth-2">Adaptive Digital Curriculum</a></li><li id="menu-15316-1" class="middle even sf-item-6 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/COEK12Playbook.html" class="sf-depth-2">K-12 Communities &amp; Playbook</a></li><li id="menu-15321-1" class="last odd sf-item-7 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/COEHEPlaybook.html" class="sf-depth-2">HED Communities &amp; Playbook</a></li></ul></li><li id="menu-4311-1" class="active-trail middle even sf-item-2 sf-depth-1 sf-total-children-13 sf-parent-children-0 sf-single-children-13 menuparent"><a href="https://www.imsglobal.org/developers" title="" class="sf-depth-1 menuparent sf-with-ul">Developers<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden"><li id="menu-14141-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/activity/accessibility" title="" class="sf-depth-2">Accessibility</a></li><li id="menu-34891-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/activity/app-vetting" title="" class="sf-depth-2">App Vetting &amp; Privacy</a></li><li id="menu-14191-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/activity/qtiapip" title="" class="sf-depth-2">Assessment</a></li><li id="menu-14146-1" class="active-trail middle even sf-item-4 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/activity/caliper" title="" class="sf-depth-2 active">Caliper Analytics</a></li><li id="menu-14151-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/activity/common-cartridge" title="" class="sf-depth-2">Common Cartridge</a></li><li id="menu-24441-1" class="middle even sf-item-6 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/activity/case" title="" class="sf-depth-2">Competencies &amp; Academic Standards Exchange</a></li><li id="menu-34736-1" class="middle odd sf-item-7 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/activity/comprehensive-learner-record" title="" class="sf-depth-2">Comprehensive Learner Record</a></li><li id="menu-14161-1" class="middle even sf-item-8 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/activity/digital-badges" title="" class="sf-depth-2">Digital Badges</a></li><li id="menu-14171-1" class="middle odd sf-item-9 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/activity/learning-tools-interoperability" title="" class="sf-depth-2">Learning Tools Interoperability &amp; LTI Advantage</a></li><li id="menu-37881-1" class="middle even sf-item-10 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/resource-search" title="" class="sf-depth-2">LTI Resource Search</a></li><li id="menu-14176-1" class="middle odd sf-item-11 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/activity/onerosterlis" title="" class="sf-depth-2">OneRoster / Learning Information Services / Edu-API</a></li><li id="menu-14181-1" class="middle even sf-item-12 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/activity/openvideo" title="" class="sf-depth-2">OpenVideo</a></li><li id="menu-35726-1" class="last odd sf-item-13 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/ims-security-framework" title="" class="sf-depth-2">Security Framework</a></li></ul></li><li id="menu-4306-1" class="middle odd sf-item-3 sf-depth-1 sf-total-children-3 sf-parent-children-0 sf-single-children-3 menuparent"><a href="https://www.imsglobal.org/cc/statuschart.cfm" class="sf-depth-1 menuparent sf-with-ul">Certified Products<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden"><li id="menu-24371-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/cc/statuschart.cfm" title="" class="sf-depth-2">Product Directory</a></li><li id="menu-24376-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/buy-ims-certified" class="sf-depth-2">Buy IMS Certified</a></li><li id="menu-24381-1" class="last odd sf-item-3 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/getting-ims-certified" class="sf-depth-2">Get IMS Certified</a></li></ul></li><li id="menu-7411-1" class="middle even sf-item-4 sf-depth-1 sf-total-children-5 sf-parent-children-0 sf-single-children-5 menuparent"><a href="https://www.imsglobal.org/learningimpact/li.html" class="sf-depth-1 menuparent sf-with-ul">Learning Impact<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden"><li id="menu-13236-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/LILI2019" title="" class="sf-depth-2">Learning Impact Leadership Institute</a></li><li id="menu-4946-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/awards.html" title="" class="sf-depth-2">Learning Impact Awards</a></li><li id="menu-3921-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/blog" title="" class="sf-depth-2">Learning Impact Blog</a></li><li id="menu-18796-1" class="middle even sf-item-4 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/sites/default/files/2018LearningImpactReport.pdf" title="" class="sf-depth-2">Learning Impact Report</a></li><li id="menu-14196-1" class="last odd sf-item-5 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/sites/default/files/2017annualreport.pdf" title="" class="sf-depth-2">IMS Global Annual Report</a></li></ul></li><li id="menu-14211-1" class="middle odd sf-item-5 sf-depth-1 sf-total-children-9 sf-parent-children-0 sf-single-children-9 menuparent"><a href="https://www.imsglobal.org/leadershipactivities" title="" class="sf-depth-1 menuparent sf-with-ul">Leadership<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden"><li id="menu-14216-1" class="first odd sf-item-1 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/leadership/board-directors" title="" class="sf-depth-2">Board of Directors</a></li><li id="menu-14221-1" class="middle even sf-item-2 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/leadership/executive-strategic-council" title="" class="sf-depth-2">Executive Strategic Council</a></li><li id="menu-14241-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/leadership/hed-institutional-executive-board" title="" class="sf-depth-2">HED Institutional Leadership Board</a></li><li id="menu-14226-1" class="middle even sf-item-4 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/leadership/k12institutional-executive-board" title="" class="sf-depth-2">K-12 Institutional Leadership Board</a></li><li id="menu-14231-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/leadership/technical-executive-advisory-groups" title="" class="sf-depth-2">Technical Executive Advisory Groups</a></li><li id="menu-14236-1" class="middle even sf-item-6 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/leadership/technical-advisory-board-tab" title="" class="sf-depth-2">Technical Advisory Board</a></li><li id="menu-19031-1" class="middle odd sf-item-7 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/membersandaffiliates.html" class="sf-depth-2">IMS Members</a></li><li id="menu-37886-1" class="middle even sf-item-8 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/collaborations.html" title="" class="sf-depth-2">Collaborations and Affiliations</a></li><li id="menu-14246-1" class="last odd sf-item-9 sf-depth-2 sf-no-children"><a href="https://www.imsglobal.org/imsstaff.html" class="sf-depth-2">IMS Staff</a></li></ul></li><li id="menu-4471-1" class="last even sf-item-6 sf-depth-1 sf-no-children"><a href="https://www.imsglobal.org/search/site/" title="" class="sf-depth-1">Search</a></li></ul> </div></div>
+</div>
+
+  </div>
+          </div>
+  </div>
+</div>
+</div>
+<!-- /Close Logo and regions --> 
+
+<!--/Begin Banner Region -->
+<div class="banner-hero">
+<div class="row">
+  <div class="col-md-12">
+    <div class="slider-adjust">
+          </div>
+  </div>
+</div>
+</div>
+<!--/End Banner Region --> 
+
+<!--/Begin Call To Action -->
+      
+    
+  
+
+<!--/End Call To Action --> 
+
+<!--/Begin Top Columns  -->
+
+    
+  
+
+<!--/End Top Columns--> 
+
+<!--/Begin Header Title Section -->
+      
+    
+  
+
+<!--/End Header Title Section --> 
+
+
+
+<!--/Begin Content and Side Bar -->
+<div class="main-section">
+<div class="container">
+  <div class="row"> 
+          <a id="main-content"></a>             <h1 class="title " id="page-title" style="color: rgb(28, 107, 124);">
+		<img src="icon-analytics-stencil.png" class="header_icon" alt="Caliper Analytics ">		Caliper Analytics 	</h1>
+                        <div class="clearfix"></div>
+            <div class="tabs">  </div>
+          
+    <!--/Content --> 
+          <div class="col-md-7">
+    
+    
+                    <div class="region region-content">
+    <div id="block-system-main" class="block block-system ">
+        <div class="block-content-container"><div class="block-content"> <div id="node-651" class="node node-technical-activity node-promoted node-full clearfix" about="/activity/caliper" typeof="sioc:Item foaf:Document">
+
+  
+      <span property="dc:title" content="Caliper Analytics " class="rdf-meta element-hidden"></span>
+  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h1><strong>Caliper Analytics<sup><small>®</small></sup></strong></h1>
+<table class="fancy">
+	<tbody>
+		<tr>
+			<td style="width: 150px; text-align: center;"><a href="#calipermember">Member Resources</a></td>
+			<td style="text-align: center; width: 150px;"><a href="#caliperpublic">Public Documents</a></td>
+			<td style="text-align: center; width: 150px;"><a href="#caliperbackground">Background</a></td>
+		</tr>
+	</tbody>
+</table>
+<h2>Summary</h2>
+<div>Caliper Analytics enables institutions to collect learning data 
+from digital resources to better understand and visualize learning 
+activity and product usage data, and present this information to 
+students, instructors, and advisors in meaningful ways to help inform:</div>
+<ul>
+	<li>Student recruitment and retention plans</li>
+	<li>Program, curriculum, and course design</li>
+	<li>Student intervention measures</li>
+</ul>
+<p>&nbsp;</p>
+<h2 id="specified-profiles">Caliper Profiles</h2>
+<p>Caliper defines a number of metric profiles, each of which models a 
+learning activity or a supporting activity that helps facilitate 
+learning. Each profile provides a domain-specific set of terms and 
+concepts that application designers and developers can draw upon to 
+describe common user interactions in a consistent manner using a shared 
+vocabulary. Annotating a reading, playing a video, taking a test, or 
+grading an assignment submission represent a few examples of the many 
+activities or events that Caliper's metric profiles attempt to describe.
+ The Caliper 1.1 profiles include:</p>
+<ul>
+	<li>Annotation Profile</li>
+	<li>Assessment Profile</li>
+	<li>Assignable Profile</li>
+	<li>Forum Profile</li>
+	<li>Grading Profile</li>
+	<li>Media Profile</li>
+	<li>Reading Profile</li>
+	<li>Session Profile</li>
+	<li>Tool Use Profile</li>
+	<li>Basic Profile</li>
+</ul>
+<h3><a href="https://www.imsglobal.org/caliper-analytics-v11-profiles">Learn More about Caliper Profiles</a></h3>
+<p>&nbsp;</p>
+<h3>Are Your Products IMS Global Certified?</h3>
+<div>IMS Global has testing programs that enable products to be 
+certified compliant with specific standards and features of the 
+standards. For technology suppliers, participation in the IMS Global 
+certification process is the fastest and most cost-effective way to 
+achieve product integrations. For institutions, ensuring that your 
+educational technology tools are IMS Global certified is the best way to
+ establish a plug-and-play ecosystem, allowing your tools and content to
+ work together seamlessly, giving you more choice, and reducing your 
+total cost of ownership. IMS Global <a href="https://www.imsglobal.org/membersandaffiliates.html">members</a>
+ have access to expert support to implement the standards prior to 
+completing conformance certification. Learn more to begin taking 
+advantage of the benefits of <a href="http://imscert.org/">certification</a>.<a name="calipermember"></a></div>
+<div>&nbsp;</div>
+<h2>Member Resources (<em>login&nbsp;required</em>)</h2>
+<div>
+	<ul>
+		<li>
+			<h3><a href="https://www.imsglobal.org/caliper-analytics-conformance">Caliper Analytics Conformance Certification</a></h3>
+		</li>
+	</ul>
+	<p>IMS conformance certification for Caliper Analytics is available for
+ Contributing and Affiliate-level members. IMS Global offers its member 
+organizations a certification service for testing applications that emit
+ Caliper messages over HTTP. Each Metric Profile defined in the Caliper 
+Analytics specification serves as a unit of certification. Edtech 
+suppliers may certify their products for one, some, or all relevant 
+Metric Profiles. End users should consult the <a href="http://imscert.org/">IMS Certified Product Directory</a> to see the current list of products that have achieved Caliper conformance certification.&nbsp;<a name="caliperpublic"></a></p>
+	<h3>Member Draft Documents</h3>
+	<ul>
+		<li><a href="https://www.imsglobal.org/spec/caliper-toollaunch/v1p1">Tool Launch Profile v1.1</a> (Base Document, Member Draft)</li>
+		<li><a href="https://www.imsglobal.org/spec/caliper-search/v1p1">Search Profile v1.1</a> (Base Document, Member Draft)</li>
+	</ul>
+	<p>&nbsp;</p>
+	<h2>Public Documents</h2>
+	<ul>
+		<li><a href="https://www.imsglobal.org/caliper-analytics-v11-introduction">Caliper Analytics v1.1 Introduction</a></li>
+		<li><a href="https://www.imsglobal.org/caliper-analytics-v11-scenarios">Caliper Analytics v1.1 User Scenarios</a></li>
+		<li><a href="https://www.imsglobal.org/caliper-analytics-v11-profiles">Caliper Analytics v1.1 Profiles</a></li>
+		<li><a href="https://www.imsglobal.org/caliper-11-metric-profiles">Caliper Analytics v1.1 Profiles—Detailed Descriptions</a></li>
+		<li><a href="https://www.imsglobal.org/how-certify-caliper-analytics-v11">Caliper Analytics v1.1: How to Certify</a></li>
+	</ul>
+	<h3>Current Version Specification Documents</h3>
+	<ul>
+		<li><a href="https://www.imsglobal.org/caliper/v1p1/caliper-spec-v1p1">Caliper Analytics v1.1 Final Specification</a></li>
+		<li><a href="https://www.imsglobal.org/sites/default/files/caliper/v1p1/caliper-sensor-cert-guide-v1p1/caliper-sensor-cert-guide-v1p1.html">Caliper Analytics v1.1 Sensor Certification Guide</a></li>
+		<li><a href="https://www.imsglobal.org/caliper-analytics-11-public-repos-sensor-apis">Sensor APIs v1.1</a></li>
+	</ul>
+	<h3>Previous Version Specification Documents</h3>
+</div>
+<ul>
+	<li><a href="https://www.imsglobal.org/caliper/caliperv1p0/ims-caliper-analytics-best-practice-guide" style="line-height: 1.42857; background-color: rgb(255, 255, 255);">Caliper Analytics v1 Best Practice Guide</a></li>
+	<li><a href="https://www.imsglobal.org/caliper/caliperv1p0/ims-caliper-analytics-implementation-guide">Caliper Analytics v1 Implementation Guide</a></li>
+	<li><a href="https://www.imsglobal.org/caliper/caliperv1p0/ims-caliper-analytics-conformance-and-certification-guide-v10">Caliper Analytics v1 Conformance Guide</a></li>
+	<li><a href="https://www.imsglobal.org/caliper-analytics-v1-public-repos-sensor-apis">Sensor APIs</a><strong><a name="caliperbackground"></a></strong></li>
+</ul>
+<p>&nbsp;</p>
+<h2><strong>Caliper Analytics<small><sup>®</sup></small>&nbsp;Background</strong></h2>
+<p>A growing number of learning interactions take place online, which 
+allows for data and information specific to the learning activity to be 
+captured. This data promises to deliver new insights into how particular
+ learning interactions relate to learning outcomes. Using this data, 
+educators can:</p>
+<ul>
+	<li>Answer those seeking more accountability with measures of learning activity in addition to learning outcomes</li>
+	<li>See which behaviors and content consistently produce the desired learning outcomes</li>
+	<li>Compare the effectiveness of different content or interaction types</li>
+	<li>Arm early warning systems and establish predictive measures</li>
+	<li>Personalize curriculum in real time based on student patterns</li>
+</ul>
+<p>The potential of learning analytics to innovate and shape education 
+are found in the widespread collection and display of the data by online
+ learning environments and other learner activity data collected by many
+ institutions. All efforts to date have been built around proprietary 
+standards that reinforce the silos often found in education. This makes 
+it nearly impossible for the educator, student or institution to see a 
+truly holistic view of what is happening in the teaching and learning 
+environment. Not only does each organization need to reinvent the 
+analytics wheel, but the current analytic conditions means the resulting
+ analytics cannot be compared effectively. Each organization counts 
+different things in different ways.</p>
+<p>Since many curriculums ask students to work in multiple learning 
+environments, there is a widespread need for data, that can be 
+consolidated for a single view or cross-provider analysis. &nbsp;</p>
+<p>The Caliper Framework will:</p>
+<ul>
+	<li>Establish a means for consistently capturing and presenting 
+measures of learning activity, which will enable more efficient 
+development of learning analytics features in learning environments</li>
+	<li>Define a common language for labeling learning data, which will set
+ the stage for an ecosystem of higher-order applications of learning 
+analytics</li>
+	<li>Provide a standard way of measuring learning activities and 
+effectiveness, which will enable designers and providers of curriculum 
+to measure, compare and improve the quality</li>
+	<li>Leverage data science methods, standards, and technologies</li>
+	<li>Build upon existing IMS Global open standards</li>
+	<li>Provide best practice recommendations for transport mechanisms</li>
+</ul>
+<p><strong style="color: inherit; font-size: 26px; line-height: 1.1;">Caliper Analytics Current Status</strong></p>
+<p>IMS Global has developed a standard that:</p>
+<ul>
+	<li>Creates learning<strong>&nbsp;Metric Profiles</strong>&nbsp;to 
+establish a basic and extensible common format for presenting learning 
+activity data gathered from learner activity across multiple learning 
+environments. Metric Profiles provide a common language for describing 
+student activity. By establishing a set of common labels for learning 
+activity data, the metric profiles greatly simplify the exchange of this
+ data across multiple platforms. While Metric Profiles provide a 
+standard, they do not in and of themselves provide a product or specify 
+how to provide a product. Many different products can be created using 
+the same labels established by the standard.</li>
+	<li>Creates the IMS learning<strong>&nbsp;Sensor API™&nbsp;</strong>to 
+define basic learning events and to standardize and simplify the 
+gathering of learning metrics across learning environments.&nbsp;</li>
+	<li>Leverages and extends the Learning Tools Interoperability<sup>®</sup>&nbsp;(LTI<sup>®</sup>), Learning Information Services, and&nbsp;Question and Test Interoperability<sup>®</sup>&nbsp;(QTI<sup>®</sup>)
+ standards thus enhancing and integrating granular, standardized 
+learning measurement with tools interoperability and the underlying 
+learning information models, inclusive of course, learner, outcomes 
+and&nbsp;other critical associated context.</li>
+</ul>
+<p style="text-align: center;"><img alt="Caliper Analytics Framework" src="caliper.png" style="width: 500px; height: 374px;"></p>
+<div>&nbsp;</div>
+</div></div></div>  </div>
+
+  
+</div>
+ </div></div>
+</div>
+
+  </div>
+      
+    </div>
+    <!--/End Content --> 
+    
+    <!--/Right Sidebar if populated -->
+          <div class="col-md-5 ">   <div class="region region-right-sidebar">
+    <div id="block-views-news-block-4" class="block block-views orange-header orange-header">
+      <h3 class="block-headline">News</h3>
+  <div class="clearfix"></div>
+      <div class="block-content-container"><div class="block-content"> <div class="view view-news view-id-news view-display-id-block_4 view-dom-id-05a367cdf2f44ea36403e7fcee77642a">
+        
+  
+  
+      <div class="view-content" style="border-color: rgb(28, 107, 124);">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-created">        <strong class="field-content nowrap">15 Jan 2019</strong>  </div>  
+  <div class="views-field views-field-title">        <a href="https://www.imsglobal.org/article/ims-global-learning-consortium-announces-2018-learning-impact-report-setting-stage-2019">IMS
+ Global Learning Consortium Announces 2018 Learning Impact Report 
+Setting the Stage for 2019 Learning Impact Awards Competition</a>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-created">        <strong class="field-content nowrap">11 Jan 2019</strong>  </div>  
+  <div class="views-field views-field-title">        <a href="https://www.imsglobal.org/article/ims-global-caliper-what-it-means-unizin-data-platform-and-higher-ed-community">IMS Global Caliper: What It Means for the Unizin Data Platform and the Higher Ed Community</a>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last">
+      
+  <div class="views-field views-field-created">        <strong class="field-content nowrap">15 Nov 2018</strong>  </div>  
+  <div class="views-field views-field-title">        <a href="https://www.imsglobal.org/article/report-library-integration-institutional-learning-analytics">Report: Library Integration in Institutional Learning Analytics</a>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> </div></div>
+</div>
+
+<div id="block-views-tech-activity-feeds-block-1" class="block block-views styled-header styled-header">
+        <div class="block-content-container"><div class="block-content"> <div class="view view-tech-activity-feeds view-id-tech_activity_feeds view-display-id-block_1 view-dom-id-877347b8f0acc967701ccb5d2212a6d4">
+            <div class="view-header">
+      <h3 class="block-headline">Specifications <span style="float: right;">[ <a href="https://www.imsglobal.org/technical-resources?field_technical_resource_tid=3796&amp;field_technical_activity_nid=651">view all...</a> ]</span></h3>    </div>
+  
+  
+  
+      <div class="view-content" style="border-color: rgb(28, 107, 124);">
+        <div class="views-row views-row-1 views-row-odd views-row-first contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">30 Jan 2018</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/caliper/v1p1/caliper-spec-v1p1">Caliper Analytics® Specification, version 1.1</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">30 Jan 2018</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/caliper/v1p1/caliper-sensor-cert-guide-v1p1">Caliper Analytics® Sensor Certification Guide, version 1.1</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">18 Oct 2015</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/caliper/caliperv1p0/ims-caliper-analytics-implementation-guide">IMS Caliper Analytics Implementation Guide</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">
+IMS Caliper Analytics™ Implementation Guide 
+&nbsp;</div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> </div></div>
+</div>
+
+<div id="block-views-tech-activity-feeds-block-4" class="block block-views styled-header styled-header">
+        <div class="block-content-container"><div class="block-content"> <div class="view view-tech-activity-feeds view-id-tech_activity_feeds view-display-id-block_4 view-dom-id-6ab416c97c69ed0169706ca088a9583d">
+            <div class="view-header">
+      <h3 class="block-headline">Code Libraries/ APIs <span style="float: right;">[ <a href="https://www.imsglobal.org/technical-resources?field_technical_resource_tid=3811&amp;field_technical_activity_nid=651">view all...</a> ]</span></h3>    </div>
+  
+  
+  
+      <div class="view-content" style="border-color: rgb(28, 107, 124);">
+        <div class="views-row views-row-1 views-row-odd views-row-first contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">31 Jan 2018</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/caliper-analytics-11-public-repos-sensor-apis">Caliper Analytics 1.1 Public Repos for Sensor APIs</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">Caliper Analytics 1.1 SensorAPI Code
+&nbsp;</div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even views-row-last contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">19 Oct 2015</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/caliper-analytics-v1-public-repos-sensor-apis">Caliper Analytics v1 Public Repos for Sensor APIs</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">Caliper Analytics ™ v1 SensorAPI™ Code and Example Apps
+&nbsp;</div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> </div></div>
+</div>
+
+<div id="block-views-tech-activity-feeds-block-11" class="block block-views styled-header styled-header">
+        <div class="block-content-container"><div class="block-content"> <div class="view view-tech-activity-feeds view-id-tech_activity_feeds view-display-id-block_11 view-dom-id-e72a631eb37d6540167f4ac52d287c8a">
+            <div class="view-header">
+      <h3 class="block-headline">Product Roadmap<span style="float: right;">[ <a href="https://www.imsglobal.org/technical-resources?field_technical_resource_tid=5336&amp;field_initiative_nid=All&amp;field_technical_activity_nid=651">view all...</a> ]</span></h3>    </div>
+  
+  
+  
+      <div class="view-content" style="border-color: rgb(28, 107, 124);">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">27 Nov 2017</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/ims-product-roadmap-summary-updated-11272017">IMS Product Roadmap Summary Updated 11/27/2017</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">This
+ document reflects currently planned activities for IMS specifications 
+and community activities for the upcoming period.&nbsp; Published at a 
+point in time, the roadmap is expected to evolve as member needs and 
+priorities change.&nbsp; Unscheduled projects typically move into a 
+planned column</div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> </div></div>
+</div>
+
+<div id="block-views-tech-activity-feeds-block" class="block block-views styled-header styled-header">
+        <div class="block-content-container"><div class="block-content"> <div class="view view-tech-activity-feeds view-id-tech_activity_feeds view-display-id-block view-dom-id-3a807c32993019e8b36e335a62105345">
+            <div class="view-header">
+      <h3 class="block-headline">Tutorials and Guides <span style="float: right;">[ <a href="https://www.imsglobal.org/technical-resources?field_technical_resource_tid=3791&amp;field_technical_activity_nid=651">view all...</a> ]</span></h3>    </div>
+  
+  
+  
+      <div class="view-content" style="border-color: rgb(28, 107, 124);">
+        <div class="views-row views-row-1 views-row-odd views-row-first contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">09 Jan 2018</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/glossary">IMS Glossary of Terms</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">
+IMS Global Glossary of Terms</div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">26 Jul 2017</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/ims-app-note-resource-efficacy-caliper-analytics">IMS App Note: Resource Efficacy with Caliper Analytics</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">01 Sep 2016</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/ims-app-note-lti-integration-caliper-mediaevent-metric-profile">IMS App Note: LTI Integration + Caliper MediaEvent Metric Profile</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">
+LTI Integration + Caliper MediaEvent Metric Profile</div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> </div></div>
+</div>
+
+<div id="block-views-tech-activity-feeds-block-3" class="block block-views styled-header styled-header">
+        <div class="block-content-container"><div class="block-content"> <div class="view view-tech-activity-feeds view-id-tech_activity_feeds view-display-id-block_3 view-dom-id-2263165b259a727afa32da9b7dc44caf">
+            <div class="view-header">
+      <h3 class="block-headline">Best Practices <span style="float: right;">[ <a href="https://www.imsglobal.org/technical-resources?field_technical_resource_tid=3806&amp;field_technical_activity_nid=651">view all...</a> ]</span></h3>    </div>
+  
+  
+  
+      <div class="view-content" style="border-color: rgb(28, 107, 124);">
+        <div class="views-row views-row-1 views-row-odd views-row-first contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">04 Oct 2016</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/initial-xapicaliper-comparison">Initial xAPI/Caliper Comparison</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">&nbsp;
+Initial xAPI/Caliper Comparison
+Executive Summary</div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">18 Oct 2015</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/caliper/caliperv1p0/ims-caliper-analytics-best-practice-guide">IMS Caliper Analytics Best Practice Guide</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">
+IMS Caliper Analytics™ Best Practice Guide 
+&nbsp;</div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">22 Jun 2015</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/caliper-analytics-proof-concept-details">Caliper Analytics Proof of Concept Details</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> </div></div>
+</div>
+
+  </div>
+ </div>
+        <!--/End Right Side Bar --> 
+  </div>
+</div>
+</div>
+<!--/End Content and Side Bar --> 
+
+<!--/Begin Feature 1  -->
+<!--/End Feature 1--> 
+<!--/Begin Feature 2  -->
+<!--/End Feature 2--> 
+<!--/Begin Feature 3  -->
+<!--/End Feature 3--> 
+<!--/Begin Feature 3.1 -->
+<!--/End Feature 3--> 
+<!--/Begin Feature 4  -->
+<!--/End Feature 4--> 
+
+<!--/Begin Content Bottom Regions  -->
+      
+    
+  
+
+<div class="content-bottom-section">
+  <div class="container">
+    <div class="row">
+				      <div class="col-md-4">   <div class="region region-content-bottom-third">
+    <div id="block-views-tech-activity-feeds-block-10" class="block block-views styled-header styled-header">
+        <div class="block-content-container"><div class="block-content"> <div class="view view-tech-activity-feeds view-id-tech_activity_feeds view-display-id-block_10 view-dom-id-288fc10c77f24eddd4da3b0aa967602a">
+            <div class="view-header">
+      <h3 class="block-headline">RFP Guidance and Checklists <span style="float: right;">[ <a href="https://www.imsglobal.org/technical-resources?field_technical_resource_tid=4351&amp;field_technical_activity_nid=651">view all...</a> ]</span></h3>    </div>
+  
+  
+  
+      <div class="view-content" style="border-color: rgb(28, 107, 124);">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last contextual-links-region">
+      
+  <div class="views-field views-field-created">        <strong class="field-content">04 May 2017</strong>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.imsglobal.org/suggested-caliper-requirements-rfps">Suggested Caliper Requirements for RFPs</a></span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-contextual-links">        <span class="field-content"></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> </div></div>
+</div>
+
+  </div>
+ </div>
+          </div>
+  </div>
+</div>
+<!--/End Content Bottom Regions--> 
+
+<!--/Begin Footer Columns  -->
+
+<div class="footer-4-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">   <div class="region region-footer-first">
+    <div id="block-menu-menu-footer-1" class="block block-menu ">
+        <div class="block-content-container"><div class="block-content"> <ul class="menu clearfix"><li class="first leaf"><a href="https://www.imsglobal.org/aboutims.html">About IMS</a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/institutions.html" title="">Initiatives</a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/leadershipactivities" title="">Leadership Activities</a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/initiativesponsors.html">Initiative Sponsors</a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/collaborations.html">Collaborations and Affiliations</a></li>
+<li class="last leaf"><a href="https://www.imsglobal.org/news1.html">News</a></li>
+</ul> </div></div>
+</div>
+
+  </div>
+ </div>
+            <div class="col-sm-3">   <div class="region region-footer-second">
+    <div id="block-menu-menu-footer-2" class="block block-menu ">
+        <div class="block-content-container"><div class="block-content"> <ul class="menu clearfix"><li class="first leaf"><a href="https://www.imsglobal.org/lili2019">Leadership Institute</a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/lili/awards.html">Learning Impact Awards</a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/blog" title="">Learning Impact Blog</a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/IMSLeadershipAwards.html">Leadership Awards</a></li>
+<li class="last leaf"><a href="https://www.imsglobal.org/william-h-bill-graves-leadership-award">William H. (Bill) Graves Leadership Award</a></li>
+</ul> </div></div>
+</div>
+
+  </div>
+ </div>
+            <div class="col-sm-3">   <div class="region region-footer-third">
+    <div id="block-menu-menu-footer-3" class="block block-menu ">
+        <div class="block-content-container"><div class="block-content"> <ul class="menu clearfix"><li class="first leaf"><a href="https://www.imsglobal.org/developers" title="">Technical Activities </a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/cc/statuschart.cfm" title="">Product Directory</a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/specifications.html">Download Standards</a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/technical-resources" title="">Technical Resources Search</a></li>
+<li class="last leaf"><a href="https://www.imsglobal.org/forum" title="">Forums</a></li>
+</ul> </div></div>
+</div>
+
+  </div>
+ </div>
+            <div class="col-sm-3">   <div class="region region-footer-fourth">
+    <div id="block-menu-menu-footer-4" class="block block-menu ">
+        <div class="block-content-container"><div class="block-content"> <ul class="menu clearfix"><li class="first leaf"><a href="https://www.imsglobal.org/membersandaffiliates.html">Members</a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/vc-program">Startup Program</a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/user/register" title="">Join the IMS Public Community</a></li>
+<li class="leaf"><a href="https://www.imsglobal.org/career-opportunities">Career Opportunities</a></li>
+<li class="last leaf"><a href="https://www.imsglobal.org/contactus.cfm">Contact Us</a></li>
+</ul> </div></div>
+</div>
+
+  </div>
+ </div>
+          </div>
+  </div>
+</div>
+<!--/End Footer Columns--> 
+
+<!--/Begin Footer Columns  -->
+<div class="footer-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">   <div class="region region-footer-bottom">
+    <div id="block-block-1" class="block block-block ">
+        <div class="block-content-container"><div class="block-content"> <p>This
+ page contains trademarks of the IMS Global Learning Consortium 
+including the IMS Logos, Learning Tools Interoperability® (LTI®), 
+Accessible Portable Item Protocol® (APIP®), Question and Test 
+Interoperability® (QTI®), Common Cartridge® (CC®), AccessForAll™, 
+OneRoster®, Caliper Analytics®,SensorAPI™ and Competencies and Academic 
+Standards Exchange® (CASE®). For more information on the IMS trademark 
+usage policy see <a href="https://www.imsglobal.org/trademarks">trademark policy page</a></p>
+<p style="text-align: center;"><a href="http://twitter.com/learningimpact"><img alt="Follow Us on Twitter" src="Twitter_logo_blue.png" style="width: 35px; height: 29px;"></a></p>
+ </div></div>
+</div>
+
+  </div>
+ </div>
+          </div>
+  </div>
+</div>
+<!--/End Footer Columns--> 
+
+<!--/Begin Footer Columns  -->
+<div class="final-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">   <div class="region region-footer-final">
+    <div id="block-block-6" class="block block-block ">
+        <div class="block-content-container"><div class="block-content"> <p><a href="https://www.imsglobal.org/copyright.html">© 2001-2019 IMS Global Learning Consortium Inc.</a> All Rights Reserved. <a href="https://www.imsglobal.org/privacystatement.html">Privacy Policy</a></p>
+ </div></div>
+</div>
+
+  </div>
+ </div>
+          </div>
+  </div>
+</div>
+<!--/End Footer Columns--> <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"17d998b9ce","applicationID":"56773165","transactionName":"blZRZEUFV0RTWkNaC1ccclNDDVZZHWZFVhJQQFpfWQ1XUG1PXlYT","queueTime":0,"applicationTime":629,"atts":"QhFSEg0fREo=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>

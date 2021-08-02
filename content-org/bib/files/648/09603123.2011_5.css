@@ -1,0 +1,7 @@
+
+/* ::::: null ::::: */
+
+body, div, a, span { font: 10pt arial; }
+body { margin: 0px; border: medium none; overflow: hidden; }
+.element-desc-info { color: rgb(102, 102, 102); width: 100%; position: absolute; top: -2px; }
+.element-desc-info a { color: rgb(17, 85, 204); text-decoration: none; cursor: pointer; }

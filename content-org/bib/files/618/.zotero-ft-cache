@@ -1,0 +1,196 @@
+Screen reader users, click here to load entire article This page uses JavaScript to progressively load the article content as a user scrolls. Screen reader users, click the load entire article button to bypass dynamically loaded article content.
+Please note that Internet Explorer version 8.x will not be supported as of January 1, 2016. Please refer to this blog post for more information. Close
+ScienceDirect
+
+    Journals
+    Books
+    Register
+
+    Sign in
+    Sign in using your ScienceDirect credentials
+    Username
+    Password
+    Remember me
+    Forgotten username or password?
+    Sign in via your institution
+        OpenAthens login
+        Other institution login
+    Help
+
+    Journals
+    Books
+    Register
+
+Sign in
+Help
+close
+Sign in using your ScienceDirect credentials
+Username
+Password
+Remember me
+Forgotten username or password?
+Sign in via your institution
+
+    OpenAthens login
+    Other institution login
+
+    Purchase
+     
+    Help
+        Direct export
+         
+         
+        Export file
+          RIS (for EndNote, Reference Manager, ProCite)
+          BibTeX
+          Text
+          RefWorks Direct Export
+        Content
+          Citation Only
+          Citation and Abstract
+
+Advanced search
+
+ 
+Article outline
+Show full outline
+
+    Abstract
+    Keywords
+    1. Introduction
+    1.1. Paper's objective and structure
+    2. The air pollution monitoring network of Madrid
+    3. Methods: Radial Basis Function networks for regression
+    3.1. Radial Basis Function networks with Gaussian kernels
+    3.2. Classical RFB training algorithms
+    3.3. Evolutionary-based RBF training
+    3.3.1. Evolutionary programming
+    3.3.2. Differential evolution
+    3.3.3. Self-adaptive DE with neighborhood search
+    4. Experimental part
+    4.1. Data available for the study and methodology for the experiments
+    4.2. Results of spatial regression analysis of NO and O 3 with the different RBF networks model considered
+    4.3. Including meteorological data in the RBF networks
+    4.4. Discussion and future lines of research
+    5. Conclusions
+    Acknowledgement
+    References
+
+Alert message
+JavaScript is disabled on your browser.
+Please enable JavaScript to use all the features on this page.
+Figures and tables
+
+    Location of the measuring stations of the air quality monitoring network of ...
+    Table 1
+    Example of RBF network structure including m kernels.
+    Table 2
+    Table 3
+    Spatial regression maps (yearly mean values) obtained with the RBF trained with ...
+    Average NOx regression map obtained with the RBF trained with the EP algorithm, ...
+    Spatial regression maps (yearly mean of the maximum values) obtained with the ...
+    Average O3 regression map obtained with the RBF trained with the EP algorithm, ...
+    Table 4
+    Table 5
+    Spatial regression maps (yearly mean values) obtained with the RBF trained with ...
+    Average NOx regression map obtained with the RBF trained with the EP algorithm ...
+    Spatial regression maps (yearly maximum mean values) obtained with the RBF ...
+    Average O3 regression map obtained with the RBF trained with the EP algorithm ...
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. View full text
+
+Chemometrics and Intelligent Laboratory Systems
+
+Volume 99, Issue 1 , 15 November 2009, Pages 79–90
+Cover image Cover image
+Spatial regression analysis of NO x and O 3 concentrations in Madrid urban area using Radial Basis Function networks
+
+    S. Salcedo-Sanz a , , ,
+    J.A. Portilla-Figueras a ,
+    E.G. Ortiz-Garcia a ,
+    A.M. Perez-Bellido a ,
+    R. Garcia-Herrera b ,
+    J.I. Elorrieta c
+
+    a Department of Signal Theory and Communications, Universidad de Alcalá, Spain
+    b Department of Physics of the Earth, Astronomy and Astrophysics II, Universidad Complutense de Madrid, Spain
+    c Cementos Portland, Sustainability and Environment Department, Madrid, Spain
+
+    Received 1 April 2009, Revised 23 July 2009, Accepted 25 July 2009, Available online 6 August 2009
+
+  Show more   Show less
+Choose an option to locate/access this article:
+Check if you have access through your login credentials or your institution
+Check access
+Purchase $35.95
+
+    http://dx.doi.org/10.1016/j.chemolab.2009.07.012 
+    Get rights and content 
+
+Abstract
+
+This paper discusses the performance of Radial Basis Function networks (RBF) in a problem of spatial regression of pollutants in Madrid. Specifically, the spatial regression of NO x and O 3 is considered, in such a way that, starting from a set of measuring points provided by the air quality monitoring network of Madrid, the complete surface of the pollutants in the city is obtained. This pollutant surface can be used as an initial step for modeling intra-urban pollution using land-use regression techniques for example. Also, different works has used a pollutant surface to study the patterns of pollution in different cities in the world and also to establish their air monitoring networks under mathematical criteria. The paper is focussed in analyzing the performance of RBF networks to obtain this first pollutant surface, so different RBF training algorithms are tested in this paper. Specifically, evolutionary-based RBF training algorithms are described, and compared with classical training algorithms for RBF networks with Gaussian kernels. The inclusion of meteorological variables in the RBF networks are also discussed in the paper. The experimental part of the article studies real results of the application of RBF networks to obtain a first pollutant surface of NO x and O 3 , using the data of the air pollution monitoring network of Madrid and the meteorological network of the city.
+Keywords
+
+    Spatial regression ;
+    RBF networks ;
+    Concentration of pollutants ;
+    NO x ;
+    O 3 ;
+    LUR models ;
+    Geographic information system
+
+    Corresponding author. Department of Signal Theory and Communications, Universidad de Alcalá, 28871 Alcalá de Henares, Madrid, Spain. Tel.: +34 91 885 6731; fax: +34 91 885 6699.
+
+Copyright © 2009 Elsevier B.V. All rights reserved.
+Elsevier
+About ScienceDirect Remote access Shopping cart Contact and support Terms and conditions Privacy policy
+Cookies are used by this site. For more information, visit the cookies page .
+Copyright © 2016 Elsevier B.V. or its licensors or contributors. ScienceDirect ® is a registered trademark of Elsevier B.V.
+RELX Group
+  Recommended articles
+
+        Robust nonparametric estimation for spatial regression
+        2010, Journal of Statistical Planning and Inference
+        more
+            Abdelkader Gheriballah, , Ali Laksaci, , Rachida Rouane,
+            Robust nonparametric estimation for spatial regression
+            Journal of Statistical Planning and Inference, Volume 140, Issue 7, July 2010, Pages 1656–1670
+            Review Article
+                PDF (237 K)
+        Social capital and rates of gonorrhea and syphilis in the United States: Spatial regression analyses of state-level associations
+        2007, Social Science & Medicine
+        more
+            Salaam Semaan, , Maya Sternberg, , Akbar Zaidi, , Sevgi O. Aral,
+            Social capital and rates of gonorrhea and syphilis in the United States: Spatial regression analyses of state-level associations
+            Social Science & Medicine, Volume 64, Issue 11, June 2007, Pages 2324–2341
+            Original Research Article
+                PDF (340 K)
+        Tobacco outlet density and demographics: Analysing the relationships with a spatial regression approach
+        2010, Public Health
+        more
+            D. Yu, , N.A. Peterson, , M.A. Sheffer, , R.J. Reid, , J.E. Schnieder,
+            Tobacco outlet density and demographics: Analysing the relationships with a spatial regression approach
+            Public Health, Volume 124, Issue 7, July 2010, Pages 412–416
+            Original Research Article
+                PDF (135 K)
+    View more articles »
+
+  Citing articles ( 4 )
+
+    This article has not been cited.
+
+  Related book content
+
+    No articles found.
+
++ Show more applications
+- Show fewer applications
+ 
+Download PDFs
+Help
+Help
+ 
+[Entitle Gadget]
+Entitle Gadget
+

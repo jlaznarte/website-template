@@ -1,0 +1,312 @@
+
+/* ::::: null ::::: */
+
+.gm-style .gm-style-cc span, .gm-style .gm-style-cc a, .gm-style .gm-style-mtc div { font-size: 10px; }
+
+/* ::::: null ::::: */
+
+@media print {
+  .gm-style .gmnoprint, .gmnoprint { display: none; }
+}
+@media screen {
+  .gm-style .gmnoscreen, .gmnoscreen { display: none; }
+}
+
+/* ::::: null ::::: */
+
+.gm-style { font-family: Roboto,Arial,sans-serif; font-size: 11px; font-weight: 400; text-decoration: none; }
+.gm-style img { max-width: none; }
+
+/* ::::: http://www.londonair.org.uk/LondonAir/App_Themes/page-effects.css ::::: */
+
+.curl-top-left { width: 210px; height: 140px; margin: 0px; padding: 0px; background-repeat: no-repeat; background-position: center center; position: relative; box-shadow: 0px 0px 1px transparent; transform: translateZ(0px); }
+.curl-top-left::before { pointer-events: none; position: absolute; content: ""; height: 0px; width: 0px; top: 0px; left: 0px; background: transparent linear-gradient(135deg, rgb(204, 204, 204) 45%, rgb(170, 170, 170) 50%, rgb(204, 204, 204) 56%, white 80%) repeat scroll 0% 0%; z-index: 1000; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); transition-duration: 0.3s; transition-property: width, height; }
+.curl-top-left:hover::before, .curl-top-left:focus::before, .curl-top-left:active::before { width: 50px; height: 50px; }
+.curl-bottom-right { width: 210px; height: 140px; margin: 0px; padding: 0px; background-repeat: no-repeat; background-position: center center; display: inline-block; position: relative; transform: translateZ(0px); box-shadow: 0px 0px 1px transparent; }
+.curl-bottom-right::before { pointer-events: none; position: absolute; content: ""; height: 0px; width: 0px; bottom: 0px; right: 0px; background: transparent linear-gradient(315deg, rgb(204, 204, 204) 45%, rgb(170, 170, 170) 50%, rgb(204, 204, 204) 56%, white 80%) repeat scroll 0% 0%; z-index: 1000; box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4); transition-duration: 0.3s; transition-property: width, height; }
+.curl-bottom-right:hover::before, .curl-bottom-right:focus::before, .curl-bottom-right:active::before { width: 30px; height: 30px; }
+
+/* ::::: http://www.londonair.org.uk/LondonAir/App_Themes/SlideShow.css ::::: */
+
+#fssPrev { display: block; position: absolute; top: 70px; left: -68px; background: transparent url('arrows.png') repeat scroll -67px 0px; width: 67px; height: 143px; border: 0px none; text-indent: -999999px; }
+#fssNext { display: block; position: absolute; top: 70px; right: -68px; background: transparent url('arrows.png') no-repeat scroll 0% 0%; width: 67px; height: 143px; text-indent: -999999px; border: 0px none; }
+#fssPlayPause { display: block; position: absolute; bottom: 5px; right: 10px; background: transparent url('white.png') repeat scroll 0% 0%; padding: 4px 0px 5px; z-index: 99999; border: 0px none; border-radius: 5px; width: 60px; text-align: center; color: rgb(51, 51, 51); text-decoration: none; }
+#fssPlayPause:hover, #fssPlayPause:focus { color: rgb(243, 225, 1) ! important; }
+#fssList { position: absolute; bottom: 5px; right: 75px; display: block; list-style: outside none none; width: 150px; margin: auto; padding: 5px; border: 0px none; z-index: 99900; }
+#fssList li { display: inline; padding-right: 10px; }
+#fssList li a { color: rgb(255, 255, 255); text-decoration: none; padding: 5px; font-weight: bold; }
+#fssList li a:hover, #fssList li a:focus { color: rgb(243, 225, 1) ! important; border: 1px solid rgb(243, 225, 1); padding: 4px; }
+#fssList li.fssActive a { color: rgb(243, 225, 1) ! important; border: 1px solid rgb(243, 225, 1); padding: 4px; }
+
+/* ::::: http://www.londonair.org.uk/LondonAir/App_Themes/Kings/Print.css ::::: */
+
+@media print {
+}
+
+/* ::::: http://www.londonair.org.uk/LondonAir/App_Themes/Guide.css ::::: */
+
+div#WhiteBackground { width: 100%; background-color: White; z-index: -1; }
+div#HealthEffects { background-image: url('HealthEffects.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; min-height: 628px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#signpost { width: 100%; background-image: url('signpost.jpg'); background-color: White; background-repeat: no-repeat; background-position: center top; min-height: 562px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#ShortTermEffects { width: 100%; background-image: url('ShortTermEffects.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 670px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#LongTermEffects { width: 100%; background-image: url('LongTermEffects.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#GuideIn30Seconds { width: 100%; background-image: url('GuideIn30Seconds.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#ActionsOverview { width: 100%; background-image: url('ActionsOverview.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: 100% ! important; z-index: 0; overflow: hidden; }
+div#AirQualityBands { width: 100%; background-image: url('AirQualityBands.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#BusyRoad { width: 100%; background-image: url('BusyRoad.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#CanImonitor { width: 100%; background-image: url('CanImonitor.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#ClimateChange { width: 100%; background-image: url('ClimateChange.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#Episodes { width: 100%; background-image: url('Episodes.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#Exercise { width: 100%; background-image: url('Exercise.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 650px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#Fireworks { width: 100%; background-image: url('Fireworks.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#FirstOzone { width: 100%; background-image: url('FirstOzone.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#GettingInformation { width: 100%; background-image: url('GettingInformation.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#GovernmentAction { width: 100%; background-image: url('GovernmentAction.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 528px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#IndoorHealth { width: 100%; background-image: url('IndoorHealth.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#London { width: 100%; background-image: url('London.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#LondonHistory { width: 100%; background-image: url('LondonHistory.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#Monitoring { width: 100%; background-image: url('Monitoring.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#MyActionsForOthers { width: 100%; background-image: url('MyActionsForOthers.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#MyActionsForMe { width: 100%; background-image: url('MyActionsForMe.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#ObjectivesForHealth { width: 100%; background-image: url('ObjectivesForHealth.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#SensitiveEffects { width: 100%; background-image: url('SensitiveEffects.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#SportsDay { width: 100%; background-image: url('SportsDay.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#SummerSmog { width: 100%; background-image: url('SummerSmog.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#WhatIsCO { width: 100%; background-image: url('WhatIsCO.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#WhatIsLAQN { width: 100%; background-image: url('WhatIsLAQN.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#WhatIsNO2 { width: 100%; background-image: url('WhatIsNO2.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#WhatIsO3 { width: 100%; background-image: url('WhatIsO3.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#WhatIsPM { width: 100%; background-image: url('WhatIsPM.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#WhatIsPollution { width: 100%; background-image: url('WhatIsPollution.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#WhatIsSO2 { width: 100%; background-image: url('WhatIsSO2.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#WhereShouldILive { width: 100%; background-image: url('WhereShouldILive.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#WhyMonitor { width: 100%; background-image: url('WhyMonitor.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#WinterSmog { width: 100%; background-image: url('WinterSmog.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#WorstPlace { width: 100%; background-image: url('WorstPlace.jpg'); background-color: rgb(229, 226, 221); background-repeat: no-repeat; background-position: center top; min-height: 580px; height: auto ! important; z-index: 0; overflow: hidden; }
+div#GuideTextLight { width: 50%; height: 100%; background-color: rgb(229, 226, 221); padding: 10px; margin: 10px; position: relative; left: 20px; top: 10px; font-size: 1.2em; z-index: 5; opacity: 0.9; }
+div#GuideTextLight.guide-home { width: 40% ! important; height: 100%; opacity: 0.9 ! important; }
+div#GuideTextLight h2, div#GuideTextLight.guide-home h2 { font-size: 1.25em ! important; text-transform: uppercase; margin: 15px 0px ! important; padding: 0px ! important; color: rgb(0, 39, 94); display: block; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; }
+div#GuideTextLight p, div#GuideTextLight.guide-home p { font-size: 0.9em ! important; }
+div#GuideTextLight a, div#GuideTextLight.guide-home a { color: rgb(0, 80, 84) ! important; text-decoration: underline; }
+div#GuideTextLight a:hover, div#GuideTextLight a:focus, div#GuideTextLight.guide-home a:hover, div#GuideTextLight.guide-home a:focus { color: rgb(243, 225, 1) ! important; background-color: rgb(0, 80, 84) ! important; }
+ul#TopicLinks { background-color: rgb(255, 187, 119); margin: 0px; padding: 10px; }
+ol#steps { list-style: outside none decimal ! important; display: list-item ! important; }
+ol#steps li { display: list-item ! important; }
+div#GuideNavigation { float: right; background-color: rgb(71, 79, 81); padding: 10px; margin: 10px; z-index: 5; color: White ! important; min-width: 15%; width: auto ! important; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; opacity: 0.8; }
+div#GuideNavigation ul#guidenav { margin: 0px; padding: 0px; text-align: left; }
+div#GuideNavigation ul#guidenav li { margin: 0px; padding: 2px 0px; }
+div#GuideNavigation ul#guidenav li#home { margin: 0px; padding: 5px 0px ! important; }
+div#GuideNavigation img.home-icon { margin: 0px 5px 0px 0px; float: left; }
+div#GuideNavigation ul#guidenav li a#guidehome { color: rgb(255, 255, 255); text-decoration: none; font-weight: normal; border: 0px none; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; text-transform: uppercase; font-size: 1.2em; padding: 8px 5px ! important; }
+div#GuideNavigation ul#guidenav li a#guidehome:hover, div#GuideNavigation ul#guidenav li a#guidehome:focus { cursor: pointer; color: rgb(243, 225, 1); }
+div#GuideNavigation ul#guidenav li h3 { color: rgb(255, 255, 255); text-decoration: none; font-weight: normal; font-size: 1.2em; border-left: 1px solid rgb(255, 255, 255); padding: 5px ! important; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; text-transform: uppercase; }
+div#GuideNavigation ul#guidenav li h3:hover, div#GuideNavigation ul#guidenav li h3:focus { cursor: pointer; color: rgb(243, 225, 1); border-left-color: rgb(243, 225, 1); }
+div#GuideNavigation ul.ItemContent li a { color: rgb(255, 255, 255); text-decoration: none; font-weight: normal; font-size: 0.9em ! important; font-family: Arial,Helvetica,sans-serif; text-transform: lowercase; }
+div#GuideNavigation ul.ItemContent li a:hover, div#GuideNavigation ul.ItemContent li a:focus { cursor: pointer; color: rgb(243, 225, 1); }
+div.video-container { width: 300px; height: 203px; border: 1px solid rgb(34, 30, 32); margin: 2px; padding: 0px; float: left; }
+div.video-info { width: 300px; height: 203px; border: 1px solid rgb(34, 30, 32); margin: 2px; padding: 0px; float: left; }
+div.video-info img { float: left; margin: 0px 5px 5px 0px; }
+#LongTermGraph { width: 80%; padding: 10px; margin: 10px; position: relative; font-size: larger; z-index: 5; }
+#Birth { position: absolute; left: 50px; }
+#Childhood { position: absolute; left: 100px; }
+#MiddleAge { position: absolute; left: 300px; }
+#OldAge { position: absolute; left: 500px; }
+#VeryOld { position: absolute; left: 650px; }
+#GraphText { position: relative; top: 30px; min-height: 100px; height: auto; }
+div#GuideControl { margin: 0px; padding: 5px 5px 5px 40px; color: rgb(255, 255, 255); font-size: 1.1em; height: 25px; background: rgb(102, 102, 102) url('video_icon.png') no-repeat scroll 5px 2px; vertical-align: middle; }
+div#GuideControl a { display: inline; color: rgb(255, 255, 255); padding: 5px; font-weight: bold; }
+div#GuideControl a:hover, div#GuideControl a:focus { color: rgb(243, 225, 1); }
+
+/* ::::: http://www.londonair.org.uk/LondonAir/App_Themes/Kings/Screen.css ::::: */
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, input, blockquote, th, td, img, form, * { margin: 0px; padding: 0px; }
+html, body { height: 100%; width: 100%; margin: 0px; padding: 0px; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+hr { clear: both; color: rgb(211, 207, 198); background-color: rgb(211, 207, 198); height: 1px; border: 0px none; margin: 10px 0px; }
+ul { list-style: outside none none; }
+address, caption, cite, code, dfn, th, var { font-style: normal; font-weight: normal; }
+table { border-collapse: collapse; border: 0px none; }
+fieldset, img { border: 0px none; }
+caption, th { text-align: left; }
+body { font-family: Arial,Helvetica,sans-serif; font-size: 1em; color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); line-height: normal; }
+h1 { font-size: 1.6em; float: none; width: 100%; text-transform: uppercase; color: rgb(255, 255, 255); padding: 8px 0px 4px; margin: 0px 0px 10px; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; text-indent: 12px; clear: none; }
+h2 { font-size: 1.4em; float: none; width: 100%; text-transform: uppercase; color: rgb(255, 255, 255); padding: 8px 0px 4px; margin: 0px 0px 10px; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; text-indent: 12px; clear: none; }
+h3 { font-size: 1.3em; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; padding: 0px; margin: 0px 0px 13px; font-weight: normal; }
+h4 { font-size: 1.2em; font-family: "KingsCaslonTextRegular",Georgia,"Times New Roman",Times,serif; font-weight: bold; padding: 0px; margin: 15px 0px 10px; }
+h5 { font-size: 1.1em; font-family: Arial,Helvetica,sans-serif; font-weight: bold; padding: 0px; margin: 15px 0px 10px; }
+h6 { font-size: 1em; font-family: Arial,Helvetica,sans-serif; font-weight: normal; padding: 0px; font-style: italic; margin: 0px; }
+p { margin: 0px; padding: 0px 0px 10px; }
+h2.page_title { background-color: rgb(0, 0, 0); }
+img { border: 0px none; }
+img.border { border: 1px solid rgb(0, 0, 0) ! important; }
+img.float-left-margin { border: 1px solid rgb(0, 0, 0) ! important; float: left; margin-right: 5px; }
+img.float-left-margin-noborder { border: 0px none; float: left; margin-right: 5px; }
+img.float-right-margin { border: 1px solid rgb(0, 0, 0) ! important; float: right; margin-left: 5px; }
+img.float-right-margin-noborder { border: 0px none; float: right; margin-left: 5px; }
+img.centre-page { margin: 0px auto; border: 0px none; }
+a, a:link { color: rgb(0, 80, 84); text-decoration: underline; font-weight: normal; }
+a:visited { color: rgb(0, 80, 84); text-decoration: underline; }
+a:hover { color: rgb(0, 0, 0); text-decoration: underline; }
+a:active { color: rgb(0, 80, 84); text-decoration: underline; }
+a:focus { color: rgb(0, 0, 0); text-decoration: underline; }
+a.no-bg:hover { background-color: Transparent ! important; }
+a.no-bg:focus { background-color: Transparent ! important; }
+a.disabled, a.disabled:focus, a.disabled:hover, a.disabled:active, a.disabled:visited { color: Gray ! important; background-color: Transparent ! important; text-decoration: none ! important; }
+div.warning { width: 930px; color: rgb(0, 0, 0); margin: 5px auto; font-size: 0.8em; background: rgb(255, 255, 223) url('warning.gif') no-repeat scroll 5px 8px; padding: 5px 5px 5px 25px; border: 1px solid rgb(207, 168, 64); font-weight: bold; }
+div.warning a, div.warning a:link { color: rgb(0, 0, 0) ! important; text-decoration: underline ! important; }
+div#wrapper { width: 960px; margin: 0px auto; padding: 0px; border-top: 5px solid rgb(0, 0, 0); color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); }
+div#header { width: 960px; margin: 0px; padding: 0px; height: 100px; border: 0px none; background-color: rgb(0, 0, 0); }
+div#header img.laqn-logo { float: left; margin: 10px 10px 0px; }
+div#header img.kings-logo { float: right; margin: 0px; }
+div#header div.flash-border { float: left; border: 0px none; width: 710px; height: 100px; margin: 0px; }
+div#header div.flash-border object.flash-banner { margin: 0px 3px 0px 0px; border: 0px none; }
+div#header div.flash-border img.alternate-banner { margin: 0px 3px 0px 0px; border: 0px none; }
+div#top-navigation { background-color: rgb(0, 0, 0); margin: 20px 0px 0px; border: 0px none; height: 50px; width: 960px; padding: 0px; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; }
+div#top-navigation ul#topnav { margin: 0px; padding: 0px; text-align: left; }
+div#top-navigation ul#topnav li { float: left; width: 100px; color: rgb(255, 255, 255); margin: 0px 0px 0px 10px; padding: 0px; list-style-image: none; list-style-type: none; display: inline; position: relative; z-index: 99998; }
+div#top-navigation ul#topnav li a, div#top-navigation ul#topnav li a:link { height: 50px; float: left; display: block; color: rgb(255, 255, 255); text-decoration: none; font-weight: normal; font-size: 0.95em; border-left: 1px solid rgb(255, 255, 255); padding: 0px 0px 0px 5px; width: 100px; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; text-transform: uppercase; }
+div#top-navigation ul#topnav li a.selected { color: rgb(243, 225, 1) ! important; text-decoration: underline ! important; background-color: rgb(0, 0, 0); }
+div#top-navigation ul#topnav li a:hover, div#top-navigation ul#topnav li a:focus { color: rgb(243, 225, 1) ! important; border-left-color: rgb(243, 225, 1) ! important; text-decoration: none; background-color: rgb(0, 0, 0); }
+div#top-navigation ul#topnav li.last-item { float: right; height: 50px; width: 120px; margin: 0px; border: 0px none; padding: 0px; }
+div#top-navigation ul#topnav li.last-item input.search-box { float: left; width: 80px; height: 17px; margin: 0px 2px 0px 0px; padding: 0px; border: 1px solid rgb(204, 204, 204); }
+div#top-navigation ul#topnav li.last-item input.search-box:hover, div#top-navigation ul#topnav li.last-item input.search-box:focus { border-color: rgb(243, 225, 1) ! important; }
+div#top-navigation ul#topnav li.last-item input.search-button { font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; font-size: 0.8em; font-weight: bold; cursor: pointer; color: rgb(255, 255, 255); margin: 0px; padding: 2px; background-color: rgb(35, 31, 32); width: 25px; height: 19px; border: 1px solid rgb(204, 204, 204); float: left; }
+div#top-navigation ul#topnav li.last-item input.search-button:hover, div#top-navigation ul#topnav li.last-item input.search-button:focus { color: rgb(243, 225, 1) ! important; }
+div#top-navigation ul#topnav li div.sub { position: absolute; border-left: 1px solid rgb(243, 225, 1); top: 50px; left: 0px; z-index: 99999; padding: 20px; float: left; display: none; background-color: rgb(52, 60, 62); }
+div#top-navigation ul#topnav li div.row { clear: both; float: left; width: 100%; margin-bottom: 10px; }
+div#top-navigation ul#topnav li div.sub ul { list-style: outside none none; margin: 0px; padding: 0px; width: 150px; float: left; border: 0px none; }
+div#top-navigation ul#topnav div.sub ul li { width: 100%; color: rgb(255, 255, 255); }
+div#top-navigation ul#topnav div.sub ul li h3 { padding: 0px 0px 4px; margin: 0px 0px 10px; font-size: 1em ! important; font-weight: normal; }
+div#top-navigation ul#topnav div.sub ul li h3 a { padding: 5px 0px; background-image: none; color: rgb(255, 255, 255); }
+div#top-navigation ul#topnav div.sub ul li a { float: none; text-indent: 0px; height: auto; background: transparent url('navlist_arrow.png') no-repeat scroll 5px 12px; padding: 7px 5px 7px 15px; display: block; text-decoration: none; color: rgb(255, 255, 255); font-size: 0.9em ! important; text-transform: none; font-family: Arial,Helvetica,sans-serif; }
+div#top-navigation ul#topnav div.sub ul li a:hover, div#top-navigation ul#topnav div.sub ul li a:focus { color: rgb(221, 221, 221); background-position: 5px 12px; }
+div#main-content { margin: 0px; padding: 10px; font-size: 0.8em; background-color: rgb(229, 226, 221); color: rgb(0, 0, 0); z-index: 1; border: 0px none; height: 100%; min-height: 450px; width: auto; }
+div#main-content p { margin: 5px; padding: 0px; }
+div#breadcrumbs { width: 75%; height: 100%; margin: 0px 0px 10px; padding: 0px; border: 0px none; color: rgb(0, 0, 0); font-size: 0.9em; font-weight: normal; display: block; }
+div#main-content div#hero-banner { position: relative; margin: 10px 0px; padding: 0px; width: 940px; height: 280px; background-color: rgb(52, 60, 62); color: rgb(0, 0, 0); border: 1px solid rgb(34, 30, 32); }
+div#main-content div#hero-banner div.slideshow-container { position: relative; z-index: 1; float: none; margin: 0px; padding: 0px; width: 100%; height: 100%; min-height: 240px; border: 0px none; overflow: hidden; }
+div#main-content div#hero-banner div.slideshow-container div.banner-overlay { position: absolute; margin: 0px; padding: 5px; width: 930px; height: 10%; bottom: 0px; left: 0px; border: 0px none; z-index: 98888; background-color: rgb(0, 0, 0); }
+div#main-content div#hero-banner div.slideshow-container div.banner-overlay a { padding: 7px 0px 0px; color: rgb(255, 255, 255); font-weight: normal; text-decoration: none; font-size: 1.2em; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; }
+div#main-content div#hero-banner div.slideshow-container div.banner-overlay a:hover, div#main-content div#hero-banner div.slideshow-container div.banner-overlay a:focus { color: rgb(243, 225, 1) ! important; text-decoration: underline; }
+div#main-content div#hero-banner div.slideshow-container div.banner-overlay span { padding: 7px 0px 0px; color: rgb(255, 255, 255); font-weight: normal; text-decoration: none; font-size: 1.2em; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; }
+div#bulletin-map-key { position: absolute; bottom: 38px; right: 0px; z-index: 95000; width: 65px; height: 149px; }
+div#nowcast-map-key { position: absolute; bottom: 45px; right: 5px; border: 1px solid rgb(0, 0, 0); width: 300px; height: 40px; }
+div.google-map { width: 940px; height: 280px; border: 0px none; z-index: 1; }
+div#selection select { width: 250px; margin: 5px 0px ! important; border: 1px solid rgb(34, 30, 32); }
+div.google-map a:hover { background-color: Transparent ! important; }
+div.google-map a.map-link:hover, div.google-map a.map-link:focus { background-color: rgb(255, 255, 255) ! important; }
+div.google-map span { display: none ! important; }
+div.google-map a.gmnoprint terms-of-use-link { display: none ! important; }
+div.google-map div#logocontrol { display: none ! important; }
+div.info-window { height: 100%; min-height: 60px; width: auto; overflow: visible ! important; }
+div#main-content div.la-container { width: 250px; height: 292px; display: block; margin: 0px; padding: 0px; min-height: 240px; overflow: hidden ! important; float: right; border-top: 1px solid rgb(34, 30, 32); border-right: 1px solid rgb(34, 30, 32); border-bottom: 1px solid rgb(34, 30, 32); position: relative; z-index: 200; }
+div#main-content div.la-container div.title { position: absolute; top: 0px; left: 0px; z-index: 900; width: 100%; height: 20px; padding: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-size: 1.2em; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; }
+div#main-content div.la-container div.previous { position: absolute; top: 57px; left: 45%; z-index: 900; width: 35px; height: 35px; }
+div#main-content div.la-container div.previous input.previous-button { background-image: url('2uparrow-grey.png'); background-position: 0px 0px; background-repeat: no-repeat; background-color: transparent; width: 35px; height: 35px; border: 0px none; }
+div#main-content div.la-container div.previous input.previous-button:hover { cursor: pointer; background-image: url('2uparrow.png') ! important; }
+div#main-content div.la-container div.next { position: absolute; bottom: 8px; left: 45%; z-index: 900; width: 35px; height: 35px; }
+div#main-content div.la-container div.next input.next-button { background-image: url('2downarrow-grey.png'); background-position: 0px 0px; background-repeat: no-repeat; background-color: transparent; width: 35px; height: 35px; border: 0px none; }
+div#main-content div.la-container div.next input.next-button:hover { cursor: pointer; background-image: url('2downarrow.png') ! important; }
+div#main-content div.la-container div#la-list { margin: 30px 0px 0px; padding: 0px; width: 100%; height: 100%; min-height: 280px; background-color: rgb(255, 255, 255); border-top: 0px solid rgb(34, 30, 32); border-right: 1px solid rgb(34, 30, 32); border-left: 1px solid rgb(34, 30, 32); overflow: hidden ! important; }
+div#main-content div.la-container div#la-list div.la-item { margin: 0px; padding: 2px; width: auto; height: 40px; border-bottom: 1px solid rgb(34, 30, 32); clear: both; background-color: rgb(255, 255, 255); }
+div#main-content div.la-container div#la-list div.la-item img.la-icon { margin: 5px; float: left; }
+div#main-content div.la-container div#la-list div.la-item img.index-icon { margin: 5px 2px 5px 5px; float: right; }
+div#main-content div.la-container div#la-list div.la-item a { margin: 8px 0px 5px; padding: 2px; text-decoration: none; display: block; float: left; font-size: 0.85em; width: auto; color: rgb(0, 0, 0); }
+div#main-content div.la-container div#la-list div.la-item a:hover, div#main-content div.la-container div#la-list div.la-item a:focus { color: rgb(0, 0, 0) ! important; }
+div#main-content div.la-container div#la-list div.la-item a.chevron-link { margin: 0px; padding: 0px; display: inline ! important; float: right; }
+div#main-content div.la-container div#la-list div.la-item a.chevron-link img.chevron-icon { margin: 15px 2px 5px; float: none; }
+div#main-content div.feature-containers { clear: none; margin: 10px 0px 0px; padding: 0px; border: 0px none; height: 100%; min-height: 300px; width: 70%; }
+div#main-content div.feature-containers div.feature-widget { margin-right: 10px; margin-bottom: 10px; padding: 0px; border: 1px solid rgb(34, 30, 32); float: left; width: 210px; height: 140px; position: relative; }
+div#main-content div.feature-containers div.feature-widget img { width: 210px; height: 140px; }
+div#main-content div.feature-containers div.feature-widget div.feature-overlay { position: absolute; margin: 0px; padding: 5px; width: 200px; height: auto; top: 0px; left: 0px; border: 0px none; z-index: 99999; background-color: rgba(0, 0, 0, 0.5); }
+div#main-content div.feature-containers div.feature-widget div.feature-overlay a, div#main-content div.feature-containers div.feature-widget div.feature-overlay a:link { padding: 5px 0px 0px; color: rgb(255, 255, 255); font-weight: normal; font-size: 1.2em; text-decoration: none; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; }
+div#main-content div.feature-containers div.feature-widget div.feature-overlay a:hover, div#main-content div.feature-containers div.feature-widget div.feature-overlay a:focus { color: rgb(243, 225, 1) ! important; text-decoration: underline ! important; }
+div#main-content span.contentbanner { font-size: 1.2em; font-weight: bold; height: 100%; min-height: 20px; width: 100%; display: block; color: rgb(255, 255, 255) ! important; padding: 3px; background-color: rgb(0, 0, 0) ! important; margin: 0px; }
+ul.list { margin: 10px 0px 10px 10px; padding: 0px 0px 0px 15px; }
+ul.list li { clear: both; margin: 0px; padding: 2px 0px 2px 10px; list-style-image: url('bullet.gif') ! important; }
+table.health-advice { margin: 15px 0px 10px; border-collapse: collapse; border-spacing: 0px; }
+table.health-advice tr th { background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-weight: bold; padding: 5px; vertical-align: top; border: 1px solid rgb(211, 207, 198); }
+table.health-advice tr td { border: 1px solid rgb(211, 207, 198); padding: 5px; background-color: rgb(255, 255, 255); }
+table.mobile-apps { margin: 15px 0px 10px; border-collapse: collapse; border-spacing: 0px; width: 100%; }
+table.mobile-apps tr th { background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-weight: bold; padding: 5px; vertical-align: top; border: 1px solid rgb(211, 207, 198); font-size: 1.2em; }
+table.mobile-apps tr td { border: 1px solid rgb(211, 207, 198); padding: 5px; background-color: transparent; }
+div#sub-main-content { clear: both; margin: 0px; padding: 10px 10px 5px; border: 0px none; height: 250px; min-height: 250px; width: auto; background-color: rgb(178, 175, 169); }
+div#sub-main-content h3 { color: rgb(0, 0, 0); font-size: 1.3em; font-family: "KingsBureauGrotThreeSeven",Arial,Helvetica,sans-serif; padding: 0px; margin: 0px 0px 13px; font-weight: normal; }
+div#sub-main-content ul.list li { font-size: 0.8em; }
+div#sub-main-content img { border: 1px solid rgb(34, 30, 32) ! important; }
+img.forecast-icon { float: left; margin: 0px 10px 10px 0px; border: 1px solid rgb(34, 30, 32) ! important; }
+img.nowcast-icon { float: left; margin: 0px 10px 10px 0px; border: 1px solid rgb(34, 30, 32) ! important; background-color: rgb(255, 255, 255); }
+div#laqn-twitter { float: left; margin: 0px; padding: 0px; border: 0px none; height: 250px; width: 430px; background-color: rgb(178, 175, 169); }
+div#laqn-nowcast { float: right; margin: 0px; padding: 0px; border: 0px none; height: 250px; width: 250px; background-color: rgb(178, 175, 169); color: rgb(0, 0, 0); }
+div#laqn-nowcast p { font-size: 0.8em; }
+div#laqn-forecast { float: right; margin: 0px; padding: 0px; border: 0px none; height: 250px; width: 250px; background-color: rgb(178, 175, 169); color: rgb(0, 0, 0); }
+div#laqn-forecast p { font-size: 0.8em; }
+div#laqn-forecast div.current { float: left; margin: 0px; }
+div#laqn-forecast div.future { float: right; margin: 0px; }
+div.current-forecast { float: left; margin: 0px 20px 0px 0px; width: 47%; }
+div.future-forecast { float: left; margin: 0px 0px 0px 10px; width: 47%; }
+div#footer { clear: both; margin: 0px; padding: 10px 10px 5px; border: 0px none; height: 145px; min-height: 145px; width: auto; background-color: rgb(211, 207, 198); }
+div#footer div.footer-links { float: left; margin: 0px 5px 0px 0px; padding: 0px; border: 0px none; height: 100%; width: 110px; text-align: left; }
+div#footer div.footer-links h3 { color: rgb(0, 0, 0); margin: 0px; }
+div#footer div.footer-links ul { border: 0px none; width: auto; }
+div#footer div.footer-links ul li { font-size: 0.75em; padding: 3px 0px; }
+div#footer div.footer-links ul li a { color: rgb(0, 0, 0); border-bottom: 1px solid rgb(0, 0, 0); padding: 2px; text-decoration: none; }
+div#footer div.footer-links ul li a:hover, div#footer div.footer-links ul li a:focus { color: rgb(71, 79, 81) ! important; text-decoration: none ! important; }
+div#footer div.footer-links div.air-mail { float: left; margin: 0px; padding: 0px; border: 0px none; width: auto; text-align: left; color: rgb(0, 0, 0); font-size: 0.8em; }
+div#footer div.footer-links div.air-mail input.text-box { margin: 5px 0px; padding: 0px; width: 100px; border: 1px solid rgb(52, 60, 62); }
+div#footer div.footer-links div.air-mail input.button { display: block; outline: medium none; cursor: pointer; text-align: center; text-decoration: none; padding: 0.5em 0.7em 0.55em; margin: 5px 0px; color: rgb(254, 244, 233); border-radius: 5px; box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2); border: 1px solid rgb(197, 36, 44); background: transparent -moz-linear-gradient(center top , rgb(247, 7, 17), rgb(197, 36, 44)) repeat scroll 0% 0%; font-weight: bold; width: 100px; }
+div#footer div.footer-links-social-networks { float: right; margin: 0px; padding: 0px; border: 0px none; height: 100%; width: 85px; }
+div#footer div.footer-links-social-networks h3 { color: rgb(0, 0, 0); margin: 0px; }
+div#footer div.footer-links-social-networks ul { width: 80px; margin: 0px; padding: 0px; border: 0px none; height: 100%; float: right; text-align: right; }
+div#footer div.footer-links-social-networks ul li { padding: 0px; width: 70px ! important; clear: none; float: right; border: 0px none; margin: 5px 0px 0px; }
+div#footer div.footer-links-social-networks ul li a { font-size: 0px ! important; height: 0px ! important; width: 30px ! important; border: 0px none; color: rgb(0, 0, 0); padding: 30px 0px 0px ! important; clear: none; float: left; margin: 5px 5px 5px 0px ! important; overflow: hidden ! important; background-repeat: no-repeat; background-position: left top; background-color: transparent ! important; }
+div#footer div.footer-links-social-networks ul li a:hover, div#footer div.footer-links-social-networks ul li a:focus { background-position: left -40px ! important; cursor: pointer; }
+div#footer div.footer-links-social-networks ul li a.facebook { background-image: url('facebook.jpg'); }
+div#footer div.footer-links-social-networks ul li a.twitter { background-image: url('twitter.jpg'); }
+div#footer div.footer-links-social-networks ul li a.delicious { background-image: url('delicious.jpg'); }
+div#footer div.footer-links-social-networks ul li a.rss { background-image: url('rss.jpg'); }
+div#footer div.footer-links-social-networks ul li a.youtube { background-image: url('youtube.jpg'); }
+div#footer div.footer-links-social-networks ul li a.digg { background-image: url('digg.jpg'); }
+div#footer div.footer-links-social-networks ul li a.favourites { background-image: url('favourites.jpg'); }
+div#sub-footer { clear: both; margin: 0px; padding: 15px 0px 0px; border: 0px none; height: 40px; min-height: 40px; width: auto; background-color: rgb(52, 60, 62); font-family: Georgia,Arial,Helvetica,sans-serif; font-size: 0.8em; }
+div#sub-footer ul { margin: 0px 10px; padding: 0px; border: 0px none; height: 80%; width: auto; }
+div#sub-footer ul li { display: inline; margin: 0px; padding: 0px; border: 0px none; color: rgb(255, 255, 255); }
+div#sub-footer ul li a { margin: 0px; padding: 3px; border: 0px none; text-decoration: none ! important; color: rgb(255, 255, 255); }
+div#sub-footer ul li a:hover, div#sub-footer ul li a:focus { color: rgb(243, 225, 1) ! important; text-decoration: underline ! important; }
+div.PanelMessage { text-align: center; background-color: rgb(255, 255, 255); border: 1px solid rgb(0, 0, 0); width: 640px; height: 510px; margin: 0px auto; display: block; }
+div.PanelMessage input.modal-button { color: rgb(255, 255, 255); background-color: rgb(198, 198, 115); font-weight: bold; }
+div.PanelMessage img.modal-image { border: 0px none; margin: 0px; }
+.modal-bg { background-color: rgb(221, 221, 221) ! important; opacity: 0.7; }
+.dark-grey { color: rgb(52, 60, 62); }
+.mid-grey { color: rgb(71, 79, 81); }
+.light-grey { color: rgb(229, 226, 221); }
+.footer-grey { color: rgb(211, 207, 198); }
+.header-black { color: rgb(1, 30, 44); }
+.kings-black { color: rgb(34, 30, 32); }
+.link-yellow { color: rgb(243, 225, 1); }
+.mid-blue { color: rgb(109, 152, 171) ! important; }
+.dark-blue { color: rgb(0, 39, 94) ! important; }
+.low { color: green ! important; }
+.moderate { color: orange ! important; }
+.high { color: red ! important; }
+.very-high { color: black ! important; }
+.very-high-defra { color: purple ! important; }
+.none { display: none ! important; }
+.block { display: block ! important; }
+.clear { clear: both ! important; }
+.float-left { float: left; }
+.float-right { float: right; }
+.bold { font-weight: bold; }
+.bold-larger { font-weight: bold; font-size: 1.1em; }
+.italic { font-style: italic; }
+.small { font-size: 0.85em; }
+.small-italic { font-style: italic; font-size: 0.85em; }
+.small-bold { font-weight: bold; font-size: 0.85em; }
+.red-bold { font-weight: bold; color: Red ! important; }
+.bold-centre { text-align: center; font-weight: bold; }
+.centre { text-align: center; }
+.justify { text-align: justify; }
+.red-bold-centre { color: Red; font-weight: bold; text-align: center; }
+.vertical-top { vertical-align: top; }
+.vertical-middle { vertical-align: middle; }
+.vertical-bottom { vertical-align: bottom; }

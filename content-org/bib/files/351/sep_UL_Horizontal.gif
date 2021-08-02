@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>www.madrid.es</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="es" />	
+	<link type="text/css" rel="STYLESHEET" href ="./cssFS/main.css" media="screen,print"/>
+	<link type="text/css" rel="STYLESHEET" href ="./cssFS/indice.css" media="screen,print"/>
+	<!--[if lte IE 6]>
+		<link type="text/css" rel="STYLESHEET" href ="./cssFS/ie6.css" media="screen,print"/>
+	<![endif]-->
+	<!--[if gte IE 6]>
+		<link type="text/css" rel="STYLESHEET" href ="./cssFS/ie_gte6.css" media="screen,print"/>
+	<![endif]-->
+
+
+
+
+</head>
+
+<body>
+	<a name="arriba"></a>
+	<div id="contenedor">
+		<div id="contenido">
+			<!-- ************** CABECERA ******************	-->
+			<div id="cabecera">
+				
+				<a id="enlacelogo" href="http://www.madrid.es" title="Inicio">
+					<img src="./imagenesFS/cn/logoHead.png" id="logo" class="logo" alt="Logotipo de Munimadrid y enlace a la p&aacutegina principal" />
+				</a>
+			</div>
+			
+		    <!-- ************** CONTENIDO ******************	-->
+    <div class="bannerSeccion"><img src="./imagenesFS/cn/Promo_FueraServicio.jpg" alt="Mantenimiento" class="imgBannerSecc" />
+      <div class="secundarias">
+        <h2><span>mantenimiento</span></h2>
+      </div>
+    </div>
+    <div id="avisos" class="bloqueError">
+      <hr />
+      <div id="txtAviso">
+        <div class="tit"> <strong>SERVICIO O RECURSO NO DISPONIBLE</strong> </div>
+        <div class="contTxtInfo">
+        <p>Lo sentimos, <strong>el servicio o recurso que ha solicitado no existe o no est&aacute disponible en este momento.</strong>.</p>
+        <p> Puede tratar acceder a dicho servicio desde la portada de <a href="http://www.madrid.es">www.madrid.es</a>. </p>
+        <p>Si tiene dudas sobre c&oacutemo navegar en www.madrid.es visite nuestra zona de <a href="http://www.madrid.es/portal/site/munimadrid/menuitem.2ee17f6fcf5ca0aa7d245f019fc08a0c/?vgnextoid=23ee43db40317010VgnVCM100000dc0ca8c0RCRD">ayuda.</a> </p>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+			<div class="contenedorCopy">
+				
+				<p class="texto3_1">Ayuntamiento de Madrid, 2008. Todos los derechos reservados.</p>
+			</div>
+		</div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

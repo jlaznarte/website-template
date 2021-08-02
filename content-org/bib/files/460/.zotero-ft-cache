@@ -1,0 +1,848 @@
+Screen reader users, click here to load entire article This page uses JavaScript to progressively load the article content as a user scrolls. Screen reader users, click the load entire article button to bypass dynamically loaded article content.
+Please note that Internet Explorer version 8.x will not be supported as of January 1, 2016. Please refer to this blog post for more information. Close
+ 
+
+    Journals
+    Books
+
+    Sign in
+    Sign in
+    OpenAthens login
+    Login via your institution
+    Other institution login
+    Sign in using your ScienceDirect credentials
+    Username:
+    Password:
+    Remember me
+    | Not Registered?
+    Forgotten username or password?
+    Help
+
+    Download PDF
+     
+    Help
+        Direct export
+         
+         
+        Export file
+          RIS (for EndNote, Reference Manager, ProCite)
+          BibTeX
+          Text
+          RefWorks Direct Export
+        Content
+          Citation Only
+          Citation and Abstract
+
+Advanced search
+Other users also viewed these articles
+
+    Opens document download manager
+
+Do not show again
+Downloading zip file containing 3 articles...
+Article
+Article + other articles in this issue
+
+ 
+Article outline
+Show full outline
+
+    Abstract
+    Keywords
+    1. Introduction
+    2. Method
+    2.1. Strategy
+    2.2. Data set
+    2.3. Statistical model
+    2.3.1. Regularisation scheme
+    2.3.2. Confidence interval of prediction
+    3. Results
+    3.1. Inputs selection
+    3.2. Description of the various model used
+    3.3. Performance indices
+    3.4. Results of the statistical evaluation of the model performance
+    3.4.1. Evaluation of the global fit agreement
+    3.4.2. Evaluation of the exceedance indexes
+    3.4.3. Development of a neural classifier to perform the exceedance levels
+    3.4.4. Forecasting on the other two stations
+    4. Conclusion
+    Acknowledgements
+    References
+
+Alert message
+JavaScript is disabled on your browser.
+Please enable JavaScript to use all the features on this page.
+Figures and tables
+
+    Hourly maximum ozone from 1999 to 2003, during the Summer period – April to ...
+    BIC-like criterion according to the number of neurons in the hidden layer of the ...
+    Structure of the artificial neural network after the optimization by REGRESS.
+    Table 1
+    Table 2
+    Time series of the MLP1 (in red) and the deterministic models (in green) during ...
+    Probability of exceedance of the European threshold, during the validation phase ...
+    Scatter plot of the measured and forecasted maximum ozone concentrations at the ...
+    Standardized residual analysis on the validation data set.
+    Table 3
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. This page uses JavaScript to progressively load the article content as a user scrolls. Click the View full text link to bypass dynamically loaded article content. View full text
+
+Environmental Modelling & Software
+
+Volume 22, Issue 9 , September 2007, Pages 1261–1269
+Cover image Cover image
+A 24-h forecast of ozone peaks and exceedance levels using neural classifiers and weather predictions
+
+    Alain-Louis Dutot a , , ,
+    Joseph Rynkiewicz b ,
+    Frédy E. Steiner a ,
+    Julien Rude a
+
+    a Laboratoire Inter universitaire des Systèmes Atmosphériques-UMR-CNRS-7583, Université Paris 12 et Université Paris 7, 61 av. du Gal, De Gaulle 94010, Creteil Cedex, France
+    b Laboratoire de Statistique Appliquée et Modélisation Stochastique, MATISSE-SAMOS-UMR-CNRS-8595, Université Paris 1, Centre Mendès France, 90 rue de Tolbiac, 75634 Paris Cedex 13, France
+
+    Received 20 May 2005, Revised 22 July 2006, Accepted 8 August 2006, Available online 3 November 2006
+
+  Show more   Show less
+
+    doi:10.1016/j.envsoft.2006.08.002 
+    Get rights and content 
+
+Abstract
+
+A neural network combined to a neural classifier is used in a real time forecasting of hourly maximum ozone in the centre of France, in an urban atmosphere. This neural model is based on the MultiLayer Perceptron (MLP) structure. The inputs of the statistical network are model output statistics of the weather predictions from the French National Weather Service. These predicted meteorological parameters are very easily available through an air quality network. The lead time used in this forecasting is ( t  + 24) h. Efforts are related to a regularisation method which is based on a Bayesian Information Criterion-like and to the determination of a confidence interval of forecasting. We offer a statistical validation between various statistical models and a deterministic chemistry-transport model. In this experiment, with the final neural network, the ozone peaks are fairly well predicted (in terms of global fit), with an Agreement Index = 92%, the Mean Absolute Error = the Root Mean Square Error = 15 μg m −3 and the Mean Bias Error = 5 μg m −3 , where the European threshold of the hourly ozone is 180 μg m −3 .
+
+To improve the performance of this exceedance forecasting, instead of the previous model, we use a neural classifier with a sigmoid function in the output layer. The output of the network ranges from [0,1] and can be interpreted as the probability of exceedance of the threshold. This model is compared to a classical logistic regression. With this neural classifier, the Success Index of forecasting is 78% whereas it is from 65% to 72% with the classical MLPs. During the validation phase, in the Summer of 2003, six ozone peaks above the threshold were detected. They actually were seven.
+
+Finally, the model called NEUROZONE is now used in real time. New data will be introduced in the training data each year, at the end of September. The network will be re-trained and new regression parameters estimated. So, one of the main difficulties in the training phase – namely the low frequency of ozone peaks above the threshold in this region – will be solved.
+Keywords
+
+    Artificial neural network ;
+    Multilayer Perceptron ;
+    Ozone modelling ;
+    Statistical stepwise method ;
+    Neural classifier ;
+    Regularisation method ;
+    Confidence interval of prediction
+
+Software availability
+
+REGRESS:
+
+    Joseph Rynkiewicz (rynkiewi@univ-paris1.fr), Laboratoire de Statistique Appliquée et Modélisation Stochastique, MATISSE-SAMOS-UMR-CNRS-8595, Université Paris 1 Centre Mendès France, 90 rue de Tolbiac 75634 Paris Cedex 13, France. http://samos.univ-paris1.fr . Running under LINUX and SOLARIS. Free of charge.
+NEUROZONE:
+
+    Alain-Louis Dutot (dutot@lisa.univ-paris12.fr), Laboratoire Inter universitaire des Systèmes Atmosphériques-UMR-CNRS-7583, Université Paris12 et Université Paris7, 61 av. du Gal, De Gaulle 94010, Creteil Cedex, France. http://www.lisa.univ-paris12.fr . Visual Basic running under Windows. Free of charge. Software required: NETRAL: www.netral.com .
+
+1. Introduction
+
+According to the law, air quality agencies are commissioned to:
+
+•
+
+    monitor pollutants,
+•
+
+    forecast pollution peaks,
+•
+
+    inform authorities and public, and
+•
+
+    assess the impact of emission reductions.
+
+For all these reasons, there is nowadays a considerable challenge to air quality forecasting. Tools to forecast pollution peaks can be used in two different ways thanks to:
+
+•
+
+    3-dimensional air quality models which integrate chemistry, transport and dispersion, or
+•
+
+    statistical models which generally directly connect meteorological conditions to level of pollutants.
+
+The first approach is time-consuming and requires very large databases to initialize and run the model. Therefore, the second approach is generally preferred to the first one for real time forecasting. This study focuses on photochemical smog pollution and especially on ozone pollution. Although changes in daily emissions affect daily ozone concentrations, it is the daily weather variations that best explain the day to day variability in the ozone levels ( US-EPA, 1999 ). Ozone conducive meteorological conditions are now well-known. During the Summer, high insulation, high temperature, high stability (low mixing heights), and low midday relative humidity produce photochemical smog. The persistence of these conditions leads to ozone episodes ( Altshuller and Lefhon, 1996 , Seinfeld and Pandis, 1998  and  US Environmental Protection Agency, 1996 ).
+
+Empirical ozone modelling and regression models in particular have been largely studied. The time series analysis can model the seasonality, the trend and the autocorrelation of the ozone variability. The regressive and autoregressive models are often used ( Box and Jenkins, 1976 , Gonzalez-Manteiga et al., 1993 , Graf-Jacottet and Jaunon, 1998  and  Prada-Sanchez et al., 2000 ), but they are limited by the weakness of the modelling in the extreme values. Regressions are also associated with automatic classification as in the Classification And Regression Tree (CART) method ( Garner and Dorling, 2000  and  Ryan, 1995 ). The possible presence of chaotic dynamics in ozone concentrations allows the performing of non-linear time series modelling ( Chen et al., 1998 , Kocak et al., 2000  and  Lee et al., 1994 ). Other non-linear methods such as neural networks have also been developed ( Boznar et al., 1993 , Comrie, 1997 , Gardner and Dorling, 1998 , Ruiz-Suarez et al., 1995 , Yi and Prybutok, 1996 , Zolghadri et al., 2004 , Agirre-Basurko et al., 2006  and  Sousa et al ). These neural methods provide a better representation of the extreme values than the linear ones. The use of non-linear techniques is often recommended to deal with the ozone prediction ( Schlink et al., 2003  and  Schlink et al ).
+
+The aim of this paper is to test an empirical ozone modelling using a neural network coupled with a neural classifier to improve the performance of a threshold exceedance prediction.
+2. Method
+2.1. Strategy
+
+The aim of this study is to present an ozone peak forecasting method which uses, in the statistical regression function, easily available variables for air quality agencies. In this study, the predicted weather data will be provided by the model output statistics of the French National Weather Service (METEO-FRANCE).
+2.2. Data set
+
+The ozone data used in this study come from LIG'AIR – the air quality agency of the centre of France. This agency has 15 ground monitoring stations distributed over 39 540 km 2 . This region produces about 3% of the national NO x emissions and 10% of the Volatile Organic Compound (VOC) production, 38% of which come from biogenic emissions. In this region 85% of the NO x emissions come from mobile sources. VOC regional emissions (75%) come from the industrial sector, waste processing and agriculture ( http://www.citepa.org , http://www.ligair.fr ). This study is focused only on the city of Orléans (274 000 inhabitants) which owns three urban monitoring stations: called Préfecture (station 1), La Source (station 2) and Saint Jean de Braye (station 3). The database for developing the model were obtained during five consecutive years (1999–2003). The ozone forecasting presented here is based on the daily maximum of the hourly mean concentrations of the background stations. As ozone peaks during the Summer, the data from April to September are the only ones used in this model. Finally the choice of the air quality network of Orléans is to develop a “spring–summer” model.
+
+The meteorological data used are the weather forecasts delivered by the French Weather Service ( METEO-FRANCE-département du Loiret ) for the Orléans area. These forecasts are delivered at 12:00 UTC, for the following day. The forecast bulletin ( D  + 1), called atmogramme , contains five predicted parameters:
+
+•
+
+    the cloudiness, divided into six classes of weather conditions,
+•
+
+    the rainfall, divided into 10 classes,
+•
+
+    the surface wind speed and direction, divided into six and eight classes, respectively,
+•
+
+    the maximum and the minimum air temperatures, and
+•
+
+    the vertical temperature gradient between 0 and 300 m.
+
+The first three parameters are predicted for 3-h intervals. So we calculate the daily sum of the hours for each class of these meteorological variables. The last parameter is a 12-h intervals variable. So, there are two vertical gradients, one a.m. and another p.m.
+
+Persistence is introduced in the analysis by using ozone value at 12:00 UT, on D -day. These 34 meteorological variables and persistence are used as input data in the neural network. Note that the choice of these variables is directly imposed by the forecast bulletin and not by a statistical or chemical criterion. But it already contains the main part of the relevant meteorological parameters. Unfortunately, the solar radiation is not available. But it is highly correlated both to air temperature and cloud cover. Moreover, there are no data available on the upper-air ventilation reflecting the possible transport of the ozone and of the ozone precursors in and out of the site. The data used range from 1999 to 2003. Fig. 1 shows the variability of the ozone data.
+
+Hourly maximum ozone from 1999 to 2003, during the Summer period – April to ... Hourly maximum ozone from 1999 to 2003, during the Summer period – April to ...
+    Fig. 1. 
+
+    Hourly maximum ozone from 1999 to 2003, during the Summer period – April to September.
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+2.3. Statistical model
+
+The neural model used in this study is autoregressive and includes exogenous parameters (it is termed a Nonlinear AutoRegressive with eXogenous input (NARX) model. It is based on the use of a MultiLayer Perceptron Network. From a statistical point of view, MultiLayer Perceptrons are non-linear parametric functions. The adjustable parameters are called the weight; the exogenous variables are the inputs of the model and the estimated variable is the output. One important feature of MultiLayer Perceptron is its capability to model any smooth functional relationship between one or more predictors and variables to be predicted. This property is completely fulfilled with just one hidden layer MLP . Thus, we have employed this kind of neural network, in this study. These regressions can be presented as static single-output processes with an n -input vector X and an output vector Y   . So, the estimated model, View the MathML source View the MathML source Y ˆ , can be represented by:
+equation ( 1 )
+View the MathML source View the MathML source Y ˆ = f ( X , w ) + ɛ
+Turn   MathJax on
+where f is the neural activation function, w   are the parameters of the neural regression to be estimated, and ɛ ɛ is a zero-mean random variable.
+
+Details on the use of such neural networks can be found, for example, in White, 1992 , Gardner and Dorling, 1999  and  Nunnari et al., 1998 and Dutot et al. (2003) . In this study, we have trained the neural network with 2S-shape function, the logistic and the hyperbolic tangent. There is no significant difference between the two results on the validation data set (not shown here). So, we empirically chose the hyperbolic tangent as the activation function, f , of the neural operator. So, Eq. (1) is written as:
+equation ( 2 )
+View the MathML source View the MathML source Y ˆ = w 0 + ∑ i = 1 n ( w i tan h ( w 0 , i + ∑ i = 1 p w i X i ) ) + ɛ
+Turn   MathJax on
+
+The two main pitfalls in using MLP are the poor local minima of the error function and the overtraining of this regression function. For the first problem, a good solution is to use a sufficiently large number of random initializations for the weights of the MLP to be trained. This method is time-consuming but is easy to implement in parallel. It could also be convenient to use several computers to find the best parameters.
+2.3.1. Regularisation scheme
+
+Overtraining is a more complex problem. MLPs may be extremely overparametrized models. It occurs when the model learns the noisy details of the training data. The overtrained models have very poor performance on fresh data. In this study, we have used a pruning technique to avoid overtraining. This technique, both for the parameter estimation (in the learning process) and the model selection (in the hidden layer architecture selection), is a stepwise method using a BIC-like criterion, which has been proved consistent ( Cottrell et al., 1995 ). The MLP with the minimal dimension is found by the elimination of the irrelevant weights. The method essentially consists in minimizing a BIC 1 -like information criterion, that is to say, the Mean Square Error of the model penalized by a function of the number of parameters and data:
+equation ( 3 )
+View the MathML source View the MathML source BIC = ln MSE N + W ln ( N ) N
+Turn   MathJax on
+where MSE=(1/N)∑(X estimated −X observed ) 2 =mean square error MSE = ( 1 / N ) ∑ ( X estimated − X observed ) 2 = mean square error , N  = size of the training data, and W  = number of adjustable parameters, w i w i , of the MLP.
+
+This minimization leads to the elimination of the irrelevant weights and, depending on the case, to the elimination of a few complete variables or even to the elimination of a few neural units in the hidden layer. This is a way to avoid overtraining of the learning phase. The determination of the final model begins with all the possible inputs and with too many neurons in the hidden layer. Then, units in the hidden layer are gradually eliminated by computing at each step the BIC-like criterion as long as its value decreases. The calculation stops when the BIC criterion remains stable or increases. In the beginning, the first value of the weights between the inputs and the hidden layer are initialized by the value of the parameters of a linear regression having the same inputs. The initial value of the bias is equal to the mean value of the training data. Finally, the elimination of these parameters, and eventually those of some inputs, leads to the minimal MLP. One advantage of this regularisation method instead of the classical early-stopping method is to merge the learning and validation data sets into a bigger learning set. This methodology can be found in our software REGRESS, available at http://samos.univ-paris1.fr , running under LINUX and SOLARIS.
+2.3.2. Confidence interval of prediction
+
+Monari and Dreyfus (2002) propose to use the leverage of the examples in the training data to compute a confidence interval of the predicted values. Leverage is a measure of the effect of a particular observation on the fitted regression, due to the position of the observation in the space of the predictor variables:
+equation ( 4 )
+View the MathML source View the MathML source h i i = Z i T M − 1 Z i
+Turn   MathJax on
+where h ii h i i is the leverage of the example i in the training data which represents the influence of i   in the learning phase, Z i =∂f(x i ,θ)/∂θ Z i = ∂ f ( x i , θ ) / ∂ θ is the gradient of the model output with respect to the parameters θ θ , and M=(ZTZ) M = ( Z T Z ) .
+
+The authors show that if the matrix Z has full rank and under asymptotic conditions, then the confidence interval of prediction is:
+equation ( 5 )
+View the MathML source View the MathML source ± t α N − q S ( Z T ( Z T Z ) − 1 Z )
+Turn   MathJax on
+where View the MathML source View the MathML source t α N − q is the t   -distribution with N−q N − q degrees of freedom and a level of significance (1−α) ( 1 − α ) , and View the MathML source View the MathML source S = ( ( 1 / N − q ) ∑ i = 1 N R i 2 ) is the residual standard deviation of the model.
+
+All the details of this approach can be found on http://www.neurones.espci.fr .
+
+In this work we have used a neural algorithm of the MLP developed by NETRAL (see http://www.netral.com ). This software gives large access to the source code. The non-linear function used in the neural units is the hyperbolic tangent. The optimization method used is a second-order method: the Levenberg–Marquardt method. The cost function to be minimized according to the Delta rule is:
+equation ( 6 )
+View the MathML source View the MathML source E = 1 2 ∑ ( Y observed − Y estimated ) 2
+Turn   MathJax on
+
+The weights, W i W i , are initialized with some small random value. Until E   is within desired tolerance, the weights are updated, as W new W new , according to where E   is evaluated at W old W old :
+equation ( 7 )
+View the MathML source View the MathML source W new = W old − ∂ E ∂ W
+Turn   MathJax on
+
+Classically, the initial data are centered and standardized as:
+equation ( 8 )
+View the MathML source View the MathML source X i , normalized = ( X i − X ¯ ) S X
+Turn   MathJax on
+where S X is the standard deviation.
+
+3. Results
+3.1. Inputs selection
+
+The neural network design will be obtained from the most representative station of the urban atmosphere: station 3, Saint Jean de Bray . This choice which includes location and environmental criteria is based on the national typology and classification of air quality monitoring sites. Then, the architecture (number of neurons in the hidden layer and number of input variables) of the network will be reproduced in the two other stations.
+
+The database of the stations are split into two data sets, training and validation sets. The first data set is used to optimise the parameters of the regression. The years 1999–2002 represent the training data, and 2003 the validation set. This validation data set, which is not used during the training phase, is used to assess the performance of the regression. An Analysis Of Variance (ANOVA) test indicated that there was no significant difference between these two data sets at the 95% confidence level.
+
+According to the stepwise method (REGRESS) presented above, the variables selection leads to keep only eight meteorological parameters and the ozone concentration of the D -day as input data:
+
+•
+
+    the ozone concentration at 12:00 UTC on D -day,
+•
+
+    the predicted ( D  + 1) minimum and maximum of the air temperatures,
+•
+
+    the predicted ( D  + 1) mean surface wind speed,
+•
+
+    the predicted ( D  + 1) hourly frequency of wind in directions: S, SW, W and NW, and
+•
+
+    the predicted ( D  + 1) hourly frequency of a cloudiness class called “sky without cloud” in the atmogramme .
+
+The REGRESS method also provides the number of neuronal units in the hidden layer. Fig. 2 shows that the optimum of the BIC criterion, on the validation data set, is reached with only one neuron in this hidden layer. Finally, Fig. 3 presents the diagram of the neural network. This neural structure will be used on the other two stations, Préfecture (1) and La Source (2).
+
+BIC-like criterion according to the number of neurons in the hidden layer of the ... BIC-like criterion according to the number of neurons in the hidden layer of the ...
+    Fig 2. 
+
+    BIC-like criterion according to the number of neurons in the hidden layer of the validation set. Note that the MLP with 0 neuron is a multi-linear regression.
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+Structure of the artificial neural network after the optimization by REGRESS. Structure of the artificial neural network after the optimization by REGRESS.
+    Fig. 3. 
+
+    Structure of the artificial neural network after the optimization by REGRESS.
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+3.2. Description of the various model used
+
+In this study, we have tested three neural models (MLP 1 , MLP 2 and MLP 3 ), one linear model (LIN), one deterministic chemistry-transport model (CHIMERE) and the pure persistence model (PERS):
+
+•
+
+    The first model MLP 1 is the neural network with the architecture shown above.
+•
+
+    In Europe, threshold for which information of bad air quality in urban areas is made public, is the hourly mean ozone concentration: 180 μg m −3 . Looking at Table 1 , it is possible to see that the observations above the critical level of 180 μg m −3 constitute a very small part of the overall data. Only 2% of the total data exceed this threshold. In case of such rare events, Nunnari et al. (2004) propose a method of pattern balancing that is based on artificially reducing the frequency of data with low values. Let us call N a N a and N b N b the number of episodes above and below the threshold θ θ . The authors propose to re-determine N b N b according to:
+    equation ( 9 )
+    View the MathML source View the MathML source N b , MLP 2 ∗ = r ( θ ) N a
+    Turn   MathJax on
+
+        Table 1.
+
+        Composition of the training and validation sets; in brackets the number of value >180 μg m −3 , outside the total number of data
+        	MLP 1 	MLP 2 	MLP 3
+        1999 training 	159(1) 	10(1) 	20(1)
+        2000 training 	161(0) 	0(0) 	0(0)
+        2001 training 	162(3) 	30(3) 	60(3)
+        2002 training 	131(1) 	10(1) 	20(1)
+        Total training 	613(5) 	50(5) 	100(5)
+        2003 validation 	105(7) 	70(7) 	105(7)
+        Full-size table 
+        Table options
+
+            View in workspace
+            Download as CSV
+
+    with r(θ)=aexp(bθ) r ( θ ) = a exp ( b θ ) , where a  = 1 and b  = 0.0125 if 0<θ<100 0 < θ < 100 .
+
+    Though the European threshold is 180, we will implement this technique in the MLP 2 model. As seen on Table 1 , in this model the number of the training data is randomly reduced from 613 to 50 and 70 in the validation data.
+•
+
+    According to the difference between the value of the European threshold (180) and the Nunnari's θ θ coefficient (0<θ<100) ( 0 < θ < 100 ) , a new balancing of the training set is proposed in this study. The size of the training set is empirically:
+    equation ( 10 )
+    View the MathML source View the MathML source N b , MLP 3 ∗ = 2 N b , MLP 2 ∗
+    Turn   MathJax on
+
+    This model is called MLP 3 . This empirical factor 2 allows obtaining a training data set large enough.
+•
+
+    We added the results of a multi-linear model, called LIN, which has the same predictors as the other models. To deal with obvious multicollinearity of the data we have used ridge regression. Instead of parameters estimation which is used in least square regression: View the MathML source View the MathML source b ˆ i = ( X T X ) − 1 ( X T Y ) , the ridge regression use a biased estimator: View the MathML source View the MathML source b ˆ ˜ i = ( X T X + λ I ) − 1 ( X T Y ) , where I   is the identity matrix. The ridge parameter λ λ is the smallest value, which gives stable estimate of View the MathML source View the MathML source b ˆ ˜ i . In this study we have used λ=0.05 λ = 0.05 .
+•
+
+    A deterministic chemistry-transport model was then used to evaluate the other models. This model (called CHIMERE, Vautard et al., 2001  and  Bessagnet et al., 2004 , http://euler.lmd.polytechnique.fr/chimere ) calculates, given the emissions, the meteorological variables and the lateral boundary conditions, the concentration fields of several pollutants, on a 6 × 6 km grid. The model produces the ozone forecasts for four different lead times: Day + 0, Day + 1, Day + 2 and Day + 3. The D  + 1 forecasts of this study will be used in comparison with the other models. Details on the model and the experiment can be found on our Web site: http://www.lisa.univ-paris12.fr and also on: http://prevair.org .
+•
+
+    To evaluate the forecast system, pure persistence model is included in the performance indices. It will be called: PERS. In this model the ozone forecast of the (Day + 1) is the real ozone concentration of the D -day.
+
+3.3. Performance indices
+
+Generally, there are two main groups of performance measures that can be used in the evaluation: one group represents the global fit agreement between observed and predicted data and the other represents the quality of the forecasting exceedance of a threshold value. The first group contains:
+equation ( 11 )
+View the MathML source View the MathML source Mean Bias Error ( MBE ) = 1 N ∑ i = 1 N ( P i − O i )
+Turn   MathJax on
+which represents the degree of correspondence between the mean forecast (P i =predicted data) ( P i = predicted data ) and the mean observation (O i =observed data) ( O i = observed data ) . Values >0 indicate over-prediction.
+equation ( 12 )
+View the MathML source View the MathML source Mean Absolute Error ( MAE ) = 1 N ∑ i = 1 N | P i − O i |
+Turn   MathJax on
+equation ( 13 )
+View the MathML source View the MathML source Root Mean Square Error ( RMSE ) = 1 N ∑ i = 1 N ( P i − O i ) 2
+Turn   MathJax on
+which can be divided into systematic and unsystematic components by a least square linear regression of P i P i and O i O i with slope b 1 b 1 and intercept b 0 b 0 . The systematic RMSE is:
+equation ( 14 )
+View the MathML source View the MathML source RMSE s = 1 N ∑ i = 1 N ( P ˆ i − O i ) 2
+Turn   MathJax on
+where View the MathML source View the MathML source P ˆ i is the predicted value in the linear regression: View the MathML source View the MathML source P ˆ i = b 0 + b 1 O i . This measure describes the linear bias produced by the model.
+equation ( 15 )
+View the MathML source View the MathML source unsystematic RMSE , RMSE u = 1 N ∑ i = 1 N ( P ˆ i − P i ) 2
+Turn   MathJax on
+may be interpreted as a measure of precision of the model. With respect to a coherent model, RMSE s should approach 0 while RMSE u should approach RMSE.
+equation ( 16 )
+View the MathML source View the MathML source index of agreement , d = 1 − ∑ i = 1 N ( P i − O i ) 2 ∑ i = 1 N ( | P i − O ¯ | + | O i − O ¯ | ) 2
+Turn   MathJax on
+which should approach 1 in a coherent model.
+
+The correlation coefficient is not suitable for comparative study and therefore not used in this work ( Willmott et al., 1985 ).
+
+In the second group of indexes all observed and predicted exceedances are classified in a contingency table. With A representing the correctly predicted exceedances, F all the predicted exceedances, M all the observed exceedances and N the total number of data, we will use:
+equation ( 17 )
+View the MathML source View the MathML source True Positive Rate , TPR = A / M
+Turn   MathJax on
+which represents the fraction of correctly predicted exceedances. It can be interpreted as the sensitivity of the model.
+equation ( 18 )
+View the MathML source View the MathML source False Alarm Rate , FAR = ( F − A ) / ( N − M )
+Turn   MathJax on
+for which (1−FAR) ( 1 − FAR ) represents the specificity of the model.
+
+Lastly,
+equation ( 19 )
+View the MathML source View the MathML source Success Index , SI = TPR − FAR
+Turn   MathJax on
+ranging from −1 to +1 with an optimal value of 1. Not affected by a large number of correctly forecasted non-exceedances, SI is useful for evaluating rare events as there are in this study.
+
+Information about these performance indices can be found in Willmott et al., 1985  and  European Environment Agency, 1997 and Schlink et al. (2003) .
+
+Note that the diurnal maximum 1-h average ozone reference level in Europe is 180 μg m −3 ( Directive 2002/3/EC ).
+3.4. Results of the statistical evaluation of the model performance
+
+Let us recall that the new data used to assess the models, come from Summer 2003 for station 3, the most representative one of the city.
+3.4.1. Evaluation of the global fit agreement
+
+Table 2 shows that the index of agreement, d , of the pure persistence model is the weakest of all the models which are all better than this reference model. But note that there is no significant difference between the three neural models, the chemistry-transport model and the linear one, respectively d  = 92%, 92%, 92%, 87% and 90%. In the same way, these five models have similar global indices such as MBE, MAE and RMSE. Nevertheless, most important for the aim of this study, is that:
+
+•
+
+    the ozone levels are fairly well forecast in this urban area by the neural models, and
+•
+
+    that they are as efficient as the physical model.
+
+    Table 2.
+
+    Performance measures of all the models during the validation phase: April to September 2003
+    	MBE 	MAE 	RMSE 	RMSE s 	RMSE u 	d 	FAR 	SI
+    PERS 	−2 	20 	20 	8 	19 	0.88 	0.07 	0.64
+    LIN 	5 	17 	14 	14 	11 	0.90 	0.02 	0.12
+    MLP 1 	5 	15 	15 	11 	12 	0.92 	0.06 	0.65
+    MLP 2 	11 	18 	18 	12 	17 	0.92 	0.17 	0.69
+    MLP 3 	7 	17 	18 	8 	16 	0.92 	0.14 	0.72
+    CHIMERE 	3 	19 	27 	26 	12 	0.87 	0.02 	0.55
+    Classifier 	– 	– 	– 	– 	– 	– 	0.08 	0.78
+    Logistic 	– 	– 	– 	– 	– 	– 	0.34 	0.66
+    Full-size table 
+    Table options
+
+        View in workspace
+        Download as CSV
+
+In comparison with the goal of this study, this neuronal method, using very easily available variables for air quality agencies, is an easily operational tool.
+
+Finally, as there is no statistical improvement in using a balancing of the training data set (MLP 1 and MLP 2 models), we might select the MLP 1 model (that is the simplest) as an efficient forecasting system. Fig. 4 summarizes the results of Day + 1 forecasts at station 3 during the validation period for both the MLP 1 and the physical models.
+
+Time series of the MLP1 (in red) and the deterministic models (in green) during ... Time series of the MLP1 (in red) and the deterministic models (in green) during ...
+    Fig 4. 
+
+    Time series of the MLP 1 (in red) and the deterministic models (in green) during the validation phase. The horizontal line is the European threshold.
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+3.4.2. Evaluation of the exceedance indexes
+
+The essential quality of a forecast model is its ability to correctly predict concentrations above the threshold. The Success Index (SI) can measure this ability. To evaluate the performance of the exceedance forecasting, we have calculated the frequency of the predictions such as, a correct prediction is retained if,
+View the MathML source View the MathML source C estimated + t α N − q S ( Z T ( Z T Z ) − 1 Z ) ≥ 180
+Turn   MathJax on
+where View the MathML source View the MathML source t α N − q S ( Z T ( Z T Z ) − 1 Z ) is the confidence interval calculated as shown in Section 2.3.2 .
+
+The linear model (SI = 12%) and the physical one (SI = 55%) have the lower indice of all the approaches, at the 95% confidence level. For MLPs models, the best Success Index (72%) is obtained with the MLP 3 which uses our pattern balancing (see Table 2 ). The other neural models are not statistically different. Unfortunately, the MLP 3 model also has one of the higher False Alarm Rate, 14%. This sensitivity gives 12 false alarms on the validation period while the observed exceedances only are seven. The model associated with the lowest FAR (6%) is the MLP 1 but this model also has about the same SI (65%) than the pure persistence model. So, it is clearly difficult to do the right choice.
+3.4.3. Development of a neural classifier to perform the exceedance levels
+
+According to the difficulties to choose the right model of exceedance, we want to present in this work a significant improvement of the scores by using a new neural model. As seen above, the MLP 1 model might be selected in terms of global fit. With the same neural structure, we have built a new neural network with a sigmoid neural function in the output layer instead of the identity function. The MLP network was defined as:
+View the MathML source View the MathML source Y ˆ MLP 1 = w 0 + ∑ i = 1 n ( w i tan h ( w 0 , i + ∑ i = 1 p w i X i ) )
+Turn   MathJax on
+
+The new neural network, which is called classifier, will be:
+equation ( 20 )
+View the MathML source View the MathML source Y ˆ classifier = w 0 + 1 1 + exp [ ∑ i = 1 n ( w i tan h ( w 0 , i + ∑ i = 1 p w i X i ) ) ]
+Turn   MathJax on
+
+All the input data are now ranging from [0,1] [ 0 , 1 ] . The output of the network in the training data is no longer the ozone peak but p i p i with:
+View the MathML source View the MathML source p i = 0 if C estimated + t α N − q S ( Z T ( Z T Z ) − 1 Z ) < 180
+Turn   MathJax on
+View the MathML source View the MathML source p i = 1 if C estimated + t α N − q S ( Z T ( Z T Z ) − 1 Z ) ≥ 180
+Turn   MathJax on
+
+If N A N A is the number of training data in the class p i =1 p i = 1 , f A (x) f A ( x ) is the probability density function of the class A   , N B N B is the number of training data in the class p i =0 p i = 0 , f B (x) f B ( x ) is the probability density function of the class B , then the function:
+equation ( 21 )
+View the MathML source View the MathML source P 〈 A | x 〉 = N A f A ( x ) N A f A ( x ) + N B f B ( x )
+Turn   MathJax on
+is the a posteriori class-conditional density function of A given x .
+
+Because of the sigmoid function in the output layer, the output o   the classifier in the validation set, View the MathML source View the MathML source Y ˆ classifier , i , is also ranging from [0,1] [ 0 , 1 ] . It can be interpreted as the probability of exceedance of the threshold 180 μg m −3 . This classifier is used on the same training data, with the same predictors and evaluated on the same validation set. If View the MathML source View the MathML source Y ˆ classifier , i ≥ 0.50 , we admit a prediction of exceedance. Table 2 shows that the SI of the classifier is the highest (78%) associated with one of the lowest FAR (8%). Using the best MLP model (MLP 3 ) these scores with a 95% confidence interval are 72% and 14%, respectively. Fig. 5 shows the probability of exceedance during the validation phase. Six ozone peaks have been detected above 180 μg m −3 on seven real alarms and there are six false predictions. The correctly predicted exceedances for MLP 3 were only four out of seven. This method clearly shows a significant improvement in the prediction of the peak concentrations above 180 μg m −3 .
+
+Probability of exceedance of the European threshold, during the validation phase ... Probability of exceedance of the European threshold, during the validation phase ...
+    Fig 5. 
+
+    Probability of exceedance of the European threshold, during the validation phase (April to September 2003). Observations are in black, forecasted probability of the classifier is red squares and forecasted probability of the logistic model is blue squares.
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+Is this method more accurate than a classical logistic regression? A logistic model fits a response of observed proportions or probabilities at each level of an independent variable. The logistic model is defined by the equation:
+equation ( 22 )
+View the MathML source View the MathML source y = exp ( a + ∑ i b i x i ) 1 + exp ( a + ∑ i b i x i )
+Turn   MathJax on
+
+The response function of this model is a non-linear S-shaped curve with asymptotes at 0 and 1. In this study, after removing the no significant variables by using a stepwise technique, the best logistic model with the same data only uses three exogenous variables:
+
+•
+
+    the ozone concentration at 12 00 UTC on D-day,
+•
+
+    the predicted mean surface wind speed, and
+•
+
+    the predicted hourly frequency of wind in direction: SW.
+
+And the equation of the logistic model is:
+equation ( 23 )
+View the MathML source View the MathML source probability of exceedance = exp ( − 12.23 − 0.8074 SW − 0.4092 windspeed + 0.091 ozone on D-day ) 1 + exp ( − 12.23 − 0.8074 SW − 0.4092 windspeed + 0.091 ozone on D-day )
+Turn   MathJax on
+
+The p -value of the model and the residual are 0.0001 and 1.00, respectively. Because the p -value of the model is less than 5%, there is a statistically significant relationship between the variables at the 95% or higher confidence level. In addition, the p -value of the residuals indicates that the model is not significantly worse than the best possible model for this data set at the 95% confidence interval. The Chi-square goodness of fit test p -value is 0.76. This determines whether the logistic function adequately fits the observed data. In this study there is no reason to reject the adequacy of the fitted model at the 95% or higher confidence level.
+
+The results of this logistic regression during the validation phase are shown on Fig. 5 . This figure shows that all the observed exceedances are correctly predicted. Especially the last isolated peak in the end of September, not seen by the classifier model, is correctly forecasted with the logistic model. Unfortunately the Fig. 5 also shows that this method is too much sensitive. There are 29 false alarms during this validation period. So, the Success Index of the logistic model becomes worse than those of the classifier: 66% and 78%, respectively (see Table 2 ).
+
+Finally, the neural classifier remains the best candidate for the exceedance forecasting.
+3.4.4. Forecasting on the other two stations
+
+The same neuronal structure (MLP 1 ), that is to say, the same predictors and the same hidden layer, is applied to the data of stations 1 and 2. A new training is made for each station with the data of 1999–2002 and a validation phase is made with the data of the year 2003. Fig. 6 shows all the results for the three stations. The slopes of the linear regression of this scatter plot are 0.70 ± 0.15, 0.72 ± 0.12 and 0.70 ± 0.15 for stations 1, 2 and 3, respectively. Let us remember that station 3 was used as a reference. It is easy to see that there is no significant difference between these values. The analysis of the standardized residual, SR, (SR=( C estimated ) − ( C observed )/ S ), where S is the standard deviation of the observed data) indicates that the variation of these values is less than ±2 S , and that no special pattern appears in the residuals, Fig. 7 . Therefore, these three models can be globally validated to evaluate the global fit agreement.
+
+Scatter plot of the measured and forecasted maximum ozone concentrations at the ... Scatter plot of the measured and forecasted maximum ozone concentrations at the ...
+    Fig 6. 
+
+    Scatter plot of the measured and forecasted maximum ozone concentrations at the three ground-stations.
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+Standardized residual analysis on the validation data set. Standardized residual analysis on the validation data set.
+    Fig 7. 
+
+    Standardized residual analysis on the validation data set.
+    Figure options
+
+        Download full-size image
+        Download as PowerPoint slide
+
+The neural classifier applied to the data of stations 1 and 2 gives the results shown in Table 3 . All the observed exceedances are correctly forecasted for station 1. The SI has the higher score (89%). For the station 2, six exceedances out of eight have been found. The SI is 70% for this station.
+
+    Table 3.
+
+    Performance measures of the exceedance forecasting for the three stations
+    	Station 1 	Station 2 	Station 3 (reference)
+    FAR 	11% 	5% 	8%
+    SI 	89% 	70% 	78%
+    Observed peak 	6 	8 	7
+    Forecasted peak 	6 	6 	6
+    False alarm 	10 	4 	6
+    Full-size table 
+    Table options
+
+        View in workspace
+        Download as CSV
+
+4. Conclusion
+
+We have presented the results of an hourly maximum ozone forecast in an urban atmosphere. The system is based on an artificial neural network for which the input data come from meteorological model output statistics. Meteorological forecasts 24 h ahead used in this model are easily available data provided by any National Weather Service. In this study, our aim was essentially to find these exogenous parameters and, of course, to develop an easily operational ozone system forecasting.
+
+The validation procedure consists in comparing the forecasts with observations over a complete Summer season, from April to September 2003. One Multilayer Perceptron and two MLPs with a pattern balancing are tested. In comparison, we use a deterministic model and the persistence model as references.
+
+For the global fit agreement, the MLP 1 network without balancing shows a score of prediction 24 h ahead with d  = 92% and a high precision with MAE = 15 μg m −3 , MBE = 5 μg m −3 and RMSE unsystematic  = 12 μg m −3 . By this validation experiment, it has been demonstrated that the neural model is as efficient as the physical model, CHIMERE. By using easily available predicted parameters, the neural approach is an operational forecasting tool in this urban area.
+
+For the ability to predict the exceedance of the European threshold (180 μg m −3 ), the three neural models, MLP 1 , MLP 2 , MLP 3 are statistically identical with SI = 65%, 69% and 72%, respectively. These models are statistically higher than the physical model (SI = 55%). According to the difficulty to choose the right model for exceedance forecasting, we have developed a neural classifier. The output of this model ranges from 0 to 1 and can be interpreted as the probability of the exceedance of the 180 threshold. Using this classifier during the validation phase, six exceedances out of seven have been found. The Success Index reaches 78% and the False Alarm Rate only is 8%. This is the best combined performance of all the models.
+
+Our model, now called NEUROZONE , has been implemented in real time in the Orléans region. Each year, at the end of September, the validation data will be introduced into the former training data. Year after year, the network will be re-trained and new regression parameters estimated. So, one of the main difficulties in the training phase – namely the low frequency of ozone peaks above the threshold in this region – will be solved. In this study, we have focused on a 24 h ahead forecasting. In the future, it would be possible to introduce forecasting with longer lead times.
+Acknowledgements
+
+This forecasting project was supported by the air quality network of the Orléans region (LIG'AIR). We are also grateful to the French National Meteorological network (METEO-FRANCE) for the weather forecasts. INERIS graciously supplied us with the model-predicted data of the CHIMERE-PREV'AIR 2003 experiment, we gratefully acknowledge their assistance.
+References
+
+        Agirre-Basurko et al., 2006
+        E. Agirre-Basurko, G. Ibarra-Berastegi, I. Madariaga
+
+        Regression and multilayer perceptron-based models to forecast hourly O 3 and NO 2 levels in the Bilbao area
+
+        Environmental Modelling & Software, 21 (4) (2006), pp. 430–446
+        Article
+        |
+          Purchase PDF
+
+|
+View Record in Scopus
+ | 
+Citing articles (99)
+
+    Altshuller and Lefhon, 1996
+    A.P. Altshuller, A.S. Lefhon
+
+    Background ozone in the planetary boundary layer over the United States
+
+    Journal of Air & Waste Management Association, 76 (1996), pp. 137–171
+
+    Bessagnet et al., 2004
+    B. Bessagnet, A. Hodzic, R. Vautard, M. Beekmann, S. Cheinet, C. Honoré, C. Lioussec, L. Rouil
+
+    Aerosol modelling with CHIMERE-preliminary evaluation at the continental site
+
+    Atmospheric Environment, 38 (2004), pp. 2803–2817
+    Article
+    |
+      Purchase PDF
+
+|
+View Record in Scopus
+ | 
+Citing articles (207)
+
+    Box and Jenkins, 1976
+    G.E. Box, G.M. Jenkins
+
+    Time Series Analysis. Forecasting and Control
+
+    Holden Day, San Francisco (1976)
+
+    Boznar et al., 1993
+    M. Boznar, M. Lesjak, P. Mlakar
+
+    A neural network-based method for short-term predictions of ambient SO 2 concentrations in highly polluted industrial areas of complex terrain
+
+    Atmospheric Environment, 27B (2) (1993), pp. 211–230
+
+    Chen et al., 1998
+    J.L. Chen, S. Islam, P. Biswas
+
+    Nonlinear dynamics of hourly ozone concentrations: nonparametric short-term prediction
+
+    Atmospheric Environment, 32 (1998), pp. 1839–1848
+    Article
+    |
+      Purchase PDF
+
+|
+View Record in Scopus
+ | 
+Citing articles (80)
+
+    Comrie, 1997
+    A.C. Comrie
+
+    Comparing neural networks and regression models for ozone forecasting
+
+    Journal of the Air & Waste Management Association, 47 (1997), pp. 653–663
+    View Record in Scopus
+    |
+    Full Text via CrossRef
+     | 
+    Citing articles (255)
+
+    Cottrell et al., 1995
+    M. Cottrell, B. Girard, Y. Girard, M. Mangeas, C. Muller
+
+    Neural modelling for times series. a statistical stepwise method for weight elimination
+
+    Neural Networks, 6 (1995), pp. 1355–1364
+    View Record in Scopus
+    |
+    Full Text via CrossRef
+     | 
+    Citing articles (122)
+
+    Directive 2002/3/EC
+    Directive 2002/3/EC: of the European Parliament and of the Council of 12 February 2002, relating to ozone in ambient air, Available from: .
+
+    Dutot et al., 2003
+    A.L. Dutot, J. Rude, B. Aumont
+
+    Neural network method to estimate the aqueous rate constants for the OH reactions with organic compounds
+
+    Atmospheric Environment, 37 (2003), pp. 269–276
+    Article
+    |
+      Purchase PDF
+
+|
+View Record in Scopus
+ | 
+Citing articles (16)
+
+    European Environment Agency, 1997
+    European Environment Agency
+
+    R.M. van Aalst, F.A.A.M. de Leeuw (Eds.), National Ozone Forecasting Systems and International Data Exchange in Northwest Europe, European Environment Agency (1997) (Technical Report 9)
+
+    Gardner and Dorling, 1998
+    M.W. Gardner, S.R. Dorling
+
+    Artificial neural networks, the multilayer perceptron. A review of applications in the atmospheric sciences
+
+    Atmospheric Environment, 32 (14/15) (1998), pp. 2627–2636
+    Article
+    |
+      Purchase PDF
+
+|
+View Record in Scopus
+ | 
+Citing articles (509)
+
+    Gardner and Dorling, 1999
+    M.W. Gardner, S.R. Dorling
+
+    Neural network modelling and prediction of hourly NO x and NO 2 concentrations in urban air in London
+
+    Atmospheric Environment, 33 (1999), pp. 709–719
+    Article
+    |
+      Purchase PDF
+
+|
+View Record in Scopus
+ | 
+Citing articles (201)
+
+    Garner and Dorling, 2000
+    M.W. Garner, S.R. Dorling
+
+    Statistical surface ozone models: an improved methodology to account for non-linear behaviour
+
+    Atmospheric Environment, 34 (2000), pp. 21–34
+
+    Gonzalez-Manteiga et al., 1993
+    W. Gonzalez-Manteiga, J.M. Prada-Sanchez, R. Cao, I. Garcia-Jurado, M. Febrero-Bande, T. Lucas-Domingez
+
+    Time series analysis for ambient concentrations
+
+    Atmospheric Environment, 27A (2) (1993), pp. 153–158
+    Article
+    |
+      Purchase PDF
+    |
+    View Record in Scopus
+     | 
+    Citing articles (12)
+
+    Graf-Jacottet and Jaunon, 1998
+    M. Graf-Jacottet, M.-H. Jaunon
+
+    Predictive models for ground ozone and nitrogen dioxide time series
+
+    Environmetrics, 9 (1998), pp. 393–406
+
+    Kocak et al., 2000
+    K. Kocak, L. Saylan, O. Sen
+
+    Nonlinear time series prediction of ozone concentration in Istanbul
+
+    Atmospheric Environment, 34 (2000), pp. 1267–1271
+    Article
+    |
+      Purchase PDF
+    |
+    View Record in Scopus
+     | 
+    Citing articles (42)
+
+    Lee et al., 1994
+    I.F. Lee, P. Biswas, S. Islam
+
+    Estimation of the dominant degrees of freedom for air pollutant concentration data: application to ozone measurement
+
+    Atmospheric Environment, 28 (1994), pp. 1707–1714
+
+    Monari and Dreyfus, 2002
+    G. Monari, G. Dreyfus
+
+    Local overfitting control via leverages
+
+    Neural Computation, 6 (2002), pp. 1481–1506
+    View Record in Scopus
+    |
+    Full Text via CrossRef
+     | 
+    Citing articles (50)
+
+    Nunnari et al., 1998
+    G. Nunnari, A. Nucifora, C. Randieric
+
+    The application of neural techniques to the modelling of times series of atmospheric pollution data
+
+    Ecological Modelling, 11 (1998), pp. 187–205
+    Article
+    |
+      Purchase PDF
+    |
+    View Record in Scopus
+     | 
+    Citing articles (72)
+
+    About ScienceDirect
+
+    Contact and support
+
+    Terms and conditions
+
+    Privacy policy
+
+Copyright © 2016 Elsevier B.V. or its licensors or contributors. ScienceDirect® is a registered trademark of Elsevier B.V.
+Cookies are used by this site. To decline or learn more, visit our Cookies page.
+Switch to Mobile Site
+  Recommended articles
+
+        Hourly ozone prediction for a 24-h horizon using neural networks
+        2008, Environmental Modelling & Software
+        more
+            Adriana Coman, Anda Ionescu, Yves Candau
+            Hourly ozone prediction for a 24-h horizon using neural networks
+            Environmental Modelling & Software, Volume 23, Issue 12, December 2008, Pages 1407–1421
+            Original Research Article
+                PDF (2139 K)
+        Combining principal component regression and artificial neural networks for more accurate predictions of ground-level ozone
+        2008, Environmental Modelling & Software
+        more
+            Saleh M. Al-Alawi, Sabah A. Abdul-Wahab, Charles S. Bakheit
+            Combining principal component regression and artificial neural networks for more accurate predictions of ground-level ozone
+            Environmental Modelling & Software, Volume 23, Issue 4, April 2008, Pages 396–403
+            Original Research Article
+                PDF (704 K)
+        Regression and multilayer perceptron-based models to forecast hourly O 3 and NO 2 levels in the Bilbao area
+        2006, Environmental Modelling & Software
+        more
+            E. Agirre-Basurko, G. Ibarra-Berastegi, I. Madariaga
+            Regression and multilayer perceptron-based models to forecast hourly O 3 and NO 2 levels in the Bilbao area
+            Environmental Modelling & Software, Volume 21, Issue 4, April 2006, Pages 430–446
+            Original Research Article
+                PDF (394 K)
+    View more articles »
+
+  Citing articles ( 56 )
+
+    This article has not been cited.
+
+  Related book content
+
+    No articles found.
+
++ Show more applications
+- Show fewer applications
+ 
+Download PDFs
+Help
+Help
+[Entitle Gadget]
+Entitle Gadget
+

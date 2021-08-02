@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="wpd_version" content="0.2">
+<meta name="wpd_baseurl" content="http://www.sciencedirect.com/science/article/pii/S0952197615000494">
+<meta name="wpd_url" content="http://audioslides.elsevier.com/viewersmall.aspx?doi=10.1016/j.engappai.2015.02.010&amp;source=0">
+<meta name="wpd_date" content="2015-04-29T12:04Z">
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Audioslide viewer</title>
+
+        
+
+        <script src="jquery-1.4.1.min.js" type="text/javascript"></script>
+        <script src="swfobject.js" type="text/javascript"></script>
+        <script type="text/javascript" src="audioChecker.js"></script>
+        <!--[if !(IE 8)]><!-->
+        <script type="text/javascript" src="player.js"></script>
+        <!--<![endif]-->
+
+        
+
+<!--[if lt IE 9]>
+<style>
+    #topContainer
+    {
+        position: relative;
+        height: 20px;
+        width: 258px;
+        padding-left: 4px;
+        padding-top: 0px;
+        padding-right: 2px;
+        padding-bottom: 0px;
+    }
+</style>
+<![endif]-->
+
+        <script type="text/javascript">
+
+
+            var jsPlayerProperties =
+            {
+                largeButtonInterval: 0,
+                largeButtonIntervalTime: 1000,
+                useAudio: false,
+                currentAudioFinished: false,
+                holdForAudio: false,
+                firstPlay: true,
+                imageDownloadsizeWidthArray: [256,320,640,800,1024],
+                imageDownloadsizeHeightArray: [192,240,480,600,768]
+            };
+
+            /*
+             * Used to play the current audio
+             */
+            var viewerAudio;
+            var heightOffset = 36;
+
+            function openPopup()
+            {
+                var progress = 0;
+
+                if (!jsPlayerProperties.useAudio)
+                {
+                    progress = document.getElementById('audioslideViewer').getProgress(true);
+                }
+
+                var currentTime = progress ? progress.time : 0;
+                var currentSlide = progress ? progress.slideIndex : 0;
+
+                var fileToOpen = "ViewerLarge";
+
+                // non flash
+                if (jsPlayerProperties.useAudio)
+                {
+                    currentSlide = slideIndex;
+                    playPresentation(true);
+                    fileToOpen = "ViewerSmall";
+                }
+
+                var openHeight = 675;
+        if (openHeight == 675) openHeight = 675 - heightOffset;
+                var myWindow = window.open(fileToOpen + '.aspx?doi=10.1016/j.engappai.2015.02.010&Source=0&resumeTime=' + currentTime + '&resumeSlideIndex=' + currentSlide + '&width=800&height=' + openHeight, 'audioslideviewer', 'width=800,height=' + openHeight + ',scrollbars=no,location=no');
+                myWindow.focus();
+            }
+
+            
+            function openReport() {
+                var myWindow = window.open('report.aspx?doi=10.1016/j.engappai.2015.02.010', 'audioslideviewerReport', 'width=320,height=430,scrollbars=no,location=no');
+                myWindow.focus();
+            }
+            
+        </script>
+    
+<link rel="stylesheet" type="text/css" href="S0952197615000494_7.css" media="all">
+</head>
+<body style="margin: 0px; padding: 0px;">
+        <div id="viewer" style="display: block;">
+            <div id="viewerContent">
+                <div style="height: 192px;" id="viewport" onclick="viewportClick(event)">
+                    <img style="visibility: visible;" src="getImage.aspx" id="slideImage" alt="slideImage">
+                    <button style="top: 60px; left: 83.5px;" id="largePlayButton"></button>
+                </div>
+                <div id="controls">
+                    <div id="progress" onclick="progressClick(event)">
+                        <div id="progressBackground"></div>
+                        <div style="width: 0%;" id="progressBar"></div>
+                    </div>
+                    <div id="volumecontrols">
+                        <button class="unMuted" id="muteButton" onclick="mute()"></button>
+                        <input id="volumeSlider" oninput="changeVolume()" onchange="changeVolume()" min="0" max="1" step="0.1" orient="horizontal" type="range">
+                    </div>
+                    <div style="margin-left: 77.5px;" id="playControls">
+                        <button id="rewindButton" onclick="rewind()"></button>
+                        <button class="playState" id="playButton" onclick="play()"></button>
+                        <button id="forwardButton" onclick="forward()"></button>
+                    </div>
+                </div>
+            </div>
+	<div id="audioHolder" style="display: none;"><audio src="http://audioslides.elsevier.com/getAudio.aspx?doi=10.1016/j.engappai.2015.02.010&amp;Audio=1.ogg&amp;role=" id="audio_2" preload="auto"></audio></div>
+        </div>
+
+        <div id="audioslideViewer">
+            <!--
+            <a href="http://www.adobe.com/go/getflash">
+                <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"/>
+            </a>
+            -->
+        </div>
+        
+        <div id="topContainer">
+        
+            <a id="report" href="javascript:openReport();">Report inappropriate content in this presentation</a>
+            
+            <div class="fullScreen">
+                <a id="fullscreenLink" href="javascript:openPopup();"></a>
+            </div>
+        </div>
+
+<!--[if !(IE 8)]><!-->
+        <script type="text/javascript">
+
+            // viewport
+            //get viewport size
+            var browserViewport = function()
+            {
+                var viewportObj = new Object();
+                viewportObj.width = 0;
+                viewportObj.height = 0;
+                // the more standards compliant browsers (mozilla/netscape/opera/IE7)
+                //use window.innerWidth and window.innerHeight
+                if (typeof window.innerWidth != 'undefined')
+                {
+                    viewportObj.width = window.innerWidth,
+                    viewportObj.height = window.innerHeight
+                }
+                else if (typeof document.documentElement != 'undefined'
+                && typeof document.documentElement.clientWidth !=
+                'undefined' && document.documentElement.clientWidth != 0)
+                {
+                    viewportObj.width = document.documentElement.clientWidth,
+                    viewportObj.height = document.documentElement.clientHeight
+                }
+                else
+                {
+                    viewportObj.width = document.getElementsByTagName('body')[0].clientWidth,
+                    viewportObj.height = document.getElementsByTagName('body')[0].clientHeight
+                }
+                return viewportObj;
+            };
+
+            var presentationMode = false;
+
+            var vp = browserViewport();
+
+            //var viewerWidth = !isNaN( parseInt("")) ? parseInt("") : vp.width-2;
+            //var viewerHeight = !isNaN( parseInt("")) ? parseInt("") : vp.height-4;
+
+            var viewerWidth = vp.width-2;
+            var viewerHeight = vp.height-4;
+            var calculatedViewPortHeight = viewerHeight -52;
+
+            //var imageWidth = viewerWidth;
+            //var imageHeight = calculatedViewPortHeight;
+
+            var imageHeight// = !isNaN( parseInt("")) ? parseInt("") : viewerHeight;
+            var imageWidth// = !isNaN( parseInt("")) ? parseInt("") : viewerWidth;
+            
+            var setImageWidth = false;
+            var setImageHeight = false;
+
+            if (!isNaN( parseInt("")))
+            {
+                imageHeight = parseInt("");
+            }
+
+            if (!isNaN( parseInt("")))
+            {
+                imageWidth = parseInt("");
+            }
+
+            if (imageHeight == undefined)
+            {
+                setImageHeight = true;
+                imageHeight = vp.height-heightOffset ;
+            }
+
+            if (imageWidth == undefined)
+            {
+                setImageWidth = true;
+                imageWidth = vp.width;
+            }
+
+            //var imageHeight = !isNaN( parseInt("")) ? parseInt("") : calculatedViewPortHeight;
+
+            //var imageScale = (imageWidth > imageHeight) ? getImageScaleWidth() : getImageScaleHeight();
+            //imageWidth = Math.round(imageWidth * imageScale);
+            //imageHeight = Math.round(imageHeight * imageScale);
+            
+            //////////////////////////////
+            // IMAGE SIZE
+            //////////////////////////////
+            
+            function imageSizeToDownload()
+            {
+                var imageSize = {};
+                console.log("requested size: " + imageWidth + "x" + (imageHeight-heightOffset));
+                var containerIsLandscape = (imageWidth / (imageHeight-heightOffset)) >= 1;
+                console.log("containerIsLandscape: " + containerIsLandscape);
+                var index = (!containerIsLandscape) ? getDownloadsizeWidthIndex( getImageWidthFromArray(imageWidth) ) : getDownloadsizeHeigthIndex( getImageHeightFromArray((imageHeight-heightOffset) ) );
+                console.log("index: " + index);
+                imageSize.width = jsPlayerProperties.imageDownloadsizeWidthArray[ index ];
+                imageSize.height = jsPlayerProperties.imageDownloadsizeHeightArray[ index ];
+                return imageSize;
+            }
+            
+            function getImagesizeIndex(sizeArray, p_value)
+            {
+                var returnIndex = 0;
+                var matchFound = false;
+                for (var i = 0; i < sizeArray.length; i++)
+                {
+                    if ((sizeArray[i] == p_value) && !matchFound)
+                    {
+                        console.log(sizeArray[i] + " | " + !matchFound);
+                        returnIndex = i;
+                        matchFound = true;
+                    }
+                }
+                return returnIndex;
+            }
+            
+            function getDownloadsizeWidthIndex(p_width)
+            {
+                return getImagesizeIndex(jsPlayerProperties.imageDownloadsizeWidthArray, p_width);
+            }
+                
+            function getDownloadsizeHeigthIndex(p_height)
+            {
+                return getImagesizeIndex(jsPlayerProperties.imageDownloadsizeHeightArray, p_height);
+            }
+            
+            /**
+             * Get width or height from array
+             */
+            function getImageSizeFromArray(sizeArray, p_value)
+            {
+                var returnSize = Math.max(p_value, sizeArray[0]);
+                var previousValue = returnSize;
+                if (sizeArray[sizeArray.length-1] < previousValue)
+                {
+                    returnSize = sizeArray[sizeArray.length-1];
+                } else {
+                    for (var i = 0; i < sizeArray.length; i++)
+                    {
+                        if (previousValue == Math.min(p_value, sizeArray[i]))
+                        {
+                            returnSize = previousValue = sizeArray[i];
+                            //break;
+                        } else {
+                            console.log("no match: " + returnSize);
+                        }
+                    }
+                }
+
+                return returnSize;
+            }
+            
+            function getImageWidthFromArray(p_width)
+            {
+                return getImageSizeFromArray( jsPlayerProperties.imageDownloadsizeWidthArray, p_width );
+            }
+            
+            function getImageHeightFromArray(p_height)
+            {
+                return getImageSizeFromArray( jsPlayerProperties.imageDownloadsizeHeightArray, p_height );
+            }
+            
+            //////////////////////////////
+            // END IMAGE SIZE
+            //////////////////////////////
+
+            var baseUrl = "http://audioslides.elsevier.com/";
+            var xmlPath = "AudioSlide.aspx?doi=10.1016/j.engappai.2015.02.010&Source=0";
+            var saveProgressCall = "SaveProgress.aspx?doi=10.1016/j.engappai.2015.02.010_0%26Source=0";
+
+            var allSlides = [];
+            var slideIndex = 0;
+            var resumeSlideIndex = !isNaN( parseInt("")) ? parseInt("") : 0;
+            var showFullscreenButton = isNaN( parseInt(""));
+            var slideIndex = resumeSlideIndex;
+            var totalNumberOfSlides = 0;
+            var volumeLevel = 1;
+
+            var animationTimer;
+            var slideEndTimer;
+            var animationTicks = 0;
+            var animationPercentage = 0;
+            var animationSpeed = 10;
+
+            var pausedSlideIndex;
+
+            var savedSlides = [];
+
+            if (!showFullscreenButton)
+            {
+                document.getElementById('fullscreenLink').style.display = 'none';
+            }
+
+            $.fn.preloadImage = function()
+            {
+                this.each(function()
+                {
+                    $('<img/>').load(function()
+                    {
+                        //console.log("preloaded image | " + this.src + " | " + this.width + "x" + this.height);
+                    }).attr('src', this);
+                });
+            }
+
+            JSPlayer.loadXML(xmlPath);
+
+                function getPresProgressionPercentage(index)
+                {
+                    return (100 / totalNumberOfSlides) * index;
+                }
+
+                function progressClick(event)
+                {
+                    var progressBarwidth = viewerWidth; //document.getElementById('viewport').style.width;
+                    var clickedPercentage = (event.clientX / progressBarwidth) * 100;
+                    var index = getClosestIndexFromPersentage(clickedPercentage);
+                    doSlide(index);
+                }
+
+                function getClosestIndexFromPersentage(percentage)
+                {
+                    return Math.floor( (percentage * totalNumberOfSlides) / 100 );
+                }
+
+                function viewportClick(event)
+                {
+                    playPresentation();
+                    document.getElementById("largePlayButton").style.display = 'block';
+                    setLargePlayButton();
+                    jsPlayerProperties.largeButtonInterval = setInterval(hideButton, jsPlayerProperties.largeButtonIntervalTime);
+                }
+
+                function hideButton()
+                {
+                    clearInterval(jsPlayerProperties.largeButtonInterval);
+                    document.getElementById("largePlayButton").style.display = 'none';
+                }
+
+                function setLargePlayButton()
+                {
+                    document.getElementById("largePlayButton").style.top = (JSPlayer.getComputedHeight("viewport") / 2) - (JSPlayer.getComputedHeight("largePlayButton") / 2) + "px";
+                    document.getElementById("largePlayButton").style.left = (JSPlayer.getComputedWidth("viewport") / 2) - (JSPlayer.getComputedWidth("largePlayButton") / 2) + "px";
+                }
+
+                function playPresentation(onlyPause)
+                {
+			if (jsPlayerProperties.firstPlay == true)
+			{
+				jsPlayerProperties.firstPlay = false;
+				viewerAudio.src = "/sounds/point1sec.mp3";
+				viewerAudio.play();
+				
+			}
+                    if (onlyPause == true)
+                    {
+                        pausePlayer();
+                        presentationMode = false;
+                    } else {
+                        presentationMode = (presentationMode == true) ? false : true;
+                        if (presentationMode == false)
+                        {
+                            pausePlayer();
+                        } else {
+                            playPlayer();
+                        }
+                    }
+                }
+
+                function pausePlayer()
+                {
+                    //console.log("pausePlayer");
+                    document.getElementById('playButton').className = 'playState';
+                    document.getElementById('largePlayButton').className = 'pauseStateLarge';
+                    pausedSlideIndex = slideIndex;
+                    //console.log("percentage played: " + animationPercentage + " from slide: " + slideIndex);
+                    if (animationTimer != null) clearInterval(animationTimer);
+                    if (slideEndTimer != null) clearInterval(slideEndTimer);
+                    viewerAudio.pause();
+                    var currentPlayTime = viewerAudio.currentTime;
+                    var totalDuration = isNaN(viewerAudio.duration) ? 0 : viewerAudio.duration;
+                    //console.log("currentPlayTime: " + currentPlayTime + " from total of: " + viewerAudio.duration);
+
+                    JSPlayer.saveState("10.1016/j.engappai.2015.02.010", slideIndex, animationPercentage, currentPlayTime, viewerAudio.duration, viewerAudio.volume);
+                }
+
+                function playPlayer()
+                {
+                    document.getElementById('playButton').className = 'pauseState';
+                    document.getElementById('largePlayButton').className = 'playStateLarge';
+                    var totalDuration = isNaN(viewerAudio.duration) ? 0 : viewerAudio.duration;
+                    if ((pausedSlideIndex == slideIndex) && totalDuration != 0)
+                    {
+                        jsPlayerProperties.holdForAudio = false;
+                        jsPlayerProperties.currentAudioFinished = false;
+                        // resume
+                        //viewerAudio.play();
+                        doSlide(slideIndex);
+                    } else {
+                        // start
+                        doSlide(slideIndex);
+                    }
+
+                }
+
+                function nextSlide()
+                {
+                    JSPlayer.resetPercentagePlayed();
+                    jsPlayerProperties.holdForAudio = false;
+                    jsPlayerProperties.currentAudioFinished = true;
+                    doSlide(slideIndex+1);
+                }
+
+                function previousSlide()
+                {
+                    JSPlayer.resetPercentagePlayed();
+                    jsPlayerProperties.holdForAudio = false;
+                    jsPlayerProperties.currentAudioFinished = true;
+                    doSlide(slideIndex-1);
+                }
+
+                function toggleVolume()
+                {
+                    var volume = viewerAudio.volume;
+                    volume = (volume > 0) ? 0 : volumeLevel;
+                    if (volume == 0)
+                    {
+                        document.getElementById('muteButton').className = 'muted';
+                    } else {
+                        document.getElementById('muteButton').className = 'unMuted';
+                    }
+                    viewerAudio.volume = volume;
+                    document.getElementById('volumeSlider').value = volume;
+                }
+
+                function changeVolume()
+                {
+                    volumeLevel = document.getElementById('volumeSlider').value;
+                    viewerAudio.volume = volumeLevel;
+                    if (volumeLevel == 0)
+                    {
+                        document.getElementById('muteButton').className = 'muted';
+                    } else {
+                        document.getElementById('muteButton').className = 'unMuted';
+                    }
+                }
+
+                function startTimer(index)
+                {
+                    if (allSlides[index] != undefined)
+                    {
+                        var audioLength = allSlides[index]['@attributes'].audioLength;
+                        var startPercentage = getPresProgressionPercentage(index);
+                        var endPercentage = 100;
+                        if ((allSlides[index+1] != undefined) && index+1 < totalNumberOfSlides)
+                        {
+                            endPercentage = getPresProgressionPercentage(index+1);
+                        }
+
+                        // infoSlides don't have audioLength, only audioSlides
+                        if (animationTimer != null) clearInterval(animationTimer);
+                        if (slideEndTimer != null) clearInterval(slideEndTimer);
+                        animationTicks = 0;
+                        var percPlayedFromSlide = startPercentage;
+                        if (JSPlayer.getPercentagePlayed != undefined)
+                        {
+                            percPlayedFromSlide = JSPlayer.getPercentagePlayed() - startPercentage;
+                        }
+                        var diff = endPercentage - startPercentage;
+                        var ticks = (100) / (diff / animationSpeed);
+
+                        if(audioLength != undefined)
+                        {
+                            animationTimer = setInterval(function() {aniTimer()}, audioLength / ticks);
+                            slideEndTimer = setInterval(function() {endTimer()}, audioLength);
+                        } else {
+                            // @TODO defaultslide timer
+                            var defaultSlideTime = 5000;
+                            animationTimer = setInterval(function() {aniTimer()}, defaultSlideTime / ticks);
+                            slideEndTimer = setInterval(function() {endTimer()}, defaultSlideTime);
+                        }
+                    }
+                }
+
+                function aniTimer()
+                {
+                    setTimedProgresBar(slideIndex);
+                    animationTicks += 1;
+                }
+
+                function endTimer()
+                {
+                    animationTicks = 0;
+                    clearInterval(animationTimer);
+                    if ((presentationMode == true) && (index < totalNumberOfSlides-1))
+                    {
+                        doSlide(index+1);
+                    }
+                }
+
+                function setExtionsionInAudioURL(audioURL)
+                {
+                    var hasMp3 = String(audioURL).lastIndexOf(".mp3");
+                    if (hasMp3 > -1)
+                    {
+                        var audioExt = "." + audioExtension;
+                        audioURL = audioURL.replace(".mp3", audioExt);
+                    }
+                    return audioURL;
+                }
+
+                function doSlide(slideNr)
+                {
+                    if (jsPlayerProperties.holdForAudio == false)
+                    {
+                        viewerAudio.src = "";
+                        slideNr = (slideNr < 0) ? totalNumberOfSlides-1 : slideNr;
+                        slideNr = (slideNr > totalNumberOfSlides-1) ? 0 : slideNr;
+                        index = slideIndex = slideNr;
+                        saveProgress();
+
+                        var preloadDone = 0;
+                        var preloadCount = 3;
+
+                        var preloadArray = [];
+                        var tempIndex = index;
+                        for (var c = 0; c < preloadCount; c++)
+                        {
+                            if (tempIndex >= totalNumberOfSlides-1)
+                            {
+                                tempIndex = 0;
+                            } else if (tempIndex < 0)
+                            {
+                                tempIndex = totalNumberOfSlides-1;
+                            }
+                            // images
+                            if (allSlides[tempIndex]['@attributes'].imageUrl.length > 0)
+                            {
+                                var imageUrl = allSlides[tempIndex]['@attributes'].imageUrl + "&width=" + imageSizeToDownload().width + "&height=" + imageSizeToDownload().height + "&role=";
+                                preloadArray.push( allSlides[tempIndex] );
+                                $([imageUrl]).preloadImage();
+                            }
+                            // audio
+                            if(allSlides[tempIndex]['@attributes'].hasAudio == "true")
+                            {
+                                if (allSlides[tempIndex]['@attributes'].audioUrl.length > 0)
+                                {
+                                    var audioURL = baseUrl + setExtionsionInAudioURL(allSlides[tempIndex]['@attributes'].audioUrl);
+                                    var audioName = "audio_" + tempIndex;
+                                    var existingAudio = document.getElementById(audioName);
+                                    if(!existingAudio)
+                                    {
+                                        var audio = document.createElement('audio');
+                                        viewerAudio.addEventListener("ended", onAudioEnded);
+					viewerAudio.addEventListener("canplay", canplay);
+					viewerAudio.addEventListener("canplaythrough", canplaythrough);
+                                        audio.preload = "auto";
+                                        audio.id = audioName;
+                                        audio.src = audioURL;
+                                        document.getElementById('audioHolder').appendChild(audio);
+                                    } else {
+                                        if (c == 0)
+                                        {
+                                            if (presentationMode == true)
+                                            {
+                                                //console.log("play audio");
+                                                viewerAudio.src = audioURL;
+                                                viewerAudio.play();
+                                                jsPlayerProperties.holdForAudio = true;
+                                                jsPlayerProperties.currentAudioFinished = false;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            tempIndex++;
+                        }
+                        document.getElementById('slideImage').addEventListener("load", onImageLoaded);
+                        document.getElementById('slideImage').src = baseUrl + preloadArray[0]['@attributes'].imageUrl + "&width=" + imageSizeToDownload().width + "&height=" + imageSizeToDownload().height + "&role=";
+                        if (presentationMode == true)
+                        {
+                            startTimer(index);
+                        }
+                        setProgresBar();
+                    }
+                }
+
+function canplay()
+{
+	console.log("canplay");
+}
+
+function canplaythrough()
+{
+	console.log("canplaythrough");
+}
+
+                function onAudioEnded()
+                {
+                    if (jsPlayerProperties.useAudio)
+                    {
+                        jsPlayerProperties.holdForAudio = false;
+                        jsPlayerProperties.currentAudioFinished = true;
+                        if ((presentationMode == true) && (index < totalNumberOfSlides-1))
+                        {
+                            doSlide(index+1);
+                        }
+                    }
+                }
+
+                function onImageLoaded()
+                {
+                    if (jsPlayerProperties.useAudio)
+                    {
+                        document.getElementById("slideImage").style.visibility = 'visible';
+                        sizeViewport(vp.width, vp.height);
+                        if (showFullscreenButton == true)
+                        {
+                            if (document.getElementById("fullscreen") !== null)
+                            {
+                                document.getElementById("fullscreen").style.visibility = 'hidden';
+                                setFulscreenButton();
+                            }
+                            setLargePlayButton();
+                        }
+                    }
+                }
+
+                function getImageScaleHeight()
+                {
+                    var newImageWidth = imageWidth;
+                    var calculatedImageScale = (newImageWidth / imageWidth);
+                    return calculatedImageScale;
+                }
+
+                function getImageScaleWidth()
+                {
+                    var controlBarHeight = 44;
+                    var newImageHeight = imageHeight - controlBarHeight;
+                    var calculatedImageScale = (newImageHeight / imageHeight);
+                    return calculatedImageScale;
+                }
+
+                /**
+                 * slide index 0 doesn't need to be saved. This is always an infoSlide
+                 */
+                function saveProgress()
+                {
+                    var allreadySaved = false;
+
+                    for (var q = 0; q < savedSlides.length; q++)
+                    {
+                        if ( savedSlides[q] == slideIndex)
+                        {
+                            allreadySaved = true;
+                        }
+                    }
+                    if ((allreadySaved == false) && (slideIndex != 0))
+                    {
+                        console.log("save slideIndex: " + slideIndex);
+                        savedSlides.push(slideIndex);
+                        var saveURL = baseUrl + saveProgressCall + "&slideIndex=" + slideIndex;
+                        var request = $.get( saveURL, function( data )
+                        {
+                            //console.log(data);
+                        });
+                    } else {
+                        //console.log("Slide " + slideIndex + " allready saved");
+                    }
+                }
+
+                function setJSView(viewportWidth, viewportHeight)
+                {
+                    var viewer = document.getElementById("viewer");
+                    viewer.style.display = 'block';
+
+                    document.getElementById("muteButton").className = 'unMuted';
+                    document.getElementById("playButton").className = 'playState';
+                    viewerAudio.volume = volumeLevel;
+                    document.getElementById("volumeSlider").value = volumeLevel;
+
+                    sizeViewport(viewportWidth, viewportHeight);
+                }
+
+                function sizeViewport(viewPortWidth, viewPortHeight)
+                {
+                    var playControls = document.getElementById("playControls");
+                    var rewindWidth = JSPlayer.getComputedWidth("rewindButton");
+                    var playWidth = JSPlayer.getComputedWidth("playButton");
+                    var forwardWidth = JSPlayer.getComputedWidth("forwardButton");
+                    var buttonWidth = parseFloat(rewindWidth) + parseFloat(playWidth) + parseFloat(forwardWidth) - 50;
+                    playControls.style.marginLeft = (parseFloat(JSPlayer.getComputedWidth("viewport") / 2) - (buttonWidth)) + "px";
+
+                    var viewPort = document.getElementById("viewport");
+                    viewPort.style.height = JSPlayer.getComputedHeight("slideImage") + "px";
+
+                    if (showFullscreenButton == true)
+                    {
+                        setFulscreenButton();
+                    }
+                }
+
+                function setProgresBar()
+                {
+                    var progressBar = document.getElementById("progressBar");
+                    var percPlayedFromSlide = 0;
+                    if (JSPlayer.getPercentagePlayed() !== undefined)
+                    {
+                        percPlayedFromSlide = JSPlayer.getPercentagePlayed();
+                    }
+                    progressBar.style.width = getPresProgressionPercentage(slideIndex) + '%';
+                }
+
+                function setTimedProgresBar(index)
+                {
+                    if (index <= totalNumberOfSlides-1)
+                    {
+                        var progressBar = document.getElementById("progressBar");
+                        var startPercentage = getPresProgressionPercentage(index);
+                        var endPercentage = getPresProgressionPercentage(index+1);
+                        var percPlayedFromSlide = 0;
+                        if (JSPlayer.getPercentagePlayed() !== undefined)
+                        {
+                            percPlayedFromSlide = JSPlayer.getPercentagePlayed();
+                        }
+                        var diff = endPercentage - startPercentage;
+                        var tickPercentage = diff / (100 / (diff / animationSpeed)) * animationTicks;
+                        animationPercentage = startPercentage + tickPercentage;
+                        progressBar.style.width = animationPercentage + "%";
+                    }
+                }
+
+                function embedPlayer()
+                {
+                    viewerAudio = document.createElement('audio');
+                    jsPlayerProperties.useAudio = checkAudio(document, viewerAudio) || (iOS != false);
+
+                    if (!jsPlayerProperties.useAudio)
+                    {
+                        embedSWF();
+                    } else {
+                        JSPlayer.init(viewerAudio);
+                    }
+                }
+
+
+                function setFulscreenButton()
+                {
+                    var containerElem = document.getElementById("viewerContent");
+                    var containerElemHeight = window.getComputedStyle(containerElem,null).getPropertyValue("height").replace(/[^-\d\.]/g, '');
+                    var containerElemWidth = window.getComputedStyle(containerElem,null).getPropertyValue("width").replace(/[^-\d\.]/g, '');
+                }
+
+                $(window).resize(function()
+                {
+                    sizeViewport(vp.width, vp.height);
+                    if (jsPlayerProperties.useAudio)
+                    {
+                        if (showFullscreenButton == true)
+                        {
+                            setFulscreenButton();
+                        }
+                        setLargePlayButton();
+                    }
+                });
+
+        </script>
+<!--<![endif]-->
+
+<!--[if lt IE 9]>
+<script>
+    // this is only for ie 8 so it doesn't give any javascript errors
+    var JSPlayer = new function()
+    {
+        this.init = function (viewerAudio) { }
+    };
+    var iOS = false;
+</script>
+<![endif]-->
+
+
+<script>
+
+
+    function embedPlayer()
+    {
+        viewerAudio = document.createElement('audio');
+        jsPlayerProperties.useAudio = checkAudio(document, viewerAudio) || (iOS != false);
+        if (!jsPlayerProperties.useAudio)
+        {
+            // position the fullscreen button
+            var isSource = !isNaN( parseInt("0")) ? parseInt("0") : 1;
+            var fullscreenButtonOffset = (isSource) ? "5px" : "25px";
+            document.getElementById('fullscreenLink').style.bottom = fullscreenButtonOffset;
+
+            embedSWF();
+        } else {
+            JSPlayer.init(viewerAudio);
+        }
+    }
+
+    // <![CDATA[
+    var flashvars = {};
+    var params = {};
+    var attributes = params;
+    var isEmbedded = false;
+    var url = '';
+
+    function embedSWF() {
+        // Zet flashvars
+        flashvars["baseUrl"] = "http://audioslides.elsevier.com/&ViewSize=0&Source=0";
+        flashvars["xmlPath"] = "AudioSlide.aspx?doi=10.1016/j.engappai.2015.02.010%26Source=0";
+        flashvars["saveProgressCall"] = "SaveProgress.aspx?doi=10.1016/j.engappai.2015.02.010_0%26Source=0";
+        flashvars["width"] = "258";
+        flashvars["height"] = "194";
+        flashvars["isPreview"] = 'false';
+
+        // Zet attributes
+        params.menu = "false";
+        params.swliveconnect = "true";
+        params.allowscriptaccess = "always";
+        params.allownetworking = "all";
+
+        attributes["allowScriptAccess"] = 'always';
+        attributes["bgcolor"] = '#ffffff';
+        attributes["wmode"] = 'opaque';
+        attributes["id"] = 'audioslideViewer';
+        attributes["name"] = 'audioslideViewer';
+
+        if (!isEmbedded) {
+            swfobject.embedSWF('flash/audioslideviewer.swf?v=20000002', 'audioslideViewer', "258", "227", '10.0.0', "", flashvars, params, attributes);
+            isEmbedded = true;
+        }
+    }
+
+    // ]]>
+
+    $(document).ready(function()
+    {
+        embedPlayer();
+    });
+
+</script>
+    
+
+</body>
+</html>

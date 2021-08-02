@@ -1,0 +1,230 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Page Not Found - EUR-Lex</title>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+		<meta name="DCS.dcssta" content="404"/><meta name="WT.z_usr_lan" content="en"/><meta name="WT.seg_1" content="Unregistered"/><script type="text/javascript">function sendDcsMultiTrack() {eurlexDcsMultiTrack('DCS.dcssta','404','dcsuri','\/legislation_summaries\/images\/plus.gif','WT.ti','Page not found','WT.z_usr_lan','en','WT.seg_1','Unregistered');}</script>
+
+	
+	    <style type="text/css" media="all">
+			@import url(./../../css/eurlex.css);	@import url(./../../css/eurlex-oj.css);	@import url(./../../css/calendar.css);	@import url(./../../css/validation.css);	
+		</style>
+	    <style type="text/css" media="print">
+			@import url(./../../css/eurlex-print.css);
+		</style>
+		<script type="text/javascript" >
+
+
+
+
+
+
+
+var imageMap=new Array;
+imageMap['images'] = './../../images/';
+imageMap['box-maximize'] = './../../images/box-maximize.png';
+imageMap['box-minimize'] = './../../images/box-minimize.png';
+imageMap['op-tools-icon-hover'] = './../../images/op-tools-icon-hover.png';
+imageMap['op-tools-icon'] = './../../images/op-tools-icon.png';
+imageMap['ajax-loader'] = './../../images/ajax-loader.gif';
+imageMap['help-bub'] = './../../images/help-bub.png';
+imageMap['collapse-tree'] = './../../images/collapse-tree.png';
+imageMap['expand-tree'] = './../../images/expand-tree.png';
+imageMap['collapse-menu-tree'] = './../../images/n/lm-collapsed.png';
+imageMap['expand-menu-tree'] = './../../images/n/lm-extended.png';
+imageMap['addPicker'] = './../../images/addPicker.png';
+imageMap['ajax-loader-small'] = './../../images/ajax-loader-small.gif';
+
+var formMap=new Array;
+formMap['autocomplete']='./../../autocomplete.html';
+formMap['homepage']='./../../homepage.html';
+
+
+
+
+
+
+var fullTextLabel='Text search';
+var allTheseWordsLabel='All these words';
+var viewQueryLabel='[View search]';
+var hideQueryLabel='Hide search';
+
+var contextualHelp = './../../help/contextual-help.html?isAjaxRequest=true' ; 
+var pleaseWait = 'Please wait';
+var isWebTrendsEnabled = 'true';
+
+
+
+
+
+var legislativeUrl = 'http://old.eur-lex.europa.eu/en/techleg/index.htm';
+var eurovocUrl = 'http://eurovoc.europa.eu/drupal/';
+var interStyleGuideUrl = 'http://publications.europa.eu/code/en/en-000100.htm';
+var authenticationRequiredUrl = './../../error/authentication-required.html';
+var legDraftLabel = 'Legislative drafting';
+var interStyleGuideLabel = 'Interinstitutional style guide';
+var otherLink = './../../content/links/links.html';
+var otherLinksLabel = 'Links';
+
+var frontOfficeUrl = 'http://eur-lex.europa.eu/';
+var webtrendsDomain = 'http://eur-lex.europa.eu';
+var webtrendsDcsid = 'dcszgmkqs100008qxd83quum3_9q5x';
+var webtrendsFrontOfficeDomain = '.eur-lex.europa.eu';
+var defaultDateFormatSeparator = '/';
+
+var acceptedCookies = 'notSelected';
+
+var sessionExpired = false;
+var pageUrl = '';
+var queryString = '';
+
+
+var sessionTimeout = '900000';
+
+
+var celexBasicActLabel='The Celex id must begin with at least 5 numbers and a letter.';
+
+var fileTooBigLabel='The file you selected is too large. File size may not exceed 10,240 KB.';
+var maxUploadSize = '10485760';
+
+var noResults='No results found.';
+
+
+
+var zoomingTextMetadataLabel='Zooming text metadata';
+var zoomingErrorLabel='An error has occured during the zoom on textual metadata. Please try again later.';
+
+
+var altHelp = 'Help';
+
+
+var relationInvalidLabel='The CELEX or annotation part of the relation search cannot start with a truncation operator (*, ?, +).';</script>
+		<script type="text/javascript" src="./../../js/jquery.js">//</script>
+		<script type="text/javascript" src="./../../js/eur-lex.js">//</script>		
+		<!--[if lte IE 7]>
+	    <style type="text/css" media="all">
+			@import url(./../../css/eurlex-ie6.css);
+		</style>
+	    <![endif]-->
+		<link rel="shortcut icon" href="./../../images/eurlex.ico"/>
+	</head>
+	<body>
+		<div id="mainContainer">
+			<div id="op-header"><div role="banner"><a href="./../../homepage.html"  class="op-logo"      ><img src="./../../images/n/eurlex-logo.png" alt="Back to EUR-Lex homepage" /></a><span class="op-site-subtitle">Access to European Union law</span><h1 class="screenreaderNoDisplay">EUR-Lex Access to European Union law</h1></div><div role="navigation"><ul class="op-top-links"><li><a href="./../../content/welcome/about.html"        >About EUR-Lex</a></li><li><a href="./../../content/site-map/site-map.html"        >Site map</a></li><li><a href="./../../content/glossary/glossary.html"        >A-Z</a></li><li><a href="./../../content/help/faq/intro.html#top"        >FAQ</a></li><li><a href="./../../content/help/pages/help-default.html"        >Help</a></li><li><a href="./../../content/links/links.html"        >Links</a></li><li><a href="./../../content/legal-notice/legal-notice.html"        >Legal notice</a></li><li><a href="./../../content/cookies/cookies-notice.html"        >Cookies</a></li><li><a href="./../../contact.html"        >Contact</a></li><li id="liLanguageBarContainer"><form id="languageForm" action="" method="get" name="languageForm"><fieldset><div id="language" class="com-lang-selection"><label class="screenreaderNoDisplay" for="languageSelect">Language</label><select id="languageSelect" name="locale" onchange="$('#languageForm').submit()"><option lang="bg" value="bg"  title="Bulgarian">български (bg)</option><option lang="es" value="es"  title="Spanish">Espa&ntilde;ol (es)</option><option lang="cs" value="cs"  title="Czech">Če&scaron;tina (cs)</option><option lang="da" value="da"  title="Danish">Dansk (da)</option><option lang="de" value="de"  title="German">Deutsch (de)</option><option lang="et" value="et"  title="Estonian">Eesti keel (et)</option><option lang="el" value="el"  title="Greek">&epsilon;&lambda;&lambda;&eta;&nu;&iota;&kappa;ά (el)</option><option lang="en" value="en" selected="selected" title="English">English (en)</option><option lang="fr" value="fr"  title="French">Fran&ccedil;ais (fr)</option><option lang="ga" value="ga"  title="Irish">Gaeilge (ga)</option><option lang="hr" value="hr"  title="Croatian">Hrvatski (hr)</option><option lang="it" value="it"  title="Italian">Italiano (it)</option><option lang="lv" value="lv"  title="Latvian">Latvie&scaron;u valoda (lv)</option><option lang="lt" value="lt"  title="Lithuanian">Lietuvių kalba (lt)</option><option lang="hu" value="hu"  title="Hungarian">Magyar (hu)</option><option lang="mt" value="mt"  title="Maltese">Malti (mt)</option><option lang="nl" value="nl"  title="Dutch">Nederlands (nl)</option><option lang="pl" value="pl"  title="Polish">Polski (pl)</option><option lang="pt" value="pt"  title="Portuguese">Portugu&ecirc;s (pt)</option><option lang="ro" value="ro"  title="Romanian">Rom&acirc;nă (ro)</option><option lang="sk" value="sk"  title="Slovak">Slovenčina (sk)</option><option lang="sl" value="sl"  title="Slovenian">Sloven&scaron;čina (sl)</option><option lang="fi" value="fi"  title="Finnish">Suomi (fi)</option><option lang="sv" value="sv"  title="Swedish">Svenska (sv)</option></select><input type="submit" class="button2 searchButton hideInJsInline" value="Update"/></div></fieldset></form></li></ul></div></div>
+	<ul class="op-breadcrumb printNone" role="navigation"><li style="background:none;"><a target="_blank" href="http://europa.eu/index_en.htm">EUROPA</a></li><li><a target="_blank" href="http://publications.europa.eu/index_en.htm">EU law and publications</a></li><li><a href="./../../homepage.html"     title="EUR-Lex"   >EUR-Lex</a></li><li><span>Page not found</span></li></ul>
+			<div id="mainContent">
+			<div id="content" style="">
+				<div id="middleColumn" role="main">
+					<div class="pageTitle">
+						<div style="float:left">
+							<h2 class="invertedPageTitle" style="display:inline">
+								Page Not Found
+	</h2>	</div>	</div>	<div><!-- Editorial content start --><!--PUBLICATION_DATE 11/18/2014 16:30:23--><div class="editorialContent">
+   <!--Allow to rewrite the links thanks to the included xsl link-replacement.xsl-->
+   
+   <p>
+      <b>EUR-Lex changed recently.</b>
+      
+   </p>
+   
+   <p>
+      The page you are looking for was <b>moved</b> or <b>doesn't exist</b> anymore.
+      
+   </p>
+   
+   <p>
+      To find your way again, go to our <a href="./../../homepage.html">homepage</a>.
+      
+   </p>
+   
+   <p>&nbsp;</p>
+   
+   <p>
+      <a href="./../../oj/direct-access.html">Official Journal</a>
+      
+   </p>
+   
+   <p>
+      <a href="./../../collection/eu-law/treaties.html">Treaties</a>
+      
+   </p>
+   
+   <p>
+      <a href="./../../advanced-search-form.html">Search</a>
+      
+   </p>
+   
+   <p>&nbsp;</p>
+   
+   <p>
+      <a href="./../../content/help/faq/linking.html">How to link to us</a>
+      ( <img alt="warning icon" src="./../../content/images/validation/warning.png"> new rules)
+      
+   </p>
+   
+   <p>&nbsp;</p>
+   
+   <p>&nbsp;</p>
+   
+   <p>
+      <a href="./../../content/help/pages/help-default.html">Help</a>| 
+      <a href="./../../content/help/faq/intro.html#top">FAQ</a>| 
+      <a href="./../../contact.html">Contact</a>
+      
+   </p>
+   
+</div><!-- Editorial content end --></div>	<!--<div>	Unable to connect to the requested page. Please contact the site administrator if the problem persists.
+	</div><br/>	<div>	<a href="./../../contact.html"        >Contact </a>
+	</div>--><br/>	
+	
+	</div>	</div>
+	
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+	</div><!--End mainContent -->
+	<div id="footerSeparator" class="printNone"></div><div id="op-footer" role="navigation"><div class="leftFooter"><span class="footerTitle">Other sites managed by the Publications Office</span><div class="op-external-links"><ul style="left:0%;"><li><a title="EU Bookshop" href="http://bookshop.europa.eu/en/home/?request_locale=en" class="bookshop" target="_blank"><b style="color:#FF9933">EU Bookshop</b></a></li><li><a title="EU Open Data Portal" href="http://open-data.europa.eu/en/data/" target="_blank"><b style="color:#7082B1">EU Open Data Portal</b></a></li><li><a title="Ted" href="http://ted.europa.eu/TED/misc/chooseLanguage.do" class="ted" target="_blank"><b style="color:#339933">Ted</b></a></li><li><a title="Whoiswho" href="http://europa.eu/whoiswho/public/index.cfm?lang=en" class="whoiswho" target="_blank"><b style="color:#EE441E">Whoiswho</b></a></li></ul><ul><li><a title="CORDIS" href="http://cordis.europa.eu/" class="cordis" target="_blank"><b style="color:#EE5088">CORDIS</b></a></li><li><a title="N-Lex" href="http://eur-lex.europa.eu/n-lex/index_en.htm" target="_blank"><b style="color:#0099CC">N-Lex</b></a></li><li><a title="EU law and publications" href="http://publications.europa.eu/index_en.htm" target="_blank"><b style="color:#003399">EU law and publications</b></a></li></ul></div></div><div><span class="footerTitle">Direct access</span><ul><li><a href="./../../oj/direct-access.html"     title="Official Journal"   >Official Journal</a></li><li><a href="./../../collection/eu-law.html"     title="EU law and related documents"   >EU law and related documents</a></li><li><a href="./../../collection/n-law.html"     title="National law"   >National law</a></li><li><a href="./../../collection/eu-law/pre-acts.html"     title="Preparatory acts"   >Preparatory acts</a></li><li><a href="./../../browse/browse-by-index.html"     title="More..."   >More...</a></li></ul></div><div><span class="footerTitle">Practical information</span><ul><li><a href="./../../content/help/faq/intro.html#top"     title="FAQ"   >FAQ</a></li><li><a href="./../../content/help/pages/help-default.html"     title="Help"   >Help</a></li><li><a href="./../../contact.html"     title="Contact"   >Contact</a></li><li><a title="EuroVoc" href="http://eurovoc.europa.eu/drupal/" target="_blank">EuroVoc</a></li></ul></div><div class="lastFooter"><span class="footerTitle">My EUR-Lex</span><ul><li><a href="./../../error/authentication-required.html?callingUrl=%2Fhomepage.html&amp;towardUrl=%2Fprotected%2Fuser-account.html"  class="modal "   title="Preferences"   >Preferences</a></li><li><a href="./../../my-eurlex/my-queries.html"     title="My searches"   >My searches</a></li><li><a href="./../../my-eurlex/my-documents.html"     title="My items"   >My items</a></li><li><a href="./../../error/authentication-required.html?callingUrl=%2Fhomepage.html&amp;towardUrl=%2Fprotected%2Fmy-eurlex%2Fmy-rss.html"  class="modal "   title="My RSS feeds"   >My RSS feeds</a></li></ul></div></div><div class="com-footer" role="navigation"><ul><li><a href="./../../content/welcome/about.html"     title="About this website"   >About this website</a></li><li><a href="./../../content/legal-notice/legal-notice.html"     title="Legal notice"   >Legal notice</a></li><li><a href="./../../contact.html"     title="Contact"   >Contact</a></li><li><a href="#"     title="Top"   >Top</a></li></ul></div>
+	</div>	<script type="text/javascript" src="./../../js/webtrends.js">//</script><script type="text/javascript">
+			//<![CDATA[
+			var start = (new Date).getTime();
+			var _tag=new WebTrends();
+			_tag.dcsGetId();
+			
+			//]]>
+		</script><script type="text/javascript">
+			//<![CDATA[
+			_tag.dcsCustom=function(){
+				// Add custom parameters here.
+				//_tag.DCSext.param_name=param_value;
+			}
+			_tag.dcsCollect();
+			var diff = (new Date).getTime() - start;
+			if($('#webtrendsTime').length > 0) {
+				$('#webtrendsTime').html(diff);
+			}
+			//]]>
+		</script><noscript><div style=""><img alt="" id="DCSIMG" width="1" height="1" src="http://eur-lex.europa.eu/dcszgmkqs100008qxd83quum3_9q5x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.4.0&amp;dcssip=www.eurlex.europa.eu"/></div></noscript><!-- END OF SmartSource Data Collector TAG -->
+	</body>
+</html>

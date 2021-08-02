@@ -1,0 +1,1 @@
+/*#/javascript/adsbygoogle.js#*/var canRunAds=true;

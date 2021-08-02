@@ -1,0 +1,419 @@
+
+Search Menu
+ 
+Loading..
+Your cart is empty.
+
+...you'll find more products in the shopping cart.
+Total €239.99
+View cart
+Login
+
+    Manage Account
+    My Bookshelf
+    Manage Alerts
+    Article Tracking
+    Book Tracking
+
+    Login
+
+Global Website
+
+    Change
+
+    Home
+    Subjects
+        Astronomy
+        Behavioral Sciences
+        Biomedical Sciences
+        Business & Management
+        Chemistry
+        Climate
+        Computer Science
+        Earth Sciences
+        Economics
+        Education & Language
+        Energy
+        Engineering
+        Environmental Sciences
+        Food Science & Nutrition
+        Geography
+        Law
+        Life Sciences
+        Materials
+        Mathematics
+        Medicine
+        Philosophy
+        Physics
+        Popular Science
+        Public Health
+        Social Sciences
+        Statistics
+        Water
+    Services
+        Advertisers
+        Authors & Editors
+        Booksellers
+        Book Reviewers
+        Instructors
+        Journalists
+        Librarians (Springer Nature)
+        Rights & Permissions
+        Societies & Publishing Partners
+        Subscription Agencies (Springer Nature)
+        Help & Contact
+        Open Access & Springer
+    Springer Shop
+    About us
+
+Get 40% off select Statistics books or choose from thousands of Archive eBooks at 9.99 each!
+Statistics
+Springer Series in Statistics
+Free Preview cover
+© 2001
+The Elements of Statistical Learning
+Data Mining, Inference, and Prediction
+
+Authors: Hastie , Trevor, Tibshirani , Robert, Friedman , Jerome
+Show next edition
+Free Preview
+
+    The many topics include neural networks, support vector machines, classification trees and boosting - the first comprehensive treatment of this topic in any book
+    Includes over 200 pages of four-color graphics
+
+see more benefits
+Buy this book
+
+eBook 67,82 €
+    price for Spain (gross)
+    Buy eBook
+
+        ISBN 978-0-387-21606-5
+        Digitally watermarked, DRM-free
+        Included format: PDF
+        ebooks can be used on all reading devices
+        Immediate eBook download after purchase
+
+FAQ Policy
+
+    About this book
+    About the authors
+    Reviews
+
+About this book
+
+    During the past decade there has been an explosion in computation and information technology. With it have come vast amounts of data in a variety of fields such as medicine, biology, finance, and marketing. The challenge of understanding these data has led to the development of new tools in the field of statistics, and spawned new areas such as data mining, machine learning, and bioinformatics. Many of these tools have common underpinnings but are often expressed with different terminology. This book describes the important ideas in these areas in a common conceptual framework. While the approach is statistical, the emphasis is on concepts rather than mathematics. Many examples are given, with a liberal use of color graphics. It is a valuable resource for statisticians and anyone interested in data mining in science or industry. The book's coverage is broad, from supervised learning (prediction) to unsupervised learning. The many topics include neural networks, support vector machines, classification trees and boosting---the first comprehensive treatment of this topic in any book.
+
+    This major new edition features many topics not covered in the original, including graphical models, random forests, ensemble methods, least angle regression and path algorithms for the lasso, non-negative matrix factorization, and spectral clustering. There is also a chapter on methods for ``wide'' data ( p bigger than n ), including multiple testing and false discovery rates.
+
+    Trevor Hastie, Robert Tibshirani, and Jerome Friedman are professors of statistics at Stanford University. They are prominent researchers in this area: Hastie and Tibshirani developed generalized additive models and wrote a popular book of that title. Hastie co-developed much of the statistical modeling software and environment in R/S-PLUS and invented principal curves and surfaces. Tibshirani proposed the lasso and is co-author of the very successful An Introduction to the Bootstrap . Friedman is the co-inventor of many data-mining tools including CART, MARS, projection pursuit and gradient boosting.
+
+    Show all
+About the authors
+
+    Trevor Hastie, Robert Tibshirani, and Jerome Friedman are professors of statistics at Stanford University. They are prominent researchers in this area: Hastie and Tibshirani developed generalized additive models and wrote a popular book of that title. Hastie co-developed much of the statistical modeling software and environment in R/S-PLUS and invented principal curves and surfaces. Tibshirani proposed the lasso and is co-author of the very successful An Introduction to the Bootstrap. Friedman is the co-inventor of many data-mining tools including CART, MARS, projection pursuit and gradient boosting.
+
+    Show all
+Reviews
+
+    From the reviews:
+
+    SIAM REVIEW
+
+    "The book is very well written and color is used throughout. Color adds a dimension that can be used to help the reader visualize high-dimensional data, and it is also very useful to help the eye see patterns and clusters more easily. This makes color effective in the book and not just a pleasing gimmick. This is the first book of its kind to treat data mining from a statistical perspective that is comprehensive and up-to-date on the statistical methods…I found the book to be both innovative and fresh. It provides an important contribution to data mining and statistical pattern recognition. It should become a classic…It is especially good for statisticians interested in high-dimensional and high-volume data such as can be found in telephone records, satellite images, and genetic microarrays. It can be used for an advanced special topics course in statistics for graduate students."
+
+    TECHNOMETRICS
+
+    "[This] is a vast and complex book. Generally, it concentrates on explaining why and how the methods work, rather than how to use them. Examples and especially the visualizations are principle features…As a source for the methods of statistical learning…it will probably be a long time before there is a competitor to this book."
+
+    SHORT BOOK REVIEWS
+
+    "This book describes modern tools for data analysis. With the exception of the last chapter, it is concerned with "supervised" methods - those methods in which a sample of cases is available, including values of an outcome variable, and on which one can build a model allowing one to predict the value of the outcome variable for new cases. The authors are amongst the leaders in this area, having developed many of the modern tools. Such methods have seen extraordinary development in recent decades, primarily because of progress in computer technology, but also because of the huge range of applications. Furthermore, the practical development of these modeling and inferential tools has resulted in a deeper theoretical understanding of the modeling process... The book includes many special cases and examples, which give insights into the ideas and methods. It explains very clearly the relationships between the methods, and covers both standard statistical staples, such as linear and logistic regression, as well as modern tools. It is not overburdened with unnecessary mathematics but uses only what is necessary for the practical application of the methods...The book has been beautifully produced. It was a pleasure to read. I strongly recommend it."
+
+    MATHEMATICAL REVIEWS
+
+    "The book provides a comprehensive and up-to-date introduction to the field of statistical pattern recognition, now commonly referred to as statistical learning…Browsing through the book, one is immediately attracted to the skillful use of color plots to stress the different behaviors of algorithms on real-world datasets. This tells a lot about the books style: intuition about a learning technique is built by looking at the behavior on the data, then the statistical analysis follows. However, even in its most technical parts, the presentation flows very smoothly, avoiding the definition-theorem-proof writing style…this is a very complete and up-to-date work covering all the most important learning techniques, which are presented in a rigorous but accessible statistical framework."
+
+    JOURNAL OF CLASSIFICATION, JUNE 2004
+
+    "This is a great book. All three authors have track records for clear exposition and are famously gifted for finding intuitive explanations that illuminate technical results…In particular, we admire the book for its:
+
+    -outstanding use of real data examples to motivate problems and methods;
+
+    -unified treatment of flexible inferential procedures in terms of maximization of an objective function subject to a complexity penalty;
+
+    -lucid explanation of the amazing performance of the AdaBoost algorithm in improving classification accuracy for almost any rule;
+
+    -clear account of support vector machines in terms of traditional statistical paradigms;
+
+    -regular introduction of some new insight, such as describing self-organizing maps as constrained k-means clustering.
+
+    …No modern statistician or computer scientist should be without this book."
+
+    JOURNAL OF THE AMERICAN STATISTICAL ASSOCIATION, JUNE 2004
+
+    "In the words of the authors, the goal of this book was to ‘bring together many of the important new ideas in learning, and explain them in a statistical framework.’ The authors have been quite successful in achieving this objective, and their work is a welcome addition to the statistics and learning literatures…A strength of the book is the attempt to organize a plethora of methods into a coherent whole. The relationships among the methods are emphasized. I know of no other book that covers so much ground."
+
+    "The book by Hastie et al. covers a wider number of topics such as supervised learning based on linear models, nearest neighbor methods, decision theory, function approximations, roughness, and kernels … . The charts and graphs are done in color to distinguish different patterns. The book has both challenging and easier exercise problems in each chapter. The book is suitable for a graduate level data mining course. I learned a lot from this well written book and recommend it highly." (Ramalingam Shanmugam, Journal of Statistical Computation & Simulation, Vol. 74 (4), 2004)
+
+    "One of the great features of the book is that it really contains more or less all modern methods for statistical learning, so it gives the reader a very good overview of this important field. … The author worked very hard on presentation of the material, in particular they illustrated the material by many colored graphics. … I think this book is valuable for anyone interested in statistical learning and its application, and I am happy to have it on my desk." (Michael Kohler, Metrika, February, 2003)
+
+    "For anyone who … wants to learn the new terminology and to understand what the ‘competition’ is doing, this is the book to buy. … the thinking is still very much statistical. This makes the book very easy to digest and pleasant to read for people with a statistical background. The many superb graphs add to this pleasure. … The book is important because it shows that interaction between statistics and machine learning can be profitable for both fields." (Hans C. van Houwelingen, Statistics in Medicine, Vol. 23, 2004)
+
+    "This is a great book. … We have taught a large graduate course (for statisticians and computer scientists) in data mining from this book. In developing this course we spoke to many other faculty members at a range of institutions, and we found no one who did not enjoy reading and teaching from this text. … there is no other book worth considering for such a course. … The book has beautiful graphics … . No modern statistician or computer scientist should be without this book." (David Banks and Feng Liang, Journal of Classification, Vol. 21 (1), 2004)
+
+    "The book provides a long-sought link between Statistics and Data Mining. It provides an excellent reference for researchers in information sciences … . Written by well-known specialists in applied statistics, the book provides a good practical orientation, with related theoretical issues coming out quite clearly. … this is the first book to address different aspects of data mining, inference and prediction in a coherently interdisciplinary context. … this book will always be remembered for laying the foundation of that scientific pyramid." (Kassim Said Mwitondi, Journal of Applied Statistics, Vol. 30 (1), 2003)
+
+    "The emphasis is on concepts rather than mathematics, and several examples are given as illustration. … This book is designed for researchers and students in a broad variety of fields such as statistics, artificial intelligence, engineering and finance. It should be a valuable resource for those who are interested in data mining in science or industry. I believe that it will be a very useful addition to any scholarly library." (Theofanis Sapatinas, Journal of the Royal Statistical Society Series A: Statistics in Society, Vol. 157 (1), 2004)
+
+    "A mere glance at the table of contents gives an idea of the breadth and depth of coverage of this remarkable book. … The style of this beautifully presented book is friendly and intuitive, and at the same time clear and rigorous. All the techniques dealt with are presented and compared through examples with real and simulated data. … The book can be used as a basis for courses of different levels, from the purely practical to the thoroughly theoretical. … a wonderful book!" (Ricardo Maronna, Statistical Papers, Vol. 44 (3), 2003)
+
+    "The book covers two topics: 12 chapters discuss statistical methods of supervised learning, the final chapter is on unsupervised learning. … The getup of the book is outstanding … . The book is an excellent and comprehensive treatment of the topics for which the authors are well known … . The book may well serve as a textbook for an advanced course; the illustrating examples and the discussion of computational aspects make the book useful for those who want to apply the methods." (Peter Hackl, Statistical Papers, Vol. 43 (3), 2002)
+
+    "This book describes modern tools for data analysis. … The book includes many special cases and examples, which give insights into the ideas and methods. It explains very clearly the relationship between the methods, and covers both standard statistical staples, such as linear and logistic regression, as well as modern tools. It is not overburdened with unnecessary mathematics but uses only what is necessary for the practical application … . The book has been beautifully produced. It was a pleasure to read. I strongly recommend it." (D. J. Hand, Short Book Reviews, Vol. 22 (1), 2002)
+
+    "This book is designed for researchers and students in the fields of statistics, artificial, intelligence, engineering, finance, and others. Some of the most important learning methods with the underlying concepts are described. … Bibliographic notes giving background references for the material, as well as computational considerations and exercises are provided at the end of each chapter. … The website for this book is located at http://www.stat.standford.edu/ElemStatLearn, which includes many of the datasets used." (Roland Fahrion, Zentralblatt MATH, Vol. 973, 2001)
+
+    Show all
+
+    Table of contents (14 chapters)
+
+Table of contents (14 chapters)
+Table of contents (14 chapters)
+
+        Introduction
+
+        Pages 1-8
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Overview of Supervised Learning
+
+        Pages 9-40
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Linear Methods for Regression
+
+        Pages 41-78
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Linear Methods for Classification
+
+        Pages 79-113
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Basis Expansions and Regularization
+
+        Pages 115-163
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Kernel Methods
+
+        Pages 165-192
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Model Assessment and Selection
+
+        Pages 193-224
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Model Inference and Averaging
+
+        Pages 225-256
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Additive Models, Trees, and Related Methods
+
+        Pages 257-298
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Boosting and Additive Trees
+
+        Pages 299-345
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Neural Networks
+
+        Pages 347-369
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Support Vector Machines and Flexible Discriminants
+
+        Pages 371-409
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Prototype Methods and Nearest-Neighbors
+
+        Pages 411-435
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+        Unsupervised Learning
+
+        Pages 437-508
+
+        Hastie, Trevor (et al.)
+        Preview Buy Chapter 30,19 €
+
+    Show next 9
+
+Read this book on SpringerLink
+
+    Link to the authors' web sites
+
+Buy this book
+
+eBook 67,82 €
+    price for Spain (gross)
+    Buy eBook
+
+        ISBN 978-0-387-21606-5
+        Digitally watermarked, DRM-free
+        Included format: PDF
+        ebooks can be used on all reading devices
+        Immediate eBook download after purchase
+
+FAQ Policy
+Book Metrics
+
+    Citations 4648
+    Readers 131
+    Reviews 14
+    Downloads 57374
+
+Provided by Book metrix
+Services for this Book
+Download Product Flyer Download High-Resolution Cover
+Facebook Twitter LinkedIn Google++
+Recommended for you
+previous
+
+    Classification and Data Mining
+    Giusti, A. (et al.) (Eds.) (2013)
+    An Introduction to Statistical Learning
+    James, G. (et al.) (2013)
+    Case Studies in Bayesian Statistics
+    Gatsonis, C. (et al.) (Eds.) (2002)
+    Applied Functional Data Analysis
+    Ramsay, J.O. (et al.) (2002)
+    An Introduction to Statistical Modeling of Extreme Values
+    Coles, S. (2001)
+    Mathematical Statistics
+    Pfanzagl, J. (2017)
+    Observational Studies
+    Rosenbaum, P.R. (2002)
+    Probability for Statistics and Machine Learning
+    DasGupta, A. (2011)
+
+next
+Classification and Data Mining
+Giusti, A. (et al.) (Eds.) (2013)
+An Introduction to Statistical Learning
+James, G. (et al.) (2013)
+Case Studies in Bayesian Statistics
+Gatsonis, C. (et al.) (Eds.) (2002)
+Applied Functional Data Analysis
+Ramsay, J.O. (et al.) (2002)
+An Introduction to Statistical Modeling of Extreme Values
+Coles, S. (2001)
+Mathematical Statistics
+Pfanzagl, J. (2017)
+Observational Studies
+Rosenbaum, P.R. (2002)
+Probability for Statistics and Machine Learning
+DasGupta, A. (2011)
+Bibliographic Information
+
+    Bibliographic Information
+
+Bibliographic Information
+
+    Book Title
+        The Elements of Statistical Learning
+    Book Subtitle
+        Data Mining, Inference, and Prediction
+    Authors
+
+            Trevor Hastie
+            Robert Tibshirani
+            Jerome Friedman
+
+    Series Title
+        Springer Series in Statistics 
+    Copyright
+        2001
+    Publisher
+        Springer-Verlag New York 
+    Copyright Holder
+        Springer Science+Business Media New York
+
+    eBook ISBN
+        978-0-387-21606-5
+    DOI
+        10.1007/978-0-387-21606-5
+    Series ISSN
+        0172-7397
+    Edition Number
+        1
+
+    Number of Pages
+        XVI, 536
+    Topics
+
+            Statistical Theory and Methods
+
+CLOSE
+PAGE 1
+PAGE 2
+My Account
+
+    Shopping Cart
+    MySpringer
+    Login
+    SpringerAlerts
+
+About Springer
+
+    History
+    Media
+    Compliance
+    Careers
+    Affiliate Program
+
+Help & Contact
+
+    Help Overview
+    Order FAQ
+    Contact Us
+    Imprint
+
+Legal
+Springer Nature logo
+© 2019 Springer Nature Switzerland AG. Springer is part of Springer Nature Privacy Policy General Terms & Conditions
+Springer
+
+JavaScript is currently disabled, this site works much better if you enable JavaScript in your browser .

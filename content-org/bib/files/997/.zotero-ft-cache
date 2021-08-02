@@ -1,0 +1,176 @@
+
+close
+Skip to main content
+
+This service is more advanced with JavaScript available, learn more at http://activatejavascript.org
+SpringerLink
+Search
+
+    Home
+    Contact us
+    Log in
+
+Menu
+
+    Home
+    Contact us
+    Log in
+
+Artificial Intelligence Applications and Innovations
+IFIP International Conference on Artificial Intelligence Applications and Innovations
+
+AIAI 2014 : Artificial Intelligence Applications and Innovations pp 395-404 | Cite as
+Analysis of Relevant Features for Pollen Classification
+
+    Authors
+    Authors and affiliations
+
+    Gildardo Lozano-Vega
+    Yannick Benezeth
+    Franck Marzani
+    Frank Boochs
+
+    Gildardo Lozano-Vega
+        1
+        2
+    Yannick Benezeth
+        2
+    Franck Marzani
+        2
+    Frank Boochs
+        1
+
+    1. i3mainz, Fachhochschule Mainz Mainz Germany
+    2. Le2i, Université de Bourgogne Dijon Cedex France
+
+Conference paper
+
+    1 Mentions
+    762 Downloads
+
+Part of the IFIP Advances in Information and Communication Technology book series (IFIPAICT, volume 436)
+Abstract
+
+The correct classification of airborne pollen is relevant for medical treatment of allergies, and the regular manual process is costly and time consuming. Aiming at automatic processing, we propose a set of relevant image-based features for the recognition of top allergenic pollen taxa. The foundation of our proposal is the testing and evaluation of features that can properly describe pollen in terms of shape, texture, size and apertures. In this regard, a new flexible aperture detector is incorporated to the tests. The selected set is demonstrated to overcome the intra-class variance and inter-class similarity in a SVM classification scheme with a performance comparable to the state of the art procedures.
+Keywords
+pattern recognition  feature extraction  feature evaluation  apertures  palynology 
+Cite paper
+
+    How to cite?
+    .RIS Papers Reference Manager RefWorks Zotero
+    .ENW EndNote
+    .BIB BibTeX JabRef Mendeley
+
+Preview
+
+Unable to display preview.  Download preview PDF.
+
+Unable to display preview.  Download preview PDF.
+References
+
+    1.
+    Chen, C., Hendriks, E.A., Duin, R.P., Reiber, J., Hiemstra, P., De Weger, L., Stoel, B.: Feasibility study on automated recognition of allergenic pollen: grass, birch and mugwort. Aerobiologia 22, 275–284 (2006) CrossRef Google Scholar
+    2.
+    Boucher, A., Hidalgo, P.J., Thonnat, M., Belmonte, J., Galan, C., Bonton, P., Tomczak, R.: Development of a semi-automatic system for pollen recognition. Aerobiologia 18(3), 195–201 (2002) CrossRef Google Scholar
+    3.
+    Rodríguez-Damián, M., Cernadas, E., Formella, A., González, A.: Automatic identification and classification of pollen of the urticaceae family. In: Proceedings of Advanced Concepts for Intelligent Vision Systems (ACIVS 2003), pp. 38–45 (2003) Google Scholar
+    4.
+    Li, P., Treloar, W.J., Flenley, J.R., Empson, L.: Towards automation of palynology 2: the use of texture measures and neural network analysis for automated identification of optical images of pollen grains. Journal of Quaternary Science 19(8), 755–762 (2004) CrossRef Google Scholar
+    5.
+    Ranzato, M., Taylor, P.E., House, J.M., Flagan, R.C., LeCun, Y., Perona, P.: Automatic recognition of biological particles in microscopic images. Pattern Recognition Letters 28(1), 31–39 (2007) CrossRef Google Scholar
+    6.
+    Ronneberger, O., Wang, Q., Burkhardt, H.: 3D invariants with high robustness to local deformations for automated pollen recognition. In: Proceedings of the 29th DAGM Conference on Pattern Recognition, pp. 425–435 (2007) Google Scholar
+    7.
+    Byun, H.-R., Lee, S.-W.: Applications of support vector machines for pattern recognition: A survey. In: Lee, S.-W., Verri, A. (eds.) SVM 2002. LNCS, vol. 2388, pp. 213–236. Springer, Heidelberg (2002) CrossRef Google Scholar
+    8.
+    Otsu, N.: A Threshold Selection Method from Gray-Level Histograms. IEEE Transactions on Systems, Man and Cybernetics 9, 62–66 (1979) CrossRef Google Scholar
+    9.
+    Suzuki, S., Abe, K.: Topological Structural Analysis of Digitized Binary Images by Border Following. Computer Vision, Graphics, and Image processing 30(1), 32–46 (1985) CrossRef MATH Google Scholar
+    10.
+    Da Costa, L., Cesar Jr., R.: Shape analysis and classification: theory and practice. CRC Press Inc. (2001) Google Scholar
+    11.
+    Erdtman, G.: An Introduction To Pollen Analysis. Chronica Botanica Company, U.S.A. (1943) Google Scholar
+    12.
+    Joon Ahn, S., Rauh, W., Warnecke, H.: Least-squares orthogonal distances fitting of circle, sphere, ellipse, hyperbola, and parabola. Pattern Recognition 34(12), 2283–2303 (2001) CrossRef MATH Google Scholar
+    13.
+    Nixon, M., Aguado, A.S.: Feature Extraction and Image Processing, 2nd edn. Academic Press (2008) Google Scholar
+    14.
+    Iwata, H., Niikura, S., Matsuura, S., Takano, Y., Ukai, Y.: Evaluation of variation of root shape of Japanese radish (Raphanus sativus L.) based on image analysis using elliptic Fourier descriptors. J. Euphytica, 143–149 (1998) Google Scholar
+    15.
+    Haralick, R.M., Shanmugam, K., Dinstein, I.: Textural Features for Image Classification. IEEE Transactions on Systems, Man and Cybernetics 3(6), 610–621 (1973) CrossRef Google Scholar
+    16.
+    Lozano-Vega, G., Benezeth, Y., Marzani, F., Boochs, F.: Classification of Pollen Apertures Using Bag of Words. In: Petrosino, A. (ed.) ICIAP 2013, Part I. LNCS, vol. 8156, pp. 712–721. Springer, Heidelberg (2013) CrossRef Google Scholar
+    17.
+    Ojala, T., Pietikäinen, M., Harwood, D.: A comparative study of texture measures with classification based on feature distributions. Pattern Recognition 29 (1996) Google Scholar
+    18.
+    Huang, D., Shan, C., Ardabilian, M., Wang, Y., Chen, L.: Local Binary Patterns and Its Application to Facial Image Analysis: A Survey. IEEE Transactions on Systems, Man, and Cybernetics, Part C: Applications and Reviews 41(6), 765–781 (2011) CrossRef Google Scholar
+    19.
+    Ojala, T., Pietikäinen, M., Maenpaa, T.: Multiresolution gray-scale and rotation invariant texture classification with local binary patterns. IEEE Transactions on Pattern Analysis and Machine Intelligence 24, 971–987 (2002) CrossRef Google Scholar
+
+Copyright information
+© IFIP International Federation for Information Processing 2014
+About this paper
+
+Cite this paper as:
+    Lozano-Vega G., Benezeth Y., Marzani F., Boochs F. (2014) Analysis of Relevant Features for Pollen Classification. In: Iliadis L., Maglogiannis I., Papadopoulos H. (eds) Artificial Intelligence Applications and Innovations. AIAI 2014. IFIP Advances in Information and Communication Technology, vol 436. Springer, Berlin, Heidelberg
+
+    DOI https://doi.org/10.1007/978-3-662-44654-6_39
+    Publisher Name Springer, Berlin, Heidelberg
+    Print ISBN 978-3-662-44653-9
+    Online ISBN 978-3-662-44654-6
+    eBook Packages Computer Science
+
+    About this book
+    Reprints and Permissions
+
+Personalised recommendations
+Analysis of Relevant Features for Pollen Classification
+Cite paper
+
+    How to cite?
+    .RIS Papers Reference Manager RefWorks Zotero
+    .ENW EndNote
+    .BIB BibTeX JabRef Mendeley
+
+Buy options
+Actions
+Log in to check access
+Buy eBook
+EUR 107.09
+Buy paper (PDF)
+EUR 30.19
+
+    Instant download
+    Readable on all devices
+    Own it forever
+    Local sales tax included if applicable
+
+Learn about institutional subscriptions
+Cite paper
+
+    How to cite?
+    .RIS Papers Reference Manager RefWorks Zotero
+    .ENW EndNote
+    .BIB BibTeX JabRef Mendeley
+
+Cookies
+We use cookies to improve your experience with our site. More information
+Accept
+
+Over 10 million scientific documents at your fingertips
+Switch Edition
+
+    Academic Edition
+    Corporate Edition
+
+    Home
+    Impressum
+    Legal information
+    Accessibility
+    Contact us
+
+Springer Nature
+
+© 2017 Springer International Publishing AG. Part of Springer Nature .
+
+Not logged in Not affiliated 81.0.54.165

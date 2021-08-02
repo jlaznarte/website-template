@@ -1,0 +1,449 @@
+
+/* ::::: http://eskup.elpais.com/Estilos/v1.x/v1.0/eskup_widget.css ::::: */
+
+body { margin: 0px; font-family: Arial,Helvetica,sans-serif; background-color: rgb(255, 255, 255); min-width: 220px; font-size: 12px; }
+a { color: rgb(255, 51, 0); text-decoration: none; }
+a img { border: 0px none; }
+ul, ul li { list-style-type: none; margin: 0px; padding: 0px; }
+#contenedor { position: relative; padding-bottom: 20px; }
+#contenedor.powererdby-abajo { padding-bottom: 40px; }
+#contenedor.powererdby-arriba { padding-top: 30px; }
+.poweredby { position: fixed; left: 0px; background-color: rgb(255, 255, 255); height: 25px; padding-top: 2px; z-index: 10; width: 100%; }
+.powererdby-arriba .poweredby { top: 0px; border-bottom: 1px solid rgb(204, 204, 204); }
+.powererdby-abajo .poweredby { bottom: 0px; border-top: 1px solid rgb(204, 204, 204); }
+.poweredby strong { display: none; }
+.poweredby, .poweredby a { vertical-align: middle; }
+.poweredby p { margin: 0px; text-align: right; font: 9px Tahoma,Arial,Helvetica,sans-serif; color: rgb(153, 153, 153); }
+.poweredby a { display: inline-block; width: 61px; height: 23px; margin-right: 5px; background: transparent url('sprite.png') no-repeat scroll -8px -9px; }
+.poweredby a srong { display: none; }
+.rompedor { clear: both; }
+.pestanas { background-color: rgb(204, 204, 204); padding: 5px 0px; }
+.pestanas ul { border-color: rgb(51, 51, 51); height: 22px; margin: 0px 0px 2px 2px; white-space: nowrap; }
+.pestanas ul li { display: inline; height: 10px; white-space: nowrap; }
+.pestanas ul li a, .pestanas ul li .inactivo { background-color: rgb(102, 102, 102); color: rgb(255, 255, 255); display: block; float: left; margin: 0px 5px 0px 0px; height: 16px; padding: 3px 7px; text-decoration: none; }
+.pestanas ul li.activo a { padding-bottom: 10px; }
+.pestanas ul li .inactivo { color: rgb(140, 140, 140); background-color: rgb(238, 238, 238); border-color: rgb(222, 222, 222); }
+.pestanas ul li a:hover { background-color: rgb(139, 139, 139); text-decoration: none; }
+.pestanas ul li.activo a { background-color: rgb(255, 51, 0); }
+a.titulotema { display: block; padding: 7px 9px 6px 12px; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); margin: 0px; font: bold 14px/19px Arial,Helvetica,Garuda,sans-serif; text-transform: uppercase; float: left; }
+a.titulotema:hover { color: rgb(102, 102, 102); }
+.cabecera { position: fixed; top: 0px; left: 0px; z-index: 20; width: 100%; background-color: rgb(255, 255, 255); border-top: 1px solid rgb(0, 0, 0); border-bottom: 1px solid rgb(211, 211, 211); height: 40px; }
+.cabecera a.logo { background: transparent url('elpais_cabecera_widget.png') no-repeat scroll 0px 0px; display: block; width: 81px; height: 18px; margin: 5px 0px 0px 5px; float: left; }
+.cabecera .pestanas { background-color: rgb(255, 255, 255); float: left; margin: 7px 0px 0px 7px; padding: 0px; border-top: medium none; }
+.cabecera .pestanas ul { height: auto; margin: 0px; font: bold 11px/14px Tahoma,Arial,Helvetica,sans-serif; }
+.cabecera .pestanas ul li { height: auto; }
+.cabecera .pestanas ul li a, .cabecera .pestanas ul li .inactivo { color: rgb(153, 153, 153); background-color: rgb(255, 255, 255); display: block; float: left; margin: 0px; padding: 0px 7px; text-decoration: none; }
+.cabecera .pestanas ul li.activo a { padding-bottom: 0px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font: bold 16px/18px Arial,Helvetica,sans-serif; }
+.cabecera .pestanas ul li a:hover { background-color: rgb(255, 255, 255); text-decoration: none; color: rgb(102, 102, 102); }
+#id_info_usuario, #id_info_evento { position: relative; margin: 5px 5px 10px; padding: 3px 3px 3px 0px; }
+#id_info_usuario { padding-bottom: 5px; border-bottom: 1px dotted rgb(204, 204, 204); }
+#id_info_evento { margin-bottom: 10px; min-height: 50px; }
+#id_info_usuario .fotoymas, #id_info_evento .fotoymas { position: absolute; top: 0px; left: 0px; width: 80px; border: 1px solid rgb(211, 211, 211); padding: 3px; z-index: 5; }
+#id_info_usuario .fotoymas img { width: 80px; height: auto ! important; }
+.nombreymas { min-height: 90px; }
+.tituloymas { min-height: 65px; }
+#id_info_usuario .nombreymas, #id_info_evento .tituloymas { margin: 0px 0px 0px 94px; }
+#id_info_evento .fotoymas { width: 80px; }
+#id_info_evento .fotoymas img { width: 80px; height: auto ! important; }
+#id_info_usuario h2, #id_info_usuario div, #id_info_usuario p, #id_info_evento h2, #id_info_evento div, #id_info_evento p { margin-bottom: 0px; margin-top: 0px; }
+#id_info_usuario h2, #id_info_usuario p, #id_info_evento h2, #id_info_evento p { margin-top: 0px; margin-bottom: 5px; }
+#id_info_usuario div div, #id_info_evento div div { margin-left: 0px; }
+#id_info_usuario h2, #id_info_evento h2 { font-size: 14px; line-height: 100%; margin-bottom: 0px; }
+#id_info_usuario h2 a, #id_info_evento h2 a { color: rgb(0, 0, 0); }
+#id_info_usuario h2 a:hover, #id_info_evento h2 a:hover { color: rgb(255, 51, 0); }
+#id_info_usuario .nickname { color: rgb(102, 102, 102); margin: 3px 0px; }
+#id_info_usuario .estado .noactivo { display: block; }
+#id_info_usuario .estado .activo { background-color: rgb(255, 51, 0); display: block; color: rgb(255, 255, 255); font: 10px/14px Tahoma,Arial,Helvetica,Garuda,sans-serif; margin: 1px 0px 0px; padding: 2px 0px 5px 4px; }
+#id_info_evento .estado_evento { width: 20px; margin-top: 0px; }
+#id_info_evento .estado_evento span { display: inline-block; }
+#id_info_evento .estado_evento .solo_suscripcion { width: 25px; height: 13px; margin-top: 5px; background: transparent url('sprite.png') no-repeat scroll -9px -571px; }
+#id_info_evento .estado_evento .cerrado { width: 16px; height: 16px; margin-top: 4px; background: transparent url('sprite.png') no-repeat scroll -9px -625px; vertical-align: middle; }
+#id_info_usuario .enlaces ul li { display: inline; }
+#id_info_usuario .enlaces ul li a { color: rgb(255, 51, 0); border-top: 1px solid rgb(255, 51, 0); font: bold 11px Tahoma,Arial,Helvetica,sans-serif; text-decoration: none; display: inline-block; float: left; padding: 5px 5px 5px 0px; margin: 0px 5px 5px 0px; }
+#id_info_usuario p#id_descripcion_usuario, #id_info_evento p#id_descripcion_evento { clear: both; padding: 3px 0px 0px; margin-bottom: 0px; border-top: 1px dotted rgb(204, 204, 204); color: rgb(113, 113, 113); }
+#id_info_evento p#id_descripcion_evento { border-top: 0px none; }
+.contadores { padding-top: 5px; margin: 3px 0px 10px; }
+.contadores .contador { background-color: rgb(232, 232, 220); border-bottom: 1px solid rgb(255, 255, 255); border-left: 1px solid rgb(219, 219, 205); border-right: 1px solid rgb(255, 255, 255); border-top: 1px solid rgb(219, 219, 205) ! important; margin: 0px 0px 0.5%; padding: 1px 1% 5px; width: 29%; float: left; font: 11px/18px Tahoma,Arial,Helvetica,Garuda,sans-serif; color: rgb(119, 119, 119); }
+#id_info_evento .contadores .contador { width: 47%; }
+.contadores .contador h5 { color: rgb(0, 0, 0); font-size: 11px; font-weight: bold; margin: 0px; padding: 0px; }
+.contadores .contador ul li .enunciado { display: block; float: left; width: 53px; font-size: 9px; }
+.contadores .contador ul li a { color: rgb(255, 51, 0); font-weight: bold; text-decoration: none; }
+.contenido { clear: both; padding: 5px 0px 1px; border-top: 1px solid rgb(175, 175, 175); }
+.escribirmensaje a.publicar { clear: both; }
+.otrousuario .escribirmensaje a.cancelar { margin: 5px 0px 5px 5px; }
+.escribirmensaje a.botonactivo { color: rgb(0, 0, 0); background-color: transparent; float: left; width: 123px; font-weight: bold; padding: 5px 0px 3px; border-color: rgb(255, 255, 255); margin: 0px 0px 0px 5px; }
+.inversion p { font: 11px/14px Tahoma,Arial,Helvetica,Garuda,sans-serif; margin: 0px; padding: 5px 30px 15px 65px; color: rgb(136, 136, 136); background: transparent url('sprite_colores.png') no-repeat scroll 30px -1451px; }
+.mensajes { background-color: rgb(238, 238, 238); clear: both; overflow: hidden; }
+.mensajes .mensaje { border-width: 1px; border-style: solid; border-color: rgb(187, 187, 187) rgb(187, 187, 187) rgb(158, 158, 158); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; padding: 5px 10px 10px 8px; margin-bottom: 5px; font-size: 14px; clear: both; background-color: rgb(255, 255, 255); }
+.mensajes .mensaje .escribirmensaje { clear: both; }
+.mensajes .mio .mensaje { border-color: rgb(0, 0, 0); border-width: 2px; }
+.mensajes .mio .mensaje .detalles { border-color: rgb(51, 51, 51); }
+.mensajes .menombran .mensaje { background-color: rgb(222, 225, 225); }
+.mensajes .menombran .mensaje .detalles { border-color: rgb(210, 232, 246); }
+.mensajes .menombran .mensaje p em { font-style: normal; font-weight: bold; }
+.mensajes .mensaje_enviando .mensaje { padding: 0px 3px 3px; border: 1px dotted rgb(175, 168, 164); margin: 8px 0px 16px; color: rgb(170, 170, 170) ! important; }
+.mensajes .mensaje_enviando .mensaje .quien a { color: rgb(255, 171, 171); }
+.mensajes .mensaje_enviando .mensaje img { opacity: 0.5; }
+.recargar, .procesando, .informacion, .error, .cuidadoaclaracion, .explicacion, .comunicaciones { background-color: rgb(250, 250, 218); border: 1px solid rgb(219, 219, 184); padding: 10px; margin: 10px 5px; color: rgb(0, 0, 0); font-size: 100%; clear: both; font-weight: bold; }
+.mensajes .mensaje .error p { margin: 0px 0px 2px; }
+.mensajes .mensaje .quien a { color: rgb(255, 51, 0); text-decoration: none; font-weight: bold; }
+.mensajes .mensaje p { margin: 5px 0px 2px; line-height: 17px; }
+.mensajes .mensaje p img { width: 36px; background-color: rgb(255, 255, 255); padding: 3px; border: 1px solid rgb(204, 204, 204); margin: 0px 6px 0px 0px; height: auto; float: left; }
+.mensajes .mensaje .cuando, .mensajes .mensaje .aquien, .mensajes .mensaje .tema, .mensajes .mensaje .capatemas { color: rgb(170, 170, 170); font-size: 11px; }
+.mensajes .mensaje .aquien { margin-left: 5px; }
+.mensajes .mensaje .tema {  }
+.mensajes .mensaje .capatemas, .mensajes .mensaje .capatemas ul, .mensajes .mensaje .capatemas ul li, .mensajes .mensaje .aquien ul, .mensajes .mensaje .aquien ul li { display: inline; }
+.mensajes .mensaje .aquien ul li a, .mensajes .mensaje .capatemas ul li a, .mensajes .mensaje .tema a, .sigoa a, .mesiguen a { color: rgb(153, 153, 153); padding: 0px 0px 0px 4px; text-decoration: underline; }
+.sigoa a, .mesiguen a { background-color: rgb(255, 51, 0); }
+.article .video { clear: both; padding: 10px 0px; width: 97%; }
+.article .fotoizquierda img, .article .fotocompleta img { display: block; height: auto; padding: 1px; border: 1px solid rgb(204, 204, 204); }
+.article .fotocompleta img { width: 98.5%; clear: both; margin: 5px 0px 8px; }
+.article .fotoizquierda img { width: 40%; float: right; position: relative; margin: 0px 0px 8px 8px; }
+.article .piemensaje { margin-top: 2px; clear: both; position: relative; }
+.mensajes .detalles { padding: 5px 0px; }
+.mensajes .detalles a { text-decoration: none; color: rgb(241, 0, 0); }
+.paginacion { clear: both; margin: 5px 0px 1px; height: 20px; border-top: 1px dotted rgb(204, 204, 204); padding-top: 5px; }
+.paginacion ul li { display: inline; }
+.paginacion ul li span, .paginacion ul li a, .paginacion ul li.activo { display: inline-block; padding: 4px 6px; float: left; border: 1px solid rgb(204, 204, 204); color: rgb(204, 204, 204); text-align: center; font-size: 100%; font-weight: bold; margin-right: 2px; }
+.paginacion ul li.activo { border: 0px none; color: rgb(0, 0, 0); }
+.paginacion ul li a { border: 1px solid rgb(255, 51, 0); background-color: rgb(255, 51, 0); color: rgb(255, 255, 255); text-decoration: none; }
+.paginacion ul li.activo a { background-color: rgb(51, 51, 51); color: rgb(255, 255, 255); border-color: rgb(51, 51, 51); }
+.article .comentario { overflow: hidden; background-color: rgb(255, 255, 255); margin: 5px; padding: 10px; border: 1px solid rgb(204, 204, 204); }
+body#conversacion .article .comentario { float: none; margin: 8px 0px 0px; width: auto; }
+.article .comentario p.autor { font-size: 12px; }
+.article .comentario p { font: 12px/16px Arial,Helvetica,Garuda,sans-serif; margin: 0px; display: inline; }
+.article .comentario p a { color: rgb(255, 51, 0); }
+.article .comentario p a:hover { background-color: rgb(255, 221, 172); }
+.article .comentario .capainfo p a:hover { background-color: transparent; }
+.article .comentario a.verconversacion { background: transparent url('sprite.png') no-repeat scroll -9px -169px; display: inline-block; height: 13px; margin: 0px 0px 0px 5px; width: 16px; }
+.article .comentario a.verconversacion:hover { background-color: transparent; }
+.article .comentario .contenedorbotones { clear: both; padding: 3px 0px 0px; text-align: right; overflow: hidden; border-top: 1px dotted rgb(204, 204, 204); }
+.article .comentario .contenedorbotones a.boton { border: 1px solid rgb(197, 197, 197); display: block; float: left; font: 10px/14px Tahoma,Arial,Helvetica,Garuda,sans-serif; margin: 3px 2px 0px 0px; color: rgb(153, 153, 153); }
+.article .comentario .contenedorbotones a.responder { background: transparent url('sprite.png') no-repeat scroll -5px -114px; color: rgb(153, 153, 153); font-weight: bold; padding: 2px 7px 3px 24px; }
+.article .comentario .contenedorbotones a.opciones { background: transparent url('sprite.png') no-repeat scroll 63px -421px; color: rgb(153, 153, 153); padding: 2px 16px 3px 8px; }
+.article .comentario .contenedorbotones a.opciones:hover { background-color: rgb(168, 175, 177); border: 1px solid rgb(142, 151, 153); color: rgb(255, 255, 255); cursor: pointer; }
+.article .comentario .contenedorbotones a.responder:hover { background-color: rgb(255, 51, 0); border: 1px solid rgb(255, 51, 0); color: rgb(255, 255, 255); }
+.article .comentario .contenedorbotones a.activo { background-color: rgb(168, 175, 177); border: 1px solid rgb(142, 151, 153); color: rgb(255, 255, 255); }
+.article .comentario .contenedorbotones a.activo:hover { background-color: rgb(168, 175, 177); border: 1px solid rgb(142, 151, 153); color: rgb(255, 255, 255); }
+.article .comentario .contenedorbotones .fecha { color: rgb(153, 153, 153); font: 11px/14px Tahoma,Arial,Helvetica,Garuda,sans-serif; padding: 5px 2px 0px 0px; display: inline-block; }
+.article .comentario .contenedorbotones a.via { border-bottom: 1px dotted rgb(153, 153, 153); color: rgb(153, 153, 153); font: 10px/14px Tahoma,Arial,Helvetica,Garuda,sans-serif; margin: 0px 10px 0px 0px; }
+.article .comentario .contenedorbotones a.via:hover { border-bottom: medium none; color: rgb(102, 102, 102); }
+.article .comentario .capamasopciones { position: absolute; width: 180px; z-index: 50; }
+.article .comentario .capamasopciones ul { background-color: rgb(168, 175, 177); border: 1px solid rgb(142, 151, 153); font: 11px/15px Tahoma,Arial,Helvetica,Garuda,Sans,sans-serif; padding: 5px 0px; text-align: left; }
+.article .comentario .capamasopciones ul li { padding: 0px; }
+.article .comentario .capamasopciones ul li a { border: medium none; color: rgb(255, 255, 255); display: block; float: none; padding: 2px 0px 3px 25px; }
+.article .comentario .recipientes { padding: 0px 0px 5px; }
+.article .comentario .recipientes p { font: bold 11px/14px Tahoma,Arial,Helvetica,Garuda,Sans,sans-serif; margin: 0px 0px 5px; padding: 1px 8px 1px 0px; }
+.article .comentario .recipientes ul { margin: 0px; padding: 0px 0px 5px; }
+.article .comentario .recipientes ul li { display: inline; margin: 0px 0px 5px; }
+.article .comentario .recipientes ul li a { color: rgb(0, 0, 0); font: 11px/18px Tahoma,Arial,Helvetica,Garuda,Sans,sans-serif; padding: 3px 5px 2px 17px; }
+.article .comentario .recipientes ul li a.eliminado { color: rgb(153, 153, 153); }
+.article .comentario .recipientes ul li .bloqueado { color: rgb(153, 153, 153); font: 11px/18px Tahoma,Arial,Helvetica,Garuda,Sans,sans-serif; padding: 3px 5px 2px 16px; }
+.article .comentario .recipientes ul li a:hover { color: rgb(255, 51, 0); }
+.article .comentario .recipientes ul li a.eliminado:hover { color: rgb(119, 119, 119); }
+.article .comentario .capamasopciones ul li a.spam { background: transparent url('sprite.png') no-repeat scroll -3px -466px; }
+.article .comentario .capamasopciones ul li a.insulto { background: transparent url('sprite.png') no-repeat scroll -3px -517px; }
+.article .comentario .capamasopciones ul li a.permalink { background: transparent url('sprite.png') no-repeat scroll -3px -374px; }
+.article .comentario .capamasopciones ul li a.reenviar { background: transparent url('sprite.png') no-repeat scroll -3px -220px; }
+.article .comentario .capamasopciones ul li a.editar { background: transparent url('sprite.png') no-repeat scroll -2px -271px; }
+.article .comentario .capamasopciones ul li a.borrar { background: transparent url('sprite.png') no-repeat scroll -2px -321px; }
+.article .comentario .capamasopciones ul li a:hover { background-color: rgb(142, 151, 153); font-weight: bold; }
+.article .comentario .foto { float: left; margin: 0px 5px 5px 0px; padding: 1px; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); }
+.article .comentario .foto img { display: block; width: 60px; height: auto; }
+.escribirmensaje { margin: 20px 0px 0px; width: 100%; }
+.escribirmensaje .contenedorsuperior { background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); position: relative; margin: 5px; }
+.escribirmensaje .contenedorinferior { margin: 10px 7px 10px 0px; }
+.escribirmensaje .contenedorsuperior .secundario { background-color: rgb(245, 245, 245); position: absolute; top: 0px; right: 0px; margin: 1px 0px 0px; padding: 0px 5px 6px; width: 67px; }
+.escribirmensaje .contenedorsuperior .activo { background-color: rgb(255, 255, 255); }
+.escribirmensaje .contenedorsuperior .secundario .caracteres { height: 50px; padding: 9px 0px 0px; }
+.escribirmensaje .contenedorsuperior .secundario .caracteres p { color: rgb(102, 102, 102); font: 11px/11px Tahoma,Arial,Helvetica,Garuda,sans-serif; margin: 0px; padding: 0px; text-align: center; display: block; }
+.escribirmensaje .contenedorsuperior .secundario .caracteres p.numero { color: rgb(0, 0, 0); font: bold 30px/28px Arial,Helvetica,Garuda,sans-serif; }
+.escribirmensaje .contenedorsuperior .secundario a.publicar { background-color: rgb(213, 72, 35); border: 1px solid rgb(213, 72, 35); color: rgb(255, 255, 255); display: block ! important; font: bold 11px/14px Tahoma,Arial,Helvetica,sans-serif; padding: 3px 0px 6px; text-align: center; }
+.escribirmensaje a.trabajando { display: block; background: rgb(255, 255, 255) url('trabajando_23x23.gif') repeat scroll 0px 0px; height: 21px; cursor: progress; font-size: 0%; border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(255, 255, 255) rgb(255, 255, 255) rgb(204, 204, 204); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; color: transparent; }
+.escribirmensaje .contenedorsuperior .secundario a.publicar:hover { background-color: rgb(255, 51, 0); border: 1px solid rgb(196, 62, 27); padding: 4px 0px 5px; }
+.escribirmensaje .contenedorsuperior .contenedor_textarea { margin-right: 77px; }
+.escribirmensaje .contenedorsuperior textarea { background-color: rgb(245, 245, 245); border: 0px none; width: 100%; outline: medium none; overflow: auto; resize: none; }
+.escribirmensaje .contenedorsuperior textarea.cajaactiva { background-color: rgb(255, 255, 255); font: 14px/17px Arial,Helvetica,Garuda,sans-serif; height: 90px; }
+.escribirmensaje .contenedorsuperior textarea.cajareposo { color: rgb(221, 221, 221); font: 50px/60px Georgia,Arial,Helvetica,Garuda,sans-serif; letter-spacing: -2px; height: 90px; }
+.article .escribirmensaje .contenedorsuperior textarea.cajaactiva { background-color: rgb(255, 255, 255); font: 12px/17px Arial,Helvetica,Garuda,sans-serif; height: 90px; }
+.article .escribirmensaje .contenedorsuperior textarea.cajareposo { font: 30px/40px Georgia,Arial,Helvetica,Garuda,sans-serif; letter-spacing: 0px; }
+.article .escribirmensaje a.cancelar, .datosusuariotema .escribirmensaje a.cancelar, .listadousuarios .escribirmensaje a.cancelar { background-color: rgb(204, 204, 204); border: 1px solid rgb(204, 204, 204); color: rgb(255, 255, 255); display: inline-block; float: right; font: 11px/14px Tahoma,Arial,Helvetica,sans-serif; margin: 0px 4px 0px 0px; padding: 2px 0px 3px; text-align: center; width: 65px; }
+.escribirmensaje .contenedorinferior .botones { font: 11px/14px Tahoma,Arial,Helvetica,Garuda,sans-serif; width: 100%; }
+.escribirmensaje .contenedorinferior .botones .boton { color: rgb(102, 102, 102); display: block; float: left; margin: 0px 5px 0px 0px; }
+.escribirmensaje .contenedorinferior .botones .boton:hover { color: rgb(255, 51, 0); }
+.escribirmensaje .contenedorinferior .botones .negrita, .escribirmensaje .contenedorinferior .botones .cursiva { width: 14px; padding-left: 2px; padding-top: 1px; height: 16px; margin-top: 0px; text-align: center; border: 1px solid rgb(192, 192, 192); background-color: rgb(245, 245, 245); }
+.escribirmensaje .contenedorinferior .botones .negrita { margin-right: 1px; margin-left: 5px; }
+.escribirmensaje .contenedorinferior .botones .negrita strong, .escribirmensaje .contenedorinferior .botones .cursiva em { font: bold 12px Georgia,"Times New Roman",Times,serif; }
+.escribirmensaje .contenedorinferior .botones .cursiva:hover, .escribirmensaje .contenedorinferior .botones .negrita:hover { background-color: rgb(221, 221, 221); }
+.escribirmensaje .contenedorinferior .botones .cursiva em { font-weight: normal; font-style: italic; }
+.escribirmensaje .contenedorinferior .botones .imagen { background: transparent url('sprite.png') no-repeat scroll -5px -64px; border: 1px solid rgb(255, 255, 255); padding: 1px 3px 3px 20px; }
+.article .escribirmensaje .contenedorinferior .botones .borrarimagenadjunta a { background: transparent url('sprite_neutro.png') no-repeat scroll 0px -559px; padding: 3px 6px 2px 18px; margin-left: 5px; float: left; }
+.article .escribirmensaje .contenedorinferior .botones .borrarimagenadjunta a.eliminada { background: transparent url('sprite_neutro.png') no-repeat scroll 0px -497px; }
+.escribirmensaje .contenedorinferior .botones .temas { border: 1px solid rgb(255, 255, 255); padding: 1px 3px 3px 22px; }
+.escribirmensaje .contenedorinferior .botones .publicarfuera { border: 1px solid rgb(255, 255, 255); margin: 0px 1px 0px 0px; padding: 1px 0px 3px 26px; }
+.escribirmensaje .contenedorinferior .botones .desactivado { opacity: 0.3; }
+.escribirmensaje .contenedorinferior .botones .destinatario { border: 1px solid rgb(255, 255, 255); padding: 1px 3px 3px 29px; }
+.escribirmensaje .contenedorinferior .botones .activo { background-color: rgb(245, 245, 245); border: 1px solid rgb(192, 192, 192); color: rgb(0, 0, 0); }
+.escribirmensaje .contenedorinferior .botones .publicarfuera:hover { color: rgb(102, 102, 102); }
+.escribirmensaje .contenedorinferior .botones a.externo, .escribirmensaje .contenedorinferior .botones .externo { background-color: rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255); display: block; float: left; height: 14px; margin: -4px 3px 0px 0px; padding: 4px; width: 14px; }
+.escribirmensaje .contenedorinferior .botones .externo { margin: -4px 0px 0px; padding: 4px 2px 4px 4px; }
+.escribirmensaje .contenedorinferior .opciones { clear: both; margin: 0px 0px 0px 4px; padding: 15px 0px 0px; }
+.escribirmensaje .contenedorinferior .opciones p { font: 11px/19px Tahoma,Arial,Helvetica,sans-serif; margin: 5px 0px 0px; padding: 0px; }
+.escribirmensaje .contenedorinferior .opciones p strong { margin: 0px; }
+.escribirmensaje .contenedorinferior .opciones input { border: 1px solid rgb(204, 204, 204); color: rgb(102, 102, 102); font-size: 11px; margin: 15px 0px 0px; }
+.escribirmensaje .contenedorinferior .opciones a.boton { border: 1px solid rgb(153, 153, 153); color: rgb(255, 255, 255); display: inline-block; font: 10px/14px Tahoma,Arial,Helvetica,Garuda,sans-serif; }
+.escribirmensaje .contenedorinferior .opciones a.borrarimagen { background: rgb(153, 153, 153) url('sprite.png') no-repeat scroll -2px -321px; margin: 5px 0px 0px; padding: 1px 6px 2px 20px; }
+.escribirmensaje .contenedorinferior .opciones a.borrarimagen:hover { border: 1px solid rgb(142, 151, 153); }
+.escribirmensaje .opciones .instrucciones { float: left; width: 470px; }
+.mensajes .comentario { clear: both; font-size: 12px; }
+.mensajes .comentario .tema { font-size: 11px; margin: 10px 0px 0px; padding-top: 5px; padding-bottom: 5px; clear: both; border-top: 1px dotted rgb(204, 204, 204); }
+.mensajes .comentario .tema .enunciado { padding-right: 3px; color: rgb(150, 150, 150); }
+.mensajes .comentario .tema a { color: rgb(255, 102, 64); }
+.mensajes .comentario .tema a.desplegartemas { background-color: rgb(238, 238, 238); border: 1px solid rgb(221, 221, 221); display: inline-block; padding: 0px 3px; margin-left: 3px; }
+.mensajes .comentario .nombres, .mensajes .comentario .nombres p { display: inline; }
+.mensajes .comentario .nombres p { padding-right: 5px; }
+.mensajes .comentario p.respuesta { margin-left: 4px; }
+.mensajes .comentario p.respuesta a { color: rgb(119, 119, 119); font: 11px/14px Tahoma,Arial,Helvetica,Garuda,sans-serif; display: inline-block; }
+.mensajes .comentario p.respuesta a:hover { text-decoration: none; color: rgb(0, 0, 0); background-color: transparent; }
+.mensajes .comentario p.respuesta a.iconorespuesta { background: transparent url('sprite.png') no-repeat scroll -9px -675px; width: 12px; height: 13px; margin: 1px 2px 0px 0px; }
+.aviso { background-color: rgb(205, 188, 188); padding: 10px; }
+.aviso p { margin: 0px; padding: 0px; font-size: 100%; line-height: 15px; }
+.aviso p a { text-decoration: none; }
+.aviso p a:hover { text-decoration: underline; }
+.escribir_mensaje label { display: block; margin: 0px 0px 5px; font-weight: bold; color: rgb(102, 102, 102); font-size: 12px; }
+.escribir_mensaje label em { font-style: normal; font-size: 80%; font-weight: normal; }
+.botones_escribir { margin: 5px 0px; }
+.escribir_mensaje .botones_escribir .publicar { background-color: rgb(213, 72, 35); color: rgb(255, 255, 255); display: inline-block; float: left; font-size: 11px; font-weight: bold; padding: 4px 3px 6px; border: 1px solid rgb(213, 72, 35); text-align: center; text-decoration: none; margin-right: 5px; }
+.botones_escribir a.imagen { font-size: 11px; }
+.botones_escribir .boton:hover { color: rgb(255, 51, 0); }
+
+/* ::::: http://ep01.epimg.net/estilos/v1.x/v1.4/eskup_widget_sumario_noticia.css ::::: */
+
+a { outline: medium none; }
+html { overflow-x: hidden; }
+#contenedor { position: static; }
+#contenedor_error { background-color: rgb(250, 250, 218); border: 1px solid rgb(219, 219, 184); padding: 5px; margin: 10px 5px 10px 0px; color: rgb(193, 193, 158); clear: both; font: 11px/18px Tahoma,Arial,Helvetica,Garuda,sans-serif; text-align: center; }
+.pestanas { width: 100%; background-color: rgb(255, 255, 255); border-top: 1px solid rgb(220, 220, 220); padding: 0px; }
+.pestanas ul { margin: 0px; padding: 0px 0px 15px; font: bold 11px/13px Tahoma,Arial,Helvetica,Garuda,sans-serif; }
+.pestanas ul li { padding: 0px; display: block; float: left; margin: 0px; }
+.pestanas ul li a { display: block; padding: 5px 9px 6px 10px; height: 13px; float: left; text-decoration: none; color: rgb(255, 255, 255); background-color: rgb(204, 204, 204); border-radius: 0px 0px 1px 1px; border-width: medium 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(204, 204, 204) rgb(204, 204, 204); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; margin: 0px 3px 0px 0px; }
+.pestanas ul li.activo a { color: rgb(51, 51, 51); padding: 5px 9px 6px 10px; background-color: rgb(255, 255, 255); border-width: medium 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(220, 220, 220) rgb(220, 220, 220); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; }
+.pestanas ul li a:hover { color: rgb(255, 255, 255); background-color: rgb(170, 170, 170); border-color: rgb(170, 170, 170); }
+.pestanas ul li.activo a:hover { background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); cursor: text; border-color: rgb(220, 220, 220); }
+#id_info_usuario, #id_info_evento { margin: 0px 8px 0px 0px; position: relative; border-top: 1px solid rgb(238, 238, 238); padding: 8px 0px 5px; border-bottom: medium none; }
+#id_info_usuario .fotoymas, #id_info_evento .fotoymas { border: 1px solid rgb(211, 211, 211); left: 0px; padding: 4px; position: absolute; top: 8px; z-index: 5; width: auto; }
+#id_info_evento .fotoymas { left: 285px; }
+#id_info_evento .fotoymas img { width: auto; }
+#id_info_usuario .fotoymas img { width: 75px; }
+#id_info_evento .tituloymas { margin: 0px 175px 10px 0px; min-height: 110px; }
+#id_info_usuario .nombreymas { margin: 0px 0px 0px 95px; min-height: 95px; }
+#id_info_usuario h2, #id_info_evento h2 { font-size: 16px; line-height: 21px; margin-bottom: 3px; }
+#id_info_usuario p, #id_info_evento p { border-top: medium none; clear: both; color: rgb(113, 113, 113); line-height: 18px; margin-bottom: 3px; padding: 0px; }
+#id_info_usuario div, #id_info_evento div { margin: 0px; }
+.contadores { margin: 3px 0px 10px; }
+.contadores .contador { padding: 5px 10px; width: 28.2%; }
+#id_info_evento .contadores .contador { width: 44.9%; }
+.contadores .contador ul li .enunciado { font-size: 10px; }
+.escribirmensaje { margin: 5px 5px 10px 0px; width: auto; }
+.escribirmensaje .contenedorsuperior { margin: 0px; }
+.aviso { background-color: rgb(248, 248, 229); padding: 7px 20px; border: 1px solid rgb(228, 228, 198); }
+.aviso p { font: 11px/17px Tahoma,Arial,Helvetica,Garuda,sans-serif; }
+.aviso p br { display: none; }
+.aviso a { font: bold 11px/17px Tahoma,Arial,Helvetica,Garuda,sans-serif; }
+.aviso a:hover { color: rgb(51, 51, 51); }
+.escribirmensaje .contenedorinferior .botones .imagen { background-position: -5px -62px; padding-bottom: 2px; }
+.escribirmensaje .contenedorinferior .botones .negrita { margin-left: 0px; margin-right: 4px; }
+.article .escribirmensaje { width: 455px; margin-right: 0px; }
+.article .escribirmensaje .contenedorinferior { margin: 5px 2px 10px 0px; }
+.article .comentario .contenedorbotones a.responder, .article .comentario .contenedorbotones a.opciones { border-color: rgb(221, 221, 221); }
+.escribirmensaje .contenedorinferior .opciones { width: 100%; }
+.mensajes { background-color: rgb(255, 255, 255); padding: 0px 0px 3px; }
+.article { border-top: 1px solid rgb(225, 225, 225); margin: 0px 4px 4px 0px; padding: 5px 0px 0px; }
+.article .comentario { background-color: transparent; border: medium none; margin: 0px; overflow: hidden; padding: 0px; }
+.article .comentario .foto { float: left; margin: 4px 8px 5px 0px; padding: 2px; }
+.article .comentario .foto img { width: 25px; }
+.article .comentario p.autor { font: bold 11px/16px Tahoma,Arial,Helvetica,Garuda,sans-serif; margin: 3px 0px 0px; }
+.mensajes .comentario p.respuesta { margin: 1px 0px 3px; }
+.article .comentario p.autor, .mensajes .comentario p.respuesta { clear: none; }
+.mensajes .article .comentario p.respuesta a.iconorespuesta { background-position: -9px -677px; margin: 0px 2px 0px 0px; vertical-align: middle; }
+.article .comentario p { font: 12px/19px Arial,Helvetica,Garuda,sans-serif; margin: 2px 0px 0px; display: block; clear: left; }
+.article .comentario a.verconversacion { margin-top: 5px; }
+.mensajes .comentario .tema { margin: 6px 0px 0px; padding-bottom: 7px; padding-top: 7px; border-bottom: 1px dotted rgb(204, 204, 204); }
+.mensajes .comentario .tema .todoslostemas { margin-left: 32px; }
+.article .comentario .contenedorbotones { margin: 0px; padding-bottom: 5px; padding-top: 0px; border-top: medium none; }
+.article .comentario .contenedorbotones a.responder, .article .comentario .contenedorbotones a.opciones { border: 1px solid rgb(255, 255, 255); }
+.article .comentario .contenedorbotones a.activo { background-color: rgb(177, 177, 177); border: 1px solid rgb(177, 177, 177); }
+.article .fotoizquierda img { margin: 6px 0px 8px 10px; position: static; }
+.article .fotocompleta img { margin: 10px 0px 8px; width: 100%; }
+.article .comentario p span object { width: 371px; }
+.editar_mensaje_moderado { border: 1px dotted rgb(204, 204, 204); margin-bottom: 6px; padding: 10px; margin-top: 1em; animation: 1s ease 0s normal none 1 running editar_mensaje_moderado_ani; background-color: rgba(1, 108, 162, 0.1); }
+.article .comentario .editar_mensaje_moderado p { margin: 0px; border: 0px none; font-weight: bold; }
+.botones_aceptar_moderacion { height: 22px; }
+.botones_aceptar_moderacion a { display: inline-block; padding: 0.1em 0.5em; font-size: 11px; font-family: Tahoma,Arial,Helvetica,sans-serif; margin-left: 0.5em; text-transform: uppercase; font-weight: bold; float: right; border-radius: 2px; background-color: rgb(1, 108, 162); color: rgb(255, 255, 255) ! important; }
+.botones_aceptar_moderacion a:hover { color: rgb(1, 108, 162) ! important; background-color: rgb(255, 255, 255); }
+.botones_aceptar_moderacion a.boton_cancelar_moderacion { background-color: rgb(246, 246, 246); border: 1px solid rgb(214, 214, 214); color: rgb(102, 102, 102) ! important; font-weight: normal; text-transform: none; }
+.paginacion { border-top: 1px solid rgb(204, 204, 204); clear: both; height: 20px; margin: 0px; padding-top: 10px; }
+.paginacion ul li span, .paginacion ul li a, .paginacion ul li.activo { padding: 2px 6px; }
+a { color: rgb(1, 108, 162); }
+#id_info_usuario .estado .activo { background-color: rgb(1, 108, 162); }
+#id_info_usuario h2 a:hover, #id_info_evento h2 a:hover { color: rgb(1, 108, 162); }
+.article .comentario p a { color: rgb(1, 108, 162); }
+.article .comentario p a:hover { background-color: transparent; color: rgb(153, 153, 153); }
+.paginacion ul li a { background-color: rgb(1, 108, 162); border: 1px solid rgb(1, 108, 162); }
+.article .comentario .contenedorbotones a.responder { background: transparent url('sprite_azul.png') no-repeat scroll 5px -49px; }
+.article .comentario .contenedorbotones a.responder:hover { background-color: rgb(1, 108, 162); border-color: rgb(1, 108, 162); }
+.article .comentario .contenedorbotones a.opciones:hover { background-color: rgb(177, 177, 177); border-color: rgb(177, 177, 177); }
+.contadores .contador { background-color: rgb(239, 239, 239); border-left-color: rgb(239, 239, 239); border-top-color: rgb(239, 239, 239) ! important; }
+.contadores .contador ul li a { color: rgb(1, 108, 162); }
+.contadores .contador ul li a:hover { color: rgb(102, 102, 102); }
+.inversion p { background: transparent url('sprite_azul.png') no-repeat scroll 30px -166px; }
+.article .comentario .contenedorbotones a.responder { padding-left: 21px; }
+
+/* ::::: http://ep01.epimg.net/estilos/v1.x/v1.4/eskup_widget_comentarios_noticia.css ::::: */
+
+.oculto { display: none; }
+.visible { display: block; }
+.info_opinadores { position: relative; background-color: rgb(1, 108, 162); min-height: 97px; margin: 10px 0px 20px; border-radius: 1px; }
+.info_opinadores .encabezado { border-bottom: 1px solid rgb(136, 185, 209); margin: 0px 0px 10px; padding: 10px 10px 10px 15px; }
+.info_opinadores .encabezado p { font: bold 11px/18px Tahoma,Arial,Helvetica,Garuda,sans-serif; text-transform: uppercase; color: rgb(255, 255, 255); float: left; margin: 0px; }
+.info_opinadores .encabezado a.cerrar { background: transparent url('cerrar_fff.png') no-repeat scroll 2px 2px; display: block; float: right; width: 16px; height: 16px; }
+.info_opinadores .encabezado a.cerrar:hover { background-image: url('cerrar_333.png'); }
+.info_opinadores ul { font: 11px/16px Tahoma,Arial,Helvetica,Garuda,sans-serif; color: rgb(255, 255, 255); margin: 0px 15px; float: left; width: 60%; }
+.info_opinadores .pico { background: transparent url('flecha_abajo_info_opinadores-2.png') no-repeat scroll 0px 0px; width: 23px; height: 12px; position: absolute; bottom: -12px; left: 40px; }
+.info_opinadores .boton_participa { display: inline-block; float: right; margin: 3px 13px 0px 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; color: rgb(0, 0, 0); font: bold 11px/30px Tahoma,Arial,Geneva,sans-serif; text-transform: uppercase; border-radius: 4px; padding: 0px 15px; }
+.info_opinadores .boton_participa:hover { background: rgb(51, 51, 51) none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
+.pestanas { border-bottom: 1px solid rgb(220, 220, 220); border-top: medium none; margin: 10px 0px 20px; text-transform: uppercase; }
+.pestanas ul { padding: 0px 0px 2px; line-height: 15px; height: 24px; }
+.pestanas ul li a, .pestanas ul li .sin_enlace { background-color: rgb(220, 220, 220); color: rgb(102, 102, 102); border-top: 1px solid rgb(204, 204, 204); margin-right: 6px; vertical-align: middle; padding: 5px 9px 7px 6px; }
+.pestanas ul li .sin_enlace { color: rgb(202, 202, 202); text-shadow: 1px 1px 0px rgb(255, 255, 255); font-weight: normal; display: block; height: 13px; border-width: 1px; border-style: solid; border-color: rgb(231, 231, 231) rgb(231, 231, 231) rgb(220, 220, 220); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background-color: rgb(240, 240, 240); }
+.pestanas ul li a .literal, .pestanas ul li a.opinadores strong, .pestanas ul li a em, .pestanas ul li a em.nuevos .ene, .pestanas ul li a em.nuevos .numero { display: block; float: left; }
+.pestanas ul li a.opinadores strong { text-indent: -9999px; white-space: nowrap; overflow: hidden; width: 42px; height: 9px; margin: 3px 0px 0px 4px; background: transparent url('elpais_pestana_opinadores.png') no-repeat scroll 0px 0px; }
+.pestanas ul li.inactivo a.opinadores:hover strong { background-position: 0px -9px; }
+.pestanas ul li.activo a { border-top: 1px solid rgb(220, 220, 220); border-bottom: medium none; padding: 5px 9px 8px 6px; }
+.pestanas ul li a em { padding: 0px 0px 0px 7px; margin: 0px -5px 0px 3px; background: transparent url('flecha_pestanas_comentarios_noticia-2.png') no-repeat scroll 0px 0px; }
+.pestanas ul li a em .numero { font-style: normal; font-weight: normal; padding: 0px 3px 0px 2px; background: rgb(1, 108, 162) none repeat scroll 0% 0%; border-radius: 0px 2px 2px 0px; color: rgb(255, 255, 255); }
+.pestanas ul li a em, .pestanas ul li a em .numero { display: block; height: 16px; line-height: 15px; }
+.pestanas ul li a em.nuevos { background: transparent url('flecha_pestanas_comentarios_noticia-2.png') no-repeat scroll 0px -16px; }
+.pestanas ul li a em.nuevos .ene { width: 16px; height: 16px; background: rgb(1, 173, 236) url('nuevo_comentarios_noticia.png') no-repeat scroll 1px 3px; text-indent: -9999px; white-space: nowrap; overflow: hidden; }
+.pestanas ul li a em.nuevos .numero { background-color: rgb(1, 173, 236); padding-left: 0px; }
+.pestanas ul li a.todo em.nuevos { margin: -1px -7px 0px 5px; }
+.pestanas ul li a:hover em .numero, .pestanas ul li a.opinadores:hover em .numero { color: rgb(255, 255, 255); }
+.pestanas ul .todos_mensajes { float: right; border: medium none; }
+.pestanas ul .todos_mensajes a.todo { text-transform: none; font-weight: normal; padding: 5px 0px 0px 13px; border: medium none; background: transparent url('sprite_neutro_001.png') no-repeat scroll 0px -1233px; color: rgb(102, 102, 102); }
+.pestanas ul .todos_mensajes.activo a.todo { font-weight: bold; color: rgb(0, 0, 0); padding: 5px 0px 0px 13px; }
+.pestanas ul .todos_mensajes a.todo:hover { color: rgb(51, 51, 51); background: transparent url('flecha_abajo_4_000.png') no-repeat scroll 0px 11px; border: medium none; }
+.escribirmensaje { margin: 5px 0px 20px; }
+.mensajes { padding: 0px; }
+.article { border-radius: 2px; box-shadow: 0px 1px 1px rgb(233, 233, 233); background-color: rgb(255, 255, 255); border: 1px solid rgb(211, 211, 211); margin: 0px 0px 10px; padding: 10px 15px; }
+.article .comentario .foto { margin: 0px 8px 8px 0px; padding: 3px; }
+.article .comentario .foto img { width: 35px; }
+.article p.autor { display: inline; font: bold 11px/15px Tahoma,Arial,Helvetica,Garuda,sans-serif ! important; }
+.article .comentario p.autor, .article .comentario p.respuesta { clear: none; border-top: medium none; padding-top: 2px; font: 11px/15px Tahoma,Arial,Helvetica,Garuda,sans-serif; }
+.article .comentario p.respuesta { margin: 0px 0px 3px; color: rgb(102, 102, 102); }
+.mensajes .article .comentario p.respuesta a.iconorespuesta { background-position: -9px -677px; margin: 0px 2px 0px 0px; vertical-align: middle; }
+.article .comentario p { font: 12px/19px Arial,Helvetica,Garuda,sans-serif; padding: 8px 0px 0px; border-top: 1px dotted rgb(204, 204, 204); }
+.article .comentario p a { color: rgb(1, 108, 162); }
+.article .comentario p a:hover { background-color: transparent; color: rgb(153, 153, 153); }
+.article .fotoizquierda img { float: right; margin: 60px 0px 8px 8px; width: 45%; }
+.article .fotocompleta img { width: 99%; }
+.article .comentario .contenedorbotones { margin: 10px 0px 0px; padding: 5px 0px 0px; }
+.article .comentario .contenedorbotones a.responder, .article .comentario .contenedorbotones a.opciones, .article .comentario .contenedorbotones a.favorito { border-color: rgb(221, 221, 221); }
+.article .comentario .contenedorbotones a.responder { background: transparent url('sprite_azul_001.png') no-repeat scroll 4px -48px; }
+.article .comentario .contenedorbotones a.activo { color: rgb(51, 51, 51); }
+.article .comentario .contenedorbotones a.opciones.activo { border-color: rgb(177, 177, 177); }
+.article .comentario .capamasopciones ul { background-color: rgb(177, 177, 177); border-color: rgb(153, 153, 153); }
+.article .comentario .capamasopciones ul li a:hover { background-color: rgb(153, 153, 153); }
+.article .comentario a.vervideo { color: rgb(148, 143, 140); padding: 6px 0px 6px 22px; font: 10px/14px Tahoma,Arial,Helvetica,Garuda,sans-serif; margin: 10px auto; display: block; border-width: 1px 0px; border-style: dotted none; border-color: rgb(204, 204, 204) -moz-use-text-color; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; background: transparent url('sprite_001.png') no-repeat scroll -5px -876px; }
+.article .comentario a.vervideo:hover { border-color: rgb(168, 175, 177); color: rgb(255, 255, 255); }
+.article .comentario .contenedorbotones a.favorito { padding: 2px 7px 3px 21px; background: rgb(255, 255, 255) url('sprite_002.png') no-repeat scroll -5px -725px; width: 91px; text-align: left; display: none; }
+.article .comentario .contenedorbotones a.favorito_off { background-position: -5px -725px; }
+.article .comentario .contenedorbotones a.favorito_on { background-position: -5px -777px; }
+.article .comentario .contenedorbotones a.favorito:hover { background-color: rgb(239, 239, 239); color: rgb(51, 51, 51); }
+.article .comentario .contenedorbotones .capafavorito { position: absolute; top: 6px; left: 171px; width: 121px; background-color: rgb(255, 255, 255); padding: 3px 2px 2px; margin: -2px 0px 0px -2px; border-radius: 3px; z-index: 50; }
+.article .comentario .contenedorbotones .capafavorito a.favorito { margin: -1px 0px 0px; }
+.article .escribirmensaje { width: auto; margin-bottom: 10px; padding-top: 10px; }
+.escribirmensaje .contenedorsuperior .secundario .caracteres p { border-top: medium none; }
+.escribirmensaje .contenedorsuperior .secundario a.publicar { background-color: rgb(1, 108, 162); border: 1px solid rgb(1, 108, 162); }
+.escribirmensaje .contenedorsuperior .secundario a.publicar:hover { background-color: rgb(51, 51, 51); border: 1px solid rgb(51, 51, 51); }
+.escribirmensaje .contenedorinferior .botones .boton:hover { color: rgb(1, 108, 162); }
+.escribirmensaje .contenedorinferior .botones .imagen { background-image: url('sprite_azul.png'); background-position: 4px 3px; padding-bottom: 2px; }
+.paginacion { border-top: medium none; clear: both; height: 20px; margin: 0px; padding-top: 0px; }
+.editar_mensaje_moderado { border: 1px dotted rgb(204, 204, 204); margin-bottom: 6px; padding: 5px 15px; margin-top: 1em; animation: 1s ease 0s normal none 1 running editar_mensaje_moderado_ani; background-color: rgba(0, 0, 0, 0.1); }
+.article .comentario .editar_mensaje_moderado p { margin: 0px; border: 0px none; font-weight: bold; }
+.botones_aceptar_moderacion { height: 30px; }
+.botones_aceptar_moderacion a { display: inline-block; padding: 0.1em 0.5em; font-size: 11px; font-family: Tahoma,Arial,Helvetica,sans-serif; margin-left: 0.5em; text-transform: uppercase; font-weight: bold; float: right; border-radius: 2px; background-color: rgb(1, 108, 162); color: rgb(255, 255, 255) ! important; }
+.botones_aceptar_moderacion a:hover { color: rgb(1, 108, 162) ! important; background-color: rgb(255, 255, 255); }
+.botones_aceptar_moderacion a.boton_cancelar_moderacion { background-color: rgb(246, 246, 246); border: 1px solid rgb(214, 214, 214); color: rgb(102, 102, 102) ! important; font-weight: normal; text-transform: none; }
+.borrado div { opacity: 0.5; }
+.borrado .comentario p { text-align: center; border: 1px dashed rgb(153, 153, 153); color: rgb(51, 51, 51); padding: 10px 0px; margin-bottom: 0px; font: 11px/12px Tahoma,Arial,Helvetica,Garuda,sans-serif; }
+.borrado .comentario p.autor, .borrado .comentario p.respuesta { border: medium none; text-align: left; }
+.article .borrado .comentario .contenedorbotones .boton, .mensajes .borrado .comentario p.respuesta a.respondea { display: none; }
+.article a.respondea { display: inline-block; vertical-align: middle; width: 21px; height: 16px; background: transparent url('sprite_azul_002.png') no-repeat scroll 1px -104px; margin: 0px 0px 0px 3px; border: 1px solid rgb(255, 255, 255); padding: 1px; border-radius: 2px; }
+.entrada .article a.respondea { border-color: rgb(243, 242, 218); }
+.opinador a.respondea { border-color: rgb(246, 246, 246); }
+.article a.respondea:hover { border-color: rgb(170, 170, 170); }
+.flotante { position: relative; }
+.flotante .article { clear: both; background-color: rgb(242, 246, 247); border: 1px solid rgb(206, 216, 218); }
+.flotante .pico { display: block; width: 21px; height: 11px; background: transparent url('sprite_colores_001.png') no-repeat scroll 0px -1524px; position: absolute; bottom: -10px; left: 203px; z-index: 10; }
+.flotante .article a.cerrar { background: transparent url('cerrar_999.png') no-repeat scroll 2px 2px; display: block; height: 16px; width: 16px; position: absolute; top: 15px; right: 15px; z-index: 10; }
+.flotante .article a.cerrar:hover { background: transparent url('cerrar_333_001.png') no-repeat scroll 2px 2px; cursor: pointer; }
+.flotante .article .fotocompleta img { margin: 10px 0px 8px; }
+.flotante .article .fotoizquierda { display: inline; }
+.opinador { clear: both; background-color: rgb(246, 246, 246); }
+.flotante .opinador { background-color: rgb(242, 246, 247); }
+.opinador .comentario { overflow: visible; }
+.opinador p { position: relative; }
+.opinador p.autor, .opinador p.respuesta { position: static; }
+.opinador .comentario .contenedorbotones a.responder, .opinador .comentario .contenedorbotones a.opciones, .opinador .comentario .contenedorbotones a.favorito { background-color: rgb(246, 246, 246); border-color: rgb(214, 214, 214); color: rgb(148, 143, 140); }
+.opinador .comentario .contenedorbotones a.responder:hover, .article .comentario .contenedorbotones a.responder:hover { background-color: rgb(1, 108, 162); border-color: rgb(1, 108, 162); color: rgb(255, 255, 255); }
+.opinador .comentario .contenedorbotones a.opciones:hover, .article .comentario .contenedorbotones a.opciones:hover { background-color: rgb(177, 177, 177); border-color: rgb(177, 177, 177); color: rgb(255, 255, 255); }
+.opinador .comentario .contenedorbotones a.favorito:hover, .article .comentario .contenedorbotones a.favorito:hover { background-color: rgb(221, 221, 221); border-color: rgb(204, 204, 204); color: rgb(51, 51, 51); }
+.comentario a.ver_imagen { float: right; font: 10px/14px Tahoma,Arial,Helvetica,Garuda,sans-serif; padding: 2px 2px 3px 21px; background: transparent url('sprite_001.png') no-repeat scroll -5px -829px; color: rgb(153, 153, 153); border-radius: 3px; }
+.comentario .fotoizquierda a.ver_imagen { margin-top: 60px; z-index: 100; position: relative; }
+.comentario a.ver_imagen:hover { background-color: rgb(168, 175, 177); border-color: rgb(168, 175, 177); color: rgb(255, 255, 255); }
+.opinador .chapa_opinador { width: 140px; height: 19px; position: absolute; top: -53px; right: -15px; }
+.flotante .opinador .chapa_opinador { top: -27px; }
+.opinador .chapa_opinador span { display: inline-block; float: left; }
+.opinador .chapa_opinador .remate { width: 10px; height: 19px; background: transparent url('remate_chapa_opinador-2.png') no-repeat scroll 0px 0px; }
+.opinador .chapa_opinador .literal { font: 10px/14px Tahoma,Arial,Helvetica,Garuda,sans-serif; color: rgb(255, 255, 255); background-color: rgb(1, 108, 162); padding: 2px 14px 3px 10px; width: 106px; }
+.opinador .escribirmensaje .contenedorinferior .botones .imagen { border-color: rgb(246, 246, 246); }
+.provisional .article { border: 1px dashed rgb(204, 204, 204); background-color: rgb(240, 240, 240); overflow: hidden; animation: 1s ease-out 0s normal none 1 running aparece_provisional; }
+.provisional .article .explicacion { font: bold 11px/16px Tahoma,Arial,Helvetica,Garuda,sans-serif; color: rgb(0, 0, 0); padding: 10px 10px 10px 40px; margin: 10px 0px 0px; border-width: 1px; border-style: solid; border-color: rgb(202, 202, 202) rgb(255, 255, 255) rgb(255, 255, 255) rgb(202, 202, 202); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-radius: 4px; background: rgb(226, 226, 226) url('exclamacion_pequeno.png') no-repeat scroll 7px 12px; animation: 4s ease 0s normal none 1 running atencion; }
+.provisional .article .contenedorcolumnas { padding-top: 10px; }
+.provisional .article a.recargar { font: bold 11px/16px Tahoma,Arial,Helvetica,Garuda,sans-serif; padding: 6px 30px 8px 50px; margin: -5px; background: rgb(131, 160, 171) url('sprite_colores_001.png') no-repeat scroll 22px -512px; border-width: 1px; border-style: solid; border-color: rgb(110, 137, 147) rgb(255, 255, 255) rgb(255, 255, 255) rgb(110, 137, 147); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-radius: 4px; display: inline-block; color: rgb(255, 255, 255); }
+.provisional .article a.recargar:hover { background-color: rgb(155, 182, 192); border-bottom: 1px solid rgb(255, 255, 255); border-right: 1px solid rgb(255, 255, 255); }
+.provisional .article p { color: rgb(51, 51, 51); }
+.comunicaciones { margin: 10px 0px; padding: 5px 0px; background-color: rgb(247, 247, 247); border-width: 1px; border-style: solid; border-color: rgb(227, 227, 227) rgb(255, 255, 255) rgb(255, 255, 255) rgb(227, 227, 227); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-radius: 4px; text-align: center; clear: both; }
+.article .comentario .comunicaciones p { margin: 15px 0px; font: italic 14px/20px Georgia,Arial,Helvetica,Garuda,sans-serif; color: rgb(153, 153, 153); border-top: medium none; padding-top: 0px; }
+.refresco a { font: bold 11px/16px Tahoma,Arial,Helvetica,Garuda,sans-serif; padding: 10px 10px 10px 108px; margin: 3px auto 10px; background: rgb(131, 160, 171) url('sprite_colores_001.png') no-repeat scroll 80px -509px; border-width: 1px; border-style: solid; border-color: rgb(110, 137, 147) rgb(255, 255, 255) rgb(255, 255, 255) rgb(110, 137, 147); border-radius: 4px; display: block; width: 195px; color: rgb(255, 255, 255); }
+.refresco a:hover { background-color: rgb(155, 182, 192); border-top: 1px solid rgb(132, 158, 167); border-left: 1px solid rgb(132, 158, 167); }
+.article .comentario .contenedorbotones .fecha { float: right; }
+
+/* ::::: http://skp00.epimg.net/Estilos/v1.x/v1.0/eskup_ampliar_foto.css ::::: */
+
+.fotocompleta, .fotoizquierda { position: relative; width: 40%; float: right; margin: 0px 0px 8px 8px; }
+.fotocompleta .encima, .fotoizquierda .encima { color: rgb(204, 204, 204); border: 1px solid rgb(34, 34, 34); height: 25px; padding: 0px 8px 0px 27px; opacity: 1; font: 11px/23px Tahoma,Arial,Helvetica,Garuda,sans-serif; }
+.fotoizquierda { margin-right: 8px; }
+.fotocompleta { width: auto; float: none; margin-left: 0px; }
+.fotocompleta span.reposo, .fotoizquierda span.reposo { width: 25px; height: 25px; opacity: 0.8; border: 1px solid rgb(85, 85, 85); }
+.ampliar_foto { position: absolute; left: 15px; bottom: 15px; display: block; border-radius: 2px; background: rgb(51, 51, 51) url('icono_ampliar_foto_hover.png') no-repeat scroll 5px 4px; color: rgb(255, 255, 255); }
+.fotoizquierda .ampliar_foto { left: 4px; bottom: 15px; top: auto; right: auto; }
+.article .fotoizquierda .posicionador { float: right; display: inline-block; position: relative; }
+.article .fotoizquierda img { width: 100%; height: auto; }
+.article .fotoizquierda .posicionador img { width: 100%; }
+.telon_eskup_ampliar_foto { opacity: 0.92; position: absolute; left: 0px; top: 0px; z-index: 8001; background-color: rgb(0, 0, 0); width: 100%; height: 100%; min-width: 1002px; }
+.telon_eskup_ampliar_foto .contenedor_capa_flotante_eskup_ampliar_foto { position: absolute; width: 100%; z-index: 10500; text-align: center; }
+.telon_eskup_ampliar_foto .flotante_foto_eskup_ampliar_foto { margin-left: auto; margin-right: auto; border: 1px solid rgb(0, 0, 0); max-width: 1000px; }
+.telon_eskup_ampliar_foto .flotante_foto_eskup_ampliar_foto .contenedor_foto_eskup_ampliar_foto { background-color: rgb(17, 17, 17); padding: 10px; text-align: left; }
+.telon_eskup_ampliar_foto .flotante_foto_eskup_ampliar_foto .contenedor_foto_eskup_ampliar_foto .foto_eskup_ampliar_foto { clear: both; border-top: 1px solid rgb(34, 34, 34); margin: 0px; }
+.telon_eskup_ampliar_foto .flotante_foto_eskup_ampliar_foto .contenedor_foto_eskup_ampliar_foto .foto_eskup_ampliar_foto img { margin: 0px auto; max-width: 980px; }
+.telon_eskup_ampliar_foto .flotante_foto_eskup_ampliar_foto .contenedor_foto_eskup_ampliar_foto a.cerrar_eskup_ampliar_foto, .telon_eskup_ampliar_foto .flotante_foto_eskup_ampliar_foto .contenedor_foto_eskup_ampliar_foto a.boton_eskup_ampliar_foto { color: rgb(255, 255, 255); font: 11px/14px Tahoma,Arial,Helvetica,Garuda,sans-serif; display: block; float: right; width: 45px; height: 18px; padding: 7px 20px 5px 10px; background: rgb(51, 51, 51) url('cerrar_hover_fff.png') no-repeat scroll 50px 7px; margin: 0px 0px 0px 10px; }
+.telon_eskup_ampliar_foto .flotante_foto_eskup_ampliar_foto .contenedor_foto_eskup_ampliar_foto a.ampliar_eskup_ampliar_foto { background-image: url('icono_foto_real_1.png'); background-position: 85px 6px; width: 80px; color: rgb(153, 153, 153); }
+.telon_eskup_ampliar_foto .flotante_foto_eskup_ampliar_foto .contenedor_foto_eskup_ampliar_foto a.reducir_eskup_ampliar_foto { background-image: url('icono_foto_real_2.png'); background-position: 105px 6px; width: 100px; color: rgb(153, 153, 153); }
+.telon_eskup_ampliar_foto .flotante_foto_eskup_ampliar_foto .contenedor_foto_eskup_ampliar_foto a.cerrar_eskup_ampliar_foto:hover { background: rgb(34, 34, 34) url('cerrar_hover.png') no-repeat scroll 50px 7px; color: rgb(40, 179, 224); }
+.telon_eskup_ampliar_foto .flotante_foto_eskup_ampliar_foto .contenedor_foto_eskup_ampliar_foto a.ampliar_eskup_ampliar_foto:hover, .telon_eskup_ampliar_foto .flotante_foto_eskup_ampliar_foto .contenedor_foto_eskup_ampliar_foto a.reducir_eskup_ampliar_foto:hover { background-color: rgb(34, 34, 34); color: rgb(255, 255, 255); }
+.telon_eskup_ampliar_foto .flotante_foto_eskup_ampliar_foto .contenedor_foto_eskup_ampliar_foto .foto_eskup_ampliar_foto p { color: rgb(102, 102, 102); font: 12px/18px Arial,Helvetica,Garuda,sans-serif; height: 55px; overflow: auto; margin: 8px 0px 0px; border: medium none; padding: 0px; max-width: 980px; }
+
+/* ::::: null ::::: */
+
+.boton_video { background-image: url('boton_video_miniatura.png'); background-position: 0px 0px; background-repeat: no-repeat; bottom: 15px; display: block; height: 35px; left: 15px; position: absolute; width: 65px; }
