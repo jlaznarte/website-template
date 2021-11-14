@@ -4,7 +4,7 @@
 :EXPORT_HUGO_SECTION: home
 :END:
 
-** News
+# ** News
 :PROPERTIES:
 :EXPORT_FILE_NAME: news
 :EXPORT_HUGO_FRONT_MATTER_FORMAT: toml
@@ -19,7 +19,7 @@
 
 
 
-* Teaching
+* Docencia
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: teaching
 :END:
@@ -32,7 +32,8 @@
 
 ** Course 1
 
-* Project
+   
+* Proyectos
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: project
 :END:
@@ -49,6 +50,7 @@
 :EXPORT_DATE: 2020-07-24
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :summary "Project page for some work on the COVID-19 pandemic."
 :END:
+
 
 * Students
 :PROPERTIES:
